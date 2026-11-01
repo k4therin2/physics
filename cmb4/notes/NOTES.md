@@ -20,3 +20,9 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   of S to 3rd order; zeta ICs via zeta_nl = ln(1+delta_T)+1/2 ln(1-2Phi) at eta->0 (SPEC §5).
 - [t1] Agents launched: research(Anthropic), literature. Next: C1 (Einstein eqs to 3rd order), C2 (observable S to
   3rd order + checks), C3 (harmonic machinery).
+- [t2] Anthropic-writeups research done -> cmb4/lit/anthropic_writeups.md. Adopted lessons: (1) orchestrator does
+  no heavy math, briefs = memos with fixed conventions + control cases; (2) separate generator/verifier agents,
+  blind hostile referee for each claim; (3) CAS/numerics as arbiter; (4) state on disk, ledger of failed approaches;
+  (5) treat "done" as a claim to refute.
+## Ledger of failed approaches / decisions
+- Decided: Poisson gauge for dynamics (literature-checkable, no secular growth); exact e^{-S} formula for observable.
