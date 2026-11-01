@@ -64,3 +64,9 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   t_o=8 (and 4), x_o=0 (and pi/2): a_20[Th1]=-2.18472036, a_40=+1.25524563; a_20[Th2]=-4.22249422, a_40=+1.37854398;
   a_20[Th3]=-12.890, a_40=-47.071 (unc. Th2 3e-8, Th3 2e-4). Clock shift t_o(±0.01)=8.02512265/7.97421965 for x_o=0.
   Gauge used: comoving-orthogonal with alpha = e^{-zeta}(AB^2)^{1/3} exactly. USE THESE AS ARBITER for assembled K1,K2,K3.
+- [t11] C2 DONE (report_C2.md; L_terms.pkl term dicts; shear form + direct form). Exact formula verified symbolically to 3rd order
+  (both routes). L1 = SW formula. Dilation: full map zero through 3rd order incl. clock + emission (a2 tadpole free -> drops out).
+  Boubekeur et al structure reproduced. CONVENTION FIX: background ray xbar(eta) = x_o + n (eta_o - eta), e = -n, n = observation
+  direction (C2). C3/C5 used source at -n chi => their a_lm differ by (-1)^l: harmless for C_l but ASSEMBLY must use C2's convention
+  and re-derive Rayleigh rule signs: e^{+ik.n chi} = 4pi sum i^l j_l Y_lm(n) Y*_lm(k).
+- [t11] NEXT: A1 = plane-wave end-to-end check vs N1 (Th2, Th3 maps); A2 = Fourier kernels K2, K3c + C_l assembly + monochromatic.
