@@ -1,0 +1,68 @@
+\section{Verification ledger}
+\label{app:ledger}
+Every check performed on the settled material, with its outcome.  ``Exact'' means symbolic identity (sympy);
+numbers are maximal relative or absolute deviations.  Code locations: V1 \code{code/V1\_referee/}, C1 \code{code/C1\_einstein/},
+C2 \code{code/C2\_observable/}, C3 \code{code/C3\_harmonic/} (\code{run\_all\_tests.py}, log \code{test\_log.txt}), N1 \code{code/N1\_planar/}.
+
+\subsection*{Exact observable (referee V1; Sec.~\ref{sec:observable})}
+\begin{itemize}\itemsep1pt
+\item[V1-1] Lemma~\ref{lem:kin} in a generic Lorentzian metric $g=G_0+G_{1\alpha}x^\alpha$ (random rational coefficients, no symmetry), generic unit $u(x)$, generic null $p$: geodesic-derived $\dd E/\dd\lambda$ vs $-pp\nabla u$, decomposition, $\omega_{\mu\nu}p^\mu p^\nu=0$, final identity: exact.
+\item[V1-2] Lemma~\ref{lem:fluid}: energy and Euler equations from $\nabla\cdot T=0$ for general $\rho,P$; equivalence to \eqref{eq:lemma2} iff $\rho=3P+c$, $P=CT^4-c/4$; for $P=w\rho$, $\rho\propto T^4$ the identities hold iff $w=1/3$: exact.
+\item[V1-3] Off-shell identity $\dd\ln E/\dd l-\dd\ln T/\dd l+\sigma_{ee}=-[(\theta+3u\cdot\partial\ln T)/3+(a+h\partial\ln T)\cdot e]$ at a generic point: exact (residual $-0.93$ off shell in a random instance, $0$ on shell).
+\item[V1-4a] FRW radiation: $\sigma=0$, $T_*E_o/E_e/T_o=1$ symbolically for all $p_i$.
+\item[V1-4b] Bianchi~I $\dd s^2=-\dd t^2+\sum t^{2q_i}\dd x_i^2$ with a radiation test fluid $u=\partial_t$: $\dd/\dd t[\ln E-\ln T]+\sigma_{ee}=0$ symbolically; integrated for Kasner $(\tfrac23,\tfrac23,-\tfrac13)$ and non-Kasner $(\tfrac12,\tfrac13,\tfrac15)$, three directions, $t_e=1\to t_o=5$: $|T_{\rm obs}^{\rm exact}-T_oe^{-S}|\lesssim2\times10^{-31}$ with $O(1)$ direction dependence.
+\item[V1-4c] Milne flow in Minkowski: $\theta=3/\tau$, $\sigma=a=0$, $T_{\rm obs}=T(o)$ isotropic: exact.
+\item[V1-5] Linear Poisson gauge: $\hat\theta,\hat a,\hat\sigma$ of \eqref{eq:lin_kin}; direct geodesic $\dd\ln\hat E/\dd\eta$ vs kinematic: agree; identity \eqref{eq:sigma_ee_lin} off shell non-zero, on shell $0$: exact.  Sachs--Wolfe + Doppler + ISW with observer terms recovered.
+\item[V1-6] Tetrad rotation $R=\exp(\eps A)$ at $\ell=2$ (exact spin-2 generators): $\sum_m|a_{\ell m}|^2$ invariant through $O(\eps^4)$ and $a^{(1)}$ invariant; $a^{(2)}\to a^{(2)}+2Aa^{(1)}$; $C^{(22)}$ and $\Re C^{(13)}$ separately \emph{not} invariant ($\sum|a_2|^2$: $321/25$ vs $329107/1225-8798\sqrt6/1225$) while $\tfrac14C^{(22)}+\tfrac13\Re C^{(13)}$ is ($107/60$ both).  Dipole power invariant.
+\end{itemize}
+
+\subsection*{Exact observable, independent route (agent C2, milestone 1; Sec.~\ref{sec:linearS})}
+\begin{itemize}\itemsep1pt
+\item[C2-1] Kinematic identity $p^ap^b\nabla_au_b=\sigma_{pp}+\theta(p\cdot p+E^2)/3+Ea\cdot p$ for a generic (non-null) $p$, no equations of motion: zero at orders 1, 2, 3.
+\item[C2-2] Radiation identities \eqref{eq:lemma2} from $\hat\nabla_\mu\hat T^{\mu\nu}=0$ alone (solved order by order for $\partial_\eta\delta_{T,n}$, $\partial_\eta v_n$): zero at orders 1, 2, 3.
+\item[C2-3] Integrand-level comparison of route (i) [$\ln(\hat E_o/\hat E_e)=-\int\Gamma^0_{kk}\dd\eta+[\ln(-u\cdot k)]^o_e$] with route (ii) [$\ln(\hat T_o/\hat T_e)-S$] along an arbitrary perturbed ray $k^i=-n^i+\eps k_1^i+\ldots$ with the non-affine geodesic equation substituted: residual $R\equiv0$ at orders 1, 2 and 3 modulo conservation (14/70/340 terms before reduction).
+\item[C2-4] $-I_1=-D[\delta_{T,1}+\Psi_1-\nhat\cdot v_1]+\Phi_1'+\Psi_1'$ with $I_1=\sigma_{1,kk}$: exact (SPEC check (a)).
+\item[C2-5] Canonical triad (Gram--Schmidt w.r.t.\ $\hat g$, orthogonal to $\hat u$): $\hat g(e_a,e_b)=\delta_{ab}$, $\hat g(e_a,\hat u)=0$ through order 3.
+\item[C2-6] Direction map \eqref{eq:dirmap}: $k^\mu(\eta_o)$ null through order 3 (with $|\nhat|=1$); first-order geodesic right-hand side $G_1^i=-\partial_i(\Phi+\Psi)+2n^i\,\nhat\cdot\nabla(\Phi+\Psi)-n^i(\Phi'+\Psi')$ consistent with the null condition $\nhat\cdot k_1=-(\Phi+\Psi)$.
+\end{itemize}
+
+\subsection*{Einstein--fluid equations (agent C1; Secs.~\ref{sec:primordial}--\ref{sec:einstein})}
+\begin{itemize}\itemsep1pt
+\item[C1-1] Engine: $g\,g^{-1}=1$ and $g_{\mu\nu}u^\mu u^\nu=-1$ to $O(\eps^3)$; background part of every $E_{\mu\nu}$ and of $\nabla_\mu T^{\mu\nu}$ vanishes identically.
+\item[C1-2] First-order equations reproduce the standard linearised Poisson-gauge equations \eqref{eq:first_eqs}; $\Psi_1=\Phi_1$; $v^T_1=0$; $\mathrm{curl}\,v_1=0$ identically.
+\item[C1-3] $\Phi_1''+4\Phi_1'/\eta+k^2\Phi_1/3=0$ verified; transfer functions \eqref{eq:transfer} verified by substitution; conservation equations ($\nu=0..3$) vanish identically on the solution; agreement with the lead's independent linear check ($\TP$, $\delta_T\to\zeta/3$, $V\to\eta\zeta/3$).
+\item[C1-4] Second-order SVT structure \eqref{eq:operators} verified component by component ($S_{0y}=S_{yz}=S_{xy}=0$ by reflection symmetry; vector/tensor kernels free of $\sqrt{1-\mu^2}$ after projection).
+\item[C1-5] Contracted Bianchi identity $g^{\mu\alpha}\nabla_\alpha E_{\mu\nu}+g_{\nu\beta}\nabla_\mu T^{\mu\beta}\equiv0$ to $O(\eps^3)$ (hence the constraints propagate at every order).
+\item[C1-6] Exact dilation family \eqref{eq:dilation} solves $E_{\mu\nu}=0$ to $O(\eps^3)$ for arbitrary $A,B$; $k=0$ second-order equations fix only $\delta_2=-2\Psi_2+\tfrac{32}9c^2$; angle-averaged $k\to0$ limit of the regular solution lies on the family.
+\item[C1-7] Vector sector: $\mathrm{curl}\,\hat u_i\neq0$ at second order; relativistic Kelvin \eqref{eq:kelvin} holds and the algebraic $\omega_2$ satisfies the $ij$-vector ODE identically.
+\item[C1-8] $\zeta^{(2)}$, $\zeta^{(3)}$ expansions \eqref{eq:zeta2}--\eqref{eq:zeta3}; $\lim\eta^2K_{S_{00}}=32/3$; $K_Q(0)$ and $K^0_{\Phi_2}$ \eqref{eq:KQ0}--\eqref{eq:KPhi20}.
+\item[C1-9] Tensor source $K_h$ identical to Kohri--Terada (8) / Baumann et al.\ (11)--(12) with $w=1/3$, $\Phi=\Psi$: numerically exact.
+\item[C1-10] Superhorizon $\Phi_2,\Psi_2$ \eqref{eq:Phi20_pos}--\eqref{eq:Psi20_pos} $=$ Pitrou--Uzan--Bernardeau (3.12b,c) with $\mathcal R^{(2)}=-2\mathcal R^{(1)2}$: exact.
+\item[C1-11] Bartolo--Matarrese--Riotto II (7.30): local and gradient terms agree; velocity-quadrupole term differs ($27F$ vs our $3F$) because BMR use the late-time velocity; ours $=$ PUB.
+\item[C1-12] Green's functions \eqref{eq:greens}: $\mathcal LG=0$, $G(\eta,\eta)=0$, $\partial_\eta G|_{\eta'=\eta}=1$ (re-checked for the rewritten form of $G_\Phi$ in this write-up).
+\item[C1-13] $K_{S_\Phi}$ and $K_{3c,S_\Phi}$ finite as $\eta\to0$ (small-$\eta$ expansions), so particular integrals vanish at $\eta=0$; contracted vector/tensor sources vanish after angular integration.
+\item[C1-14] Squeezed limit $C_3(q\to0)=-32/9$ equals the prediction of the exact dilation family: pass.
+\end{itemize}
+
+\subsection*{Harmonic machinery (agent C3; Sec.~\ref{sec:harmonic})}
+\begin{itemize}\itemsep1pt
+\item[C3-1] Rule (A-$s$), $s=0..3$; rule (A-$\lambda$), $\lambda=\pm1,\pm2$, in the $k$-frame and in a random frame (via $D$-matrices and spin-weighted harmonics): $10^{-14}$.
+\item[C3-2] $C^{(11)}$ normalisation $2/\pi$ via the real-space route (monochromatic $\xi=\sigma^2|f|^2j_0(k_0\chi|\nhat_1-\nhat_2|)\Rightarrow C_\ell=4\pi\sigma^2|f|^2\jl^2$): $10^{-14}$.
+\item[C3-3] (B1), both pairings, plain and gradient weights, correlated maps, vs exact real-space Wick $+$ Legendre transform: $2.6\times10^{-12}$; Monte Carlo (400 Gaussian realisations, exact band-limited SHT): plain product $6.6\%$, gradient product $4.1\%$, $\sky X\cdot$map $4.5\%$, cross term (ii) $3.1\%$ (statistical, excludes any factor-2 error).
+\item[C3-4] Type-D Fourier $\leftrightarrow$ angular-gradient identity (two radii): $2.9\times10^{-12}$.
+\item[C3-5] Lensing control: $\tfrac14C^{(22)}=\sum F^2/(2\ell+1)[C^\phi C^\Theta+C^{\phi\Theta}C^{\Theta\phi}]$ algebraically ($2.5\times10^{-16}$); Monte Carlo of the Taylor-expanded remapping with correlated $\phi,\Theta$: $(22)$ $2.3\%$, $(13)=-\ell(\ell+1)RC_\ell$ $4.6\%$; unlensed $C_\ell$ recovered $2.1\%$.
+\item[C3-6] SPEC prefactors re-derived: $C^{(22)}$ factor 2 and $C^{(13)}$ factor 3 confirmed; SPEC's $K^*_1K_3$ is the conjugate of $\langle a^{(1)}a^{(3)*}\rangle$ (irrelevant for $\Re$).
+\item[C3-7] Type C: $K_{2,\ell m}$ finite $3j$ sums vs direct 2D quadrature (random $k_1,k_2$, two time nodes, degree 3): $1.1\times10^{-14}$; isotropy reduction random frame vs $\Khat=\hat z$: $8.9\times10^{-15}$; (C1) $\equiv$ (B1) for product kernels (monochromatic): $3.7\times10^{-15}$; (C2) vs (B1): $3.6\times10^{-15}$.
+\item[C3-8] Rule (A-$L$): $3.2\times10^{-14}$; reduction (E1) with $b\le3$, $a\le2$, $\Delta\chi=0$ and $\neq0$: $\le2.8\times10^{-15}$.
+\item[C3-9] Monochromatic normalisation $\langle\zeta^2\rangle=\sigma^2$: $5.9\times10^{-7}$ (Gaussian approximation of the $\delta$-function).
+\item[C3-10] Not verified numerically (formulas only, Wick counting consistent with the verified ones): (E2), (E3), $T^{\rm(ii)}_3$; the collapse of (E3) to \eqref{eq:monopole_terms}(ii) for a type-B $m_2$ passes analytically.
+\end{itemize}
+
+\subsection*{Non-perturbative arbiter (agent N1; planar symmetry)}
+\begin{itemize}\itemsep1pt
+\item[N1-1] Exact planar GR $+$ radiation solver (comoving-orthogonal gauge, lapse fixed algebraically by \eqref{eq:lemma2}: $\alpha=e^{-\zeta}(AB^2)^{1/3}$, $\Tphys=1/\alpha$), constraint violations $\sim10^{-13}$: Theorem~\ref{thm:exact} verified non-perturbatively, $T_{\rm obs}/T_o=e^{-S}$ to $7\times10^{-15}$ at $\eps=0.1$ ($\Theta_{\rm rms}=0.08$).
+\item[N1-2] Linear limit of the planar solver vs the Poisson-gauge transfer functions \eqref{eq:transfer} through a derived gauge transformation: pass.  Reference $a_{\ell0}[\Theta^{(1,2,3)}]$ for a single plane wave are stored for the assembly check (Sec.~\ref{sec:checks}).
+\end{itemize}
+
+\subsection*{Not yet checked / pending}
+Independent referee of the second- and third-order kernels (V3); dilation (constant-$\zeta$) and gradient-mode invariance of the assembled map (SPEC 9(d)); closed forms of $\mathcal K_{\Phi_2}$, $\mathcal K_h$ (C4); first-order $C^{(11)}_\ell$ closed form (C5); comparison of the assembled kernels with N1.

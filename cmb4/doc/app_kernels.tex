@@ -1,0 +1,163 @@
+\section{Explicit kernels (machine generated)}
+\label{app:kernels}
+All expressions below are exported directly from the engine output of agent C1
+(\code{cmb4/code/C1\_einstein/second\_order.pkl}, \code{third\_order\_ic.pkl}; loader \code{kernels\_api.load()},
+\code{closed\_form()} inserts $\TP$).  Notation: $T_q\equiv\TP(q\eta/\sqrt3)$, $\dot T_q\equiv\partial_\eta T_q$,
+$p=|\vk-\vq|$, $\mu=\khat\cdot\qhat=(k^2+q^2-p^2)/(2kq)$; every second-order kernel is per $\zeta_{\vq}\zeta_{\vp}$ in the sense of
+\eqref{eq:kernel_def}.  Sources are those of $E^{(2)}_{\mu\nu}=2[\eps^2]E_{\mu\nu}$ in the frame $\vk=k\hat{\mathbf z}$,
+$\vq$ in the $x$--$z$ plane.  The transfer functions \eqref{eq:transfer} and the dictionary $\dot T_q=\partial_\eta\TP$ with
+$\partial_\eta=(q/\sqrt3)\,\dd/\dd x$ convert everything to closed form in $\sin,\cos$ of $q\eta/\sqrt3$, $p\eta/\sqrt3$.
+
+\subsection{Second-order kernels}
+
+\paragraph{$K_Q$ (traceless scalar, $Q_2=\Phi_2-\Psi_2$)}
+\begin{dmath}
+- \frac{T_{p} T_{q} \left(13 k^{4} - 6 k^{2} p^{2} - 6 k^{2} q^{2} + 9 p^{4} - 18 p^{2} q^{2} + 9 q^{4}\right)}{4 k^{4}} - \frac{T_{p} \dot{T}_q \eta \left(- k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}\right)}{4 k^{4}} - \frac{T_{q} \dot{T}_p \eta \left(- k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}\right)}{4 k^{4}} - \frac{\dot{T}_p \dot{T}_q \eta^{2} \left(- k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}\right)}{4 k^{4}}
+\end{dmath}
+
+\paragraph{$K_{S_{00}}$ (source of the 00 constraint)}
+\begin{dmath}
+- \frac{2 T_{p} T_{q} \left(\eta^{2} k^{2} + 3 \eta^{2} p^{2} + 3 \eta^{2} q^{2} - 12\right)}{\eta^{2}} - T_{p} \dot{T}_q \eta \left(- k^{2} + p^{2} + q^{2}\right) - T_{q} \dot{T}_p \eta \left(- k^{2} + p^{2} + q^{2}\right) + \dot{T}_p \dot{T}_q \left(\eta^{2} k^{2} - \eta^{2} p^{2} - \eta^{2} q^{2} + 6\right)
+\end{dmath}
+
+\paragraph{$K_{S_{0z}}$ (longitudinal $0i$ source, $S_0^L$)}
+\begin{dmath}
+- \frac{2 i T_{p} T_{q} \left(- \eta^{2} k^{2} p^{2} - \eta^{2} k^{2} q^{2} + \eta^{2} p^{4} - 2 \eta^{2} p^{2} q^{2} + \eta^{2} q^{4} - 6 k^{2}\right)}{3 \eta k} - \frac{i T_{p} \dot{T}_q \left(- 2 \eta^{2} k^{2} p^{2} + 2 \eta^{2} p^{4} - 2 \eta^{2} p^{2} q^{2} - 27 k^{2} + 9 p^{2} - 9 q^{2}\right)}{3 k} + \frac{i T_{q} \dot{T}_p \left(2 \eta^{2} k^{2} q^{2} + 2 \eta^{2} p^{2} q^{2} - 2 \eta^{2} q^{4} + 27 k^{2} + 9 p^{2} - 9 q^{2}\right)}{3 k} + 4 i \dot{T}_p \dot{T}_q \eta k
+\end{dmath}
+
+\paragraph{$K_{S_\Phi}$ (source of $\mathcal L_\Phi\Phi_2=S_\Phi$)}
+\begin{dmath}
+\frac{T_{p} T_{q} \left(- 7 k^{6} - 19 k^{4} p^{2} - 19 k^{4} q^{2} + 7 k^{2} p^{4} - 22 k^{2} p^{2} q^{2} + 7 k^{2} q^{4} + 3 p^{6} - 3 p^{4} q^{2} - 3 p^{2} q^{4} + 3 q^{6}\right)}{12 k^{4}} + \frac{T_{p} \dot{T}_q \eta \left(k^{2} + p^{2}\right) \left(- k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}\right)}{12 k^{4}} + \frac{T_{q} \dot{T}_p \eta \left(k^{2} + q^{2}\right) \left(- k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}\right)}{12 k^{4}} + \frac{\dot{T}_p \dot{T}_q \left(- \eta^{2} k^{6} - 2 \eta^{2} k^{4} p^{2} - 2 \eta^{2} k^{4} q^{2} + 3 \eta^{2} k^{2} p^{4} - 6 \eta^{2} k^{2} p^{2} q^{2} + 3 \eta^{2} k^{2} q^{4} + 12 k^{4} - 24 k^{2} p^{2} - 24 k^{2} q^{2} + 36 p^{4} - 72 p^{2} q^{2} + 36 q^{4}\right)}{12 k^{4}}
+\end{dmath}
+
+\paragraph{$K_\omega$ (vector metric, $\omega_{2,i}=\int P_{ij}q_jK_\omega\zeta\zeta$)}
+\begin{dmath}
+- \frac{2 i T_{p} T_{q} \eta \left(p - q\right) \left(p + q\right)}{k^{2}} - \frac{2 i T_{p} \dot{T}_q \eta^{2} p^{2}}{k^{2}} + \frac{2 i T_{q} \dot{T}_p \eta^{2} q^{2}}{k^{2}}
+\end{dmath}
+
+\paragraph{$K_{v^T}$ (transverse velocity, $v^T_{2,i}=\int P_{ij}q_jK_{v^T}\zeta\zeta$)}
+\begin{dmath}
+- \frac{i T_{p} T_{q} \eta \left(p - q\right) \left(p + q\right) \left(\eta^{2} k^{2} - 24\right)}{12 k^{2}} - \frac{i T_{p} \dot{T}_q \eta^{2} \left(\eta^{2} k^{2} p^{2} + 18 k^{2} - 24 p^{2}\right)}{12 k^{2}} + \frac{i T_{q} \dot{T}_p \eta^{2} \left(\eta^{2} k^{2} q^{2} + 18 k^{2} - 24 q^{2}\right)}{12 k^{2}}
+\end{dmath}
+
+\paragraph{$K_h$ (tensor source, $h_{2,ij}=\Lambda_{ij,kl}q_kq_l\int_0^\eta G_hK_h$)}
+\begin{dmath}
+12 T_{p} T_{q} + 4 T_{p} \dot{T}_q \eta + 4 T_{q} \dot{T}_p \eta + 4 \dot{T}_p \dot{T}_q \eta^{2}
+\end{dmath}
+
+\paragraph{$K^0_{\Phi_2}$ (initial amplitude of $\Phi_2$, Eq.~\eqref{eq:KPhi20})}
+\begin{dmath}
+- \frac{7 k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}}{9 k^{4}}
+\end{dmath}
+
+\paragraph{$K_Q(\eta\to0)$}
+\begin{dmath}
+- \frac{13 k^{4} - 6 k^{2} p^{2} - 6 k^{2} q^{2} + 9 p^{4} - 18 p^{2} q^{2} + 9 q^{4}}{9 k^{4}}
+\end{dmath}
+
+\paragraph{kernel of the local quadratic part $-\tfrac14\delta_1^2-2\Phi_1^2$ of $\zeta^{(2)}$, Eq.~\eqref{eq:zeta2} ($\to-\tfrac43$ as $\eta\to0$)}
+\begin{dmath}
+- \frac{T_{p} T_{q} \left(\eta^{4} p^{2} q^{2} + 3 \eta^{2} p^{2} + 3 \eta^{2} q^{2} + 27\right)}{9} - \frac{T_{p} \dot{T}_q \eta \left(\eta^{2} p^{2} + 3\right)}{3} - \frac{T_{q} \dot{T}_p \eta \left(\eta^{2} q^{2} + 3\right)}{3} - \dot{T}_p \dot{T}_q \eta^{2}
+\end{dmath}
+
+\paragraph{Algebraic second-order scalars} (with $S_{00}$, $S_{0z}$ the corresponding sources)
+\begin{dmath}
+\delta_2 = \frac{S_{00} \eta^{2}}{3} - \frac{2 \eta^{2} k^{2} \Phi_{2}{\left(\eta \right)}}{3} - 2 \eta \frac{d}{d \eta} \Phi_{2}{\left(\eta \right)} - 2 \Psi_{2}{\left(\eta \right)}
+\end{dmath}
+\begin{dmath}
+v_{2,z} = \frac{\eta \left(- S0z \eta - 2 i \eta k \frac{d}{d \eta} \Phi_{2}{\left(\eta \right)} - 2 i k \Psi_{2}{\left(\eta \right)}\right)}{4}
+\end{dmath}
+
+
+\subsection{Homogeneous solutions and Green's functions}
+
+\paragraph{$u_1$}
+\begin{dmath}
+\frac{3 \sqrt{3} \left(- \frac{\sqrt{3} \eta k \cos{\left(\frac{\sqrt{3} \eta k}{3} \right)}}{3} + \sin{\left(\frac{\sqrt{3} \eta k}{3} \right)}\right)}{\eta^{3} k^{3}}
+\end{dmath}
+
+\paragraph{$u_2$}
+\begin{dmath}
+\frac{3 \sqrt{3} \left(\frac{\sqrt{3} \eta k \sin{\left(\frac{\sqrt{3} \eta k}{3} \right)}}{3} + \cos{\left(\frac{\sqrt{3} \eta k}{3} \right)}\right)}{\eta^{3} k^{3}}
+\end{dmath}
+
+\paragraph{$\hat g=3u_1$}
+\begin{dmath}
+\frac{9 \sqrt{3} \left(- \frac{\sqrt{3} \eta k \cos{\left(\frac{\sqrt{3} \eta k}{3} \right)}}{3} + \sin{\left(\frac{\sqrt{3} \eta k}{3} \right)}\right)}{\eta^{3} k^{3}}
+\end{dmath}
+
+\paragraph{$G_\Phi(k;\eta,\eta')$}
+\begin{dmath}
+\frac{\sqrt{3} \eta' \left(\eta' \eta k^{2} \sin{\left(\frac{\sqrt{3} k \left(- \eta' + \eta\right)}{3} \right)} + \sqrt{3} \eta' k \cos{\left(\frac{\sqrt{3} k \left(- \eta' + \eta\right)}{3} \right)} - \sqrt{3} \eta k \cos{\left(\frac{\sqrt{3} k \left(- \eta' + \eta\right)}{3} \right)} + 3 \sin{\left(\frac{\sqrt{3} k \left(- \eta' + \eta\right)}{3} \right)}\right)}{\eta^{3} k^{3}}
+\end{dmath}
+
+\paragraph{$G_h(k;\eta,\eta')$}
+\begin{dmath}
+\frac{\eta' \sin{\left(k \left(- \eta' + \eta\right) \right)}}{\eta k}
+\end{dmath}
+
+\paragraph{$G_\omega(\eta,\eta')$ (for the ODE form of the vector equation)}
+\begin{dmath}
+\frac{\eta'^{2}}{\eta^{2}}
+\end{dmath}
+
+
+\subsection{Third-order initial amplitude and intermediate limits}
+Per $P(q)\,\zeta_{\vk}$ in the contracted sense of \eqref{eq:contracted}; $p^2=k^2-2kq\mu+q^2$.
+
+\paragraph{$C_3(k;q,\mu)$, Eq.~\eqref{eq:C3}}
+\begin{dmath}
+- \frac{16 \left(2 k^{5} + 12 k^{4} \mu q - 42 k^{3} \mu^{2} q^{2} - 10 k^{3} q^{2} + 36 k^{2} \mu^{3} q^{3} + 32 k^{2} \mu q^{3} + 3 k \mu^{4} q^{4} - 42 k \mu^{2} q^{4} + k q^{4} + 8 \mu q^{5}\right)}{9 k \left(k^{2} - 2 k \mu q + q^{2}\right)^{2}}
+\end{dmath}
+
+\paragraph{$C_3$ in invariant form $(k,q,p)$}
+\begin{dmath}
+- \frac{35 k^{8} + 12 k^{6} p^{2} - 84 k^{6} q^{2} + 66 k^{4} p^{4} - 52 k^{4} p^{2} q^{2} + 66 k^{4} q^{4} - 84 k^{2} p^{6} + 84 k^{2} p^{4} q^{2} + 20 k^{2} p^{2} q^{4} - 20 k^{2} q^{6} + 3 p^{8} - 12 p^{6} q^{2} + 18 p^{4} q^{4} - 12 p^{2} q^{6} + 3 q^{8}}{9 k^{4} p^{4}}
+\end{dmath}
+
+\paragraph{$Q_{3c}(\eta\to0)$}
+\begin{dmath}
+- \frac{16 q \left(44 k^{4} \mu - 142 k^{3} \mu^{2} q - 18 k^{3} q + 108 k^{2} \mu^{3} q^{2} + 104 k^{2} \mu q^{2} + 9 k \mu^{4} q^{3} - 126 k \mu^{2} q^{3} - 3 k q^{3} + 24 \mu q^{4}\right)}{9 k \left(k^{2} - 2 k \mu q + q^{2}\right)^{2}}
+\end{dmath}
+
+\paragraph{$\lim_{\eta\to0}\eta^2K_{3c,S_{00}}$}
+\begin{dmath}
+- \frac{256 k q \left(2 k^{2} \mu - k \mu^{2} q - 3 k q + 2 \mu q^{2}\right)}{3 \left(k^{2} - 2 k \mu q + q^{2}\right)^{2}}
+\end{dmath}
+
+
+\subsection{Tadpole (mean-field) functions}
+$\mathrm{tad}_X(q,\eta)=\langle K_X(\vq,-\vq;\eta)\rangle_{\rm ang}$, Eq.~\eqref{eq:tad}, angle-averaged $\vk\to0$ limits of the
+second-order kernels (convention of Sec.~\ref{sec:tadpole}); small-$\eta$ behaviour in brackets.
+
+\paragraph{$\mathrm{tad}_{Q_2}$ [$-\tfrac{16}9+\tfrac{88}{405}q^2\eta^2+\ldots$]}
+\begin{dmath}
+\frac{8 \left(\eta^{6} q^{6} \sin^{2}{\left(\frac{\sqrt{3} \eta q}{3} \right)} + \sqrt{3} \eta^{5} q^{5} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 6 \eta^{4} q^{4} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 6 \sqrt{3} \eta^{3} q^{3} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 18 \eta^{2} q^{2} \left(16 \sin^{2}{\left(\frac{\sqrt{3} \eta q}{3} \right)} - 15\right) + 270 \sqrt{3} \eta q \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 810 \sin^{2}{\left(\frac{\sqrt{3} \eta q}{3} \right)}\right)}{15 \eta^{6} q^{6}}
+\end{dmath}
+
+\paragraph{$\mathrm{tad}_{S_{00}}$ [$\tfrac{32}{3\eta^2}-\tfrac{272}{45}q^2+\ldots$]}
+\begin{dmath}
+\frac{24 \left(\frac{\eta^{6} q^{6} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)}}{2} - \frac{\eta^{6} q^{6}}{2} - 2 \sqrt{3} \eta^{5} q^{5} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 21 \eta^{4} q^{4} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 6 \eta^{4} q^{4} + 36 \sqrt{3} \eta^{3} q^{3} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 126 \eta^{2} q^{2} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 9 \eta^{2} q^{2} - 117 \sqrt{3} \eta q \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - \frac{351 \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)}}{2} + \frac{351}{2}\right)}{\eta^{8} q^{6}}
+\end{dmath}
+
+\paragraph{$\mathrm{tad}_{S_\Phi}$ [$-\tfrac{56}{81}q^2+\ldots$]}
+\begin{dmath}
+\frac{4 \left(2 \sqrt{3} \eta^{7} q^{7} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 12 \eta^{6} q^{6} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 30 \sqrt{3} \eta^{5} q^{5} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 684 \eta^{4} q^{4} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 270 \eta^{4} q^{4} + 1764 \sqrt{3} \eta^{3} q^{3} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 7506 \eta^{2} q^{2} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 216 \eta^{2} q^{2} - 7290 \sqrt{3} \eta q \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 10935 \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 10935\right)}{45 \eta^{8} q^{6}}
+\end{dmath}
+
+\paragraph{$\mathrm{tad}_{\Phi_2}$ [$-\tfrac89-\tfrac{28}{405}q^2\eta^2+\ldots$]}
+\begin{dmath}
+\frac{- 116 \eta^{6} q^{6} + 3 \eta^{3} q^{3} \left(- 2 \sqrt{3} \eta^{2} q^{2} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 18 \eta q \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 180 \eta q + 33 \sqrt{3} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)}\right) + 108 \eta^{2} q^{2} \left(17 \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 2\right) - 1620 \sqrt{3} \eta q \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 2430 \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 2430}{45 \eta^{6} q^{6}}
+\end{dmath}
+
+\paragraph{$\mathrm{tad}_{\delta_2}$ [$\tfrac{16}9-\tfrac{472}{405}q^2\eta^2+\ldots$]}
+\begin{dmath}
+\frac{4 \left(45 \eta^{6} q^{6} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 19 \eta^{6} q^{6} - 186 \sqrt{3} \eta^{5} q^{5} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 1944 \eta^{4} q^{4} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 270 \eta^{4} q^{4} + 3879 \sqrt{3} \eta^{3} q^{3} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 13986 \eta^{2} q^{2} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 2646 \eta^{2} q^{2} - 11340 \sqrt{3} \eta q \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 17010 \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 17010\right)}{45 \eta^{6} q^{6}}
+\end{dmath}
+
+
+\subsection{Not reproduced here}
+The contracted third-order source kernels $K_{3c,X}$ for $X\in\{Q,S_{00},S_{0z},S_\Phi,S_{0x},S_{xz},S_{xx}-S_{yy}\}$
+(157--830 terms each, containing the declared integrals $\mathcal K_{\Phi_2}(a,b,c;\eta)$, $\mathcal K_h(a,b,c;\eta)$ as symbols)
+are in \code{third\_order.pkl}/\code{third\_order.tex}; the position-space sources $S^{(2)}_{\mu\nu}$, $S^{(3)}_{\mu\nu}$ in
+\code{position\_sources.tex}; the full $E^{(n)}_{\mu\nu}$ in \code{E.tex}.
