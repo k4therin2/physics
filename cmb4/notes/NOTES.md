@@ -34,3 +34,7 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
 - [t3] Lead's independent linear check (cmb4/code/lead/linear_check.py): T_Phi=-2(sin x - x cos x)/x^3, delta_T->zeta/3, v_pot->eta zeta/3 (v_i=d_i v),
   continuity+Euler verified. Use as reference against C1.
 - [t3] Running: C1 (Einstein 3rd order), C2 (observable S), C3 (harmonics), V1 (referee of exact formula).
+- [t4] Launched V2 (squeezed-limit predictions via MZ/CPV transformations; independent route) and N1 (exact planar 1+1
+  numerical GR+radiation + ray tracing; nonperturbative arbiter; extracts Th2, Th3 maps for single plane wave).
+  Agents in flight: C1, C2, C3, V1, V2, N1. Waiting. Next after results: assemble kernels (C1 x C2 -> K1,K2,K3c),
+  feed to C3 formulas, run checks (dilation/gradient from V2; planar numerics from N1), then write-up + simplifier + cold-read referee.
