@@ -1,5 +1,5 @@
 """asymptotics.py -- eta -> infinity forms of the particular integrals P (Phi2) and I_h (h2).
-Cin(z) -> EulerGamma + ln|z| - sin z/z - cos z/z^2 + ...,   Si(z) -> (pi/2) sgn z - cos z/z - sin z/z^2 + ...
+Cin(z) -> EulerGamma + ln|z| - sin z/z + cos z/z^2 + 2 sin z/z^3 - ...,   Si(z) -> (pi/2) sgn z - cos z/z - sin z/z^2 + 2 cos z/z^3 + ...
 Signs of the frequencies are fixed by the triangle inequalities k <= q+p, p <= k+q, q <= k+p:
    Phi2: (k+q+p), (k+q-p), (k-q+p) >= 0,  (k-q-p) <= 0.     h2: k+(q+p)/s3, k+(q-p)/s3, k-(q-p)/s3 > 0;  k-(q+p)/s3 has either sign.
 Result kept to relative order 1/eta^2 beyond leading (i.e. terms eta^-2, eta^-3, eta^-4 for Phi2; eta^-1, eta^-2 for h2)."""
@@ -28,12 +28,12 @@ def asym(e, nmax, sgn=sgn_phys):
         z = f.args[0]; w = sp.cancel(z / eta); s = sgn(w)
         absw = s * w if s is not None else sp.Abs(w)
         rep[f] = sp.EulerGamma + sp.log(absw * eta) - sum((-1)**j * sp.factorial(2*j) * sp.sin(z) / z**(2*j+1) for j in range(M)) \
-                 - sum((-1)**j * sp.factorial(2*j+1) * sp.cos(z) / z**(2*j+2) for j in range(M))
+                 + sum((-1)**j * sp.factorial(2*j+1) * sp.cos(z) / z**(2*j+2) for j in range(M))
     for f in e.atoms(Si):
         z = f.args[0]; w = sp.cancel(z / eta); s = sgn(w)
         sg = s if s is not None else sp.sign(w)
         rep[f] = sp.pi / 2 * sg - sum((-1)**j * sp.factorial(2*j) * sp.cos(z) / z**(2*j+1) for j in range(M)) \
-                 + sum((-1)**j * sp.factorial(2*j+1) * sp.sin(z) / z**(2*j+2) for j in range(M))
+                 - sum((-1)**j * sp.factorial(2*j+1) * sp.sin(z) / z**(2*j+2) for j in range(M))
     e = sp.expand(e.xreplace(rep))
     # keep powers eta^n with n >= -nmax ; log(eta) terms must cancel
     out = 0
