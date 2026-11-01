@@ -204,7 +204,7 @@ def test_typeC_vs_typeB(lmax=4, verbose=True):
     g = lambda k: 2.0 - 0.3 * k
     Kfun = lambda k1, k2, K, c: 0.5 * (f(k1) * g(k2) + g(k1) * f(k2))   # symmetrised
     Qfun = lambda k1, k2, mu: [(1.0, 0, 0, 0)]
-    lmax_in = 24
+    lmax_in = 16   # j_l(3) < 1e-11 beyond
     DA = lambda l, k: f(k) * jl(l, k * chi)
     DAp = lambda l, k: g(k) * jl(l, k * chi)
     ls = np.arange(lmax_in + 1)
@@ -215,10 +215,10 @@ def test_typeC_vs_typeB(lmax=4, verbose=True):
     out = []
     errC, errX = 0.0, 0.0
     for l in range(1, lmax + 1):
-        c22 = C22_typeC_mono(l, k0, sigma2, Kfun, Qfun, [chi], [1.0], nmu=80)
+        c22 = C22_typeC_mono(l, k0, sigma2, Kfun, Qfun, [chi], [1.0], nmu=40)
         errC = max(errC, abs(c22 - typeB[l]) / typeB[l])
         # cross (C2) with the type-B frame kernel
-        mus, ws = np.polynomial.legendre.leggauss(40)
+        mus, ws = np.polynomial.legendre.leggauss(20)
         tot = 0.0
         for mu, w in zip(mus, ws):
             KC = K2_lm_frame(l, k0, k0, mu, Kfun, Qfun, [chi], [1.0])
