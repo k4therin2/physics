@@ -59,3 +59,8 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   NOTE: C3 used ray x = -n chi (source at -n chi), SPEC §6 implies +... sign: a_lm -> (-1)^l; harmless if consistent. ASSEMBLY MUST
   USE ONE CONVENTION: ray x(eta) = x_o - n (eta_o - eta) (SPEC) i.e. source at -n chi. OK consistent with C3.
 - [t9] Launched W1 (draft settled sections of doc: setup, exact observable, zeta ICs, Einstein solution, harmonics). Still blocked on C2 for assembly.
+- [t10] N1 DONE (report_N1.md; output in code/N1_planar/output, summary.md). Exact formula T_obs/T_o = exp(-S) verified
+  NONPERTURBATIVELY to 7e-15 (eps=0.1, Theta_rms=0.08). Reference maps for single plane wave zeta = eps cos(kx), k=1, t_*=2,
+  t_o=8 (and 4), x_o=0 (and pi/2): a_20[Th1]=-2.18472036, a_40=+1.25524563; a_20[Th2]=-4.22249422, a_40=+1.37854398;
+  a_20[Th3]=-12.890, a_40=-47.071 (unc. Th2 3e-8, Th3 2e-4). Clock shift t_o(±0.01)=8.02512265/7.97421965 for x_o=0.
+  Gauge used: comoving-orthogonal with alpha = e^{-zeta}(AB^2)^{1/3} exactly. USE THESE AS ARBITER for assembled K1,K2,K3.
