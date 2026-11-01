@@ -5,3 +5,11 @@ a_l0 (l=0..8): [ 1.173677246364e-16 -2.451380769351e-13 -6.749212039925e-02
 {'N': 32}                                (  4.1s) max|dTheta|=1.95e-12  dt_o=-1.78e-15  dT_o/T_o=-3.44e-15  max|d a_l0|=4.74e-13  exactS=8.5e-15
 {'N': 64}                                ( 45.7s) max|dTheta|=2.53e-12  dt_o=-5.33e-15  dT_o/T_o=-3.44e-15  max|d a_l0|=4.40e-13  exactS=8.4e-15
 {'rtol': 1e-12, 'atol': 1e-15}           (  2.9s) max|dTheta|=6.17e-12  dt_o=-3.55e-15  dT_o/T_o=-1.39e-14  max|d a_l0|=9.10e-13  exactS=1.3e-14
+{'rtol': 3e-14, 'atol': 1e-17}           ( 91.3s) max|dTheta|=2.89e-12  dt_o=+5.33e-15  dT_o/T_o=-3.33e-15  max|d a_l0|=5.03e-13  exactS=1.4e-14
+{'cH': 0.0}                              (  2.7s) max|dTheta|=2.39e-12  dt_o=+1.49e-13  dT_o/T_o=+2.91e-14  max|d a_l0|=4.12e-13  exactS=2.2e-14
+{'cH': -1.0}                             ( 20.7s) max|dTheta|=2.43e-12  dt_o=+1.78e-15  dT_o/T_o=-9.88e-15  max|d a_l0|=4.13e-13  exactS=7.9e-15
+{'t_i': 0.005}                           (  4.9s) max|dTheta|=4.32e-12  dt_o=-2.72e-12  dT_o/T_o=+3.69e-13  max|d a_l0|=7.40e-13  exactS=2.1e-14
+{'t_i': 0.02}                            (  3.9s) max|dTheta|=3.48e-12  dt_o=+4.36e-11  dT_o/T_o=-6.11e-12  max|d a_l0|=9.81e-13  exactS=2.3e-14
+nmu= 32 (  3.5s) max|d a_l0|(l<=24)=4.55e-10  l<=20: 5.56e-11  monopole diff=+3.69e-14
+nmu= 64 (  4.7s) max|d a_l0|(l<=24)=4.58e-13  l<=20: 4.58e-13  monopole diff=+7.11e-15
+nmu= 96 (  5.2s) max|d a_l0|(l<=24)=3.42e-13  l<=20: 3.42e-13  monopole diff=+2.58e-14

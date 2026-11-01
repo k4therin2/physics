@@ -10,3 +10,12 @@ n=5: a5 = 0
       b5 = 0
 n=6: a6 = (877*Derivative(zeta(x), x)**6 - 928*Derivative(zeta(x), x)**4*Derivative(zeta(x), (x, 2)) - 2218*Derivative(zeta(x), x)**3*Derivative(zeta(x), (x, 3)) - 1852*Derivative(zeta(x), x)**2*Derivative(zeta(x), (x, 2))**2 + 1924*Derivative(zeta(x), x)**2*Derivative(zeta(x), (x, 4)) + 2754*Derivative(zeta(x), x)*Derivative(zeta(x), (x, 2))*Derivative(zeta(x), (x, 3)) - 522*Derivative(zeta(x), x)*Derivative(zeta(x), (x, 5)) + 128*Derivative(zeta(x), (x, 2))**3 - 352*Derivative(zeta(x), (x, 2))*Derivative(zeta(x), (x, 4)) - 470*Derivative(zeta(x), (x, 3))**2 + 48*Derivative(zeta(x), (x, 6)))*exp(-6*zeta(x))/408240
       b6 = (32*Derivative(zeta(x), x)**6 - 196*Derivative(zeta(x), x)**4*Derivative(zeta(x), (x, 2)) + 20*Derivative(zeta(x), x)**3*Derivative(zeta(x), (x, 3)) + 92*Derivative(zeta(x), x)**2*Derivative(zeta(x), (x, 2))**2 - 89*Derivative(zeta(x), x)**2*Derivative(zeta(x), (x, 4)) - 54*Derivative(zeta(x), x)*Derivative(zeta(x), (x, 2))*Derivative(zeta(x), (x, 3)) + 18*Derivative(zeta(x), x)*Derivative(zeta(x), (x, 5)) + 37*Derivative(zeta(x), (x, 2))**3 - 49*Derivative(zeta(x), (x, 2))*Derivative(zeta(x), (x, 4)) + 55*Derivative(zeta(x), (x, 3))**2 + 3*Derivative(zeta(x), (x, 6)))*exp(-6*zeta(x))/408240
+Ham coeff t^0: 0    Mom coeff t^{n}: 0
+Ham coeff t^1: 0    Mom coeff t^{n}: 0
+Ham coeff t^2: 0    Mom coeff t^{n}: 0
+Ham coeff t^3: 0    Mom coeff t^{n}: 0
+Ham coeff t^4: 0    Mom coeff t^{n}: 0
+Ham coeff t^5: 0    Mom coeff t^{n}: 0
+Ham coeff t^6: 0    Mom coeff t^{n}: 0
+a2+2b2 = (Derivative(zeta(x), x)**2 + 2*Derivative(zeta(x), (x, 2)))*exp(-2*zeta(x))/6
+saved 677.9864118099213
