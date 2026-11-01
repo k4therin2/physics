@@ -1,0 +1,145 @@
+integrands built, t=1.2
+emission shifts: deta_e1 = eta_star*dT1(eta, x, y, z)
+   deta_e2 = -4*eta_star**2*n1*dT1(eta, x, y, z)*Derivative(dT1(eta, x, y, z), x) - 4*eta_star**2*n2*dT1(eta, x, y, z)*Derivative(dT1(eta, x, y, z), y) - 4*eta_star**2*n3*dT1(eta, x, y, z)*Derivative(dT1(eta, x, y, z), z) + 4*eta_star**2*dT1(eta, x, y, z)*Derivative(dT1(eta, x, y, z), eta) + 4*eta_star*Dx1_1(eta_star)*Derivative(dT1(eta, x, y, z), x) + 4*eta_star*Dx1_2(eta_star)*Derivative(dT1(eta, x, y, z), y) + 4*eta_star*Dx1_3(eta_star)*Derivative(dT1(eta, x, y, z), z) + 2*eta_star*dT2(eta, x, y, z)
+t=1.4
+   pos_expand done, sizes [1, 15, 199, 1990] t=20.5
+S (shear form) assembled, t=20.8
+   pos_expand done, sizes [1, 7, 57, 319] t=23.2
+Lambda (direct form) assembled, t=26.3
+=== Lambda coefficient of eps^1 (= L1/1!) shear form: 15 terms in 1 groups
+     15  [ray] local | fields:1
+=== Lambda coefficient of eps^2 (= L2/2!) shear form: 229 terms in 7 groups
+     22  [ray] local | fields:2
+     21  [ray] direction perturbation k1 (aberration + deflection propagated) | fields:1
+     78  [ray] local | fields:1+1
+     33  [ray] local | fields:1
+     45  [ray] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:1
+     15  [obs] observer clock shift | fields:1
+     15  [emi] emission-surface shift | fields:1
+=== Lambda coefficient of eps^3 (= L3/3!) shear form: 2484 terms in 30 groups
+     15  [ray] direction perturbation k1 (aberration + deflection propagated) | fields:1
+     36  [ray] local | fields:1
+     22  [ray] local | fields:3
+    237  [ray] local | fields:1+1
+    126  [ray] direction perturbation k1 (aberration + deflection propagated) | fields:1+1
+     45  [ray] direction perturbation k1 (aberration + deflection propagated) | fields:1
+     31  [ray] direction perturbation k1 (aberration + deflection propagated) | fields:2
+     21  [ray] second-order direction k2 | fields:1
+    404  [ray] local | fields:2+1
+    198  [ray] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:1
+     90  [ray] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:1
+     45  [ray] second-order path displacement | fields:1
+     66  [ray] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:2
+     63  [ray] path displacement Dx1 (lensing [transverse] + time delay [radial]); direction perturbation k1 (aberration + deflection propagated) | fields:1
+    453  [ray] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:1+1
+    138  [ray] local | fields:1+1+1
+     36  [obs] observer clock shift | fields:1
+     22  [obs] observer clock shift | fields:2
+     15  [obs] observer clock shift (2nd) | fields:1
+     45  [obs] observer clock shift; observer displacement | fields:1
+     24  [obs] observer clock shift | fields:1
+     36  [obs] observer clock shift | fields:1+1
+     51  [obs] observer clock shift | fields:1
+     22  [emi] emission-surface shift | fields:2
+     15  [emi] emission-surface shift (2nd) | fields:1
+     78  [emi] emission-surface shift | fields:1+1
+     33  [emi] emission-surface shift | fields:1
+     21  [emi] emission-surface shift; direction perturbation k1 (aberration + deflection propagated) | fields:1
+     45  [emi] path displacement Dx1 (lensing [transverse] + time delay [radial]); emission-surface shift | fields:1
+     51  [emi] emission-surface shift | fields:1
+=== direct form eps^1: 17 terms in 3 groups
+      7  [ray] local | fields:1
+      5  [obs] local | fields:1
+      5  [emi] local | fields:1
+=== direct form eps^2: 179 terms in 18 groups
+     23  [ray] local | fields:2
+     21  [ray] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:1
+      6  [ray] direction perturbation k1 (aberration + deflection propagated) | fields:1
+      4  [ray] local | fields:1
+      3  [ray] local | fields:1+1
+      7  [obs] observer clock shift | fields:1
+      7  [emi] emission-surface shift | fields:1
+      8  [obs] local | fields:1
+      8  [obs] local | fields:2
+      5  [obs] observer clock shift | fields:1
+     15  [obs] observer displacement | fields:1
+      9  [obs] local | fields:1+1
+      8  [emi] local | fields:1
+      8  [emi] local | fields:2
+     20  [emi] emission-surface shift | fields:1
+     15  [emi] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:1
+      3  [emi] direction perturbation k1 (aberration + deflection propagated) | fields:1
+      9  [emi] local | fields:1+1
+=== direct form eps^3: 1402 terms in 67 groups
+     23  [ray] local | fields:3
+      3  [ray] direction perturbation k1 (aberration + deflection propagated) | fields:1
+     51  [ray] local | fields:2+1
+      6  [ray] second-order direction k2 | fields:1
+     31  [ray] direction perturbation k1 (aberration + deflection propagated) | fields:2
+      4  [ray] local | fields:1
+     42  [ray] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:1
+     21  [ray] second-order path displacement | fields:1
+     69  [ray] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:2
+     24  [ray] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:1
+     18  [ray] path displacement Dx1 (lensing [transverse] + time delay [radial]); direction perturbation k1 (aberration + deflection propagated) | fields:1
+      3  [ray] local | fields:1+1
+      3  [ray] direction perturbation k1 (aberration + deflection propagated) | fields:1
+     18  [ray] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:1+1
+      3  [ray] direction perturbation k1 (aberration + deflection propagated) | fields:1+1
+     23  [obs] observer clock shift | fields:2
+      7  [obs] observer clock shift (2nd) | fields:1
+     18  [obs] observer clock shift | fields:1
+     21  [obs] observer clock shift; observer displacement | fields:1
+     27  [obs] observer clock shift | fields:1+1
+      7  [obs] observer clock shift | fields:1
+     22  [obs] observer clock shift | fields:1
+     23  [emi] emission-surface shift | fields:2
+      7  [emi] emission-surface shift (2nd) | fields:1
+     21  [emi] path displacement Dx1 (lensing [transverse] + time delay [radial]); emission-surface shift | fields:1
+      4  [emi] emission-surface shift | fields:1
+      6  [emi] emission-surface shift; direction perturbation k1 (aberration + deflection propagated) | fields:1
+      3  [emi] emission-surface shift | fields:1+1
+     22  [emi] emission-surface shift | fields:1
+      5  [obs] local | fields:1
+      8  [obs] local | fields:3
+     30  [obs] local | fields:1+1
+      8  [obs] observer clock shift | fields:2
+      5  [obs] observer clock shift (2nd) | fields:1
+     24  [obs] observer displacement | fields:2
+     15  [obs] observer displacement (2nd) | fields:1
+      5  [obs] observer clock shift | fields:1
+     30  [obs] observer displacement | fields:1
+     51  [obs] local | fields:2+1
+     15  [obs] observer clock shift; observer displacement | fields:1
+      8  [obs] observer clock shift | fields:1
+     24  [obs] observer displacement | fields:1
+     10  [obs] local | fields:1+1+1
+     18  [obs] observer clock shift | fields:1+1
+     54  [obs] observer displacement | fields:1+1
+      5  [emi] local | fields:1
+      8  [emi] local | fields:3
+     21  [emi] local | fields:1+1
+     48  [emi] local | fields:2+1
+     32  [emi] emission-surface shift | fields:2
+     20  [emi] emission-surface shift (2nd) | fields:1
+     50  [emi] emission-surface shift | fields:1
+     30  [emi] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:1
+     15  [emi] second-order path displacement | fields:1
+     24  [emi] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:2
+      6  [emi] direction perturbation k1 (aberration + deflection propagated) | fields:2
+      3  [emi] second-order direction k2 | fields:1
+     24  [emi] emission-surface shift; direction perturbation k1 (aberration + deflection propagated) | fields:1
+     60  [emi] path displacement Dx1 (lensing [transverse] + time delay [radial]); emission-surface shift | fields:1
+      9  [emi] path displacement Dx1 (lensing [transverse] + time delay [radial]); direction perturbation k1 (aberration + deflection propagated) | fields:1
+     72  [emi] emission-surface shift | fields:1+1
+     32  [emi] emission-surface shift | fields:1
+      3  [emi] direction perturbation k1 (aberration + deflection propagated) | fields:1
+     24  [emi] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:1
+     12  [emi] direction perturbation k1 (aberration + deflection propagated) | fields:1+1
+     10  [emi] local | fields:1+1+1
+     54  [emi] path displacement Dx1 (lensing [transverse] + time delay [radial]) | fields:1+1
+m1 = L1 ; m2 = L1**2 + L2 ; m3 = L1**3 + 3*L1*L2 + L3
+Theta1 = -<m1> + L1
+Theta2 = 2*<m1>**2 - 2*<m1>*L1 - <m2> + L1**2 + L2
+Theta3 = -6*<m1>**3 + 6*<m1>**2*L1 + 6*<m1>*<m2> - 3*<m1>*L1**2 - 3*<m1>*L2 - 3*<m2>*L1 - <m3> + L1**3 + 3*L1*L2 + L3
+saved L_terms.pkl, t=30.8

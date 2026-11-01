@@ -58,3 +58,4 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   Monochromatic: C11 = 4 pi sigma^2 |Delta_l(k0)|^2; type C -> single mu integral; delicate mu->-1 (K->0) for 1/K^2 kernels.
   NOTE: C3 used ray x = -n chi (source at -n chi), SPEC §6 implies +... sign: a_lm -> (-1)^l; harmless if consistent. ASSEMBLY MUST
   USE ONE CONVENTION: ray x(eta) = x_o - n (eta_o - eta) (SPEC) i.e. source at -n chi. OK consistent with C3.
+- [t9] Launched W1 (draft settled sections of doc: setup, exact observable, zeta ICs, Einstein solution, harmonics). Still blocked on C2 for assembly.

@@ -1,2 +1,3 @@
 shift symmetry: max|Theta(-eps,0) - Theta(+eps,pi)| = 5.39124300757976e-12  dt_o = -2.6645352591003757e-15  dT_o/T_o = 9.769962616701378e-15
 parity (x_o=0): max|Theta(mu) - Theta(-mu)| = 5.468070440883821e-12
+generic observer x_o=pi/2: parity breaking max|Theta(mu)-Theta(-mu)| = 0.2089215046593439  a_10 = 0.10300618489474238
