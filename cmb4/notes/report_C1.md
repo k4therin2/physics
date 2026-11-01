@@ -41,3 +41,70 @@ Status: COMPLETE, verified (`first_order.py`, outputs `first_order.pkl/.tex`).  
   Agrees with lead's linear_check (T_Phi, delta_T -> zeta/3, v_pot -> eta zeta/3).
 
 ## Milestone 3 — SECOND ORDER (status: in progress)
+Status: COMPLETE, all three control checks PASS (`second_order.py`, `second_order_solve.py`, `bianchi.py`,
+`gauge_check.py`, `position_sources.py`; outputs `second_order.pkl/.tex`, `position_sources.pkl/.tex`, `gauge_check.pkl`).
+Notation: E^{(n)} := n! [eps^n] E_{mu nu} = Lin[X_n] + S^{(n)};  kernels per zeta_q zeta_p, p = k - q,
+X2_k = int d^3q/(2pi)^3 K_X(q,k-q;eta) zeta_q zeta_{k-q};  frame k = k zhat, q = (q sqrt(1-mu^2),0,q mu);
+invariant form uses magnitudes (k,q,p), mu = (k^2+q^2-p^2)/(2kq). T := T_Phi, T' := d_eta T_Phi.
+
+### Linear operators (identical at every order) and sources
+- Traceless scalar: Q_n := Phi_n - Psi_n = S_TL/k^2,  S_TL = S_zz - (S_xx+S_yy)/2  (position space:
+  Q_n = -(3/2) nabla^-2 (d_i d_j nabla^-2 - delta_ij/3) S_ij).
+- 00:  delta_n = (eta^2/3) S_00 - (2/3) eta^2 k^2 Phi_n - 2 eta Phi_n' - 2 Psi_n.
+- 0i longitudinal: v_{n,i} = d_i V_n,  V_n = -(eta^2/4)[2(Phi_n' + Psi_n/eta) + S_0z/(ik)].
+- 0i transverse (constraint relating nabla^2 omega to the transverse momentum density):
+  (1/2) nabla^2 omega_i - (4/eta^2)(omega_i + v^T_i) = S^T_{0i}   [8 pi G a^2 (rho+P) = 4/eta^2].
+- ij vector: omega_n' + (2/eta) omega_n = (2/(ik)) S_xz  -> regular solution omega = eta^-2 int eta'^2 S.
+- ij TT:  h'' + (2/eta) h' + k^2 h = -2 (S_xx - S_yy)  for the (xx - yy) component; h2_ij = Lambda_ij,kl q_k q_l x (...).
+- trace (delta_n eliminated by 00, Psi_n = Phi_n - Q_n):
+  Phi_n'' + (4/eta) Phi_n' + (k^2/3) Phi_n = S_Phi := -(S_tr - S_00)/6 + Q_n'/eta - (k^2/3) Q_n.
+Position-space S^{(2)}_{mu nu} (explicit derivatives, 6-20 terms each) and S^{(3)} (71-127 terms) in position_sources.tex/.pkl.
+
+### Second-order kernels (abstract T form; closed forms obtained by inserting T_Phi)
+- K_Q(q,p) = [ (13k^4-6k^2(p^2+q^2)+9(p^2-q^2)^2) T(q)T(p) + ... ]/(4k^4) (full form in second_order.tex); mu-form:
+  K_Q = T(q)T(p)[-4+6 mu q/k+3q^2/k^2-9 mu^2 q^2/k^2] + eta[T(p)T'(q)+T(q)T'(p)][2 mu q/k + q^2/k^2 - 3 mu^2 q^2/k^2]
+        + eta^2 T'(q)T'(p)[2 mu q/k + q^2/k^2 - 3 mu^2 q^2/k^2].
+  Superhorizon: K_Q(0) = -(4/9)(4k^2 - 6 k q mu + 9 mu^2 q^2 - 3 q^2)/k^2  = (-4 + 9 F/k^2) Phi1Phi1-units, F = BMR's F.
+- S_Phi kernel K_SPhi (second_order.tex), finite as eta->0 (no 1/eta^2 terms), so the particular integral vanishes at eta=0.
+- VECTOR SECTOR (important finding): curl(uhat_i) = 0 is NOT implied at second order; what the equations imply
+  (verified: the algebraic omega2 obtained from it satisfies the ij-vector ODE identically) is relativistic Kelvin:
+  curl[(1+delta_T) uhat_i] = 0 (enthalpy-weighted velocity, h ∝ T ∝ rho^{1/4}).  Consequently omega2 is ALGEBRAIC:
+    omega2_i(k) = int P_ij(k) q_j K_om(q,p) zeta zeta,
+    K_om = (2i/k^2)[ eta (q^2-p^2) T(q)T(p) + eta^2 (q^2 T(q)T'(p) - p^2 T(p)T'(q)) ]   (antisymmetric in q<->p),
+    v2^T_i = P_ij q_j K_vT,  K_vT = -(eta^2 k^2/8 + 1) K_om - (eta^2/4) S^T_{0i}-kernel  (explicit in second_order.pkl).
+- TENSOR: h2_ij(k) = Lambda_ij,kl(k) q_k q_l int_0^eta G_h K_h,  K_h = 4[ 3 T(q)T(p) + eta(T'(q)T(p)+T(q)T'(p)) + eta^2 T'(q)T'(p) ]
+        = 4[ 2 T(q)T(p) + (eta T'+T)_q (eta T'+T)_p ].
+  CHECK (a): identical to Kohri-Terada (8) / Baumann et al (11)-(12) with w=1/3, Phi=Psi, h2^{ours} = h^{KT}: PASS (numerically exact).
+- GREEN'S FUNCTIONS (verified L G = 0, G(eta,eta)=0, d_eta G|_{eta'=eta}=1):
+  Phi: u1 = (sin x - x cos x)/x^3, u2 = (cos x + x sin x)/x^3, W = -3 sqrt3/(eta^4 k^3),
+       G_Phi(eta,eta') = [u1(eta')u2(eta) - u1(eta)u2(eta')]/W(eta') ;  Phi2 = int_0^eta G_Phi S_Phi + C_Phi(k) ghat(k eta), ghat = 3u1 -> 1.
+       (k->0: G_Phi -> (eta'/3)(1 - eta'^3/eta^3)).
+  h:   G_h = (eta'/eta) sin(k(eta-eta'))/k.      omega: algebraic (or G_om = (eta'/eta)^2 for the ODE form).
+  delta2, V2, Psi2: algebraic from the constraints (expressions saved as K_delta2_expr, K_v2z_expr).
+- CHECK (b) Bianchi: engine verifies g^{mu a} nabla_a E_{mu nu} + g_{nu b} cons^b == 0 identically to O(eps^3)
+  (bianchi.py).  Hence d/deta of the constraints (00, 0i) at any order = combination of the evolution equations,
+  conservation, and lower-order equations; with first-order fields on shell the second-order constraints propagate.
+- CHECK (c) constant zeta: exact family eta = A eta~, x = B x~: Psi=(A^4-1)/2, Phi=(1-A^2B^2)/2, delta=A^-4-1, v=0,
+  zeta_nl = ln B; engine verifies it solves E=0 to O(eps^3) for arbitrary A,B.  With b1 = c, a1 = -c/3 (Psi1=Phi1 = -2c/3,
+  delta1 = 4c/3), the k=0 second-order equations give ONLY delta2 = -2 Psi2 + 32c^2/9 (Phi2, Psi2 free: residual
+  zero-mode gauge freedom of Poisson gauge).  zeta^(2)=0 fixes b2 = c^2.  The member with Psi2 = Phi2 has
+  Phi2 = Psi2 = -8c^2/27, delta2 = 112c^2/27 (delta_T2 = 19c^2/27).  The angle-averaged k->0 limit of the finite-k
+  regular solution instead picks <Phi2(0)> = -(8/9)c^2, <Psi2(0)> = +(8/9)c^2, delta2 = 16c^2/9: on the same gauge family.
+
+## Milestone 4 — INITIAL CONDITIONS FROM GAUSSIAN ZETA (status: COMPLETE)
+zeta_nl = (1/4) ln(1+delta) + (1/2) ln(1-2Phi) expanded by the engine:
+  zeta^(2) = delta2/4 - delta1^2/4 - Phi2 - 2 Phi1^2,
+  zeta^(3) = delta3/4 - (3/4) delta1 delta2 + delta1^3/2 - Phi3 - 6 Phi1 Phi2 - 8 Phi1^3.
+lim eta^2 K_S00 = 32/3, K_Q(0) above, quadratic kernel of zeta^(2) -> -3 TT(0)... ; imposing zeta^(2)(eta->0) = 0:
+  Phi2(k, eta->0) = C_Phi(k) with kernel
+     K_Phi2(q,p; 0) = -(4/9) (2k^2 - 2 k q mu + 3 mu^2 q^2 - q^2)/k^2
+                    = -(7k^4 - 2k^2(p^2+q^2) + 3(p^2-q^2)^2)/(9 k^4)
+  position space (Phi1 = -2zeta/3): Phi2(0) = -2 Phi1^2 - nabla^-2(d_i Phi1 d_i Phi1) + 3 nabla^-4 d_i d_j (d_i Phi1 d_j Phi1),
+  Psi2(0) - Phi2(0) = 4 Phi1^2 + 3 nabla^-2(dPhi dPhi) - 9 nabla^-4 d d(dPhi dPhi).
+COMPARISON: EXACT agreement with Pitrou-Uzan-Bernardeau (3.12b,c) with R^(2) = -2 R^(1)2 (Gaussian Salopek-Bond zeta),
+  after swapping their (Phi,Psi) names (PUB/BMR call the lapse Phi).  Bartolo-Matarrese-Riotto II (7.30): converting
+  their exponential variables, BMR's Q2(0) = (-4 + 33 F/k^2) Phi1Phi1 vs ours (-4 + 9 F/k^2): the gradient terms (6F) and
+  local term agree; the velocity-quadrupole term differs (BMR 27F, ours 3F) because BMR evaluate it with the late-time
+  oscillating velocity (their 7.29) rather than the eta->0 velocity v = -(eta/2) grad Phi(0).  We keep ours (= PUB).
+
+## Milestone 5 — THIRD ORDER (status: in progress)

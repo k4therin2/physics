@@ -1,0 +1,5 @@
+nu=0: residual terms by order: [0, 0, 0, 0] (0.0s)
+nu=1: residual terms by order: [0, 0, 0, 0] (0.1s)
+nu=2: residual terms by order: [0, 0, 0, 0] (0.1s)
+nu=3: residual terms by order: [0, 0, 0, 0] (0.2s)
+BIANCHI IDENTITY VERIFIED to O(eps^3): nabla^mu E_{mu nu} = -(8 pi G) nabla^mu T_{mu nu} identically.
