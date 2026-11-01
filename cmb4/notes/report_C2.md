@@ -34,3 +34,29 @@ Status legend: [DONE] [VERIFIED] [PARTIAL] [NOT DONE].
     mod first-order conservation and |n|=1, hence
       L1 = -S1 = [dT + Psi - n.v]_e - [dT + Psi - n.v]_o + int_{eta_*}^{eta_o} (Phi'+Psi') deta   (SPEC §9a), observer
     terms included (the -[dT+Psi]_o piece is a monopole, +n.v_o the observer dipole).
+
+## Milestone 2 — the ray through second order  [DONE, VERIFIED]  (`ray.py`, cache `ray_cache.pkl`)
+Geodesic eq. in the eta parametrisation (exact): dk^i/deta = G^i = -Gam^i_kk + Gam^0_kk k^i, k=(1,k^i). Background ghat is
+Minkowski, so the background ray is exactly straight, k^i = -n^i.
+* Canonical triad: Gram-Schmidt of (d_1,d_2,d_3) wrt ghat and orthogonal to uhat (order of GS: 1,2,3). Verified
+  g(e_a,e_b)=delta_ab, g(e_a,u)=0 through order 3. Explicit (second order, c2 = X2/2 convention):
+  e_1^0 = eps v_1 + eps^2[ v_1_2/2 + om_1/2 - (Phi1+2Psi1) v_1 ],  e_1^1 = 1 + eps Phi1 + eps^2[ 3Phi1^2/2 + Phi2/2 - h_11/4 + v_1^2/2 ],
+  e_1^2 = eps^2 v_1 v_2, e_1^3 = eps^2 v_1 v_3;  e_2: first order (v_2, 0, Phi1, 0), second order (x2):
+  (-2Phi1 v_2 - 4Psi1 v_2 + om_2 + v_2_2, -h_12, 3Phi1^2 + Phi2 - h_22/2 + v_2^2, 2 v_2 v_3); e_3 analogous (GS asymmetry only in h_ab, v_a v_b).
+* Direction map k^i(eta_o) = (u^i - n^a e_a^i)/(u^0 - n^a e_a^0), verified null through order 3 (with |n|=1):
+    k1_init^i = v^i - n^i (n.v) - n^i (Phi1 + Psi1)                      (aberration v_perp; radial |k| = 1+Phi+Psi)
+    k2_init^i/2 (displayed for n = z-hat, perp = 1,2, radial = 3):
+       perp:   v_perp_2/2 + v_perp (n.v) + h_{perp z}/2
+       radial: -Psi2/2 - Phi2/2 - 3Phi1^2/2 - Phi1 Psi1 + Psi1^2/2 + h_zz/4 - om_z/2 + v_perp^2/2
+  (general n: `ray.k_init[i].c[2]`, 23-26 terms each). All fields at the observer EVENT (eta_o, x_o).
+* First-order geodesic RHS (|n|=1):  G1^i = -d_i(Phi+Psi) + 2 n^i n.d(Phi+Psi) - n^i (Phi'+Psi')
+  (transverse: -d_perp(Phi+Psi) = lensing deflection; radial n.G1 = -D(Phi+Psi), consistent with the null condition n.k1 = -(Phi+Psi)).
+* Second order RHS G2/2 = [Gam2 at background point] + [Gam1 x k1 cross terms] (82-85 terms, `ray.G2half`, contains k1_i(eta)),
+  plus the positional shift Dx1^i d_i G1 added in the functional definition.
+* Ray functionals (all in terms of fields on the BACKGROUND ray; `ray.definitions` holds them as sympy Integral equations):
+    k1(eta)    = k1_init|_(etabar_o,xbar_o) + int_eta^{etabar_o} G1 deta'
+    Dx1(eta)   = dx_o1 + n deta_o1 - int_eta^{etabar_o} k1 deta'                  (Dx := x(eta) - xbar(eta))
+    k2(eta)/2  = k2_init/2 + deta_o1 d_eta k1_init + dx_o1.d k1_init - deta_o1 G1(etabar_o) + int_eta^{etabar_o} [G2/2 + Dx1.d G1] deta'
+    Dx2(eta)/2 = dx_o2/2 + n deta_o2/2 - int_eta^{etabar_o} k2/2 deta' - deta_o1 k1(etabar_o)
+  (deta_o, dx_o = perturbation of the observer event, kept symbolic deta_o1, deta_o2, dxo1_i, dxo2_i.)
+  Decomposition: n.Dx1 = radial (time-delay-like) part, Dx1 - n(n.Dx1) = transverse (lensing) part.
