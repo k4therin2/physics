@@ -1,0 +1,26 @@
+eps=1e-03: max |Phi_P/eps - T_Phi| = 1.78e-06, max |Psi_P/eps - T_Phi| = 2.91e-05, max |delta_c/eps - analytic| = 4.73e-05   (expect O(eps) from 2nd order)
+   t=  0.010  Phi_P/eps=-0.6666641111  T_Phi=-0.6666644445  dPhi=+3.3e-07 dPsi=-6.7e-07 ddc=+7.8e-11
+   t=  0.897  Phi_P/eps=-0.6489476129  T_Phi=-0.6489478720  dPhi=+2.6e-07 dPsi=-1.5e-07 ddc=+3.4e-07
+   t=  2.148  Phi_P/eps=-0.5695950914  T_Phi=-0.5695951981  dPhi=+1.1e-07 dPsi=+3.8e-07 ddc=-2.1e-06
+   t=  3.320  Phi_P/eps=-0.4517255356  T_Phi=-0.4517255806  dPhi=+4.5e-08 dPsi=-2.4e-07 ddc=-7.2e-06
+   t=  4.378  Phi_P/eps=-0.3272070847  T_Phi=-0.3272070959  dPhi=+1.1e-08 dPsi=-1.1e-06 ddc=-9.3e-06
+   t=  5.584  Phi_P/eps=-0.1868137502  T_Phi=-0.1868137680  dPhi=+1.8e-08 dPsi=-1.2e-06 ddc=-8.8e-06
+   t=  6.907  Phi_P/eps=-0.0597276763  T_Phi=-0.0597274155  dPhi=-2.6e-07 dPsi=+3.7e-07 ddc=+3.9e-07
+   t=  8.263  Phi_P/eps=+0.0235253089  T_Phi=+0.0235251246  dPhi=+1.8e-07 dPsi=-1.2e-05 ddc=+3.8e-06
+   t=  9.560  Phi_P/eps=+0.0556418008  T_Phi=+0.0556401243  dPhi=+1.7e-06 dPsi=-1.1e-05 ddc=+1.3e-05
+   t= 10.632  Phi_P/eps=+0.0537765511  T_Phi=+0.0537754433  dPhi=+1.1e-06 dPsi=+1.8e-05 ddc=+4.3e-05
+   t= 11.996  Phi_P/eps=+0.0297659391  T_Phi=+0.0297674726  dPhi=-1.5e-06 dPsi=+2.1e-05 ddc=+1.8e-05
+   t= 11.999  Phi_P/eps=+0.0296987940  T_Phi=+0.0297003314  dPhi=-1.5e-06 dPsi=+2.1e-05 ddc=+1.8e-05
+eps=1e-04: max |Phi_P/eps - T_Phi| = 1.78e-08, max |Psi_P/eps - T_Phi| = 2.91e-07, max |delta_c/eps - analytic| = 4.73e-07   (expect O(eps) from 2nd order)
+   t=  0.010  Phi_P/eps=-0.6666644411  T_Phi=-0.6666644445  dPhi=+3.3e-09 dPsi=-6.7e-09 ddc=+2.4e-12
+   t=  0.840  Phi_P/eps=-0.6511138724  T_Phi=-0.6511138751  dPhi=+2.7e-09 dPsi=-2.0e-09 ddc=+3.3e-09
+   t=  2.062  Phi_P/eps=-0.5768078210  T_Phi=-0.5768078221  dPhi=+1.1e-09 dPsi=+4.0e-09 ddc=-1.8e-08
+   t=  3.283  Phi_P/eps=-0.4559428949  T_Phi=-0.4559428953  dPhi=+4.7e-10 dPsi=-2.2e-09 ddc=-7.1e-08
+   t=  4.500  Phi_P/eps=-0.3126072790  T_Phi=-0.3126072791  dPhi=+1.2e-10 dPsi=-1.2e-08 ddc=-9.5e-08
+   t=  5.717  Phi_P/eps=-0.1724881547  T_Phi=-0.1724881548  dPhi=+6.7e-11 dPsi=-9.3e-09 ddc=-8.3e-08
+   t=  6.951  Phi_P/eps=-0.0562225967  T_Phi=-0.0562225939  dPhi=-2.7e-09 dPsi=+2.6e-09 ddc=+7.3e-09
+   t=  8.220  Phi_P/eps=+0.0216892882  T_Phi=+0.0216892867  dPhi=+1.4e-09 dPsi=-1.1e-07 ddc=+3.9e-08
+   t=  9.449  Phi_P/eps=+0.0545355056  T_Phi=+0.0545354896  dPhi=+1.6e-08 dPsi=-1.3e-07 ddc=+1.1e-07
+   t= 10.649  Phi_P/eps=+0.0535897519  T_Phi=+0.0535897411  dPhi=+1.1e-08 dPsi=+1.9e-07 ddc=+4.3e-07
+   t= 11.988  Phi_P/eps=+0.0299485314  T_Phi=+0.0299485466  dPhi=-1.5e-08 dPsi=+2.1e-07 ddc=+1.9e-07
+   t= 12.000  Phi_P/eps=+0.0296816864  T_Phi=+0.0296817018  dPhi=-1.5e-08 dPsi=+2.1e-07 ddc=+1.8e-07

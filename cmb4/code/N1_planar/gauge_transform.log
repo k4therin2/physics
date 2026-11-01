@@ -1,0 +1,4 @@
+L = (hA(t) - hB(t))/k    T = (-Derivative(hA(t), t) + Derivative(hB(t), t))/k**2
+Psi (Poisson) = (k**2*t*Pc(t) + t*(Derivative(hA(t), (t, 2)) - Derivative(hB(t), (t, 2))) + Derivative(hA(t), t) - Derivative(hB(t), t))/(k**2*t)
+Phi (Poisson) = (-k**2*t*hB(t) - Derivative(hA(t), t) + Derivative(hB(t), t))/(k**2*t)
+delta_Poisson = delta_c + 4*T/t with T = (-Derivative(hA(t), t) + Derivative(hB(t), t))/k**2

@@ -38,3 +38,6 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   numerical GR+radiation + ray tracing; nonperturbative arbiter; extracts Th2, Th3 maps for single plane wave).
   Agents in flight: C1, C2, C3, V1, V2, N1. Waiting. Next after results: assemble kernels (C1 x C2 -> K1,K2,K3c),
   feed to C3 formulas, run checks (dilation/gradient from V2; planar numerics from N1), then write-up + simplifier + cold-read referee.
+- [t5] V1 referee: exact formula CONFIRMED (Kasner+radiation test to 1e-31; linear SW reproduced). Caveats: needs both P=rho/3 and
+  rho∝T^4; e = last crossing of T=T_*; C^(22), Re C^(13) separately frame-dependent, only 1/4C22+1/3ReC13 invariant -> compute all
+  orders in ONE frame (canonical triad). report_V1.md.

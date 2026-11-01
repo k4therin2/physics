@@ -1,0 +1,63 @@
+
+=== plain ADM (cH = 0) ===
+Linearised M(kappa,t):
+⎡     0             0         1    0 ⎤
+⎢                                    ⎥
+⎢     0             0         0    1 ⎥
+⎢                                    ⎥
+⎢   2  2           2  2              ⎥
+⎢- κ ⋅t  + 1  - 5⋅κ ⋅t  + 2  -5    2 ⎥
+⎢───────────  ─────────────  ───  ───⎥
+⎢      2             2       3⋅t  3⋅t⎥
+⎢   3⋅t           3⋅t                ⎥
+⎢                                    ⎥
+⎢    1             2          1   -4 ⎥
+⎢   ────          ────       ───  ───⎥
+⎢      2             2       3⋅t  3⋅t⎥
+⎣   3⋅t           3⋅t                ⎦
+Principal symbol M0 (coefficient of kappa):
+⎡ 0     0    1  0⎤
+⎢                ⎥
+⎢ 0     0    0  1⎥
+⎢                ⎥
+⎢-1/3  -5/3  0  0⎥
+⎢                ⎥
+⎣ 0     0    0  0⎦
+  eigenvalue 0  alg mult 2  geom mult 1
+  eigenvalue -sqrt(3)*I/3  alg mult 1  geom mult 1
+  eigenvalue sqrt(3)*I/3  alg mult 1  geom mult 1
+  max |Re eigenvalue| of full M over kappa in 1..64, t in 0.01..10: 205.38490327116506
+
+=== modified, cH = -1/2 ===
+Linearised M(kappa,t):
+⎡     0             0         1    0  ⎤
+⎢                                     ⎥
+⎢     0             0         0    1  ⎥
+⎢                                     ⎥
+⎢   2  2           2  2               ⎥
+⎢- κ ⋅t  + 1  - 5⋅κ ⋅t  + 2  -5    2  ⎥
+⎢───────────  ─────────────  ───  ─── ⎥
+⎢      2             2       3⋅t  3⋅t ⎥
+⎢   3⋅t           3⋅t                 ⎥
+⎢                                     ⎥
+⎢                  2  2               ⎥
+⎢   -2        - 3⋅κ ⋅t  - 4  -2   -10 ⎥
+⎢   ────      ─────────────  ───  ────⎥
+⎢      2             2       3⋅t  3⋅t ⎥
+⎣   3⋅t           3⋅t                 ⎦
+Principal symbol M0 (coefficient of kappa):
+⎡ 0     0    1  0⎤
+⎢                ⎥
+⎢ 0     0    0  1⎥
+⎢                ⎥
+⎢-1/3  -5/3  0  0⎥
+⎢                ⎥
+⎣ 0     -1   0  0⎦
+  eigenvalue -I  alg mult 1  geom mult 1
+  eigenvalue I  alg mult 1  geom mult 1
+  eigenvalue -sqrt(3)*I/3  alg mult 1  geom mult 1
+  eigenvalue sqrt(3)*I/3  alg mult 1  geom mult 1
+  max |Re eigenvalue| of full M over kappa in 1..64, t in 0.01..10: 261.7929626667664
+
+Ham lin: 2*(a + b*kappa**2*t**2 + 2*b + t*(qA + 2*qB))/t**4
+Mom lin: 2*I*kappa*(a + 2*b - 3*qB*t)/(3*t)
