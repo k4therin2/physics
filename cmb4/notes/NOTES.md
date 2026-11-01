@@ -49,3 +49,6 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   CAVEAT: scalar k=0 tadpoles (<Phi2>,<Psi2>) are residual zero-mode gauge; C1 used angle-averaged k->0 limit; must drop out of the
   observable (dilation check in assembly). Green's integrals left as integrals: G_Phi=[u1(eta')u2(eta)-u1(eta)u2(eta')]/W(eta'),
   u1=(sin x - x cos x)/x^3, u2=(cos x + x sin x)/x^3, W=-3sqrt3/(eta^4 k^3); G_h=(eta'/eta) sin(k(eta-eta'))/k.
+- [t7] Launched V3 (referee of C1 2nd/3rd order, independent ADM re-derivation), C4 (closed-form Green's integrals, Kohri-Terada
+  control), C5 (first-order Delta_l, C_l^(11) closed form, monochromatic, sky monopole <m1>).
+  In flight: C2, C3, V2, N1, V3, C4, C5. Blocked on C2: assembly A1 (map kernels K1,K2,K3c), dilation check of tadpoles.

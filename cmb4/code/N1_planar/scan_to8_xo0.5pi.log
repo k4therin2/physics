@@ -1,0 +1,13 @@
+[eps=+0.0100] forward: 3544 steps, t_init=9.999999994444e-03, t_o=7.9994600672885 (t_obar=8.0), T_o=1.2499633549362e-01; constraints at t_o: |H|=1.78e-14 rel=2.62e-10 |M|=8.64e-13 rel=2.73e-10
+[eps=+0.0100] rays: 43 steps back; |alpha_e - t_*|max=8.9e-16; null-cond E mismatch max=9.3e-15; max|T_obs/T_o - exp(-S)|=9.77e-15; Theta rms=8.425e-03
+   done eps=+0.010  (37s)
+[eps=-0.0100] forward: 3691 steps, t_init=9.999999994444e-03, t_o=7.9994600672885 (t_obar=8.0), T_o=1.2499633549362e-01; constraints at t_o: |H|=9.68e-15 rel=1.42e-10 |M|=1.06e-12 rel=3.34e-10
+[eps=-0.0100] rays: 43 steps back; |alpha_e - t_*|max=4.4e-16; null-cond E mismatch max=3.9e-15; max|T_obs/T_o - exp(-S)|=1.18e-14; Theta rms=8.425e-03
+   done eps=-0.010  (67s)
+[eps=+0.0200] forward: 2784 steps, t_init=9.999999977777e-03, t_o=7.9978407209875 (t_obar=8.0), T_o=1.2498527334079e-01; constraints at t_o: |H|=3.52e-14 rel=2.55e-10 |M|=1.26e-12 rel=1.99e-10
+[eps=+0.0200] rays: 45 steps back; |alpha_e - t_*|max=4.4e-16; null-cond E mismatch max=6.0e-15; max|T_obs/T_o - exp(-S)|=1.53e-14; Theta rms=1.683e-02
+   done eps=+0.020  (87s)
+[eps=-0.0200] forward: 2870 steps, t_init=9.999999977777e-03, t_o=7.9978407209875 (t_obar=8.0), T_o=1.2498527334079e-01; constraints at t_o: |H|=1.91e-14 rel=1.39e-10 |M|=1.79e-12 rel=2.82e-10
+[eps=-0.0200] rays: 46 steps back; |alpha_e - t_*|max=6.7e-16; null-cond E mismatch max=9.8e-15; max|T_obs/T_o - exp(-S)|=1.69e-14; Theta rms=1.683e-02
+   done eps=-0.020  (108s)
+[eps=+0.0300] forward: 630 steps, t_init=9.999999949999e-03, t_o=7.9951433146075 (t_obar=8.0), T_o=1.2496660689351e-01; constraints at t_o: |H|=1.36e-13 rel=6.53e-10 |M|=8.69e-12 rel=9.13e-10

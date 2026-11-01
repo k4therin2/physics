@@ -39,3 +39,14 @@
   sum_m |K_lm|^2 : random frame vs Khat=z frame (isotropy reduction)               max err = 8.85e-16
   type-C K_{2,lm} finite 3j-sum vs direct n-quadrature (trial 1)                   max err = 1.13e-14
   sum_m |K_lm|^2 : random frame vs Khat=z frame (isotropy reduction)               max err = 8.65e-15
+  type-C (C1-mono) vs type-B (B1) for K=f g, Q=1 (Bessel addition identity), l=1..4 max rel err = 3.68e-15
+  C x B cross formula (C2) vs (B1)  (same toy)                                     max rel err = 3.55e-15
+== (13) reductions
+  rule (A-L): P_L(n.khat) e^{-ik.n chi} -> sum (2Lam+1)(l L Lam;000)^2 (-i)^(Lam-l) j_Lam max abs err = 3.17e-14
+  q-average reduction (E1): b=2 a=0 qDchi=0.0                                      max abs err = 1.78e-15
+  q-average reduction (E1): b=3 a=1 qDchi=0.0                                      max abs err = 6.63e-16
+  q-average reduction (E1): b=1 a=0 qDchi=2.7                                      max abs err = 2.77e-15
+  q-average reduction (E1): b=2 a=2 qDchi=3.9                                      max abs err = 4.37e-16
+== monochromatic normalisation
+  monochromatic normalisation <zeta^2> = sigma^2                                   rel err = 5.92e-07
+all tests done in 140 s
