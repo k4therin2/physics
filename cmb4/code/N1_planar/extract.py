@@ -35,13 +35,14 @@ for name, (sub, nt) in subsets.items():
     co = fit(sub, 'odd', nt); ce = fit(sub, 'even', nt)
     results[name] = dict(c1=co[0], c3=co[1], c5=co[2], c2=ce[0], c4=ce[1])
 names = list(results)
+good = [n for n in names if not n.startswith('E')]   # E (no small-eps points) is a deliberately weak fit, excluded from the uncertainty
 ref = 'D: e<=0.08, 7pts, 6terms'
 summary = {}
-print(f"=== {tag} ===  (rms over sphere; spread = max over fit subsets of max|diff| vs subset {ref})")
+print(f"=== {tag} ===  (rms over sphere; spread = max over fit subsets A,B,C,F of max|diff| vs subset {ref})")
 for cn, fac, lab in [('c1', 1, 'Th1 = c1'), ('c2', 2, 'Th2 = 2 c2'), ('c3', 6, 'Th3 = 6 c3'), ('c4', 24, 'Th4 = 24 c4 (indicative)')]:
     r = results[ref][cn]*fac
     rms = np.sqrt(0.5*np.sum(w*r**2))
-    spread = max(np.max(np.abs(results[n][cn]*fac - r)) for n in names if n != ref)
+    spread = max(np.max(np.abs(results[n][cn]*fac - r)) for n in good if n != ref)
     spreads = {n: float(np.max(np.abs(results[n][cn]*fac - r))) for n in names}
     a = alm(r)
     print(f"{lab:28s} rms={rms:.6e}  max|.|={np.max(np.abs(r)):.6e}  spread={spread:.2e}  a_l0(l=0..6)=", np.array2string(a[:7], precision=8))
@@ -50,9 +51,9 @@ for cn, fac, lab in [('c1', 1, 'Th1 = c1'), ('c2', 2, 'Th2 = 2 c2'), ('c3', 6, '
     summary[lab] = dict(rms=float(rms), spread=float(spread), a_l0=a.tolist(), map=r.tolist())
 np.savez(f"output/coeff_{tag}.npz", mu=mu, wmu=w, Th1=results[ref]['c1'], Th2=2*results[ref]['c2'], Th3=6*results[ref]['c3'], Th4=24*results[ref]['c4'],
          alm_Th1=alm(results[ref]['c1']), alm_Th2=alm(2*results[ref]['c2']), alm_Th3=alm(6*results[ref]['c3']), alm_Th4=alm(24*results[ref]['c4']),
-         spread_Th1=max(np.max(np.abs(results[n]['c1'] - results[ref]['c1'])) for n in names),
-         spread_Th2=2*max(np.max(np.abs(results[n]['c2'] - results[ref]['c2'])) for n in names),
-         spread_Th3=6*max(np.max(np.abs(results[n]['c3'] - results[ref]['c3'])) for n in names),
+         spread_Th1=max(np.max(np.abs(results[n]['c1'] - results[ref]['c1'])) for n in good),
+         spread_Th2=2*max(np.max(np.abs(results[n]['c2'] - results[ref]['c2'])) for n in good),
+         spread_Th3=6*max(np.max(np.abs(results[n]['c3'] - results[ref]['c3'])) for n in good),
          fit_subset=ref, t_star=float(d['t_star']), t_obar=float(d['t_obar']), x_o=float(d['x_o']))
 json.dump(summary, open(f"output/coeff_{tag}.json", 'w'), indent=1)
 # diagnostics

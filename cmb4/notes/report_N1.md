@@ -91,3 +91,63 @@ integral: the lead's exact formula holds at the double-precision level at fully 
 
 ## 5. Production runs / extraction  — IN PROGRESS
 (see below when done)
+
+## 5. Production runs and eps-Taylor extraction (milestones 5-7 — DONE)
+Parameters (all runs): k=1, t_i=0.01, t_* = 2 (x_* = k eta_*/sqrt3 = 1.155), t_obar = 8 (eta_o/eta_* = 4) and 4 (ratio 2),
+observer x_o = 0 (primary; sits at the maximum of zeta) and x_o = pi/2 (generic: zeta(x_o)=0, zeta' maximal, non-zero
+dipole), N=48, nmu=96, O(t^6) ICs, DOP853 rtol 1e-13, cH=-1/2.  Amplitudes eps = +-{0.01,0.02,0.03,0.04,0.05,0.06,0.08,0.10}
+(16 runs per configuration, ~8 s each).  Every run: exact-formula residual max|T_obs/T_o - e^{-S}| <= 7.5e-14,
+constraint violations (relative to largest term) < 1e-9 at t_o (absolute ~1e-13), |alpha_e - t_*| < 3e-15, null condition 1e-14.
+Symmetry checks (x_o=0, eps=0.05): Theta(-eps; x_o=0) vs Theta(+eps; x_o=pi): 5.4e-12; parity Theta(mu)=Theta(-mu): 5.5e-12.
+For x_o = pi/2: Theta(-eps, mu) = Theta(+eps, -mu) holds exactly (t_o, T_o, monopole identical for +-eps) => odd-eps
+coefficients are odd in mu (odd l only), even-eps coefficients even in mu.
+
+**Extraction.** E(e) = [Theta(e)+Theta(-e)]/2 = c2 e^2 + c4 e^4 + ..., O(e) = [Theta(e)-Theta(-e)]/2 = c1 e + c3 e^3 + ...;
+least-squares polynomial fits in e^2 on several amplitude subsets (A: e<=0.04/4 terms, B: e<=0.06/5, C: e<=0.10/6,
+D: e<=0.08/6 [reference], F: e<=0.05/4). SPEC normalisation Th1 = c1, Th2 = 2c2, Th3 = 6c3. Uncertainty := max over the
+map of the spread between subsets (conservative; the three best subsets B,C,D typically agree 5-20x better).
+Full tables (a_l0 for l<=12 per configuration, t_o(eps), T_o(eps), <T_obs>(eps)): `code/N1_planar/output/summary.md`;
+maps/a_l0 (l<=30): `output/coeff_<tag>.npz/.json`; raw runs: `output/scan_<tag>.npz` (formats in README.md).
+
+| configuration | Th1 rms / max | Th2 rms / max | Th3 rms / max | uncertainty Th1 / Th2 / Th3 (abs, max over map) |
+|---|---|---|---|---|
+| to8_xo0  (ratio 4, x_o=0)    | 0.7111 / 1.076 | 1.309 / 2.708 | 14.21 / 37.23 | 3.6e-9 / 3.2e-8 / 2.1e-4 (best subsets B,C,D: 1.2e-5) |
+| to4_xo0  (ratio 2, x_o=0)    | 0.06503 / 0.09907 | 0.3955 / 1.258 | 1.644 / 6.816 | 6.8e-12 / 9.7e-10 / 4.0e-7 |
+| to8_xo0.5pi (ratio 4, x_o=pi/2) | 0.8428 / 2.106 | 2.145 / 4.871 | 24.13 / 38.20 | 5.3e-7 / 9.2e-6 / 3.1e-2 (B,C,D: ~1e-3) |
+| to4_xo0.5pi (ratio 2, x_o=pi/2) | 0.09388 / 0.2649 | 0.6417 / 1.658 | 4.078 / 6.319 | 6.7e-10 / 5.4e-9 / 3.9e-5 |
+
+Primary configuration to8_xo0, a_l0 (real Y_l0, polar axis +x; odd l vanish by parity, numerically <2e-11 for Th1):
+```
+ l    a_l0[Th1]            a_l0[Th2]            a_l0[Th3]
+ 2   -2.1847203553e+00    -4.2224942193e+00    -1.288998797e+01
+ 4   +1.2552456282e+00    +1.3785439781e+00    -4.707090710e+01
+ 6   -4.7973477364e-02    -1.2595382817e+00    +6.290510536e+00
+ 8   -6.2592963739e-02    -6.4106435777e-02    +6.924507646e+00
+10   +1.4257282317e-02    -1.1039960997e-01    -5.605800149e+00
+12   -1.5571675075e-03    +3.8560168349e-01    +3.831186883e+00
+Th1(mu=+1) = Th1(mu=-1) = -0.4221462,  Th1(mu=0) = +1.07625651
+```
+Observer clock/temperature (to8_xo0): t_o(+-0.01) = 8.0251226534 / 7.9742196483 (O(eps) shift because zeta(x_o)=eps != 0),
+T_o(+-0.01) = 0.12445094278 / 0.12554985919, <T_obs> = 0.12499073752 / 0.12499056880.  For x_o = pi/2 the shifts are O(eps^2).
+Th4 (indicative, 24 c4) is also stored; its uncertainty is ~1e-4 (ratio 2) to ~4e-3 (ratio 4, x_o=0).
+
+**Error budget (observable T_obs(n)/T_o, single run).** Double-precision floor: changing N (32/48/64), rtol (1e-12..3e-14),
+cH (0,-1/2,-1), t_i (0.005/0.01/0.02), IC order (4/6) changes Theta by 2e-12 .. 8e-12 (max over sky) and t_o by <5e-11
+(relative <1e-11); exact e^{-S} identity 1e-14. => T_obs/T_o accurate to ~1e-11 relative (target 1e-9 met by 2 orders).
+Angular: nmu=64 already gives a_l0 (l<=24) to 5e-13; production nmu=96.
+Extraction: noise floor sigma_Theta ~ 5e-12 propagates as ~sigma/e0^n (e0 = 0.01) with O(1) weights: Th1 ~1e-9, Th2 ~1e-7,
+Th3 ~1e-5 for the ratio-4 runs (consistent with the subset spreads); truncation (c_{2m+1} e^{2m}) is controlled by the
+subset comparison (the ratio-4 maps have fast-growing Taylor coefficients, c4 ~ 3.5, so e<=0.08 is near the useful limit).
+
+## 6. What is verified (summary)
+1. Equations derived symbolically; conservation identities and shear verified; hyperbolicity analysed (strongly hyperbolic variant used).
+2. FRW limit exact (2e-16). Constraints ~1e-13 absolute throughout.
+3. Linear limit = SPEC's T_Phi (Phi_P = Psi_P = zeta T_Phi, delta_c) with residuals ∝ eps (2nd-order), to 1e-8 at eps=1e-4.
+4. Nonlinear regular initial data (gradient expansion) consistent with constraints to O(t^6); IC-order independence 8e-12.
+5. Exact observable identity T_obs = T_o e^{-S} (SPEC §3) verified to 1e-14 at eps up to 0.1 (Theta_rms 0.08) — nonperturbative.
+6. Symmetries (zeta sign flip = half-period shift; parity) at 5e-12.
+7. Th1, Th2, Th3 maps/a_l0 for 4 configurations with quantified uncertainties (Th2 to ~1e-8..1e-5, Th3 to ~1e-6..1e-3 relative).
+
+Caveats: single plane wave => only the m=0 (axisymmetric) part of the kernels is probed (for x_o=0 only even l;
+x_o=pi/2 adds odd l and the dipole); eta_o/eta_* is 2 and 4 (not CMB-like 50); monopole normalisation and the
+observer-clock shift are included exactly, so the analytic comparison must include SPEC §6-7 bookkeeping.

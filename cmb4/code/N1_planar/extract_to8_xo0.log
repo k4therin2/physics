@@ -1,5 +1,5 @@
-=== to8_xo0 ===  (rms over sphere; spread = max over fit subsets of max|diff| vs subset D: e<=0.08, 7pts, 6terms)
-Th1 = c1                     rms=7.111402e-01  max|.|=1.076257e+00  spread=1.26e-07  a_l0(l=0..6)= [ 9.13565771e-15 -9.77294526e-12 -2.18472036e+00 -1.55188290e-11
+=== to8_xo0 ===  (rms over sphere; spread = max over fit subsets A,B,C,F of max|diff| vs subset D: e<=0.08, 7pts, 6terms)
+Th1 = c1                     rms=7.111402e-01  max|.|=1.076257e+00  spread=3.55e-09  a_l0(l=0..6)= [ 9.13565771e-15 -9.77294526e-12 -2.18472036e+00 -1.55188290e-11
   1.25524563e+00 -1.84225680e-11 -4.79734774e-02]
       A: e<=0.04, 4pts, 4terms           max|diff|=5.57e-10
       B: e<=0.06, 6pts, 5terms           max|diff|=1.85e-10
@@ -7,7 +7,7 @@ Th1 = c1                     rms=7.111402e-01  max|.|=1.076257e+00  spread=1.26e
       D: e<=0.08, 7pts, 6terms           max|diff|=0.00e+00
       E: e=.02-.08 even, 4pts,4terms     max|diff|=1.26e-07
       F: e<=0.05, 5pts, 4terms           max|diff|=3.55e-09
-Th2 = 2 c2                   rms=1.309367e+00  max|.|=2.707557e+00  spread=1.13e-06  a_l0(l=0..6)= [ 8.22397021e-12 -1.58590856e-10 -4.22249422e+00 -1.23693814e-09
+Th2 = 2 c2                   rms=1.309367e+00  max|.|=2.707557e+00  spread=3.24e-08  a_l0(l=0..6)= [ 8.22397021e-12 -1.58590856e-10 -4.22249422e+00 -1.23693814e-09
   1.37854398e+00 -3.49228224e-09 -1.25953828e+00]
       A: e<=0.04, 4pts, 4terms           max|diff|=2.07e-08
       B: e<=0.06, 6pts, 5terms           max|diff|=5.77e-09
@@ -15,7 +15,7 @@ Th2 = 2 c2                   rms=1.309367e+00  max|.|=2.707557e+00  spread=1.13e
       D: e<=0.08, 7pts, 6terms           max|diff|=0.00e+00
       E: e=.02-.08 even, 4pts,4terms     max|diff|=1.13e-06
       F: e<=0.05, 5pts, 4terms           max|diff|=3.24e-08
-Th3 = 6 c3                   rms=1.420806e+01  max|.|=3.722716e+01  spread=2.69e-03  a_l0(l=0..6)= [ 2.13898551e-11  1.28534559e-07 -1.28899880e+01  2.02066396e-07
+Th3 = 6 c3                   rms=1.420806e+01  max|.|=3.722716e+01  spread=2.06e-04  a_l0(l=0..6)= [ 2.13898551e-11  1.28534559e-07 -1.28899880e+01  2.02066396e-07
  -4.70709071e+01  2.29870077e-07  6.29051054e+00]
       A: e<=0.04, 4pts, 4terms           max|diff|=4.77e-05
       B: e<=0.06, 6pts, 5terms           max|diff|=1.17e-05
@@ -23,7 +23,7 @@ Th3 = 6 c3                   rms=1.420806e+01  max|.|=3.722716e+01  spread=2.69e
       D: e<=0.08, 7pts, 6terms           max|diff|=0.00e+00
       E: e=.02-.08 even, 4pts,4terms     max|diff|=2.69e-03
       F: e<=0.05, 5pts, 4terms           max|diff|=2.06e-04
-Th4 = 24 c4 (indicative)     rms=8.550726e+01  max|.|=2.843895e+02  spread=4.85e-02  a_l0(l=0..6)= [-3.61828383e-07 -1.74496778e-06  2.02116511e+02  4.11211972e-05
+Th4 = 24 c4 (indicative)     rms=8.550726e+01  max|.|=2.843895e+02  spread=3.76e-03  a_l0(l=0..6)= [-3.61828383e-07 -1.74496778e-06  2.02116511e+02  4.11211972e-05
   1.53777547e+02  1.41422866e-04  7.82322356e+01]
       A: e<=0.04, 4pts, 4terms           max|diff|=2.14e-03
       B: e<=0.06, 6pts, 5terms           max|diff|=6.63e-04
