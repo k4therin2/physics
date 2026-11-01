@@ -1,0 +1,49 @@
+== C5 linear_cl test suite ==
+[1] transfer functions vs C1 and first-order equations
+  T_Phi     matches C1: True
+  T_deltaT  matches C1: True
+  T_V       matches C1: True
+  ODE            residual = 0
+  00 constraint  residual = 0
+  0i constraint  residual = 0
+  continuity     residual = 0
+  ISW source     residual = 0
+  limits x->0: A = T_dT + T_Phi -> -1/3, kT_V/x -> sqrt(3)/3, T_dT -> 1/3, T_Phi -> -2/3
+  -> True
+[2] Rayleigh rules (numerical angular quadrature)
+  Rayleigh rules (1 -> i^l j_l, n.khat -> -i i^l j_l', observer n.khat -> l=1 only, 1/3): max |err| = 2.93e-14
+  -> True
+[3] ISW closed form: product-to-sum, partial fractions, finite part, vs mpmath quadrature (12 digits)
+  product-to-sum identity l=0: residual -0.e-166
+  product-to-sum identity l=1: residual -0.e-165
+  product-to-sum identity l=2: residual 0.e-166
+  product-to-sum identity l=5: residual -0.e-168
+  partial fractions (p,q)=(2,1): residual 0
+  partial fractions (p,q)=(4,3): residual 0
+  partial fractions (p,q)=(3,7): residual 0
+  l=0: 106 terms, singular pieces cancelled (1 checked), finite-part check 2.2e-21, max rel err closed vs quad 1.9e-18  [1.0s]
+  l=1: 163 terms, singular pieces cancelled (2 checked), finite-part check 6.5e-21, max rel err closed vs quad 6.6e-18  [1.3s]
+  l=2: 228 terms, singular pieces cancelled (3 checked), finite-part check 1.9e-20, max rel err closed vs quad 2.2e-17  [1.7s]
+  l=3: 307 terms, singular pieces cancelled (4 checked), finite-part check 2.1e-01, max rel err closed vs quad 2.2e-17  [2.9s]
+  l=4: 400 terms, singular pieces cancelled (5 checked), finite-part check 1.1e+20, max rel err closed vs quad 2.2e-17  [4.3s]
+  l=5: 495 terms, singular pieces cancelled (6 checked), finite-part check 1.1e+41, max rel err closed vs quad 2.4e-17  [6.0s]
+  l=6: 598 terms, singular pieces cancelled (7 checked), finite-part check 6.4e+61, max rel err closed vs quad 2.4e-17  [8.3s]
+  eta_*=0 closed form l=2: 0.158254166741002 vs quad -3.19529436444958e+29
+  eta_*=0 closed form l=3: 0.0835225650339258 vs quad -1.3644019100956e+30
+  -> False
+[4] C_l^(11) real-space check (monochromatic; verifies prefactor 4 pi sigma^2 |Delta_l|^2, observer l=0,1 terms, ISW)
+  theta=0.00  xi_direct= 1.4096508110+1.4e-19j   harmonic sum= 1.4096508110
+  theta=0.40  xi_direct= 1.0481927194+2.8e-17j   harmonic sum= 1.0481927194
+  theta=1.10  xi_direct= 0.0982963279-4.2e-17j   harmonic sum= 0.0982963279
+  theta=2.00  xi_direct= 0.0914189135-2.8e-17j   harmonic sum= 0.0914189135
+  theta=3.14  xi_direct=-0.0109051449+0.0e+00j   harmonic sum=-0.0109051449
+  real-space vs harmonic C_l^(11) (incl. observer terms, l=0,1, and ISW): max diff 9.02e-15
+  -> True
+[5] limits
+  k=1e-02: M(k)=Delta_0 = -1.458e-10 (expect O(k^2)),  Delta_1 = 3.333e-08 (expect O(k^3)),  Delta_2 = -8.333e-06
+  k=1e-03: M(k)=Delta_0 = -1.682e-14 (expect O(k^2)),  Delta_1 = 3.333e-11 (expect O(k^3)),  Delta_2 = -8.333e-08
+  scaling ratios k=1e-2/1e-3:  M: 8669.030 (100 = k^2),  Delta_1: 999.97 (1000 = k^3; the O(k) dipole of a gradient mode cancels)
+  int dy/y j_2(y)^2 = 0.08333333  vs 1/(2l(l+1)) = 0.08333333
+  int dy/y j_3(y)^2 = 0.04166667  vs 1/(2l(l+1)) = 0.04166667
+  int dy/y j_7(y)^2 = 0.00892857  vs 1/(2l(l+1)) = 0.00892857
+  k=200: Delta_2 = -1.186701e-03, asymptotic = -1.296963e-03, diff*k^2 = 4.410

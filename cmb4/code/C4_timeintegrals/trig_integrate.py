@@ -70,12 +70,24 @@ def decompose(expr, t):
     Each term of expand(expr) is split into a t-free coefficient and the t-dependent part (t^n times trig
     functions) BEFORE the trig -> exp rewriting, so that denominators in the coefficients are never touched."""
     out = {}
-    expr = sp.expand_power_base(sp.powdenest(expr, force=True), force=True)
+    def split_t(m):
+        """Mul m -> (t-free part, t power, t-dependent non-power part)"""
+        c, n, rest = sp.S.One, 0, sp.S.One
+        for f in sp.Mul.make_args(m):
+            if f == t: n += 1
+            elif f.is_Pow and f.base == t and f.exp.is_Integer: n += int(f.exp)
+            elif f.has(t): rest *= f
+            else: c *= f
+        return c, n, rest
     for term0 in sp.Add.make_args(sp.expand(expr)):
-        c0, tpart = term0.as_independent(t, as_Add=False)
-        e = sp.expand(sp.powsimp(sp.expand(sp.expand_trig(tpart).rewrite(sp.exp)), combine='exp'))
+        num, den = term0.as_numer_denom()
+        cd, nd, rd = split_t(sp.factor(den))
+        assert rd == 1, ("t-dependent denominator", den)
+        cn, nn, rn = split_t(num)
+        c0 = cn / cd; n0 = nn - nd
+        e = sp.expand(sp.powsimp(sp.expand(sp.expand_trig(rn).rewrite(sp.exp)), combine='exp'))
         for term in sp.Add.make_args(e):
-            c, n, w = c0, 0, sp.S.Zero
+            c, n, w = c0, n0, sp.S.Zero
             for f in sp.Mul.make_args(term):
                 if f == t:
                     n += 1

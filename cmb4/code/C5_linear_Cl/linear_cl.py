@@ -131,7 +131,7 @@ def rayleigh_check(kchi=5.3, khat=(0.3, -0.5, 0.81), lmax=6, log=print):
     for l in range(0, 4):
         for m in range(-l, l + 1):
             a = alm_numeric(lambda T, P: mu + 0j, l, m, grid)
-            pred = 4 * np.pi * 1j * np.conj(sph_harm_y(1, m, thk, phk)) / 3 if l == 1 else 0.0
+            pred = 4 * np.pi * np.conj(sph_harm_y(1, m, thk, phk)) / 3 if l == 1 else 0.0
             worst = max(worst, abs(a - pred))
     log("  Rayleigh rules (1 -> i^l j_l, n.khat -> -i i^l j_l', observer n.khat -> l=1 only, 1/3): max |err| = %.2e" % worst)
     return worst < 1e-10
@@ -438,7 +438,7 @@ def var_m1_mono(sig2, kk0, es, eo):
 # ----------------------------------------------------------------------------------------------------------------
 def kernel_K(kk, khat, nvec, es, eo, neta=160):
     """First-order kernel K(k, n) (Theta1 = int d^3k/(2pi)^3 zeta_k K): emission + observer + ISW, x_e = +n chi_*."""
-    mu = nvec @ khat
+    mu = np.atleast_2d(khat) @ nvec                                   # vectorised over rows of khat
     xs_ = kk * es / np.sqrt(3); xo = kk * eo / np.sqrt(3); c = kk * (eo - es)
     A = lambda xx: -np.cos(xx) + 2 * spherical_jn(0, xx) - 4 * spherical_jn(1, xx) / xx
     kTV = lambda xx: np.sqrt(3) * (np.sin(xx) - 2 * spherical_jn(1, xx))
@@ -460,8 +460,8 @@ def realspace_check(kk0=4.0, es=0.5, eo=2.0, lmax=30, log=print):
     n1 = np.array([0, 0, 1.0]); worst = 0
     for theta in (0.0, 0.4, 1.1, 2.0, np.pi):
         n2 = np.array([np.sin(theta), 0, np.cos(theta)])
-        K1 = np.array([kernel_K(kk0, kh, n1, es, eo) for kh in khat])
-        K2 = np.array([kernel_K(kk0, kh, n2, es, eo) for kh in khat])
+        K1 = kernel_K(kk0, khat, n1, es, eo)
+        K2 = kernel_K(kk0, khat, n2, es, eo)
         xi = np.sum(W * K1 * np.conj(K2))
         pred = np.sum((2 * ls + 1) / (4 * np.pi) * Cl * eval_legendre(ls, np.cos(theta)))
         worst = max(worst, abs(xi - pred))
@@ -541,9 +541,9 @@ def run_tests(lmax_closed=6):
     for kk in (1e-2, 1e-3):
         log("  k=%.0e: M(k)=Delta_0 = %.3e (expect O(k^2)),  Delta_1 = %.3e (expect O(k^3)),  Delta_2 = %.3e" %
             (kk, M_num(kk, 0.5, 2.0), Delta_l_num(1, kk, 0.5, 2.0)[0], Delta_l_num(2, kk, 0.5, 2.0)[0]))
-    ok5 = abs(M_num(1e-3, 0.5, 2.0)) < 1e-5 and abs(Delta_l_num(1, 1e-3, 0.5, 2.0)[0]) < 1e-8
-    Msmall = sp.series(Delta_l_sym(0, 'closed').subs({eta_s: sp.Rational(1, 2), eta_o: 2}), k, 0, 3).removeO()
-    log("  M(k) small-k series (eta_*=1/2, eta_o=2): %s" % sp.nsimplify(sp.simplify(Msmall)))
+    r0 = M_num(1e-2, 0.5, 2.0) / M_num(1e-3, 0.5, 2.0); r1 = Delta_l_num(1, 1e-2, 0.5, 2.0)[0] / Delta_l_num(1, 1e-3, 0.5, 2.0)[0]
+    log("  scaling ratios k=1e-2/1e-3:  M: %.3f (100 = k^2),  Delta_1: %.2f (1000 = k^3; the O(k) dipole of a gradient mode cancels)" % (r0, r1))
+    ok5 = abs(r0 - 100) < 1 and abs(r1 - 1000) < 20
     ok5 &= plateau_check(log)
     # k -> infinity: Delta_l ~ -cos x_* j_l - sqrt3 sin x_* j_l'  (ISW O(1/k))
     for kk in (200.0, 2000.0):
