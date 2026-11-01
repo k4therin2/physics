@@ -1,0 +1,18 @@
+Psi  = [0, 2*alpha1, 3*alpha1**2 + alpha2, 2*alpha1**3 + 3*alpha1*alpha2]
+Phi  = [0, -alpha1 - beta1, -alpha1**2/2 - 2*alpha1*beta1 - alpha2/2 - beta1**2 - beta2/2, -alpha1**2*beta1 - alpha1*alpha2/2 - 2*alpha1*beta1**2 - alpha1*beta2 - alpha2*beta1 - 2*beta1**3/3 - beta1*beta2]
+dT   = [0, -alpha1, alpha1**2 - alpha2/2, -alpha1**3 + alpha1*alpha2]
+zeta_nl = [0, beta1, beta2/2, 0]
+first order:  {alpha1: -c/3, beta1: c}  -> dT1 = c/3 (SPEC: c/3)
+zeta_nl^(2) = beta2  => beta2 = 0
+second-order constants (alpha2 free): {'Psi1': -2*c/3, 'Psi2': 2*alpha2 + 2*c**2/3, 'Psi3': -6*alpha2*c - 4*c**3/9, 'Phi1': -2*c/3, 'Phi2': -alpha2 - 7*c**2/9, 'Phi3': -5*alpha2*c - 2*c**3/3, 'dT1': c/3, 'dT2': -alpha2 + 2*c**2/9, 'dT3': -2*alpha2*c + 2*c**3/9}
+sigma_mu nu == 0 for constant fields through order 3: True
+uhat^0 for constant fields: [1, 2*c/3, -alpha2 + c**2/3, -alpha2*c + 4*c**3/27]  (expect lam^-2 = [1, 2*c/3, -alpha2 + c**2/3, -alpha2*c + 4*c**3/27] )
+eta_o =  [eta_o_bar, -alpha1*eta_o_bar, eta_o_bar*(2*alpha1**2 - alpha2)/2, 0]  ; eta_ob/lam = [eta_o_bar, -alpha1*eta_o_bar, eta_o_bar*(2*alpha1**2 - alpha2)/2, alpha1*eta_o_bar*(-alpha1**2 + alpha2)]
+T_o/Tbar(etabar_o) = [1, 0, 0, alpha1*(-alpha1**2 + alpha2)]   (monopole unperturbed through 2nd order)
+deta_e1 = c*eta_star/3  deta_e2 = -alpha2*eta_star + 2*c**2*eta_star/9  ; eta_*(1/lam-1) series: [0, c*eta_star/3, -alpha2*eta_star/2 + c**2*eta_star/9, -alpha2*c*eta_star/3 + c**3*eta_star/27]
+L order 1 with constant (dilation) fields: ZERO
+L order 2 with constant (dilation) fields: ZERO
+L order 3 with constant (dilation) fields: ZERO
+L_direct order 1 with constant (dilation) fields: ZERO
+L_direct order 2 with constant (dilation) fields: ZERO
+L_direct order 3 with constant (dilation) fields: ZERO

@@ -22,7 +22,8 @@ print('first order: ', sol1, ' -> dT1 =', dTc.c[1].subs(sol1), '(SPEC: c/3)')
 # zeta_nl^(2) = 0  => b2 = 0 ;  a2 stays FREE (residual constant time rescaling)
 zeta2 = sp.expand(2*zeta.c[2].subs(sol1)); print('zeta_nl^(2) =', zeta2, ' => beta2 = 0')
 sol = dict(sol1); sol[b2] = 0
-consts = {'Psi1': Psi.c[1], 'Psi2': 2*Psi.c[2], 'Phi1': Phi.c[1], 'Phi2': 2*Phi.c[2], 'dT1': dTc.c[1], 'dT2': 2*dTc.c[2]}
+consts = {'Psi1': Psi.c[1], 'Psi2': 2*Psi.c[2], 'Psi3': 6*Psi.c[3], 'Phi1': Phi.c[1], 'Phi2': 2*Phi.c[2], 'Phi3': 6*Phi.c[3],
+          'dT1': dTc.c[1], 'dT2': 2*dTc.c[2], 'dT3': 6*dTc.c[3]}   # alpha3 = beta3 = 0
 consts = {k_: sp.expand(v_.subs(sol)) for k_, v_ in consts.items()}
 print('second-order constants (alpha2 free):', consts)
 
@@ -30,7 +31,6 @@ print('second-order constants (alpha2 free):', consts)
 d = build(verbose=False)
 sub = {}
 for nm, val in consts.items(): sub[F(nm)] = val
-for nmf in ['Psi3', 'Phi3', 'dT3']: sub[F(nmf)] = 0
 for i in (1, 2, 3):
     for n_ in (1, 2, 3): sub[fields.fname('v', n_, i)] = 0
     for n_ in (2, 3):

@@ -97,7 +97,7 @@ emission = {}
 e1 = sp.expand(at_emi(lhs.c[1] - rhs.c[1]))
 emission[deta_e1] = sp.solve(e1, deta_e1)[0]
 e2 = sp.expand(at_emi(lhs.c[2] - rhs.c[2]).subs(deta_e1, emission[deta_e1]))
-emission[deta_e2] = sp.expand(2*sp.solve(e2, deta_e2)[0])     # store deta_e2 itself
+emission[deta_e2] = sp.expand(sp.solve(e2, deta_e2)[0])       # deta_e2 itself (dser_e carries deta_e2/2)
 print('emission shifts: deta_e1 =', emission[deta_e1]); print('   deta_e2 =', emission[deta_e2]); print('t=%.1f' % (time.time()-t0))
 
 # ---------- assemble S for a given integrand (and optional boundary function) ----------
@@ -140,11 +140,14 @@ functional_syms = {'k1': set(kfun[1]) | {f_.subs(eta, eta_s) for f_ in kfun[1]},
                    'deta_o1': {deta_o1}, 'deta_o2': {deta_o2}, 'dxo1': set(dxo1), 'dxo2': set(dxo2),
                    'deta_e1': {deta_e1}, 'deta_e2': {deta_e2}}
 def field_orders(mono):
+    """orders of the field factors of a monomial, with multiplicity (derivatives count as the field)."""
     ords = []
-    for f_ in mono.atoms(sp.core.function.AppliedUndef):
-        s = str(f_.func)
-        if s[0] in 'kD': continue
-        ords.append(int(s[-1]))
+    for fac_, pw in mono.as_powers_dict().items():
+        base = fac_.expr if isinstance(fac_, sp.Derivative) else fac_
+        if not isinstance(base, sp.core.function.AppliedUndef): continue
+        s_ = str(base.func)
+        if s_[0] in 'kD': continue
+        ords += [int(s_[-1])]*int(pw)
     return ords
 def classify(expr):
     groups = {}
@@ -190,6 +193,60 @@ for m in (1, 2, 3):
     for t_ in Ld[m]: print('   %4d  %s' % (t_['nterms'], t_['name']))
 
 # ---------- m_n and the sky-monopole subtraction (SPEC §7) ----------
+# ---------- 'split' display: n = z-hat, k1_3 -> -(Phi1+Psi1) (null condition), Dx1_3 radial ----------
+zsub = {n[0]: 0, n[1]: 0, n[2]: 1}
+def split_z(expr):
+    e = sp.expand(sp.expand(expr).xreplace(zsub))
+    e = e.xreplace({kfun[1][2]: -(fname('Phi', 1) + fname('Psi', 1)),
+                    kfun[1][2].subs(eta, eta_s): -(fname('Phi', 1) + fname('Psi', 1))})
+    return sp.expand(e)
+SPLIT_TAGS = {'lens': set([Dxfun[1][0], Dxfun[1][1], Dxfun[1][0].subs(eta, eta_s), Dxfun[1][1].subs(eta, eta_s)]),
+              'tdelay': set([Dxfun[1][2], Dxfun[1][2].subs(eta, eta_s)]),
+              'k1perp': set([kfun[1][0], kfun[1][1], kfun[1][0].subs(eta, eta_s), kfun[1][1].subs(eta, eta_s)]),
+              'lens2': set([Dxfun[2][0], Dxfun[2][1], Dxfun[2][0].subs(eta, eta_s), Dxfun[2][1].subs(eta, eta_s)]),
+              'tdelay2': set([Dxfun[2][2], Dxfun[2][2].subs(eta, eta_s)]),
+              'k2perp': set([kfun[2][0], kfun[2][1], kfun[2][0].subs(eta, eta_s), kfun[2][1].subs(eta, eta_s)]),
+              'k2rad': set([kfun[2][2], kfun[2][2].subs(eta, eta_s)]),
+              'deta_o1': {deta_o1}, 'deta_o2': {deta_o2}, 'dxo1': set(dxo1), 'dxo2': set(dxo2), 'deta_e1': {deta_e1}, 'deta_e2': {deta_e2}}
+SPLIT_PHYS = {'lens': 'lensing (transverse Dx1)', 'tdelay': 'time delay (radial Dx1)', 'k1perp': 'transverse direction k1 (aberration+deflection)',
+              'lens2': 'lensing 2nd (transverse Dx2)', 'tdelay2': 'time delay 2nd (radial Dx2)', 'k2perp': 'transverse k2', 'k2rad': 'radial k2',
+              'deta_o1': 'observer clock', 'deta_o2': 'observer clock 2nd', 'dxo1': 'observer displacement', 'dxo2': 'observer displacement 2nd',
+              'deta_e1': 'emission-surface shift', 'deta_e2': 'emission-surface shift 2nd'}
+def classify_split(expr):
+    groups = {}
+    for mono in sp.Add.make_args(sp.expand(expr)):
+        atoms = mono.atoms(sp.Symbol) | mono.atoms(sp.core.function.AppliedUndef)
+        mult = []
+        for kname, ss in SPLIT_TAGS.items():
+            if atoms & ss:
+                deg = sum(sp.degree(mono, f_) for f_ in ss if mono.has(f_))
+                mult.append(kname + ('^%d' % deg if deg > 1 else ''))
+        fo = field_orders(mono)
+        fo_desc = 'fields:' + '+'.join(str(o) for o in sorted(fo, reverse=True)) if fo else 'nofields'
+        key = (' * '.join(sorted(mult)) if mult else '-') + ' | ' + fo_desc
+        groups.setdefault(key, []).append(mono)
+    return {k_: sp.Add(*v_) for k_, v_ in groups.items()}
+def term_list_split(pieces, order, sign=1):
+    out = []
+    for where, expr in pieces[order]:
+        for key, val in classify_split(split_z(sign*expr)).items():
+            tags = key.split(' | ')[0]
+            name = ('[%s] ' % where) + ('; '.join(SPLIT_PHYS.get(t.split('^')[0], t) + ('^'+t.split('^')[1] if '^' in t else '') for t in tags.split(' * ')) if tags != '-' else 'local') + ' | ' + key.split(' | ')[1]
+            out.append(dict(name=name, where=where, tags=key, expr=val, nterms=len(sp.Add.make_args(val))))
+    return out
+Lsplit = {m: term_list_split(S_sigma, m, sign=-1) for m in (1, 2, 3)}
+Ldsplit = {m: term_list_split(S_direct_neg, m, sign=+1) for m in (1, 2, 3)}
+for m in (1, 2, 3):
+    print('=== SPLIT (n=z) shear form eps^%d: %d terms in %d groups' % (m, sum(t['nterms'] for t in Lsplit[m]), len(Lsplit[m])))
+    for t_ in sorted(Lsplit[m], key=lambda t: t['name']): print('   %4d  %s' % (t_['nterms'], t_['name']))
+for m in (1, 2):
+    print('=== SPLIT (n=z) direct form eps^%d: %d terms in %d groups' % (m, sum(t['nterms'] for t in Ldsplit[m]), len(Ldsplit[m])))
+    for t_ in sorted(Ldsplit[m], key=lambda t: t['name']): print('   %4d  %s' % (t_['nterms'], t_['name']))
+print('--- explicit L2/2 (shear form, n=z) ---')
+for t_ in sorted(Lsplit[2], key=lambda t: t['name']): print(t_['name'], ':\n      ', t_['expr'])
+print('--- explicit direct-form eps^2 (n=z) ---')
+for t_ in sorted(Ldsplit[2], key=lambda t: t['name']): print(t_['name'], ':\n      ', t_['expr'])
+
 L1s, L2s, L3s = sp.symbols('L1 L2 L3')
 Lam = Ser([0, L1s, L2s/2, L3s/6])
 M = Lam.exp()
@@ -202,7 +259,7 @@ print('m1 =', m1, '; m2 =', m2, '; m3 =', m3)
 print('Theta1 =', Theta[1]); print('Theta2 =', Theta[2]); print('Theta3 =', Theta[3])
 
 with open('L_terms.pkl', 'wb') as f:
-    pickle.dump(dict(doc=__doc__, L=L, L_direct=Ld, emission=emission, definitions=ray.definitions,
+    pickle.dump(dict(doc=__doc__, L=L, L_direct=Ld, L_split=Lsplit, L_direct_split=Ldsplit, emission=emission, definitions=ray.definitions,
                      S_pieces=S_sigma, Lambda_direct_pieces=S_direct_neg, m=(m1, m2, m3), Theta=Theta,
                      symbols=dict(n=n, eta_star=eta_s, eta_o_bar=eta_o, deta_o=(deta_o1, deta_o2), dxo=(dxo1, dxo2),
                                   deta_e=(deta_e1, deta_e2), kfun=kfun, Dxfun=Dxfun)), f)
