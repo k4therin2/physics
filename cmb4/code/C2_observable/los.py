@@ -102,9 +102,10 @@ print('emission shifts: deta_e1 =', emission[deta_e1]); print('   deta_e2 =', em
 
 # ---------- assemble S for a given integrand (and optional boundary function) ----------
 dser_o = Ser([0, deta_o1, deta_o2/2, 0])
-def assemble(I, B=None):
-    """S = int_{eta_e}^{eta_o} I deta + [B]_e^o on the perturbed ray. Returns dict order-> list of (where, expr)."""
-    Fq = pos_expand(I); print('   pos_expand done, sizes', [len(sp.Add.make_args(c)) for c in Fq.c], 't=%.1f' % (time.time()-t0), flush=True)
+def assemble(I, B=None, expanded=False):
+    """S = int_{eta_e}^{eta_o} I deta + [B]_e^o on the perturbed ray. Returns dict order-> list of (where, expr).
+    expanded=True: I is already position-expanded (a function on the background ray)."""
+    Fq = I if expanded else pos_expand(I); print('   pos_expand done, sizes', [len(sp.Add.make_args(c)) for c in Fq.c], 't=%.1f' % (time.time()-t0), flush=True)
     pieces = {1: [], 2: [], 3: []}
     for m in range(N+1):
         if m == 0: continue

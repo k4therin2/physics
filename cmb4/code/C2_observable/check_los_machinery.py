@@ -22,7 +22,7 @@ res = {}
 # ---- T1 ----
 Bq = pos_expand(B_direct)
 A = assemble(I_direct, B_direct)
-Bp = assemble(I_direct + Dtot(Bq))
+Bp = assemble(pos_expand(I_direct) + Dtot(Bq), expanded=True)
 ok = True
 for m in (1, 2, 3):
     ray_A = sum(e for w, e in A[m] if w == 'ray'); ray_B = sum(e for w, e in Bp[m] if w == 'ray')
@@ -57,8 +57,8 @@ def reduce_rules(e, maxit=12):
 
 # ---- T2 ----
 gkk = contract2(g)
-R = Ser.const(0) - Gam0kk + Dtot(Bq) + pos_expand(I_sigma + theta*gkk/(3*muk))
-P = assemble(R)
+R = pos_expand(Ser.const(0) - Gam0kk + I_sigma + theta*gkk/(3*muk)) + Dtot(Bq)
+P = assemble(R, expanded=True)
 ok = True
 for m in (1, 2, 3):
     for w in ('ray', 'obs', 'emi'):
@@ -74,7 +74,7 @@ om = [g[0][i+1] for i in range(3)]
 Psi = (Ser.const(0) - g[0][0] - 1)*sp.Rational(1, 2)
 den = 1 + 2*Psi - sum((om[i]*kser[i+1] for i in range(3)), Ser.const(0))
 dgkk = sum((g[a][b].diff(eta)*kser[a]*kser[b] for a in range(4) for b in range(4) if not g[a][b].iszero()), Ser.const(0))
-T3 = Ser.const(0) - Gam0kk + dgkk/den*sp.Rational(1, 2) + Dtot(den.log())
+T3 = pos_expand(Ser.const(0) - Gam0kk + dgkk/den*sp.Rational(1, 2)) + Dtot(pos_expand(den.log()))   # Dtot is the ray derivative of position-expanded quantities
 ok = all(sp.expand(T3.c[m]) == 0 for m in range(N+1))
 print('T3 (P_0 form identity, exact, no rules):', 'ZERO' if ok else 'NONZERO', [len(sp.Add.make_args(sp.expand(T3.c[m]))) for m in range(N+1)])
 res['T3_P0_identity'] = ok

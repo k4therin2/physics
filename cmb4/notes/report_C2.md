@@ -134,3 +134,57 @@ Results (all symbolic in c, a2):
  derivatives of the fields) — the clock and emission-surface machinery is only exercised by the monopole T_o (verified above) and by the
  direct form (route i), whose assembled L1..L3 also vanish. The nontrivial content is thus (a) S has no undifferentiated-field terms
  (true by construction: sigma is built from nabla u), (b) T_o = Tbar(etabar_o) at fixed proper time.
+
+## Check 4(c) — literature structure (Boubekeur et al. 2009, arXiv:0906.0980 §2)  [DONE]  (`lit_compare.py`, `lit_compare_run.log`)
+Dictionary: their Phi = our Psi, their Psi = our Phi, their gamma_ij = our h_ij, their n-hat = our n (P^i = -P^0 n^i). Their eq. (2.25)
+is written with the LOWER-index P_0, for which the geodesic equation has only d_tau g: (1/P_0) dP_0/dtau = Phi'+Psi'+omega'.n - gamma'_nn/2
+(their 2.16). Exact counterpart in our variables (identity T3 below, any fields):
+   d ln p^0/deta = -Gam^0_kk = -(1/2) d_eta g_kk/(1+2Psi-omega.k) - D ln(1+2Psi-omega.k),
+so our direct form can be rewritten as   Lambda = int (Psi' + Phi'|k|^2 + omega'.n - h'_kk/2)/(1+2Psi-omega.k) deta [perturbed path & k]
+   + [ln(-u.k) - ln(1+2Psi-omega.k)]_e^o - [ln(1+dT)]_e^o,  and  [ln(-u.k) - ln(1+2Psi-omega.k)]_e^o -> -[(1/2)ln(1+2Psi)]_e^o for v=0
+   (the omega pieces cancel) = their sqrt[(1+2Phi_e)/(1+2Phi_o)].
+Concrete comparison (same prescriptions as theirs: v = 0, observer at the origin, emission at FIXED coordinate time with
+T_e = Tbar(1+dT)|_{perturbed position}, ln(1+int) -> int):  ours - theirs, n = z-hat,
+   order 1: ZERO (ray, obs, emi).
+   order 2: obs ZERO, emi ZERO (both boundary structures agree exactly: (1/2)ln(1+2Psi) and ln(1+dT) at the lensed/time-delayed
+            position, i.e. their eq. 2.27 "Phi(x_e) = Phi(nD) + dx_e.grad" with dx_e = our Dx1(eta_*) incl. the Shapiro part 2.30);
+            ray: 8 terms =  int deta { Dx1_perp.d_perp(Phi1'+Psi1') + Dx1_z d_z(Phi1'+Psi1') + 2 Phi1 Phi1' - 2 Psi1 Psi1' },
+            which is EXACTLY zero under their matter-domination assumption Phi1' = Psi1' = 0 (first-order potentials constant).
+   => full structural agreement: second-order SW (their Phi_e - 5Phi_e^2/18 after inserting the MD relation T_e = (1+2Phi)^{-1/3}T̄; in
+      our notation ln(1+dT)_e + (1/2)ln(1+2Psi)_e with dT left general), second-order ISW/Rees-Sciama + vector + tensor integrand
+      (Phi2'+Psi2'+omega2'.n - h2'_nn/2)/2, lensing (transverse Dx1.grad), Shapiro time delay (radial Dx1), observer monopole, and the
+      exponential/normalisation structure (their 2.33-2.34 = our T_obs = T_o e^{-S}, 1+Theta = e^{-S}/<e^{-S}>).
+   Terms present in ours and ABSENT in theirs (by their assumptions, not disagreements): the three RD-specific products above
+   [path-displaced first-order ISW integrand; (1+2Psi)^{-1} and |k|^2 = 1+2(Phi+Psi) corrections to the first-order ISW], all Doppler /
+   aberration terms (v_e, v_o, k1_perp.v), the emission-surface shift deta_e (ours emits on T = T_*, theirs at fixed tau_e), the observer
+   clock/displacement, and -(1/2)(int(Phi1'+Psi1'))^2 which in our log-form does not exist (it is generated only when exponentiating).
+   Creminelli-Pitrou-Vernizzi 2011 (1109.1822 §3) discuss exactly the constant-mode cancellations (average temperature, recombination time
+   shift, coordinate rescaling of x_rec) that our check 4(b) implements; our e^{-S} form makes them automatic. Huang-Vernizzi 2013 (PRL)
+   exclude lensing/time delay from the Boltzmann hierarchy and add them separately; no term-level comparison attempted.
+
+## Machinery consistency checks  [DONE, VERIFIED]  (`check_los_machinery.py`, `machinery_run.log`)
+T1 endpoint machinery: for the boundary function B = ln(-u.k) - ln That, [B]_e^o computed by shifting the endpoints equals the
+   ray integral of its total derivative plus the endpoint corrections of the integral (after int D Bq -> Bq(o) - Bq(e)), identically
+   (no equations of motion), orders 1, 2, 3: ZERO.
+T2 direct vs shear, EXPANDED (the "term by term" comparison of 1(a) at the level of the assembled line-of-sight expressions):
+   Lambda^direct - Lambda^shear = assemble(R), R = position-expanded [-Gam^0_kk + sigma_kk/(-u.k) + theta g_kk/(3(-u.k))] + D(Bq).
+   Every piece (ray / obs / emi) at orders 1, 2 AND 3 is ZERO modulo the conservation rules and their derivatives (112 / 802 ray terms
+   before reduction at orders 2 / 3). This confirms both the exact formula and that the two assembled forms in L_terms.pkl are equivalent.
+T3 exact lower-index identity -Gam^0_kk = -(1/2) d_eta g_kk/(1+2Psi-omega.k) - D ln(1+2Psi-omega.k): ZERO, orders 0-3 (basis of 4c).
+(A first version of T1-T3 failed because the tests, not the deliverable, double-applied the position expansion / applied D to an
+ unexpanded quantity; fixed. A factor-2 slip in the stored deta_e2 was caught by the dilation check and fixed before the final run.)
+
+## STATUS TABLE
+| item | status |
+|---|---|
+| 1a kinematic identity, radiation identities, direct-vs-exact (integrand level, free k, orders 1-3) | DONE, VERIFIED |
+| 1a direct-vs-exact at the assembled/expanded level (T2, orders 1-3) | DONE, VERIFIED |
+| 1b S_1 -> standard linear formula incl. observer terms | DONE, VERIFIED |
+| 2 ray: triad (2nd order explicit), direction map k_init to 2nd order, G1, G2, functionals k1,Dx1,k2,Dx2 | DONE, VERIFIED (orthonormality, null) |
+| 3 S through 3rd order: L1, L2, L3 named terms, pickle; emission shift to 2nd order; m_n, Theta_n | DONE |
+| 4a linear | DONE (= 1b) |
+| 4b dilation incl. clock and emission surface, 2nd-order constants | DONE, VERIFIED |
+| 4c literature structure (Boubekeur et al.) | DONE (agreement; differences = their MD assumptions) |
+| not done | integration by parts of L2/L3 into "standard" SW/ISW/Doppler form (available for L2 via the direct form); imposing d_i om_i = 0 = d_i h_ij, |n|=1 in the general-n pickle; vorticity check (needs dynamics, C1) |
+Files: ser.py fields.py check_identity.py ray.py los.py check_los_machinery.py check_dilation.py lit_compare.py, caches/pickles
+(ray_cache.pkl, L_terms.pkl, *_results.pkl), logs (*_run.log). Load L_terms.pkl with python3 after `import sympy` (cwd = C2_observable, needs no modules).
