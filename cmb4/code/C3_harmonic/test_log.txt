@@ -1,0 +1,41 @@
+== type A (Rayleigh / helicity rules, C11 normalisation)
+  scalar rule s=0 x=5.79                                  max abs err = 3.32e-14
+  scalar rule s=1 x=5.79                                  max abs err = 1.27e-14
+  scalar rule s=2 x=5.79                                  max abs err = 3.91e-15
+  scalar rule s=3 x=5.79                                  max abs err = 2.45e-15
+  scalar rule s=0 x=3.64                                  max abs err = 3.71e-14
+  scalar rule s=1 x=3.64                                  max abs err = 1.88e-14
+  scalar rule s=2 x=3.64                                  max abs err = 8.45e-15
+  scalar rule s=3 x=3.64                                  max abs err = 4.62e-15
+  helicity rule lam=+1 (k-frame)                          max abs err = 4.22e-15
+  helicity rule lam=-1 (k-frame)                          max abs err = 4.22e-15
+  helicity rule lam=+2 (k-frame)                          max abs err = 3.11e-15
+  helicity rule lam=-2 (k-frame)                          max abs err = 3.11e-15
+  helicity lam=+1 random frame, D-matrix form             max abs err = 2.39e-14
+  helicity lam=+1 random frame, spin-weighted form        max abs err = 2.42e-14
+  helicity lam=-1 random frame, D-matrix form             max abs err = 2.02e-14
+  helicity lam=-1 random frame, spin-weighted form        max abs err = 2.00e-14
+  helicity lam=+2 random frame, D-matrix form             max abs err = 1.50e-14
+  helicity lam=+2 random frame, spin-weighted form        max abs err = 1.50e-14
+  sYlm(s=0) == Y_lm                                       max abs err = 1.60e-16
+  C11 normalisation (monochromatic, real-space route) max abs err = 3.93e-14
+== type B (products, Wick pairings, monopole terms)
+  type-B C_l, 3j formula vs real-space Wick+Legendre (plain product, correlated maps) max rel err = 1.79e-12
+  type-B C_l, 3j formula vs real-space Wick+Legendre (gradient product, correlated maps) max rel err = 2.63e-12
+  type-B C_l, 3j vs real-space (plain product, uncorrelated)                       max rel err = 1.76e-12
+  type-B C_l, 3j vs real-space (gradient product, uncorrelated)                    max rel err = 2.64e-12
+  MC plain product (l=1..4), nreal=400                                   max rel dev = 0.066  (expect ~ few/sqrt(nreal))
+  MC gradient product (l=1..4), nreal=400                                max rel dev = 0.041  (expect ~ few/sqrt(nreal))
+  MC <A>.B  (monopole x map) (l=1..4), nreal=400                         max rel dev = 0.045  (expect ~ few/sqrt(nreal))
+  MC <(AB)_lm (<A> b_lm)^*> (l=1..4), nreal=400                          max rel dev = 0.031  (expect ~ few/sqrt(nreal))
+== lensing control case (Hu 2000) and type-D identity
+  1/4 C^(22) from (B1,w_grad)  ==  sum F^2/(2l+1) C^phi C^T (+corr.)   [exact]          max rel dev = 2.49e-16
+  MC: <|delta1_lm|^2>  vs  1/4 C^(22) (Hu 22-term + corr.)  (l=1..4, nreal=400)         max rel dev = 2.30e-02
+  MC: 2Re<Theta delta2*>  vs  -l(l+1) R C_l  (Hu 13-term)   (l=1..4, nreal=400)         max rel dev = 4.62e-02
+  MC: sanity, unlensed C_l recovered                                                    max rel dev = 2.14e-02
+  type-D: Fourier (delta-nn) dX dY  ==  (1/chi1chi2) w_grad Gaunt shell-map route       max rel err = 2.94e-12
+== type C (convolution kernels): matrix elements, isotropy reduction, C22 vs type-B, C x B
+  type-C K_{2,lm} finite 3j-sum vs direct n-quadrature (trial 0)                   max err = 7.15e-15
+  sum_m |K_lm|^2 : random frame vs Khat=z frame (isotropy reduction)               max err = 8.85e-16
+  type-C K_{2,lm} finite 3j-sum vs direct n-quadrature (trial 1)                   max err = 1.13e-14
+  sum_m |K_lm|^2 : random frame vs Khat=z frame (isotropy reduction)               max err = 8.65e-15

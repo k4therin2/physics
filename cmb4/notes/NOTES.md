@@ -41,3 +41,11 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
 - [t5] V1 referee: exact formula CONFIRMED (Kasner+radiation test to 1e-31; linear SW reproduced). Caveats: needs both P=rho/3 and
   rho∝T^4; e = last crossing of T=T_*; C^(22), Re C^(13) separately frame-dependent, only 1/4C22+1/3ReC13 invariant -> compute all
   orders in ONE frame (canonical triad). report_V1.md.
+- [t6] C1 DONE (report_C1.md; code C1_einstein, loader kernels_api.load()). Engine verified (Bianchi to eps^3; exact dilation family
+  Psi=(A^4-1)/2, Phi=(1-A^2B^2)/2, delta=A^-4-1, zeta=ln B solves eqs). 1st order = lead's. 2nd order: tensor source = Kohri-Terada
+  (PASS); omega2 ALGEBRAIC via relativistic Kelvin curl[(1+delta_T)u_i]=0: K_om=(2i/k^2)[eta(q^2-p^2)TT+eta^2(q^2 T_q T'_p - p^2 T_p T'_q)];
+  Phi2 superhorizon kernel = Pitrou-Uzan-Bernardeau 3.12 (PASS; BMR II 7.30 differs by their velocity quadrupole evaluation).
+  3rd order: contracted kernels K3c (Q3,S00,S0z,SPhi) + 3rd-order IC amplitude C3 (squeezed limit = dilation family PASS).
+  CAVEAT: scalar k=0 tadpoles (<Phi2>,<Psi2>) are residual zero-mode gauge; C1 used angle-averaged k->0 limit; must drop out of the
+  observable (dilation check in assembly). Green's integrals left as integrals: G_Phi=[u1(eta')u2(eta)-u1(eta)u2(eta')]/W(eta'),
+  u1=(sin x - x cos x)/x^3, u2=(cos x + x sin x)/x^3, W=-3sqrt3/(eta^4 k^3); G_h=(eta'/eta) sin(k(eta-eta'))/k.

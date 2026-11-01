@@ -13,3 +13,19 @@
 [eps=+0.0300] forward: 590 steps, t_init=1.000000313921e-02, t_o=8.0735363383062 (t_obar=8.0), T_o=1.2337260064596e-01; constraints at t_o: |H|=9.14e-14 rel=4.50e-10 |M|=6.45e-12 rel=6.62e-10
 [eps=+0.0300] rays: 54 steps back; |alpha_e - t_*|max=2.7e-15; null-cond E mismatch max=1.3e-14; max|T_obs/T_o - exp(-S)|=1.74e-14; Theta rms=2.187e-02
    done eps=+0.030  (61s)
+[eps=-0.0300] forward: 865 steps, t_init=9.999996460561e-03, t_o=7.9205450950427 (t_obar=8.0), T_o=1.2663268923139e-01; constraints at t_o: |H|=1.11e-13 rel=5.16e-10 |M|=4.68e-12 rel=5.04e-10
+[eps=-0.0300] rays: 53 steps back; |alpha_e - t_*|max=1.1e-15; null-cond E mismatch max=1.3e-14; max|T_obs/T_o - exp(-S)|=2.00e-14; Theta rms=2.076e-02
+   done eps=-0.030  (66s)
+[eps=+0.0400] forward: 469 steps, t_init=1.000000410273e-02, t_o=8.0968969542338 (t_obar=8.0), T_o=1.2285114900092e-01; constraints at t_o: |H|=1.59e-13 rel=5.90e-10 |M|=6.93e-12 rel=5.28e-10
+[eps=+0.0400] rays: 56 steps back; |alpha_e - t_*|max=8.9e-16; null-cond E mismatch max=8.9e-15; max|T_obs/T_o - exp(-S)|=1.49e-14; Theta rms=2.939e-02
+   done eps=+0.040  (72s)
+[eps=-0.0400] forward: 503 steps, t_init=9.999995185416e-03, t_o=7.8925824446877 (t_obar=8.0), T_o=1.2715527159082e-01; constraints at t_o: |H|=7.38e-14 rel=2.54e-10 |M|=5.18e-12 rel=4.19e-10
+[eps=-0.0400] rays: 55 steps back; |alpha_e - t_*|max=8.9e-16; null-cond E mismatch max=1.4e-14; max|T_obs/T_o - exp(-S)|=2.07e-14; Theta rms=2.743e-02
+   done eps=-0.040  (77s)
+[eps=+0.0500] forward: 423 steps, t_init=1.000000502687e-02, t_o=8.1197383250952 (t_obar=8.0), T_o=1.2234614812291e-01; constraints at t_o: |H|=1.03e-13 rel=3.07e-10 |M|=4.61e-12 rel=2.78e-10
+[eps=+0.0500] rays: 57 steps back; |alpha_e - t_*|max=1.1e-15; null-cond E mismatch max=2.0e-14; max|T_obs/T_o - exp(-S)|=1.93e-14; Theta rms=3.702e-02
+   done eps=+0.050  (83s)
+[eps=-0.0500] forward: 417 steps, t_init=9.999993860196e-03, t_o=7.8638262182788 (t_obar=8.0), T_o=1.2765792357514e-01; constraints at t_o: |H|=1.44e-13 rel=3.91e-10 |M|=6.86e-12 rel=4.46e-10
+[eps=-0.0500] rays: 57 steps back; |alpha_e - t_*|max=8.9e-16; null-cond E mismatch max=2.5e-14; max|T_obs/T_o - exp(-S)|=4.02e-14; Theta rms=3.395e-02
+   done eps=-0.050  (88s)
+[eps=+0.0600] forward: 359 steps, t_init=1.000000591280e-02, t_o=8.1420925597397 (t_obar=8.0), T_o=1.2186063083625e-01; constraints at t_o: |H|=1.48e-13 rel=3.68e-10 |M|=5.69e-12 rel=2.82e-10
