@@ -43,3 +43,7 @@
 [eps=+0.1000] forward: 324 steps, t_init=1.000000909701e-02, t_o=8.2272219595038 (t_obar=8.0), T_o=1.2016164751884e-01; constraints at t_o: |H|=1.90e-13 rel=2.78e-10 |M|=8.37e-12 rel=2.38e-10
 [eps=+0.1000] rays: 69 steps back; |alpha_e - t_*|max=8.9e-16; null-cond E mismatch max=7.2e-14; max|T_obs/T_o - exp(-S)|=6.81e-14; Theta rms=7.660e-02
    done eps=+0.100  (168s)
+[eps=-0.1000] forward: 311 steps, t_init=9.999986428972e-03, t_o=7.7071999858858 (t_obar=8.0), T_o=1.2966216852366e-01; constraints at t_o: |H|=8.51e-14 rel=1.07e-10 |M|=4.05e-12 rel=1.34e-10
+[eps=-0.1000] rays: 67 steps back; |alpha_e - t_*|max=1.3e-15; null-cond E mismatch max=3.4e-14; max|T_obs/T_o - exp(-S)|=4.53e-14; Theta rms=6.446e-02
+   done eps=-0.100  (172s)
+saved output/scan_to8_xo0.npz total 172s

@@ -1,0 +1,40 @@
+=== to4_xo0 ===  (rms over sphere; spread = max over fit subsets of max|diff| vs subset D: e<=0.08, 7pts, 6terms)
+Th1 = c1                     rms=6.503348e-02  max|.|=9.907169e-02  spread=2.54e-10  a_l0(l=0..6)= [ 9.99444066e-15 -1.16792276e-12  2.07525310e-01 -1.31546122e-12
+ -1.00223283e-01 -7.10350446e-13  6.01217327e-03]
+      A: e<=0.04, 4pts, 4terms           max|diff|=4.98e-12
+      B: e<=0.06, 6pts, 5terms           max|diff|=8.85e-13
+      C: e<=0.10, 8pts, 6terms           max|diff|=3.95e-12
+      D: e<=0.08, 7pts, 6terms           max|diff|=0.00e+00
+      E: e=.02-.08 even, 4pts,4terms     max|diff|=2.54e-10
+      F: e<=0.05, 5pts, 4terms           max|diff|=6.82e-12
+Th2 = 2 c2                   rms=3.954511e-01  max|.|=1.257833e+00  spread=2.76e-09  a_l0(l=0..6)= [ 1.22630157e-11 -6.27057584e-10 -1.35721654e+00 -9.82372436e-10
+ -2.29950877e-01 -1.01118747e-09 -2.59942061e-01]
+      A: e<=0.04, 4pts, 4terms           max|diff|=9.74e-10
+      B: e<=0.06, 6pts, 5terms           max|diff|=2.21e-10
+      C: e<=0.10, 8pts, 6terms           max|diff|=9.44e-10
+      D: e<=0.08, 7pts, 6terms           max|diff|=0.00e+00
+      E: e=.02-.08 even, 4pts,4terms     max|diff|=2.76e-09
+      F: e<=0.05, 5pts, 4terms           max|diff|=5.56e-10
+Th3 = 6 c3                   rms=1.643975e+00  max|.|=6.816025e+00  spread=5.43e-06  a_l0(l=0..6)= [ 1.04452584e-10  2.15179824e-08 -4.83306275e+00  2.38730829e-08
+ -3.06351070e+00  1.66514227e-08 -5.91984391e-01]
+      A: e<=0.04, 4pts, 4terms           max|diff|=2.98e-07
+      B: e<=0.06, 6pts, 5terms           max|diff|=5.09e-08
+      C: e<=0.10, 8pts, 6terms           max|diff|=1.87e-07
+      D: e<=0.08, 7pts, 6terms           max|diff|=0.00e+00
+      E: e=.02-.08 even, 4pts,4terms     max|diff|=5.43e-06
+      F: e<=0.05, 5pts, 4terms           max|diff|=3.98e-07
+Th4 = 24 c4 (indicative)     rms=1.377222e+01  max|.|=2.288889e+01  spread=1.18e-04  a_l0(l=0..6)= [-4.08511070e-07  3.08481900e-05  4.76333651e+01  4.43674689e-05
+ -9.18897399e+00  4.26089262e-05 -1.27930965e+00]
+      A: e<=0.04, 4pts, 4terms           max|diff|=1.04e-04
+      B: e<=0.06, 6pts, 5terms           max|diff|=2.52e-05
+      C: e<=0.10, 8pts, 6terms           max|diff|=8.97e-05
+      D: e<=0.08, 7pts, 6terms           max|diff|=0.00e+00
+      E: e=.02-.08 even, 4pts,4terms     max|diff|=1.18e-04
+      F: e<=0.05, 5pts, 4terms           max|diff|=5.89e-05
+per-run: eps, t_o, T_o, monopole, dipole a_10, exact-formula residual, |H|rel, |M|rel
+  +0.010  t_o=4.0122085857588  T_o=2.5171047995250e-01  <T_obs>=2.5161968395567e-01  a10=-2.91e-14  expS=6.7e-15  H=1.7e-10 M=1.8e-10
+  -0.010  t_o=3.9876261190216  T_o=2.4828016030920e-01  <T_obs>=2.4836097444923e-01  a10=-1.30e-14  expS=3.7e-15  H=8.1e-11 M=2.3e-10
+  +0.020  t_o=4.0242478064900  T_o=2.5341057910944e-01  <T_obs>=2.5321891633453e-01  a10=+1.48e-15  expS=5.8e-15  H=4.3e-11 M=6.4e-11
+  -0.020  t_o=3.9750911126737  T_o=2.4655198761837e-01  <T_obs>=2.4670374892146e-01  a10=+1.97e-14  expS=6.4e-15  H=5.5e-11 M=6.3e-11
+  +0.030  t_o=4.0361137010120  T_o=2.5509928546407e-01  <T_obs>=2.5479662362180e-01  a10=+7.61e-15  expS=4.2e-15  H=1.3e-10 M=3.4e-10
+  -0.030  t_o=3.9623992421945  T_o=2.4481651106137e-01  <T_obs>=2.4502949176515e-01  a10=+1.93e-14  expS=6.4e-15  H=2.1e-10 M=2.1e-10

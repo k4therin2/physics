@@ -58,14 +58,15 @@ for i in range(3):
     Drep[sp.Derivative(Dxfun[2][i], eta)] = kfun[2][i]
 def Dtot_expr(e):
     r = sp.diff(e, eta) - sum(n[i]*sp.diff(e, X[i+1]) for i in range(3))
-    return sp.expand(r.subs(Drep))
-def Dtot(Q): return Ser([Dtot_expr(t) for t in Q.c])
+    return sp.expand(r.xreplace(Drep))
+def Dtot(Q, upto=N): return Ser([Dtot_expr(t) if i <= upto else sp.Integer(0) for i, t in enumerate(Q.c)])
+def trunc(Q, upto): return Ser([t if i <= upto else sp.Integer(0) for i, t in enumerate(Q.c)])
 
 def shift_eta(Q, dser):
     """R(eta + deta) = sum_m deta^m/m! Dtot^m R, deta = dser (Ser, O(eps))."""
     out = Q; term = Q; p = Ser.const(1)
     for m in range(1, N+1):
-        term = Dtot(term); p = p*dser
+        term = Dtot(term, upto=N-m); p = p*dser
         add = term*p*sp.Rational(1, sp.factorial(m))
         if add.iszero(): break
         out = out + add
@@ -84,8 +85,8 @@ sub_emi_fun = {}
 for i in range(3):
     for f_ in (kfun[1][i], kfun[2][i], Dxfun[1][i], Dxfun[2][i]):
         sub_emi_fun[f_] = f_.subs(eta, eta_s)
-def at_obs(e): return sp.expand(sp.expand(e).subs(sub_obs_fun))
-def at_emi(e): return sp.expand(sp.expand(e).subs(sub_emi_fun))
+def at_obs(e): return sp.expand(sp.expand(e).xreplace(sub_obs_fun))
+def at_emi(e): return sp.expand(sp.expand(e).xreplace(sub_emi_fun))
 
 # ---------- emission time shift: 1 + dT(eta_e, x(eta_e)) = eta_e/eta_* ----------
 RT = pos_expand(dT)
@@ -103,7 +104,7 @@ print('emission shifts: deta_e1 =', emission[deta_e1]); print('   deta_e2 =', em
 dser_o = Ser([0, deta_o1, deta_o2/2, 0])
 def assemble(I, B=None):
     """S = int_{eta_e}^{eta_o} I deta + [B]_e^o on the perturbed ray. Returns dict order-> list of (where, expr)."""
-    Fq = pos_expand(I)
+    Fq = pos_expand(I); print('   pos_expand done, sizes', [len(sp.Add.make_args(c)) for c in Fq.c], 't=%.1f' % (time.time()-t0), flush=True)
     pieces = {1: [], 2: [], 3: []}
     for m in range(N+1):
         if m == 0: continue
@@ -113,7 +114,7 @@ def assemble(I, B=None):
         term = Fq; p = Ser.const(1)
         for j in range(1, N+1):
             p = p*dser
-            if j > 1: term = Dtot(term)
+            term = Dtot(term, upto=N-j) if j > 1 else trunc(term, N-j)
             add = term*p*sp.Rational(1, sp.factorial(j))
             for m in range(1, N+1):
                 if add.c[m] != 0: pieces[m].append((where, sign*ev(add.c[m])))

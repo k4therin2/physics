@@ -1,0 +1,33 @@
+=== to8_xo0_ic4 ===  (rms over sphere; spread = max over fit subsets of max|diff| vs subset D: e<=0.08, 7pts, 6terms)
+Th1 = c1                     rms=7.111402e-01  max|.|=1.076257e+00  spread=1.26e-07  a_l0(l=0..6)= [-7.58206070e-15 -2.27011795e-12 -2.18472036e+00 -3.53513032e-12
+  1.25524563e+00 -6.15489067e-12 -4.79734774e-02]
+      A: e<=0.04, 4pts, 4terms           max|diff|=5.57e-10
+      B: e<=0.06, 6pts, 5terms           max|diff|=1.85e-10
+      C: e<=0.10, 8pts, 6terms           max|diff|=1.99e-10
+      D: e<=0.08, 7pts, 6terms           max|diff|=0.00e+00
+      E: e=.02-.08 even, 4pts,4terms     max|diff|=1.26e-07
+      F: e<=0.05, 5pts, 4terms           max|diff|=3.55e-09
+Th2 = 2 c2                   rms=1.309367e+00  max|.|=2.707557e+00  spread=1.13e-06  a_l0(l=0..6)= [ 6.96312011e-12 -5.35777445e-10 -4.22249422e+00 -9.76538535e-10
+  1.37854398e+00 -1.66959297e-09 -1.25953828e+00]
+      A: e<=0.04, 4pts, 4terms           max|diff|=9.80e-09
+      B: e<=0.06, 6pts, 5terms           max|diff|=2.28e-09
+      C: e<=0.10, 8pts, 6terms           max|diff|=1.09e-08
+      D: e<=0.08, 7pts, 6terms           max|diff|=0.00e+00
+      E: e=.02-.08 even, 4pts,4terms     max|diff|=1.13e-06
+      F: e<=0.05, 5pts, 4terms           max|diff|=3.23e-08
+Th3 = 6 c3                   rms=1.420806e+01  max|.|=3.722716e+01  spread=2.69e-03  a_l0(l=0..6)= [ 5.41557744e-10 -1.29514222e-08 -1.28899875e+01 -6.41945295e-09
+ -4.70709065e+01  4.31469382e-08  6.29051118e+00]
+      A: e<=0.04, 4pts, 4terms           max|diff|=4.77e-05
+      B: e<=0.06, 6pts, 5terms           max|diff|=1.17e-05
+      C: e<=0.10, 8pts, 6terms           max|diff|=9.45e-06
+      D: e<=0.08, 7pts, 6terms           max|diff|=0.00e+00
+      E: e=.02-.08 even, 4pts,4terms     max|diff|=2.69e-03
+      F: e<=0.05, 5pts, 4terms           max|diff|=2.06e-04
+Th4 = 24 c4 (indicative)     rms=8.550726e+01  max|.|=2.843893e+02  spread=4.84e-02  a_l0(l=0..6)= [-2.68355617e-07  2.96388581e-05  2.02116508e+02  4.90358497e-05
+  1.53777605e+02  7.89969016e-05  7.82323855e+01]
+      A: e<=0.04, 4pts, 4terms           max|diff|=1.07e-03
+      B: e<=0.06, 6pts, 5terms           max|diff|=2.72e-04
+      C: e<=0.10, 8pts, 6terms           max|diff|=1.03e-03
+      D: e<=0.08, 7pts, 6terms           max|diff|=0.00e+00
+      E: e=.02-.08 even, 4pts,4terms     max|diff|=4.84e-02
+      F: e<=0.05, 5pts, 4terms           max|diff|=3.75e-03
