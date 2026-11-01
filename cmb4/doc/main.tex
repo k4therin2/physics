@@ -1,0 +1,75 @@
+% main.tex -- CMB temperature power spectrum through fourth order, radiation-only GR.
+% Structure: every section lives in its own file (sec_*.tex) so that later agents can
+% replace the placeholder files without touching the others.  Compile: pdflatex main (x2).
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{breqn}          % dmath for the machine-generated kernels in app_kernels.tex
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black]{hyperref}
+
+\input{macros}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{The CMB temperature angular power spectrum through fourth order\\
+in a radiation-only universe: exact observable, initial data, perturbative kernels\\
+and harmonic machinery}
+\author{(collaborative derivation; see the verification ledger, App.~\ref{app:ledger})}
+\date{Working draft, \today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We set up the calculation of the observed temperature angular power spectrum
+$C_\ell=\eps^2C_\ell^{(11)}+\eps^4[\tfrac14C_\ell^{(22)}+\tfrac13\Re C_\ell^{(13)}]+O(\eps^6)$
+in a spatially flat, radiation-only universe governed by general relativity with $\Lambda=0$,
+for photons emitted on the physical hypersurface $T_{\rm phys}=T_*$ and observed by a tagged
+fluid element at fixed proper time.  The settled parts are presented here: (i)~an exact,
+non-perturbative reformulation of the measurement, $T_{\rm obs}(\nhat)=T_o\,e^{-S(\nhat)}$ with
+$S$ the fluid shear integrated along the ray, which contains all Sachs--Wolfe, Doppler,
+integrated Sachs--Wolfe, lensing, time-delay, emission-surface and observer physics;
+(ii)~the definition of the Gaussian non-linear primordial variable and the construction of
+regular initial data satisfying the constraints at every order; (iii)~the perturbative solution
+of the Einstein--fluid system through third order in Poisson gauge (closed first-order transfer
+functions, second-order scalar/vector/tensor kernels and Green's functions, third-order
+contracted kernels); (iv)~the exact normalisation bookkeeping and the harmonic-space machinery
+needed to turn direction-space kernels into $C_\ell^{(22)}$ and $C_\ell^{(13)}$.  Sections that
+assemble the explicit second- and third-order maps, the final $C_\ell$, the checks and the
+monochromatic reduction are marked as placeholders to be supplied.  Every result quoted
+here has been verified symbolically or numerically; the verification ledger lists each check.
+\end{abstract}
+
+\tableofcontents
+
+% ---------------------------------------------------------------- settled sections
+\input{sec_setup}          % 1. Setup and conventions
+\input{sec_observable}     % 2. The exact observable
+\input{sec_primordial}     % 3. Primordial variable and initial data
+\input{sec_einstein}       % 4. Perturbative solution of the Einstein + fluid equations
+\input{sec_harmonic}       % 5. Normalisation, loop structure, harmonic machinery
+
+% ---------------------------------------------------------------- placeholders (to be supplied)
+\input{sec_map2}           % 6. Second-order map          [PLACEHOLDER]
+\input{sec_map3}           % 7. Third-order map           [PLACEHOLDER]
+\input{sec_assembly}       % 8. Assembly of C_l           [PLACEHOLDER]
+\input{sec_checks}         % 9. Checks                    [PLACEHOLDER]
+\input{sec_mono}           % 10. Monochromatic result     [PLACEHOLDER]
+\input{sec_unresolved}     % 11. Unresolved steps         [PLACEHOLDER]
+
+% ---------------------------------------------------------------- appendices
+\appendix
+\input{app_kernels}        % A. Explicit kernels (machine generated, C1)
+\input{app_ledger}         % B. Verification ledger
+
+\input{refs}               % References (thebibliography)
+\end{document}

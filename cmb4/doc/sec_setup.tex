@@ -1,0 +1,105 @@
+\section{Setup and conventions}
+\label{sec:setup}
+
+\paragraph{Model.}
+Spatially flat FRW background, general relativity with $\Lambda=0$, signature $(-+++)$, and a
+single perfect radiation fluid
+\begin{equation}
+T^{\mu\nu}=(\rho+P)u^\mu u^\nu+P g^{\mu\nu},\qquad P=\rho/3,\qquad \rho=\alpha\,\Tphys^4,
+\label{eq:fluid}
+\end{equation}
+with $\alpha$ constant and $u^\mu u_\mu=-1$.  The second relation \emph{defines} the physical
+temperature $\Tphys$; no chemical potential or particle-number assumption is made.  Test photons
+are emitted isotropically with a Planck spectrum of temperature $T_*$ on the hypersurface
+$\Tphys=T_*$, then propagate collisionlessly without backreaction.
+
+\paragraph{Background and units.}
+Conformal time $\eta$, $\dd s^2=a^2(\eta)\,\hat g_{\mu\nu}\dd x^\mu\dd x^\nu$.  In radiation
+domination $a\propto\eta$; we fix the normalisation $a(\eta)=\eta$, so that $\mathcal H\equiv a'/a=1/\eta$
+and the Friedmann equation $3\mathcal H^2=8\pi G a^2\bar\rho$ reads
+\begin{equation}
+8\pi G\,a^4\bar\rho=3,\qquad\text{i.e.}\qquad 8\pi G\,\bar\rho=3/\eta^4 .
+\label{eq:friedmann}
+\end{equation}
+Background temperature $\bar T(\eta)=\bar T_i\,\eta_i/\eta$.  The \emph{conformal} fluid variables
+\begin{equation}
+\hat\rho\equiv a^4\rho,\qquad \hat P\equiv a^4P,\qquad \hat T\equiv a\,\Tphys,\qquad
+\hat u^\mu\equiv a\,u^\mu\quad(\hat g_{\mu\nu}\hat u^\mu\hat u^\nu=-1),
+\label{eq:hatvars}
+\end{equation}
+are constant in the background ($\hat{\bar\rho}=3/8\pi G$, $\hat{\bar T}=$ const) and are the natural
+variables of Sec.~\ref{sec:observable}.
+
+\paragraph{Fourier conventions and statistics.}
+\begin{equation}
+f(\vx)=\int\!\frac{\dd^3k}{(2\pi)^3}\,e^{i\vk\cdot\vx}f_{\vk},\qquad
+\langle\zeta_{\vk}\zeta_{\vk'}\rangle=(2\pi)^3\delta^3(\vk+\vk')\,P(k),\qquad
+\langle\zeta^2(\vx)\rangle=\int\!\frac{\dd^3k}{(2\pi)^3}P(k)=\frac1{2\pi^2}\int k^2\dd k\,P(k).
+\label{eq:fourier}
+\end{equation}
+Products in position space become convolutions, $ (fg)_{\vk}=\int\dd^3q/(2\pi)^3\,f_{\vq}\,g_{\vk-\vq}$,
+and $\partial_i\to ik_i$, $\lap\to-k^2$, $\ilap\to-1/k^2$.  $\langle\cdot\rangle$ denotes the ensemble
+average over the Gaussian field $\zeta_1$ (Sec.~\ref{sec:primordial}); $\sky{\cdot}$ denotes the
+solid-angle average over the observer's sky.
+
+\paragraph{Perturbative expansion.}
+Every perturbation $X\in\{\Psi,\Phi,\omega_i,h_{ij},\delta,v^i,\ldots\}$ is expanded as
+\begin{equation}
+X=\eps X_1+\tfrac{\eps^2}{2}X_2+\tfrac{\eps^3}{6}X_3+O(\eps^4),
+\label{eq:expansion}
+\end{equation}
+and the same convention is used for every derived quantity ($S$, $\Lambda$, $m$, $\Theta$, $\zeta_{\rm nl}$).
+For an equation $E[X]=0$ we write $E^{(n)}\equiv n!\,[\eps^n]E$, so that $X_n$ enters $E^{(n)}$ linearly with
+unit weight.  The bookkeeping parameter $\eps$ is the amplitude of $\zeta_1$; the final expansion
+parameter is $\eps^2\langle\zeta_1^2\rangle$.  Products of lower-order quantities are never dropped.
+
+\paragraph{Poisson gauge.}
+The conformal metric is parametrised \emph{linearly} (no exponentials),
+\begin{equation}
+\hat g_{00}=-(1+2\Psi),\qquad \hat g_{0i}=\omega_i,\qquad \hat g_{ij}=(1-2\Phi)\delta_{ij}+h_{ij},
+\qquad \partial_i\omega_i=0,\quad h_{ii}=0=\partial_ih_{ij},
+\label{eq:poisson}
+\end{equation}
+with $\omega_i$ and $h_{ij}$ starting at order $\eps^2$ (no primordial vector or tensor modes,
+Sec.~\ref{sec:primordial}).  Indices on $\omega_i$, $h_{ij}$, $v^i$ are raised and lowered with $\delta_{ij}$.
+The fluid is parametrised by
+\begin{equation}
+\rho=\bar\rho(\eta)\,(1+\delta),\qquad 1+\delta_T\equiv(1+\delta)^{1/4}=\hat T/\hat{\bar T},\qquad
+\hat u^\mu=\hat u^0\,(1,v^i),
+\label{eq:fluidvars}
+\end{equation}
+with $\hat u^0$ fixed by the normalisation $\hat g_{\mu\nu}\hat u^\mu\hat u^\nu=-1$ as a series in $\eps$.
+Irrotationality of $v^i$ is \emph{not} imposed (Sec.~\ref{sec:second}).  The Einstein equations are
+$E_{\mu\nu}\equiv G_{\mu\nu}[g]-8\pi G\,T_{\mu\nu}=0$ with $g=\eta^2\hat g$ and
+$8\pi G\,T_{\mu\nu}=(3/\eta^4)(1+\delta)[\tfrac43u_\mu u_\nu+\tfrac13g_{\mu\nu}]$; the conservation laws
+$\nabla_\mu T^{\mu\nu}=0$ are implied and are used as checks.
+Dictionary to the exponential parametrisation of \cite{BMR1,BMR2,MZ}
+($\hat g_{00}=-e^{2\Phi_{\rm e}}$, $\hat g_{ij}=e^{-2\Psi_{\rm e}}\delta_{ij}+\ldots$, note the swapped names):
+$\Phi_{\rm e}^{(2)}=\Psi_2-2\Psi_1^2$, $\Psi_{\rm e}^{(2)}=\Phi_2+2\Phi_1^2$ at second order.
+
+\paragraph{Directions, rays and times.}
+$\nhat$ is the direction in which the observer looks (unit vector with respect to the observer's
+orthonormal triad, Sec.~\ref{sec:observer}); the photon propagation direction at the observer is
+$\ehat=-\nhat$.  The background ray through the observer event $(\bar\eta_o,\bar\vx_o)$ is
+\begin{equation}
+\bar\vx(\eta)=\bar\vx_o+\nhat\,\chi(\eta),\qquad \chi(\eta)\equiv\bar\eta_o-\eta,\qquad
+\frac{\dd\bar\vx}{\dd\eta}=-\nhat,
+\label{eq:bgray}
+\end{equation}
+and the total derivative along it acting on a field is $D\equiv\partial_\eta-\nhat\cdot\nabla$.  Four times are
+kept distinct: the \emph{initial} time $\eta_i$ at which initial data are posed
+($\bar T(\eta_i)=T_i$); the background \emph{emission} time $\eta_*$ defined by $\bar T(\eta_*)=T_*$, and the
+actual emission time $\eta_e(\nhat)=\eta_*+\delta\eta_e(\nhat)$ along each ray; the \emph{observation} time
+$\eta_o=\bar\eta_o+\delta\eta_o$ of the observer (direction independent, fixed by proper time); and the
+dummy time $\eta$ along the ray.  The ordering is $0<\eta_i<\eta_*<\bar\eta_o$.
+The angular quantities are
+\begin{equation}
+a^{(r)}_{\ell m}=\int\dd\Omega_{\nhat}\,Y^*_{\ell m}(\nhat)\,\Theta^{(r)}(\nhat),\qquad
+C^{(rs)}_\ell=\frac1{2\ell+1}\sum_{m=-\ell}^{\ell}\big\langle a^{(r)}_{\ell m}a^{(s)*}_{\ell m}\big\rangle_c ,
+\label{eq:cl_def}
+\end{equation}
+with $Y_{\ell m}$ carrying the Condon--Shortley phase, and the target is
+\begin{equation}
+C_\ell=\eps^2C^{(11)}_\ell+\eps^4\Big[\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell\Big]+O(\eps^6),\qquad \ell\ge2 .
+\label{eq:cl_target}
+\end{equation}
