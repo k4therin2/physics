@@ -25,3 +25,19 @@ All fields X = eps X1 + eps^2 X2/2 + eps^3 X3/6; the engine stores the coefficie
   E_ii: [9, 40, 147], E_ij (i!=j): [2, 19, 89] at orders [1,2,3].  Runtime < 1 s.
 
 ## Milestone 2 — FIRST ORDER (status: in progress)
+Status: COMPLETE, verified (`first_order.py`, outputs `first_order.pkl/.tex`).  Frame k = k zhat.
+- Traceless-scalar ij:  -k^2 (Phi1 - Psi1) = 0  => Psi1 = Phi1 (no anisotropic stress).
+- 0i transverse: 4 v1_{x,y}/eta^2 = 0 => no transverse velocity; 0i longitudinal: v1_i = d_i V1,
+  V1 = -(eta^2/2)(Phi1' + Psi1/eta)  (irrotational, curl v1 = 0 identically).
+- 00: delta1 = -(2/3) eta^2 k^2 Phi1 - 2 eta Phi1' - 2 Psi1.
+- trace ij (after eliminating delta1, Psi1):  Phi1'' + (4/eta) Phi1' + (k^2/3) Phi1 = 0   [VERIFIED].
+- Conservation equations (nu = 0..3) vanish identically on the solution of the Einstein equations [VERIFIED].
+- Regular solution, normalised with zeta_1 = lim (delta_T1 - Phi1), x = k eta/sqrt3:
+    T_Phi(x)    = -2 (sin x - x cos x)/x^3                      -> -2/3
+    T_delta(x)  = -4 cos x + 8 sin x/x + 8 cos x/x^2 - 8 sin x/x^3   (delta1 = zeta T_delta)
+    T_deltaT(x) = T_delta/4 = -cos x + 2 sin x/x + 2 cos x/x^2 - 2 sin x/x^3  -> 1/3
+    T_V(x)      = eta (x^2 sin x + 2 x cos x - 2 sin x)/x^3    -> eta/3   (v1_i = d_i V1, V1 = zeta T_V)
+  all verified by substitution; singular second mode (cos x + x sin x)/x^3 ~ eta^-3 discarded.
+  Agrees with lead's linear_check (T_Phi, delta_T -> zeta/3, v_pot -> eta zeta/3).
+
+## Milestone 3 — SECOND ORDER (status: in progress)
