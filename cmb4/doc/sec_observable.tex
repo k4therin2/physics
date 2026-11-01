@@ -1,0 +1,202 @@
+\section{The exact observable}
+\label{sec:observable}
+
+\subsection{Conformal frame}
+\label{sec:conformal}
+Write $g_{\mu\nu}=a^2\hat g_{\mu\nu}$ with $a=\eta$.  Null geodesics of $g$ and $\hat g$ coincide as
+curves; if $p^\mu=\dd x^\mu/\dd\lambda$ is affine for $g$ then $\hat p^\mu=a^2p^\mu$ is affine for $\hat g$.
+With the conformal fluid variables \eqref{eq:hatvars},
+\begin{equation}
+E\equiv-u_\mu p^\mu=\hat E/a,\qquad \hat E\equiv-\hat g_{\mu\nu}\hat u^\mu\hat p^\nu .
+\label{eq:Ehat}
+\end{equation}
+The radiation stress tensor is traceless, hence conformally covariant:
+$\hat T^{\mu\nu}\equiv a^6T^{\mu\nu}=(\hat\rho+\hat P)\hat u^\mu\hat u^\nu+\hat P\hat g^{\mu\nu}$ with
+$\hat\rho=\alpha\hat T^4$, $\hat P=\hat\rho/3$, and $\hat\nabla_\mu\hat T^{\mu\nu}=0$ \emph{exactly}, where
+$\hat\nabla$ is the Levi-Civita connection of $\hat g$.  Everything in this section therefore holds verbatim
+for the hatted system, whose background is Minkowski space with a constant fluid; we drop the hats
+in the lemmas (they hold for any metric) and restore them when we parametrise.
+
+\subsection{Two lemmas}
+Let $u^\mu$ be a unit timelike field and decompose its gradient in the standard way,
+\begin{equation}
+\nabla_\nu u_\mu=\sigma_{\mu\nu}+\omega_{\mu\nu}+\tfrac13\theta\,h_{\mu\nu}-u_\nu a_\mu,\qquad
+h_{\mu\nu}=g_{\mu\nu}+u_\mu u_\nu,\quad a_\mu=u^\nu\nabla_\nu u_\mu,\quad \theta=\nabla_\mu u^\mu,
+\label{eq:kinematic}
+\end{equation}
+with $\sigma_{\mu\nu}$ the symmetric trace-free part and $\omega_{\mu\nu}$ the antisymmetric part of
+$h_\mu{}^\alpha h_\nu{}^\beta\nabla_\beta u_\alpha$ \cite{Ellis71}.  For a null vector $p^\mu$ write
+$p^\mu=E(u^\mu+e^\mu)$ with $E=-u\cdot p$, $u\cdot e=0$, $e\cdot e=1$, and define the proper-length element
+$\dd l\equiv E\,\dd\lambda$ along the ray.
+
+\begin{lemma}[kinematic redshift identity]\label{lem:kin}
+Along an affinely parametrised null geodesic, $p^\nu\nabla_\nu p^\mu=0$,
+\begin{equation}
+\frac{\dd\ln E}{\dd l}=-\Big(\frac\theta3+\sigma_{\mu\nu}e^\mu e^\nu+a_\mu e^\mu\Big).
+\label{eq:lemma1}
+\end{equation}
+\end{lemma}
+\begin{proof}
+$\dd E/\dd\lambda=p^\nu\nabla_\nu(-u_\mu p^\mu)=-p^\mu p^\nu\nabla_\nu u_\mu$.  Insert \eqref{eq:kinematic}:
+the $\sigma$ term gives $E^2\sigma_{ee}$ ($\sigma\perp u$); the $\omega$ term vanishes identically (antisymmetric
+tensor contracted with $p^\mu p^\nu$), so \emph{vorticity drops out with no assumption}; the $\theta$ term gives
+$\tfrac13\theta E^2h_{ee}=\tfrac13\theta E^2$; the acceleration term gives
+$-E^2[u\cdot(u+e)][a\cdot(u+e)]=E^2a\cdot e$.  Divide by $E^2$.
+\end{proof}
+
+\begin{lemma}[radiation-fluid identities]\label{lem:fluid}
+For the fluid \eqref{eq:fluid}, the conservation law $\nabla_\mu T^{\mu\nu}=0$ alone (no field equations)
+is equivalent to
+\begin{equation}
+\theta=-3\,u^\mu\partial_\mu\ln T,\qquad a_\mu=-h_\mu{}^\nu\partial_\nu\ln T .
+\label{eq:lemma2}
+\end{equation}
+\end{lemma}
+\begin{proof}
+$u_\nu\nabla_\mu T^{\mu\nu}=0$ gives $u\cdot\partial\rho+(\rho+P)\theta=0$ and
+$h^\nu{}_\lambda\nabla_\mu T^{\mu\lambda}=0$ gives $(\rho+P)a^\nu+h^{\nu\mu}\partial_\mu P=0$.  With
+$\rho=\alpha T^4$, $P=\rho/3$ one has $\rho+P=\tfrac43\alpha T^4=T\,\dd P/\dd T$ and
+$\dd\rho/\dd T=3(\rho+P)/T$, which turn the two equations into \eqref{eq:lemma2}.  Both ingredients are
+needed: for $P=w\rho$, $\rho\propto T^4$ one finds $a=-\tfrac{4w}{1+w}h\,\partial\ln T$ and
+$\theta=-\tfrac4{1+w}u\cdot\partial\ln T$, which reduce to \eqref{eq:lemma2} iff $w=\tfrac13$
+(App.~\ref{app:ledger}, V1-2).
+\end{proof}
+
+\subsection{The theorem}
+\begin{theorem}\label{thm:exact}
+Let the photon be emitted at the event $e$ where its past-directed null geodesic last meets the
+hypersurface $T=T_*$, with an isotropic Planck spectrum in the fluid rest frame, and let it be received
+at the event $o$ by an observer comoving with the fluid.  Then the observed temperature in the direction
+$\nhat$ is
+\begin{equation}
+\boxed{\;\Tobs(\nhat)=T_*\,\frac{E_o}{E_e}=T_o\,\exp[-S(\nhat)],\qquad
+S(\nhat)\equiv\int_e^o\sigma_{\mu\nu}e^\mu e^\nu\,\dd l\;}
+\label{eq:exact}
+\end{equation}
+where $T_o$ is the fluid temperature at $o$ and the integral runs along the ray.
+\end{theorem}
+\begin{proof}
+Since $e^\mu h_\mu{}^\nu=e^\nu$, Lemma~\ref{lem:fluid} gives
+$\theta/3+a\cdot e=-(u+e)\cdot\partial\ln T=-E^{-1}p\cdot\partial\ln T=-\dd\ln T/\dd l$.
+Lemma~\ref{lem:kin} then reads $\dd(\ln E-\ln T)/\dd l=-\sigma_{ee}$; $p$ is future directed, so $\lambda$
+increases from $e$ to $o$ and $\ln(E_o/E_e)=\ln(T_o/T_e)-S$.  With $T_e=T_*$ this is
+$T_*E_o/E_e=T_oe^{-S}$.  Finally, $E_o/E_e$ is independent of the photon energy (the geodesic equation is
+homogeneous in $p$), so by Liouville's theorem a Planck spectrum at $T_*$ in the fluid frame at $e$ is
+received as a Planck spectrum at $T_*E_o/E_e$ in the fluid frame at $o$; this is what $\Tobs(\nhat)$ means.
+\end{proof}
+
+\begin{remark}[conformal invariance]
+Theorem~\ref{thm:exact} applies to $(g,u,T)$ and to $(\hat g,\hat u,\hat T)$ alike.  Since $E=\hat E/a$ and
+$T=\hat T/a$ with the same $a_e$, $a_o$, the two statements agree iff $S=\hat S$: the shear integral is
+conformally invariant and may be computed entirely in the hatted frame, where the background shear
+vanishes identically.
+\end{remark}
+
+\begin{corollary}\label{cor:theta}
+With $\Theta(\nhat)\equiv\Tobs(\nhat)/\sky{\Tobs}-1$ and $\sky{\cdot}=\tfrac1{4\pi}\int\dd\Omega$ in the
+observer's rest frame,
+\begin{equation}
+1+\Theta(\nhat)=\frac{e^{-S(\nhat)}}{\sky{e^{-S}}}\qquad\text{exactly.}
+\label{eq:theta_exact}
+\end{equation}
+\end{corollary}
+
+\paragraph{Consequences.}
+\begin{enumerate}
+\item[(i)] All of the usual emission-surface (intrinsic temperature and $T_{\rm phys}=T_*$ shift),
+Sachs--Wolfe, Doppler, integrated Sachs--Wolfe, lensing and time-delay physics is contained in $S$: the
+only inputs are the fluid shear field $\sigma_{\mu\nu}$, the ray $x^\mu(\lambda)$, and the two endpoints.
+In particular the perturbation of the emission point along the ray does \emph{not} require a separate
+``intrinsic $\delta T$'' term; $T_e=T_*$ has been used exactly.
+\item[(ii)] $T_o$ is a scalar at the observer event, independent of $\nhat$; it drops out of $\Theta$
+identically.  No expansion of $T_o$ or of $\sky{\Tobs}$ in terms of a background temperature is ever needed.
+\item[(iii)] The observer's tetrad.  Fermi--Walker transport of an orthonormal tetrad along the observer's
+worldline defines the sky directions.  The FW tetrad is a realisation-dependent rigid rotation
+$R=\exp(\eps A)$ of the \emph{canonical triad} (Sec.~\ref{sec:observer}).  A rigid rotation of the sky leaves
+$\sum_m|a_{\ell m}|^2$ invariant realisation by realisation, hence $C_\ell$ is independent of the tetrad
+orientation.  However, because $R$ depends on $\eps$, $a^{(2)}_{\ell m}\to a^{(2)}_{\ell m}+2A\,a^{(1)}_{\ell m}$ etc.,
+so $C^{(22)}_\ell$ and $\Re C^{(13)}_\ell$ are \emph{not separately} invariant; only
+$\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell$ is (verified explicitly at $\ell=2$, App.~\ref{app:ledger}, V1-5).
+Consequently $\Theta^{(1)},\Theta^{(2)},\Theta^{(3)}$ must all be computed in one and the same frame; we use the
+canonical triad throughout.  The dipole power $\sum_m|a_{1m}|^2$ is likewise invariant, so ``remove the dipole
+after normalising'' is frame independent.
+\item[(iv)] The emission surface enters only through the endpoint $e$ of the integral: the location of the
+last crossing of $T=T_*$ along the past ray.  Perturbatively there is a single crossing and
+$\eta_e(\nhat)=\eta_*+\delta\eta_e(\nhat)$.
+\end{enumerate}
+\begin{remark}[validity]
+The proof uses the differential form of $\nabla\cdot T=0$ and $C^1$ fields along the ray; it is not
+defined across a shock (irrelevant perturbatively).  Isotropic Planck emission in the fluid frame at $T=T_*$
+is self-consistent (the photons \emph{are} the fluid there); after emission the ``fluid'' $(u,T)$ entering $S$
+is the model's perfect-fluid continuation, as the problem statement prescribes.  The identities also hold
+for $\rho=3P+c$, $P=CT^4-c/4$ (a $\Lambda$-like constant), not needed here.
+\end{remark}
+
+\subsection{Observer, clock, emission event and direction map}
+\label{sec:observer}
+\emph{Observer worldline}: a tagged fluid element, $\vx_o(\eta)=\vx_o^{\rm lab}+\int_{\eta_{\rm init}}^{\eta}
+v^i(\eta',\vx_o(\eta'))\,\dd\eta'$.  \emph{Clock}: proper time elapsed since the observer crossed the
+initial-data surface $\Tphys=T_i$ (Poisson time $\eta_{\rm init}(\vx_o)$ with
+$1+\delta_T(\eta_{\rm init},\vx_o)=\eta_{\rm init}/\eta_i$, since $\bar T\propto1/\eta$),
+\begin{equation}
+\Delta\tau=\int_{\eta_{\rm init}}^{\eta_o}\frac{a(\eta)}{\hat u^0(\eta,\vx_o(\eta))}\,\dd\eta\quad\text{held fixed}
+\qquad\Longrightarrow\qquad \eta_o=\bar\eta_o+\delta\eta_o[\zeta],
+\label{eq:clock}
+\end{equation}
+with $\delta\eta_o$ direction independent (it is a functional of the fields on the worldline).
+\emph{Emission event}: the ray meets $\Tphys=T_*$, i.e.
+\begin{equation}
+1+\delta_T\big(\eta_e,\vx(\eta_e)\big)=\eta_e/\eta_* .
+\label{eq:emission}
+\end{equation}
+\emph{Canonical triad}: $\{e_a\}_{a=1,2,3}$ is the Gram--Schmidt orthonormalisation (order $1,2,3$) of the coordinate
+basis $\partial_i$ with respect to $\hat g$, orthogonal to $\hat u$.  \emph{Direction map}: the photon received
+from the sky direction $\nhat$ has
+\begin{equation}
+\hat p_o=\hat E_o\big(\hat u_o-n^ae_a\big),\qquad k^i(\eta_o)\equiv\frac{\dd x^i}{\dd\eta}\Big|_o=\frac{\hat p^i_o}{\hat p^0_o},
+\label{eq:dirmap}
+\end{equation}
+so that in the background $k^i=-n^i$ and the ray is \eqref{eq:bgray}.  With the ray parametrised by $\eta$,
+$k^\mu=\dd x^\mu/\dd\eta=(1,k^i)$, and using $\sigma\perp u$, $\hat E/\hat p^0=-\hat u_\mu k^\mu$,
+\begin{equation}
+S(\nhat)=\int_{\eta_e(\nhat)}^{\eta_o}\dd\eta\;\frac{\hat\sigma_{\mu\nu}k^\mu k^\nu}{-\hat u_\mu k^\mu}\Big|_{x^i(\eta)} .
+\label{eq:S_eta}
+\end{equation}
+The perturbative evaluation of \eqref{eq:S_eta} (ray, endpoints, triad, clock, all to third order) is the
+subject of Secs.~\ref{sec:map2}--\ref{sec:map3}.
+
+\subsection{Linear order: recovery of the Sachs--Wolfe formula}
+\label{sec:linearS}
+At $O(\eps)$ the endpoints and the ray may be taken at their background values, since $S$ itself starts at
+$O(\eps)$.  With $\hat g=\mathrm{diag}(-(1+2\eps\Psi),(1-2\eps\Phi)\delta_{ij})$, $\hat u^\mu=(1-\eps\Psi,\eps v^i)$,
+$\hat T=\hat{\bar T}(1+\eps\delta_T)$, the covariant definitions \eqref{eq:kinematic} give (App.~\ref{app:ledger}, V1-4)
+\begin{equation}
+\hat\theta=\eps(\partial\!\cdot\!v-3\Phi'),\qquad \hat a_i=\eps(v_i'+\partial_i\Psi),\qquad
+\hat\sigma_{ij}=\eps\big[\partial_{(i}v_{j)}-\tfrac13\delta_{ij}\partial\!\cdot\!v\big],\qquad \hat\sigma_{0\mu}=0,
+\label{eq:lin_kin}
+\end{equation}
+and Lemma~\ref{lem:fluid} becomes the linearised continuity and Euler equations
+\begin{equation}
+\delta_T'=\Phi'-\tfrac13\partial\!\cdot\!v,\qquad v_i'=-\partial_i(\Psi+\delta_T).
+\label{eq:lin_fluid}
+\end{equation}
+With $e=-\nhat$ and $D=\partial_\eta-\nhat\cdot\nabla$ along the background ray one has
+$n^in^j\partial_iv_j=\nhat\cdot v'-D(\nhat\cdot v)$, $\nhat\cdot\nabla f=f'-Df$; inserting \eqref{eq:lin_fluid},
+\begin{equation}
+\hat\sigma_{1,ee}=n^in^j\partial_iv_j-\tfrac13\partial\!\cdot\!v
+= D\big(\delta_T+\Psi-\nhat\cdot v\big)-(\Phi'+\Psi')\qquad\text{(on shell)}.
+\label{eq:sigma_ee_lin}
+\end{equation}
+Integrating along the ray from $(\eta_*,\bar\vx(\eta_*))$ to $(\bar\eta_o,\bar\vx_o)$,
+\begin{equation}
+\boxed{\;L_1\equiv-S_1=\big[\delta_T+\Psi-\nhat\cdot v\big]_{e}-\big[\delta_T+\Psi-\nhat\cdot v\big]_{o}
++\int_{\eta_*}^{\bar\eta_o}(\Phi'+\Psi')\,\dd\eta\;}
+\label{eq:L1}
+\end{equation}
+which is the standard Sachs--Wolfe~\cite{SW67} + Doppler + integrated Sachs--Wolfe formula with the
+emission-surface shift (the $\delta_T$ at $e$ arises because $\bar T\propto1/\eta$ and the emission surface
+is $\Tphys=T_*$, not $\eta=\eta_*$) and with the observer terms: a monopole $-[\delta_T+\Psi]_o$ and the
+observer dipole $+\nhat\cdot v_o$.  Both are removed from $\Theta^{(1)}$ by the normalisation and the dipole
+subtraction, but they multiply other terms at higher order and are kept (Sec.~\ref{sec:normalisation}).
+Equation~\eqref{eq:sigma_ee_lin} has been verified symbolically and the same identity holds through third
+order at the integrand level (App.~\ref{app:ledger}, C2-1).
