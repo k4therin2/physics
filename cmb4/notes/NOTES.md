@@ -26,3 +26,11 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   (5) treat "done" as a claim to refute.
 ## Ledger of failed approaches / decisions
 - Decided: Poisson gauge for dynamics (literature-checkable, no secular growth); exact e^{-S} formula for observable.
+- [t3] Literature extracted -> cmb4/lit/literature_extracts.md (33 papers in cmb4/lit/raw). Key: NO one-loop C_l exists
+  in literature; (13) term never computed; only Mirbabayi-Zaldarriaga (MZ 1409.4777) keeps observer terms. MZ: constant+gradient
+  zeta unobservable once x_o, v_o, proper time, sky monopole included (their 4.21-4.25) -> our dilation check (SPEC 9d) + gradient check.
+  CPV 1109.1822: time shift eps = -eta zeta_L/3 in RD. Kohri-Terada RD kernel I_RD(u,v,x) with Si/Ci (their eq 22). PUB 1003.0481
+  RD superhorizon ICs: Psi2 = 2/3 R2 + Psi^2 - Delta^-1[dPsi dPsi] + 3 Delta^-2 dd[dPsi dPsi]; Phi2 = Psi2 + 4Psi^2 + 3Delta^-1[..] - 9 Delta^-2[..].
+- [t3] Lead's independent linear check (cmb4/code/lead/linear_check.py): T_Phi=-2(sin x - x cos x)/x^3, delta_T->zeta/3, v_pot->eta zeta/3 (v_i=d_i v),
+  continuity+Euler verified. Use as reference against C1.
+- [t3] Running: C1 (Einstein 3rd order), C2 (observable S), C3 (harmonics), V1 (referee of exact formula).
