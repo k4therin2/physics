@@ -1,0 +1,1440 @@
+                                                                                                                                               KEK-TH-2046
+
+
+
+
+                                                    Semianalytic Calculation of Gravitational Wave Spectrum
+                                                   Nonlinearly Induced from Primordial Curvature Perturbations
+arXiv:1804.08577v2 [gr-qc] 29 Jun 2018
+
+
+
+
+                                                                    Kazunori Kohri1,2,3 and Takahiro Terada1
+
+                                                                 1 Theory Center, IPNS, KEK, 1-1 Oho, Tsukuba, Ibaraki 305-0801, Japan
+                                                 2 The Graduate University for Advanced Studies (SOKENDAI), 1-1 Oho, Tsukuba, Ibaraki 305-0801, Japan
+
+                                         3 Rudolf Peierls Centre for Theoretical Physics, The University of Oxford, 1 Keble Road, Oxford OX1 3NP, United Kingdom
+
+
+
+
+                                                                                               Abstract
+
+                                                   Whether or not the primordial gravitational wave (GW) produced during inflation is suffi-
+                                               ciently strong to be observable, GWs are necessarily produced from the primordial curvature
+                                               perturbations in the second order of perturbation. The induced GWs can be enhanced by cur-
+                                               vature perturbations enhanced at small scales or by the presence of matter-dominated stages of
+                                               the cosmological history. We analytically calculate the integral in the expression of the power
+                                               spectrum of the induced GWs which is a universal part independent of the spectrum of the pri-
+                                               mordial curvature perturbations. This makes the subsequent numerical integrals significantly
+                                               easy. In simple cases, we derive fully analytic formulas for the induced GW spectrum.
+1       Introduction
+Gravitational wave (GW) astronomy began after the detection of GWs by the LIGO and Virgo
+collaborations [1–5], and more signals or constraints are awaited for current and future precise
+observations. It is now important to study what we can learn about the early Universe or new
+physics beyond the Standard Model using GWs as probes. Currently, there is only an upper bound
+on the strength of the primordial GW [6, 7] in terms of the tensor-to-scalar ratio, r < 0.07 (95%
+confidence level; Planck, BICEP2/Keck Array combined) [8] at the pivot scale k = 0.05 Mpc−1 ,
+from the cosmic microwave background (CMB) observations.
+     Whether or not the primordial GW is observable, there exits an independent generation mech-
+anism for GWs.1 The GWs are generated from curvature perturbations in the second order of
+perturbation [22] although the tensor and scalar modes are decoupled in the first order of pertur-
+bation as is well known. It is true that the induced second-order GW is suppressed by the square of
+the curvature perturbations, but it can be sizable and can even become larger than the primordial
+(first-order) GW if the primordial curvature perturbations are enhanced at small scales compared
+to the CMB scale [22–24] or if the density perturbations grow in a matter-dominated (MD) phase of
+the Universe [25–28]. The enhancement of the primordial curvature perturbations at small scales is
+realized in some models of inflation, and, in particular, motivates us to explore scenarios to produce
+primordial black holes (PBHs), which can explain dark matter and/or the binary black hole merger
+event rate; see, e.g., Refs. [29–33] and the references therein. In particular, the induced GWs are
+used as constraints on the PBH scenarios, and, conversely, the PBH constraints can be recast as the
+constraints on the induced GWs [23, 34–36]. Similarly, the induced GWs can put constraints on
+inflation models which lead to small scale enhancement of perturbations [24, 28, 37]. Also, MD eras
+are expected in some scenarios involving heavy particles or oscillating scalar fields like an inflaton.
+Entropy production by the decay of such particles/fields at the end of the MD period can dilute
+unwanted long-lived particles like gravitinos in supersymmetric theories, which otherwise affects
+the CMB or big-bang nucleosynthesis (BBN). In this way, studies of induced GWs (as well as the
+primordial ones) are motivated by cosmology, astrophysics, and particle physics.
+     To calculate the power spectrum of the GW produced in the radiation-dominated (RD) Uni-
+verse, we need to do multiple integrals of a highly oscillating function. Schematically,
+                                    Z        Z          Z                   2
+                             Ph ∼       dk       dk 0        dtf (k, k 0 , t) Pζ (k)Pζ (k 0 ),
+
+    1
+     Apart from the induced second-order GWs, which are the topic of this paper, there are other mechanisms of GW
+production in the early Universe, including those associated with preheating [9–12], phase transitions [13–15], and
+topological defects such as cosmic strings [16, 17]. In particular, it should be noted that the GWs are also produced
+from the primordial curvature perturbations in the subhorizon when shocks are formed [18]. It was reported in
+Ref. [18] that the resultant GW power spectrum is similar to that of the induced GWs we are considering, but the
+                           1/2
+frequency is lowered by Pζ , which would affect the constraints on PBH scenarios which aim to explain the merger
+rate of binary black holes of around 30 solar masses. For light PBH scenarios, GWs emitted by Hawking radiation
+are relevant [19–21].
+
+
+
+
+                                                               1
+where Ph (Pζ ) is the power spectrum of the induced GW (primordial curvature perturbations), k
+and k 0 correspond to the momenta of the scalar source modes, t describes the time when the GW is
+sourced from the scalar modes (using the Green’s function method), and f (k, k 0 , t) is some oscillat-
+ing function. We will shortly introduce the precise definition. This can be numerically done, but it
+is time consuming and sometimes obscures the underlying physics. An analytic calculation for the
+time integral was partially done in the pioneering paper [22], and we complete the calculation to
+obtain a relatively short, useful expression. An analytic formula was also obtained in Ref. [24], but
+we find it shows the wrong behavior for the contribution from the long-wavelength modes of the
+density perturbations. Once we obtain an analytic formula for the integral within the parentheses
+above, it is easy to take an oscillation average analytically, so the subsequent (numerical) integra-
+tion with respect to the wavenumbers k and k 0 are greatly simplified and the calculation cost is
+significantly reduced.
+     In section 2, we review the derivation of the scalar-induced GWs basically following the conven-
+tions of Ref. [38]. In section 3, we analytically calculate the time integral, and take its oscillation
+average. We consider the cases of both the RD Universe and MD Universe, and we briefly discuss
+more general cases there and in Appendix A. For simple examples, we obtain fully analytic for-
+mulas for the power spectrum of the induced GWs. We conclude in section 4. The usage of our
+formulas is illustrated in Appendix B, where they are compared with future observations. As a
+byproduct, we derive a new BBN constraint on relativistic degrees of freedom (gravitons, in our
+case) in Appendix C.
+
+
+2     Basic equations
+In this section, we review the derivation of the master formula for the second-order GWs. We
+basically follow the conventions of Ref. [38] and extend their results so that we can use them both
+in a RD era and in a MD era. See also Refs. [22, 26] for the derivation.
+
+2.1   Definitions, energy density, and power spectrum
+We choose the longitudinal (conformal Newtonian) gauge, and the metric reads
+                                                                 
+                                                              1
+              ds = gµν dx dx = −a (1 + 2Φ)dη + a (1 − 2Ψ)δij + hij dxi dxj ,
+                2         µ   ν       2            2    2
+                                                                                                   (1)
+                                                              2
+
+where η is the conformal time. We neglect the vector perturbations, the first-order GWs and the
+anisotropic stress, and Φ = Ψ then follows. The effect of the difference Φ − Ψ 6= 0 was studied in
+Ref. [26], and it turns out to be small. With the above normalization, the second-order graviton
+action is
+
+                                  MP2
+                                      Z
+                                         dηd3 xa2 h0ij h0 ij − hij,k hij,k ,
+                                                                          
+                             S=                                                                (2)
+                                   32
+
+
+                                                  2
+               √
+where MP = 1/ 8πG = 1 is the reduced Planck mass and primes denote the derivative with respect
+                                                        R
+to the conformal time. The GW energy density ρGW (η) = d ln kρGW (η, k) can be evaluated in
+the subhorizon as [39]
+
+                                                     MP2
+                                            ρGW =         hij,k hij,k ,                                       (3)
+                                                     16a2
+
+where the overline denotes the oscillation average. The Fourier components of the tensor mode are
+introduced as usual,
+
+                                             d3 k  +
+                                       Z                                           
+                                                            +         ×      ×
+                        hij (η, x) =            3/2
+                                                    eij (k)hk (η) + e ij (k)hk (η)   eik·x ,                  (4)
+                                           (2π)
+
+where the transverse traceless polarization tensors are defined as e+              √1
+                                                                           ij (k) = 2 (ei (k)ej (k)−ēi (k)ēj (k))
+and e×       √1
+     ij (k) = 2 (ei (k)ēj (k) + ēi (k)ej (k)), with ei (k) and ēi (k) being normalized vectors orthogonal
+to each other and to k. The dimensionless power spectrum is defined by
+
+                                            0                           2π 2
+                                hhλk (η)hλk0 (η)i =δλλ0 δ 3 (k + k0 )        Ph (η, k),                       (5)
+                                                                         k3
+
+where λ, λ0 = +, × represents the polarization index, which we omit in the following. We consider
+parity invariant situations so that both polarizations give the same result. The fraction of the GW
+energy density per logarithmic wavelength is
+                                                                              2
+                                            ρGW (η, k)    1            k
+                          ΩGW (η, k) =                 =                            Ph (η, k),                (6)
+                                             ρtot (η)    24        a(η)H(η)
+
+where we have summed over the two polarization modes. This ΩGW is the observationally relevant
+quantity, and below we compute the power spectrum Ph .
+
+2.2    Equations of motion
+The equation of motion for the tensor mode hk (η) can be derived straightforwardly from the
+tensor part of the Einstein equation. In the second-order equation, squares of first-order quantities
+also appear. The first-order perturbations of the energy-momentum tensor can be related to the
+derivative of the gravitational potential Φ via the first-order Einstein equation. Thus, one obtains
+the tensor equation of motion sourced by the scalar perturbations Φ,
+
+                                   h00k (η) + 2Hh0k (η) + k 2 hk (η) =4Sk (η),                                (7)
+
+where H = aH is the conformal Hubble parameter, and the source term is given by
+
+                   d3 q
+             Z                                                                    
+                                                     4     −1 0
+                                                                    −1 0        
+      Sk =               eij (k)qi qj 2Φq Φk−q +          H Φq + Φq H Φk−q + Φk−q .                           (8)
+                 (2π)3/2                         3(1 + w)
+
+
+
+                                                          3
+We have used −2Ḣ = ρ + P = (1 + w)ρ = 3(1 + w)H 2 , where w = P/ρ is the equation-of-state
+parameter with P and ρ denoting pressure and energy density. The Fourier components Φk of
+the gravitational potential are defined similarly to those of the tensor mode (of course without the
+polarization tensor). We adopt the Green’s function method to solve hk (η),
+                                                   Z η
+                               a(η)hk (η) = 4            dη̄Gk (η, η̄)a(η̄)Sk (η̄),                   (9)
+
+where the Green’s function Gk (η, η̄) is the solution of
+
+                                                 a00 (η)
+                                                        
+                           G00k (η, η̄) +     2
+                                             k −           Gk (η, η̄) = δ(η − η̄).                   (10)
+                                                 a(η)
+
+The derivatives are with respect to η.
+   We need to know the time evolution of the source term Sk (η). The gravitational potential obeys
+the following equation of motion (see e.g. Ref. [40]):
+
+                                                                                          a2
+                  Φ00k + 3H(1 + c2s )Φ0k + (2H0 + (1 + 3c2s )H2 + c2s k 2 )Φk =              τ δS,   (11)
+                                                                                          2
+
+where c2s and τ are defined as δP = c2s δρ + τ δS, with S being entropy. In the absence of entropy
+perturbations and using c2s = w, the above equation reduces to
+
+                                             6(1 + w) 0
+                             Φ00k (η) +              Φ (η) + wk 2 Φk (η) = 0.                        (12)
+                                            (1 + 3w)η k
+
+In the following, we pull out the primordial value φk from the definition of Φk = Φ(kη)φk so that
+the transfer function Φ(kη) approaches unity well before the horizon entry. The primordial value
+is related to the curvature perturbation as
+                                                                           2
+                                                  2π 2
+                                                              
+                                                     0            3 + 3w
+                             hφk φk0 i = δ(k + k ) 3                            Pζ (k),              (13)
+                                                   k              5 + 3w
+
+where w should be evaluated at time well before the horizon entry. As the above equation implies,
+we define the “primordial” value φk as being well before the horizon entry but not too early so that
+the equation of state of the Universe at the “primordial time” is the same as that at the horizon
+entry.
+    One can compute the correlation function hSk (η)Sk0 (η 0 )i by neglecting the non-Gaussianity of
+the primordial curvature perturbations. It involves integration with respect to the wavenumber k̃
+corresponding to that of the scalar source Φk̃ . It turns out to be useful to introduce the dimen-
+sionless variables u = |k − k̃|/k and v = k̃/k. The details for this calculation can be found in
+Refs. [22, 26, 31]. After some algebra, by comparing hSk (η)Sk0 (η 0 )i with the definition of Ph , one
+
+
+
+
+                                                          4
+can extract the power spectrum Ph ,
+                           Z ∞            Z 1+v                                         2
+                                                            4v 2 − (1 + v 2 − u2 )2
+                                                        
+          Ph (η, k) = 4              dv            du                                        I 2 (v, u, x)Pζ (kv)Pζ (ku),   (14)
+                             0             |1−v|                     4vu
+
+where the dimensionless combination x ≡ kη should not be confused with the spatial coordinate.
+The function I(v, u, x) is defined as
+                                                        Z x
+                                                                      a(η̄)
+                                     I(v, u, x) =               dx̄         kGk (η, η̄)f (v, u, x̄),                        (15)
+                                                            0         a(η)
+
+and the source information is contained in
+
+                     6(w + 1)                 6(1 + 3w)(w + 1)
+    f (v, u, x̄) =            Φ(vx̄)Φ(ux̄) +                        (x̄∂η̄ Φ(vx̄)Φ(ux̄) + x̄∂η̄ Φ(ux̄)Φ(vx̄))
+                      3w + 5                       (3w + 5)2
+                       3(1 + 3w)2 (1 + w) 2
+                     +                     x̄ ∂η̄ Φ(vx̄)∂η̄ Φ(ux̄),                                           (16)
+                           (3w + 5)2
+
+where x̄ = k η̄, and we have used H = aH = 2/((1 + 3w)η). Note that the integral defining Ph
+includes the square of a single function I(v, u, x). The integral has been recast in this form by
+noticing symmetries of the integrand under changes of variables as explained in Ref. [31]. This was
+seemingly unnoticed in the original paper [22], which makes their analytic expression so complicated.
+Related to this, both the integrand and the integral region are symmetric under the exchange of u
+and v. Taking advantage of the above form, we will calculate the function I(v, u, x) analytically in
+the following section.
+
+
+3    Analytic integration
+We find it useful to introduce new variables t = u + v − 1 and s = u − v to finally execute the
+remaining integrals. The Jacobian for this transformation is 1/2. Using these variables, the power
+spectrum is rewritten as
+                             Z ∞          Z 1                                          2
+                                                  t(2 + t)(s2 − 1)
+                                                    
+            Ph (η, k) = 2             dt    ds                                              I 2 (v, u, x)Pζ (kv)Pζ (ku),    (17)
+                                 0       −1    (1 − s + t)(1 + s + t)
+
+where u = (t + s + 1)/2 and v = (t − s + 1)/2, and we remind the reader of the definition x = kη.
+In the following, we give expressions of I in terms of u and v as well as t and s. We separately
+study the cases of a pure RD era and a pure MD era, finally discussing more realistic situations.
+
+
+
+
+                                                                        5
+3.1      Radiation-dominated Universe
+In the RD Universe, the solution to eq. (10) for the Green’s function of GW is
+
+                                    kGk (η, η̄) = − xx̄(j0 (x)y0 (x̄) − y0 (x)j0 (x̄))
+                                                = sin(x − x̄),                                              (18)
+
+where j0 (x) (y0 (x)) is the spherical Bessel function of the first (second) kind. The solution to
+eq. (12) for the gravitational potential which approaches 1 in the past (x → 0) is
+                                                            √              !
+                                             9        sin(x/ 3)         √
+                                      Φ(x) = 2             √    − cos(x/ 3) .                               (19)
+                                            x            x/ 3
+             √
+The factor 1/ 3 is the sound speed in the RD era. The gravitational potential decays like x−2 at
+large x.
+    The source function f in the RD era is
+                              
+                   12                      ux      vx                                      ux     vx
+  fRD (v, u, x) = 3 3 6        18uvx2 cos √ cos √ + (54 − 6(u2 + v 2 )x2 + u2 v 2 x4 ) sin √ sin √
+                 u v x                      3       3                                       3       3
+                              √                               √
+                                                                                                 
+                                                   ux    vx                          ux       vx
+                            +2 3ux(v 2 x2 − 9) cos √ sin √ + 2 3vx(u2 x2 − 9) sin √ cos √          . (20)
+                                                    3     3                             3      3
+
+This is equal to 4/3 at x = 0 and decays like ∼ 1/(uvx2 ) at large x. The factor a(η̄)/a(η) in the
+definition of I(v, u, x) is equal to x̄/x in the RD era.2
+    Combining this information, we calculate the integral I(v, u, x). To this end, multiple usages of
+the trigonometric addition theorem and integration by parts are required [22]. The result is
+                             
+                 3         4                                     ux      vx
+IRD (v, u, x) = 3 3     − 3 uv(u2 + v 2 − 3)x3 sin x − 6uvx2 cos √ cos √
+               4u v x      x                                       3      3
+                  √                       √
+                                                                                            
+                             ux    vx             ux       vx           2     2     2 ux vx
+               +6 3ux cos √ sin √ + 6 3vx sin √ cos √ − 3(6 + (u + v − 3)x ) sin √ sin √
+                              3      3               3      3                          3  3
+                                                                         
+                                                 v−u                     v−u
+               + (u2 + v 2 − 3)2 sin x Ci    1− √         x + Ci     1+ √         x
+                                                     3                      3
+                                                                 3 − (u + v)2
+                                                                          
+                           v+u                 v+u
+               −Ci 1 − √         x − Ci     1+ √         x + log
+                              3                    3             3 − (u − v)2
+                                                          
+                                    v−u                    v−u
+               + cos x −Si      1− √       x − Si      1+ √      x
+                                       3                      3
+   2
+       Precisely speaking, it involves the effective numbers of relativistic degrees of freedom,
+                                                            1/2                2/3
+                                        a(η̄) η̄ g∗ (T (η̄))        g∗,s (T (η))
+                                              =                                        .                     (21)
+                                        a(η) η g∗ (T (η))           g∗,s (T (η̄))
+
+Before recombination, both numbers are the same, g∗ (T ) = g∗,s (T ), and the power is only 1/6. We neglect these
+factors for analytic calculations.
+
+
+
+                                                             6
+                                                    
+                            v+u                     v+u
+               +Si        1− √         x + Si    1+  √    x    ,                                           (22)
+                               3                       3
+
+where Si and Ci functions are defined as follows:
+                          Z x                                                     Z ∞
+                                  sin x̄                                                      cos x̄
+                  Si(x) =     dx̄        ,                            Ci(x) = −         dx̄          .     (23)
+                           0        x̄                                            x             x̄
+
+We have used the fact that
+               Z x
+                       cos Ax̄ − cos B x̄
+                   dx̄                    = Ci(Ax) − log(Ax) − Ci(Bx) + log(Bx).                           (24)
+                0              x̄
+
+For small x, the leading term is independent of u and v, IRD (v, u, x) ≃ x2 /2.
+    We are interested in the GW spectrum observed today, so let us take the late-time limit η → ∞
+or x  1:
+
+                            3(u2 + v 2 − 3)                                     3 − (u + v)2
+                                                                                           
+                                                               2     2
+       IRD (v, u, x → ∞) =                   sin x  −4uv +  (u   + v   − 3) log
+                               4u3 v 3 x                                        3 − (u − v)2
+                                                                             √        
+                                                −π(u2 + v 2 − 3)Θ(v + u − 3) cos x .           (25)
+
+We have used limx→±∞ Si(x) = ±π/2 and limx→+∞ Ci(x) = 0, and the sign change of the limit
+of Si is the origin of the Heaviside theta function Θ in the above expression. We can see that it
+redshifts like x−1 ∝ a−1 in this limit. What we want to know is its oscillation average [see eq. (6)].
+It is
+                                                      2                                                 2
+                                    3(u2 + v 2 − 3)                                         3 − (u + v)2
+                                                              
+       2 (v, u, x → ∞) = 1
+      IRD                                                                    2    2
+                                                                −4uv + (u + v − 3) log
+                            2          4u3 v 3 x                                            3 − (u − v)2
+                                                                                              √ 
+                                                               +π 2 (u2 + v 2 − 3)2 Θ(v + u − 3) .          (26)
+
+In terms of the variables t = u + v − 1 and s = u − v,
+                              2           2                    π2                              √
+                                                           
+  2 (t, s, x → ∞) = 288(−5 + s + t(2 + t))
+ IRD                                                              (−5 + s2 + t(2 + t))2 Θ(t − ( 3 − 1))
+                     2          6          6
+                      x (1 − s + t) (1 + s + t)                4
+                                                                                        !
+                                                                          −2 + t(2 + t) 2
+                        
+                                                 1       2
+                      + −(t − s + 1)(t + s + 1) + (−5 + s + t(2 + t)) log                  .
+                                                 2                           3 − s2
+                                                                                                           (27)
+
+These formulas are our main results.
+   Let us discuss some simple examples.
+
+
+
+
+                                                               7
+Example 1: Monochromatic source Consider the monochromatic curvature perturbations,
+
+                                                     Pζ (k) = Aζ δ(log k/k∗ ),                             (28)
+
+where Aζ is the overall normalization and k∗ is the wavenumber at which the power spectrum has
+a delta-function peak. This may be regarded as a rough approximation of a spectrum with a sharp
+peak. For example, k∗ should be about 3.5 × 105 Mpc−1 or 2.7 × 10−14 Mpc−1 for PBHs produced
+in a RD era to explain dark matter abundance or the LIGO/Virgo binary black hole merger rate,
+respectively.
+    In this monochromatic case, the GW strength is
+                                          !2
+                  3A2ζ         4 − k̃ 2                      2
+   ΩGW (η, k) =                                k̃ 2 3k̃ 2 − 2
+                  64             4
+                                                                                         2 !
+                                               √
+                                                          
+                                                                                    4
+                  ×        π 2 (3k̃ 2 − 2)2 Θ(2 3 − 3k̃) + 4 + (3k̃ 2 − 2) log 1 −            Θ(2 − k̃),   (29)
+                                                                                   3k̃ 2
+
+where the dimensionless wavenumber k̃ ≡ k/k∗ is introduced for notational simplicity. The result
+of Ref. [38] is reproduced in the small k̃ limit where their approximation is valid. The logarithmic
+                       √                 √
+singularity at k = (2/ 3)k∗ (u + v = 3) is due to resonant amplification: the frequency of the
+                                                                             √
+source term oscillation is twice that of the gravitational potential 2 × k∗ / 3. The factor 2 appears
+                                                  √
+because this is the second-order effect, and 1/ 3 is the ratio between the propagating speeds of
+GWs and radiation. The spectrum vanishes above k = 2k∗ because there are no solutions satisfying
+the energy and momentum conservation. Equation. (29) is shown in Figure 1.
+
+
+                                  10
+
+                                    1
+                   ΩGW /Aζ 2
+
+
+
+
+                               0.100
+
+                               0.010
+
+                               0.001
+                                           0.01               0.05 0.10          0.50   1
+                                                                       k/k*
+
+Figure 1: The energy density fraction ΩGW of GWs produced in the RD era, eq. (29), from the
+monochromatic source, eq. (28).
+
+
+
+
+                                                                   8
+Example 2: Scale-invariant case                The scale-invariant power spectrum is
+
+                                                      Pζ (k) = Aζ ,                                                           (30)
+
+where Aζ is independent of k. We can do a numerical integration to obtain
+
+                                 19.73 2
+                   Ph (η, k) ≃        A ,                                   ΩGW (η, k) ≃0.8222A2ζ ,                           (31)
+                                 (kη)2 ζ
+
+where we have used H = η −1 in the RD era.
+
+Example 3: power-law spectrum We extend the previous case to a general power-law spec-
+trum,
+                                                                      ns −1
+                                                                  k
+                                               Pζ = Aζ                          ,                                             (32)
+                                                                  k∗
+
+where k∗ is a reference scale and ns − 1 controls the spectral tilt. In this case,
+                                           2(ns −1)                                                       2(ns −1)
+                      24Q(ns ) 2       k                                                                k
+          Ph (η, k) =         Aζ                        ,               ΩGW (η, k) =Q(ns )A2ζ                            ,    (33)
+                       (kη)2           k∗                                                               k∗
+
+where examples of the overall coefficient Q(ns ) are shown in Table 1. For the central value of the
+Planck 2015 TT+lowP constraint, ns = 0.9655 ± 0.0062 [41], and Q(0.9655) = 0.8149.
+   Too large or small ns makes the integral divergent.
+
+Table 1: The overall coefficient of the second-order GW sourced from the power-law index spectrum
+
+  ns        0.4      0.6       0.8             1.0            1.2         1.4        1.6     1.8         2.0       2.2        2.4
+ Q(ns )   0.8196   0.7984    0.7956          0.8222         0.8988       1.074      1.470   2.478       5.783     24.77      708.2
+
+
+
+
+3.2   Matter-dominated Universe
+The GW spectrum from the curvature perturbations in a MD Universe was studied in Refs. [26, 27],
+and the analytic formula for I(v, u, x) was obtained there. We also derive the formula using our
+conventions for self-completeness, which makes comparisons with other papers easier, and obtain
+fully analytic formulas of the GW power spectrum for simple examples, some of which were obtained
+only approximately.
+    In the MD Universe, the solution of eq. (10) for the Green’s function of GW is
+
+                     kGk (η, η̄) = − xx̄(j1 (x)y1 (x̄) − y1 (x)j1 (x̄))
+
+
+
+
+                                                              9
+                                         1
+                                    =       ((1 + xx̄) sin(x − x̄) − (x − x̄) cos(x − x̄)) .                    (34)
+                                        xx̄
+
+For a late-time η  η̄ and for a sufficiently large k, it is almost the sinusoidal functions, − x̄1 cos(x−x̄)
+and sin(x − x̄), respectively. The solution of eq. (12) for the gravitational potential which is regular
+at x → 0 is3
+
+                                                         Φ(x) = 1.                                              (35)
+
+The source function f is
+
+                                                                  6
+                                                   fMD (v, u, x) = .                                            (36)
+                                                                  5
+
+Since this is constant, the function I(v, u, x) in the MD era can be much more easily obtained. The
+ratio a(η̄)/a(η) is now (x̄/x)2 in the MD era. The function I(v, u, x) turns out to be
+
+                                                         6(x3 + 3x cos x − 3 sin x)
+                                  IMD (v, u, x) =                                   .                           (37)
+                                                                    5x3
+
+This asymptotes to 6/5 in the large x limit. For a small x, the leading term is 3x2 /25. When we
+introduce the oscillation average in eq. (3), we neglect the kinetic term and instead multiply the
+gradient term by 2. To compensate for the factor 2 for the oscillation average of the nonoscillating
+term, we have to multiply the correction factor by 1/2 to obtain
+
+                                                                          18
+                                               I 2 (v, u, x → ∞) =           .                                  (38)
+                                                                          25
+
+Example 1: Monochromatic source                         The first example for the curvature perturbation is the
+monochromatic case,
+
+                                              Pζ (k) = Aζ δ (log(k/k∗ )) .                                      (39)
+
+The GW spectrum is obtained as
+
+                                                  2                   2 !2
+                                 3            k∗                    k
+                           ΩGW =                          1−                     A2ζ Θ(2k∗ − k).                (40)
+                                 25           aH                   2k∗
+
+Example 2: Scale-invariant case If the MD era continues eternally, the density perturbations
+eventually become nonlinear. Then the perturbation approach becomes invalid, so we set a cutoff
+scale kmax to the curvature perturbations. Actually, the integral is divergent in the pure MD era
+   3
+     This heuristic derivation is actually not a proper treatment because small perturbations to the pure MD equation
+affect properties of its solution significantly. A proper treatment without neglecting the entropy perturbation shows
+the existence of the constant solution sourced by the entropy perturbation, which is a well-known fact in cosmology.
+
+
+
+
+                                                             10
+unless we introduce such a cutoff. In practice, the cutoff scale is the larger of the nonlinear scale
+ −1       1/4
+kNL  ∼ Pζ H−1 [27] (see also Appendix B) and the scale corresponding to the onset of the MD era
+ −1
+kMD   (for example, the beginning of the inflaton oscillation). Thus, as a toy model, we assume a
+scale-invariant curvature perturbation with a cutoff kmax [27],
+
+                                             Pζ (k) = Aζ Θ(kmax − k).                                           (41)
+
+    For 0 < k ≤ kmax , the integration regions dictated by the Heaviside theta function are 0 < t <
+2kmax
+  k   − 2, −1 < s < 1 and 2kmax
+                              k  − 2 < t < 2kmax
+                                              k   − 1, t − 2kmax
+                                                             k   + 1 < s < −(t − 2kmax
+                                                                                   k   + 1), while for
+kmax < k ≤ 2kmax , the integration region is 0 < t < k − 1, t − k + 1 < s < −(t − 2kmax
+                                                      2kmax          2kmax
+                                                                                             k  + 1).
+The GW strength is
+                                                                   
+           A2ζ
+                 
+                      k
+                          2     1792k̃ −1 − 2520 + 768k̃ + 105k̃ 2                           (0 < k ≤ kmax )
+ΩGW =                          ×                                                                                       ,
+                                 1 − 2k̃ −1 4 105k̃ 2 + 72k̃ + 16 − 32k̃ −1 − 16k̃ −2
+                                                                                     
+         14000       aH                                                                        (kmax < k ≤ 2kmax )
+                                                                                                                (42)
+
+where k̃ ≡ k/kmax . The two expressions coincide up to and including the third derivative at
+k = kmax . Equation (42) is shown as the dashed brown line in Figure 2.
+    Note that the power spectrum Ph is enhanced by k̃ −1 = kmax /k for a small k. This enhancement
+is due to the effect of a nondecaying scalar source, Φ =const., during the MD era. Taking the leading
+term for a small k reproduces the result in Ref. [27] up to a numerical factor.4
+
+3.3     Transitions between radiation/matter eras
+So far, we have considered the pure RD and the pure MD Universe. However, the RD epoch is
+taken over by the late-time MD epoch. Also, an early MD era such as an inflaton oscillation period
+may precede the RD era. We consider these transitions, the MD era to the RD era and the RD era
+to the MD era, separately below. When one considers nonminimal cosmological scenarios, there
+may be multiple transitions. Generalization to such cases is a straightforward task.
+
+3.3.1    MD-to-RD transition
+
+We imagine a MD era dominated by some massive field which decays to reheat the Universe. After
+the decay, it is a RD era. We indicate the reheating time by the subscript R. Before reheating (x <
+xR ≡ kηR ), the function I(v, u, x) is the same as the MD case we have seen above, i.e. I(v, u, x) =
+    4
+      After taking into account the difference of the normalization conventions,
+                                                                         √         a factor 2 is missed in the source
+side of their equation of motion for GW, and a geometric factor cos 2φ/ 2 is missed for projection to the transverse
+traceless mode where φ is the angle between the polarization vector e(k) and the projection of the source wavenumber
+k̃ onto the plane spanned by e(k) and ē(k).
+    5
+      For this choice with Aζ ∼ 10−9 , the nonlinear scale kNL comes below kmax . The reason for this choice is to
+clearly show the characteristic behavior of each of the modes k  kR , kR  k < kmax , and kmax < k.
+
+
+
+
+                                                         11
+                              10 4
+
+                             1000
+                 ΩGW /Aζ 2
+                              100
+
+                               10
+
+                                1
+
+                              0.1 -4
+                                10       0.001 0.010 0.100               1     10      100
+                                                                k/kmax
+
+Figure 2: The energy density fraction ΩGW of GWs produced in the MD era from the scale-invariant
+source. The brown lines (vanishing at k = 2kmax ) show the case of an abrupt cutoff kmax (41),
+which may be interpreted as the scale corresponding to the beginning of inflaton oscillation or the
+scale where density perturbations become nonlinear. The dashed curve represents eq. (42) where
+reheating is not considered (the pure MD case). The effect of reheating (transition to the RD
+era) is included in the solid line by multiplying eq. (45) for the case kR = 10−3 kmax 5 . These lines
+overlap for k  kR . The above plot shows the spectra observed at late time (η  ηR ) scaled back
+in time by the common redshift factor (independent of k) in such a way that they coincide with the
+spectra at H = kR for modes k  kR . In other words, we have taken into account the evolution
+of modes k  kR since reheating to their horizon entry. The green line shows the case of a
+MD era preceded by a RD era. kmax is identified as keq . The standard radiation-matter transition
+corresponds to this case with keq = 1.0 × 10−2 Mpc−1 [42]. This line is obtained numerically using
+the interpolating transfer function (49). Note that ΩGW grows during the MD era. The above plot
+shows the spectra at H = 10−3 kmax (see footnote 5). The pink line (horizontal dotted dashed) is
+the standard in the RD era [see eq. (31)] shown for comparison.
+
+
+IMD (v, u, x). After reheating (x > xR ), we separate the time integral as follows:
+                                     Z xR          x   x̄ 2
+                                                    R
+                   I(v, u, x) =             dx̄              kGMD→RD
+                                                                  k    (η, η̄)fMD (v, u, x̄)
+                                      0          x      x R
+                                        Z x      x̄ 
+                                     +      dx̄        kGRD
+                                                         k (η, η̄)fMD→RD (v, u, x̄),             (43)
+                                         xR       x
+
+where the first line is the contribution from the MD era taking into account the fact that the
+propagation of the GW changes after reheating. The second line is the contribution from the RD
+era taking into account the fact that the scalar source experienced the MD era.
+    We may integrate it explicitly, but the expression is complicated. Here, let us focus on terms
+with a qualitatively new behavior, that is, a feature beyond the simple sum of the RD and MD
+contributions. Such a nontrivial feature resides in modes which were about to grow near the end
+
+
+
+                                                           12
+of the MD era. These come from the first line of eq. (43). We connect the GW solution at the
+transition requiring continuity of the zeroth and first derivatives. Then the first line becomes
+  Z xR           x   x̄ 2
+                  R
+          dx̄                   kGkMD→RD (η, η̄)fMD (v, u, x̄)
+    0             x    xR
+          3
+              3(2x2R − 1) cos x − 6xR sin x + 2x4R cos(x − xR ) + 4x3R sin(x − xR ) + 3 cos(x − 2xR ) .
+                                                                                                     
+  =         3
+        5xxR
+                                                                                                     (44)
+
+In the limit xR → x, this reduces to the pure MD case result, eq. (37). On the other hand, in
+the limit x  xR , it is approximated as (12/25)(x2R /x) sin x. By taking the square and oscillation
+average for x and dividing it by eq. (38) and the common redshift factor (xR /x), we obtain the
+relative factor R explaining the inefficient enhancement of superhorizon modes at reheating,
+
+                            1              3              4
+                                                                                        2
+                      R=         −6x R + 4x R cos x R + 2x R sin x R + 6 cos xR sin x R
+                           4x8R
+                                                                                        2 
+                                + −3 + 6x2R + 2x4R cos xR + 3 cos 2xR − 4x3R sin xR          ,       (45)
+
+which reduces to one in the subhorizon limit xR  1 and is proportional to x2R in the superhorizon
+limit xR  1. Multiplying eq. (42) by this factor, we obtain the brown solid line in Figure 2.
+     The contribution to I(v, u, x) from modes entering the horizon a bit after reheating scales like
+k. Squaring this and multiplying the integration region of t which scales like kmax /k, the power
+spectrum for this range of wavenumber behaves like Ph ∼ (a(ηR )/a(η))2 (kmax k/kR       2 )P 2 (k), where
+                                                                                             ζ
+                            −1
+we have replaced ηR ∼ kR        with kR ≡ H(ηR ). This scaling is valid at late times η  ηR since
+we have taken the late-time limit. Note that the snapshot of the power spectrum at the time of
+reheating scales as k 3 , but the observed spectrum scales as k, taking into account the evolution of
+modes since reheating to their horizon entry. The origin of this evolution is the kinetic energy of
+GWs already developed at reheating. It seems that this change of scaling has not been explicitly
+noticed in the literature.
+     For shorter length scales, kR < k < kmax , it is similar to the MD case, Ph ∼ (a(ηR )/a(η))2 (kmax /k)Pζ2 (k).
+On the other hand, for larger length scales, k < kits  R with the intersection k R ≡ k (k /k        1/3 , it
+                                                                                 its   R R max )
+is similar to the RD case, Ph ∼ (a(ηR )/a(η))2 (kR /k)2 Pζ2 (k). The common factor (a(ηR )/a(η))2 rep-
+resents redshift, and Pζ2 (k) represents the source characteristics. The remaining factor represents
+the specific feature for the MD, RD, or intermediate era.
+
+3.3.2     RD-to-MD transition
+
+We now consider a RD era followed by a MD era denoting the equality time by the subscript eq.
+Before the equality (i.e. x < xeq ≡ kηeq ), I(v, u, x) = IRD (v, u, x) is satisfied. After the equality,
+
+
+
+
+                                                         13
+we may split the time integral for the function I(v, u, x) as follows:
+                                          Z xeq          x 2  x̄ 
+                                                          eq
+                           I(v, u, x) =           dx̄                kGRD→MD
+                                                                         k     (η, η̄)fRD (v, u, x̄)
+                                           0           x        x eq
+                                             Z x       x̄ 2
+                                          +       dx̄         kGMD
+                                                                 k (η, η̄)fRD→MD (v, u, x̄).                   (46)
+                                              xeq       x
+
+The first line is the contribution produced in the RD era when taking into account the fact that the
+GW propagation changes after the radiation-matter equality. The second line is the contribution
+produced in the MD era when taking into account the fact that the source term experienced the
+RD era.
+    Again, for modes entering the horizon well before equality and well after equality, the power
+spectrum is essentially the same as that in the RD era and in the MD era, respectively. This time,
+the only nontrivial terms come from the second line. The scalar modes entering the horizon a
+bit before equality are suppressed in the RD Universe, so, even after the enhancement in the MD
+era, the corresponding GW power spectrum is less enhanced compared to the modes entering the
+horizon after equality. Note also that this effect gives a physical cutoff for an otherwise divergent
+integral in the MD era. Quantitatively, this effect is explained by the large k limit of the transfer
+function,
+                                                                             p
+                          ln(c1 kηeq )             2          7                9/10
+  Φ(η  ηeq , k  keq ) =             2
+                                        , c1 = √ √        eγ− 2 ≈ 0.15, c2 = √        ≈ 0.25. (47)
+                           (c2 kηeq )           3( 2 − 1)                   9( 2 − 1)
+
+This is a standard result: see e.g. Ref. [40]. Using this, the second line of eq. (46) becomes
+Z x           x̄ 2
+       dx̄             kGMD
+                         k (η, η̄)fRD→MD (v, u, x̄)
+ xeq           x
+    (x3 − 3(x − xeq ) − xx2eq ) cos(x − xeq ) − (3 + 3xxeq − x2eq ) sin(x − xeq ) 6 ln(c1 uxeq ) ln(c1 vxeq )
+=                                                                                ×                            ,
+                                        x3                                         5 (c2 uxeq )2 (c2 vxeq )2
+                                                                                                        (48)
+
+For a late time η  ηeq , the first factor asymptotes to 1, and the k dependence at large k is
+given just by Φ2 , or k −4 (ln k)2 . Squaring this and numerically integrating6 it with respect to t
+and s, we find that the power spectrum scales as Ph ∼ (kηeq )−2γ(k) Pζ2 (k) with 3 . γ(k) . 4
+being an increasing function of k. This is consistent with an observation in Ref. [26]. For larger
+length scales, k < keq , it is essentially the MD era, and Ph ∼ (keq /k)Pζ2 (k), where kmax has been
+   6
+     For this purpose, we interpolate the large k behavior of the transfer function (47) and the small k limit Φ = 1
+with the following function:
+                                                                     log(1 + c1 kηeq )
+                                          Φ(η  ηeq , k) =                                     .               (49)
+                                                               log(1 + c1 kηeq ) + (c2 kηeq )2
+The numerical result of ΩGW using this transfer function in the case of the scale-invariant source is shown as the
+green solid line in Figure 2.
+
+
+
+                                                                   14
+                                                                                 eq
+replaced by the physical cutoff keq . For shorter length scales, keq < k < kits     with the intersection
+ eq                   2/(γ−1)
+kits ≡ keq (keq /H(η))        , it is essentially the RD era, so Ph ∼ (a(ηeq )/a(η))2 (keq /k)2 Pζ2 (k).
+
+
+4    Summary and conclusion
+Traditionally, the second-order GWs sourced from the primordial curvature perturbations have been
+studied mainly numerically. We have analytically calculated the part of the curvature-induced GW
+power spectrum I(v, u, x) [defined in eq. (15)], which is calculable independently of the primordial
+curvature perturbations Pζ (k). One of our main results is the expression (22) and its late-time
+                      2 (v, u, x) [eq. (26)], or, equivalently in terms of the other variables, I 2 (t, s, x)
+oscillation average, IRD                                                                         RD
+[eq. (27)]. Once the primordial curvature perturbation Pζ (k) is specified, one can easily compute
+the remaining integrals for u and v [eq. (14)], or, equivalently, t and s [eq. (17)] whose physical
+meaning is the wavenumber of the gravitational potential Φ.
+    As applications of the analytic formula, we have calculated the power spectrum of the induced
+GW for simple examples of the primordial curvature perturbations. This has been done numerically
+or fully analytically when possible. For completeness, we have also studied the second-order GWs
+induced in a MD era and have obtained analytic formulas for simple examples. Moreover, we have
+suggested an approximate way of analytically calculating the GW power spectrum in the presence of
+transitions between the RD and MD eras. In fact, using our formulas, we have derived the nontrivial
+wavenumber dependence of the induced GW power spectrum. In particular, we have analytically
+obtained the suppression factor (45) for modes entering the horizon after reheating by assuming
+the sudden transition between the MD and RD eras, taking into account the growth of these modes
+after reheating until their horizon entry. The RD-to-MD transition can be treated numerically. In
+this way, the nontrivial shape of the power spectrum of the induced GWs in the presence of finite
+duration of the MD era, during which the GW spectrum is enhanced, is obtained (semi)analytically,
+as demonstrated in Figure 2 for the case of the scale-invariant curvature perturbations.
+    Our results are useful when one quantitatively evaluates the power spectrum Ph (η, k) or the
+corresponding energy fraction parameter ΩGW (η, k) of the GW induced from the curvature per-
+turbations. These quantities are to be compared with observations as illustrated in Appendix B
+and Figure 3 with simple examples. From Figure 3, one can see that it would be difficult to detect
+the induced GWs by near future observations if the curvature perturbation can be approximated
+as a scale-invariant one. This is so even if we assume the presence of an early MD era to enhance
+the induced GWs, as long as we consider the linear regime. By contrast, if the spectrum of the
+curvature perturbation has a sufficiently blue tilt or running, it may be possible to detect it as
+shown in the Figure 3. In such a case, one has to consider constraints on the enhanced curvature
+perturbations by µ distortion of the CMB [43, 44], change of the baryon-to-photon ratio [45] and
+the neutron-to-proton ratio [46] (see also Ref. [47]) in BBN, and overproduction of ultracompact
+minihalos [48, 49] or PBHs (for reviews of the constraints, see e.g. Refs. [33, 50, 51]).
+
+
+
+                                                     15
+Note added
+Ref. [52] appeared recently after the most parts of this paper had been completed. They derived
+an analytic formula of the late-time limit of the gravitational field hk (η) induced in the radiation
+dominated era right after inflation, from which the power spectrum as well as bispectrum can also
+be calculated, in the context of the Standard Model Higgs instability.
+
+
+Acknowledgments
+The authors are grateful to Sachiko Kuroyanagi for reading the manuscript and for the useful
+discussion. TT thanks Kyohei Mukaida for explaining the conventions in Ref. [38]. This work is
+supported in part by the JSPS Research Fellowship for Young Scientists (TT) and JSPS KAK-
+ENHI Grants No. JP17J00731 (TT), No. JP17H01131 (KK), and No. 26247042 (KK), and MEXT
+KAKENHI Grants No. JP15H05889 (KK), No. JP16H0877 (KK), and No. JP18H04594 (KK).
+
+
+A     General integral formulas with radiation/matter transitions
+In this Appendix, we provide general formulas which can be used for the calculation of I(v, u, x)
+in the presence of multiple RD/MD transitions. We need to consider a generalization of eqs. (43)
+and (46).
+     In general, in a RD era, Φ can be written as a linear combination of two independent solutions,
+        √        √              √        √
+3j1 (x/ 3)/(x/ 3) and 3y1 (x/ 3)/(x/ 3). The GW solution is a linear combination of two inde-
+pendent solutions, sin x̄ and cos x̄. On the other hand, in a MD era, Φ can be written as a linear
+combination of two independent solutions, 1 and x−5 . (However, the power of the decaying mode
+changes when we perturb the pure MD case, and in any case, we neglect the decaying mode) The
+GW solution is a linear combination of two independent solutions, x̄j1 (x̄) and x̄y1 (x̄).
+     For the RD case, we consider
+                           Z x2
+  IRD (v, u, x1 , x2 ) =          dx̄ x̄(C sin x̄ + D cos x̄)fRD (v, u, x̄)|Φ(x̄)=3√3(Aj1 (x̄/√3)+By1 (x̄/√3))/x̄ . (50)
+                            x1
+
+For the MD case, we consider
+                                          Z x2
+                IMD (v, u, x1 , x2 ) =           dx̄ x̄2 (C x̄j1 (x̄) + Dx̄y1 (x̄))fMD (v, u, x̄)|Φ(x̄)=A ,        (51)
+                                            x1
+
+where x1 ≡ kη1 and x2 ≡ kη2 , and where A, B, C, and D are constants with respect to η̄. A and B
+may depend on k and η1 , and C and D may depend on k, η2 , and the present time η. Substituting
+Φ into f (v, u, k, η), A(k) becomes A(uk) or A(vk), and B behaves similarly. We show only the
+dependence on u and v, so we express this as A(u) and A(v).
+
+
+
+
+                                                             16
+    The function f is now
+
+fRD (v, u, x̄)|Φ(x̄)=3√3(Aj1 (x̄/√3)+By1 (x̄/√3))/x̄
+                                                                                                                   
+      1          cos,v−u      (v − u)x̄       sin,v−u    (v − u)x̄    cos,v+u    (v + u)x̄    sin,v+u     (v + u)x̄
+ = 3 3 6 E               cos √          +E            sin √        +E         cos √        +E         sin √           ,
+   u v x̄                          3                         3                       3                        3
+                                                                                                         (52)
+
+where the E values are functions of (u, v, x̄),
+
+          E cos,v−u =6 (A(u)A(v) + B(u)B(v)) 54 − 6(u2 + v 2 − 3uv)x̄2 + u2 v 2 x̄4
+                                                                                         
+                              √
+                          + 12 3 (A(u)B(v) − A(v)B(u)) (u − v)x̄(9 + uvx̄2 ),                            (53)
+                          √
+          E cos,v+u = − 6 2 3 (A(u)B(v) + A(v)B(u)) (u + v)x̄(−9 + uvx̄2 )
+
+                          + (A(u)A(v) − B(u)B(v)) (54 − 6(u2 + v 2 + 3uv)x̄2 + u2 v 2 x̄4 ) ,
+                                                                                           
+                                                                                                         (54)
+                          √
+          E sin,v−u = − 6 2 3x̄ (A(u)A(v) + B(u)B(v)) (u − v)(9 + uvx̄2 )
+
+                          + (A(v)B(u) − A(u)B(v)) 54 − 6(u2 − 3uv + v 2 )x̄2 + u2 v 2 x̄4 ,
+                                                                                          
+                                                                                                         (55)
+                        √
+          E sin,v+u =6 2 3 (A(u)A(v) − B(u)B(v)) (u + v)x̄(−9 + uvx̄2 )
+
+                          + (A(u)B(v) + A(v)B(u)) (−54 + 6(u2 + v 2 + 3uv)x̄2 − u2 v 2 x̄4 ) .
+                                                                                             
+                                                                                                         (56)
+
+The counterpart in the MD case is
+
+                                                                  6A(u)A(v)
+                                       fMD (v, u, x̄)|Φ(x̄)=A =             .                            (57)
+                                                                      5
+
+    The integrals I(v, u, x1 , x2 ) are as follows:
+                                
+                           3      1
+IRD (v, u, x1 , x2 ) =              F −− cos y −− + F +− cos y +− + F −+ cos y −+ + F ++ cos y ++
+                         4u3 v 3 x4
+                                                                                                x2
+                                                                                                
+                                    −−      −−      +−      +−      −+     −+      ++      ++
+                                  +G sin y      + G sin y       + G sin y       + G sin y
+                                                                                                   x1
+                           3(u2 + v 2 − 3)2  −−
+                         +                   H Ci(y −− ) + H +− Ci(y +− ) + H −+ Ci(|y −+ |) + H ++ Ci(y ++ )
+                                4u3 v 3
+                                                                                                    x
+                                  +I −− Si(y −− ) + I +− Si(y +− ) + I −+ Si(y −+ ) + I ++ Si(y ++ ) x21 , (58)
+                                            
+where we have introduced y ±± = 1 ± v±u  √
+                                           3
+                                               x for compact notation, where the first (second) ± on
+the left side corresponds to the first (second) ± on the right side. (The first sign is the relative
+sign between 1 and v, and the second sign is the relative sign between v and u.) The coefficient
+functions F , G, H, and I are defined as
+                              √                  √                          
+             F −− =I −− 18(−1 + 3(u − v))x + (−3 + 3(u − v))((u + v)2 − 3)x3
+
+
+
+                                                        17
+                                                     √             
+                  − H −− 54 − 3(3 + u2 + v 2 − 6uv + 2 3(v − u))x2                          (59)
+                               √                   √                       
+           F +− = − I +− 18(1 + 3(u − v))x + (3 + 3(u − v))((u + v)2 − 3)x3
+                                                     √             
+                  − H +− 54 − 3(3 + u2 + v 2 − 6uv + 2 3(u − v))x2                          (60)
+                               √                   √                       
+           F −+ = − I −+ 18(1 + 3(u + v))x + (3 + 3(u + v))((u − v)2 − 3)x3
+                                                     √             
+                  − H −+ 54 − 3(3 + u2 + v 2 + 6uv + 2 3(u + v))x2                          (61)
+                              √                     √                       
+           F ++ =I ++ 18(−1 + 3(u + v))x + (−3 + 3(u + v))((u − v)2 − 3)x3
+                                                     √             
+                  − H ++ 54 − 3(3 + u2 + v 2 + 6uv − 2 3(u + v))x2                          (62)
+                                  √                    √                      
+           G−− = − H −− 18(−1 + 3(u − v))x + (−3 + 3(u − v))((u + v)2 − 3)x3
+                                                     √            
+                  − I −− 54 − 3(3 + u2 + v 2 − 6uv + 2 3(v − u))x2                          (63)
+                             √                    √                     
+           G+− =H +− 18(1 + 3(u − v))x + (3 + 3(u − v))((u + v)2 − 3)x3
+                                                     √            
+                  − I +− 54 − 3(3 + u2 + v 2 − 6uv + 2 3(u − v))x2                          (64)
+                             √                    √                     
+           G−+ =H −+ 18(1 + 3(u + v))x + (3 + 3(u + v))((u − v)2 − 3)x3
+                                                     √            
+                  − I −+ 54 − 3(3 + u2 + v 2 + 6uv + 2 3(u + v))x2                          (65)
+                                  √                    √                      
+           G++ = − H ++ 18(−1 + 3(u + v))x + (−3 + 3(u + v))((u − v)2 − 3)x3
+                                                     √            
+                  − I ++ 54 − 3(3 + u2 + v 2 + 6uv − 2 3(u + v))x2                          (66)
+
+          H −− =(A(u)A(v) + B(u)B(v))D + (A(u)B(v) − A(v)B(u))C,                            (67)
+          H +− =(A(u)A(v) + B(u)B(v))D + (A(v)B(u) − A(u)B(v))C,                            (68)
+          H −+ = − ((A(u)A(v) − B(u)B(v))D + (A(u)B(v) + A(v)B(u))C),                       (69)
+              ++
+          H        = − ((A(u)A(v) − B(u)B(v))D − (A(u)B(v) + A(v)B(u))C),                   (70)
+           I −− =(A(u)A(v) + B(u)B(v))C + (A(v)B(u) − A(u)B(v))D,                           (71)
+           I +− =(A(u)A(v) + B(u)B(v))C + (A(u)B(v) − A(v)B(u))D,                           (72)
+           I −+ = − ((A(u)A(v) − B(u)B(v))C − (A(u)B(v) + A(v)B(u))D),                      (73)
+           I ++ = − ((A(u)A(v) − B(u)B(v))C + (A(u)B(v) + A(v)B(u))D).                      (74)
+
+The x1 → 0 limit can be taken by using limx1 →0 Ci(Ax1 ) − Ci(Bx1 ) = log A − log B. The above
+formula correctly reproduces earlier results. For example, if we take A = 1, B = 0, C = − cos x,
+and D = sin x, then x−1 limx1 →0 IRD (v, u, x1 , x) = IRD (v, u, x).
+
+
+
+
+                                              18
+    The MD counterpart of the integral is
+
+                         6A(u)A(v)                                                             x
+                                    C −3x cos x + (3 − x2 ) sin x + D −3x sin x + (x2 − 3) cos x x21 .
+                                                                 
+IMD (v, u, x1 , x2 ) =
+                             5
+                                                                                                  (75)
+
+If we take A = 1, C = xy1 (x), and D = −xj1 (x), this reduces to the pure MD result,
+x−2 limx1 →0 IMD (v, u, x1 , x) = IMD (v, u, x). Equation (44) is obtained by using the values of C
+and D which equate the zeroth and first derivatives before and after the reheating (sudden decay
+approximation is used). Also, we substitute Φ in eq. (47) to A to obtain eq. (48).
+
+
+B     Comparison with observations
+Although the focus of this paper is the derivation of the analytic formulas of the power spectrum
+of the induced GWs, we briefly illustrate how to compare our results to observations. The related
+discussion is given at the end of section 4.
+    Well after the horizon entry, GWs produced in a RD era redshift as radiation ρGW ∝ a−4 , so
+ΩGW is constant during a RD era, but it is diluted as a−1 in a MD era. This fact is represented by
+the redshift factor (xeq /x)2 in eq. (46). The present value of the energy fraction for the contribution
+from or before the RD era is thus
+
+                                       ΩGW (η0 , k) = Ωr,0 ΩGW (ηc , k),                           (76)
+
+where Ωr,0 = ρr,0 /ρ0 is the present value of the energy density fraction of radiation, and ηc is
+some time after ΩGW (η, k) has become constant so ΩGW (ηc , k) is the asymptotic constant value
+during the RD era [31]. A precise formula taking into account the change in the number of
+relativistic degrees of freedom can be found, e.g., in Ref. [66] in the context of the primordial GWs.
+For a comprehensive discussion on the precise temperature dependence of the effective degrees of
+freedom, see Ref. [67]. We do not show such a dependence here because we neglect such changes
+in the analytic integral; see footnote 2.
+    On the other hand, the present value of the energy fraction for the contribution after the
+radiation-matter equality is obtained as
+
+                                         ρGW (η0 , k) ρGW (ηΛ , k) ρ(ηΛ ) ρm (η0 )
+                            ΩGW (η0 , k) =
+                                         ρGW (ηΛ , k) ρ(ηΛ ) ρm (η0 ) ρ(η0 )
+                                                a(ηΛ )
+                                        ≃2 Ωm,0        ΩGW (ηΛ , k),                               (77)
+                                                a(η0 )
+
+where Ωm,0 = ρm,0 /ρ0 is the present value of the matter energy fraction, ηΛ is the conformal time
+when the dark energy begins to dominate the Universe, ρm (ηΛ ) = ρΛ (ηΛ ) ≃ ρ(ηΛ )/2, and we
+approximate ΩGW (ηΛ , k) by the MD-to-RD formula because GWs are supposed to redshift like
+
+
+
+                                                      19
+Figure 3: Simple examples of the energy density fraction ΩGW h2 of the induced GWs. The
+brown lines show the case of the scale-invariant curvature perturbations with Aζ = 2.2 × 10−9 .
+The horizontal part is the contribution from the RD era. The bottom left curves show the effect of
+the late-time MD era. The dashed line is in the nonlinear regime, and the solid line is a conservative
+one neglecting all of the contributions beyond the nonlinearity scale. The bottom right curve shows
+an example of an early MD era with the reheating temperature TR = 109 GeV. The scale of the
+onset of the early MD era is assumed to be 200 times shorter than the reheating scale so that there
+is no nonlinearity issue. The green line shows the contribution from the RD era in the case of
+power-law curvature perturbations with Aζ = 10−12 , ns = 2, and k∗ = 0.05 Mpc−1 . The blue lines
+denote existing pulsar timing array constraints from EPTA [53], NANOGrav [54], and PPTA [55].
+The pink lines show sensitivity curves [56] of various future GW observations reproduced from
+Ref. [57]. The observations are from SKA [58], eLISA [59], LISA [60], BBO [61], DECIGO [62],
+Einstein Telescope [63], Cosmic Explorer [64], and KAGRA [65]. The gray line (dotted) shows
+the upper bound on the relativistic degrees of freedom from BBN, ΩGW h2 < 1.8 × 10−6 (95% C.L.)
+derived in Appendix C.
+
+
+radiation after the MD era.
+     To suppress the uncertainty of the Hubble parameter, it is customary to multiply ΩGW with
+  2
+h0 , which is defined as H0 = 100 h0 km/s/Mpc. Some simple examples are plotted in Figure 3
+for illustration. The brown lines show the scale-invariant case with two MD eras. The green
+line shows an example of the power-law spectrum, which may be interpreted qualitatively as a
+rough approximation for some PBH scenarios with curvatons [68–71]. The pulsar timing array
+constraints and the sensitivity curves of future GW detectors are also shown, as blue and pink
+lines, respectively.
+     The dashed line in the Figure 3 indicates that it is in the nonlinear regime. Since the gravita-
+
+
+
+
+                                                 20
+tional potential and the density perturbation are related to each other through ∆Φ ≃ a2 δρ/2 in
+the deep subhorizon limit, we define the nonlinear scale as (see Ref. [27])
+
+                                                  3 −1/4
+                                         kNL (η) = Pζ    H(η).                                         (78)
+                                                  2
+
+We are mostly interested in the nonlinear scale evaluated at the end of the MD era. The solid
+line below the dashed one is the case in which we cut off the source spectrum at the nonlinear
+scale, and the line of the RD era is simply extrapolated. This should be too conservative because
+there would be a contribution which gets marginally nonlinear during the MD era and subsequently
+diluted just by cosmic expansion. This contribution scales as (kNL /k)4 [27]. However, to derive
+the precise spectrum, including the region around k ≃ kNL , one has to consider a time-dependent
+cutoff kNL (η) or rely on nonlinear lattice simulations. For simplicity, we neglect this contribution.
+The true value will be between the dashed and solid curves.
+
+
+C     Constraints on GW from Big-Bang Nucleosynthesis
+An extra component of radiation such as the primordial gravitational wave background speeds up
+the expansion of the Universe, which can be checked by light element abundances produced in the
+epoch of BBN. Such an extra component of radiation is often parametrized by the effective number
+of neutrino species Nν,eff ≡ ρν,eff /ρνi , where ρν,eff is the total energy density for the three species of
+active neutrinos and the extra component of radiation, and ρνi is the energy density for one species
+of active neutrino νi . If Nν,eff is larger than ∼ 3, the interconverting reactions between neutron (n)
+and proton (p) should be decoupled from the thermal bath earlier than the time in the case of the
+standard BBN, which gives a larger neutron to proton ratio (n/p) as its freeze-out value. Then
+more 4 He and D are produced due to this larger n/p. Compared with observational light element
+abundances of 4 He and D, we can constrain Nν,eff for a fixed value of baryon number. Here, we
+adopt the value of the baryon number to be ΩB h20 = 0.02229+0.00029  −0.00027 (95% C.L.) [42].
+    In this paper we adopt the following observational values of the mass fraction of 4 He [72] and
+the deuterium (D) to hydrogen (H) ratio [73] at 68% C.L.,
+
+                                       Yp = 0.2449 ± 0.0040,                                           (79)
+
+and
+
+                                 (D/H)p = (2.545 ± 0.025) × 10−5 ,                                     (80)
+
+respectively.
+    In Fig. 4a, we plot χ2 s as a function of Nν,eff to fit the observational abundance of D and 4 He,
+respectively, by using theoretical values of abundances calculated in BBN with errors of nuclear
+
+
+
+                                                    21
+                   (a) D and 4 He                                        (b) Total
+
+
+
+Figure 4: (4a) χ2 as a function of Nν,eff to fit abundances of D and 4 He, respectively. (4b) Total
+χ2 as a function of ΩGW h20 to simultaneously fit both D and 4 He.
+
+
+reaction rates. By using these values of χ2 , we can calculate the total χ2 , which is plotted in Fig. 4b
+as a function of ΩGW h20 ∼ 5.6 × 10−6 (Nν,eff − 3).
+    From this figure, we obtain the upper bound on the energy density of the primordial GWs to be
+ΩGW h20 < 1.8 × 10−6 at 95% C.L. It is notable that this constraint is sensitive to both the adiabatic
+and nonadiabatic components of radiation. This constraint is shown in Fig. 3 as the gray dotted
+line.
+
+
+References
+ [1] Virgo, LIGO Scientific Collaboration, B. P. Abbott et al., “Observation of Gravitational Waves
+     from a Binary Black Hole Merger,” Phys. Rev. Lett. 116 no. 6, (2016) 061102, arXiv:1602.03837
+     [gr-qc].
+
+ [2] Virgo, LIGO Scientific Collaboration, B. P. Abbott et al., “GW151226: Observation of
+     Gravitational Waves from a 22-Solar-Mass Binary Black Hole Coalescence,” Phys. Rev. Lett. 116
+     no. 24, (2016) 241103, arXiv:1606.04855 [gr-qc].
+
+
+
+                                                   22
+ [3] VIRGO, LIGO Scientific Collaboration, B. P. Abbott et al., “GW170104: Observation of a
+     50-Solar-Mass Binary Black Hole Coalescence at Redshift 0.2,” Phys. Rev. Lett. 118 no. 22, (2017)
+     221101, arXiv:1706.01812 [gr-qc].
+
+ [4] Virgo, LIGO Scientific Collaboration, B. P. Abbott et al., “GW170814: A Three-Detector
+     Observation of Gravitational Waves from a Binary Black Hole Coalescence,” Phys. Rev. Lett. 119
+     no. 14, (2017) 141101, arXiv:1709.09660 [gr-qc].
+
+ [5] Virgo, LIGO Scientific Collaboration, B. P. Abbott et al., “GW170608: Observation of a
+     19-solar-mass Binary Black Hole Coalescence,” Astrophys. J. 851 no. 2, (2017) L35,
+     arXiv:1711.05578 [astro-ph.HE].
+
+ [6] L. P. Grishchuk, “Amplification of gravitational waves in an istropic universe,” Sov. Phys. JETP 40
+     (1975) 409–415. [Zh. Eksp. Teor. Fiz.67,825(1974)].
+
+ [7] A. A. Starobinsky, “Spectrum of relict gravitational radiation and the early state of the universe,”
+     JETP Lett. 30 (1979) 682–685. [,767(1979)].
+
+ [8] BICEP2, Keck Array Collaboration, P. A. R. Ade et al., “Improved Constraints on Cosmology and
+     Foregrounds from BICEP2 and Keck Array Cosmic Microwave Background Data with Inclusion of 95
+     GHz Band,” Phys. Rev. Lett. 116 (2016) 031302, arXiv:1510.09217 [astro-ph.CO].
+
+ [9] S. Y. Khlebnikov and I. I. Tkachev, “Relic gravitational waves produced after preheating,” Phys. Rev.
+     D56 (1997) 653–660, arXiv:hep-ph/9701423 [hep-ph].
+
+[10] R. Easther and E. A. Lim, “Stochastic gravitational wave production after inflation,” JCAP 0604
+     (2006) 010, arXiv:astro-ph/0601617 [astro-ph].
+
+[11] R. Easther, J. T. Giblin, Jr., and E. A. Lim, “Gravitational Wave Production At The End Of
+     Inflation,” Phys. Rev. Lett. 99 (2007) 221301, arXiv:astro-ph/0612294 [astro-ph].
+
+[12] J. F. Dufaux, A. Bergman, G. N. Felder, L. Kofman, and J.-P. Uzan, “Theory and Numerics of
+     Gravitational Waves from Preheating after Inflation,” Phys. Rev. D76 (2007) 123517,
+     arXiv:0707.0875 [astro-ph].
+
+[13] E. Witten, “Cosmic Separation of Phases,” Phys. Rev. D30 (1984) 272–285.
+
+[14] C. J. Hogan, “Gravitational radiation from cosmological phase transitions,” Mon. Not. Roy. Astron.
+     Soc. 218 (1986) 629–636.
+
+[15] R. Jinno and M. Takimoto, “Gravitational waves from bubble collisions: An analytic derivation,”
+     Phys. Rev. D95 no. 2, (2017) 024009, arXiv:1605.01403 [astro-ph.CO].
+
+[16] T. Vachaspati and A. Vilenkin, “Gravitational Radiation from Cosmic Strings,” Phys. Rev. D31
+     (1985) 3052.
+
+[17] T. Damour and A. Vilenkin, “Gravitational radiation from cosmic (super)strings: Bursts, stochastic
+     background, and observational windows,” Phys. Rev. D71 (2005) 063510, arXiv:hep-th/0410222
+     [hep-th].
+
+
+
+                                                     23
+[18] U.-L. Pen and N. Turok, “Shocks in the Early Universe,” Phys. Rev. Lett. 117 no. 13, (2016) 131301,
+     arXiv:1510.02985 [astro-ph.CO].
+
+[19] G. S. Bisnovatyi-Kogan and V. N. Rudenko, “Very high frequency gravitational wave background in
+     the universe,” Class. Quant. Grav. 21 (2004) 3347–3359, arXiv:gr-qc/0406089 [gr-qc].
+
+[20] R. Anantua, R. Easther, and J. T. Giblin, “GUT-Scale Primordial Black Holes: Consequences and
+     Constraints,” Phys. Rev. Lett. 103 (2009) 111303, arXiv:0812.0825 [astro-ph].
+
+[21] R. Dong, W. H. Kinney, and D. Stojkovic, “Gravitational wave production by Hawking radiation from
+     rotating primordial black holes,” JCAP 1610 no. 10, (2016) 034, arXiv:1511.05642 [astro-ph.CO].
+
+[22] K. N. Ananda, C. Clarkson, and D. Wands, “The Cosmological gravitational wave background from
+     primordial density perturbations,” Phys. Rev. D75 (2007) 123518, arXiv:gr-qc/0612013 [gr-qc].
+
+[23] E. Bugaev and P. Klimai, “Induced gravitational wave background and primordial black holes,” Phys.
+     Rev. D81 (2010) 023517, arXiv:0908.0664 [astro-ph.CO].
+
+[24] L. Alabidi, K. Kohri, M. Sasaki, and Y. Sendouda, “Observable Spectra of Induced Gravitational
+     Waves from Inflation,” JCAP 1209 (2012) 017, arXiv:1203.4663 [astro-ph.CO].
+
+[25] S. Mollerach, D. Harari, and S. Matarrese, “CMB polarization from secondary vector and tensor
+     modes,” Phys. Rev. D69 (2004) 063002, arXiv:astro-ph/0310711 [astro-ph].
+
+[26] D. Baumann, P. J. Steinhardt, K. Takahashi, and K. Ichiki, “Gravitational Wave Spectrum Induced by
+     Primordial Scalar Perturbations,” Phys. Rev. D76 (2007) 084019, arXiv:hep-th/0703290 [hep-th].
+
+[27] H. Assadullahi and D. Wands, “Gravitational waves from an early matter era,” Phys. Rev. D79
+     (2009) 083511, arXiv:0901.0989 [astro-ph.CO].
+
+[28] L. Alabidi, K. Kohri, M. Sasaki, and Y. Sendouda, “Observable induced gravitational waves from an
+     early matter phase,” JCAP 1305 (2013) 033, arXiv:1303.4519 [astro-ph.CO].
+
+[29] E. D. Kovetz, “Probing Primordial-Black-Hole Dark Matter with Gravitational Waves,” Phys. Rev.
+     Lett. 119 no. 13, (2017) 131301, arXiv:1705.09182 [astro-ph.CO].
+
+[30] K. Kohri and T. Terada, “Primordial Black Hole Dark Matter and LIGO/Virgo Merger Rate from
+     Inflation with Running Spectral Indices,” arXiv:1802.06785 [astro-ph.CO].
+
+[31] K. Inomata, M. Kawasaki, K. Mukaida, and T. T. Yanagida, “Double inflation as a single origin of
+     primordial black holes for all dark matter and LIGO observations,” Phys. Rev. D97 no. 4, (2018)
+     043514, arXiv:1711.06129 [astro-ph.CO].
+
+[32] J. Garcia-Bellido, M. Peloso, and C. Unal, “Gravitational Wave signatures of inflationary models from
+     Primordial Black Hole Dark Matter,” JCAP 1709 no. 09, (2017) 013, arXiv:1707.02441
+     [astro-ph.CO].
+
+[33] M. Sasaki, T. Suyama, T. Tanaka, and S. Yokoyama, “Primordial black holes—perspectives in
+     gravitational wave astronomy,” Class. Quant. Grav. 35 no. 6, (2018) 063001, arXiv:1801.05235
+     [astro-ph.CO].
+
+
+
+                                                   24
+[34] R. Saito and J. Yokoyama, “Gravitational wave background as a probe of the primordial black hole
+     abundance,” Phys. Rev. Lett. 102 (2009) 161101, arXiv:0812.4339 [astro-ph]. [Erratum: Phys.
+     Rev. Lett.107,069901(2011)].
+
+[35] R. Saito and J. Yokoyama, “Gravitational-Wave Constraints on the Abundance of Primordial Black
+     Holes,” Prog. Theor. Phys. 123 (2010) 867–886, arXiv:0912.5317 [astro-ph.CO]. [Erratum: Prog.
+     Theor. Phys.126,351(2011)].
+
+[36] E. Bugaev and P. Klimai, “Constraints on the induced gravitational wave background from primordial
+     black holes,” Phys. Rev. D83 (2011) 083521, arXiv:1012.4697 [astro-ph.CO].
+
+[37] N. Orlofsky, A. Pierce, and J. D. Wells, “Inflationary theory and pulsar timing investigations of
+     primordial black holes and gravitational waves,” Phys. Rev. D95 no. 6, (2017) 063518,
+     arXiv:1612.05279 [astro-ph.CO].
+
+[38] K. Inomata, M. Kawasaki, K. Mukaida, Y. Tada, and T. T. Yanagida, “Inflationary primordial black
+     holes for the LIGO gravitational wave events and pulsar timing array experiments,” Phys. Rev. D95
+     no. 12, (2017) 123510, arXiv:1611.06130 [astro-ph.CO].
+
+[39] M. Maggiore, “Gravitational wave experiments and early universe cosmology,” Phys. Rept. 331 (2000)
+     283–367, arXiv:gr-qc/9909001 [gr-qc].
+
+[40] V. Mukhanov, Physical Foundations of Cosmology. Cambridge University Press, Oxford, 2005.
+     http://www-spires.fnal.gov/spires/find/books/www?cl=QB981.M89::2005.
+
+[41] Planck Collaboration, P. A. R. Ade et al., “Planck 2015 results. XX. Constraints on inflation,”
+     Astron. Astrophys. 594 (2016) A20, arXiv:1502.02114 [astro-ph.CO].
+
+[42] Planck Collaboration, P. A. R. Ade et al., “Planck 2015 results. XIII. Cosmological parameters,”
+     Astron. Astrophys. 594 (2016) A13, arXiv:1502.01589 [astro-ph.CO].
+
+[43] J. Chluba, A. L. Erickcek, and I. Ben-Dayan, “Probing the inflaton: Small-scale power spectrum
+     constraints from measurements of the CMB energy spectrum,” Astrophys. J. 758 (2012) 76,
+     arXiv:1203.2681 [astro-ph.CO].
+
+[44] K. Kohri, T. Nakama, and T. Suyama, “Testing scenarios of primordial black holes being the seeds of
+     supermassive black holes by ultracompact minihalos and CMB µ-distortions,” Phys. Rev. D90 no. 8,
+     (2014) 083514, arXiv:1405.5999 [astro-ph.CO].
+
+[45] T. Nakama, T. Suyama, and J. Yokoyama, “Reheating the Universe Once More: The Dissipation of
+     Acoustic Waves as a Novel Probe of Primordial Inhomogeneities on Even Smaller Scales,” Phys. Rev.
+     Lett. 113 (2014) 061302, arXiv:1403.5407 [astro-ph.CO].
+
+[46] K. Inomata, M. Kawasaki, and Y. Tada, “Revisiting constraints on small scale perturbations from
+     big-bang nucleosynthesis,” Phys. Rev. D94 no. 4, (2016) 043527, arXiv:1605.04646 [astro-ph.CO].
+
+[47] D. Jeong, J. Pradler, J. Chluba, and M. Kamionkowski, “Silk damping at a redshift of a billion: a new
+     limit on small-scale adiabatic perturbations,” Phys. Rev. Lett. 113 (2014) 061301, arXiv:1403.3697
+     [astro-ph.CO].
+
+
+
+                                                     25
+[48] B. C. Lacki and J. F. Beacom, “Primordial Black Holes as Dark Matter: Almost All or Almost
+     Nothing,” Astrophys. J. 720 (2010) L67–L71, arXiv:1003.3466 [astro-ph.CO].
+
+[49] T. Bringmann, P. Scott, and Y. Akrami, “Improved constraints on the primordial power spectrum at
+     small scales from ultracompact minihalos,” Phys. Rev. D85 (2012) 125027, arXiv:1110.2484
+     [astro-ph.CO].
+
+[50] B. J. Carr, K. Kohri, Y. Sendouda, and J. Yokoyama, “New cosmological constraints on primordial
+     black holes,” Phys. Rev. D81 (2010) 104019, arXiv:0912.5297 [astro-ph.CO].
+
+[51] B. Carr, F. Kuhnel, and M. Sandstad, “Primordial Black Holes as Dark Matter,” Phys. Rev. D94
+     no. 8, (2016) 083504, arXiv:1607.06077 [astro-ph.CO].
+
+[52] J. R. Espinosa, D. Racco, and A. Riotto, “A Cosmological Signature of the SM Higgs Instability:
+     Gravitational Waves,” arXiv:1804.07732 [hep-ph].
+
+[53] L. Lentati et al., “European Pulsar Timing Array Limits On An Isotropic Stochastic
+     Gravitational-Wave Background,” Mon. Not. Roy. Astron. Soc. 453 no. 3, (2015) 2576–2598,
+     arXiv:1504.03692 [astro-ph.CO].
+
+[54] NANOGRAV Collaboration, Z. Arzoumanian et al., “The NANOGrav 11-year Data Set:
+     Pulsar-timing Constraints On The Stochastic Gravitational-wave Background,” arXiv:1801.02617
+     [astro-ph.HE].
+
+[55] R. M. Shannon et al., “Gravitational waves from binary supermassive black holes missing in pulsar
+     observations,” Science 349 no. 6255, (2015) 1522–1525, arXiv:1509.07320 [astro-ph.CO].
+
+[56] B. S. Sathyaprakash and B. F. Schutz, “Physics, Astrophysics and Cosmology with Gravitational
+     Waves,” Living Rev. Rel. 12 (2009) 2, arXiv:0903.0338 [gr-qc].
+
+[57] C. J. Moore, R. H. Cole, and C. P. L. Berry, “Gravitational-wave sensitivity curves,” Class. Quant.
+     Grav. 32 no. 1, (2015) 015014, arXiv:1408.0740 [gr-qc].
+
+[58] P. E. Dewdney, P. J. Hall, R. T. Schilizzi, and T. J. L. W. Lazio, “The square kilometre array,”
+     Proceedings of the IEEE 97 no. 8, (Aug, 2009) 1482–1496.
+
+[59] eLISA Collaboration, P. A. Seoane et al., “The Gravitational Universe,” arXiv:1305.5720
+     [astro-ph.CO].
+
+[60] P. Amaro-Seoane, H. Audley, S. Babak, J. Baker, E. Barausse, P. Bender, E. Berti, P. Binetruy,
+     M. Born, D. Bortoluzzi, J. Camp, C. Caprini, V. Cardoso, M. Colpi, J. Conklin, N. Cornish,
+     C. Cutler, K. Danzmann, R. Dolesi, L. Ferraioli, V. Ferroni, E. Fitzsimons, J. Gair, L. Gesa Bote,
+     D. Giardini, F. Gibert, C. Grimani, H. Halloin, G. Heinzel, T. Hertog, M. Hewitson,
+     K. Holley-Bockelmann, D. Hollington, M. Hueller, H. Inchauspe, P. Jetzer, N. Karnesis, C. Killow,
+     A. Klein, B. Klipstein, N. Korsakova, S. L. Larson, J. Livas, I. Lloro, N. Man, D. Mance, J. Martino,
+     I. Mateos, K. McKenzie, S. T. McWilliams, C. Miller, G. Mueller, G. Nardini, G. Nelemans,
+     M. Nofrarias, A. Petiteau, P. Pivato, E. Plagnol, E. Porter, J. Reiche, D. Robertson, N. Robertson,
+     E. Rossi, G. Russano, B. Schutz, A. Sesana, D. Shoemaker, J. Slutsky, C. F. Sopuerta, T. Sumner,
+
+
+
+                                                    26
+    N. Tamanini, I. Thorpe, M. Troebs, M. Vallisneri, A. Vecchio, D. Vetrugno, S. Vitale, M. Volonteri,
+    G. Wanner, H. Ward, P. Wass, W. Weber, J. Ziemer, and P. Zweifel, “Laser Interferometer Space
+    Antenna,” ArXiv e-prints (Feb., 2017) , arXiv:1702.00786 [astro-ph.IM].
+
+[61] G. M. Harry, P. Fritschel, D. A. Shaddock, W. Folkner, and E. S. Phinney, “Laser interferometry for
+     the big bang observer,” Class. Quant. Grav. 23 (2006) 4887–4894. [Erratum: Class. Quant.
+     Grav.23,7361(2006)].
+
+[62] N. Seto, S. Kawamura, and T. Nakamura, “Possibility of direct measurement of the acceleration of the
+     universe using 0.1-Hz band laser interferometer gravitational wave antenna in space,” Phys. Rev. Lett.
+     87 (2001) 221103, arXiv:astro-ph/0108011 [astro-ph].
+
+[63] M. Punturo et al., “The Einstein Telescope: A third-generation gravitational wave observatory,”
+     Class. Quant. Grav. 27 (2010) 194002.
+
+[64] LIGO Scientific Collaboration, B. P. Abbott et al., “Exploring the Sensitivity of Next Generation
+     Gravitational Wave Detectors,” Class. Quant. Grav. 34 no. 4, (2017) 044001, arXiv:1607.08697
+     [astro-ph.IM].
+
+[65] KAGRA Collaboration, K. Somiya, “Detector configuration of KAGRA: The Japanese cryogenic
+     gravitational-wave detector,” Class. Quant. Grav. 29 (2012) 124007, arXiv:1111.7185 [gr-qc].
+
+[66] R. Jinno, T. Moroi, and K. Nakayama, “Inflationary Gravitational Waves and the Evolution of the
+     Early Universe,” JCAP 1401 (2014) 040, arXiv:1307.3010 [hep-ph].
+
+[67] K. Saikawa and S. Shirai, “Primordial gravitational waves, precisely: The role of thermodynamics in
+     the Standard Model,” arXiv:1803.01038 [hep-ph].
+
+[68] M. Kawasaki, N. Kitajima, and T. T. Yanagida, “Primordial black hole formation from an axionlike
+     curvaton model,” Phys. Rev. D87 no. 6, (2013) 063519, arXiv:1207.2550 [hep-ph].
+
+[69] K. Kohri, C.-M. Lin, and T. Matsuda, “Primordial black holes from the inflating curvaton,” Phys.
+     Rev. D87 no. 10, (2013) 103527, arXiv:1211.2371 [hep-ph].
+
+[70] B. Carr, T. Tenkanen, and V. Vaskonen, “Primordial black holes from inflaton and spectator field
+     perturbations in a matter-dominated era,” Phys. Rev. D96 no. 6, (2017) 063507, arXiv:1706.03746
+     [astro-ph.CO].
+
+[71] K. Ando, K. Inomata, M. Kawasaki, K. Mukaida, and T. T. Yanagida, “Primordial Black Holes for
+     the LIGO Events in the Axion-like Curvaton Model,” arXiv:1711.08956 [astro-ph.CO].
+
+[72] E. Aver, K. A. Olive, and E. D. Skillman, “The effects of He I λ10830 on helium abundance
+     determinations,” JCAP 1507 no. 07, (2015) 011, arXiv:1503.08146 [astro-ph.CO].
+
+[73] E. O. Zavarygin, J. K. Webb, S. Riemer-Sørensen, and V. Dumont, “Primordial deuterium abundance
+     at z=2.504 towards Q1009+2956,” 2018. arXiv:1801.04704 [astro-ph.CO].
+     https://inspirehep.net/record/1648127/files/arXiv:1801.04704.pdf.
+
+
+
+
+                                                    27
+

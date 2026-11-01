@@ -1,0 +1,408 @@
+                                                               CMB Bispectrum from Non-linear Effects during Recombination
+
+                                                                                S.-C. Su,1 Eugene A. Lim,1, 2 and E. P. S. Shellard1
+                                                           1
+                                                               Centre for Theoretical Cosmology, Department of Applied Mathematics and Theoretical Physics,
+                                                                    University of Cambridge, Wilberforce Road, Cambridge CB3 0WA, United Kingdom
+                                                                         2
+                                                                           Theoretical Particle Physics and Cosmology Group, Physics Department,
+                                                                            Kings College London, Strand, London WC2R 2LS, United Kingdom
+                                                                                                  (Dated: August 23, 2018)
+                                                              We study cosmological perturbations by solving the governing Boltzmann and Einstein Field equa-
+                                                           tions up to second order, and calculate the corresponding CMB bispectrum during recombination.
+                                                           We include all the second-order Liouville and collision terms, truncating the multipole hierarchy
+arXiv:1212.6968v2 [astro-ph.CO] 19 Feb 2013
+
+
+
+
+                                                           at l = 10, consistently including all m 6= 0 terms when calculating the bispectrum in the flat-sky
+                                                           limit. At this stage, we focus on contributions at recombination and we neglect 2nd-order vector
+                                                           and tensor terms, lensing effects, and late time non-linear ISW. We find that the signal-to-noise for
+                                                           the bispectrum is 0.69 for lmax = 2000, yielding an overall signal FNL = 3.19 (normalised relative to
+                                                           the local model). We find that the effective fNL ’s of the equilateral and local type are 5.11 and 0.88
+                                                           respectively. This recombination signal will have to be taken into account in a quantitative analysis
+                                                           of the Planck data.
+                                                           PACS numbers: 98.80.-k, 98.80.Es
+
+
+                                                 Introduction.        With the Planck data shortly              effects, we solve the 2nd-order Boltzmann Equations
+                                              to become available, we may be able to detect
+                                              non-Gaussianities in the Cosmic Microwave Back-                                     L[II] + L[I,I] = C[II] + C[I,I]              (1)
+                                              ground(CMB) for the very first time. Such a detection
+                                                                                                                where L is the Liouville operator, C is the collision op-
+                                              could provide crucial insights advancing our understand-
+                                                                                                                erator, the superscripts [II] and [I,I] denote linear terms
+                                              ing of the physics of the very early Universe, so its im-
+                                                                                                                of purely second-order perturbations and cross terms of
+                                              portance cannot be overstated. However, as well as pri-
+                                                                                                                two first-order perturbations respectively. In addition,
+                                              mordial effects when the initial conditions are laid down
+                                                                                                                we require knowledge of the first-order ionization frac-
+                                              during inflation, there can be late-time non-linear inter-
+                                                                                                                tion [6] at recombination, which encodes the effect of the
+                                              actions of the photon-baryon fluid with gravity(For more
+                                                                                                                perturbed last-scattering surface(LSS), when evaluating
+                                              details, refer to [1]). There have been several past at-
+                                                                                                                C[I,I] .
+                                              tempts at estimating the CMB bispectrum from the lat-
+                                                                                                                   We begin with the metric defined up to second-order
+                                              ter in the literature [2–4]. A detailed quantitative analy-
+                                              sis of these late-time contributions is necessary, not only                    gµν
+                                              to debiase potential primordial signals, but also as an in-               −          dxµ dxν = (1 + 2Φ)dτ 2 − 2Bi dxi dτ
+                                                                                                                            a(τ )2
+                                              dependent test of GR and cosmological perturbation the-
+                                                                                                                                 −[(1 − 2Ψ)δij + 2Xij ]dxi dxj                 (2)
+                                              ory. In this paper, we present our numerical implemen-
+                                              tation of the calculation of the bispectrum produced at           where a(τ ) is the scale factor, and Φ, Ψ, Bi ’s and Xij ’s
+                                                                                          local
+                                              recombination and beyond. We obtain fN        L = 0.88, in        are perturbations expanded in the following way
+                                              agreement with previous work focussing on the squeezed
+                                              limit [13, 14]. We also find an equilateral signal with                                            1
+                                                equil                                                                                  A = A[I] + A[II]                        (3)
+                                              fN  L = 5.11 which agrees very well with [5]. The over-
+                                                                                                                                                 2
+                                              all signal-to-noise (S/N )rec = 0.69 provides an effective        with A denoting the perturbation quantities above. We
+                                              FNL = 3.19 contribution which is larger than antici-              will use Newtonian gauge up to second-order through-
+                                              pated previously and should be incorporated in the anal-          out. Moreover, we ignore the 1st-order and 2nd-order
+                                              ysis of the Planck CMB data with a forecast variance of                                                  [I]     [II]
+                                                                                                                vector and tensor perturbations, i.e. Bi = Bi = 0
+                                              ∆FNL = 5. First, however, we briefly describe the un-                    [I]    [II]
+                                              derlying analytic methodology before describing the nu-           and Xij = Xij = 0.1
+                                              merical pipeline that has been developed, leading to the            We compute the corresponding reduced bispectrum
+                                              recombination bispectrum results. A much more detailed            during recombination in the flat-sky and thin-shell ap-
+                                              discussion of these methods and results will be presented
+                                              in a longer paper shortly [18].
+                                                                                                                 1 In general, the second-order vector and tensor perturbations are
+
+                                                                                                                  non-negligible as they are sourced by the first-order scalar per-
+                                                Second-Order Perturbations and their Bispec-                      turbations nonlinearly, however, we can expect these to be sub-
+                                              tra. To study non-Gaussianities generated by non-linear             dominant.
+                                                                                                                                                    2
+
+proximation [4]                                                                      In particular, the first and second term in the first line
+                 −4     Z ∞                                Z 0                    of eq. (6) are the lensing and time-delay effects respec-
+                rLSS                                                              tively. The term △(Φ′ + Ψ′ ) can be identified as the
+b l1 l2 l3 ≈                    dk1z dk2z P (k1 )P (k2 )           dr1 dr2 dr3
+               (2π)2       −∞                               rLSS                  photon-ISW coupling when the perturbed photons are
+    −i(k1z r1 +k2z r2 +k3z r3 ) [I]                                               redshifted by the time-varying gravitational potential.
+e                             S (k1 , r1 )S [I] (k2 , r2 )S2ND (k1 , k2 , r3 )
+                                                                                  Similarly, we can interpret Φ(Φ′ + Ψ′ ), (4△ + C̃)Φ and Φ2
+    +1 ↔ 3 + 2 ↔ 3                                                          (4)
+                                                                                  as the SW-ISW, photon-SW and SW-SW effects respec-
+where LSS denoting the last-scattering surface, r ≡ τ0 −τ                         tively. The term (Φ − Ψ)ni ∂i Φ + 2ΨΨ′ is the quadratic
+with the present conformal time τ0 , P (k) being the pri-                         part of the evolution equation of photon energy p in 2nd-
+mordial power spectrum, k z being the component of k                              order, i.e. (dp/dη)[I,I] . We will discuss the contributions
+perpendicular to the tangent plane [15]. The first-order                          of these effects on the bispectrum later.
+                                  (S)
+source function S [I] refers to ST in [7] while the second-                          Our ultimate goal is to calculate the bispectrum as ob-
+order source function S2ND can be expanded into its lin-                          served today, which means that all the effects post recom-
+ear and quadratic parts S2ND = S [II] + S [I,I] . The lin-                        bination till today are ideally included in the calculation.
+ear part S [II] refers to eq. (40) of [8] with the first-order                    However, an appropriate milestone towards this goal is
+perturbations replaced by the kernels of the correspond-                          the computation of the bispectrum at the end of recom-
+ing second-order perturbations2 . Analogous to well-                              bination which is what we undertake in this paper. This
+known linear perturbation theory, S [II] contains contri-                         means that we cut off the numerical integration at this
+butions from intrinsic photon density, Sachs-Wolfe(SW),                           point.
+Doppler, integrated Sachs-Wolfe(ISW) effects of purely                               However, there exist source terms in this calculation
+2nd-order perturbations which require the full set of so-                         which, via integrations by parts, are either zeroes or can
+lutions from the 2nd-order Boltzmann[9] and Einstein                              be rescaled away today, i.e. we can drop the boundary
+Field equations[10] (BE and EFE respectively).                                    terms if they are taken today. In moving from eq. (5) to
+   In contrast, the quadratic part S [I,I] requires solutions                     eq. (6), as we mentioned, we have performed integration
+of 1st-order perturbations only and can be read in con-                           by parts for the term ni ∂i (△Φ) in the line of sight integral
+figuration space as3                                                              and dropped the boundary term evaluated today. This
+                                                                                  means that we have secretly included post-recombination
+                                     ∂△                                           effects as a bonus. More importantly, these terms turn
+        S [I,I] = 2e−τ̄ [S ij ∂j (Φ + Ψ) − (Φ + Ψ)ni ∂i △
+                                     ∂ni                                          out to be much easier numerically to deal with once in-
+                + 4(−ni ∂i Φ + Ψ′ )△ + (Φ − Ψ)ni ∂i Φ                             tegration by parts has been performed.
+                + 2ΨΨ′ + C[I,I] ]                                           (5)      Thus, it is necessary to clarify which terms of the
+                                                                                  source function are considered when we restrict the time
+where S ij is the screen projector [9], 4△ ≡ δI/I¯ is the                         integration around the recombination. In our study, we
+fractional brightness, ni ’s are the components of the ob-                        include all the terms of the source function S2ND in eq. (6)
+servational direction, C[I,I] is the quadratic collision op-                      coupled with the function g as it behaves like a dirac-
+erator, and τ̄ is the optical thickness.4                                         delta function at recombination. We will also include all
+   We rewrite the 1st term in the 2nd line of Eq. (5)                             ISW-related effect at early-time6 , such as the purely 2nd-
+△ni ∂i Φ = ni ∂i (△Φ) − Φni ∂i △ and perform an integra-                          order ISW and photon-ISW coupling.7 . We ignore con-
+tion by part for the 1st term of r.h.s., to obtain5                               tributions from lensing, time-delay and late-time ISW-
+                                                                                  related effects. The lensing and time-delay effects have
+                                 ∂△
+     S [I,I] = 2e−τ̄ [S ij ∂j (Φ + Ψ)− (Φ + Ψ)ni ∂i △                             been studied elsewhere [11, 12]. Finally, we leave for a
+                                 ∂ni                                              future publication the effects from the 2nd-order vector
+            + 4(Φ′ + Ψ′ )(△ + Φ) + (Φ − Ψ)ni ∂i Φ + 2ΨΨ′ ]                        and tensor perturbations and the late-time ISW-related
+            + 2g[(4△ + C̃)Φ + 2Φ2 + C̃[I,I] ]            (6)                      effects – note that the former contributes throughout the
+                                                                                  entire time integration of the line-of-sight approach al-
+where g ≡ τ̄ ′ eτ̄ and C ≡ τ̄ ′ C̃.                                               though they should be fairly small.
+                                                                                     Numerical Implementation. To calculate the bis-
+                                                                                  pectrum in eq. (4), we solve the perturbations numeri-
+2 The kernels A[II] (k
+                 R    1 , k2 , τ ) are defined as
+  A[II] (k, τ ) ≡ dk1 dk2 (2π)−3/2 δ(k − k1 − k2 )A[II] (k1 , k2 , τ ).
+3 For simplicity, the notation for 1st-order perturbations is omit-
+
+  ted.                                                                            6 We also take (dp/dη)[I,I] into account but its contribution to the
+4 The quadratic collision C[I,I] contains only quadratic terms in
+                                                                                    bispectrum is small.
+  1st-order perturbaions and refers to eq. (A.55) of [4] in Fourier               7 Effectively, we ignore the ISW effect due to late-time Dark En-
+
+  space.                                                                            ergy driven acceleration. We perform the time integration from
+5 Another integration by part is needed to transform (Ψ′ −ni ∂ Φ)Φ                  τ = 230 to 1050 Mpc to make sure that the early-time ISW
+                                                                   i
+  into Φ(Φ′ + Ψ′ ) (SW-ISW) and τ̄ ′ Φ2 (SW-SW).                                    effects are included.
+                                                                                                                                                                                       3
+
+cally for both 1st and 2nd-order terms. For the latter,                                                             chosen to align with the z-axis of the multipole decom-
+we compute the kernels of the 2nd-order perturbations                                                               position. Thus, modes with m 6= 0 are suppressed8 . Sim-
+as functions of k1 , k2 , k1 · k1 and τ .                                                                           ilarly, the 2nd-order vector and tensor perturbations are
+   The solved 2nd-order perturbations can then be fed                                                               not important in the squeezed limit as they are sourced
+into the purely 2nd-order source function S [II] . Although                                                         by m = 1 and m = 2 modes respectively.
+only 1st-order perturbations are needed to compute the
+quadratic source function S [I,I] , it has to be decomposed
+                   [I,I]
+into multipoles Sl,m . In principle, to close the hierarchy
+requires multipoles up to infinite l, but this is numeri-                                                              Results and Discussion. In Fig. 2, we plot the bis-
+cally consuming, and hence the usual prescription is to                                                             pectra of the terms in the source function S2ND . We can
+truncate the hierarchy once convergence is reached. For                                                             see that the main contributions come from the effects of
+the bispectrum at recombination, we found that l up to                                                              the Photon-SW, SW-SW and quadratic Collisions as well
+10 is sufficient (See Fig. 1). We include all the m 6= 0                                                            as the purely second-order SW, Doppler and anisotropic
+modes consistently up to l = 10.                                                                                    stress9 effects. The sum of the Photon-SW and the SW-
+                                                                                                                    SW effects has roughly the same value regardless of l.
+      b{{{ C{ 2
+                                                                                                                    That is, the total bispectrum from these two effects is
+                                                                                                                    approximately proportional to the product of the power
+         5
+                                                                                                                    of the long and short wavelength modes, i.e. ClS ClL .
+                   600           800       1000    1200     1400      1600          1800          2000
+                                                                                                         {          This is because the power spectrum of the short wave-
+                                                                                                                    length mode comes mainly from intrinsic intensity, SW
+       -5
+                                                                                                                    and Doppler effects while the power spectrum of the long
+      -10                                                                                                           wavelength mode is proportional to the square of the ini-
+                         { up to 10
+                                                                                                                    tial gravitational potential Φ. This shifts the bispectrum
+      -15
+
+                         { up to 8
+                                                                                                                    from the purely second-order source terms up and sup-
+      -20                { up to 5
+                                                                                                                    presses the correlation between the bispectrum at recom-
+                                                                                                                    bination and that of the local type.
+  b20 {{ HC{ C20 L
+
+       40
+
+                          { up to 10
+
+       35                 { up to 8
+                                                                                                                                   All
+                          { up to 5                                                                                                              b20 {{ HC{ C20 L
+                                                                                                                                   SW-SW
+       30                                                                                                                                             40
+                                                                                                                                   Γ-SW
+                                                                                                                                   Γ-ISW
+
+                                                                                                                                   SW-ISW
+       25
+                                                                                                                                    dp                30
+                                                                                                                                   H L@I,ID
+                                                                                                                                    dΤ
+                                                                                                                                   Collision
+       20
+                                                                                                                                                      20
+
+
+
+
+                                                                                                                {
+                   600               800    1000     1200      1400          1600          1800          2000
+                                                                                                                                                      10
+
+
+
+FIG. 1. The graphs of the bispectra generated from the
+quadratic source function S [I,I] against l for equilateral(upper)                                                                 500                               1500             2000
+                                                                                                                                                                                             {
+
+and squeezed(lower) limit. The curves correspond to differ-
+                                        [I,I]
+ent l truncations of the multipoles Slm . We can see that the                                                                                       -10
+
+convergence occurs when l goes up to 10.
+
+   Our bispectrum at the squeezed limit is in good agree-
+ment with the analytical estimate in [13, 14]. However,
+as we have indicated previously, our integration by part
+scheme has included different post recombination effects
+and hence we do not expect a full agreement.
+   In addition, we remark that the numerical accuracy of
+                    [I,I]
+the multipoles Sl,m with m 6= 0 cannot be checked with
+the analytic solution as they contribute negligibly in the                                                          8 This is true if we only consider scalar perturbations in 1st-order.
+squeezed limit. The reason is as follows. In this limit,                                                              In this case, we have only m = 0 modes in 1st-order when k
+kL1 ≪ kS2 , kS3 , and combined with the conservation law                                                              aligns with the z-axis of the multipole decomposition.
+                                                                                                                    9 Explicitly, the term Π in [7].
+of momenta, kS2 is approximately parallel to kS3 which is
+                                                                                                                                             4
+
+                          b20 {{ HC{ C20 L
+
+
+
+                                                                        {
+              500                                1500            2000
+
+
+
+
+                             -20
+
+
+
+
+              All
+                             -40
+
+              I0
+
+              Doppler
+
+              SW
+                             -60
+              ISW
+
+              P
+
+
+
+
+FIG. 2. The bispectra of the terms in the quadratic(upper)
+and linear(lower) source function in squeezed limit.
+
+
+   We present the full bispectrum at recombination in
+Fig. 3, showing isosurfaces of the bispectrum density. Al-
+though the main contribution to the recombination bis-
+pectrum is concentrated towards the edges of the tetrahe-
+dron, in the strongly squeezed limit the bispectrum fluc-
+tuates around zero and hence its correlation with the lo-
+                                                                            FIG. 3. The 3D plot of the reduced bispectrum generated
+cal type template is somewhat suppressed. What is clear
+                                                                            at recombination. The bispectrum is normalized by the co-
+from the figure is that the bispectrum does not corre-                      efficient D(l1 , l2 , l3 ) defined in [16] to remove an overall l−4
+late particularly well with the popular templates – local,                  scaling. We can see that the main contribution occurs in a
+equilateral or orthogonal. It possesses its own distinct                    fairly diffuse region near the edges of the tetrahedron, i.e.
+shape with most power located between the local and                         towards the squeezed limit. The red regions represent pos-
+equilateral limits. In Fig. 4, we show different tetrahe-                   itive values while the blue regions represent negative values
+dral cross-sections through the full recombination bispec-                  of the recombination bispectrum – the oscillatory nature of
+                                                                            the bispectrum means that it does not conform well to known
+trum taken at different summations l1 + l2 + l3 = const.
+                                                                            templates such as the local or equilateral types. The signal
+On the other hand, it contains features in the squeezed                     to noise for the bispectrum is 0.69 for lmax = 2000 as plotted.
+limit and along the edges which reflect those appearing in
+the ISW-lensing bispectrum, but we will report on ISW
+cross-correlations in our longer paper [18].
+                                                                               These results are consistent in the squeezed limit with
+   In Table I, we summarize the effective fNL ’s, the nor-
+                                                                            [13, 14], confirming the correction of the value ∼ 5 as
+malized FNL ’s [17] and their signal-to-noise ratios. The
+              local                                                         first calculated in [4]. In this work, however, we have fo-
+local-type FNL      is small because of the fluctuating bis-
+                                                                            cussed on increasing quantitative accuracy across the full
+pectrum in squeezed limit as we explained previously.
+                          equil                                             tetrahedral domain beyond the squeezed limit. We have
+The equilateral-type FNL        is small due to the lack of                                                    equil
+                                                                            computed the equilateral type fNL        = 5.11 (FNL = 0.66)
+support in the interior of the bispectrum.
+                                                                            which is modest but consistent with [5]. However, the
+                                                                            full signal-to-noise ratio of the recombination bispectrum
+TABLE I. The table of the effective fNL ’s, FNL ’s and signal-              in our calculation out to lmax = 2000 is substantial
+to-noise ratio S/N of the local and equilateral templates cor-              (S/N )rec ∼ 0.69 (FNL = 3.19) and larger than antici-
+related to the recombination bispectrum, as well as its total               pated in the recent literature. Confirmation of the mag-
+signal (auto-correlation). For ease of comparison, the FNL                  nitude of this signal will be important for the a quantita-
+quantity normalises the integrated bispectrum signal for any                tive analysis of the Planck data where this contribution
+shape relative to the fNL = 1 local model. It shows that
+                                                                            should be incorporated in debiasing local and equilateral
+the recombination bispectrum does not correlate well with
+local and equilateral templates. We have used lmax = 2000                   signals and in determining whether there is an overall pri-
+throughout.                                                                 mordial non-Gaussian signature in the data. The recom-
+                                                                            bination bispectrum will combine with the ISW-lensing
+     Model                     fNL            FNL       (S/N )              bispectrum at about the 10% level (or greater) and its
+     Equilateral               5.11           0.66       0.028              correlation can affect the significance of this determina-
+     Local                     0.88           0.88        0.22              tion in the Planck data (recall that ISW can bias the local
+     Auto-correlation           —             3.19        0.69
+                                                                            signal by as much as fNL = 9.5 [11]). For this reason we
+                                                                                                                             5
+
+                                                                 order (both which have been studied separately in the
+                                                                 literature), the addition of the second-order vector and
+                                                                 tensor perturbations, and finally the late-time ISW ef-
+                                                                 fects. These will be addressed in a future publication [18].
+                                                                 With improving precision, this recombination bispectrum
+                                                                 should be included in the analysis of future CMB exper-
+                                                                 iments.
+                                                                    Acknowledgements. We are grateful for many infor-
+                                                                 mative conversations with Julien Lesgourgues, T. Tram,
+                                                                 Christian Fidler, Zhiqi Huang and Christophe Pitrou (in-
+                                                                 cluding comparisons with CMBQUICK[19]). We would
+                                                                 also like to thank James Fergusson for many useful dis-
+                                                                 cussions and help with bispectrum visualisation. The nu-
+                                                                 merical simulations were implemented and performed on
+                                                                 the COSMOS supercomputer, part of the DiRAC HPC
+                                                                 Facility which is funded by STFC and BIS. We thank
+                                                                 Andrey Kaliazin for computational support and techni-
+                                                                 cal advice. E. A. Lim, S. Su and E.P.S. Shellard were
+                                                                 supported by STFC grant ST/F002998/1 and the Cen-
+                                                                 tre for Theoretical Cosmology. The numerical code was
+                                                                 developed based on CAMB [21].
+
+                                                                 Note added in proof: While this paper was being pre-
+                                                                 pared, a preprint appeared with an alternative numeri-
+                                                                 cal implementation which also tackles second-order CMB
+                                                                 perturbations [20]. This short paper offers a number of
+                                                                                                                     local
+                                                                 tests in the squeezed limit including a forecast fN   L ≈
+                                                                 0.82, in agreement with our results. An equilateral pre-
+                                                                 diction was not given but the overall signal quoted [20]
+                                                                 (S/N )rec = 0.47 is lower than our result. This discrep-
+                                                                 ancy may reflect the range of physical effects which have
+                                                                 been incorporated in the two approaches. It is unlikely to
+                                                                 be due to tensor and vector contributions which are sub-
+                                                                 dominant, but it may reflect a different hierarchy trunca-
+                                                                                      [I,I]
+                                                                 tion scheme of the Sl,m multipoles or the integration by
+                                                                 parts approach they adopt which seems to include some
+FIG. 4. The cross sections of the normalized reduced bis-        different post recombination effects.
+pectrum in Fig. 3 with the conditions 12 (l1 + l2 + l3 ) = 400
+(upper panel), 1100 (middle panel) and 1600 (lower panel).
+They correspond to hyperslices through Fig. 3.
+
+                                                                  [1] Bartolo N., Matarrese S., Riotto A., Adv. Astron. 2010,
+shall continue to incorporate more physical effects in our            157079 (2010).
+numerical pipeline to improve this quantitative analysis          [2] Nitta D. et al., J. Cosmol. Astropart. Phys. 05, 014
+further.                                                              (2009).
+                                                                  [3] Senatorea L., Tassevc S., Zaldarriaga M., J. Cosmol. As-
+   Summary. In this paper, we focus on the bispectrum                 tropart. Phys. 09, 038 (2009).
+generated at recombination across the full range of multi-        [4] Pitrou C., Uzan J.-P., Bernardeau F., J. Cosmol. As-
+pole combinations. We find that the effective fNL ’s of the           tropart. Phys. 07, 003 (2010).
+equilateral and local types are 5.11 and 0.88 respectively,       [5] Bartolo N., Riotto A., J. Cosmol. Astropart. Phys. 03,
+while the overall signal-to-noise is (S/N )rec = 0.69, all            017 (2009).
+calculated using lmax = 2000. We note from Fig. 3 that            [6] Novosyadlyj B., Mon. Not. Roy. Astron. Soc. 370, 1771
+                                                                      (2006).
+the bispectrum possesses its own distinct features dif-
+                                                                  [7] Seljak U., Zaldarriaga M., Astrophys. J. 469, 437 (1996).
+ferentiating it from well-known templates, such as local,         [8] Hu W. et al., Phys. Rev. D 57, 6 (1998).
+equilateral and ISW-lensing. To complete the full calcu-          [9] Pitrou C., Class. Quant. Grav. 26, 065006 (2009).
+lation of this late-time bispectrum will require the inclu-      [10] Bartolo N., Matarrese S., Riotto A., J. Cosmol. As-
+sion of the time-delay and lensing effects up to second-              tropart. Phys. 06, 024 (2006).
+                                                                                                                           6
+
+[11] Lewis A., Challinor A., Hanson D., J. Cosmol. Astropart.        043510 (2009).
+     Phys. 03, 018(2011).                                       [17] Fergusson J. R., Liguori M., Shellard E. P. S. (2010),
+[12] Hu W., Cooray A., Phys. Rev. D 63, 023504 (2001).               arXiv:1006.1642.
+[13] Creminelli P., Pitrou C., Vernizzi F., J. Cosmol. As-      [18] Su, S, Lim, E., Shellard, E.P.S., in preparation (2013).
+     tropart. Phys. 11, 025 (2011).                             [19] http://www2.iap.fr/users/pitrou/cmbquick.htm.
+[14] Bartolo N., Matarrese S., Riotto A., J. Cosmol. As-        [20] Huang Z., Vernizzi F. (2012), arXiv:1212.3573.
+     tropart. Phys. 1202 017 (2012).                            [21] Lewis A., Challinor A., Lasenby A., Astrophys. J. 538,
+[15] Bernardeau F., Pitrou C., Uzan J.-P., J. Cosmol. As-            473 (2000).
+     tropart. Phys. 02, 015 (2011).
+[16] Fergusson J. R., Shellard E. P. S., Phys. Rev. D 80,
+

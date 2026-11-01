@@ -1,0 +1,1753 @@
+                                                                Weak Lensing of the CMB: A Harmonic Approach
+
+                                                                                                Wayne Hu
+                                                                            Institute for Advanced Study, Princeton, NJ 08540
+                                                                                         Revised November 26, 2024
+                                                    Weak lensing of CMB anisotropies and polarization for the power spectra and higher order statistics
+                                                    can be handled directly in harmonic-space without recourse to real-space correlation functions. For
+                                                    the power spectra, this approach not only simplifies the calculations but is also readily generalized
+                                                    from the usual flat-sky approximation to the exact all-sky form by replacing Fourier harmonics with
+                                                    spherical harmonics. Counterintuitively, due to the nonlinear nature of the effect, errors in the
+                                                    flat-sky approximation do not improve on smaller scales. They remain at the 10% level through
+                                                    the acoustic regime and are sufficiently large to merit adoption of the all-sky formalism. For the
+                                                    bispectra, a cosmic variance limited detection of the correlation with secondary anisotropies has an
+                                                    order of magnitude greater signal-to-noise for combinations involving magnetic parity polarization
+arXiv:astro-ph/0001303v1 18 Jan 2000
+
+
+
+
+                                                    than those involving the temperature alone. Detection of these bispectra will however be severely
+                                                    noise and foreground limited even with the Planck satellite, leaving room for improvement with
+                                                    higher sensitivity experiments. We also provide a general study of the correspondence between flat
+                                                    and all sky potentials, deflection angles, convergence and shear for the power spectra and bispectra.
+
+                                                         I. INTRODUCTION                                  should be employed where full accuracy is required, e.g.
+                                                                                                          for the analysis of precise measurements from CMB satel-
+                                          As the cosmic microwave background (CMB) photons                lite missions.
+                                       propagate from the last scattering surface through in-                Beyond the power spectrum, lensing induces three
+                                       tervening large-scale structure, they are gravitationally          point correlations in the CMB through its correlation
+                                       lensed. Weak lensing effects on the the temperature and            with secondary anisotropies [4,5], even when the intrin-
+                                       polarization distributions of the cosmic microwave back-           sic distribution at last scattering is Gaussian. Detec-
+                                       ground is already a well-studied field. As in other as-            tion of these effects in the temperature maps however
+                                       pects of the field, early work treating the effects on the         are severely limited by cosmic variance. The primary
+                                       temperature correlation function [1] has largely been su-          anisotropies themselves act at as Gaussian noise for these
+                                       perceded by harmonic space power spectrum analyses in              purposes. In this case, the low level at which the CMB
+                                       the post-COBE era [2,3]. In harmonic space, the physical           is polarized can be an asset not a liability. Three point
+                                       processes of anisotropy formation are most directly man-           correlations involving the polarization, where orientation
+                                       ifest. However for weak lensing in the CMB, correlation            plays a role, are most simply considered with their har-
+                                       function underpinnings have typically remained, forcing            monic space analogue, the bispectrum. We introduce
+                                       transformations between real and Fourier space to de-              polarization and polarization-temperature bispectra and
+                                       fine the effect in a small-angle (flat-sky) approximation.         show that they can have signal-to-noise advantages over
+                                       Exceptions include recent work on the non-Gaussianity              those involving the temperature alone.
+                                       of the lensed temperature field where a direct harmonic               The outline of the paper is as follows. In §II, we treat
+                                       space approach has been taken [4,5].                               the basic elements of the cosmological framework, CMB
+                                          In this paper, we provide a complete framework for the          temperature and polarization, and weak lensing needed
+                                       study of lensing effects in the temperature and polariza-          to understand these effects. Detailed derivations are pre-
+                                       tion fields directly in harmonic space. Not only does this         sented in a series of Appendices: A covers the all-sky
+                                       greatly simplify the power spectrum calculations but it            weak lensing approach, B the evaluation of the all-sky
+                                       also establishes a clear link between weak lensing power           formulae and C the correspondence between the flat and
+                                       spectrum observables in wide-field galaxy surveys and              all sky approaches for scalar, vector and tensor fields on
+                                       CMB observables for cross-correlation studies. Further-            the sky. The lensing effects on the power spectrum are
+                                       more, this approach is easily generalized to lensing on            treated in the flat-sky approximation in §III and in the
+                                       the full sky by replacing Fourier harmonics with spheri-           exact all-sky approach in §IV. In §V, we study the ef-
+                                       cal harmonics.                                                     fects of lensing on the bispectra of the temperature and
+                                          We show that counterintuitively, corrections from em-           polarization distributions. We conclude in §VI.
+                                       ploying an exact all-sky treatment are not confined to
+                                       large angles. The second order nature of the effect brings
+                                       in large scale power through mode coupling. Since the                                 II. FORMALISM
+                                       all-sky expressions are as simple to evaluate as their flat-
+                                       sky approximations, which themselves are much simpler                In this section, we review and develop the formalism
+                                       to evaluate than the correlation function analogues, they          necessary for calculating lensing effects in the CMB. We
+
+
+                                                                                                      1
+review the relevant properties of the adiabatic cold dark                       10–9
+matter (CDM) model in §II A. In §II B, we discuss the
+power spectra and bispectra of the temperature fluctu-                          10–10
+
+
+
+
+                                                                   l(l+1)ClΘΘ /2π
+                                                                                        lensed
+ations, polarization and temperature-polarization cross                                 unlensed
+correlation. Finally in §II C, we review the properties of                      10–11
+weak lensing relevant for the CMB calculation.
+                                                                                10–12         all
+                                                                                              flat
+                A. Cosmological Model                                           10–13
+                                                                                                                              error
+
+   We work in the context of the adiabatic CDM family of                        10–11
+models, where structure forms through the gravitational
+
+
+
+
+                                                                   l(l+1)ClΘΕ /2π
+instability of the CDM in a background Friedmann-                               10–12
+Robertson-Walker metric. In units of the critical density
+3H02 /8πG, where H0 = 100h km s−1 Mpc−1 is the Hub-                             10–13
+ble parameter today, the contribution of each component
+is denoted Ωi , i = c for the CDM, b for the baryons, Λ for                     10–14
+the cosmological constant. It is convenient to define
+                                                    P the                       10–15
+auxiliary quantities Ωm = Ωc + Ωb and ΩK = 1 − i Ωi ,
+                                                                                         10              100           1000
+which represent the matter density and the contribution
+                                                                                                          l
+of spatial curvature to the expansion rate respectively.                 FIG. 1. Temperature and temperature-polarization cross
+The expansion rate                                                    power spectra. Shown here are the power spectra of the un-
+                                                                      lensed and lensed fields, their difference in the all-sky and
+     H 2 = H02 Ωm (1 + z)3 + ΩK (1 + z)2 + ΩΛ .
+                                                
+                                                        (1)           flat-sky calculations and the error induced by using the flat
+                                                                      sky expressions. The oscillatory nature of the difference indi-
+then determines the comoving conformal distance to red-
+                                                                      cates that lensing smooths the power spectrum.
+shift z,
+                       Z z
+                           H0
+               D(z) =         ′
+                                dz ′ ,              (2)               Here δH is the amplitude of present-day density fluctua-
+                        0 H(z )                                       tions at the Hubble scale; we adopt the COBE normal-
+in units of the Hubble distance today H0−1 =                          ization for δH [8]. F (z)/(1 + z) is the growth rate of
+2997.9h−1Mpc. The comoving angular diameter distance                  linear density perturbations δ(z) = F (z)δ(0)/(1 + z) [9]
+                                                                                                                        3
+                                                                                         H(z) ∞ ′
+                                                                                                              
+                                                                                                                 H0
+                                                                                             Z
+                       −1/2        1/2                                                                     ′
+              D A = ΩK        sinh(ΩK D) ,              (3)              F (z) ∝ (1 + z)          dz (1 + z )              . (7)
+                                                                                         H0 z                   H(z ′ )
+plays an important role in lensing. Note that as ΩK → 0,
+DA → D.                                                               For the matter dominated regime where H ∝ (1 + z)3/2 ,
+   The adiabatic CDM model possesses a power spectrum                 F is independent of redshift.
+of fluctuations in the gravitational potential Φ                         Although we maintain generality in all derivations, we
+                                                                      illustrate our results with a ΛCDM model. The parame-
+                                      n−1
+                   k3                                                 ters for this model are Ωc = 0.30, Ωb = 0.05, ΩΛ = 0.65,
+                                 
+                                   k
+      ∆2Φ (k, z) = 2 PΦ = A(z)              T 2 (k) , (4)             h = 0.65, Yp = 0.24, n = 1, and δH = 4.2 × 10−5 . This
+                  2π               H0
+                                                                      model has mass fluctuations on the 8h Mpc−1 scale in
+where the the transfer function is normalized to T (0) = 1.           accord with the abundance of galaxy clusters σ8 = 0.86.
+We employ the CMBFast code [6] to determine T (k) at                  A reasonable value here is important since the lensing
+intermediate scales and extend it to small scales using               calculation is second order.
+analytic fits [7].
+   The cosmological Poisson equation relates the power
+spectra of the potential and density perturbations δ                                                 B. CMB
+                 4             −2
+                          H02
+           
+    2   9 H0                                                            We decompose the CMB temperature perturbation on
+  ∆Φ =               1 + 3 2 ΩK       Ω2m (1 + z)2 ∆2δ , (5)
+        4 k               k                                           the sky Θ(n̂) = ∆T (n̂)/T into its multipole moments
+and gives the relationship between their relative normal-
+                                                                                             X
+                                                                                     Θ(n̂) =    Θlm Ylm (n̂) .            (8)
+ization                                                                                          lm
+                               −2
+                        H2
+                 
+               9                                                      The polarization on the sky is represented by the trace-
+       A(z) =      1 + 3 20 ΩK     Ω2m F (z)δH
+                                             2
+                                               .      (6)
+               4        k                                             free symmetric Stokes matrix on the sky
+
+                                                               2
+             10–11                                                          The power spectra and cross correlation of these quan-
+                                                                         tities is defined as
+l(l+1)ClΕΕ /2π
+
+             10–12                   lensed                                                                                       ′
+                                                                                           ∗
+                                     unlensed                                            hXlm Xl′′ m′ i = δl,l′ δm,m′ ClXX ,                            (14)
+             10–13
+                                                                         where X and X ′ can take on the values Θ,E,B. Note
+                                                                         that the cross power spectra between B and Θ or E have
+             10–14
+                                                                         odd total parity and thus vanish assuming anisotropy
+                                                                         formation is a parity invariant process.
+             10–15
+                                                                           The bispectrum is defined as
+
+                                                                                                          l l′ l′′
+                                                                                                                   
+             10–14                                                                                                             ′
+                                                                                                                                 X ′′
+                                                                            hXlm Xl′′ m′ Xl′′′′ m′′ i =       ′  ′′   BllXX
+                                                                                                                          ′ l′′       , (15)
+                                                                                                          m m m
+l(l+1)ClΒΒ /2π
+
+
+
+
+                                     all
+             10–15                   flat                                and vanishes if the fluctuations are Gaussian. Even in the
+                                                                         presence of non-Gaussianity due to non-linear but parity-
+             10–16                                    error              conserving sources, bispectra involving an even number
+                                                                         of magnetic parity terms (including zero) vanish for l +
+                                                                         l′ + l′′ =odd and those involving an odd number vanish
+             10–17
+                                                                         for l + l′ + l′′ =even.
+                         10             100        1000                     For a small section of the sky or high multipole mo-
+                                            l
+    FIG. 2. Polarization power spectra. The same as in Fig. 1
+                                                                         ments, it is sufficient to treat the sky as flat. In the
+  except for the E and B polarization. We have assumed that              flat-sky approximation, the Fourier moments of the tem-
+  the unlensed B spectrum vanishes as appropriate for scalar             perature fluctuations are given as
+  perturbations.
+                                                                                                   d2 l
+                                                                                                Z
+                                                                                        Θ(n̂) =         Θ(l)eil·n̂ ,           (16)
+                                                                                                  (2π)2
+      P(n̂) = + X(n̂) (m+ ⊗ m+ ) + − X(n̂) (m− ⊗ m− ) , (9)
+                                                                         and the polarization as
+  where
+                                                                                              d2 l
+                                                                                          Z
+                                                                                                           ±2i(ϕl −ϕ) il·n̂
+                                                                              ± X(n̂) = −          ± X(l)e           e ,                                (17)
+                     ± X(n̂) = Q(n̂) ± iU (n̂) ,                                             (2π)2
+                             1                                           where ϕl is azimuthal angle of l. Again one separates the
+                        m± = √ (êθ ∓ iêφ ) .                (10)
+                              2                                          Stokes moments as
+  The complex Stokes parameter ± X is a spin-2 object
+                                                                                                 ± X(l) = E(l) ± iB(l) .                                (18)
+  which can be decomposed in the spin-spherical harmonics
+  [11]                                                                     As in the all-sky case, the power spectra and cross
+                       X                                                 correlations can be defined as with power spectra
+                                    m
+             ± X(n̂) =   ± Xlm ±2 Yl (n̂) .          (11)                                                                                   ′
+                              lm                                                    hX ∗ (l)X ′ (l′ )i = (2π)2 δ(l − l′ )C(l)
+                                                                                                                          XX
+                                                                                                                              ,                         (19)
+                                                                               ∗         ′   ′     ′′       ′′            2   ′       ′′     XX ′ X ′′
+  We have assumed that the Stokes V parameter vanishes                      hX (l)X (l )X (l )i = (2π) δ(l − l − l                         )B(l,l′ ,l′′ ) .
+
+  as appropriate for cosmological perturbations; for a full
+  set add the term V ǫij to the polarization matrix, where               The power spectra for the fiducial ΛCDM model are
+  ǫij is the Levi-Civita tensor.                                         shown in Figs. 1 and 2.
+     Due to the parity properties of the spin-spherical har-               In Appendix C, we establish the correspondence be-
+  monics                                                                 tween the all-sky and flat-sky spectra. For the power
+                                                                         spectra and bispectra,
+                           m      l     m
+                       s Yl → (−1) −s Yl ,                    (12)                   ′                  ′
+                                                                              ClXX ≈ C(l) XX
+                                                                                              ,
+  one introduces the parity eigenstates [12,13]                                         
+                                                                                          l l′ l′′
+                                                                                                   r
+                                                                                                      (2l + 1)(2l′ + 1)(2l′′ + 1)
+                                                                            XX ′ X ′′
+                                                                           Bll′ l′′   ≈
+                                                                                          0 0 0                   4π
+                       ± Xlm = Elm ± iBlm ,                   (13)
+                                                                                                                 ′   ′′
+                                                                                                   XX X
+                                                                                                  B(l,l′ ,l′′ ) ,                                       (20)
+  such that Elm just like Θlm has parity (−1)l (“electric”
+  parity) whereas Blm has parity (−1)l+1 (“magnetic” par-                for sufficiently high l’s.
+  ity). Density (scalar) fluctuations in linear theory only                 For the bispectra, we have assumed that the triplet
+  stimulate the E component of polarization.                             is composed of an even number of magnetic parity (B)
+
+                                                                     3
+objects such that it vanishes for l + l′ + l′′ = odd. For                   is not affected by non-linearity until very high multipoles
+combinations involving an odd number (e.g. BΘΘ), the                        (see Fig. 3), we neglect these terms here.
+Wigner-3j symbol should be replaced with its algebraic                         Finally, the lensing potential can also be corre-
+approximation (B2) but with l + l′ + l′′ = even terms set                   lated with secondary temperature and polarization
+to zero instead. However the overall sign depends on the                    anisotropies [4,10], so that one must also consider the
+orientation of the triangle in the flat-sky approximation                   cross power spectra
+since the bispectrum is then antisymmetric to reflections
+about either axis.
+                                                                                        ∗
+                                                                                      hXlm φl′ m′ i = δl,l′ δm,m′ ClXφ ,
+                                                                                                                        Xφ
+                                                                                     hX ∗ (l)φ(l′ )i = (2π)2 δ(l − l′ )C(l) ,     (27)
+                       C. Weak Lensing                                      in the all and flat sky limits.
+                                                                              To calculate the power spectra of the lensing potential
+   In the so-called Born approximation where lensing ef-                    for a given cosmology one expands the gravitational po-
+fects are evaluated on the the null-geodesics of the un-                    tential in eqn. (21) in plane waves and then expanding
+lensed photons, all effects can be conveniently encapsu-                    the plane waves in spherical harmonics. The result is
+lated in the projected potential [14,15]
+                                                                                                   dk 2
+                                                                                                Z
+                     Z                                                               Clφφ = 4π        ∆ (k, z)[Illen (k)]2 ,    (28)
+         φ(n̂) = −2 dDgφ (D)Φ(x(n̂), D) ,           (21)                                            k Φ
+                                                                            where
+where
+                                                                                                                 k
+                                                                                                   Z
+              1
+                        Z ∞                   ′                                      Iℓlen (k) =       dD W len (D)jl (
+                                                                                                                   D) ,
+                                    ′ DA (D− D)                                                                 H0
+   gφ (D) =                    dD               gs (D′ ) .       (22)
+            DA (D)        D            DA (D′ )                                                          DA (Ds − D)
+                                                                                    W len (D) = −2F (D)                .          (29)
+For the CMB, the source distribution gs is the Thomson                                                  DA (D)DA (Ds )
+visibility and may be replaced by a delta function at the
+                                                                            For curved universes, replace the spherical Bessel func-
+last scattering surface Ds = D(z ∼ 103 ); for galaxy weak
+                                                                            tion with the ultra-spherical Bessel function. In the small
+lensing this is the distance distribution of the sources.
+                                                                            scale limit, this expression may be replaced by its equiv-
+We explicitly relate this quantity to the more familiar
+                                                                            alent Limber approximated integral [14]
+convergence and shear in Appendix A. Note that the
+deflection angle is given by the angular gradient α(n̂) =                         φφ     2π 2
+                                                                                              Z
+∇φ(n̂).                                                                         C(l) = 3        dDDA [W len (D)]2 ∆2Φ (k, 0)         ,
+                                                                                          l                                      H
+                                                                                                                             k=l D 0
+   As with the temperature perturbations, we can decom-                                                                           A
+
+
+pose the lensing potential into multipole moments                           This expression also has the useful property that its non-
+                        X                                                   linear analogue can be calculated with the replacement
+                φ(n̂) =    φlm Ylm (n̂) ,             (23)
+                              lm                                                        F (D)2 ∆2Φ (k, 0) → ∆2Φ (k, D) ,          (30)
+or Fourier moments as                                                       where the time-dependent non-linear power spectrum is
+                               d2 l                                         given by the scaling formula [16] and the Poisson equa-
+                     Z
+             φ(n̂) =                φ(l)eil·n̂ ,                 (24)       tion (5). Since non-linear effects generally only appear
+                              (2π)2
+                                                                            at small angles, the full non-linear all-sky spectrum can
+The power spectra of the lensing potential in the all-sky                   be obtained by matching these expressions in the linear
+and flat-sky cases as                                                       regime (see Fig. 3).
+                                                                               Similarly, the cross correlation may be calculated for
+           hφ∗lm φl′ m′ i = δl,l′ δm,m′ Clφφ ,
+                                                                            any secondary effect once its relation to the gravitational
+                                            φφ
+          hφ∗ (l)φ(l′ )i = (2π)2 δ(l − l′ )C(l) ,                (25)       potential is known. We shall illustrate these results with
+                                                                            the integrated Sachs-Wolfe effect. It contributes to tem-
+                   φφ
+where again C(l)       = Clφφ . The lensing potential also de-              perature fluctuations as
+velops a bispectrum in the non-linear density regime,                                                 Z
+                                                                                      ΘISW (n̂) = −2 dD Φ̇(x(n̂), D) .             (31)
+                               l l′ l′′
+                                        
+  hφlm φl′ m′ φl′′ m′′ i =                 Bllφφφ
+                                               ′ l′′ ,
+                             m m′ m′′
+                                                        ′   ′′
+                                                                            It then follows that the all-sky cross correlation is given
+   hφ(l)φ(l′ )φ(l′′ )i = (2π)2 δ(l − l′ − l′′ )B(l,l
+                                                XX X
+                                                    ′ ,l′′ ) ,   (26)       by [4,10]
+which is responsible for skewness in convergence maps                                           dk 2
+                                                                                             Z
+and other higher order effects. Since the lensing potential                        ClΘφ = 4π       ∆ (k)Illen (k)IlISW (k) ,       (32)
+                                                                                                 k Φ
+
+                                                                        4
+     10–6                                                                         approach [2,3]. However we also show why one cannot
+                                                                                  expect a flat-sky approach to be fully accurate even on
+                        flat                                                      small scales.
+l4Clφφ
+
+
+
+
+     10–7                       all
+
+
+
+
+                                                                  no
+                                                                                                          A. Temperature
+
+
+
+
+                                                                    nli lin
+                                                                       n
+                                                                                    Weak lensing of the CMB remaps the primary
+     10–8                                                                         anisotropy according to the deflection angle ∇φ
+     10–8
+                 flat                                                                  Θ̃(n̂) = Θ(n̂ + ∇φ)
+                               all                                                            = Θ(n̂) + ∇i φ(n̂)∇i Θ(n̂)
+     10–9                                                                                           1
+l3ClΘφ
+
+
+
+
+                                                                                                  + ∇i φ(n̂)∇j φ(n̂)∇i ∇j Θ(n̂) + . . .        (34)
+                                                                                                    2
+
+     10–10                                                                        Because surface brightness is conserved in lensing only
+                                                                                  changes the distribution of the anisotropies and has no
+                                                                                  effect on the isotropic part of the background.
+                                                                                     The Fourier coefficients of the lensed field then become
+                        1                10             100                                       Z
+                                              l
+    FIG. 3. Lensing power spectra. The power spectrum of the                              Θ̃(l) = dn̂ Θ̃(n̂)e−il·n̂
+ lensing potential is shown in the top panel as calculated by
+                                                                                                             d2 l1
+                                                                                                         Z
+ the flat and all sky approaches for linear and non-linear den-                                 = Θ(l) −           Θ(l1 )L(l, l1 ) ,      (35)
+ sity perturbations. In the lower panel, the cross correlation                                              (2π)2
+ with the ISW effect is shown. In both cases, a non-negligible
+ fraction of the power comes from scales where the flat-sky                       where
+ approximation is inadequate.                                                                                             1
+                                                                                                                            Z
+                                                                                                                                  d2 l2
+                                                                                   L(l, l1 ) = φ(l − l1 ) (l − l1 ) · l1 +              φ(l2 ) (36)
+                                                                                                                          2      (2π)2
+ where                                                                                             × φ∗ (l2 + l1 − l) (l2 · l1 )(l2 + l1 − l) · l1 .
+                                                        k
+                               Z
+              IlISW (k) =            dD W ISW (D)jl (      D) ,                   This determines the lensed power spectrum
+                                                        H0
+             W ISW (D) = −2Ḟ (D) ,
+                                                                                         D               E
+                                                                   (33)                    Θ̃∗ (l)Θ̃(l′ ) = (2π)2 δ(l − l′ )C̃lΘΘ ,            (37)
+ again with the understanding that one replaces the spher-                        as
+ ical Bessel function with the ultra-spherical Bessel func-
+ tions for curved universes. Similarly the flat-sky expres-                                                                d2 l1 ΘΘ
+                                                                                                                      Z
+                                                                                       C̃lΘΘ = 1 − l2 R ClΘΘ +                         C φφ
+                                                                                                       
+                                                                                                                                C              (38)
+ sion becomes,                                                                                                            (2π)2 |l−l1 | l1
+    Θφ     2π 2
+                Z                                                                                 ×[(l − l1 ) · l1 ]2 ,
+  C(l)  = 3       dDDA W ISW (D)W len (D)∆2Φ (k)           .
+            l                                          H
+                                                   k=l D 0
+                                                        A                         where
+ Figure 3 also shows the cross-correlation for the ΛCDM                                                      1
+                                                                                                                 Z
+                                                                                                                     dl 4 φφ
+ cosmology.                                                                                          R=                 l Cl .                 (39)
+                                                                                                            4π        l
+   Cross lensing-CMB bispectrum terms can also included
+ but require an external measure of lensing (e.g. a galaxy                        The second term in eqn. (38) represents a convolution
+ weak lensing survey) to be observable with three-point                           of the power spectra. Since l4 Clφφ peaks at low l’s com-
+ correlations.                                                                    pared with the peaks in the CMB (see Fig. 3), it can be
+                                                                                  considered as a narrow window function on ClΘΘ in the
+                                                                                  acoustic regime 200 <    <
+                                                                                                       ∼ l ∼ 2000. It is useful to consider
+             III. FLAT-SKY POWER SPECTRA
+                                                                                  the limit that ClΘΘ is slowly varying. It may then be
+                                                                                  evaluated at l − l1 ≈ l and taken out of the integral
+   In this section, we calculate the effects of lensing on
+ the CMB temperature (§III A), polarization and cross                                             d2 l1 φφ
+                                                                                              Z
+                                                                                         ClΘΘ          C (l · l1 )2 ≈ l2 RClΘΘ .        (40)
+ (§III B) power spectra. The simplicity of the resulting                                         (2π)2 l
+ expressions have calculational and pedagogical advan-
+ tages over the traditional flat-sky correlation function                         Note that the two terms in eqn. (37) cancel in this limit
+
+
+                                                                              5
+                      C̃lΘΘ ≈ ClΘΘ .                         (41)       where recall that R was defined in eqn. (39). The cross
+                                                                        correlations between B and Θ or E still vanish since lens-
+This is the well known result that lensing shifts but does              ing is parity conserving. Unlike the case of the temper-
+not create power on large scales. Intrinsic features with               ature fluctuations, lensing does not conserve the broad-
+width ∆l less than the l of the peak in l4 Clφφ are washed              band large scale power of the E and B [3], but only the
+out by the convolution (see Fig. 3). Note that in the                   total polarization power. For example, lensing will cre-
+ΛCDM model this scale is l ∼ 40. The implication is                     ate a B component in a field that originally had only
+that for such a model, the smoothing effect even for high               an E-component. Furthermore, lensing actually destroys
+multipoles arises from such low multipoles that the flat-               temperature-polarization cross correlations due to the
+sky approach is suspect.                                                lack of correlation with the generated B polarization.
+  On scales small compared with the damping length                      From Fig. 1, one can see that the largest relative effect
+l >
+  ∼ 2000, there is little intrinsic power in the CMB so                 of lensing is on the correlation.
+that the first term in eqn. (38) can be ignored and the
+second term behaves instead like a smoothing of Clφφ of
+width ∆l approximately the l of the peak in l4 ClΘΘ . Since                       IV. ALL-SKY POWER SPECTRA
+Clφφ is very smooth itself, the term is approximately,
+                                                                           In this section, we treat lensing effects on the tempera-
+                       1 2 φφ       d2 l1 2 ΘΘ
+                               Z
+         ΘΘ      ΘΘ
+       C̃l ≈ Cl + l Cl                    l C   ,      (42)             ture (IV A), polarization and cross (IV B) power spectra
+                       2           (2π)2 1 l1                           in a full all-sky formalism. Corrections to the flat-sky re-
+                                                                        sults remain at the 10% even on small scales. Moreover,
+where we have interchanged the roles of l1 and l1 −l. The
+                                                                        although the derivation appears more complicated, the
+power generated is proportional to the lensing power at
+                                                                        end results for the power spectra are simple. They are
+the same scale and may be approximated as the lensing of
+                                                                        as readily evaluated their the flat-sky counterparts and
+a pure temperature gradient [5]. In this limit the flat-sky
+                                                                        should be used in their stead.
+approximation should be fully adequate.
+
+                                                                                                 A. Temperature
+                       B. Polarization
+
+                                                                          In the all-sky case, the Fourier harmonics are replaced
+  The lensing of the polarization field may be obtained
+                                                                        with spherical harmonics, and the lensed field becomes
+by following the same steps as for the temperature field
+                                                                                           Z
+       ± X̃(n̂) = ± X(n̂ + ∇φ)                               (43)           Θ̃lm ≈ Θlm + dn̂Ylm∗ ∇i φ(n̂)∇i Θ(n̂)
+                                         i
+                ≈ ± X(n̂) + ∇i φ(n̂)∇ ± X(n̂)                                           1
+                                                                                          Z
+                      1                                                               +      dn̂Ylm∗ ∇i φ(n̂)∇j φ(n̂)∇i ∇j Θ(n̂)
+                    + ∇i φ(n̂)∇j φ(n̂)∇i ∇j ± X(n̂) ,                                   2
+                      2                                                                    X X
+                                                                                 = Θlm +            φl1 m1 Θl2 m2               (46)
+where we have used the shorthand notation ± X = Q ±                                            l1 m 1 l2 m 2
+iU . The Fourier coefficients of the lensed field are then                              
+                                                                                                   1 X ∗
+                                                                                                                        
+                                                                                          mm1 m2              mm1 m2 m3
+                                                                                       × Ill1 l2 +    φl3 m3 Jll1 l2 l3   ,
+                       d2 l1                                                                       2
+                   Z
+                                       ±2i(ϕl1 −ϕl )
+± X̃(l) = ± X(l) −           ± X(l1 )e               L(l, l1 ) , (44)                                          l3 m 3
+                     (2π)2
+                                                                        with the geometrical factors expressed as integrals over
+where L was defined in eqn. (37).                                       the spherical harmonics
+  Recalling that ± X(l) = E(l) ± iB(l), we obtain the                                        Z
+power spectra directly
+                                                                             Illmm    1 m2
+                                                                                               dn̂ Ylm∗ ∇i Ylm
+                                                                                                                  i m2 
+                                                                                 1 l2
+                                                                                           =                 1
+                                                                                                               1
+                                                                                                                   ∇ Yl2      ,       (47)
+                 EE 1         d2 l1
+                           Z
+  EE          2                                          φφ
+                                     [(l − l1 ) · l1 ]2 C|l−l
+                                                                                             Z
+C̃l = 1 − l R Cl +                                           1|         Jllmm   1 m2 m3
+                                                                                           = dn̂ Ylm∗ ∇i Ylm   1
+                                                                                                                 
+                                                                                                                   ∇j Ylm 3∗
+                                                                                                                              i j m2
+                                                                                                                                ∇ ∇ Yl2 .
+                         2    (2π)2                                         1 l2 l3                          1          3
+
+         ×[(ClEE1
+                   + ClBB
+                       1
+                          ) + cos(4ϕl1 )(ClEE
+                                            1
+                                                 − ClBB 1
+                                                           )] ,
+                                 2                                      The lensed power spectrum then becomes
+                          1     d l1
+                            Z
+                                                          φφ
+C̃lBB = 1 − l2 R ClBB +              [(l − l1 ) · l1 ]2 C|l−l
+                 
+                                                             1|
+                          2    (2π)2
+                                                                                     X φφ                  X φφ
+                                                                          C̃l = Cl +    Cl1 ClΘΘ
+                                                                                              2
+                                                                                                 S1 + ClΘΘ  Cl1 S2 ,                 (48)
+         ×[(ClEE1
+                   + ClBB
+                       1
+                          ) − cos(4ϕl1 )(ClEE1
+                                                  − ClBB 1
+                                                            )] ,                       l1 l2                            l1
+                               2
+                              d l1
+                         Z
+C̃lΘE = 1 − l2 R ClΘE +                                φφ
+                                   [(l − l1 ) · l1 ]2 C|l−l             with
+                 
+                             (2π)2                         1|
+
+
+            ×ClΘE
+               1
+                  cos(2ϕl1 ) ,                               (45)
+
+                                                                    6
+                          X                      2
+                S1 =              Illmm
+                                      1 l2
+                                          1 m2
+                                                      ,                        so that
+                         m1 m2                                                                r
+                                                                                                  l(l + 1)
+                S2 =
+                     1 X mm1 mm1
+                         J       + cc ,                             (49)           ∇Ylm =                  [1 Ylm m+ − −1 Ylm m− ] .              (56)
+                     2 m ll1 ll1                                                                      2
+                              1
+                                                                               As an aside, we note that equation (54) can alternately
+where “cc” denotes the complex conjugate and we have                           be derived from this relation and the integral (51) with
+suppressed the l-indices.                                                      s = ±1.
+   These formidable looking expressions simplify consid-                         Further, we note that spin spherical harmonics also
+erably. The second term may be rewritten through inte-                         obey a sum rule [17]
+gration by parts and the identity ∇2 Ylm = −l(l + 1)Ylm                                                        r
+[4],                                                                              X
+                                                                                          m∗           m         2l + 1     −s1
+                                                                                     s1 Yl   (n̂) s2 Yl (n̂) =          s Y     (0) . (57)
+                                                                                                                   4π 2 l
+                         1                                                         m
+        Illmm
+            1 l2
+                1 m2
+                     =     [l1 (l1 + 1) + l2 (l2 + 1) − l(l + 1)]
+                         2Z                                                    For the spin-1 harmonics
+                         ×    dn̂ Ylm∗ Ylm 1
+                                             Ylm 2
+                                                   .                (50)                                                   r
+                                         1     2
+                                                                                               1          −1                   2l + 1
+                                                                                          −1 Yl (0) = 1 Yl (0) = −                    ,           (58)
+The remaining integral may be expressed in terms of the                                                                          4π
+Wigner-3j symbol through the general relation                                  and the others involving s1 , s2 = ±1 vanish. These re-
+  Z                                                                            sults imply that
+     dn̂ s1 Ylm 1∗        m2        m3
+                                      
+                     s2 Yl2    s3 Yl2    =
+              1                                                                    X                        1          2l + 1
+                                                                                         ∇i Ylm ∇j Ylm∗ =     l(l + 1)        [(m+ )i (m− )j
+                                                                                                            2            4π
+                    r
+                       (2l1 + 1)(2l2 + 1)(2l3 + 1)                                 m
+       (−1)m1 +s1
+                              4π                                                                          +(m− )i (m+ )j ] .                  (59)
+            l1 l2        l3         l1    l2 l3
+       ×                                           , (51)                      To evaluate the second derivative term in equation (48),
+            s1 −s2 −s3            −m1 m2 m3
+                                                                               we again apply equation (55) to show that
+where note that 0 Ylm = Ylm . It is therefore convenient
+to define                                                                              [(m+ )i (m− )j + (m− )i (m+ )j ]∇i ∇j s Ylm =
+               1                                                                            −[l(l + 1) − s2 ] s Ylm .                             (60)
+ Fl1 l2 l3 =     [l2 (l2 + 1) + l3 (l3 + 1) − l1 (l1 + 1)]   (52)
+               2r                                                              Putting these expressions together we obtain,
+                                                            
+                     (2l1 + 1)(2l2 + 1)(2l3 + 1) l1 l2 l3
+               ×                                               .                               1                     2l1 + 1
+                                   4π                  0 0 0                             S2 = − l(l + 1) l1 (l1 + 1)         .                    (61)
+                                                                                               2                       4π
+Finally the Wigner-3j symbol obeys                                             Finally combining expressions eqns. (48), (54) and (61),
+ X  l1 l2 l3   l1 l2 l3             1                                      we have the following simple result
+                                   =         . (53)
+        m1 m2 m3        m1 m2 m3     2l3 + 1                                                                                                 2
+m1 m2                                                                                                                                 (Fll1 l2 )
+                                                                                                                           Clφφ
+                                                                                                                  X
+                                                                               C̃lΘΘ = [1 − l(l + 1)R] ClΘΘ +                   Cl2              , (62)
+Putting these relations together, we find that
+                                                                                                                             1
+                                                                                                                                       2l + 1
+                                                                                                                  l1 ,l2
+
+                                1                                              where
+                     S1 =           (Fll1 l2 )2 .                   (54)
+                             2l + 1                                                               1X             2l1 + 1 φφ
+                                                                                           R=        l1 (l1 + 1)        Cl1 .                     (63)
+An algebraic expression for the relevant Wigner-3j sym-                                           2                4π
+                                                                                                    l1
+bol is given in the Appendix.
+  The second term in eqn. (48) can be simplified by re-                        This expression is computationally no more involved than
+expressing the gradients of the spherical harmonics with                       the flat-sky expression eqn. (38) and has the benefit of
+spin-1 spherical harmonics. As shown in Appendix A, the                        being exact. Since the lensing effect even at high l in the
+spin-1 harmonics are the eigenmodes of vector fields on                        CMB originates from the low order multipoles of φ, cor-
+the sky and naturally appear in expressions for deflection                     rections due to the curvature of the sky are not confined
+angles. Note that there is a general relation for raising                      to low l. We show in Fig. 1 that the correction causes
+and lowering the spin of a spherical harmonic [11],                            a 10% difference in the effect. The change in C̃lΘΘ itself
+                   r                                                           is even smaller (of order 1%). Nonetheless it is larger
+              m      (l − s)(l + s + 1)       m                                than the cosmic variance of these high multipoles and
+   m− · ∇ s Yl =                        s+1 Yl ,
+                              2                                                thus should be included in calculations for full accuracy.
+                     r
+              m        (l + s)(l − s + 1)       m
+                                                                               Corrections can be even larger in models with a red tilt
+   m+ · ∇ s Yl = −                        s−1 Yl ,    (55)                     n < 1 in the initial spectrum.
+                                2
+
+                                                                           7
+                           B. Polarization                                                          Just as in the case for the temperature field, these ex-
+                                                                                                    pressions simplify considerably. The spin-2 harmonics
+   The derivation of the all-sky generalization for polar-                                          are eigenfunctions of the angular Laplacian of a tensor
+ization is superficially more involved but follows the same
+steps as in the temperature case and results in expres-                                                        ∇2 ±2 Ylm = [−l(l + 1) + 4] ±2 Ylm ,                               (71)
+sions that are no more difficult to evaluate. The lensed
+                                                                                                    which follows from contracting indices in equation (60).
+polarization multipoles are given by
+                                                                                                    It then follows that
+                    X X
+± Xlm = ± Xlm +             φl1 m1 ± Xl2 m2             (64)                                              mm1 m2  1
+                                                                                                      ±2 Ill1 l2 = [l1 (l1 + 1) + l2 (l2 + 1) − l(l + 1)]
+                       l1 m 1 l2 m 2                                                                                      2Z
+                 "                                                                      #
+                                             1 X                                                                                           m∗
+                                                                                                                                                     Ylm             m2
+                                                                                                                                                                         
+             ×           mm1 m2
+                                                           φ∗l3 m3 ±2 Jllmm   1 m2 m3                                           dn̂   ±2 Yl
+                                                                                                                                                         1
+                                                                                                                                                                ±2 Yl2        .   (72)
+                     ±2 Ill1 l2 +                                         1 l2 l3
+                                                                                            ,                                                          1
+                                             2
+                                                  l3 m 3
+                                                                                                    Comparison with eqn. (51) implies that it is convenient
+with the geometrical factors expressed now as integrals                                             then to define the quantity
+over the spin-spherical harmonics
+                                                                                                                     1
+                                                                                                     2 Fl1 l2 l3 =     [l2 (l2 + 1) + l3 (l3 + 1) − l1 (l1 + 1)]  (73)
+                   Z
+           mm1 m2
+                  = dn̂ ±2 Ylm∗ ∇i Ylm        ∇ ±2 Ylm                                                               2
+                                             i            
+     ±2 Ill1 l2                                              ,
+                                          1              2
+                                       1              2                                                              r                                           
+                                                                                                                        (2l1 + 1)(2l2 + 1)(2l3 + 1) l1 l2 l3
+                                                                                                                                                                    ,
+                   Z
+      mm1 m2 m3
+                  = dn̂ ±2 Ylm∗ ∇i Ylm        ∇i Ylm 3∗                                                                               4π                   2 0 −2
+                                                       
+  ±2 Jll1 l2 l3
+                                          1
+                                       1           3
+
+
+                     × ∇i ∇j ±2 Ylm                                                                 so that
+                                      
+                                  2
+                                    2
+                                         .                 (65)
+                                                                                                                           1
+Noting that                                                                                                     22 S1 =        ( Fll l )2 ,
+                                                                                                                        2l + 1 2 1 2
+                mm1 m2
+                       = (−1)L ∓2 Illmm    1 m2                                                                            1
+            ±2 Ill1 l2                1 l2
+                                                ,                                  (66)                         02 S1 =        (Fll1 l2 ) ( 2 Fll1 l2 ) .                         (74)
+                                                                                                                        2l + 1
+where L = l + l1 + l2 and recalling that ± Xlm = Elm ±
+iBlm , the power spectra then become                                                                   The third term in equation (68) can be simplified by
+                                                                                                    following the same steps for the analogous temperature
+                    1 X φφ h EE                                                                     term except for the replacement of s = 0 with s = ±2 in
+       C̃lEE = ClEE +                 Cl2 + ClBB
+                                                   
+                             Cl1                                                   (67)
+                    2                            2                                                  equation (55). The result is
+                      l1 l2
+                                         i                                                                              1                            2l1 + 1
+              + (−1) ClEE
+                    L
+                                − C  BB
+                                           22 S1
+                           2         l2                                                                  ±2 S2 = −         [l(l + 1) − 4] l1 (l1 + 1)         .                   (75)
+                                                                                                                         2                              4π
+               1
+                           Clφφ
+                     X
+              + ClEE             (2 S2 + −2 S2 ) ,                                                  Putting these relations together, we obtain the result for
+               2              1
+                                 l1
+                                                                                                    the power spectra
+where                                                                                                                                                        2
+                                                                                                                                      1 X φφ ( 2 Fll1 l2 )
+                                                                                                    C̃lEE = 1 − (l2 + l − 4)R ClEE +
+                                                                                                                            
+                        X
+                                         mm1 m2 2
+                                                                                                                                                Cl1
+                                                                                                                                      2               2l + 1
+                                               
+           22 S1 =                    2 Ill1 l2             ,                                                                            l1 ,l2
+                       m1 m2                                                                                  EE
+                                                                                                              Cl2 + ClBB    + (−1)L (ClEE    − ClBB
+                                                                                                                                                      
+                                                                                                                                                     ) ,
+                       1X                                                                                                2             2           2
+
+           ±2 S2 =           J mm1 m1 m + cc .                                     (68)                                                                      2
+                       2 m ±2 ll1 l1 l                                                              C̃lBB = 1 − (l2 + l − 4)R ClBB +
+                                                                                                                                    1 X φφ ( 2 Fll1 l2 )
+                                                                                                                                                Cl1
+                             1
+                                                                                                                                      2               2l + 1
+                                                                                                                                         l1 ,l2
+The expression for C̃lBB follows by interchanging EE and                                                      EE
+                                                                                                              Cl2 + ClBB    − (−1)L (ClEE    − ClBB
+                                                                                                                                                      
+                                                                                                                                                     ) ,
+BB. The cross power spectrum is                                                                                          2             2
+                                                                                                                                      X φφ
+                                                                                                                                                   2
+
+                                                                                                    C̃lΘE = 1 − (l2 + l − 2)R ClΘE +
+                                                                                                                            
+                                                                                                                                             Cl1
+                 1 X φφ ΘE
+ C̃lΘE = ClΘE +          Cl1 Cl2 [1 + (−1)L ]02 S1                                                                                                     l1 ,l2
+                 2                                                                                                   (Fll1 l2 2 Fll1 l2 ) ΘE
+                   l1 l2
+                                                                                                                                         Cl2 .                                    (76)
+              1 ΘE X φφ                                                                                                2l + 1
+             + Cl         Cl1 2 S2 + −2 S2 + 2S2 ,                                 (69)
+              4
+                            l1                                                                      Recall that L = l + l1 + l2 and R was defined in eqn. (63).
+                                                                                                    These expressions are plotted for the ΛCDM model in
+with                                                                                                Fig. 2.
+                       X
+                                  Illmm    1 m2    mm1 m2
+                                                          
+           02 S1 =                    1 l2      2 Ill1 l2   .                      (70)
+                      m1 m2
+
+
+                                                                                                8
+       V. FLAT AND ALL SKY BISPECTRA                                       Cov = ClΘΘ
+                                                                                   1
+                                                                                      ClΘΘ
+                                                                                        2
+                                                                                           ClΘΘ
+                                                                                             3
+                                                                                                δl1 l′1 δl2 l′2 δl3 l′3 + 5perm. ,                               (81)
+
+   In this section, we consider the lensing contributions to            where the permutations are in the indices of the l′ triplet.
+CMB bispectra through the correlation with secondary                    The overall signal-to-noise becomes
+anisotropies. We begin by reviewing the calculations                         2
+                                                                               S        X X
+for the temperature bispectrum as previously treated by                              =             BlΘΘΘ
+                                                                                                     1 l2 l3
+                                                                                                             [Cov−1 ]BlΘΘΘ
+                                                                                                                       ′ l′ l′ . (82)
+[4,5]. We then introduce the polarization and cross bis-                       N                                       1 2 3
+                                                                                             l1 l2 l3 l1 l2 l3
+                                                                                             ′ ′ ′
+
+pectra which in principle have signal-to-noise advantages
+over the temperature bispectra. We illustrate the formal-               The covariance is in general diagonal in the 6×6 blocks of
+ism with a concrete calculation of the effect due to the                permutations of (l1 , l2 , l3 ) and for this simple case of the
+ISW secondary anisotropy.                                               temperature bispectrum, the blocks are proportional to
+                                                                        the trivial matrix of all ones. The result is one can take a
+                                                                        simple sum over all distinct triplets or equivalently divide
+                      A. Temperature                                    the full sum by a factor of 6,
+                                                                                     2
+  Contributions to the temperature bispectra from the                                S         X          (BlΘΘΘ
+                                                                                                             1 l2 l3
+                                                                                                                     )2
+                                                                                           =                              ,        (83)
+cross power spectrum ClΘφ discussed in §II C follow im-                              N
+                                                                                              l l l
+                                                                                                       6ClΘΘ
+                                                                                                          1
+                                                                                                             ClΘΘ
+                                                                                                                2
+                                                                                                                     ClΘΘ
+                                                                                                                        3
+                                                                                                       1 2 3
+mediately from the first order lensing term, i.e. eqn. (46)
+for the all-sky bispectrum [4],                                         for a cosmic variance limited experiment. For a realistic
+                                                                        experiment with noise from the detectors and residual
+         BlΘΘΘ
+           1 l2 l3
+                   = Fl1 l2 l3 ClΘφ
+                                 2
+                                    ClΘΘ
+                                      3
+                                         + 5perm. ,         (77)        foregrounds, one simply replaces
+and eqn. (35) for the flat sky bispectrum [5]                                                 ′                  ′           XX ′ (noise)
+                                                                                        ClXX → ClXX + Cl                                    ,                    (84)
+       ΘΘΘ
+      B(l1 ,l2 ,l3 )
+                     = −(l2 · l3 )ClΘφ ClΘΘ
+                                         3
+                                            + 5perm.        (78)
+                                    2
+                                                                        here and below. Note that one can also construct the
+One can show that these relations satisfy the general ex-               Fisher information matrix of the bispectrum along these
+pression for the correspondence between flat and all sky                lines [19].
+bispectra eqn. (20) by noting that                                         Correspondingly, in the flat-sky one constructs the op-
+                          1                                             timal inverse-variance weighted statistic [5] (see also Ap-
+               l2 · l3 = − (l22 + l32 − l12 ) ,             (79)        pendix C)
+                          2
+                                                                                                                                             ΘΘΘ
+                                                                                                                                                            ]2
+since the angles of a triangle is fully defined by the length                      2
+                                                                                                                                           [B(l
+                                                                           
+                                                                               S            fsky 1
+                                                                                                            Z                Z
+                                                                                                                                                1 ,l2 ,l3 )
+of its sides.                                                                           =                            d2 l1       d2 l2                            ,
+                                                                               N             π (2π)2                                     6ClΘΘ ClΘΘ ClΘΘ
+   Note that there can be strong cancellation between the                                                                                   1    2    3
+
+
+terms in the permutation in both cases. As we have seen,                                                                                                         (85)
+the spectrum of φ is generally peaked to low multipoles
+implying a corresponding weighting of ClΘφ to low mul-                  where fsky is the fraction of the sky covered. We show
+tipoles for secondary anisotropies that correlate strongly              that these expressions are equivalent in the high l, fsky =
+with φ. In this case the triangles (l1 , l2 , l3 ) that con-            1 limit in Appendix C. Thus the extra factor of fsky
+tribute most strongly are highly flattened such that two                can be included in the all-sky expression to approximate
+sides nearly coincide in length l1 ≈ l3 ≫ l2 . In this case,            the effects incomplete sky coverage due to exclusion of
+contributions l12 and l32 in eqn. (79) are cancelled off the            regions contaminated by galactic foregrounds.
+permutation l3 ↔ l1 leaving only a term of order l22 .                     The weighting of the modes is such that the quantity of
+   These considerations also signal problems for the flat-              interest in the lensing-temperature correlation is l3 ClΘφ
+sky expressions. It is important to know what on scales                 where the extra factor of l over the straight bispectrum
+most of the detectable signal is coming from. In the all-               contribution comes from the square root of the volume
+sky formalism, the signals from the m modes are added                   factor in l-space. This quantity is plotted in Fig. 3 for the
+together with weights given by the Wigner-3j symbol                     cross correlation with the ISW effect. The implication
+                                                                        is that for this effect, full accuracy requires an all-sky
+              X  l1 l2 l3 
+ BlΘΘΘ      =                           hΘl1 m1 Θl2 m2 Θl3 m3 i .       approach and we shall hereafter use this to evaluate the
+    1 l2 l3             m1 m2 m3
+           m1 m2 m3
+                                                                        signal-to-noise.
+                                                                           The overall signal-to-noise as a function of the largest
+                                                            (80)
+                                                                        l included in the sum is shown in Fig. 4 for a cosmic
+For the small effects due to the correlation of secondary               variance limited experiment and the Planck satellite (see
+anisotropies with lensing, the covariance of the bispec-                [19] for the specification of the noise). Note that the
+trum estimators is dominated by the Gaussian noise from                 Planck satellite is effectively cosmic variance limited to
+the power spectrum [18]                                                 l ∼ 1000 and even so the S/N is only of order a few [4].
+
+                                                                    9
+                                                                               The general correspondence between the flat and all
+            (a) Cosmic Variance                                              sky expressions in eqn. (20) is established by the use of
+      10                                                                     eqn. (79) the approximation discussed in the Appendix
+                                                                                                                      
+              BEΘ                                                                     l1 l2 l3                  l1 l2 l3
+                                                                                                  ≈ cos 2ϕ31               ,      (88)
+                     BΘΘ       EEΘ                                                    2 0 −2                    0 0 0
+       1
+                                                                             for L =even. The cancellation for flattened triangles
+             EΘΘ
+                                                                             discussed in §V A still applies and is easiest to see in
+                   ΘΘΘ                                                       the flat-sky limit: the flatness of the triangles implies
+S/N
+
+
+
+
+      0.1                                                                    cos 2ϕ31 ∼ 1.
+            (b) Planck                                                         For the S/N calculation, note that the covariance is
+      10
+                                                                             given by
+                                                       ΘΘΘ
+                                                                             Cov = ClEE ClΘΘ ClΘΘ δl1 l′1 δl2 l′2 δl3 l′3
+                                                     EΘΘ                             1    2    3
+
+       1                                           EEΘ                                   +ClΘE
+                                                                                            1
+                                                                                               ClΘΘ
+                                                                                                 2
+                                                                                                    ClΘE
+                                                                                                      3
+                                                                                                         δl1 l′2 δl2 l′3 δl3 l′1
+                                                BEΘ
+                                                                                         +ClΘE
+                                                                                            1
+                                                                                               ClΘE
+                                                                                                 2
+                                                                                                    ClΘΘ
+                                                                                                      3
+                                                                                                         δl1 l′3 δl2 l′1 δl3 l′2 + (l2′ ↔ l3′ ) , (89)
+                                          BΘΘ
+                                                                             so that a full calculation requires inverting this matrix
+      0.1
+                         500          1000          1500                     for each distinct triplet. Since we are interested mainly
+                                           lmax                              in the order of magnitude of S/N , we can set the lower
+  FIG. 4. Cumulative signal-to-noise in the bispectra as a                   bound as
+function of maximum l for a cosmic variance limited ex-                                 2
+                                                                                          S         X       (BlEΘΘ
+                                                                                                               1 l2 l3
+                                                                                                                       )2
+periment and for the Planck satellite. Note that for the                                        ≥                           ,     (90)
+cosmic variance limited case (a), bispectra involving the                                 N
+                                                                                                   l l l
+                                                                                                         6ClEE
+                                                                                                            1
+                                                                                                               ClΘΘ
+                                                                                                                  2
+                                                                                                                       ClΘΘ
+                                                                                                                          3
+                                                                                                        1 2 3
+B-polarization have a substantial signal-to-noise advantage
+over the other bispectra. For the Planck satellite (b), we                   which amounts to ignoring duplicate triplets and replac-
+assume that the additional variance comes only from detec-                   ing the remaining triplet with the average S/N of the
+tor noise. In practice, residual foreground contamination and                set. This limit is plotted for the ISW effect in Fig. 4 as
+sky-cuts to avoid them will lower the signal-to-noise further.               a function of the maximal l1 included in the sum. As
+                                                                             expected, it is comparable to the signal-to-noise in the
+                                                                             temperature bispectrum. Of course, it is experimentally
+             B. Polarization and Cross Correlation
+                                                                             more difficult to achieve the cosmic variance limit in the
+                                                                             polarization with a realistic experiment containing detec-
+   Bispectra involving the E and B parity polarization                       tor and foreground noise.
+will also receive contributions from the correlation in-                        There is also a qualitatively new effect from the
+duced by lensing. Although these signals are smaller than                    polarization-lensing correlation ClEφ . However since sec-
+the temperature bispectrum in an absolute sense, we have                     ondary polarization only arises from Thomson scatter-
+seen that the main obstacle in detecting the temperature                     ing effects, we expect this contribution to be small in
+bispectrum is cosmic variance from the Gaussian contri-                      ΛCDM models where the optical depth during reioniza-
+butions.                                                                     tion is τ < 0.3 [19].
+   We begin by analyzing terms that do not involve the                          The EΘΘ bispectrum term is
+B-parity polarization. For these all-sky bispectra, only
+terms with L ≡ l1 + l2 + l3 =even are non-vanishing, and                           BlEEΘ
+                                                                                     1 l2 l3
+                                                                                             = ( 2 Fl1 l2 l3 ClEφ
+                                                                                                               2
+                                                                                                                  ClΘE
+                                                                                                                    3
+                                                                                                                       + 2 Fl1 l3 l2 ClEE
+                                                                                                                                       2
+                                                                                                                                          ClΘφ
+                                                                                                                                            3
+                                                                                                                                               )
+we will implicitly assume that only even terms are con-
+                                                                                                   +Fl3 l1 l2 ClEφ ClΘE  + (l1 ↔ l2 ) ,
+sidered. With the help of eqns. (44) and (65), we can                                                        1
+                                                                                                                     2
+
+immediately write the all and flat sky results as                                EEΘ
+                                                                                B(l1 ,l2 ,l3 )
+                                                                                               = −(l2 · l3 ) cos 2ϕ31 ClEφ2
+                                                                                                                             ClΘE
+                                                                                                                               3
+
+
+      BlEΘΘ     = 2 Fl1 l2 l3 ClΘφ ClΘE
+                                                                                                                            
+                                                                                                                        Θφ
+        1 l2 l3                 2    3                                                             + cos 2ϕ21 ClEE 2
+                                                                                                                      Cl3
+                   +Fl2 l1 l3 (ClEφ
+                                 1
+                                    ClΘΘ
+                                      3
+                                         + ClΘE
+                                             1
+                                                ClΘφ
+                                                  3
+                                                     ) + (l2 ↔ l3 ) ,                              −(l1 · l2 )ClEφ ClΘE + (l1 ↔ l2 ) ,          (91)
+                                                                                                                1    2
+ EΘΘ
+B(l1 ,l2 ,l3 )
+               = −(l2 · l3 ) cos 2ϕ31 ClΘφ ClΘE
+                                             3
+                                                                 (86)
+                                        2
+                                                                             with covariance
+                   −(l1 · l3 )(ClEφ
+                                 1
+                                    ClΘΘ
+                                      3
+                                         + ClΘE
+                                             1
+                                                ClΘφ
+                                                  3
+                                                     ) + (l2 ↔ l3 ) ,
+                                                                             Cov = ClEE
+                                                                                     1
+                                                                                        ClEE
+                                                                                          2
+                                                                                             ClΘΘ
+                                                                                               3
+                                                                                                  δl1 l′1 δl2 l′2 δl3 l′3
+where
+                                                                                         +ClEE
+                                                                                            1
+                                                                                               ClEΘ
+                                                                                                 2
+                                                                                                    ClΘE
+                                                                                                      3
+                                                                                                         δl1 l′2 δl2 l′3 δl3 l′1
+                         ϕAB = ϕlA − ϕlB .                       (87)                    +ClΘE
+                                                                                            1
+                                                                                               ClEE
+                                                                                                 2
+                                                                                                    ClΘE
+                                                                                                      3
+                                                                                                         δl1 l′3 δl2 l′1 δl3 l′2 + (l1′ ↔ l2′ ) , (92)
+
+
+                                                                        10
+with which we can bound the S/N                                                fact that for scalar perturbations ClBB
+                                                                                                                     1
+                                                                                                                        is dominated by
+                    2                                                         the lensing contributions themselves. Moreover, even if
+                                         (BlEEΘ     )2
+            
+                S             X
+                                            1 l2 l3                            the tensor contributions are near their current limits of
+                         >                               .         (93)
+                N                     6Cl1 Cl2 ClΘΘ
+                                        EE     EE                              T /S <∼ 0.3, the signal-to-noise is not much affected for
+                             l1 l2 l3                  3
+                                                                               l>∼ 100 due to the strong damping of gravity wave contri-
+Again, the ISW example is shown in Fig. 4.                                     butions under the horizon scale at last scattering. How-
+  Finally the EEE bispectrum is given by                                       ever for the Planck experiment, the detection is severely
+                                                                               limited by detector noise and may also suffer further
+    BlEEE
+      1 l2 l3
+              = 2 Fl1 l2 l3 ClEφ
+                              2
+                                 ClEE
+                                   3
+                                      + 5perm.                                 degradation from incomplete foreground subtraction [20].
+  EEE
+ B(l            = −(l2 · l3 ) cos 2ϕ31 ClEφ ClEE + 5perm.          (94)           Next, the BEΘ bispectrum is given by
+    1 ,l2 ,l3 )                          2    3
+
+
+with covariance                                                                    BlBEΘ1 l2 l3
+                                                                                                = i( 2 Fl1 l2 l3 ClEφ ClΘE
+                                                                                                                         3
+                                                                                                                             + 2 Fl1 l3 l2 ClEE
+                                                                                                                                             2
+                                                                                                                                                ClΘφ ),
+                                                                                                                 2                               3
+
+                                                                                  BEΘ
+                                                                                 B(l            = −(l2 · l3 ) sin 2ϕ31 ClEφ       ClΘE              (101)
+   Cov = ClEE
+           1
+              ClEE
+                2
+                   ClEE
+                     3
+                        δl1 l′1 δl2 l′2 δl3 l′3 + 5perm. ,         (95)             1 ,l2 ,l3 )                                2     3
+                                                                                                                                 
+                                                                                                     + sin 2ϕ21 ClEE       ClΘφ    ,
+and signal-to-noise                                                                                                    2     3
+
+
+           2
+             S           (BlEEE     )2                                         with a covariance
+                            1 l2 l3
+                    X
+                  =                      .                         (96)
+            N         6ClEE ClEE    ClEE
+                         1   l1 l2 l3
+                               2       3                                             Cov = ClBB
+                                                                                             1
+                                                                                                ClEE
+                                                                                                  2
+                                                                                                     ClΘΘ
+                                                                                                       3
+                                                                                                          δl1 l′1 δl2 l′2 δl3 l′3
+This bispectrum signal vanishes for the ISW effect.                                                +ClBB
+                                                                                                      1
+                                                                                                         ClΘE
+                                                                                                           2
+                                                                                                              ClΘE
+                                                                                                                3
+                                                                                                                   δl1 l′1 δl2 l′3 δl3 l′2 ,      (102)
+   Bispectra involving the B-parity polarization have dis-
+tinct properties. For terms involving one B-parity polar-                      leading to a signal-to-noise
+ization term, only l1 + l2 + l3 =odd contributes to the                                            2
+                                                                                                                        (BlBΘΘ     )2
+                                                                                           
+                                                                                               S            X
+                                                                                                                           1 l2 l3
+all-sky spectrum and we implicitly assume below that                                                    ≥                               .         (103)
+even terms vanish.                                                                             N
+                                                                                                            l1 l2 l3
+                                                                                                                     2Cl1 Cl2 ClΘΘ
+                                                                                                                       BB     EE
+                                                                                                                                      3
+
+   For the BΘΘ bispectrum,
+                                                                               The signal-to-noise of this term can be greater than that
+   BlBΘΘ
+     1 l2 l3
+             = i ( 2 Fl1 l2 l3 ) ClΘφ
+                                   2
+                                      ClΘE
+                                        3
+                                           + (l2 ↔ l3 ) ,                      of BΘΘ due to the fact that the temperature and E-
+                                                                               polarization are only partially correlated in the unlensed
+ BΘΘ
+B(l1 ,l2 ,l3 )
+               = −(l2 · l3 ) sin 2ϕ31 ClΘφ ClΘE − (l2 ↔ l3 ) . (97)
+                                        2    3
+                                                                               sky.
+   Again the correspondence between the flat and all sky                         Finally,
+expressions in eqn. (20) is established by the approxima-
+                                                                                    BlBEE
+                                                                                      1 l2 l3
+                                                                                              = i ( 2 Fl1 l2 l3 ) ClEφ ClEE + (l2 ↔ l3 ) ,        (104)
+tion discussed in the Appendix                                                                                      2    3
+
+                                                                              BEE
+                                                                                 B(l1 ,l2 ,l3 )
+                                                                                                = −(l2 · l3 ) sin 2ϕ31 ClEφ
+                                                                                                                         2
+                                                                                                                            ClEE
+                                                                                                                              3
+                                                                                                                                 − (l2 ↔ l3 ) ,
+        l1 l2 l3                      l1 l2 l3
+                    ≈ ±i sin 2ϕ31                ,    (98)
+        2 0 −2                        0 0 0                                    with a covariance
+for L =odd. The sign ambiguity comes from the fact                              Cov = ClBB C2EE C3EE δl1 l′1 δl2 l′2 δl3 l′3 + (l2′ ↔ l3′ ) ,     (105)
+                                                                                        1
+that a reflection of the triangle (l1 , l2 , l3 ) across one of the
+axes corresponds to remappings ϕ → π − ϕ or ϕ → −ϕ                             leading to a signal-to-noise
+and hence a reversal in sign of the flat-sky bispectrum in                                         2
+                                                                                                                     (BlBEE     )2
+                                                                                          
+equation (97). In this case the cancellation for flattened                                     S            X
+                                                                                                                        1 l2 l3
+                                                                                                        =                            .            (106)
+triangles discussed in §V A does not apply. However since                                      N
+                                                                                                            l l l
+                                                                                                                  2ClBB
+                                                                                                                     1
+                                                                                                                        ClEE
+                                                                                                                           2
+                                                                                                                                ClEE
+                                                                                                                                   3
+                                                                                                            1 2 3
+sin 2ϕ31 ≈ 2ϕ31 ≪ 1, a suppression still exists.
+   The covariance of the BΘΘ bispectrum is                                     This signal vanishes for the ISW effect.
+                                                                                 Terms involving more than one B term have no contri-
+  Cov = ClBB
+          1
+             ClΘΘ
+               2
+                  ClΘΘ
+                    3
+                       δl1 l′1 δl2 l′2 δl3 l′3 + (l2′ ↔ l3′ ) ,    (99)        butions to first order in the correlation power spectrum.
+leading to a signal-to-noise
+           2                                                                                          VI. DISCUSSION
+            S         X       (BlBΘΘ
+                                 1 l2 l3
+                                         )2
+                  =                           .                   (100)
+            N              2Cl1 Cl2 ClΘΘ
+                             BB     ΘΘ
+                     l l l   1 2 3          3
+                                                                                 We have shown that a harmonic approach to weak lens-
+                                                                               ing in the CMB provides a simple and exact means of cal-
+In a cosmic variance limited experiment (see Fig. 4), the
+                                                                               culating its effects on the temperature and polarization
+BΘΘ bispectrum has signal-to-noise advantages over its
+                                                                               power spectra, given the power spectrum of the lensing
+temperature and E polarization counterparts due to the
+
+                                                                          11
+potential or convergence, and on the analogous bispec-               eqn. (22) that gφ is the lensing efficiency function.
+tra given their power spectrum of the cross correlation                 The deflection angle that a photon suffers while travel-
+with secondary anisotropies. Corrections to the flat-sky             ing from the source at Ds is given by the angular gradient
+approximations appear even at high multipoles because                of the potential α(n̂) = ∇φ(n̂). Applying equation (56)
+even there, lensing effects arises from the large-scale fluc-        to the the spherical harmonic expansion, we obtain
+tuations in the deflection angles. These corrections cor-                       r
+respond to a change in the predictions at the µK level.                     X l(l + 1)
+                                                                                           φlm 1 Ylm m+ − −1 Ylm m− . (A2)
+                                                                                                                      
+                                                                       α=
+While this is a negligible change given observations to-                              2
+                                                                             lm
+day, it is above the cosmic-variance limit and should be
+included when interpreting the high-precision results ex-            This implies that the quantity α1 ±iα2 is a spin ±1 object
+pected from Planck.                                                                     X
+   Unlike the temperature bispectrum, bispectra involv-               [α1 ± iα2 ](n̂) ≡     (c ± ig)lm ±1 Ylm (n̂)
+ing both the temperature and polarization multipoles of                                    lm
+the CMB have the potential of producing a high signal-
+                                                                                             Xp
+                                                                                        =±     l(l + 1)φlm ±1 Ylm (n̂) ,        (A3)
+to-noise (∼ 10) detection of secondary anisotropies such                                      lm
+as the ISW effects even with relatively modest angular
+resolutions l < 1000. Other secondary anisotropies such              which states that the curl term clm vanishes and the gra-
+as the Sunyaev-Zel’dovich effect are expected to con-                dient term
+tribute even stronger signals, although their exact am-                                      p
+plitude is far more uncertain presently [4].                                       glm = −i l(l + 1)φlm .                (A4)
+   Achieving a cosmic-variance limited detection of the
+                                                                     The power spectrum of the angular deflection is then
+magnetic-parity polarization is a daunting challenge.
+Even signal-to-noise near unity requires detectors which                      hgl∗′ m′ glm i ≡ δl,l′ δm,m′ Clgg
+are a factor of 3 more sensitive to polarization than those
+planned for the Planck satellite. Also of concern are the                                  = δl,l′ δm,m′ l(l + 1)Clφφ ,         (A5)
+residual foreground contamination remaining in the maps
+                                                                     with the curl power vanishing. This accounts for the
+after multifrequency subtraction. Our current best mod-
+                                                                     factors of l(l + 1) in equations involving the angular de-
+els of the foregrounds indicate that with the Planck chan-
+                                                                     flection [e.g. eqn. (63)].
+nels and sensitivities, foregrounds and detector noise may
+                                                                        The corresponding flat-sky quantity is given by the
+enter into the polarization maps with comparable ampli-
+                                                                     decomposition [see eqn. (C8)]
+tudes [20]. Thus improving the actual sensitivity to the
+cosmic signal beyond the specifications of the Planck ex-                                 Z
+                                                                                               d2 l
+periment will not only require better detectors but also             [α1 ± iα2 ](n̂) ≡ ±i           [c ± ig](l)e±i(ϕl −ϕ) eil·n̂ , (A6)
+                                                                                             (2π)2
+a better understanding of the foregrounds, perhaps with
+increased frequency coverage and sampling.                           with c(l) = 0 and
+   Nonetheless, the polarization of the CMB offers the
+potential to open a new window on physical processes at                                    g(l) = −ilφ(l) ,
+low redshifts and the opportunity to learn more from the                                    gg
+                                                                                           C(l)       φφ
+                                                                                                = l2 C(l) .                     (A7)
+CMB than can be achieved with the next generation of
+CMB satellites.                                                         These relations also give the bispectrum of the deflec-
+   Acknowledgements: I would like to thank M. Zaldar-                tion angle in terms of bispectrum of the lensing potential
+riaga for many useful discussions and help during the                in the obvious manner.
+early stages of this work. This work was supported by the               The convergence (κ) and shear (γ1 , γ2 ) are familiar
+Keck Foundation, a Sloan Fellowship, and NSF-9513835.                weak lensing observables from galaxy weak lensing stud-
+                                                                     ies [15]. Although they are not directly needed for CMB
+                                                                     studies, they are of interest for cross-correlation of galaxy
+    APPENDIX A: ALL-SKY WEAK LENSING                                 weak-lensing maps and the CMB. An equivalent all-sky
+              OBSERVABLES
+                                                                     lensing treatment is given by [21].
+                                                                        These quantities are given by the second derivatives
+   All weak lensing observables may be defined in terms
+of the projected potential φ                                               ∇i ∇j φ ≡ κgij + (γ1 + iγ2 )(m+ ⊗ m+ )ij
+                   Z                                                                      +(γ1 − iγ2 )(m− ⊗ m− )ij ,            (A8)
+        φ(n̂) = −2 dDgφ (D)Φ(x(n̂), D) ,           (A1)
+                                                                     convergence where gij is the metric on the sphere.
+or equivalently its multipole moments φlm in the all-                   For the all-sky harmonics, it is useful to note that equa-
+sky formalism or Fourier coefficients φ(l). Recall from              tion (55) implies
+
+                                                                12
+                                             s
+              l(l + 1) m       1                 (l + 2)!                                          1. Exact Expressions
+∇i ∇j Ylm = −         Yl gij +                                      (A9)
+                         2               2       (l − 2)!
+                     h                                    i                        The expressions for the power spectrum of the lensed
+                    × 2 Ylm (m+ ⊗ m+ ) + −2 Ylm (m− ⊗ m− ) ,                    temperature and polarization distributions involve spe-
+                                                                     ij
+                                                                                cific sets of Wigner-3j symbols that can be efficiently
+and hence                                                                       evaluated. The expression for the temperature involves,
+                              X1                                                a set which has a closed algebraic form:
+                κ(n̂) = −   l(l + 1)φlm Ylm (n̂) ,
+                          2                                                     
+                                                                                    l1 l2 l3
+                                                                                             
+                                                                                                                        ( L2 )!
+                       lm
+                                                                                               = (−1)L/2 L                                    (B1)
+                          s
+                      X 1 (l + 2)!                                                  0 0 0                ( 2 − l1 )!( L2 − l2 )!( L2 − l3 )!
+ γ1 (n̂) ± iγ2 (n̂) =               φlm ±2 Ylm (n̂) .              (A10)                                                             1/2
+                        2 (l − 2)!                                                                 (L − 2l1 )!(L − 2l2 )!(L − 2l3 )!
+                             lm                                                                ×                                             ,
+                                                                                                               (L + 1)!
+Consequently, the power spectra are related as
+                                                                                for even L = l1 + l2 + l3 and zero for odd L.
+                           l2 (l + 1)2 φφ                                          The required set for the polarization does not have an
+                    Clκκ =            Cl ,
+                                  4                                             exact closed form expression. However it may be equally
+                            1 (l + 2)! φφ                                       efficiently evaluated for our purposes with the realization
+                     Clǫǫ =           Cl ,                                      that in the sums, we require
+                           4 (l − 2)!
+                             1
+                    ClXκ = − l(l + 1)ClXφ ,
+                                                                                                               
+                                                                                                   l1 l2 l3
+                             2                                                                                    ≡ wl1               (B2)
+                            s                                                                      m1 m2 m3
+                             1    (l + 2)! Xφ
+                    ClXǫ =                C ,                      (A11)        for fixed l2 , l3 , m1 , m2 , m3 and all allowed l1 . The recur-
+                             2    (l − 2)! l
+                                                                                sion relations for the Wigner-3j symbol,
+where the ǫ shear power spectra is defined in the same
+way as that of the E polarization and X = Θ, E, B. The                            l1 Al1 +1 wl1 +1 + Bl1 wl1 + (l1 + 1)Al1 wl1 −1 = 0 ,    (B3)
+β shear power is the analogue of the B polarization power
+                                                                                where
+and vanishes for weak lensing.
+  In the flat-sky limit, these expressions become
+                                                                                         q                 q                    q
+                                                                                 Al1 =    l12 − (l2 − l3 )2 (l2 + l3 + 1)2 − l12 l12 − m21 ,
+                          1    d2 l 2
+                            Z
+                                                                                 Bl1 = −(2l1 + 1)[l2 (l2 + 1)m1 − l3 (l3 + 1)m1
+               κ(n̂) = −            l φ(l)eil·n̂         (A12)
+                          2   (2π)2                                                        −l1 (l1 + 1)(m3 − m2 )] ,                       (B4)
+                          1    d2 l 2
+                            Z
+   γ1 (n̂) ± iγ2 (n̂) = −           l φ(l)e±2i(ϕl −ϕ) eil·n̂ ,                  allow us to generate the whole set at once [22]. For a sta-
+                          2   (2π)2
+                                                                                ble recursion, one begins at the minimum and maximum
+so that                                                                         l1 values
+                  κκ     ǫǫ  1 4 φφ                                                             l1min = max(|l2 − l3 |), |m1 |) ,
+                 C(l) = C(l) = l C(l) ,
+                             4
+                                  1                                                            l1max = l2 + l3 ,                           (B5)
+                 Xκ      Xǫ             Xφ
+                C(l) = −C(l) = − l2 C(l)                           (A13)
+                                  2                                             with wl1min = wl1max = 1 and carries the recursion in both
+These relations also give the bispectrum of the shear and                       directions to the midpoint l1mid in the range (or any non-
+convergence in terms of the bispectrum of the lensing                           vanishing entry in the vicinity). One then renormalizes
+potential                                                                       either the left or right recursion to make the wl1mid agree.
+                                                                                The remaining overall normalization is fixed by requiring
+                1
+ Blκκκ
+   1 l2 l3
+           =      [l1 (l1 + 1)l2 (l2 + 1)l3 (l3 + 1)]Blφφφ
+                                                       1 l2 l3
+                                                               ,                                  X
+                8s                                                                                    (2l1 + 1)wl21 = 1 ,              (B6)
+                1     (l1 + 2)! (l2 + 2)! (l3 + 2)! φφφ                                            l1
+ Blǫǫǫ
+    1 l2 l3
+            =                                      B         ,     (A14)
+                8     (l1 − 2)! (l2 − 2)! (l3 − 2)! l1 l2 l3                    and
+with a similar relation for the flat-sky bispectra.                                          sgn (wl1max ) = (−1)l2 −l3 −m1 .              (B7)
+
+                                                                                Putting these relations together, we obtain the full set of
+    APPENDIX B: WIGNER-3J EVALUATION                                            symbols as required.
+
+
+
+                                                                           13
+                                                                                        1
+                                                                            sin 2ϕ31 = ∓ [L(L − 2l1 )(L − 2l2 )(L − 2l3 )]1/2
+                                                                                        2 
+10–2                              Wigner–3j                                                 l2 − l2 − l2
+                                                                                                         
+                                                                                        × 2 212 3 .
+                                                                                                l1 l3
+                                                                       Putting this together with equation (B2) and fixing the
+10–3                                                                   sign ambiguity, we obtain
+                                                                                                      2
+                                                                                                        l2 − l12 − l32
+                                                                                                                     
+                                                                            l1 l2 l3           L−1 1
+                                                                                        ≈ (−1) 2                              (B11)
+                                                                            2 0 −2                 2        l12 l32
+10–4                                                                                                       (L/2)!
+                                                                                          ×
+                                                                                            (L/2 − l1 )!(L/2 − l2 )!(L/2 − l3 )!
+                                                                                            h
+                                       error                                              × L(L − 2l1 )(L − 2l2 )(L − 2l3 )
+                                                                                            (L − 2l1 )!(L − 2l2 )!(L − 2l3 )! i1/2
+        60         80            100           120      140                               ×
+                                                                                                        (L + 1)!
+                                  l1
+  FIG. 5. Wigner-3j function and approximation. An ex-                 for L = odd. The half integer factorials are defined by the
+ample of the Wigner-3j symbol relevant to the polarization             gamma function x! = Γ(1 + x). By explicit calculation
+calculation with l2 = 100, m2 = 0, l3 = 50, m3 = −2 is shown           we find that these expressions are valid to better than 3%
+as calculated from the recursion relations (solid upper) and           of the rms amplitude of the symbol when averaged over
+analytic approximation (dashed). The difference is shown be-           neighboring l for all l1 −|l2 −l3 | >                   >
+low (solid lower).                                                                                         ∼ 25 and l2 +l3 −l1 ∼ 25,
+                                                                       i.e. for triangles that are sufficiently far from being flat.
+                                                                       Near zero crossings, the fractional error can be large but
+                   2. Approximations                                   the absolute error remains a small fraction of the rms. A
+                                                                       typical case is shown in Fig. 5.
+                                                                          These relations may be useful in cases where only a sin-
+   We can use the general relation between the all and
+                                                                       gle symbol is needed. However for the lensing calculation
+flat sky bispectra of equation (20) compared with the
+                                                                       where the whole set is required, the recursion relations
+explicit calculation of the flat sky bispectrum in §V B to
+                                                                       are as efficient as the approximation and are exact.
+develop an high-l approximation for the specific symbol
+in the polarization calculations. The comparison implies
+that                                                                          APPENDIX C: FLAT AND ALL SKY
+                                                                               CORRESPONDENCE
+          l1 l2 l3                   l1 l2 l3
+                      ≈ cos 2ϕ31                ,     (B8)
+          2 0 −2                     0 0 0
+                                                                                             1. Harmonics
+for L = l1 + l2 + l3 = even. By the law of cosines,
+                                                                         We establish here the correspondence between the all
+                        1 (l22 − l12 − l32 )2                          and flat sky harmonic coefficients of spin zero (scalar),
+          cos 2ϕ31 =                          −1.        (B9)
+                        2       l12 l32                                spin one (vector) and spin two (tensor) quantities on the
+                                                                       sky.
+Then
+                                                                         Following [23], let us begin by introducing the following
+                           2    2     2 2                              weighted sum over the multipole moments of the field
+                                          
+  l1 l2 l3         L/2 1 (l2 − l1 − l3 )
+             ≈ (−1)                       −1                           X = Θ, E, B, or φ for a given l and its inverse relation,
+  2 0 −2                2     l12 l32
+                                    (L/2)!
+                                                                                     r
+                   ×                                                                      4π X −m
+                     (L/2 − l1 )!(L/2 − l2 )!(L/2 − l3 )!                    X(l) =                i Xlm eimϕl ,
+                                                                                        2l + 1 m
+                                                        1/2
+                       (L − 2l1 )!(L − 2l2 )!(L − 2l3 )!                             r
+                                                                                        2l + 1 m dϕl −imϕl
+                                                                                                  Z
+                   ×                                          ,
+                                   (L + 1)!                                  Xlm =             i         e      X(l) .        (C1)
+                                                                                          4π          2π
+for L = even. For odd values of L, we use the relation                 The goal is then to show that this quantity is the Fourier
+                                                                   coefficient of the flat-sky expansion.
+       l1 l2 l3                   l1 l2 l3
+                  ≈ ±i sin 2ϕ31              ,    (B10)                  Spin-0 quantities, such as the temperature flucutations
+       2 0 −2                      0 0 0
+                                                                       and the lensing potential, are decomposed as
+and fix the overall sign ambiguity by an explicit evalua-                                       X
+                                                                                       X(n̂) =     Xlm Ylm (n̂) .           (C2)
+tion. By the triangle relations,
+                                                                                               lm
+
+
+                                                                  14
+For small angles around the pole, the spherical harmonics             and thus
+may be approximated as∗                                                             X
+                                                                                                     m
+                                                                       ± X(n̂) =          ± Xlm ±2 Yl
+                           r
+                                                                                     lm
+                m             l imϕ
+              Yl ≈ Jm (lθ)       e     ,            (C3)                           X l Z dϕl
+                                                                                                         ∓2iϕ 1
+                             2π                                                  ≈               ± X(l)e          (∂x ± i∂y )2 eil·n̂
+                                                                                       2π     2π               l2
+                                                                                   l
+and the expansion of the plane wave
+                                                                                         d2 l
+                                                                                     Z
+                                                                                                      ±2i(ϕl −ϕ) il·n̂
+                   X                                                             ≈−           ± X(l)e            e ,           (C11)
+          eil·n̂ =   im Jm (lθ)eim(ϕ−ϕl )                                               (2π)2
+                        m
+                        r                                             as desired.
+                            2π X m m imϕl
+                    ≈            i Yl e   ,              (C4)
+                             l m
+                                                                                              2. Power Spectra
+     Thus
+               X                                                         The correspondence between power spectra then fol-
+     X(n̂) =        Xlm Ylm                                           lows from the relationship between the harmonics
+               lm                                                                             √
+                                                                                                  ′
+                                                                                         m′ −m ll
+                                                                                                           Z          Z
+              X l Z dϕl                                                   ∗   ′                       XX ′                      ′
+                                                                       hXlm Xl′ m′ i ≈ i            C(l)     dϕl eimϕl dϕl′ e−im ϕl′
+                                     X
+            ≈                X(l)      Jm (lθ)im eim(ϕ−ϕl )                                    2π
+                   2π    2π          m
+                l
+                                                                                          ×δ(l − l′ ) .                       (C12)
+                   d2 l
+              Z
+            ≈           X(l)eil·n̂ ,                     (C5)         We then expand the delta function in plane waves func-
+                  (2π)2
+                                                                      tions
+which is the desired correspondence.                                               Z
+                                                                                          dn̂ i(l−l′ )·n̂
+  Spin-1 quantities like the deflection angles are decom-             δ(l − l′ ) =            e                         (C13)
+                                                                                      (2π)2
+posed as
+                                                                                    2π         dn̂ X m−m′ m′ ∗ m imϕl −im′ ϕl′
+                                                                                           Z
+                                                                                 ≈ √                        i Yl′ Yl e         .
+                                                                                             (2π)2
+                       X
+                                      m                                                 ′
+             ± X(n̂) =     ± Xlm ±1 Yl .             (C6)                            ll               mm  ′
+
+                                lm
+                                                                      Integrating over the azimuthal angles ϕl , ϕl′ collapses the
+Here one notes that                                                   sum to
+                                                                                                                           ′
+                 m   1 ∓iϕ                                                         ∗
+                                                                                 hXlm Xl′′ m′ i ≡ δl,l′ δm,m′ ClXX
+            ±1 Yl ≈ ± e    (∂x ± i∂y ) Ylm ,             (C7)
+                            l                                                                       XX ′
+                                                                                                          Z
+                                                                                                                           ′
+                                                                                                ≈ C(l)       dn̂Yl−m∗ Yl−m
+                                                                                                                        ′
+and thus
+                                                                                                                           ′
+                                                                                                                 XX
+               X
+                               m                                                                  = δl,l′ δm,m′ C(l)                     (C14)
+ ± X(n̂) =          ± Xlm ±1 Yl
+               lm                                                     which proves the desired relation in eqn. (20),
+               X l Z dϕl
+                                      ∓iϕ 1                                                       ′               ′
+            ≈±               ± X(l)e        (∂x ± i∂y ) eil·n̂                             ClXX ≈ C(l)
+                                                                                                   XX
+                                                                                                       .                                 (C15)
+                   2π     2π              l
+                 l
+                    d2 l
+                 Z
+                                 ±i(ϕl −ϕ) il·n̂
+            ≈ ±i         ± X(l)e          e .            (C8)
+                   (2π)2                                                                          3. Bispectra
+
+  Finally, spin-2 quantities like the polarization are de-
+                                                                         The correspondence between bispectra is established in
+composed as
+                                                                      exactly the same way as with the power spectra. The only
+                                                                      difference is that the expansion of δ(l′ − l) in eqn. (C14)
+                       X
+                                      m
+             ± X(n̂) =     ± Xlm ±2 Yl .             (C9)
+                                lm
+                                                                      is replaced with that of δ(l1 + l2 + l3 ) leading to
+                                                                                                   l l′ l′′
+                                                                                                                  
+                                                                                                                              ′
+Here one notes that                                                           ′      ′′                                         X ′′
+                                                                       hXlm Xl′ m′ Xl′′ m′′ i ≡                      BllXX                   (C16)
+                                                                                                  m m′ m′′
+                                                                                                                         ′ l′′
+
+                        1 ∓2iϕ
+                 m
+                               (∂x ± i∂y )2 Ylm ,
+                                                                                                               Z
+            ±2 Yl ≈        e                           (C10)                                                                         ′      ′′
+                                                                                                  XX ′ X ′′
+                        l2                                                                    ≈ B(l,l ′ ,l′′ )   dn̂Yl−m Yl−m   ′      Yl−m
+                                                                                                                                         ′′
+
+
+
+
+                                                                                                                      l l′ l′′        l l′ l′′
+                                                                                                                                              
+                                                                                                  XX ′ X ′′
+                                                                                               = B(l,l
+                                                                                                                                      m m′ m′′
+                                                                                                       ′ ,l′′ )
+                                                                                                                      0 0 0
+ ∗
+  Note that our definition of Ylm differs from the usual one                                              r
+by (−1)m to conform with the spin spherical harmonic con-                                                     (2l + 1)(2l′ + 1)(2l′′ + 1)
+vention [22].                                                                                         ×                                   .
+                                                                                                                          4π
+
+                                                                 15
+This establishes the relation                                                for the flat sky bispectrum [5]. The extra factor of (2π)2
+                           r                                                compared with the power spectrum is from the extra
+                  l l′ l′′    (2l + 1)(2l′ + 1)(2l′′ + 1)
+                
+    XX ′ X ′′
+  Bll′ l′′    ≈                                                              delta function in the noise term. One can show that
+                  0 0 0                   4π                                 these expressions agree in the high-l limit by restoring
+                                ′   ′′
+                       XX X
+                      B(l,l ′ ,l′′ ) .                        (C17)          the integration over l3 , expanding the delta function into
+                                                                             spherical harmonics as in eqn. (C14), and integrating over
+Note that we have implicitly assumed that the bispec-                        azimuthal angles,
+trum only depends on the the magnitudes (l, l′ , l′′ ) so that                Z       Z        Z
+it may be removed from the azimuthal integrals. This is                            2       2
+                                                                                  d l1 d l2 d2 l3 δ(l1 + l2 + l3 )
+not true for terms not involving the magnetic parity. In
+this case, the sign of the flat-sky bispectrum depends
+                                                                                                            s
+                                                                                                              (2π)5
+                                                                                    Z        Z      Z                  Z
+on orientation but we find empirically that a similar re-                        ≈ l1 dl1 l2 dl2 l3 dl3                   dn̂Yl01 Yl02 Yl03
+                                                                                                              l1 l2 l3
+lationship holds up to a sign ambiguity as discussed in
+                                                                                                                              2
+§II B.
+                                                                                        Z        Z       Z      
+                                                                                                                     l1 l2 l3
+                                                                                 ≈ 8π 2 l1 dl1 l2 dl2 l3 dl3                         . (C23)
+                                                                                                                     0 0 0
+
+                           4. Signal-to-Noise                                With the general correspondence of bispectra from
+                                                                             eqn. (C17), this becomes
+  Here we establish the correspondence between the all                                   2
+                                                                                                                                     (BlXXX     )2
+                                                                                 
+                                                                                     S
+                                                                                                       Z         Z         Z
+and flat sky signal-to-noise statistics for the case of di-                                                                             1 l2 l3
+                                                                                              ≈ fsky       dl1       dl2       dl3                 ,   (C24)
+agonal contributions to the covariance matrix [Cov =                                 N                                                  Var
+diag(Var)],
+                                                                             which proves the equivalence of the signal-to-noise for
+   2
+    S       X (C XX )2
+                   l
+                            X            (C XX )2                            high-l and fsky = 1.
+          =              =      (2l + 1) l        . (C18)
+    N             Var                      Var
+                lm                            l
+
+For the flat sky case, one defines a weighted sum of
+Fourier harmonics
+               Z
+          P = d2 l W (l)X(l)X(−l) ,            (C19)
+                                                                              [1] A. Blanchard & J. Schneider, Astron. & Astrophys., 184,
+                                                                                  1 (1987); A. Kashlinsky, Astrophys. J. 331, L1 (1988);
+                                       XX
+with optimal weights given by W (l) = C(l) /Var from                              E.V. Linder, Astron. & Astrophys. 206, 199 (1988); S.
+which one calculates the signal-to-noise hP i2 / P 2 as                           Cole & G. Efstathiou, Mon. Not. Roy. Astron. Soc. 239,
+                                                                                  195 (1989); M. Sasaki, Mon. Not. Roy. Astron. Soc., 240,
+                  2                                 XX 2
+                                                    [C(l) ]                       415 (1989); K. Watanabe & K. Tomita, Astrophys. J.
+               S               fsky
+                                         Z
+                           =                 d2 l                                 370, 481 (1991) M. Fukugita, T. Futamase, M. Kasai,
+               N                π                    Var                          & E.L. Turner, Astrophys. J. 393, 3 (1992); L. Cayon,
+                                                (C XX )2                          E. Martinez-Gonzalez, & Sanz, Astrophys. J., 413, 10
+                                         Z
+                           ≈ 2fsky           ldl l       ,    (C20)               (1993);
+                                                  Var
+                                                                              [2] U. Seljak, Astrophys. J, 463 1 (1996)
+where we have used the fact that δ(0) ≈ V /(2π 2 ) =                          [3] M. Zaldarriaga & U. Seljak, Phys. Rev. D. 58, 023003
+fsky /π. These expressions agree in the high l-limit and                          (1998)
+imply the familiar result that fsky should multiply the                       [4] D.M. Goldberg & D.N. Spergel, Phys. Rev. D, 59, 103002
+signal-to-noise of angular power spectrum measurements                            (1999)
+                                                                              [5] M. Zaldarriaga, preprint, astro-ph/9910498
+given incomplete sky coverage.
+                                                                              [6] U. Seljak & M. Zaldarriaga, Astrophys. J., 469, 437
+   The bispectrum signal-to-noise similarly is
+                                                                                  (1996)
+    2       X (BlXXX        )2 X
+                                                  2                         [7] D.J. Eisenstein & W. Hu, Astrophys. J., 511, 5 (1999)
+      S               1 l2 l3           l1 l2 l3
+           =                                                                  [8] E.F. Bunn & M. White, Astrophys. J., 480, 6 (1997)
+     N                Var              m1 m2 m3                               [9] Peebles, P.J.E. 1980, The Large-Scale Structure of the
+                l1 l2 l3                     m1 m2 m3
+                   X (BlXXX   2                                                   Universe, (Princeton: Princeton Univ. Press)
+                         l l )                                               [10] U. Seljak & M. Zaldarriaga, preprint, astro-ph/9811123
+            =                  1 2 3
+                                             ,                (C21)
+                               Var                                           [11] J.N. Goldberg, et al. J. Math. Phys., 7, 863 (1967)
+                l1 l2 l3
+                                                                             [12] M. Kamionkowski, A. Kosowsky, & A. Stebbins, Phys.
+for the all sky bispectrum and                                                    Rev. D, 55, 7368 (1997)
+                                                                             [13] M. Zaldarriaga & U. Seljak, Phys. Rev. D., 55, 1830
+                                            XXX
+                                                           ]2
+  2
+    S        fsky 1
+                        Z
+                           2
+                                 Z
+                                    2
+                                          [B(l 1 ,l2 ,l3 )                        (1997)
+          =               d  l 1   d  l 2                     , (C22)        [14] N. Kaiser, Astrophys. J., 498, 26 (1998)
+   N          π (2π)2                          Var
+
+                                                                        16
+[15] M. Bartlemann & P. Schneider, preprint, astro-
+     ph/9912508
+[16] J.A. Peacock & S.J. Dodds, Mon. Not. Roy. Astron. Soc.,
+     280, L19 (1996)
+[17] W. Hu & M. White, Phys. Rev. D, 56 596 (1997)
+[18] X. Luo, Astrophys. J. 427, 71 (1994)
+[19] A. Cooray & W. Hu, preprint, astro-ph/9910397
+[20] M. Tegmark, D.J. Eisenstein, W. Hu, & A. de Oliveira-
+     Costa, Astrophys. J, in press (2000)
+[21] A. Stebbins, preprint, astro-ph/9609149
+[22] K. Schulten & R.G. Gordon, J. Math. Phys., 16, 1971
+     (1975)
+[23] M. White, J.E. Carlstrom, M. Dragovan, & W.L.
+     Holzapfel, W.L. Astrophys. J., 514, 12 (1999)
+
+
+
+
+                                                               17
+

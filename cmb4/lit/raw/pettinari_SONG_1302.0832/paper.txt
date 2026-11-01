@@ -1,0 +1,1090 @@
+                                              Prepared for submission to JCAP
+
+
+
+
+                                              The intrinsic bispectrum of the
+                                              Cosmic Microwave Background
+arXiv:1302.0832v2 [astro-ph.CO] 18 Mar 2013
+
+
+
+
+                                              Guido W. Pettinari, Christian Fidler, Robert Crittenden, Kazuya
+                                              Koyama and David Wands
+                                               Institute of Cosmology and Gravitation, University of Portsmouth, Dennis Sciama Building,
+                                               Burnaby Road, Portsmouth PO1 3FX, United Kingdom
+                                               E-mail: Guido.Pettinari@port.ac.uk, Christian.Fidler@port.ac.uk,
+                                               Robert.Crittenden@port.ac.uk, Kazuya.Koyama@port.ac.uk,
+                                               David.Wands@port.ac.uk
+
+                                              Abstract. We develop a new, efficient code for solving the second-order Einstein-Boltzmann
+                                              equations, and use it to estimate the intrinsic CMB non-Gaussianity arising from the non-
+                                              linear evolution of density perturbations. The full calculation involves contributions from
+                                              recombination and less tractable contributions from terms integrated along the line of sight.
+                                              We investigate the bias that this intrinsic bispectrum implies for searches of primordial non-
+                                              Gaussianity. We find that the inclusion or omission of certain line of sight terms can make a
+                                              large impact. When including all physical effects but lensing and time-delay, we find that the
+                                              local-type fNL would be biased by fNL intr = 0.5, below the expected sensitivity of the Planck
+
+                                              satellite. The speed of our code allows us to confirm the robustness of our results with respect
+                                              to a number of numerical parameters.
+Contents
+
+1 Introduction                                                                               1
+
+2 Boltzmann equation                                                                         3
+
+3 Differential system                                                                        5
+
+4 Line of Sight                                                                              6
+  4.1 Treating the redshift contribution                                                     6
+  4.2 A note on integration by parts                                                         7
+
+5 Temperature Bispectrum                                                                     7
+  5.1 The observed temperature                                                               8
+  5.2 Reduced Bispectrum                                                                     8
+  5.3 Bispectrum computation                                                                 9
+  5.4 Squeezed limit                                                                        10
+  5.5 The estimator                                                                         10
+
+6 Results                                                                                   11
+
+7 Convergence tests                                                                         12
+
+8 Conclusions                                                                               14
+
+1   Introduction
+
+Since cosmic inflation was proposed as a mechanism to solve the causality and flatness prob-
+lems [1–4] and to generate primordial fluctuations [5–8], many different theoretical models
+of inflation have been put forward. In most cases, it is difficult to distinguish between these
+various models just from the measurements of the power spectrum and it is useful to have
+more observables. Single-field slow-roll inflation produces an effectively Gaussian distribu-
+tion of primordial adiabatic density perturbations [9, 10]. Alternative models such as the
+curvaton scenario [11–15], can generate distinctive non-Gaussian features in the primordial
+fluctuations, which are potentially detectable in the bispectrum of the Cosmic Microwave
+Background (CMB). Such a detection would rule out the simplest models of inflation and
+strongly constrain the physics of the early Universe.
+      The bispectrum of the CMB anisotropies provides an optimal way to measure non-
+Gaussianity of primordial perturbations [16]. In models such as the curvaton one, where non-
+Gaussianity arises due to the non-linear evolution of the primordial curvature perturbation
+on super-horizon scales, the bispectrum peaks at squeezed configurations where one of the
+momenta is much smaller than the other two momenta. This is called the local type non-
+Gaussianity [16–18] as the non-linearity appears locally in real space. On the other hand,
+the non-linearity of quantum fluctuations on sub-horizon scales during inflation generally
+produces a bispectrum that peaks for more equilateral configurations [19, 20]. Theoretical
+templates for the bispectra have been developed to optimally measure these two distinct types
+of non-Gaussianity. In addition, an orthogonal template with minimal overlap was developed
+
+
+
+
+                                            –1–
+to measure the bispectrum that cannot be captured by the local and equilateral templates
+[21]. These three templates have been applied to CMB anisotropies measured by WMAP,
+giving constraints −3 < fNL   local < 77, −221 < f eq < 323, −445 < f orth < −45 at 95%
+                                                       NL                      NL
+confidence level [22]. The Planck satellite [23] will dramatically improve these constraints
+providing a possibility to distinguish between various early Universe models.
+      However, we do not expect all of the observed non-Gaussianity to be of primordial
+origin. Non-linear evolution will generate some degree of non-Gaussianity even in the absence
+of a primordial signal, for the simple reason that the product of Gaussian random fields is
+non-Gaussian. The propagation of CMB photons in an inhomogeneous Universe and their
+non-linear collisions with electrons make it possible for Gaussian initial conditions to be non-
+linearly propagated into a non-Gaussian temperature field. This results in the emergence of
+an intrinsic CMB bispectrum, which is the topic of this paper.
+      The intrinsic CMB bispectrum acts as a systematic bias in the measurement of the
+primordial bispectrum [24]. In order to correctly interpret the upcoming non-Gaussianity
+measurements, it is of crucial importance to quantify this bias, which we label fNL         intr . In
+
+addition to that, the non-Gaussian signal from non-linear dynamics has an interest of its
+own, as it might shed light on the details of the gravity theory [25].
+      The non-linear signal can be quantified theoretically by using second-order perturbation
+theory; this is the leading order of non-Gaussianity since linear evolution cannot generate
+non-Gaussian features that are not already present in the initial conditions. The Einstein
+and Boltzmann equations at second order have been studied in great detail [26–30]. They are
+significantly more complicated than at first order and solving them numerically is a daunting
+task.
+      Existing approximations either neglect some of the physics or focus on a particular
+bispectrum configuration. On super-horizon scales at recombination, where only gravitational
+effects are important, it is well established that fNLintr ∼ −1/6 for the local model [31–33]. On
+
+small angular scales, one has to consider the interactions taking place between photons and
+baryons before the time of decoupling. The contribution to fNL   intr arising from the fluctuations
+
+in the free-electron density has been shown to be of order unity [34, 35], and likewise for the
+contribution from the other quadratic sources in Boltzmann equation [36]. An alternative
+approach consists of focussing on the squeezed limit, where the local template peaks. The
+recombination bispectrum in this limit can be obtained by a coordinate rescaling [37] and
+yields a contamination to the local signal again of order unity [37–40].
+      None of these estimates constitute a significant bias for Planck, which is expected to
+constrain the local model with an uncertainty of σfN L ∼ 5 [16]. However, the first full
+numerical computation of the bias, performed by Pitrou et al. (2010) [41, 42], found the
+much higher value fNL intr ∼ 5, just at the detection threshold for Planck.
+
+      In this paper, we introduce a new code, SONG (Second-Order Non-Gaussianity), to solve
+the second order Einstein-Boltzmann equations for photons, neutrinos, baryons and cold dark
+matter. The code is written in C, is parallel, and is based on the first-order Boltzmann code
+CLASS [43, 44], from which inherits its modular structure and ease of use. SONG is fast
+enough to perform various convergence tests to check the robustness of the numerical results.
+Utilising this code, we will study the intrinsic non-Gaussianity to quantify the bias in the
+measurements of primordial non-Gaussianity and evaluate its signal-to-noise ratio.
+      While this paper was in preparation, two papers appeared that study the intrinsic bis-
+pectrum, giving similar results for the bias to the primordial non-Gaussianity templates, but
+different ones for the signal-to-noise ratio [45, 46]. We will discuss later why Refs. [41, 45, 46]
+
+
+
+
+                                               –2–
+obtained different results.
+     This paper is organised as follows. In Section 2, we present the second order Boltzmann
+equation and explain physical meanings of various terms. In Section 3, we explain how we
+solve Einstein and Boltzmann equations using our code, SONG. In Section 4, the line of sight
+integration is introduced in order to solve Boltzmann equation up to today. We will explain
+which contributions in the line of sight integration are included in our analysis. In Section 5,
+we define the bispectrum of temperature anisotropies and introduce the Fisher matrix to
+estimate the importance of the intrinsic bispectrum. Section 6 is devoted to present our main
+results, while in Section 7 we show their numerical robustness. Finally, we discuss our results
+in Section 8.
+Metric We employ the conformal Poisson gauge [47, 48], where the metric reads:
+
+     ds2 = a2 (τ ) −(1 + 2Ψ)dτ 2 + 2ωi dxi dτ + [ (1 − 2Φ)δij + 2 γij ] dxi dxj .
+                  
+                                                                                             (1.1)
+
+The vector potential is transverse ωi,i = 0, while the spatial metric is both transverse γij,i = 0
+and traceless γii = 0.
+Initial conditions We shall assume scalar adiabatic initial conditions which are completely
+Gaussian in the primordial curvature perturbation ζ.
+Cosmological parameters Thorough the paper we shall employ a ΛCDM model with
+WMAP7 parameters [49], whereby h = 0.704, Ωb = 0.0455, Ωcdm = 0.228, ΩΛ = 0.727,
+As = 2.43 × 10−9 , ns = 0.967, τreio = 0.088, Neff = 3.04. In this model, the age of the
+Universe is 13.73 Gyr, the conformal age c τ0 = 14329 Mpc and recombination happens at
+z = 1088, corresponding to a conformal time of c τrec = 284 Mpc.
+Second order perturbations We solve the Einstein and Boltzmann equations at second
+order in the cosmological perturbations. We expand every physical quantity according to
+X ≃ X (0) + X (1) + X (2) , so that a second-order equation has the same structure of the
+corresponding first-order one, plus a source term that contains terms quadratic in the first-
+order perturbations. We assume that the vector and tensor modes of the metric are generated
+                                             (1)          (1)
+only by second-order effects, which implies ωi = 0 and γij = 0.
+
+2   Boltzmann equation
+
+The time evolution of the photon distribution function f (η, x, qn), with q being the comoving
+momentum, is determined by the Boltzmann equation
+
+                          ∂f   dxi ∂f   dq ∂f   dni ∂f
+                             +        +       +        = C[f ] ,                             (2.1)
+                          ∂η   dη ∂xi dη ∂q     dη ∂ni
+where the left-hand side describes particle propagation in an inhomogenous space-time and the
+right-hand side describes the interactions between photons and electrons through Compton
+scattering. The second term encodes free streaming, that is the propagation of perturbations
+from the small to the large multipoles. At higher order this term also includes time delay
+effects. The third term, at background level, causes the redshifting of photons, and at higher-
+order includes the well-known Sachs-Wolfe (SW), integrated Sachs-Wolfe (ISW) and Rees-
+Sciama (RS) effects. The fourth term vanishes to first order and describes the small-scale
+effect of gravitational lensing on the CMB.
+
+
+
+
+                                              –3–
+     It is convenient to use the brightness ∆, defined as the momentum-integrated distribution
+function normalised to the background energy density
+
+                                                    dq q 3 f (η, x, qn)
+                                                R
+                             1 + ∆(η, x, n) =       R                   ,                        (2.2)
+                                                      dq q 3 f (0) (q)
+
+where f (0) is the background distribution function, which takes the form of a black-body
+distribution. The terms in the Boltzmann equation (2.1) are explicitly given, up to second
+order, by [30, 50]:
+
+    dxi ∂f
+                →      (1 + Ψ + Φ) ni ∂i ∆ ,
+    dη ∂xi
+    dq ∂f
+                →      4 (ni ∂i Ψ − Φ̇ − ni ω̇i + ni nj γ̇ij ) (1 + ∆) − 4(Ψ − Φ) ni ∂i Ψ − 8ΦΦ̇ ,
+    dη ∂q
+    dni ∂f                                             ∂∆
+                →       − (δ ij − ni nj ) ∂j (Ψ + Φ)       .                                     (2.3)
+    dη ∂ni                                             ∂ni
+
+We represent the terms containing only metric perturbations by
+
+             M = 4 (ni ∂i Ψ − Φ̇ − ni ω̇i + ni nj γ̇ij ) − 4(Ψ − Φ) ni ∂i Ψ − 8ΦΦ̇ ,             (2.4)
+
+and the quadratic terms that include the photon distribution ∆ by
+
+                                                                                    ∂∆
+      QL = (Ψ + Φ) ni ∂i ∆ + 4 (ni ∂i Ψ − Φ̇) ∆ − (δ ij − ni nj ) ∂j (Ψ + Φ)            .        (2.5)
+                                                                                    ∂ni
+
+In the following, we shall refer to the parts of QL as time-delay (first term), redshift (second
+term) and lensing (third term). Note that the above expressions are valid only when ∆ and
+                                                                     (1)          (1)
+the metric variables are expanded up to second order and when ωi = 0 and γij = 0 .
+     We perform a Fourier transform from real space, x, into comoving wavevector, k, and
+transform from photon direction, n, into spherical harmonics, (`, m). This transforms the
+Boltzmann and Einstein equations from partial differential equations into hierarchies of ordi-
+nary differential equations. We will use a single composite index, n, to express the harmonic
+dependence, (`, m), and polarisation. The Boltzmann equation (2.1) then reads
+
+                             ˙ n + k Σnm ∆m + Mn + QL
+                             ∆                      n = Cn ,                                     (2.6)
+
+where Σnm is the free streaming matrix that arises from the decomposition of ni ∂i ∆ into
+spherical harmonics. The collision term
+
+                                           ∆n − Γnm ∆m − QC
+                                                                     
+                             Cn = −|κ̇|                   n              ,                       (2.7)
+
+includes the Compton scattering rate |κ̇| and consists of three distinct contributions: the
+purely second-order loss term −|κ̇| ∆n , describing scatterings out of a given mode ∆n , and
+scatterings into that mode from purely second-order contributions, |κ̇| Γnm ∆m , and quadratic
+contributions, |κ̇| QC
+                     n . When the scattering rate is large photons and baryons behave as a
+tightly coupled fluid, where all moments larger than the quadrupole are suppressed.
+
+
+
+
+                                               –4–
+3   Differential system
+At linear order Fourier modes evolve independently. At second order the presence of quadratic
+source terms leads to mode coupling. In Fourier space this corresponds to a convolution
+between two wavemodes k1 and k2 . Accordingly, we express a second-order perturbation
+                                                (2)
+∆(2) as a convolution of its transfer function T∆ with a quadratic product of the primordial
+curvature potential φ:
+                         Z
+             (2)             dk1 dk2                  (2)
+           ∆ (k, n) ≡                 δ(k1 + k2 + k) T∆ (k, k1 , k2 , n) φ(k1 ) φ(k2 ) . (3.1)
+                              (2π)3
+The main advantage of this form is that the stochastic potential is clearly separated from
+the deterministic transfer function, whose evolution is determined by the Boltzmann and
+Einstein equations. However, the transfer functions depend on two wavemodes k1 and k2 ,
+which, considering a homogeneous and isotropic spacetime, reduce to three degrees of freedom.
+We choose to use the magnitudes of the three wavevectors (k1 , k2 and k = |k1 + k2 |) and
+solve the Einstein-Boltzmann system of differential equations on a 3D-grid. Note that the
+limits of the third direction, k, are dictated by the triangular condition in the Dirac-delta
+function in Eq. (3.1), so that our k-space is a tetrahedron rather than a cube.
+      Our numerical code SONG solves Boltzmann equations for photons, massless neutrinos,
+baryons and cold dark matter, and includes perturbed recombination as described in Ref. [51].
+For the photons, we consider temperature, E- and B-mode polarisation. We evolve the per-
+turbations for the relativistic species until after recombination, including all terms in Eq. (2.6)
+and Eq. (2.3), and obtain their value today by then employing the line of sight formalism,
+which we describe in Section 4. We truncate the relativistic hierarchies at ` ∼ 50, where we
+reach convergence for recombination effects. In a typical run of our code, we evolve a system
+of ∼ 100 differential equations for ∼ 106 independent (k1 , k2 , k) triplets. By using ndf15, the
+implicit differential solver of the first-order Boltzmann code CLASS [43, 44], we manage to
+perform this task in ∼ 1 hour on a quad-core machine.
+      Our initial conditions are set in the radiation dominated era when all Fourier modes are
+super-horizon and in the tightly coupled regime. Our results are then not sensitive to the
+precise starting time of integration.
+      We have compared our second-order transfer functions with several known analytical
+limits. We find a < 1% agreement with the sub-horizon kernels of standard perturbation
+theory [52–55]. We obtain similar agreement with the squeezed-limit transfer functions derived
+in Refs. [38, 39] and with the numerical transfer functions produced by CMBquick [41, 42].
+Furthermore, our code is stable with respect to the choice of the Einstein equation used to
+evolve the curvature potential.
+      Finally, we have compared our results with an updated version of a code based on Green’s
+functions rather than transfer functions [56]. Green’s functions provide an orthogonal method
+of reducing the stochastic Boltzmann equations to algebraic differential equations, that can
+be solved efficiently. The Green’s function Gnm (k, η1 , η2 ) depends on two times and describes
+the impact of a mode m at time η2 on the mode n at time η1 . The differential equations for the
+Green’s functions are especially simple as they are independent of the quadratic source terms.
+It is also not necessary to introduce additional wavevectors k1 and k2 . However, the Green’s
+functions do depend on an additional time, η2 , and have one additional composite index m.
+For runs with average precision, the methods have a comparable speed, but, when refining the
+numerical parameters, we find that the transfer function approach scales better. Comparing
+the results between these different approaches, we obtain a sub-percent level agreement.
+
+
+
+
+                                              –5–
+4     Line of Sight
+
+After recombination, photons stream so that higher multipoles with l ≈ k(η−ηrec ) are excited.
+The Boltzmann hierarchy can be no longer truncated at low multipoles, making the numerical
+treatment computationally inefficient. Instead we will compute the moments today, η0 , using
+the line of sight integration
+                                    Z η0
+                         ∆n (η0 ) =      dη e−κ(η) jnm (k(η0 − η)) Sm (η) ,              (4.1)
+                                    0
+
+which is an integral representation for the solution of the differential equation [57]
+
+                               ˙ n + k Σnm ∆m = −|κ̇|∆n + Sn .
+                               ∆                                                            (4.2)
+
+The excitation of higher multipoles through streaming is encoded in the projection func-
+tions jnm , which are linear combinations of spherical Bessel functions [56]. The source Sn is
+obtained by comparing equation (4.2) with the full Boltzmann equation (2.6):
+
+                           Sn = −Mn − QL                        C
+                                                                  
+                                          n + |κ̇| Γnm ∆m + Qn .                         (4.3)
+
+      The source terms including |κ̇| are relevant only on the last scattering surface (LSS),
+where the visibility function |κ̇|e−κ peaks. These are computed by evolving the full differential
+system through recombination, as described in the previous section. Thereafter we may safely
+neglect them when computing the line of sight integral (4.1) for η  ηLSS .
+      On the other hand, the metric term Mn and the quadratic terms QL          n are important
+at all times. The metric contributions can be computed up to today evolving a simplified
+Boltzmann hierarchy as the radiation component of the Universe becomes quickly negligible
+after matter-radiation equality. The contribution QL  n is purely quadratic in first order terms
+and, in principle, can be computed without the need to solve the differential system at second
+order. However, it is impractical to include it numerically in a standard line of sight approach
+as it comprises a sum over multipoles which are important over all scales and times.
+
+4.1    Treating the redshift contribution
+As shown by Huang and Vernizzi [45], the redshift contribution to QL
+                                                                   n in Eq. (2.5)
+
+                                        4 (ni ∂i Ψ − Φ̇) ∆                                  (4.4)
+
+can be absorbed by using the new variable
+
+                                        ˜ ≡ ln (1 + ∆) .
+                                        ∆                                                   (4.5)
+
+                       ˜ up to second order is then given by
+The time derivative of ∆
+
+                         ˜˙ = ∆
+                         ∆    ˙ − ∆∆
+                                   ˙ = −ni ∂ i ∆
+                                               ˜ − M + C(1 − ∆)
+
+                                           −QL + 4 (ni ∂i Ψ − Φ̇)∆ ,                        (4.6)
+
+where we have used the first-order Boltzmann equation
+
+                              ˙ = −ni ∂ i ∆ − 4 (ni ∂i Ψ − Φ̇) + C ,
+                              ∆                                                             (4.7)
+
+
+
+
+                                              –6–
+to replace the quadratic term ∆∆   ˙ and the second-order one Eq. (2.6) to replace ∆.˙ The new
+                  i                                                 L
+contribution 4 (n ∂i Ψ− Φ̇)∆ exactly cancels the redshift term in Q , so that the second line of
+Eq. (4.6) reduces to only the time-delay and lensing contributions. In addition, the collision
+term C is replaced by C (1 − ∆) .
+     As can be seen, the transformation is effective because the second order source we are
+eliminating is the first order ∆ times part of the first order source. The price is to make the
+scattering term more complex. However the change is not localised to the LSS; like ∆, ∆        ˜
+is non-linearly related to the observed temperature anisotropies. This leads to an additional
+quadratic contribution to the temperature bispectrum arising from the first-order evolution,
+as we show in Section 5.2.
+     Unfortunately, this still leaves other problematic terms in QL , the lensing and time-delay
+terms. These do not relate to the first-order sources, and cannot be removed by a similar
+change of variables. We will not include them in the line of sight integration in this paper,
+and leave them for future work. Note, however, that we do include all terms in QL when
+solving the differential system given by Eq. (2.6) up to recombination.
+
+4.2    A note on integration by parts
+It is often a good technique to use integration by parts in order to separate recombination
+effects from time-integrated effects. By doing so, Eq. (4.1) becomes
+        Z η0                             Z η0                      !
+                                                        Ṡm   κ̇Sm
+             dη e−κ Sm jnm (k(η0 − η)) =      dη e−κ        −        Jnm (k(η0 − η)) , (4.8)
+         0                                0              k      k
+
+where we have chosen to integrate jnm and Jnm , its antiderivative, can still be expressed in
+terms of spherical Bessel functions. This is usually done at first order, where the source is
+equal to the gradient of the potential Sm = km Φ and gives rise to the usual SW (κ̇Φ) and
+ISW (Φ̇) split. This separation is useful because Φ̇ is much smaller than kΦ as the potential
+is slowly changing. The second-order metric terms M can be treated in the same way.
+      However, the quadratic sources QL are problematic as they contain the first-order photon
+fluctuations, which oscillate with frequency k so that k −1 Q˙L n ∼ QL n . Integration by parts
+then generates two terms: one with |κ̇|, which is clearly located on the LSS, and a second one
+which is comparable to the original integral. That second term itself can be decomposed by
+using integration by parts, and will yield a non-negligible LSS contribution. Therefore, the
+technique fails to single out a unique LSS contribution.
+      When we exclude sources such as lensing, we exclude them in their entirety rather than
+imposing an arbitrary split. In this way, our results can be complemented by the known
+non-perturbative approaches, see Ref. [40, 58–62] for lensing.
+
+5     Temperature Bispectrum
+
+As described in the previous sections, we are able to efficiently compute the full second-order
+transfer functions. One of the most interesting quantities that may be derived using these
+transfer functions is the intrinsic non-Gaussianity, which is usually quantified by computing
+the three-point correlation, or bispectrum. In contrast to the angular power spectrum C` ,
+which only depends on the angular separation of two points, the bispectrum can be computed
+for all possible triangles in the CMB sky, resulting in three angular separations or three
+multipole indices for the bispectrum.
+
+
+
+
+                                             –7–
+5.1    The observed temperature
+We first relate the brightness ∆ to the observed temperature perturbations. It is not generally
+possible to define a temperature in a perturbed Universe, because the notion of temperature
+implies thermal equilibrium. Perturbations provoke an unbalanced transfer of momentum
+between photons and baryons that breaks the blackbody spectrum of the photon distribution
+function. While at first order the blackbody shape of the spectrum is preserved [63], at second
+order this is no longer the case [64]. Due to spectral distortions, the effective “temperature”
+perturbation Θ becomes momentum dependent, Θ(η, x, q); this is defined as
+                                                                             −1
+                                                         q
+                          f (η, x, q) = exp                                   −1    ,                  (5.1)
+                                                 T (1 + Θ(η, x, q))
+
+where T is the background temperature. When we neglect spectral distortions, the above
+equation, together with the definition Eq. (2.2), allows us to define the bolometric temperature
+perturbation as
+                                      1 + ∆ = (1 + Θ)4 ,                                   (5.2)
+
+which is expanded up to second order into
+
+                                           ∆ = 4Θ + 6ΘΘ ,                                              (5.3)
+
+or equivalently, using Eq. (4.5),
+                                           ˜ = 4Θ − 2ΘΘ .
+                                           ∆                                                           (5.4)
+
+It was shown in Ref. [64] that neglecting spectral distortions is indeed a good approximation
+for computing bispectra.
+
+5.2    Reduced Bispectrum
+The temperature multipoles a`m are defined by 1
+                             Z                    Z                   r
+                                      ∗                  dk                 4π
+                     a`m =       dΩ Y`m Θ(n) =                (−i)l              Θ`m (k) .             (5.5)
+                                                        (2π)3             2l + 1
+
+The temperature bispectrum is then given by the three-point correlation of the multipoles,
+                                                        s
+                                                                       (4π)3
+             ha`1 m1 a`2 m2 a`3 m3 i = (−i)`1 +`2 +`3
+                                                            (2`1 + 1)(2`2 + 1)(2`3 + 1)
+                                      Z
+                                          dk1 dk2 dk3
+                                                      hΘ`1 m1 (k1 )Θ`2 m2 (k2 )Θ`3 m3 (k3 )i .         (5.6)
+                                            (2π)9
+
+Statistical isotropy enforces strict bounds on the multipole structure of this object. The multi-
+pole indices are dictated by the Gaunt structure allowing us to define the reduced temperature
+bispectrum b`1 `2 `3 [Θ]
+                           ha`1 m1 a`2 m2 a`3 m3 i = G`m1 1`m  2 m3
+                                                            2 `3
+                                                                    b`1 `2 `3 [Θ] .         (5.7)
+   1
+    The extra `-dependent factors in the integral counter the factors included in the multipole decomposition
+of Θ`m in order to simplify the Boltzmann equations.
+
+
+
+
+                                                   –8–
+     Using the relations Eq. (5.3) and Eq. (5.4) we can relate the temperature bispectrum
+to the analogous bispectra constructed using the brightness moments ∆ and ∆, ˜ which are
+computed by our code, by:
+                                  1
+                    b`1 `2 `3 [Θ] =  b` ` ` [∆] − 3 C`1 C`2 − 3 C`1 C`3 − 3 C`2 C`3
+                                 43 1 2 3
+                                  1          ˜ + C` C` + C` C` + C` C` ,
+                             = 3 b`1 `2 `3 [∆]       1   2     1   3     2   3                 (5.8)
+                                 4
+where the angular power spectrum of temperature fluctuations, Cl , is obtained from linear
+perturbation theory as ha`m a`0 m0 i = (−1)m C` δ``0 δm−m0 . In principle, the temperature bis-
+                                                                        ˜ In practice, as explained
+pectrum can be obtained by either computing b`1 `2 `3 [∆] or b`1 `2 `3 [∆].
+                                                                 ˜
+in Section 4.1, using the latter is advantageous because the ∆ variable includes by construction
+the numerically challenging redshift contribution.
+
+5.3    Bispectrum computation
+The full-sky bispectrum Eq. (5.6) is given by a multi-dimensional integration over k1 , k2 ,
+k3 . As it contains the photon perturbations at the present time, it is highly oscillatory in
+all three wavevectors. The leading contribution to the bispectrum combines one second order
+perturbation with two first order ones.
+      We choose our coordinate system so that the wavevector of the second-order transfer
+function, k, is aligned with the zenith of the spherical harmonics. In this system, scalar
+contributions correspond to azimuthal number m = 0. At second order, mode-coupling will
+generate all moments m 6= 0 even with scalar initial conditions. Any bispectrum b`1 `2 `3 can
+be split into these separate contributions:
+                                                 X {m}
+                                     b`1 `2 `3 =  b`1 `2 `3 .                            (5.9)
+                                                         m
+
+In the squeezed case, where the large wave-vectors are effectively aligned with the zenith, the
+scalar contributions are dominant and the sum can be truncated at m = 0. For non-squeezed
+configurations, the scalar bispectrum will still give an important contribution to the sum, but
+higher moments can no longer be neglected. In this work we focus on the scalar contributions
+and compute their impact on the bispectrum.
+         We separate the statistical perturbations in Eq. (5.6) using the transfer functions defined
+in Eq. (3.1). Then the statistical average only affects the primordial perturbations φ and it can
+be expressed using the primordial power spectrum P (k), assuming that there is no primordial
+non-Gaussianity. The angular integrations can be solved analytically and we are left with
+four integrations over the magnitudes (k, k1 , k2 ) of the second order transfer function and
+one parameter r of dimension time, which is introduced by the Rayleigh expansion of the
+three-dimensional Dirac-delta function:
+              3 Z            Z
+  {0}          2             2              (2)
+b `1 `2 `3 =            dr r      dk k 2 T l3 0 (k, k1 , k2 ) jl3 (rk)                                        (5.10)
+               π
+                      Z                                         Z
+                                   (1)                                         (1)
+                        dk1 k12 T l1 (k1 )P (k1 ) jl1 (rk1 )        dk2 k22 T l2 (k2 )P (k2 ) jl2 (rk2 ) + 2 symm.
+
+The above equation is similar to the usual formula for the primordial bispectrum (see, e. g.,
+Refs. [16, 65]), but with one crucial difference: the shape of the intrinsic second-order non-
+Gaussianity is not separable, meaning that the integration cannot be split into three one-
+dimensional integrations. We obviate this problem by using the fact that T (2) (k, k1 , k2 ) is
+
+
+
+
+                                                      –9–
+smooth in k1 and k2 as a consequence of the line of sight integral acting only on k. After
+integrating over the highly oscillatory direction k, we interpolate the result in the smooth
+directions. Finally, we perform the remaining two oscillatory integrations using the same
+technique, effectively breaking the three-dimensional oscillatory integration into three one
+dimensional integrations.
+        We are able to compute the bispectrum to percent accuracy for (100)3 configurations of
+(l1 , l2 , l3 ) in a few hours on a quad-core machine. This, together with the convergence tests in
+Section 7, demonstrates that our implementation of this integration is fast and numerically
+stable.
+
+5.4   Squeezed limit
+For squeezed triangles, where the small-k side is within the horizon today but was not at
+recombination, the intrinsic bispectrum is known approximately [37]. In this configuration,
+the long-wavelength mode acts as a perturbation of the background that alters the observed
+angular scale of the short wavelength modes. The reduced bispectrum for the bolometric
+temperature then takes the following form [38–40]:
+                                                          dln (l22 C`2 )       dln (l32 C`3 )
+                                                                                             
+                                                Tζ 1
+ b`1 `2 `3 [Θ] = C`1 C`2 + C`1 C`3 + C`2 C`3 − C`1    C`2                + C`3                  , (5.11)
+                                                   2         dln l2               dln l3
+
+where C`T1ζ is the correlation between the photon temperature and the super-horizon curvature
+perturbation ζ = ∆/4−Φ at first order. The derivative term encodes the shift in the observed
+angular scales, known as Ricci focussing [40], while the first three terms represent the smaller
+effect due to anisotropic redshifting, known as redshift modulation [40]. A quick comparison
+with Eq. (5.8) shows that the bispectrum induced by Ricci focussing corresponds to the
+bispectrum of ∆. ˜
+      In Figure 1 we show two temperature bispectra obtained with SONG compared to the
+analytical approximation for a squeezed configuration where the large-scale mode is fixed.
+The bispectrum computed using ∆      ˜ (labelled B R+Z in Section 6), which includes both the
+scattering sources and the time-integrated effect arising from the redshift term, matches the
+analytical curve to a precision of a few percent. On the other hand, the bispectrum computed
+using the standard brightness ∆ (labelled B R in Section 6), which does not include the redshift
+term, presents a nearly constant positive offset with respect to the analytical approximation.
+
+5.5   The estimator
+We quantify the importance of the intrinsic bispectrum by using a Fisher matrix approach.
+The Fisher matrix element between two temperature bispectra B i and B j is given by [16]:
+                                            `X
+                                             max
+                                                         B `i1 `2 `3 B `j1 `2 `3
+                               F i,j =                                             ,             (5.12)
+                                                        C`1 C`2 C`3 ∆`1 `2 `3
+                                         2≤l1 ≤l2 ≤l3
+
+where the angular power spectrum of temperature fluctuations, Cl , is obtained from linear
+perturbation theory, ∆`1 `2 `3 = 1, 2, 6 for triangles with no, two or three equal sides, and
+`max is the maximum angular resolution attainable with the considered CMB survey.      √ The
+observability of the intrinsic bispectrum B is quantified by its signal-to-noise: S/N = F B,B ,
+while the bias that it induces on the fNL measurement of a primordial template T is given
+    intr = F B,T /F T,T . In what follows, we shall assume an ideal experiment without beam
+by fNL
+or noise, going up to `max = 2000.
+
+
+
+
+                                                   – 10 –
+                                            6
+
+
+
+
+               / [-6 (C6C + C6C + C C )]
+                                                      Analytical approximation
+                                                      Numerical without redshift term
+                                                      Numerical with redshift term
+                                            4
+
+
+
+                                            2
+
+
+
+                                            0
+               b6
+
+
+
+
+                                           −2
+                                                200         500       800        1100   1400   1700   2000
+                                                                            multipole
+
+Figure 1: Numerical temperature bispectra versus the squeezed-limit approximation in
+Eq. (5.11) for a WMAP7 cosmology, where `1 = 6 and `2 = `3 = ` . We normalise the curves
+with respect to the ultra-squeezed limit for a local-type bispectrum with fNL = 1 [16, 17], so
+that the primordial curve would appear as a constant horizontal line with amplitude close to
+unity.
+
+
+     We obtain the Fisher matrix elements in Eq. (5.12) by interpolating the bispectra on a
+mesh [66]. This allows us to compute the numerically expensive second-order bispectrum for
+a small number of configurations, typically O (100) per `-direction, and still estimate the sum
+in Eq. (5.12) to high accuracy. This is a huge speed improvement over existing techniques,
+even when considering the simple separable bispectra. As an example, we can compute the
+signal-to-noise of the equilateral model for a given cosmology with ∼ 1% accuracy in the
+matter of seconds on a quad-core machine (see Section 7).
+
+6   Results
+
+We present results for the intrinsic bispectrum considering three different combinations of line
+of sight sources. The first considered bispectrum (B R ) includes only sources located on the
+surface of last scattering, that is the |κ̇| sources in Eq. (4.3) plus the second-order Sachs-Wolfe
+effect, 4 |κ̇| Ψ, which only contributes to the monopole. The second (B R+Z ) also includes the
+redshift term of QL , that is 4 (ni ∂i Ψ − Φ̇) ∆. This is computed using ∆     ˜ and it is the same
+bispectrum presented in Huang and Vernizzi (2012) [45]. Finally, B           R+Z+M    consists of the
+above sources plus all the terms in M. One of such terms gives rise to the Rees-Sciama effect
+[31, 67–69], which is given by 4 (Ψ̇ + Φ̇). The latter bispectrum contains all terms in the
+Boltzmann equation but the time-delay and lensing contributions, and is therefore our most
+complete bispectrum.
+      We compute the contamination fNL      intr induced by the intrinsic bispectra for three models
+
+of primordial non-Gaussianity: local, equilateral and orthogonal. Our results are shown in
+Table 1, where we assume an ideal experiment with `max = 2000.
+      The most striking feature of Table 1 is the difference between the B R and B R+Z bispec-
+tra, with the former yielding a larger fNL contamination. This is a quantitative confirmation
+
+
+
+
+                                                                            – 11 –
+         Model                BR               B R+Z            B R+Z+M              S/N
+         Local                2.5               0.57               0.50              0.24
+         Equilateral          6.7                4.7               4.3              0.018
+         Orthogonal           -5.1              -1.13             -1.05             0.037
+         S/N                  0.77              0.47              0.47                 —
+
+Table 1: Correlations between the primordial templates and the intrinsic bispectra, com-
+           intr = F B,T /F T,T . The signal-to-noise S/N is given by the square root of the
+puted as fNL
+autocorrelation.
+
+
+of what shown in Figure 1, where the recombination-only curve exhibits a positive offset with
+respect to the integrated one showing the importance of the integrated effects which include
+∆(1) . On the other hand, the time-integrated effects given by the metric affect fNL     intr only
+
+marginally, and do not seem to affect the signal-to-noise. This can be seen by comparing the
+B R+Z and B R+Z+M columns of Table 1.
+      The last column of Table 1 can be computed by using a first-order Boltzmann code. Our
+value of S/N = 0.24 for the local-template agrees with the one obtained using the first-order
+code CAMB [70] and with Ref. [16].
+                                           intr ∼ 5 and S/N (`
+      Pitrou et al. (2010) [41] found fNL                       max = 2000) ∼ 1 by using the
+Boltzmann code CMBquick [42]. In that code, the bispectrum was computed by including all
+line of sight sources in Eq. (4.3), including lensing and time-delay, and integrating them until
+shortly after recombination. This is perfectly achievable since lensing and time-delay pose
+numerical problems only at later times, when small-scale multipoles get excited. However, the
+choice of the cutoff time is arbitrary as the time-integrated effects are important throughout
+cosmic evolution. We ran SONG with the same parameters and cutoff time as CMBquick,
+and we obtained similar values: fNL   intr = 3.7 and S/N (`
+                                                            max = 2000) = 1.1. As pointed out
+in Section 7, the remaining discrepancy might be due to a lack of numerical convergence in
+CMBquick. Furthermore, the most recent version of CMBquick yields a value of fNL     intr ∼ 3 [71]
+
+which is more in line with what we find.
+      In Figure 2, we show the signal-to-noise ratio of the B R+Z+M bispectrum as a function of
+`max , which is the angular resolution of the considered experiment. We find that, for Planck’s
+resolution of `max = 2000, the signal-to-noise ratio is roughly equal to 0.5, and reaches unity
+only for `max = 3000.
+
+7   Convergence tests
+
+We checked the numerical robustness of our bispectrum results by varying the most relevant
+numerical parameters in SONG:
+
+    • Nτ , number of sampling points in conformal time for the line of sight sources.
+
+    • Nk , number of sampling points per direction of k-space (k, k1 , k2 ) for the transfer func-
+      tions.
+
+    • NL , number of sampling points per direction of l-space (l1 , l2 , l3 ) for the bispectrum.
+
+    • ∆r , step size of the r-grid in the bispectrum integral in Eq. (5.10).
+
+
+
+
+                                              – 12 –
+                             1.0
+                                                signal of intrinsic bispectrum
+                             0.8                signal of local model with fNL = 1
+
+
+                       S/N   0.6
+
+
+                             0.4
+
+
+                             0.2
+
+
+                              0
+                                    0                500                 1000          1500               2000      2500               3000
+                                                                                angular scale       max
+
+
+Figure 2: Signal-to-noise ratio of the B R+Z+M bispectrum, which includes all effects apart
+from time-delay and lensing. The S/N reaches unity at ` = 3000. At ` = 2000, the smallest
+scale probed by Planck, it is roughly equal to 0.5.
+
+
+       0.60
+                                                             0.8
+                                                                                                                 0.50
+       0.55                                                  0.7
+                                                                                                                 0.45
+ S/N
+
+
+
+
+                                                             0.6
+       0.50
+                                                                                                                 0.40
+                                                             0.5
+
+       0.45
+                                                             0.4                                                 0.35
+              0   50   100   150        200    250     300         0        100       200       300        400          20   40       60      80    100        120   140
+                             Nτ                                                          Nk                                                    NL
+
+                                                             1.0                                                  1.0
+        2.5
+                                                                                                                  0.9
+        2.0
+                                                             0.8                                                  0.8
+        1.5                                                                                                       0.7
+ S/N
+
+
+
+
+        1.0                                                  0.6                                                  0.6
+                                                                                                                  0.5
+        0.5
+                                                                                                                  0.4
+                                                             0.4
+              0   20    40     60         80     100               0.1      0.2       0.3       0.4        0.5          0         5           10          15         20
+                             Δr                                                     k max / Mpc-1                                          Lmax sources
+
+
+Figure 3: Convergence of the signal-to-noise ratio for B R+Z+M , our most complete bispec-
+trum. Refer to the text for details on the tested parameters.
+
+
+       • kmax , maximum value of k for which we compute the transfer functions.
+
+       • Lmax , highest multipole source considered in the line of sight integral in Eq. (4.1).
+
+In Figure 3, we show how quickly the signal-to-noise of the intrinsic bispectrum converges for
+                                                              intr     B,T /F T,T is even faster
+                              √ that the convergence of fNL = F
+all the tested parameters. (Note
+than the convergence of S/N = F B,B as numerical errors tend to cancel when taking ratios.)
+
+
+
+
+                                                                                  – 13 –
+       We find that the signal strongly depends on the number of multipoles included in the
+line of sight integration, Lmax , as shown in the bottom-right panel of Figure 3. While at first
+order the line of sight sources consist only of a monopole, at second order the sum jnm Sm
+has to be cut at a suitable Lmax – see Eq. (4.1). We obtain a convergence only for Lmax > 8,
+with lower values yielding a larger signal. This behaviour might partly explain the large value
+     intr found by Pitrou et al. (2010) [41], who used L
+of fNL                                                  max = 4.
+       As mentioned in Section 5, we compute the Fisher matrix elements in Eq. (5.12) by
+interpolating the bispectra on a mesh. The top-right panel of Figure 3 shows how our in-
+terpolation technique yields percent-level precision with just 60 points out of 2000 in each
+`-direction. We also tested the interpolation against known results, such as the signal-to-noise
+of the local model, and obtained the same level of agreement.
+
+
+8   Conclusions
+
+In this paper we have presented results from a new, efficient numerical code, SONG, designed
+to calculate the CMB anisotropies up to second order. We have exploited it to find the
+temperature bispectrum which arises even for purely Gaussian initial density perturbations.
+This intrinsic non-Gaussianity will necessarily bias attempts to estimate different types of
+primordial non-Gaussianity from the CMB bispectrum. The efficiency of SONG has allowed
+us to demonstrate convergence of our results with respect to several different numerical pa-
+rameters. We have also demonstrated per-cent-level agreement with analytical estimates in
+the squeezed limit, and we believe our answers are robust.
+       The contamination from the intrinsic bispectrum generated by the second-order Einstein-
+Boltzmann equations generally leads to a small bias in the estimates of non-Gaussianity, which
+is good news for the prospect of using forthcoming data for the Planck satellite to probe
+primordial non-Gaussianity. While the precise answer depends on the terms included, the
+biases for local templates of non-Gaussianity are below the level of primordial fNL detectable
+by Planck. The biases from the intrinsic bispectrum for other primordial templates, equilateral
+and orthogonal, also appear to be small. The intrinsic non-Gaussianity can be searched for
+directly, using the predicted signal as a template; our calculations suggest this signal is just
+beyond what is possible with Planck, with a signal-to-noise rising to unity only for `max = 3000
+(Figure 2.)
+       In comparing to recent calculations, we find good agreement with the results of Huang
+and Vernizzi [45] when we include the integrated redshift term with the recombination contri-
+bution. The signal-to-noise for the intrinsic signal matches well, while our bias to fNLintr ≃ 0.5
+
+is slightly different, which appears to be due to differences in the implementation of the local
+template. Excluding the integrated redshift term yields a significantly higher answer, with
+  intr = 2.5. This is much more similar to the results of Pitrou et al [41], which focussed on
+fNL
+the contributions on the recombination surface alone. We have also found that the number of
+multipole sources in the line of sight integral required for numerical convergence is Lmax ≥ 8,
+and we find larger values of fNL   intr are obtained for L
+                                                           max = 4 as used in Ref. [41]. Su et
+al. [46] find similar numerical values to Huang and Vernizzi [45] for the bias, but disagree on
+the signal-to-noise of the intrinsic signal. We are unable to directly compare our numerical
+results with theirs, since they use integration by parts which leads to different line of sight
+source terms. We comment on this approach in Section 4.2.
+       We have shown how the redshift terms along the line of sight lead to a change in the
+value of the local-type fNLintr bias of approximately 2. We interpret this as the evidence that
+
+
+
+
+                                             – 14 –
+effects which are not at recombination are important, and should be all included in order
+to obtain a complete result. We plan to further develop our numerical code to include the
+time-delay and lensing contributions. The time-delay effect was studied in Ref. [72] and is
+expected to be small. The lensing term, on the other hand, is known to strongly correlate
+with the first-order ISW effect and thus yields a strong squeezed signal that contaminates the
+local measurement of Planck with a bias of fNL intr ∼ 7 [40, 58–62].
+
+      We have calculated only the scalar (m = 0) bispectrum, neglecting higher moments.
+This should give a reliable estimate of local-type fNL since higher moments are suppressed
+for squeezed configurations. However there will be additional contributions to equilateral and
+orthogonal templates from higher moments and these still need to be evaluated.
+      It is our intention to make the bispectrum and Fisher parts of SONG public later in
+2013 [66] as independent modules for CLASS [43, 44]. We shall release the full code once the
+extensions discussed above have been completed.
+
+Acknowledgments
+
+We thank Nicola Bartolo, Martin Beneke, Alicia Bueno Belloso, Marco Bruni, Christian
+Byrnes, Paolo Creminelli, Dominic Galliano, Zhiqi Huang, Eiichiro Komatsu, Julien Les-
+gourgues, Donough Regan, Gianmassimo Tasinato, Thomas Tram, Filippo Vernizzi for useful
+discussions. We are particularly grateful to Antony Lewis for his insight on the the analytical
+approximation for the squeezed limit, to Cyril Pitrou for his help in comparing results, and
+to Leonidas Christodoulou for baptising our code, SONG.
+     RC, CF, KK and DW gratefully acknowledge financial support from the STFC grant
+ST/H002774/1. KK also thanks the ERC and the Leverhulme trust. GWP is supported by
+the Leverhulme trust.
+
+
+
+
+                                            – 15 –
+References
+
+ [1] A. H. Guth, Inflationary universe: A possible solution to the horizon and flatness problems,
+     Phys. Rev. D 23 (Jan, 1981) 347–356.
+ [2] A. D. Linde, A new inflationary universe scenario: A possible solution of the horizon, flatness,
+     homogeneity, isotropy and primordial monopole problems, Physics Letters B 108 (Feb., 1982)
+     389–393.
+ [3] A. Albrecht and P. J. Steinhardt, Cosmology for grand unified theories with radiatively induced
+     symmetry breaking, Physical Review Letters 48 (Apr., 1982) 1220–1223.
+ [4] A. A. Starobinsky, A new type of isotropic cosmological models without singularity, Physics
+     Letters B 91 (Mar., 1980) 99–102.
+ [5] S. W. Hawking, The development of irregularities in a single bubble inflationary universe,
+     Physics Letters B 115 (Sept., 1982) 295–297.
+ [6] A. A. Starobinsky, Dynamics of phase transition in the new inflationary universe scenario and
+     generation of perturbations, Physics Letters B 117 (Nov., 1982) 175–178.
+ [7] V. F. Mukhanov and G. V. Chibisov, Quantum fluctuations and a nonsingular universe, Soviet
+     Journal of Experimental and Theoretical Physics Letters 33 (May, 1981) 532.
+ [8] J. M. Bardeen, P. J. Steinhardt, and M. S. Turner, Spontaneous creation of almost scale-free
+     density perturbations in an inflationary universe, Phys. Rev. D 28 (Aug., 1983) 679–693.
+ [9] J. Maldacena, Non-gaussian features of primordial fluctuations in single field inflationary
+     models, Journal of High Energy Physics 5 (May, 2003) 13, [astro-ph/0210603].
+[10] V. Acquaviva, N. Bartolo, S. Matarrese, and A. Riotto, Gauge-invariant second-order
+     perturbations and non-Gaussianity from inflation, Nuclear Physics B 667 (Sept., 2003)
+     119–148, [astro-ph/0209156].
+[11] A. Linde and V. Mukhanov, Non-Gaussian isocurvature perturbations from inflation,
+     Phys. Rev. D 56 (July, 1997) 535, [astro-ph/9610219].
+[12] K. Enqvist and M. S. Sloth, Adiabatic CMB perturbations in pre-Big-Bang string cosmology,
+     Nuclear Physics B 626 (Apr., 2002) 395–409, [hep-ph/0109214].
+[13] D. H. Lyth and D. Wands, Generating the curvature perturbation without an inflaton, Physics
+     Letters B 524 (Jan., 2002) 5–14, [hep-ph/0110002].
+[14] T. Moroi and T. Takahashi, Effects of cosmological moduli fields on cosmic microwave
+     background, Physics Letters B 522 (Dec., 2001) 215–221, [hep-ph/0110096].
+[15] T. Moroi and T. Takahashi, Erratum to: “Effects of cosmological moduli fields on cosmic
+     microwave background” [Phys. Lett. B 522 (2001) 215], Physics Letters B 539 (July, 2002)
+     303–303.
+[16] E. Komatsu and D. N. Spergel, Acoustic signatures in the primary microwave background
+     bispectrum, Phys. Rev. D 63 (Mar., 2001) 063002, [astro-ph/0005036].
+[17] A. Gangui, F. Lucchin, S. Matarrese, and S. Mollerach, The three-point correlation function of
+     the cosmic microwave background in inflationary models, ApJ 430 (Aug., 1994) 447–457,
+     [astro-ph/9312033].
+[18] L. Verde, L. Wang, A. F. Heavens, and M. Kamionkowski, Large-scale structure, the cosmic
+     microwave background and primordial non-Gaussianity, MNRAS 313 (Mar., 2000) 141–147,
+     [astro-ph/9906301].
+[19] M. Alishahiha, E. Silverstein, and D. Tong, DBI in the sky: Non-Gaussianity from inflation
+     with a speed limit, Phys. Rev. D 70 (Dec., 2004) 123505, [hep-th/0404084].
+
+
+
+
+                                               – 16 –
+[20] E. Silverstein and D. Tong, Scalar speed limits and cosmology: Acceleration from D-cceleration,
+     Phys. Rev. D 70 (Nov., 2004) 103505, [hep-th/0310221].
+[21] L. Senatore, K. M. Smith, and M. Zaldarriaga, Non-Gaussianities in single field inflation and
+     their optimal limits from the WMAP 5-year data, J. Cosmology Astropart. Phys. 1 (Jan., 2010)
+     28, [arXiv:0905.3746].
+[22] C. L. Bennett, D. Larson, J. L. Weiland, N. Jarosik, G. Hinshaw, N. Odegard, K. M. Smith,
+     R. S. Hill, B. Gold, M. Halpern, E. Komatsu, M. R. Nolta, L. Page, D. N. Spergel, E. Wollack,
+     J. Dunkley, A. Kogut, M. Limon, S. S. Meyer, G. S. Tucker, and E. L. Wright, Nine-Year
+     Wilkinson Microwave Anisotropy Probe (WMAP) Observations: Final Maps and Results,
+     ArXiv e-prints (Dec., 2012) [arXiv:1212.5225].
+[23] J. A. Tauber et al., Planck pre-launch status: The Planck mission, A&A 520 (Sept., 2010)
+     A1+.
+[24] E. Komatsu, Hunting for primordial non-Gaussianity in the cosmic microwave background,
+     Classical and Quantum Gravity 27 (June, 2010) 124010, [arXiv:1003.6097].
+[25] X. Gao, Testing gravity with non-Gaussianity, Physics Letters B 702 (Aug., 2011) 197–200,
+     [arXiv:1008.2123].
+[26] N. Bartolo, S. Matarrese, and A. Riotto, Cosmic microwave background anisotropies at second
+     order: I, Journal of Cosmology and Astro-Particle Physics 6 (June, 2006) 24,
+     [astro-ph/0604416].
+[27] N. Bartolo, S. Matarrese, and A. Riotto, CMB anisotropies at second-order II: analytical
+     approach, Journal of Cosmology and Astro-Particle Physics 1 (Jan., 2007) 19,
+     [astro-ph/0610110].
+[28] C. Pitrou, Gauge-invariant Boltzmann equation and the fluid limit, Classical and Quantum
+     Gravity 24 (Dec., 2007) 6127–6158, [arXiv:0706.4383].
+[29] C. Pitrou, The radiative transfer for polarized radiation at second order in cosmological
+     perturbations, General Relativity and Gravitation 41 (Nov., 2009) 2587–2595,
+     [arXiv:0809.3245].
+[30] M. Beneke and C. Fidler, Boltzmann hierarchy for the cosmic microwave background at second
+     order including photon polarization, Phys. Rev. D 82 (Sept., 2010) 063509, [arXiv:1003.1834].
+[31] L. Boubekeur, P. Creminelli, G. D’Amico, J. Noreña, and F. Vernizzi, Sachs-Wolfe at second
+     order: the CMB bispectrum on large angular scales, J. Cosmology Astropart. Phys. 8 (Aug.,
+     2009) 29, [arXiv:0906.0980].
+[32] N. Bartolo, S. Matarrese, and A. Riotto, Evolution of second-order cosmological perturbations
+     and non-Gaussianity, J. Cosmology Astropart. Phys. 1 (Jan., 2004) 3, [astro-ph/0309692].
+[33] N. Bartolo, S. Matarrese, and A. Riotto, Gauge-Invariant Temperature Anisotropies and
+     Primordial Non-Gaussianity, Physical Review Letters 93 (Dec., 2004) 231301,
+     [astro-ph/0407505].
+[34] L. Senatore, S. Tassev, and M. Zaldarriaga, Non-gaussianities from perturbing recombination,
+     J. Cosmology Astropart. Phys. 9 (Sept., 2009) 38, [arXiv:0812.3658].
+[35] R. Khatri and B. D. Wandelt, Crinkles in the last scattering surface: Non-Gaussianity from
+     inhomogeneous recombination, Phys. Rev. D 79 (Jan., 2009) 023501, [arXiv:0810.4370].
+[36] D. Nitta, E. Komatsu, N. Bartolo, S. Matarrese, and A. Riotto, CMB anisotropies at second
+     order III: bispectrum from products of the first-order perturbations, J. Cosmology Astropart.
+     Phys. 5 (May, 2009) 14, [arXiv:0903.0894].
+[37] P. Creminelli and M. Zaldarriaga, CMB 3-point functions generated by nonlinearities at
+     recombination, Phys. Rev. D 70 (Oct., 2004) 083532, [astro-ph/0405428].
+
+
+
+
+                                               – 17 –
+[38] P. Creminelli, C. Pitrou, and F. Vernizzi, The CMB bispectrum in the squeezed limit, J.
+     Cosmology Astropart. Phys. 11 (Nov., 2011) 25, [arXiv:1109.1822].
+[39] N. Bartolo, S. Matarrese, and A. Riotto, Non-Gaussianity in the cosmic microwave background
+     anisotropies at recombination in the squeezed limit, J. Cosmology Astropart. Phys. 2 (Feb.,
+     2012) 17, [arXiv:1109.2043].
+[40] A. Lewis, The full squeezed CMB bispectrum from inflation, J. Cosmology Astropart. Phys. 6
+     (June, 2012) 23, [arXiv:1204.5018].
+[41] C. Pitrou, J. Uzan, and F. Bernardeau, The cosmic microwave background bispectrum from the
+     non-linear evolution of the cosmological perturbations, J. Cosmology Astropart. Phys. 7 (July,
+     2010) 3, [arXiv:1003.0481].
+[42] C. Pitrou, CMBquick: Spectrum and Bispectrum of Cosmic Microwave Background (CMB),
+     Sept., 2011. Astrophysics Source Code Library,
+     http://www2.iap.fr/users/pitrou/cmbquick.htm.
+[43] J. Lesgourgues, The Cosmic Linear Anisotropy Solving System (CLASS) I: Overview, ArXiv
+     e-prints (Apr., 2011) [arXiv:1104.2932].
+[44] D. Blas, J. Lesgourgues, and T. Tram, The Cosmic Linear Anisotropy Solving System (CLASS)
+     II: Approximation schemes, arXiv:1104.2933.
+[45] Z. Huang and F. Vernizzi, The CMB bispectrum from recombination, ArXiv e-prints (Dec.,
+     2012) [arXiv:1212.3573].
+[46] S.-C. Su, E. A. Lim, and E. P. S. Shellard, CMB Bispectrum from Non-linear Effects during
+     Recombination, ArXiv e-prints (Dec., 2012) [arXiv:1212.6968].
+[47] E. Bertschinger, Cosmological dynamics, NASA STI/Recon Technical Report N 96 (Jan., 1995)
+     22249, [astro-ph/9503125].
+[48] M. Bruni, S. Matarrese, S. Mollerach, and S. Sonego, Perturbations of spacetime: gauge
+     transformations and gauge invariance at second order and beyond, Classical and Quantum
+     Gravity 14 (Sept., 1997) 2585–2606, [gr-qc/9609040].
+[49] E. Komatsu et al., Seven-year Wilkinson Microwave Anisotropy Probe (WMAP) Observations:
+     Cosmological Interpretation, ApJS 192 (Feb., 2011) 18, [arXiv:1001.4538].
+[50] C. Pitrou, The radiative transfer at second order: a full treatment of the Boltzmann equation
+     with polarization, Classical and Quantum Gravity 26 (Mar., 2009) 065006, [arXiv:0809.3036].
+[51] L. Senatore, S. Tassev, and M. Zaldarriaga, Cosmological perturbations at second order and
+     recombination perturbed, J. Cosmology Astropart. Phys. 8 (Aug., 2009) 31, [arXiv:0812.3652].
+[52] F. Bernardeau, S. Colombi, E. Gaztañaga, and R. Scoccimarro, Large-scale structure of the
+     Universe and cosmological perturbation theory, Phys. Rep. 367 (Sept., 2002) 1–248,
+     [astro-ph/0112551].
+[53] M. H. Goroff, B. Grinstein, S.-J. Rey, and M. B. Wise, Coupling of modes of cosmological mass
+     density fluctuations, ApJ 311 (Dec., 1986) 6–14.
+[54] N. Makino, M. Sasaki, and Y. Suto, Analytic approach to the perturbative expansion of
+     nonlinear gravitational fluctuations in cosmological density and velocity fields, Phys. Rev. D 46
+     (July, 1992) 585–602.
+[55] B. Jain and E. Bertschinger, Second-order power spectrum and nonlinear evolution at high
+     redshift, ApJ 431 (Aug., 1994) 495–505, [astro-ph/9311070].
+[56] M. Beneke, C. Fidler, and K. Klingmüller, B polarization of cosmic background radiation from
+     second-order scattering sources, J. Cosmology Astropart. Phys. 4 (Apr., 2011) 8,
+     [arXiv:1102.1524].
+
+
+
+
+                                               – 18 –
+[57] U. Seljak and M. Zaldarriaga, A line of sight approach to cosmic microwave background
+     anisotropies, Astrophys. J. 469 (1996) 437–444, [astro-ph/9603033].
+[58] D. Hanson, K. M. Smith, A. Challinor, and M. Liguori, CMB lensing and primordial
+     non-Gaussianity, Phys. Rev. D 80 (Oct., 2009) 083004, [arXiv:0905.4732].
+[59] K. M. Smith and M. Zaldarriaga, Algorithms for bispectra: forecasting, optimal analysis and
+     simulation, MNRAS 417 (Oct., 2011) 2–19, [astro-ph/0612571].
+[60] P. Serra and A. Cooray, Impact of secondary non-Gaussianities on the search for primordial
+     non-Gaussianity with CMB maps, Phys. Rev. D 77 (May, 2008) 107305, [arXiv:0801.3276].
+[61] A. Lewis, A. Challinor, and D. Hanson, The shape of the CMB lensing bispectrum, J.
+     Cosmology Astropart. Phys. 3 (Mar., 2011) 18, [arXiv:1101.2234].
+[62] A. Lewis and A. Challinor, Weak gravitational lensing of the cmb, Jan, 2006.
+[63] S. Dodelson, Modern cosmology. 2003.
+[64] C. Pitrou, F. Bernardeau, and J.-P. Uzan, The y-sky: diffuse spectral distortions of the cosmic
+     microwave background, J. Cosmology Astropart. Phys. 7 (July, 2010) 19, [arXiv:0912.3655].
+[65] J. R. Fergusson and E. P. S. Shellard, Primordial non-Gaussianity and the CMB bispectrum,
+     Phys. Rev. D 76 (Oct., 2007) 083523, [astro-ph/0612713].
+[66] G. W. Pettinari, C. Fidler, R. Crittenden, K. Koyama, and D. Wands, Efficient computation of
+     the Cosmic Microwave Background bispectrum in CLASS, In preparation.
+[67] M. J. Rees and D. W. Sciama, Large-scale Density Inhomogeneities in the Universe, Nature
+     217 (Feb., 1968) 511–516.
+[68] S. Mollerach, A. Gangui, F. Lucchin, and S. Matarrese, Contribution to the Three-Point
+     Function of the Cosmic Microwave Background from the Rees-Sciama Effect, ApJ 453 (Nov.,
+     1995) 1, [astro-ph/9503115].
+[69] D. Munshi, T. Souradeep, and A. A. Starobinsky, Skewness of Cosmic Microwave Background
+     Temperature Fluctuations Due to Nonlinear Gravitational Instability, ApJ 454 (Dec., 1995)
+     552, [astro-ph/9501100].
+[70] A. Lewis, A. Challinor, and A. Lasenby, Efficient computation of CMB anisotropies in closed
+     FRW models, Astrophys. J. 538 (2000) 473–476, [astro-ph/9911177].
+[71] C. Pitrou, Private communication, 2012.
+[72] W. Hu and A. Cooray, Gravitational time delay effects on cosmic microwave background
+     anisotropies, Phys. Rev. D 63 (Jan., 2001) 023504, [astro-ph/0008001].
+
+
+
+
+                                               – 19 –
+

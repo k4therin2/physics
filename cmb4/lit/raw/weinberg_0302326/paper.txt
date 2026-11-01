@@ -1,0 +1,1063 @@
+                                                                                                      UTTG-12-02
+
+
+
+
+                                                           Adiabatic Modes in Cosmology
+arXiv:astro-ph/0302326v1 17 Feb 2003
+
+
+
+
+                                                                    Steven Weinberg1
+                                                  Theory Group, Department of Physics, University of Texas
+                                                                    Austin, TX, 78712
+
+
+                                                                              Abstract
+
+                                       We show that the field equations for cosmological perturbations in Newtonian
+                                       gauge always have an adiabatic solution, for which a quantity R is non-zero
+                                       and constant in all eras in the limit of large wavelength, so that it can be
+                                       used to connect observed cosmological fluctuations in this mode with those at
+                                       very early times. There is also a second adiabatic mode, for which R vanishes
+                                       for large wavelength, and in general there may be non-adiabatic modes as
+                                       well. These conclusions apply in all eras and whatever the constituents of
+                                       the universe, under only a mild technical assumption about the wavelength
+                                       dependence of the field equations for large wave length. In the absence of
+                                       anisotropic inertia, the perturbations in the adiabatic modes are given for
+                                       large wavelength by universal formulas in terms of the Robertson–Walker
+                                       scale factor. We discuss an apparent discrepancy between these results and
+                                       what appears to be a conservation law in all modes found for large wavelength
+                                       in synchronous gauge: it turns out that, although equivalent, synchronous
+                                       and Newtonian gauges suggest inequivalent assumptions about the behavior
+                                       of the perturbations for large wavelength.
+
+
+
+
+                                         1
+                                             Electronic address: weinberg@physics.utexas.edu
+                               I. INTRODUCTION
+
+    If observations are to be used to tell us something about inflation, then
+we need some way of connecting the properties of the cosmological fluctua-
+tions produced during inflation to the properties of fluctuations much closer
+to the present. Inconveniently, in inflationary cosmologies the era of inflation
+was followed by a period when the energy in scalar fields was converted into
+matter and radiation, and about this process we know essentially nothing.
+Subsequently there may have been other periods about which we are equally
+ignorant, such as the often-hypothesized era with temperatures between 1013
+GeV and 1011 GeV, when supersymmetry may have become broken by un-
+known strong forces. These mysterious eras occurred when fluctuations of
+cosmological interest were far outside the horizon, but this does not rule
+out some effect on the strength or even the wave-length dependence of these
+fluctuations.2 Therefore, in relating the cosmological fluctuations produced
+during inflation with those observed in the cosmic microwave background or
+in large-scale cosmic structures, it is essential to employ some sort of conser-
+vation law that is valid at large wavelengths whatever the details of cosmic
+evolution.
+    In much work on fluctuations in cosmology, the conserved quantity is
+taken to be a quantity R related to the spatial curvature on co-moving spatial
+surfaces[1], given in Newtonian gauge by3
+
+                                     R = −Ψ + Hδu .                                      (1)
+
+The rate of change of R is given by a general formula[2]:
+
+                       q2
+                                !"                !                       #
+                                      Ḧ + 3H Ḣ    H
+                                                              
+              Ṙ = X + 2                         Ψ−    4πG δσ .                          (2)
+                       a                 3Ḣ 2      Ḣ
+   2
+     By a mode being “beyond the horizon” we only mean that the physical wave number
+is much less than the expansion rate. This does not necessarily have anything to do with
+causality; indeed, the point of inflation is to make the true particle horizon radius much
+larger than the inverse expansion rate.
+   3
+     Here H = ȧ/a is the expansion rate, with dots denoting ordinary time derivatives. In
+Newtonian gauge the perturbations to the gravitational field are taken to be δg00 = −2Φ
+and δgij = −2a2 Ψδij . Also δρ, δp, and δu are the perturbations to the total energy density,
+pressure, and velocity potential in Newtonian gauge, while we use a bar to denote unper-
+turbed quantities like the unperturbed energy density ρ̄ and pressure p̄. For simplicity we
+assume a vanishing unperturbed spatial curvature.
+
+                                             1
+Here q is the co-moving wave number, δσ is a measure of the anisotropic
+stress,4 and
+                               ρ̄˙ δp − p̄˙ δρ
+                           X≡                  .                    (3)
+                                  3(ρ̄ + p̄)2
+Thus R is conserved in the limit of small wave number if and only if X = 0
+in this limit.
+    The limit of small q is of some interest in itself, but its importance lies
+chiefly in the circumstance that those factors of q that arise from the field
+equations (rather than from the initial conditions) are always accompanied
+by factors of 1/a(t), because it is only q/a(t) that is independent of the
+units chosen for the co-moving spatial coordinates xi . It is usually a good
+guess that terms in the perturbations proportional to such factors of q will be
+negligible if q/a(t)H(t) ≪ 1. Hence, although here we will study the behavior
+of the perturbations in the limit of small q, it is expected that this provides
+insight to the behavior of perturbations as a(t) increases. In particular, we
+expect that if X → 0 for q → 0, and if the coefficient of q 2 in the second
+term in Eq. (2) remains finite in this limit, then at any given epoch Ṙ will
+be small if q/aH is sufficiently small. In any mode for which R is non-zero
+in this limit, the fractional rate of change of R will then also be small in this
+limit.
+    Now, the quantity X vanishes in all modes and for all q when the per-
+turbed pressure p̄ + δp is a function only of the perturbed energy density
+ρ̄ + δρ, as is the case in a universe dominated either by pure radiation or by
+pure cold matter, but not when both radiation and cold matter are impor-
+tant, and also not during inflation or in the curvaton model[4]. The quantity
+X does vanish for all modes in the limit q → 0 in the case of inflation with
+a single scalar field, but this is not true with several scalar fields. Section
+II of this paper will show that in general, whatever the contents of the uni-
+verse, with only a mild technical assumption about the dependence on wave
+number of the field equations for cosmological perturbations in Newtonian
+gauge, these equations always have a physical solution for which X → 0 and
+R approaches a non-zero constant in the limit q → 0, though there may also
+be other modes for which R is not constant. In fact, there are always at least
+   4
+    The quantity δσ is defined by writing Tij for scalar perturbations as gij p + ∂i ∂j δσ.
+In this formalism, p includes effects of bulk viscosity, while iqδu is the velocity of energy
+transport, and so includes effects of heat conduction. For this formalism, see ref. [3].
+
+
+
+                                             2
+two solutions with X = 0 and R constant in the limit q → 0: one solution
+for which R =6 0, and another with R = 0. These solutions will be illustrated
+in Section III for the case of inflation with any number of interacting scalar
+fields. The existence of such solutions is well known in special cases, but I
+do not know of a previous general proof of their existence.
+    Solutions of this sort are usually called adiabatic, even in contexts where
+thermodynamics has no relevance.5 As we will also see in Section II, in
+theories in which the energy- momentum tensor is the sum of a number of
+tensors Tfµν for a set of fluids labeled f , we have the stronger result that for
+q = 0 in the adiabatic modes, the perturbations in each fluid satisfy
+                              δρf      δpf     δρ     δp
+                                     =       =      =     .                          (4)
+                               ρ̄˙ f   p̄˙ f    ρ̄˙   p̄˙
+
+In the special case where the unperturbed energy-momentum tensors are
+separately conserved, we also have ρ̄˙ f = −3H(ρ̄f + p̄f ), in which case Eq. (4)
+implies that the ratios δρf /(ρ̄f + p̄f ) are equal:
+
+                                     δρf         δρ
+                                            =         ,                              (5)
+                                  ρ̄f + p̄f   ρ̄ + p̄
+
+which is often taken to be what is meant by an adiabatic perturbation.
+    Things appear very different in synchronous gauge. As shown in Section
+IV, when we take the limit of vanishing wave number in the field equations of
+synchronous gauge, we find that these equations respect the conservation of a
+quantity A in all modes whatever the contents of the universe, provided only
+that none of the perturbations in synchronous gauge blow up in the limit q →
+0. At first sight, this presents an apparent paradox. All gauges are equivalent,
+so how can there be a quantity that is conserved for zero wave number in
+all modes during all eras in synchronous gauge and no equally universal
+conservation law for zero wave number in Newtonian gauge? We will find the
+answer to be that when we speak of the limit q = 0 we mean different things
+in different gauges. Though mathematically equivalent, synchronous gauge
+   5
+     Sometimes the non-adiabatic solutions of the field equations are called isocurvature
+perturbations. This is a misnomer, because even for q = 0 it is only possible for R to
+have the constant value zero if X = 0. Nevertheless, as we will see in Section IV, in
+synchronous gauge there is a sense in which the solutions that do not correspond to the
+adiabatic solutions of Newtonian gauge can indeed be regarded as isocurvature modes.
+
+
+                                           3
+and Newtonian gauge suggest different hypotheses about how perturbations
+behave in this limit, leading to different conditions for the validity of the
+conservation law for q = 0.
+   In some work on cosmological fluctuations, a quantity ζ, related to the
+spatial curvature on spacelike surfaces of constant energy density, is used in
+place of R. It is defined in Newtonian gauge by[5]
+
+                   ζ ≡ −Ψ − Hδρ/ρ̄˙ = −Ψ + δρ/3(ρ̄ + p̄) .                  (6)
+
+By taking a suitable linear combination of the time-time and time- space
+components of the Einstein field equation and the part of the space- space
+component proportional to δij , one can derive a general constraint[6],
+
+                                            q2a
+                                                            !
+                   3          3
+                  a δρ − 3Ha (ρ̄ + p̄) δu +     Ψ=0,                        (7)
+                                            4πG
+
+so that
+                                            q2
+                                                    !
+                             R−ζ =                      Ψ                   (8)
+                                           3a2 Ḣ
+and therefore in all modes ζ → R in the limit q → 0.
+
+       II. ADIABATIC MODES IN NEWTONIAN GAUGE
+
+    We consider a general cosmological model, based on the Einstein field
+equations, supplemented with whatever other equations are needed to give
+the energy density, pressure, and velocity potential perturbations in terms of
+independent dynamical variables, and the field equations satisfied by those
+variables. We will demonstrate the general existence of a pair of adiabatic
+solutions of these field equations in Newtonian gauge: one with R =      6 0 and
+constant in the limit q → 0, and the other with R = 0 in this limit. In order
+to draw these conclusions without specifying the formulas for δρ, δp, and δu,
+we use a trick, based on the fact that although there is no remaining gauge
+symmetry in Newtonian gauge for q 6= 0, for q = 0 there is a remnant gauge
+symmetry of the field equations in Newtonian gauge, which makes it easy to
+find exact general solutions of the field equations for q = 0. Not all of these
+solutions are physical. To be physical, such a solution must be the limit as
+q → 0 of a solution of the field equations for q 6= 0 in at least a neighborhood
+of q = 0. For this to be the case, it is necessary for the q = 0 solution
+
+                                       4
+to satisfy certain conditions imposed by the Einstein field equations, which
+limit the physical solutions to a linear combination of just two independent
+adiabatic modes. We will then make a mild technical assumption about
+the dependence of the field equations on q, which guarantees that these two
+solutions are the limits as q → 0 of physical solutions for q 6= 0.
+    Whatever the constituents of the universe, for q = 0 the field equations
+in Newtonian gauge for scalar (i.e., compressional) modes will always be
+invariant under the gauge transformation induced by a redefinition of the
+time coordinate
+                                 t → t + ǫ(t) ,                          (9)
+and a re-scaling of the space coordinate
+
+                                xi → xi (1 − λ) ,                       (10)
+
+with ǫ(t) an arbitrary infinitesimal function of time and λ an arbitrary in-
+finitesimal constant. For scalar modes, δgi0 is proportional to qi , and the
+part of δgij not proportional to δij is proportional to qi qj , so both auto-
+matically vanish for q → 0, and we therefore do not need to impose any
+conditions on ǫ(t) and λ to remain in Newtonian gauge for q = 0. Eqs. (9)
+and (10) provide the most general spacetime transformations of purely scalar
+perturbations that preserve the condition q = 0.
+    Under this gauge transformation, the q = 0 perturbations undergo the
+transformation
+                     Ψ → Ψ + Hǫ − λ ,       Φ → Φ − ǫ̇ ,                 (11)
+                     δρ → δρ − ρ̄˙ ǫ ,        δp → δp − p̄˙ ǫ .         (12)
+Likewise, in the case of separate fluids with energy density and pressure ρf
+and pf or separate scalar fields ϕf ,
+
+                  δρf → δρf − ρ̄˙ f ǫ ,       δpf → δpf − p̄˙ f ǫ ,     (13)
+
+or
+                              δϕf → δϕf − ϕ̄˙ f ǫ .                     (14)
+It follows that there is always a solution of the Newtonian gauge field equa-
+tions for q = 0, in which:
+
+                        Ψ = Hǫ − λ ,             Φ = −ǫ̇ ,              (15)
+
+                                          5
+                             δρ = −ρ̄˙ ǫ ,          δp = −p̄˙ ǫ ,         (16)
+and for several fluids
+
+                           δρf = −ρ̄˙ f ǫ ,         δpf = −p̄˙ f ǫ ,      (17)
+
+or several scalar fields
+                                        δϕf = −ϕ̄˙ f ǫ ,                  (18)
+where ǫ(t) is an arbitrary function of time and λ is an arbitrary constant. (It
+is not necessary for this that the energy-momentum tensors of the individual
+fluids or scalar fields be separately conserved; all we need is that they are
+tensors.)
+    Of course, for general ǫ(t) and λ this is just a gauge mode. For it to
+have any physical significance, it must satisfy certain conditions that allow
+it to be extended to the case of non-zero wave number. In particular, the
+part of the space-space component of the Einstein field equations that is not
+proportional to δij takes the form (with δσ the anisotropic stress):
+                                
+                            qi qj Φ − Ψ) = −8πGqi qj δσ ,                 (19)
+
+so this equation disappears for q = 0. In order for the solution (15)–(18) of
+the field equations to be extended to q 6= 0, we must have
+
+                                    Φ = Ψ − 8πGδσ ,                       (20)
+
+and therefore ǫ(t) and λ must satisfy the condition
+
+                                ǫ̇ + Hǫ = λ − 8πGδσ ,                     (21)
+
+which can always be satisfied by a suitable choice of ǫ(t).
+   There is another equation that disappears for q = 0: for scalar modes the
+space-time component of the Einstein field equations reads
+                                                        
+              qi − 2Ψ̇ − 2HΦ = 8πG ρ̄ + p̄ qi δu = −2Ḣqi δu              (22)
+
+where δu is the velocity potential in Newtonian gauge, which does not appear
+in the equations for q = 0. Hence in order for the solution we have found to
+be extended to q 6= 0, this solution must also have a velocity potential given
+by
+                               Ḣδu = Ψ̇ + HΦ ,                           (23)
+
+                                               6
+or, using the result (15),
+                                         δu = ǫ .                          (24)
+This agrees with what would be found from the gauge transformation induced
+by the coordinate transformation (9). Likewise, with several fluids,
+
+                                         δuf = ǫ                           (25)
+
+From Eqs. (16) and (24) it follows that δρ = 3H (ρ̄ + p̄) δu, so the constraint
+equation (7) is automatically satisfied for q = 0 by this solution. By inserting
+Eqs. (15), (16), and (24) in equations (1) and (6), we now find that for q = 0,
+this solution has
+                                 R=ζ =λ,                                    (26)
+so R and ζ are indeed constant and equal for this solution in the limit q → 0,
+as was to be shown. They are also non-zero, as long as we take λ 6= 0.
+    Now we have to ask what additional conditions are needed to ensure that
+this solution is the limit as q → 0 of a solution with q 6= 0. In general, any
+closed set of linear homogeneous ordinary differential equations for a finite
+set of dependent variables can be put in the first-order form
+                                     X
+                         ẏn (t) +       Cnm (t)ym (t) = 0 .               (27)
+                                     m
+
+(If some of the original set of field equations involve derivatives of higher
+than first order, we can still write the equations in the form (27) by including
+some derivatives of the field variables among the ym (t).) This has the general
+solution                              Z t
+                        X                           
+                                                ′   ′
+               yn (t) =      T exp − C(t ) dt               ym (t0 )        (28)
+                        m                       t0             nm
+
+with t0 arbitrary, and with T denoting a time-ordered product defined by a
+power series expansion of the exponential, which for finite matrices is always
+convergent. The initial conditions may be subject to constraints like Eq. (7),
+which can be written          X
+                                 cn yn (t0 ) = 0 .                        (29)
+                                 n
+
+(Eq. (7) is such a constraint, because the equations of energy and momentum
+conservation and the gravitational field equation Ψ̇ + HΦ = Ḣδu imply that
+the left-hand side of Eq. (7) is time-independent.)
+
+                                            7
+    Our “mild technical” assumption is that, as long as the Einstein equa-
+tions (19) and (22) are written instead in the stronger form (20) and (23),
+the matrix elements Cnm (t) and the constraint coefficients cn are continuous
+functions of q in at least a neighborhood of q = 0. In this case the yn (t0 )
+that satisfy Eq. (29) and the matrix in Eq. (28) will also be continuous in
+q, so that any solution of Eq. (27) for q = 0 can be extended to a solution
+for q 6= 0 in a neighborhood of q = 0 by using Eq. (28) and (29) with the
+values of C(t) and c for q 6= 0. The next section shows the validity of this
+assumption in one illustrative example: inflation with several scalar fields
+and an arbitrary potential. Because q generally enters the field equations
+and constraint equations in such a simple manner, we expect that this as-
+sumption will always be satisfied, and in any case it is easy to check for any
+specific model. For q 6= 0, there is no remaining gauge freedom in Newtonian
+gauge (as there is for q = 0), so the adiabatic solution found in this way will
+be the limit as q → 0 of a physical solution, not a mere gauge mode.
+    We expect the anisotropic stress coefficient δσ for a wide class of theories
+to be some linear combination of δu, δρ, and δp, so that for the solution
+(15)–(17), (24)–(25), δσ may be written as δσ = ǫΣ, with Σ(t) depending
+only on unperturbed quantities. (For instance, a non-zero shear viscosity η
+in an imperfect fluid gives δσ = −2η δu, so here Σ = −2η.) In all such cases,
+Eq. (21) has the general solution
+                                     λ
+                                           Z t
+                             ǫ(t) =              α(t′ ) dt′                  (30)
+                                    α(t)
+where                                           Z t              
+                                                          ′   ′
+                     α(t) ≡ a(t) exp 8πG               Σ(t ) dt       ,      (31)
+and the lower limit on the integral in Eq. (30) is arbitrary.
+    There is also a second mode, corresponding to the possibility of shifting
+the lower limit of the integral in Eq. (30), for which ǫ(t) goes as ǫ(t) ∝ 1/α(t).
+Since shifting the lower bound on the integral in Eq. (30) has no effect on
+the value (26) of R and ζ, this solution has R = ζ = 0.
+    In the special case of vanishing anisotropic stress we have δσ = 0, so here
+Φ = Ψ, and α(t) is just the Robertson–Walker scale factor a(t). The general
+solution of Eq. (21) is then
+                                    λ Zt ′ ′
+                            ǫ(t) =      a(t ) dt ,                           (32)
+                                   a(t)
+
+                                          8
+with an arbitrary lower limit. This eventually increases in absolute value as t
+for Robertson–Walker scale factors that grow as any power of t, while in the
+other mode ǫ(t) ∝ 1/a(t) decreases with time. Inserting the result (32) in
+Eqs. (15)–(18) gives explicit results for the perturbations in the gravitational
+field and various pressures and energy densities as functions of time.
+    The results presented in this section can be interpreted in terms of what
+Liddle and Lyth in ref. [1] call a “separate universe” picture, which in one
+form or another has been used since the beginning of inflationary theory to
+deal with cosmological fluctuations in the case of a single scalar field. For
+instance, Bardeen, Steinhardt, and Turner in ref. [5] gave what they called a
+‘heuristic argument’ that in this case any portion of the universe that is larger
+than the horizon 1/H but smaller than the physical perturbation wavelength
+a/q would have to look like a separate unperturbed universe, with ϕ + δϕ
+following the unique evolutionary path of the scalar field, and with all of
+these separate universes therefore the same except for a variation in the time
+at which the scalar field satisfies some specific initial condition a few Hubble
+times after horizon exit. As pointed out by Bardeen et al., it follows then
+that δρ/ρ̄˙ = δp/p̄˙ , and hence X = 0, for q/a ≪ H.
+    There is a potential problem with this sort of argument, that there are
+two fields involved, the inflaton and the gravitational field, so that different
+separate universes might have different ratios of these fields. The argument
+of Bardeen et al. was formulated in a gauge in which it is unnecessary to
+consider fluctuations in the gravitational field, but it applies also to Newto-
+nian gauge, because in this gauge the constraint (7) allows the gravitational
+potential to be expressed in terms of fluctuations in the scalar field. But as
+we have seen in this section, in Newtonian gauge it is necessary not only to
+allow shifts in the time at which the scalar field reaches some given value
+after horizon crossing, but also to re-scale the co-moving coordinates used
+in each separate universe. In synchronous gauge there is no constraint like
+Eq. (7) that allows us to express the gravitational field in terms of the scalar
+field, and so, as we will see in Section IV, the solutions even for inflation with
+a single scalar field do not satisfy X = 0 in the limit q → 0.
+    There is another potential problem, that the equation of motion of the
+scalar field is a second-order differential equation, so that there are two in-
+dependent solutions whose relative coefficients may vary from one separate
+universe to another. Bardeen et al. and other authors avoid this problem by
+assuming that the scalar field experiences a period of “slow roll” inflation,
+
+                                        9
+in which the differential equation satisfied by the scalar field is of first order,
+to a good approximation. We have not had to make this assumption, for a
+reason already pointed out by Guth and Pi[7]: the Wronskian of these two
+solutions decays rapidly after horizon crossing, so that it is as if there were
+only one independent solution. (Guth and Pi considered the case of H con-
+stant, but even with a time-dependent H the Wronskian still decays, though
+not precisely exponentially.)
+    In any case, it has always been clear that such “separate universe” argu-
+ments do not rule out non-adiabatic solutions in the case of several scalar
+fields, where ratios of the scalar fields may vary from one “separate universe”
+to another. The results of this section may be interpreted as the statement
+that in this and all other cases it is always possible to find an adiabatic solu-
+tion of the field equations in Newtonian gauge in which the separate universes
+appear the same, except for a shift in the time coordinate and a re-scaling of
+the co-moving space coordinates.
+
+          III. AN EXAMPLE: MULTIFIELD INFLATION
+
+   For illustration, and to confirm the reasoning of the theorem of the pre-
+vious section in a case where X does not vanish for all modes, let us consider
+the case of inflation with an arbitrary number of scalar fields ϕf , and with a
+general potential V that may include interactions among the various scalars.
+The energy-momentum tensor of the scalar fields has the perfect-fluid form,
+so here σ = 0, and Φ = Ψ. The field equations in Newtonian gauge are
+
+                                                 ϕ̄˙ f δϕf ,
+                                             X
+                          Ψ̇ + HΨ = 4πG                                        (33)
+                                             f
+
+                  X ∂ 2 V (ϕ̄)                 q2
+                                             !
+                                                           ∂V (ϕ̄)
+ δ ϕ̈f + 3Hδ ϕ̇f +                     δϕf ′ + 2 δϕf = −2Ψ         + 4Ψ̇ϕ̄˙ f , (34)
+                   f ′ ∂ ϕ̄ f ∂ ϕ̄ f ′         a            ∂ ϕ̄ f
+
+and the constraint (7) is here
+
+                      q2
+                           !
+                                 X                      
+                  Ḣ + 2 Ψ = 4πG   −ϕ̄˙ f δ ϕ̇f + ϕ̄
+                                                  ¨ f δϕf .                    (35)
+                      a          f
+
+
+We can write Eqs. (33) and (34) in the form (27) by taking the yn to run
+over Ψ and all φf and φ̇f , in which case the constraint (35) is of the form
+
+                                        10
+(29). Here obviously Cnm (t) and cn are continuous in q in a neighborhood
+of q = 0; in fact, they are just linear functions of q 2 . Hence any solution of
+Eqs. (33)–(35) that we find for q = 0 can be extended to a solution for q 6= 0.
+    Let us try for a solution for q = 0 in which all of the individual velocity
+potentials −δϕf /ϕ̄˙ f are equal, so that
+
+                                      δϕf = −ϕ̄˙ f δu ,                               (36)
+
+with the common value satisfying
+
+                                        δ u̇ = −Ψ .                                   (37)
+
+Using the time-derivative of the unperturbed scalar field equation
+                                                ∂V (ϕ̄)
+                          ¨ f + 3H ϕ̄˙ f +
+                          ϕ̄                            =0,                           (38)
+                                                 ∂ ϕ̄f
+we can put Eq. (34) for q = 0 in the form
+
+                               Ḣδu + Hδ u̇ + δü = 0 .                               (39)
+
+Also, the gravitational field equation (33) now reads Ψ̇ + HΨ = Ḣδu, which
+Eq. (39) guarantees is automatically satisfied by the Ψ given by Eq. (37).
+The general solution is
+                            λ
+                                  Z
+                       δu =           a dt ,        Ψ = Hδu − λ ,                     (40)
+                            a
+(with λ an arbitrary constant), just as we found above in Eqs. (15), (24),
+and (32). The perturbations to the energy density and pressure of the f th
+field here are
+               2              ∂V                   
+                                                         2
+   δρf = −Ψϕ̄˙ + ϕ̄˙ δ ϕ̇ +         δϕf = − Ψ + δ u̇ ϕ̄˙ f − ρ̄˙ f δu = −ρ̄˙ f δu ,   (41)
+                              ∂ ϕ̄f
+and
+               2              ∂V                   
+                                                         2
+   δpf = −Ψϕ̄˙ + ϕ̄˙ δ ϕ̇ −         δϕf = − Ψ + δ u̇ ϕ̄˙ f − p̄˙ f δu = −p̄˙ f δu ,   (42)
+                              ∂ ϕ̄f
+so this mode is adiabatic, in the sense that X → 0 for q → 0. Inserting
+Eq. (40) in Eq. (1) gives again R = λ.
+
+                                               11
+    Once again, because of the freedom to shift the lower limit of the integral
+in Eq. (40), there are two adiabatic modes here, the second with δu ∝ 1/a
+and R = 0.
+    For a single scalar field, Eqs. (33) and (34) are a third-order set of dif-
+ferential equations, and therefore have a third independent solution. The
+third solution can also be found explicitly, and turns out to have Ṙ ∝ 1/a3 Ḣ
+for q = 0, so this solution is not adiabatic. However, this third solution is
+eliminated by the constraint Eq. (35), which as we have seen in the previ-
+ous section is automatically satisfied by any adiabatic solution, but is not
+satisfied by the non-adiabatic solution of Eqs. (33) and (34). For N scalar
+fields Eqs. (33) and (34) have 2N + 1 independent solutions, of which two are
+adiabatic, and one is eliminated by Eq. (35), leaving 2N − 2 non-adiabatic
+solutions.
+
+                      IV. SYNCHRONOUS GAUGE
+
+   We now turn to synchronous gauge. With zero unperturbed spatial cur-
+vature, the perturbed metric has components
+
+           gij (x, t) = a2 (t)δij + hij (x, t) ,     g00 = −1 ,    gi0 = 0 ,    (43)
+
+with hij a small perturbation. We now assume for simplicity that the per-
+turbed energy-momentum tensor takes the perfect-fluid form
+
+                            Tµν = p gµν + (p + ρ)uµ uν .                        (44)
+
+The unperturbed quantities p̄ and ρ̄ depend only on time, and the unper-
+turbed velocity four-vector has components ū0 = 1, ūi = 0. The normaliza-
+tion condition uµ uµ = −1 then requires that the velocity perturbation δuµ(S)
+is purely spatial. (A superscript (S) is used to denote perturbed quantities
+in synchronous gauge.) We consider only compressional modes, for which
+   (S)
+δui = ∂δu(S) /∂xi . Then the relevant field equations for a Fourier compo-
+nent with wave number q are[8]
+                      d 2                        
+                         a ψ = −4πGa2 δρ(S) + 3δp(S) ,                          (45)
+                      dt
+and                                                                  
+          δ ρ̇(S) + 3H δρ(S) + δp(S) = − ρ̄ + p̄          ψ − a−2 q 2 δu(S) .   (46)
+
+                                            12
+Here ψ is a field employed in recent work using synchronous gauge[9]
+                                                !
+                                 d        hii
+                              ψ≡                    .                     (47)
+                                 dt       2a2
+
+There is also an Euler equation that will be needed later in this section:
+                       d h 3           i
+                          a ρ̄ + p̄ δu(S) = −a3 δp(S) .                   (48)
+                       dt
+                                                                     
+From equations (45) and (46) together with the relation 4πG ρ̄ + p̄ = −Ḣ
+it follows that
+                             Ȧ = −q 2 Hδ u̇(S)                       (49)
+where
+                    A ≡ a2 Hψ − 4πGa2 δρ(S) − q 2 Hδu(S) .                (50)
+Here is the proof: Eq. (46) can be written
+                                          Ḣ                  
+            δ ρ̇(S) + 3H δρ(S) + δp(S) =        ψ − a−2 q 2 δu(S) ,
+                                           4πG
+and it follows immediately from Eq. (45) that
+
+              d(a2 Hψ)                         
+                       = −4πGa2 H δρ(S) + 3δp(S) + a2 Ḣψ .
+                 dt
+Eliminating Ḣψ from these two equations gives
+
+d(a2 Hψ)                              h                         i
+         = −4πGa2 H δρ(S) +3δp(S) +4πGa2 δ ρ̇(S) + 3H δρ(S) + δp(S) +q 2 Ḣδu(S)
+   dt
+or in other words
+                    d h 2                i
+                       a Hψ − 4πGa2 δρ(S) = q 2 Ḣδu(S) .
+                    dt
+The quantity in square brackets on the left is not invariant under the gauge
+transformations that preserve the condition (43) for synchronous gauge, so
+instead we work with the related gauge-invariant quantity (50), for which
+Eq. (49) follows immediately.
+
+
+                                     13
+    As long as the velocity potential remains finite in the limit q → 0, Eq. (49)
+yields a conservation law
+
+                             Ȧ = 0     for q = 0 .                          (51)
+
+This is true for all modes in all cases, including inflation with several scalar
+fields and for the transition from radiation to matter dominance. The con-
+servation of A in the limit q = 0 can also be derived by simply perturbing
+a(t), ρ(t), and the curvature constant K in the Friedmann equation, which
+gives δK = −2A/3.
+    By taking suitable linear combinations of solutions, it is always possible
+to arrange that for q = 0 just one of a complete set has A 6= 0, while all
+the other solutions have A = 0. Examples are given in an appendix to
+this paper. Because of the connection of A with the spatial curvature, it
+is legitimate to call the solutions with A = 0 isocurvature modes. When
+q is small but non-zero the isocurvature solutions usually have both A and
+Ȧ of order q 2 , so that Eq. (49) does not keep A for these solutions from
+undergoing large fractional changes. This does not vitiate the usefulness of
+the conservation law for initial conditions that give a physical perturbation
+in which all solutions make contributions with comparable coefficients. In
+this case, the contribution of the isocurvature modes to A may be rapidly
+varying, but at any given time they will be small as long as q is sufficiently
+small. The physical solution will have a rapid fractional variation in A only
+if the coefficient of the mode with A 6= 0 for q = 0 is suppressed, or if the
+coefficients of the isocurvature modes are enhanced.
+    There is a simple relation between the quantity A introduced in this sec-
+tion and the more familiar quantity R discussed in Sections I–III. Given
+perturbations Ψ, δρ and δu in Newtonian gauge, we can find the pertur-
+bations ψ, δρ(S) , and δu(S) in synchronous gauge from the transformation
+equations:
+                d    2
+ ψ = −3Ψ̇ − 3      Hǫ + q/a ǫ ,          δρ(S) = δρ − ǫρ̄˙   δu(S) = δu + ǫ , (52)
+                dt
+where
+                                      ǫ̇ = Ψ .                               (53)
+(The possibility of shifting ǫ by a constant term corresponds to the possibility
+of making gauge transformations that preserve the conditions for synchronous
+
+                                        14
+gauge.) By applying these equations to the quantity (50), it is elementary
+to show that A is related to the quantity R defined in Eq. (1) by
+
+                                 A = −q 2 R .                              (54)
+
+Thus for any finite q the fractional rate of change in R will be the same as the
+fractional rate of change in A. In some treatments of multi-field inflation[10]
+and in discussions of the curvaton model[4], it is simply assumed that the
+mode with R =  6 0 and hence A 6= 0 is somehow suppressed, which is enough
+to explain why these authors find a significant fractional change in R. But
+why more generally does the condition X = 0 play an important role in
+establishing the conservation of R for q → 0 in Newtonian gauge, while
+there seems to be no similar condition needed for the conservation of A in
+synchronous gauge?
+    As a first step toward resolving this apparent paradox, we note from
+Eq. (54) that that the limit as q → 0 of the perturbed quantities δρ(S) and
+ψ in synchronous gauge in the mode for which A 6= 0 in this limit is not
+obtained by applying a gauge transformation to the perturbed quantities in
+the corresponding mode in Newtonian gauge for q = 0, since that would give
+A = 0 for q = 0. We can go further, and show in general that for q = 0,
+the synchronous gauge solution corresponding to any adiabatic solution of
+the Newtonian gauge field equations (normalized to not diverge as q → 0)
+has vanishing values not only for A, but also (up to a choice of a particular
+synchronous gauge) for ψ and the total density fluctuation δρ(S) and velocity
+potential δu(S) .
+    The reasoning here is essentially the reverse of that used to prove the
+theorem of Section II. We will use the space-time component of the Einstein
+field equations in Newtonian gauge
+
+                     Ψ̇ + HΨ = −4πG(ρ̄ + p̄)δu = Ḣδu .                    (55)
+
+We work in the limit q = 0, assuming that the solution is normalized so that
+in Newtonian gauge all fluctuations remain finite in this limit. (As we shall
+see, this assumption is less innocent than it may seem.) Then for modes that
+for q = 0 are adiabatic in the sense that X = 0, Eqs. (1) and (2) give
+
+                                       d
+                                Ψ̇ =      (Hδu)                            (56)
+                                       dt
+
+                                       15
+for q = 0. Combining this with Eq. (55) gives
+
+                                       Ψ = −δ u̇ .                                    (57)
+
+Thus according to Eq. (53) we can adopt a particular synchronous gauge
+such that the transformation parameter ǫ in Eq. (52) is
+
+                                       ǫ = −δu .                                      (58)
+
+Using Eqs. (56) and (58) in Eq. (52) shows immediately that, for q = 0,
+
+                                         ψ=0.                                         (59)
+
+Furthermore, Eq. (55) together with the Newtonian gauge Euler equation
+supplies a general constraint equivalent to Eq. (7) for q = 0:
+
+                                 − 4πGδρ = 3H Ḣδu                                    (60)
+
+Eqs. (52) and (60) give the synchronous gauge density fluctuation
+
+              − 4πGδρ(S) = −4πG [δρ − ǫρ̄˙ ]
+                         = 3H Ḣδu + [−4πG]δu [−3H(ρ̄ + p̄)]
+                         = 0.                                                         (61)
+
+Finally, the velocity potential in this synchronous gauge is
+
+                                 δu(S) = δu + ǫ = 0 .                                 (62)
+
+    Thus no synchronous gauge perturbation with non-vanishing values of ψ
+or δρ(S) or δu(S) (apart from those that can be eliminated by a transformation
+to a different synchronous gauge), such as modes 1, 2, and 3 of the radiation
+plus cold dark matter model of the appendix, can be the gauge transforma-
+tion of one of the q = 0 adiabatic Newtonian gauge solutions. Rather, the
+synchronous gauge solutions for q = 0 with A a non-zero constant must be
+the gauge transformations of the terms of order q 2 in the adiabatic Newtonian
+gauge solution with R =  6 0, re-normalized by dividing by a factor q 2 .6 With
+   6
+     This is why it is possible for the quantity X not to vanish in any mode for q = 0 in
+synchronous gauge, as we find in the appendix in the case of inflation, while there are two
+modes in Newtonian gauge in which X → 0 for q → 0, despite the fact that X is gauge
+invariant. It is not that X is different in the two gauges, but rather that the limit q → 0
+means different things in synchronous and Newtonian gauge.
+
+                                            16
+this re-normalization of the synchronous gauge modes, as in the appendix,
+the conserved quantity A is not necessarily of order q 2 , as would be expected
+from Eq. (54), but can have a finite limit for q → 0, as we will find it does
+in the appendix.
+    Now at last we come to the point. Working in Newtonian gauge, it is
+most natural to assume that, with an over-all normalization factor chosen
+so that R is finite and non-zero in the limit q = 0, all density fluctuations
+and velocity potentials as well as Ψ are non-zero in this limit. Under this
+assumption, if the contribution of non-adiabatic modes is comparable to that
+of the adiabatic modes, R will undergo significant changes with time. Trans-
+forming this sort of solution to synchronous gauge, we have found above that
+the density fluctuations and the total velocity potential receive contributions
+of order q 2 (relative to the Newtonian gauge perturbations) from the adia-
+batic modes but of order unity from the non-adiabatic modes, so that Ȧ is of
+order q 2 , while A is also of order q 2 , and so A does suffer significant changes
+with time. Or we can re-normalize the synchronous gauge fluctuations by
+an over-all factor of order 1/q 2 , in which case A and the density fluctua-
+tions and velocity potentials receive contributions of order unity for q = 0
+from the adiabatic modes, as in the appendix, while the contribution of the
+non-adiabatic modes to the total velocity potential if present is enhanced by
+a peculiar looking factor of 1/q 2 , giving both A and Ȧ non-zero limits for
+q → 0.
+    On the other hand, working in synchronous gauge, it is most natural
+to assume that, with an over-all normalization factor chosen so that A is
+finite and non-zero in the limit q = 0, all density fluctuations and velocity
+potentials as well as ψ are finite in this limit. Under this assumption, it makes
+no difference whether the contribution of non-adiabatic modes is comparable
+to that of the adiabatic modes; even if it is, A will undergo no significant
+changes with time. Transforming this sort of solution to Newtonian gauge,
+one finds that the density fluctuations and the total velocity potential receive
+contributions of order 1/q 2 from the adiabatic modes and of order unity from
+the non-adiabatic modes, so R is of order 1/q 2 while its rate of change is only
+of order unity. Or we can re- normalize the Newtonian gauge fluctuations by
+an over-all factor of order q 2 , in which case R and the density fluctuations and
+velocity potentials receive contributions of order unity for q = 0, while the
+contribution of any non-adiabatic modes is suppressed by a peculiar looking
+factor of q 2 , giving R a zero rate of change for q = 0.
+
+                                        17
+    So which is right? The issue is not the over-all normalization of the total
+perturbations, but the relative magnitude of its adiabatic and non-adiabatic
+terms in the limit q → 0. There is nothing about either gauge that makes it
+a more reliable guide to our intuition about this than the other.
+    It is generally expected that inflation with several scalar fields the gen-
+eral solution does not have R approaching a constant for increasing a(t), in
+agreement with what would be expected from the behavior for q → 0 sug-
+gested by Newtonian gauge but not synchronous gauge. But there are cases
+of multi-field inflation in which A and hence R do approach constants as a(t)
+increases, as would be expected from the behavior for q → 0 suggested by
+synchronous gauge but not Newtonian gauge. One case is a potential given
+by a sum of exponentials[11].
+                                 X
+                           V =        gn exp(−λn ϕn )                      (63)
+                                  n
+
+Another is a potential of the form
+                                                    !
+                                              ϕ2n
+                                         X
+                              V =F                      ,                  (64)
+                                          n
+
+with F an arbitrary function. It would be interesting to characterize the
+general class of potentials for multi-field inflation for which A and R approach
+constants as a(t) increases.
+
+      APPENDIX: LONG-WAVELENGTH SOLUTIONS IN
+                SYNCHRONOUS GAUGE
+
+   In this appendix we will study several examples of calculations for zero
+wave number in synchronous gauge, to exhibit both solutions with A 6= 0
+and those with A = 0. All quantities here will be in synchronous gauge, so
+we will drop the label (S).
+   As a first example, consider inflation with just a single real scalar field
+ϕ = ϕ̄(t) + δϕ(x, t), and potential V (ϕ). As is well known, the unperturbed
+pressure and energy density are
+                      1 2                         1 2
+                  ρ̄ = ϕ̄˙ + V (ϕ̄) ,         p̄ = ϕ̄˙ − V (ϕ̄) ,          (65)
+                      2                           2
+
+
+                                        18
+from which we find the equation of motion of the unperturbed scalar field
+
+                                  ¨ + 3H ϕ̄˙ + V ′ (ϕ̄) = 0 .
+                                  ϕ̄                                                  (66)
+
+The perturbations to the energy density and pressure are
+
+                δρ = ϕ̄˙ δ ϕ̇ + V ′ (ϕ̄)δϕ ,           δp = ϕ̄˙ δ ϕ̇ − V ′ (ϕ̄)δϕ .   (67)
+
+Also, the perturbed velocity potential is
+
+                                       δu = −δϕ/ϕ̄˙ .                                 (68)
+
+The field equations (45) and (46) for the Fourier component of the pertur-
+bations with wave number q here take the form
+                   d  2                                 
+                      a ψ = −4πGa2 4ϕ̄˙ δ ϕ̇ − 2V ′ (ϕ̄) δϕ ,                         (69)
+                   dt
+                  δ ϕ̈ + 3Hδ ϕ̇ + V ′′ (ϕ̄) δϕ + a−2 q 2 δϕ = −ϕ̄˙ ψ ,                (70)
+where                         v                  
+                                       ˙2
+                              u
+                              u 8πG  ϕ̄
+                           ȧ u
+                         H≡ =t            + V (ϕ̄) .                                 (71)
+                                   a          3         2
+
+The Euler equation (48) gives no new information here.
+    There is a gauge mode, with ϕ = τ ϕ̄˙ and ψ = τ (3Ḣ − q 2 /a2 ), where τ
+is an arbitrary time-independent function of q. Knowing this solution allows
+us to reduce the degree of equations (67) and (68) from three to two, in
+agreement with the number of physical solutions found in Newtonian gauge
+in Section III. We introduce time-dependent functions f and g by writing
+                                                                             
+                    δϕ = f ϕ̄˙ ,           ψ = (f + g) 3Ḣ − q 2 /a2 .                (72)
+
+Equations (67) and (68) then become a second-order set of equations for the
+gauge-invariant quantities f˙ and g:
+
+                    f¨ + 3H f˙ + (Ḧ/Ḣ)f˙ = − 3Ḣ − q 2 /a2 g ,
+                                                                         
+                                                                                      (73)
+
+                3Ḣ − q 2 /a2 ġ + 6H Ḣ + 3Ḧ g = Ḣ + q 2 /a2 f˙ ,
+                                                                             
+                                                                                      (74)
+
+                                                  19
+in which the gauge mode appears in the possibility of adding a constant to f .
+These equations can be solved exactly for q = 0 and H(t) arbitrary. There
+are two physical solutions:
+Mode 1:
+                                                                    "                                #
+            1                                                   1          H(t)
+                       Z t                                                        Z t
+ (1)
+g (t) = 3                         ′   ′
+                               a(t )dt ,     f˙(1) (t) =               1 −                 ′
+                                                                                        a(t )dt  ′
+                                                                                                         .
+       3a (t)Ḣ(t)         0                               a2 (t)Ḣ(t)     a(t)    0
+                                                                                               (75)
+Mode 2:
+                                 1                                  H(t)
+             g (2) (t) =                ,           f˙(2) (t) = − 3         .                  (76)
+                           3a3 (t)Ḣ(t)                          a (t)Ḣ(t)
+
+(The lower limit 0 on the integral over t′ is arbitrary; changing it just amounts
+to adding some of mode 2 to mode 1.)
+    Equation (50) gives the values of A for q = 0 in these two modes as the
+constants
+                            A1 = 1 ,         A2 = 0 ,                        (77)
+even though neither of these solutions satisfies the adiabatic condition X = 0.
+A general mixture of modes with coefficients c1 and c2 will have A = c1 for
+q = 0, provided c2 does not blow up in this limit. With this proviso, the
+conservation of A allows the value of c1 that is calculated for a given inflaton
+potential to be used to find the strength of the non-isocurvature mode at later
+times. However, if the value of c2 for the physical solution found after horizon
+crossing went as c/q 2 for q → 0, while c1 remained finite, then Eqs. (49), (66),
+(70), and (74) would give
+
+                                           −cH 2 (t)
+                     Ȧ → c2 Ȧ2 →                         for q → 0 ,
+                                           a3 (t)Ḣ(t)
+and there would be no useful conservation law even for q = 0. As discussed
+in Section IV, this is just what we would expect if we assumed that, with
+an over-all normalization factor chosen so that R is finite and non-zero in
+the limit q = 0, all density fluctuations and velocity potentials in Newtonian
+gauge as well as Ψ are finite and non-zero in this limit.
+    For another example, we consider a later epoch, when the dominant con-
+stituents of the universe were radiation and cold dark matter. (For simplicity,
+
+                                               20
+we are neglecting the baryon density compared with the density of cold dark
+matter, but supposing that there are still enough baryons to keep the radia-
+tion in thermal equilibrium, and we are ignoring the effects of free-streaming
+neutrinos.) We adopt a particular synchronous gauge in which the cold dark
+matter is at rest. The field equations then are Eqs. (46) and (48) for the ra-
+diation energy density perturbation δρR and velocity potential δuR ; Eq. (46)
+for the cold dark matter density ρD ; and Eq. (45) for ψ, with the total energy
+density and pressure appearing on the right hand side:
+                                                             
+                 δ ρ̇R + 4HδρR = −(4/3)ρ̄R ψ − a−2 q 2 δuR ,                (78)
+
+                              d h 3        i
+                            4     a ρ̄R δuR = −a3 δρR ,                     (79)
+                             dt
+                             δ ρ̇D + 3HδρD = −ρ̄D ψ ,                       (80)
+                       d 2 
+                           a ψ = −4πGa2 (2δρR + δρD ) .                    (81)
+                       dt
+The unperturbed radiation and dark matter densities go as a−4 and a−3 ,
+respectively. It is convenient here to normalize a so that a = 1 when ρ̄R = ρ̄D ,
+so that
+                       ρ̄R = ρEQ a−4 ,     ρ̄D = ρEQ a−3 ,                 (82)
+where ρEQ is constant.
+    Equations (78)–(81) are a fourth-order system of differential equations,
+so there are four modes, all of which are physical because the gauge has been
+fixed by choosing δuD = 0. For q = 0, they take the form
+Mode 1:
+                                                          !
+                  (1)       1
+                δρR      =      16 + 8a − 2a2 + a3 ,
+                           πGa6
+                                                  a4 da
+                                    s
+                  (1)           a       3    Z a
+                                                           (1)
+                δuR      = −                     √       δρR ,              (83)
+                             4ρEQ 8πGρEQ           1+a
+                                                       !
+                   (1)        3                 2    3
+                δρD      =          16 + 8a − 2a + a ,
+                           4πGa5
+                             s         √                      !
+                                  3      1+a
+                 ψ (1)   = 2                    32 + 8a − a 3
+                               8πGρEQ a4
+
+
+                                        21
+Mode 2:
+                   (2)          1 √
+               δρR          =         1+a,
+                              πGa6 s
+                                  a       3         a4 da
+                                               Z a
+                      (2)                                   (2)
+               δuR          = −                    √      δρR ,           (84)
+                                4ρEQ 8πGρEQ          1+a
+                   (2)           3 √
+               δρD          =          1+a,
+                              4πGa5
+                              s                !
+                                    3
+                ψ (2)       =            4 + 3a
+                                8πGρEQ
+
+Mode 3:
+                                   (3)        (3)
+                                 δρR = δρD = ψ (3) = 0 ,
+                                   (3)
+                                 δuR ∝ a .                                (85)
+
+Mode 4:
+                                              √
+                                                                !
+               (4)         1
+             δρR        =    6
+                               8 + 4a − a2 − 8 1 + a ,
+                          πGa
+                                              a a4 da
+                                       s
+                              a       3
+                                                    Z
+               (4)                                      (3)
+             δuR        = −                    √      δρR ,               (86)
+                            4ρEQ 8πGρEQ          1+a
+                                            √
+                                                   !
+                (4)          3
+             δρD        =        8 + 4a − 8 1 + a ,
+                          8πGa5
+                                               √
+                            s                                 !
+                          8      3
+              ψ (4)     = 4             (4 + a) 1 + a − 4 − 3a
+                          a 8πGρEQ
+The lower bound on the integrals in the formulas for δuR in modes 1, 2, and 4
+are arbitrary; changing this lower limit in any of these integrals just amounts
+to adding some of mode 3 to that mode.
+    Note that modes 1, 2, and (trivially) 3 are adiabatic, in the sense that
+                                   δρD      δρR
+                                       =           ,                      (87)
+                                   ρ̄D   ρ̄R + p̄R
+(and so X = 0) while mode 4 is not adiabatic in this sense. The values of A
+for the four modes are
+                             A1 = 1,       A2 = A3 = A4 = 0 .             (88)
+
+                                              22
+Thus modes 2 and 3 are both adiabatic and isocurvature. An arbitrary
+mixture of modes will have A constant unless the coefficients of modes 2, 3,
+or 4 blow up as 1/q 2 limit q → 0, which will be the case if the fluctuations in
+the non-adiabatic modes in Newtonian gauge have non-zero limits for q → 0.
+
+                        ACKNOWLEDGMENTS
+
+   I am grateful for helpful correspondence with E. Bertschinger, D. Lyth, S.
+Mukhanov, and N. Turok. This research was supported in part by the Robert
+A. Welch Foundation and NSF Grants PHY-0071512 and PHY-9511632.
+
+                              REFERENCES
+
+  1. J. M. Bardeen, Phys. Rev. D22, 1882 (1980); D. H. Lyth, Phys.
+     Rev. D31, 1792 (1985). For reviews, see J. Bardeen, in Cosmology and
+     Particle Physics, eds. Li-zhi Fang and A. Zee (Gordon & Breach, New
+     York, 1988); A. R. Liddle and D. H. Lyth, Cosmological Inflation and
+     Large Scale Structure (Cambridge University Press, Cambridge, UK,
+     2000).
+
+  2. J. M. Bardeen, Phys. Rev. D22, 1882 (1980), Eq. (5.21).
+
+  3. E. Bertschinger, in Cosmology and Large Scale Structure — Proceedings
+     Session LX of the Les Houches Summer School, ed. R. Schaeffer, J.
+     Silk, M. Spiro, and J. Zinn-Justin (Amsterdam: Elsevier Science, 1996).
+
+  4. S. Mollerach, Phys. Rev. D 42, 313 (1990); A. D. Linde and V.
+     Mukhanov, Phys. Rev. D 56, 535 (1997); D. H. Lyth and D. Wands,
+     Phys. Lett. B 524, 5 (2002); T. Moroi and T. Takahashi, Phys. Lett.
+     B 522, 215 (2001); Phys. Rev. D66, 063501 (2002); D. H. Lyth, C.
+     Ungarelli, and D. Wands, astro-ph/0208055; K. Dimpopoulos and D.
+     H. Lyth, astro-ph/0209180.
+
+  5. J. M. Bardeen, P. J. Steinhardt, and M. S. Turner, Phys. Rev. D28,
+     679 (1983). This quantity was re-introduced by D. Wands, K. A. Malik,
+     D. H. Lyth, and A. R. Liddle, Phys. Rev. D62, 043527 (2000).
+
+  6. See, e. g., C. Gordon, D. Wands, B. A. Bassett, and R. Maartens,
+     Phys. Rev. D63, 023506 (2000), Eq. (14).
+
+                                      23
+ 7. A. Guth and S-Y. Pi, Phys. Rev. Lett. 49, 1110 (1982).
+
+ 8. These are taken from Eqs. (15.10.50), (15.10.51), and (15.10.53) of S.
+    Weinberg, Gravitation and Cosmology – Principles and Applications of
+    the General Theory of Relativity (Wiley, New York, 1972). It should be
+    noted that the velocity vector U1 used in this reference has components
+    U1i = a−2 δui = a−2 iqi δu(S) .
+
+ 9. S. Weinberg, Phys. Rev. D64, 123511 (2001); Phys. Rev. D64,
+    123512 (2001); Astrophys. J. 581, 810 (2002).
+
+10. See, e.g., V. S. Mukhanov, H. A. Feldman, and R.H. Brandenberger,
+    Physics Reports 215, 203–333 (1992).
+
+11. K. A. Malik and D. Wands, Phys. Rev. D59, 123501 (1999).
+
+
+
+
+                                   24
+

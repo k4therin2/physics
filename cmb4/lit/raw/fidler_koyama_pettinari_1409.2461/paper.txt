@@ -1,0 +1,992 @@
+                                              Prepared for submission to JCAP
+
+
+
+
+                                              A new line-of-sight approach to the
+                                              non-linear Cosmic Microwave
+                                              Background
+arXiv:1409.2461v2 [astro-ph.CO] 24 Sep 2015
+
+
+
+
+                                              Christian Fidler Kazuya Koyama Guido W. Pettinari
+                                               Institute of Cosmology and Gravitation, University of Portsmouth, Portsmouth PO1 3FX,
+                                               UK
+                                               Institute of Cosmology and Gravitation, University of Portsmouth, Portsmouth PO1 3FX,
+                                               UK
+                                               Department of Physics & Astronomy, University of Sussex, Brighton BN1 9QH, UK
+
+
+                                              Abstract.
+                                                    We develop the transport operator formalism, a new line-of-sight integration framework
+                                              to calculate the anisotropies of the Cosmic Microwave Background (CMB) at the linear
+                                              and non-linear level. This formalism utilises a transformation operator that removes all
+                                              inhomogeneous propagation effects acting on the photon distribution function, thus achieving
+                                              a split between perturbative collisional effects at recombination and non-perturbative line-
+                                              of-sight effects at later times. The former can be computed in the framework of standard
+                                              cosmological perturbation theory with a second-order Boltzmann code such as SONG, while
+                                              the latter can be treated within a separate perturbative scheme allowing the use of non-linear
+                                              Newtonian potentials. We thus provide a consistent framework to compute all physical effects
+                                              contained in the Boltzmann equation and to combine the standard remapping approach with
+                                              Boltzmann codes at any order in perturbation theory, without assuming that all sources are
+                                              localised at recombination.
+Contents
+
+1 Introduction                                                                                  1
+
+2 Formalism                                                                                     2
+
+3 Collisions                                                                                    6
+
+4 Applications                                                                                  8
+  4.1 Redshift terms                                                                            9
+  4.2 Lensing terms                                                                            11
+
+5 Polarisation                                                                                 12
+
+6 Conclusions                                                                                  13
+
+A Redshift-Lensing Correlation                                                                 14
+
+
+1   Introduction
+
+Recently, there has been growing interest in computing the second-order Cosmic Microwave
+Background (CMB) anisotropies [1–10]. The Einstein-Boltzmann equations at second or-
+der have been studied in great detail [11–16] and numerical codes have been developed to
+predict non-Gaussianity of the CMB anisotropies [17–22]. Even without any primordial non-
+Gaussianity of the curvature perturbation, the CMB anisotropies are inevitably non-Gaussian
+due to non-linear physics at recombination and the non-linear nature of Einstein’s gravity.
+The intrinsic bispectrum induced by non-linear dynamics contains interesting information
+about physics at recombination and subsequent non-linear propagation of photons through
+inhomogeneous space-time. The dominant contribution in the intrinsic bispectrum due to
+the correlation between lensing and the Integrated Sachs-Wolfe (ISW) effect [23–25] has been
+detected by the Planck satellite [26]. In the future, a high-resolution experiment including
+information from polarisation might be able to observe the intrinsic bispectrum induced by
+non-linear physics [22]. Precise estimations of the intrinsic bispectrum are also important to
+extract information on the primordial non-Gaussianity in future experiments.
+      Using the second-order Boltzmann code SONG [19, 27], the intrinsic bispectra for tem-
+perature and polarisation were calculated including all physical effects except the late-time
+non-linear evolution after recombination [22] (see also [18, 20, 28]). There are several difficul-
+ties in including the late-time non-linear effects. At second order, the Boltzmann equation
+contains terms written as a product of the first-order metric perturbations and the photon
+density. These terms describe the propagation effects of photons through inhomogeneous
+space-time, i.e. gravitational redshifts, time delay and lensing. If we treat these terms as a
+source in the line-of-sight integration [29], they are not multiplied by the visibility function
+and contribute to the integral until late times after recombination. Then the source terms
+contain an infinite number of multipole moments and it is computationally impractical to
+evaluate the line-of-sight integration. Another issue is that, at late times, density perturba-
+tions become non-linear, making the second-order perturbation theory inapplicable on small
+
+
+
+
+                                              –1–
+scales, even though the metric perturbations remain small. Thus the second-order treatment
+becomes invalid at late times. The dominant late-time effect comes from lensing. In order
+to include lensing, a remapping approach is often used to express the observed temperature
+as a product of the temperature anisotropies at the last scattering surface and the deflection
+angle due to lensing at late times [30, 31].
+      There have been several attempts to solve the above problems in the Boltzmann equa-
+tion and connect the standard remapping approach with the second-order calculation of the
+Boltzmann equation. Ref. [28] showed that it is possible to avoid the problem of solving the
+full hierarchy of the photon density by using a transformation of variables and integrations
+by parts in the line-of-sight integration. Ref. [32] showed how the remapping approach can
+be reproduced from the Boltzmann equation.
+      In this paper we explore an alternative strategy of computing the various late-time line-
+of-sight propagation effects for photons. We start from the Boltzmann equation and derive a
+transformation removing the propagation terms from the Boltzmann hierarchy. Solving the
+equations for the transformation operator J turns out to be more efficient than treating lens-
+ing and time-delay in the Boltzmann hierarchy as the perturbation theory can be truncated
+at a lower order. In addition this method separates early-time effects from late-time ones and
+provides a consistent framework for numerical Boltzmann codes that are used to solve the
+equations until the time of recombination. At later times when perturbation theory breaks
+down non-linear Newtonian treatments are needed. This formalism glues both approxima-
+tions together and clarifies the connections between lensing in the remapping approach and
+non-linear Boltzmann codes. Compared with earlier attempts [28, 32], the transport opera-
+tor formalism is the most general, relaxing the assumption that all sources are localised at
+recombination and valid to any order in perturbation theory. While preparing our paper, we
+became aware of another approach to this problem using the line-of-sight integration along a
+full geodesic [33]. We will make a brief comment on the relation between the two approaches.
+      This paper is structured as follows. In section 2, we present our formalism to define
+the transformation operator J that encodes the late-time propagation effects of photons in
+inhomogeneous space-time without the collision term. The formalism is extended to include
+the collision term in section 3. We discuss our approach to set initial conditions for this
+transformation operator to make the separation between physics at the recombination and
+late-time gravitational effects efficient. In section 4, we apply our formalism and show how
+we recover the standard remapping approach from the Boltzmann equation and explain how
+we include the finite width of recombination. An extension to polarisation is briefly discussed
+in section 5. Section 6 is devoted to conclusions. In Appendix A, we compute corrections to
+the angular power spectrum due to the redshift-lensing correlation using our formalism.
+
+2   Formalism
+
+Before dealing with the propagation terms in the full Boltzmann equation we analyse the
+collision-free transport of a distribution function that is given at some initial time. We specify
+an initial distribution function of photons f (x, p), with the comoving momentum p. This
+picture could for example resemble the cosmic microwave background after recombination.
+The equations of motion for the distribution function are given by the Boltzmann equation,
+while the gravitational potentials are determined by the Einstein equation. The Boltzmann
+
+
+
+
+                                              –2–
+equation reads:
+                  ∂        ∂f   dp ∂f   dni ∂f    dxi
+                                                           i ∂f
+                                                            
+                     f + ni i +       +        +       − n        =0,                    (2.1)
+                  ∂η       ∂x   dη ∂p   dη ∂ni     dη         ∂xi
+where η is the conformal time and ni is the direction of the comoving momentum p. The
+first two terms describe the free propagation of photons while the third term describes the
+redshifting of photons. Lensing, which is the change of the direction of photons, is given by
+the fourth term while the last one encodes the time-delay effects [34]. We define the free
+propagation operator
+                                           ∂       ∂
+                                     D=       + ni i ,                                   (2.2)
+                                           ∂η     ∂x
+and the gravitational deflection operator
+                               dp ∂    dni ∂     dxi
+                                                          i
+                                                             ∂
+                          τ=         +        +       − n        .                       (2.3)
+                               dη ∂p   dη ∂ni     dη         ∂xi
+Using these operators the transport equation is given by:
+
+                                        Df + τ f = 0 .                                   (2.4)
+
+     We will now derive a transformation that removes all the inhomogeneous transport
+terms from the Boltzmann equation. This transformation is described by an operator J
+acting on the distribution function:
+                                         f = J f˜ .                                     (2.5)
+Using the equations of motion 2.4 we find for the transformed distribution function f˜:
+
+                                J Df˜ + [D, J ]f˜ + τ J f˜ = 0 ,                         (2.6)
+
+with the commutator of operators denoted by [A, B] = AB − BA. If the transformation
+operator J satisfies
+                                      [D, J ] + τ J = 0 ,                     (2.7)
+the equations of motion for f˜ can be simplified to
+
+                                           Df˜ = 0 ,                                     (2.8)
+
+and all inhomogeneous propagation effects have been removed. The transformed distribution
+function evolves as in a unperturbed Universe, while all the complications of the non-linear
+transport are encoded in J . Whether this is viable in practise depends on the complexity
+to find an operator J that satisfies the equation of motion [D, J ] + τ J = 0. Note that the
+operator J is independent of the distribution function and depends only on the structure
+of space-time. As this operator contains all information about the non-linear transport in a
+perturbed universe we will also refer to it as the transport operator.
+      The commutator [D, J ] can be interpreted as a generalisation of the free propagation
+derivative for operators. Since J is sourced by τ which contains derivatives with respect to
+ni this commutator will be nontrivial. Instead of calculating the extra terms generated by
+J acting on D, we expand J in a basis of operators which do commute with D and obtain
+equations for the coefficients in that basis. We rewrite
+                       ∂        ∂       ∂      ∂                            ∂
+              τ = τp      + τni i + τxi i = τp    + τni D̄i + (τxi − ητni ) i ,          (2.9)
+                       ∂p      ∂n      ∂x      ∂p                          ∂x
+
+
+
+                                             –3–
+             ∂        ∂
+with D̄i = ∂n  i + η ∂xi . The angular derivative operator D̄i is chosen such that [D̄i , D] = 0;
+                                  ∂     ∂
+all operators of the basis ∂a = { ∂p , ∂x i , D̄i } commute with D, i.e. [D, ∂a ] = 0. Expanding in
+this basis of differential operators (τ = τa ∂a ) we find the simple relation [D, τ ] = D(τa )∂a .
+As J is sourced only by τ , the commutator takes an analogous form for J discussed in
+Eq. (2.11). It is important to note that the price for simplifying the commutator is having a
+more complicated time-dependent operator basis.
+      While τ is linear in they differential basis, J may contain derivatives of higher order,
+complicating the expansion. We expand J using the basis ∂a
+
+                             Ja...c ∂a...c = J + Ja ∂a + Jab ∂ab + . . . .                            (2.10)
+
+where a...c denotes combinations of any number of indices and ∂a...c = ∂a · · · ∂c . Here repeated
+indices are summed over. Then the equations of motion for J read:
+                                                                  
+                            D(Ja...c ) ∂a...c = τd ∂d Je...g ∂e...g ,                        (2.11)
+
+Eq. (2.11) can be interpreted as a set of differential equation for the coefficients Ja...c since
+the differential basis is linearly independent.
+      To proceed further we will introduce perturbation theory and assume that τ is small.
+Since τ is related to the gravitational potentials this is usually a good approximation. For
+lensing it corresponds to the lensing being “weak”. We set the zero-th order J (0) to be unity.
+At the first order in τ , we get       h        i
+                                            (1)
+                                         D(Ja ) ∂a = τa ∂a .                               (2.12)
+
+At the second order, we obtain two equations:
+                              h          i    h              i
+                                D(Ja(2) ) ∂a = τd (∂d Ja(1) ) ∂a ,                                    (2.13)
+
+and                                 h               h        i
+                                        (2)             (1)
+                                     D(Jab ) ∂a ∂b = τa Jb ∂a ∂b .                                    (2.14)
+
+Note that the components of J with different number of indices do not evolve separately,
+but are coupled to each other. This is due to the derivative ∂d contained in the source τ . It
+may either act on Jb or be part of the differential basis contributing to the component of J
+with one additional index, generating the two equations at the second order.
+      To make this explicit in our notation we split ∂d = ∂d→ + ∂d↑ , where ∂d→ acts only on the
+coefficients of the differential basis and ∂d↑ acts only on the differential basis. For example,
+we define ∂d→ (Aa...c ∂a...c ) = ∂d (Aa...c ) ∂a...c and ∂d↑ (Aa...c ∂a...c ) = Aa...c ∂a...cd . Then to n-th
+order we get:
+                                  (n)
+                             D(Ja...c ) ∂a...c = τd (∂d→ + ∂d↑ ) Je...g
+                                                                   (n−1)
+                                                                          ∂e...g ,                     (2.15)
+which can be integrated in a straightforward way. We only need to be careful integrating the
+derivative operators, which may be time-dependent: ∂d→ needs to be integrated over as it is
+a part of the differential equation for the coefficients (e.g. Eq. (2.13)), while ∂d↑ is considered
+to be a part of the basis and is not part of the differential equation (e.g. Eq. (2.14)). We
+
+
+
+
+                                                   –4–
+obtain the formal solution:
+                                 Zη0
+                                                     i ∂
+                                                                               h                        i
+      (n)
+     Ja...c (η0 ) ∂a...c =             dη1 e−n ∂xi (η0 −η1 ) τd (η1 )              ∂d→ (η1 ) + ∂d↑ (η0 ) Je...g
+                                                                                                           (n−1)
+                                                                                                                 (η1 ) ∂e...g ,(2.16)
+                                ηini
+                                 Zη0
+                                                     i ∂
+                                                                               h                        i
+               J (n) (η0 ) =           dη1 e−n ∂xi (η0 −η1 ) τd (η1 )              ∂d→ (η1 ) + ∂d↑ (η0 ) J (n−1) (η1 ) ,     (2.17)
+                                ηini
+
+where time arguments apply only to the coefficients and not the basis, which is always to
+be evaluated at η0 . We assumed initial conditions J (ηini ) = 1, which means that f and f˜
+coincide at initial time, but then evolve differently. We are free to choose any initial condition
+for J as the removal of the non-linear propagation terms is independent of this choice. We
+will come back to the issue of initial conditions in the next section.
+      We iterate Eq. (2.17) to relate J (n) to J (0) = 1:
+
+                                            Zη0
+                                                            i ∂
+                                                                                       h                             i
+                     J (n) (η0 ) =                dη1 e−n ∂xi (η0 −η1 ) τa1 (η1 )          ∂a→1 (η1 ) + ∂a↑1 (η0 )
+                                        ηini
+                                               Zη1
+                                                                  i ∂
+                                                                                           h                             i
+                                        ×            dη2 e−n ∂xi (η1 −η2 ) τa2 (η2 )           ∂a→2 (η2 ) + ∂a↑2 (η0 )
+                                             ηini
+                                                                         ..
+                                                                          .
+                                                    ηZn−1
+                                                                        i ∂
+                                              ×           dηn e−n ∂xi (ηn−1 −ηn ) τan (ηn ) ∂an (η0 ) .                      (2.18)
+                                                   ηini
+
+This operator contains all propagation effects up to n-th order in τ . The structure simplifies
+in Fourier space as follows
+                               Zη0
+                                            d3 k1 d3 k10
+                                             Z
+                                                                                     i
+     J   (n)
+               (η0 , k0 ) =          dη1             6
+                                                         (2π)3 δ(k0 − k1 − k10 ) e−in k0 i (η0 −η1 )
+                                               (2π)
+                              ηini
+                                                    h                             i
+                                   × τa1 (η1 , k10 ) ∂a→1 (η1 , k1 ) + ∂a↑1 (η0 )
+                                                             ..
+                                                              .
+                                     ηZn−1
+                                                          d3 kn d3 kn0
+                                                     Z
+                                                                                                     i
+                                ×            dηn                  6
+                                                                       (2π)3 δ(kn−1 − kn − kn0 ) e−in kn−1 i (ηn−1 −ηn )
+                                                            (2π)
+                                     ηini
+
+                                             × τan (ηn , kn0 ) ∂an (η0 ) (2π)3 δ(kn ) ,                                      (2.19)
+      ∂
+with ∂x                      →
+        i replaced by ik in ∂a (η, k). Note that we have not expanded the differential basis
+into Fourier space yet. The integrations can be simplified by disentangling the coupling of
+
+
+
+
+                                                                         –5–
+                                                                                                   i
+the time arguments in the integrations. We commute the factors e−in k(ηa −ηb ) and obtain:
+                                Zη0
+                                             d3 k1 d3 k10
+                                             Z
+                                                                                           i 0
+      J   (n)
+                (η0 , k0 ) =          dη1                 (2π)3 δ(k0 − k1 − k10 ) e−in k1 i (η0 −η1 )
+                                                (2π)6
+                               ηini
+                                                     h                                                 i
+                                    × τa1 (η1 , k10 ) ∂a→1 (η1 , k1 ) + ∂a↑1 (η0 ) + ik1 a1 (η0 − η1 )
+                                      Zη1
+                                               d3 k2 d3 k20
+                                                   Z
+                                                                                             i 0
+                                ×           dη2             (2π)3 δ(k1 − k2 − k20 ) e−in k2 i (η0 −η2 )
+                                                  (2π)6
+                                  ηini
+                                                       h                                                 i
+                                      × τa2 (η2 , k20 ) ∂a→2 (η2 , k2 ) + ∂a↑2 (η0 ) + ik2 a2 (η0 − η2 )
+                                                              ..
+                                                               .
+                                          ηZn−1
+                                                             d3 kn d3 kn0
+                                                         Z
+                                                                                                        i 0
+                                      ×           dηn                     (2π)3 δ(kn−1 − kn − kn0 ) e−in kn i (η0 −ηn )
+                                                               (2π)6
+                                          ηini
+
+                                                  × τan (ηn , kn0 ) ∂an (η0 ) (2π)3 δ(kn ) ,                              (2.20)
+
+with τa ka = τni ki from the commutation of the exponentials with the derivative operators. If
+we consider a picture of the linear CMB at recombination, with all effects relocated to the last
+scattering surface, neglect time-delay and redshift terms and use a Newtonian approximation
+for the gravitational potentials, we find that the above formula is equivalent to the result
+obtained in Eq. (62) of Ref. [32]. In this simplified case that includes only lensing, our τ can
+be replaced by a derivative of the lensing potential, as we shall see in Eq. (4.14). The action of
+the derivative in Ref. [32] on the previous lenses generating the lens-lens coupling is equivalent
+to ∂a→1 (η1 , k1 ) + ik1 (η0 − η1 ) in our formula, while its action on the source is equivalent to
+our ∂a↑1 (η0 ). Apart from notational differences, the two approaches are identical. Neglecting
+lens-lens couplings, all time integrations are independent and the remapping approach is
+rediscovered (for details see Ref. [32]). The advantage of our approach is that it is more
+general, and can account for time-delay and redshift terms in the same framework. In the
+following section we shall also see that we can add collisions in a natural way.
+
+3   Collisions
+
+The procedure described above can be used to remove propagation effects from the Boltzmann
+equation also in the presence of a collision term C(f ). In this case, we obtain the following
+equation of motion for f˜:
+                                     Df˜ = J −1 C(J f˜) .                                 (3.1)
+That is, the collision term for f˜ is evaluated using the fully lensed distribution function
+J f˜ = f , but has to be “delensed” by multiplication with J −1 . Using the line-of-sight
+integration and splitting the collision term as C(f ) = −κ̇f + χ(f ) , where κ̇ is the Compton
+scattering rate, we obtain:
+                                                  Zη0
+                                                              i    ∂
+                                f˜(η0 ) =               dη e−n ∂xi (η0 −η)−κ J −1 (η) χ(J f˜(η)) .                         (3.2)
+                                                 ηini
+
+
+
+
+                                                                       –6–
+The full distribution function today can be obtained by transformation with J (η0 ):
+
+                                           Zη0
+                                                        i ∂
+                       f (η0 ) = J (η0 )         dη e−n ∂xi (η0 −η)−κ J −1 (η) χ(f (η)) .               (3.3)
+                                        ηini
+
+Applying J −1 (η) to the collision term cancels contributions from propagation effects prior
+to the source which is evaluated at the time η. This is necessary since J (η0 ) is completely
+independent of the source and includes all space-time effects before η0 .
+      It is possible to modify a second-order Boltzmann code such as SONG to obtain J −1
+directly by solving for J in cosmological perturbation theory at early times. This corresponds
+to adding an additional hierarchy to SONG. It should be noted that in most cases J is
+needed one order below the target precision as it multiplies quantities of at least first order
+in the collision term 1 . As most time is spent computing the highest order, the performance
+of numerical codes is almost unaffected by this addition. Another importend numerical
+advantage is that this formalism eliminates the need to evaluate the unbound sum in `
+appearing in the sources along the line-of-sight. After the transformation, the Boltzmann
+equation is source-free in the absence of collisions. Instead of evaluating the sum over ` at
+every numerical time step in the sources it is now sufficient to evaluate this sum only once,
+when the operator J is applied to f . Including collisions at recombination is unproblematic,
+as large multipole moments are still suppressed. For reionisation we refer to [33]; as J
+depends only on space-time and is independant of the distribution function, the appearance
+of unbound sums in ` can always be avoided.
+      The important achievement of this formula is to create a split between perturbative
+collisional effects and non-perturbative line-of-sight effects. While a second-order code can
+compute all the physical effects in the early Universe (J −1 (η) χ(f (η))) in cosmological per-
+turbation theory, the late-time physics contained in J (η0 ) can be computed in a different
+perturbative scheme using different tools. This formula not only clarifies the connection of
+lensing in the remapping approach to lensing at second order in the Boltzmann equations, it
+also specifies how to combine them using different methods suited for different epochs.
+      So far we assumed that the operator J is set to unity at the initial time. However our
+formalism does not depend on this choice and we can choose different initial conditions with
+each choice representing a different set of transformations that remove the propagation terms.
+We could set the initial conditions at the recombination ηrec when the propagation effects
+become relevant. This choice leads to the minimal modification of the collision term as J −1
+is very close to unity around recombination. However, if recombination is not instantaneous
+the choice of time is ambiguous and a clear separation of collisional and propagation effects
+is not achieved. Below we discuss in detail a natural way to solve this problem.
+      To treat the finite width of recombination, we set the initial conditions after the end of
+inflation ηini = 0 and include a collision term in the equations of motion for J suppressing
+it during tight coupling:
+                                  [D, J ] + τ J = −κ̇ (J − 1) .                            (3.4)
+The factor J − 1 ensures that at the background level f and f˜ remain identical, as J (0) = 1.
+With this collision term, J will start deviating from unity only after recombination. Since
+   1
+     For SONG, which computes second-order perturbations, J is only needed at the linear level for lensing and
+time-delay. Only the redshift effects, which act on the background distribution function, have to be included
+at second order.
+
+
+
+
+                                                       –7–
+adding this collision term is not necessary, we are not forced to apply it at reionisation.
+The best strategy is to use only collisions at recombination (κ̇rec ) to modify the equations of
+motion for J . Adding a collision term does not spoil the removal of the non-linear propagation
+terms, but it does complicate the collision term for the distribution function f˜. We find:
+                              Zη0
+                                           i ∂
+                                    dη e−n ∂xi (η0 −η)−κ J −1 (η)       χ(f (η)) + κ̇rec (1 − J −1 )f (η)
+                                                                                                           
+          f (η0 ) = J (η0 )                                                                                     (3.5)
+                          ηini
+                           Zη0
+                                           i ∂
+                 ≈ J (η0 )          dη e−n ∂xi (η0 −η)−κ χ(f (η)) ,                                             (3.6)
+                          ηini
+
+where the second line is expanded to first order in the modified collision term using χ =
+κ̇f (0) + χ(1) and J −1 = 1 − J (1) , with J (0) = 1 at background level. This approximation
+is very accurate around recombination as at early times non-linear corrections are small.
+Note that it cannot be applied to reionisation, as the cancelation depends on J (1) κ̇rec f (0)
+cancelling with J (1) χ(0) , which by construction only works at recombination.
+       At the non-linear level using the full equation Eq. (3.5), the term κ̇rec (1 − J −1 )f (η)
+takes into account the finite width of recombination. For our choice of initial conditions,
+the operator J −1 (η) singles out the effects of space-time on the distribution function around
+recombination, while J (η0 ) describes the non-trivial structure of space-time and its effect
+on the distribution function after recombination 2 . This formalism allows to identify the
+residual terms of the propagation effects to any order in perturbation theory; these terms can
+be implemented in CMB codes like SONG by modifying the collision term. The calculation
+                                                                              i ∂
+of J including the collision term is straightforward: only the factors e−n ∂xi (ηa −ηb ) have to
+                    i ∂
+be replaced by e−n ∂xi (ηa −ηb )−κ(ηa ,ηb ) in Eq. (2.18).
+       In the remapping approach all effects have to be relocated to the surface of last scatter-
+ing, which is inaccurate for the computation of reionisation and of the integrated Sachs-Wolfe
+(ISW) effect. Our method allows a natural inclusion of reionisation as there is no assumption
+on the time when the sources are active. In that case the factor J −1 (η) provides the needed
+corrections to the remapping approach.
+       An alternative approach is to set the initial condition today J (η0 ) = 1 and solve J
+backwards in time. In that way the operator J multiplying the perturbations today is
+trivial. The price to pay is a large modification of the collision term, which does contain the
+whole effect. While we were working on this paper another group has developed a similar
+approach by using the line-of-sight integration along the full geodesics [33]. It turns out that
+for this choice of initial conditions the equations in the two approaches are identical. The
+operator J −1 in this case contains all information of the space-time between the time of
+photon emission and today, and takes care of the modification of the photon path due to
+space-time effects. As this approach is discussed in detail in their paper, we will now focus
+on the first option of fixing J at the time of recombination.
+
+4       Applications
+In this chapter we calculate J to leading order in perturbation theory, assuming that τ
+is small. Note that we assume two approximations here. First we need to expand τ in
+    2
+    We would like to thank the authors of Ref. [33] for discussions on the physical interpretation of this
+transformation operator as a geodesic in inhomogeneous space-time.
+
+
+
+
+                                                        –8–
+perturbation theory, which does not assume that τ integrated along the line-of-sight is small,
+but that it is small at any point in space-time. Then, computing J , we only consider a
+certain order of perturbation theory in τ itself which is related to the smallness along the
+line-of-sight. If the non-linear Newtonian potentials are used to compute τ , the first order in
+τ will already provide very good results and only miss small corrections due to the lens-lens
+coupling. Even first order in cosmological perturbation theory, using the linear potential,
+will be sufficient to account for about 90% of the lensing signal.
+      We now compute the leading order results in τ and in cosmological perturbation theory
+(or Newtonian theory). We use the longitudinal gauge to express the perturbed metric:
+                                                                        
+                       ds2 = a(η)2 − (1 + 2A) dη 2 + (1 + 2D) δij dxi dxj .                (4.1)
+
+By comparing the Boltzmann equation in Eq. (2.1) with the definition of τ in Eq. (2.9), and
+by using the geodesic equation at first order, we find for the sources:
+
+                                          τxi = ni (A − D),                                        (4.2)
+                                                      ∂
+                                          τp = −p i ni A − p Ḋ,                                   (4.3)
+                                                     ∂x
+                                                      ∂
+                                          τni = σ ij     (D − A) ,                                 (4.4)
+                                                     ∂xj
+with the screen projector σ ij = δ ij − ni nj and the potentials computed either linear in
+cosmological perturbation theory or in non-linear Newtonian theory.
+      At leading order, J (1) , the different contributions do not mix, while at higher order
+effects such as lens-lens couplings and the lensing of redshift terms are important. Here,
+we focus on the redshift and lensing terms and do not discuss the time-delay contributions,
+whose calculation follows in a straightforward way.
+
+4.1    Redshift terms
+Using Eq. (2.20), we find the following expression for the redshift terms:
+                                   η0                                              
+                                   Z
+                                            i                                         ∂
+               Jp(1) (η0 , k0 ) =  dη1 e−in k0 i (η0 −η1 )−κ(η0 ,η1 ) τp (η1 , k0 )    .         (4.5)
+                                                                                      ∂p
+                                          0
+
+This integration is identical to computing the ISW and Sachs-Wolfe (SW) effects in linear
+perturbation theory. After partial integration of the sources we obtain the ISW from the
+integration along the line-of-sight and the SW as the boundary term at recombination. We
+define θISW as the CMB temperature perturbation induced by the SW and ISW effect:
+                              Z η                               h               i
+                                          i
+                  θISW (η) =      dη1 e−in k0 i (η−η1 )−κ(η,η1 ) κ̇A + (Ḋ − Ȧ) .  (4.6)
+                                      0
+
+Then
+                                                                  ∂
+                                          Jp (η0 ) = 1 − θISW p      .                             (4.7)
+                                                                  ∂p
+The CMB perturbations including the redshift term can be obtained using Eq. (3.5):
+                            Zη0
+                                        i ∂
+                                  dη e−n ∂xi (η0 −η)−κ Jp−1 (η) χ(f (η)) + κ̇rec (1 − Jp−1 )f (η) . (4.8)
+                                                                                                
+       f (η0 ) = Jp (η0 )
+                         ηini
+
+
+
+
+                                                     –9–
+Usually the presence of J −1 only adds a small correction since it is close to unity due to
+the tight-coupling suppression, but for the redshift term J receives a boundary contribution
+from the SW effect. However, it turns out that the corrections cancel exactly if the collision
+term is expanded to first order in perturbation theory, and we obtain:
+                                               Zη0
+                                                            i ∂
+                          f (η0 ) = Jp (η0 )         dη e−n ∂xi (η0 −η)−κ χ(f (η))
+                                            ηini
+
+                                                                            ∂
+                                  = Jp (η0 ) fcoll (η0 ) = (1 − θISW p         ) fcoll
+                                                                            ∂p
+
+                                      (1)                ∂ (0)
+                                  ≈ fcoll − θISW p          f ,                                          (4.9)
+                                                         ∂p
+with fcoll the distribution function induced by only the collisional effects. To leading order
+in cosmological perturbation theory we rediscover the usual picture of the CMB, including
+collisional effects and the ISW plus SW effects.
+      An alternative method to treat the numerically problematic part of the redshift terms
+which mixes metric and photon perturbations and involves unbound sums over ` was recently
+proposed in Ref. [28] and later generalised to the polarised case in Ref. [21]. The method
+employs the variable transformation ∆   ˜ = ∆ − ∆∆/2 at second order to remove the red-
+shift terms involving the photon perturbations from the Boltzmann equation, with ∆ the
+brightness
+                                              dp p3 f (x, p)
+                                            R
+                                   1+∆ = R                    .                         (4.10)
+                                              dp p3 f (0) (p)
+We use the method presented in this paper to derive a similar transformation. With f = J f˜
+                     ∂
+and Jp = 1 − θISW p ∂p  we find the relation
+
+                                       ∆=∆               ˜,
+                                         ˜ + ∆ISW + ∆ISW ∆                                             (4.11)
+
+with ∆ISW the brightness induced from the SW and ISW effect. In this transformation the
+quadratic terms ∆ISW ∆   ˜ are responsible for removing the mixed redshift terms, while ∆ISW
+removes the pure metric part. Note that here we have only considered the transformation
+J up to first order in τp , which is sufficient for the mixed redshift terms as they multiply ∆
+which is itself at least of first-order in perturbations.
+     To reproduce the results in Ref. [28] one only needs to remove the numerically challeng-
+ing mixed redshift terms and can therefore use the simpler transformation:
+                                            ˜ = ∆ − ∆ISW ∆ .
+                                            ∆                                                          (4.12)
+
+This transformation does not affect the pure metric part of the redshift terms, which is
+included as a source along the line-of-sight. The difference between the transformation in
+Eq. (4.12) and the one in Ref. [28] is in the modified collision term, which receives only
+minor corrections using the new transformation3 . The advantage of the new transformation
+   3
+    The new transformation also requires adding the redshift-redshift correlation to the line-of-sight sources,
+which are numerically well behaved as they involve only the lowest multipoles. It is possible to avoid this by
+                                             ˜ = ∆ − ∆ISW ∆ + ∆ISW ∆ISW .
+adding a further term to the transformation: ∆                        2
+
+
+
+
+                                                      – 10 –
+is improving the numerical stability. The collision term is almost unchanged, while in the
+transformation of Refs. [21, 28] the collision term receives major corrections. This leads
+to a contribution from the surface of last scattering which is later cancelled by reverting
+the transformation at the final time η0 . With the new transformation there is no such
+cancelation leading to improved numerical performance. The method presented in this paper
+is preferable especially when treating polarisation, in which case the fact that the ISW is
+completely unpolarised greatly simplifies the transformation.
+
+4.2   Lensing terms
+For the lensing terms, Eq. (2.20) yields:
+                          η0                                                   
+                           Z                                                                  
+           (1)                      −ini k0 i (η0 −η1 )−κ(η0 ,η1 ) i                 ∂       ∂
+          J (η0 , k0 ) =     dη1 e                               τn (η1 , k0 )        + η0 i
+                                                                                    ∂ni     ∂x
+                           0
+                             η0                                                     
+                              Z
+                                            i                                            ∂
+                         −      dη1 e−in k0 (η0 −η1 )−κ(η0 ,η1 ) η1 τni (η1 , k0 i ) i .                  (4.13)
+                                                                                        ∂x
+                                        0
+
+The more complicated structure is due to the angular derivative operator D̄i used for the
+lensing terms, defined in Eq. (2.9). Under the assumption that all CMB sources are located
+                                                                              ∂          1        ∂
+at the surface of last scattering, we can simplify the equation by enforcing ∂x i = (η
+                                                                                       rec −η0 ) ∂n
+                                                                                                    i:
+
+                        η0                                                             
+                        Z
+                                  1          ∂     i                                       ∂
+  J (1) (η0 , k0 ) = −  dη1           σ ij j e−in k0 i (η0 −η1 )−κ(η0 ,η1 ) (D − A) i            (4.14)
+                               η0 − η1     ∂n                                             ∂n
+                        0
+                       η0                                                               
+                        Z
+                                   1           ∂     i                                       ∂
+                    +  dη1              σ ij j e−in k0 i (η0 −η1 )−κ(η0 ,η1 ) (D − A) i
+                               η0 − ηrec     ∂n                                             ∂n
+                        0
+                          η0                                                                  
+                                        ηrec − η1
+                           Z
+                     ∂                                        i                                  ∂
+                  =   ⊥
+                              dη1                        e−in k0 i (η0 −η1 )−κ(η0 ,η1 ) (D − A) i ,
+                    ∂ni           (η0 − ηrec )(η0 − η1 )                                         ∂n⊥
+                                 0
+
+with ∂n∂i = σ ij ∂n
+                  ∂
+                    j . This approximation is based on assuming that J acts on a function with
+          ⊥
+                            ∂
+~n-dependence of exp(ni ∂x    i (ηrec − η0 )), resulting from a monopole source at recombination.
+ Corrections to this approximation arise from the width of recombination and sources that
+ are not localised at the surface of last scattering, e.g. the ISW effect. However, as these
+ are usually late time effects they almost unaffected by lensing. In addition there is a small
+ correction from the weak angular dependance of the sources at recombination. By going back
+ to real space, the time integration yields the projected lensing potential along the line-of-sight:
+                          Zη0
+                   d3 k                    ηrec − η1
+              Z                                                                                               
+                                                                 i
+      i
+  ψ(n ) =                       dη1                          e−in ki (η0 −η1 )−κ(η0 ,η1 ) D(η1 , k) − A(η1 , k) ,
+                  (2π)3               (η0 − ηrec )(η0 − η1 )
+                          0
+                                                                                                            (4.15)
+
+
+
+
+                                                        – 11 –
+and we obtain:
+                                            Zη0
+                                                         i ∂
+                        f (η0 ) = J (η0 )         dη e−n ∂xi (η0 −η)−κ χ(f (η))
+                                         ηini
+
+                               = J (η0 ) fcoll (η0 )
+                                                                       
+                                                ∂       i       ∂
+                               ≈ fcoll +            ψ(n   )         fcoll   .            (4.16)
+                                            ∂n⊥   i            ∂ni⊥
+
+       As there are no correlations between the redshift and lensing terms at leading order in
+τ , it is straightforward to combine both using Eq. (4.9) and Eq. (4.16):
+                                                                                   
+                    (0)    (1)           ∂    (0)  (1)        ∂ (1) i         ∂ (1)
+        f (η0 ) = f     + fcoll − θISW p    (f + fcoll ) +       ψ (n )          f      .(4.17)
+                                         ∂p                  ∂n⊥
+                                                               i            ∂ni⊥ coll
+
+The second term describes the usual collision sources at linear order, while the third term
+contains the ISW and SW effect and the redshifting of the first-order collision part. The last
+term describes the lensing of the collisional CMB, without the lensing of the ISW and SW,
+which is included at higher order in τ . Computing these higher-order contributions requires
+numerically challenging integrations along the line-of-sight; for details we refer to [33]. Note
+that the transport operator formalism also provides the residual terms of lensing and the
+redshift term at recombination that can be added using a Boltzmann code. Computing the
+time-delay transformation works in exactly the same way, without extra complications due
+to boundary terms or modified derivative operators. This result is leading order in τ and
+leading oder in cosmological perturbation theory. Considering that lensing is a nonlinear
+effect, contributions to first oder in τ and first order in cosmological perturbations are large
+compared to other second order contributions. However, for a full analysis to second order
+in perturbation theory additional contributions from the non-linear collision term and the
+second-order redshift contributions in τ , representing the second-order counterpart of the
+ISW, have to be considered.
+      In this framework, we can compute collisional effects up to second order in cosmological
+perturbation theory using a second-order Boltzmann code such as SONG. The hierarchy for
+J can be added and used to evaluate the residuals due to the finite width of recombination.
+Then, the lensing, time-delay and redshift effects can be added to a given order in τ using
+the non-linear Newtonian potentials. For the first time, we have a consistent framework to
+treat all the effects contained in the Boltzmann equation, which also answers the question
+of how to combine the standard lensing calculations with existing Boltzmann codes at any
+order in perturbation theory.
+      As an application of the transport operator formalism, in Appendix A we compute the
+correlation between the temperature anisotropies caused by lensing and the gravitational
+redshift.
+
+5   Polarisation
+
+In this section we briefly show how to extend our analysis to polarisation. To do so, we need
+to compute the transport of the polarisation tensor fab in space-time, where ab are helicity
+indices [14, 15], instead of just the scalar distribution function f . The transport terms
+
+
+
+
+                                                  – 12 –
+for fab are identical to the unpolarised analysis, only the angular derivatives are replaced
+by spin-raising and spin-lowering derivatives. To absorb the propagation effects we define
+a transformation operator Jab , but it turns out that only the diagonal components of J
+are relevant. The source τ is diagonal in the helicity indices and we can choose initial
+conditions Jab = diag(J )ab . For the diagonal elements we recover the standard angular
+derivatives, effectively reducing the formula to the scalar J discussed in the previous sections.
+The operator J removing the propagation effects depends only on the space-time and is
+independent of the distribution function it is acting on.
+     The angular derivative ∂n∂i has to be replaced with a covariant derivative when acting
+                                       ⊥
+on spin two quantities. Following Ref. [15] we substitute
+
+                                         ∂      1
+                                             → √ i− ðs + i+ ð̄s ,
+                                                                 
+                                           i
+                                                                                                                      (5.1)
+                                        ∂n⊥      2
+
+where ð and ð̄ are the spin-raising and spin-lowering derivatives, s the spin of the quantity
+the derivative is acting on (either 0 or ±2) and ± is the helicity basis on the sphere. Next
+we transform from ab to the usual polarisation basis X = I, E, B. In multipole space we
+obtain:
+
+         fab = J f˜ab
+                              s                        Z
+                  l−l0 −l00            4π(2l + 1)
+    ⇒ fab,lm = i                                                s∗
+                                                           dΩ Ylm  (~n) Yl00 m00 (~n) Jl00 m00 Yls0 m0 (~n) f˜ab,l0 m0 .(5.2)
+                                  (2l + 1)(2l00 + 1)
+                                     0
+
+
+We will now assume that Jl0 m0 does not contain angular derivatives acting on Yls00 m00 (~n).
+Then, the angular integration simply reduces to a Gaunt integral:
+                                      0 00      0 00   
+                           l−l0 −l00   l l l       l l l
+                fab,lm = i                                  Jl00 m00 f˜ab,l0 m0 .    (5.3)
+                                      m0 m00 m    −s 0 −s
+
+Here the appearance of the spin s in the Clebsch-Gordan coefficients generates a mixing of
+E and B polarisation. Following Ref. [15], in the basis X = I, E, B we find:
+                                           0 00      0 00      
+                l−l0 −l00 ∗        0   00   l l l        l l l
+      fX,lm = i          HXY (l − l − l )                           Jl00 m00 f˜Y,l0 m0 , (5.4)
+                                           m0 m00 m     FX 0 FX
+
+where HXY is a simple matrix that mixes the E and B-modes of polarisation.
+      In presence of lensing, the assumption of no angular derivatives does not hold, and one
+has to resort to a full calculation. The angular integration is then more lengthy, as one needs
+to resort to spin-raising and spin-lowering derivatives; refer to Ref. [15] for details. However,
+the structure of the solution is unchanged. In particular, the mechanism of converting E
+into B polarisation stays the same. The complexity is reduced when considering a flat sky
+approach; the relevant calculations in this case are summarised in Ref. [31].
+
+6   Conclusions
+
+In this paper we introduced the transport operator formalism, a new framework to compute
+the non-linear CMB anisotropies. The formalism is fully perturbative, it does not assume
+that all sources are located at the surface of last scattering, it includes redshifting, lensing and
+
+
+
+
+                                                       – 13 –
+time-delay effects and it naturally incorporates polarisation. As such, it generalises previous
+methods like the remapping approach for lensing [30, 31] and those in Refs. [28, 32].
+      The salient point of the transport operator formalism is the possibility to clearly sepa-
+rate the linear physics of the early Universe, mainly collisions from the time of recombination,
+from the non-linear propagation effects of the late Universe, such as lensing, redshifting and
+time-delay effects. This separation is achieved via two perturbative expansions in the Boltz-
+mann equation. The collisional physics is treated in the standard framework of cosmological
+perturbation theory, using for instance a second-order Boltzmann code such as SONG. The
+late-time physics instead is described in terms of a distinct perturbative expansion of the
+transport operator in Eq. (2.3) which, at leading order and when the sources are located
+at the surface of last scattering, naturally leads to the well known remapping approach for
+lensing, as can be seen in Eq. (4.17).
+      In addition, our formalism provides the corrective terms arising from the finite width
+of recombination and for sources that are spread out in time, like reionisation and the inte-
+grated Sachs-Wolfe effect, at any perturbative order. At next-to-leading order, the transport
+operator formalism correctly describes effects like lens-lens coupling and the lensing of the
+ISW and SW effects. We plan to implement and quantify these effects in a future work by
+updating the second-order Boltzmann code SONG.
+
+Acknowledgments
+We thank R. Saito, A. Naruko, T. Hiramatsu and M. Sasaki for useful discussions, especially
+on the connection between J and the line-of-sight integration along a full geodesic [33], which
+helped us clarifying the physical interpretation of the transformation operator J . C. Fidler
+and K. Koyama are supported by the UK Science and Technology Facilities Council grants
+number ST/K00090/1 and ST/L005573/1. GWP acknowledges support by the UK STFC
+grant ST/I000976/1. The research leading to these results has received funding from the
+European Research Council under the European Union’s Seventh Framework Programme
+(FP/2007-2013) / ERC Grant Agreement No. [616170].
+
+A    Redshift-Lensing Correlation
+As an application of the transport operator formalism we compute the contributions of the
+redshift terms to the power spectrum beyond the ISW and SW effects. Assuming a vanishing
+primordial non-Gaussianity, the next leading contribution is the correlation of the redshift
+terms with lensing. For simplicity we will perform all calculations using the flat-sky approach.
+For lensing, Eq. (4.16) can be used in the flat-sky limit to find the standard result [31]:
+
+                                             dl02 0
+                                          Z
+                            θlensing = −          l (l − l0 ) ψ|l−l0 | θl .                (A.1)
+                                             2π
+                                                                    ∂
+In Sec. 4.1, we have found for the redshift terms Jl = −θlISW p ∂p    ; using Eq. (4.9) in the
+flat-sky limit, it follows that the non-linear photon perturbations induced from the redshift
+terms are given by
+                                                  dl02 ISW
+                                                Z
+                                  θredshift = 4       θ 0 θl .                           (A.2)
+                                                  2π |l−l |
+The lensing potential is independent from recombination effects as it only correlates with the
+ISW. Thus, the correction to the angular power spectrum due to redshift-lensing correlation
+
+
+
+
+                                            – 14 –
+                                                          10−6
+                                                                                                                       Unlensed C ℓ
+                                                          10 −8                                                        Lensing correction
+                                                                                                                       Redshift-lensing correlation
+
+                                                          10−10
+          ℓ	  (	  ℓ+1	  )	  /	  (2π)	  	  C	  ℓ
+
+
+
+                                                          10−12
+
+
+                                                          10−14
+
+
+                                                          10−16
+
+
+                                                          10−18
+
+
+                                                          10−20
+
+                                                                  0                  500                 1000                 1500                    2000
+                                                                                                  Multipole	  	  ℓ
+
+Figure 1. From top to bottom, the linear intensity power spectrum compared to its correction due
+to lensing and the redshift-lensing correlation. On all examined scales the redshift-lensing correlation
+is a factor of 104 smaller than the lensing correction.
+
+
+is given by
+                                                                                                       dl02 0
+                                                                                                  Z
+                                                                      Cllensing-redshift   = −4                          ψISW
+                                                                                                            l (l − l0 ) C|l−l      θ
+                                                                                                                              0 | Cl .                       (A.3)
+                                                                                                      (2π)2
+We compute this correction with the linear solver CLASS [35, 36] and find it to be a factor
+104 smaller than the lensing correction to the power spectrum, as can be seen by Figure 1,
+and comparable to other corrections to lensing such as lens-lens coupling [32]. Its effect may
+be larger for the bispectrum, as lensing is already limited to the correlation of the lensing
+potential with the ISW effect. The effect on the bispectrum has been previously computed
+[19, 22] using the ∆∆-transformation introduced in Sec. 4.1, and it was found that the redshift
+terms are indeed relevant for the bispectrum analysis.
+
+References
+ [1] N. Bartolo, S. Matarrese, and A. Riotto, J. Cosmology Astropart. Phys. 1, 003 (2004),
+     astro-ph/0309692.
+ [2] N. Bartolo, S. Matarrese, and A. Riotto, Physical Review Letters 93, 231301 (2004),
+     astro-ph/0407505.
+ [3] N. Bartolo, S. Matarrese, and A. Riotto, J. Cosmology Astropart. Phys. 2, 017 (2012),
+     1109.2043.
+ [4] L. Senatore, S. Tassev, and M. Zaldarriaga, J. Cosmology Astropart. Phys. 9, 38 (2009),
+     0812.3658.
+ [5] R. Khatri and B. D. Wandelt, Phys. Rev. D 79, 023501 (2009), 0810.4370.
+
+
+
+
+                                                                                                  – 15 –
+ [6] D. Nitta, E. Komatsu, N. Bartolo, S. Matarrese, and A. Riotto, J. Cosmology Astropart. Phys.
+     5, 14 (2009), 0903.0894.
+ [7] P. Creminelli and M. Zaldarriaga, Phys. Rev. D 70, 083532 (2004), astro-ph/0405428.
+ [8] L. Boubekeur, P. Creminelli, G. D’Amico, J. Noreña, and F. Vernizzi, J. Cosmology Astropart.
+     Phys. 8, 029 (2009), 0906.0980.
+ [9] A. Lewis, J. Cosmology Astropart. Phys. 6, 023 (2012), 1204.5018.
+[10] P. Creminelli, C. Pitrou, and F. Vernizzi, J. Cosmology Astropart. Phys. 11, 025 (2011),
+     1109.1822.
+[11] N. Bartolo, S. Matarrese, and A. Riotto, Journal of Cosmology and Astro-Particle Physics 6,
+     24 (2006), astro-ph/0604416.
+[12] N. Bartolo, S. Matarrese, and A. Riotto, Journal of Cosmology and Astro-Particle Physics 1,
+     19 (2007), astro-ph/0610110.
+[13] C. Pitrou, Classical and Quantum Gravity 24, 6127 (2007), 0706.4383.
+[14] C. Pitrou, General Relativity and Gravitation 41, 2587 (2009), 0809.3245.
+[15] M. Beneke and C. Fidler, Phys. Rev. D 82, 063509 (2010), 1003.1834.
+[16] A. Naruko, C. Pitrou, K. Koyama, and M. Sasaki, Classical and Quantum Gravity 30, 165008
+     (2013), 1304.6929.
+[17] C. Pitrou, J. Uzan, and F. Bernardeau, J. Cosmology Astropart. Phys. 7, 3 (2010), 1003.0481.
+[18] Z. Huang and F. Vernizzi, Phys. Rev. Lett. 110, 101303 (2013), URL
+     http://link.aps.org/doi/10.1103/PhysRevLett.110.101303.
+[19] G. W. Pettinari, C. Fidler, R. Crittenden, K. Koyama, and D. Wands, J. Cosmology Astropart.
+     Phys. 4, 003 (2013), 1302.0832.
+[20] S.-C. Su, E. A. Lim, and E. P. S. Shellard, ArXiv e-prints (2012), 1212.6968.
+[21] C. Fidler, G. W. Pettinari, M. Beneke, R. Crittenden, K. Koyama, and D. Wands, ArXiv
+     e-prints (2014), 1401.3296.
+[22] G. W. Pettinari, C. Fidler, R. Crittenden, K. Koyama, A. Lewis, and D. Wands, ArXiv e-prints
+     (2014), 1406.2981.
+[23] D. N. Spergel and D. M. Goldberg, Phys. Rev. D 59, 103001 (1999), astro-ph/9811252.
+[24] D. M. Goldberg and D. N. Spergel, Phys. Rev. D 59, 103002 (1999), astro-ph/9811251.
+[25] U. Seljak and M. Zaldarriaga, Phys. Rev. D 60, 043504 (1999), astro-ph/9811123.
+[26] Planck Collaboration, ArXiv e-prints (2013), 1303.5084.
+[27] G. W. Pettinari, ArXiv e-prints (2014), 1405.2280.
+[28] Z. Huang and F. Vernizzi, Phys. Rev. D 89, 021302 (2014).
+[29] U. Seljak and M. Zaldarriaga, Astrophys. J. 469, 437 (1996), astro-ph/9603033.
+[30] W. Hu, Phys. Rev. D 62, 043007 (2000), astro-ph/0001303.
+[31] A. Lewis and A. Challinor, Phys. Rep. 429, 1 (2006), astro-ph/0601594.
+[32] S.-C. Su and E. A. Lim, ArXiv e-prints (2014), 1401.5737.
+[33] R. Saito, A. Naruko, T. Hiramatsu, and M. Sasaki. J. Cosmology Astropart. Phys. 10, 051
+     (2014), 1409.2464.
+[34] W. Hu, ApJ 529, 12 (2000), astro-ph/9907103.
+[35] J. Lesgourgues, ArXiv e-prints (2011), 1104.2932.
+
+
+
+
+                                              – 16 –
+[36] D. Blas, J. Lesgourgues, and T. Tram (2011), 1104.2933.
+
+
+
+
+                                             – 17 –
+

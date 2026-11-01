@@ -1,0 +1,1643 @@
+                                               A Cosmological Signature of the SM Higgs Instability: Gravitational Waves
+
+                                                                               J. R. Espinosa,1, 2, 3 D. Racco,4 and A. Riotto4
+                                                  1
+                                                      Institut de Fı́sica d’Altes Energies (IFAE), The Barcelona Institute of Science and Technology (BIST),
+                                                                                  Campus UAB, 08193 Bellaterra, Barcelona, Spain
+                                                                            2
+                                                                              ICREA, Institució Catalana de Recerca i Estudis Avançats,
+                                                                               Passeig de Lluı́s Companys 23, 08010 Barcelona, Spain
+                                                                                    3
+                                                                                      Instituto de Fı́sica Teórica IFT UAM/CSIC,
+                                                                        Calle Nicolás Cabrera 13. UAM, Cantoblanco. 28049 Madrid, Spain
+                                                                4
+                                                                  Département de Physique Théorique and Centre for Astroparticle Physics (CAP),
+                                                                     Université de Genève, 24 quai E. Ansermet, CH-1211 Geneva, Switzerland
+                                                                                              (Dated: Friday 24th May, 2019)
+                                                        A fundamental property of the Standard Model is that the Higgs potential becomes unstable at
+                                                        large values of the Higgs field. For the current central values of the Higgs and top masses, the
+                                                        instability scale is about 1011 GeV and therefore not accessible by colliders. We show that a possible
+arXiv:1804.07732v3 [hep-ph] 23 May 2019
+
+
+
+
+                                                        signature of the Standard Model Higgs instability is the production of gravitational waves sourced
+                                                        by Higgs fluctuations generated during inflation. We fully characterise the two-point correlator of
+                                                        such gravitational waves by computing its amplitude, the frequency at peak, the spectral index,
+                                                        as well as their three-point correlators for various polarisations. We show that, depending on the
+                                                        Higgs and top masses, either LISA or the Einstein Telescope and Advanced-Ligo, could detect such
+                                                        stochastic background of gravitational waves. In this sense, collider and gravitational wave physics
+                                                        can provide fundamental and complementary informations. Since the mechanism described in this
+                                                        paper might also be responsible for the generation of dark matter under the form of primordial black
+                                                        holes, this latter hypothesis may find its confirmation through the detection of gravitational waves.
+
+
+
+
+                                                                                                     Contents
+
+                                          I. Introduction and description of the scenario                                                                        2
+
+                                          II. Equation of motion and its solution for Gravitational Waves                                                        5
+                                           Equation of motion of GWs                                                                                             5
+                                           The source term for GWs                                                                                               6
+                                           A compact expression for GWs with a numerical integration over time                                                   7
+
+                                          III. The power Spectrum of Gravitational Waves                                                                         8
+                                           Two-point function of GWs                                                                                             9
+                                           The energy density of GWs                                                                                             10
+
+                                          IV. Bispectrum of Gravitational Waves                                                                                  11
+
+                                          V. Numerical results for the Energy Density and Bispectrum of GWs                                                      12
+                                           Energy density of GWs                                                                                                 12
+                                           The spectral tilt of GWs at low and high frequencies                                                                  14
+                                           The three-point correlator of GWs and its consistency relations                                                       15
+
+                                          VI. Conclusions                                                                                                        16
+
+                                          Appendices                                                                                                             18
+
+                                          Appendix A: Dynamics of the Higgs hitting the pole                                                                     18
+
+                                          Appendix B: Four and Six-Point Funtions of the Curvature Perturbation                                                  19
+                                           Four-point function of the curvature perturbation                                                                     19
+                                           Six-point function of the curvature perturbation                                                                      20
+
+                                          Appendix C: The final curvature perturbation in the radiation phase                                                    20
+                                                                                                                          2
+
+ Appendix D: Analytical results for the functions Ic , Is                                                                 23
+
+ References                                                                                                               24
+
+
+                        I. INTRODUCTION AND DESCRIPTION OF THE SCENARIO
+
+The recent detection of gravitational waves sourced by a spiralling binary system made of two ∼ 30M black holes
+[1] has initiated the era of Gravitational Wave (GW) cosmology [2] and opened a new window to investigate the very
+early stages of the evolution of the Universe [3]. In particular, the Laser Interferometer Space Antenna (LISA) project
+[4], as well as the Einstein Telescope (ET) [5], Advanced-Ligo [6], and the Cosmic Explorer [7] at larger frequencies,
+will search for the stochastic gravitational wave background produced from different mechanisms, possibly identifying
+a primordial origin.
+   In this paper we point out that a stochastic background of gravitational waves may be the probe of one of the most
+fundamental properties of the Standard Model (SM) of weak interactions: the SM Higgs instability at high energies.
+Within the SM, the Higgs effective potential becomes deeper than the electroweak vacuum for large values of the Higgs
+background field when the quartic Higgs coupling λ becomes negative [8, 9]. For instance, this happens (by choosing
+the current central values of the Higgs and top masses) for Higgs field values of the order of Λ ≃ 1011 GeV. Despite
+this metastability condition of our present electroweak vacuum, its lifetime against decay both via quantum tunneling
+in flat spacetime or thermal fluctuations in the early Universe is by far longer than the age of the Universe [9, 10].
+   A natural and interesting question to ask is therefore which kind of physical phenomena might reveal, albeit indi-
+rectly, the presence of the SM instability. One option has been described in Ref. [11] and makes use of primordial
+inflation [12], the early stage during which the Universe expands exponentially and light fields may be quantum
+mechanically excited. The dynamics we consider can be conveniently divided in the following stages:
+
+   1. In the first phase the Higgs has an initial value much smaller than the instability scale Λ. However, if it is lighter
+      than the Hubble rate H, the classical value of the Higgs hc field keeps receiving each Hubble time kicks of the
+      order of ±(H/2π) and walks randomly. This dynamics is described by the stochastic equation [13]
+                                                                                    1
+                                       ḧc + 3H ḣc + V 0 (hc ) = 3Hη, , V (hc ) ≃ − λh4c ,                             (1)
+                                                                                    4
+     where η is a Gaussian random noise with
+
+                                                                     H3
+                                                   hη(t)η(t0 )i =         δ(t − t0 ).                                   (2)
+                                                                     4π 2
+     If the Hubble rate is large enough, the Higgs field can climb over the maximum of the potential and roll down
+     to the unstable region [13–16].
+   2. In the second phase the Higgs has been pushed beyond the barrier of its effective potential and finds itself in the
+      unbounded from below region. The motion starts being classically dominated over the quantum jumps at some
+      time t∗ if the classical displacement, (∆h)cl ≃ V 0 /(3H 2 ) in a Hubble time, is larger than the quantum jumps
+      (∆h)q ≃ H/(2π). This happens if the classical value of the Higgs hc satisfies the relation
+
+                                                                     3H 3
+                                                             h3c >
+                                                                 ∼        .                                             (3)
+                                                                     2πλ
+     During this stage the classical equation of motion reads
+
+                                                   ḧc + 3H ḣc + V 0 (hc ) = 0.                                        (4)
+
+     For convenience, we will focus on those patches where classicality takes over during the last stages of inflation,
+     say the last 20 e-folds or so. At the beginning of this phase, the motion of the Higgs is friction dominated,
+                                             2 <   2
+     ḧc <
+         ∼ 3H ḣc . This happens as long as hc ∼ 3H /λ and
+                                                                      h∗
+                                               hc (t) ≃                          1/2
+                                                                                     ,                                  (5)
+                                                                  2
+                                                          [1 − 2λh∗ (t − t∗ )/3H]
+                                                                                                                       3
+
+                                     hc
+
+
+
+
+                                     ≈
+                                          beyond the barrier
+                                    Λ
+
+                                                                                            t
+                                                                         t∗         tend
+                                  −Λ
+                                     ≈
+
+
+
+
+                          FIG. 1: Evolution of the Higgs field background hc during inflation and reheating.
+
+
+
+     where t∗ is the instant at which classicality takes over. When friction is subdominant, hc rapidly increases
+                                                              √
+                                                                2    1
+                                                     hc (t) ≃ √          ,                                        (6)
+                                                                λ p − t)
+                                                                  (t
+     where tp is the time when the Higgs hits the pole (see Appendix A for more details).
+   3. The fast motion of the Higgs along the negative part of the potential may cause the patch of interest to experience
+      an anti-de Sitter geometry which is potentially lethal. However, this situation can be rendered harmless and the
+      patch end up to be our observed Universe if the reheating temperature TRH after inflation is large enough to push
+      the Higgs back to our current vacuum [11, 16, 17]. This happens because, thanks to the thermal interactions
+      with the surrounding plasma, the Higgs potential is corrected to the form [16]
+                                                     1 2 2
+                                            VT ≃      m h , m2T ≃ 0.12 T 2 e−hc /(2πT ) .                            (7)
+                                                     2 T c
+                                                      2   >     2
+     If the reheating temperature is large enough, TRH    ∼ λhe , where he is the value of the Higgs when inflation
+     ends, then the patch is rescued and the Higgs starts oscillating (with a relativistic equation of state) around the
+     current electroweak vacuum where it will settle after a while.
+Fig. 1 summarises the dynamics of the classical value of the Higgs during the various stages. Meanwhile, the pertur-
+bations of the Higgs field are excited and during inflation they satisfy the following equation of motion (in the flat
+gauge)
+                                               k2                       δhk d a3 2
+                                                                                     
+                              δ ḧk + 3Hδ ḣk + 2 δhk + V 00 (hc )δhk = 3 2        ḣc ,                           (8)
+                                               a                       a mP dt H
+where a is the scale factor, mP is the reduced Planck mass, and the last term accounts for the backreaction of the
+metric perturbations.√These perturbations are born inside the Hubble radius with the standard Bunch-Davies vacuum,
+δhk (k  aH) = (1/a 2k)e−ik/aH and, as soon as their physical wavelength becomes larger than the Hubble radius,
+they rapidly grow driven by the rolling down of the Higgs field [11]
+
+                                                                H ḣc (t)
+                                                δhk (k  aH) = √                .                                    (9)
+                                                                 2k 3 ḣc (tk )
+For the wavelengths leaving the Hubble radius the last 20 e-folds or so of inflation, the gauge-invariant comoving
+curvature perturbation ζ(~x) is dominated by the Higgs perturbations and reads
+                                                          ρ̇h              δρh
+                                                    ζ≃        ζh , ζ h ≃ H     ,                                    (10)
+                                                           ρ̇              ρ̇h
+                                                                                                                                              4
+
+(still in the flat gauge and we do not write down the subdominant standard component that is responsible for the cosmic
+microwave background anisotropies on much larger scales). Since the Higgs energy-momentum tensor is separetely
+(covariantly) conserved during inflation, ζh is conserved on super-Hubble scales and freezes in at the value [11]
+
+                                                                                   H2
+                               ζ̇h (k  aH) = 0 and ζh (k  aH) = √                              , k = a(tk )H.                           (11)
+                                                                                2k 3 ḣc (tk )
+
+After inflation ends, there is a fast transient epoch of reheating during which the long wavelength Higgs perturbations
+are subject to energy transfer involving the thermal plasma as their effective mass suddenly jumps to its thermal value
+induced by the interactions with the plasma. After reheating is over the Higgs perturbations promptly decay into
+radiation curvature perturbations which subsequently remain constant on super-Hubble scales as well (see Appendix
+C for a more detailed discussion). Upon Hubble reentry, if sizeable enough, these perturbations source high peaks in
+the matter power spectrum which collapse to form Primordial Black Holes (PBHs). A first cosmological signature of
+the electroweak instability could be therefore that the dark matter (or a fraction thereof) is under the form of PBHs
+seeded by Higgs fluctuations during inflation [11]. In this scenario, no physics beyond the Standard Model should be
+invoked to explain the dark matter in our observed Universe, but anthropic arguments are necessary to explain the
+fine-tuning on the initial conditions.
+   In this paper we propose that a second signature of the SM instability might be a stochastic background of gravita-
+tional waves potentially detectable by the space-based interferometer LISA. Indeed, if there are large Higgs perturba-
+tions generated during the last stages of inflation, responsible or not for the PBHs as dark matter, they inevitably act
+as a (second-order) source of primordial gravitational waves at horizon reentry. The goal of this paper is therefore to
+
+   1. characterize the two-point correlator (power spectrum Ph , its tilt as well as the frequency at the peak) of
+      gravitational waves induced by the first-order Higgs perturbations. Parametrically one expects Ph ∼ Pζ2 at
+      Hubble crossing and therefore one can reach values of Ph as large as 10−4 ; the spectral tilt is also particularly
+      interesting as the GW spectrum usually covers a large range of frequencies. The study of the detectability of
+      the spectral index of a generic GW background with energy density ΩGW (f ) = A(f /f∗ )nT can be found in Ref.
+      [4] as a function of the frequency at the peak. For a signal peaked at f∗ ∼ 0.05 Hz and A ∼ 10−12 one could
+                                           1
+      constrain nT <∼ O(1) and nT > ∼ O(7) ;
+   2. calculate the three-point correlator (bispectrum Bh ) of the gravitational waves induced by the first-order Higgs
+      perturbations. Parametrically one expects Bh ∼ Pζ3 at Hubble crossing. Such a non-Gaussian signal, despite its
+      presence in the primordial bispectrum, is unfortunately not observable today in a detector which collects signal
+      simultaneously from all patches of the sky, as discussed in [18].
+We will see that
+
+   1. the energy density ΩGW of the GWs generated by the Higgs fluctuations is typically of the order of 10−8 at the
+      peak. The latter is reached at frequencies ranging from 10−2 to 10 Hz. This should allow either LISA or ET
+      and Advanced-Ligo to detect the signal. Furthermore, as the frequency at the peak depends sensitively on the
+      Higgs and top mass, this will provide complementary and fundamental information to be crossed with the ones
+      provided by colliders with the possibility of either confirming or ruling out the origin of the GW signal;
+
+   2. the spectral index of the signal will have a characteristic behaviour: blue with nT ≃ 3 for frequencies below the
+      peak, and red with nT ≃ −0.6 for frequencies above the peak frequency;
+   3. the bispectrum, in the case in which the two-point correlator is detectable by LISA, is mainly peaked in the
+      so-called equilateral configurations. Summing up all polarisations we find the characteristic consistency relation
+                                 3/2
+      (k1 k2 k3 )2 Bh ∼ 3 · 104 Ph . This non-Gaussian part of the GW signal is unfortunately unobservable in a GW
+      detector, which unavoidably measures the sum of the signal from many uncorrelated patches of the sky. This
+      sum is Gaussian by means of the Central Limit Theorem, and no bispectrum can be observed for any primordial
+      GW background [18].
+
+
+
+1 For a frequency at the peak of f                    −17 Hz, present CMB data already provide an upper bound on the amount of GWs,
+                                      CMB ∼ 7.7 · 10
+ ΩCMB
+   GW   , generated  during  inflation and  one can  write the GW energy density ΩGW = ΩCMB    GW (f /fCMB )
+                                                                                                             nT , being n the spectral tilt. A
+                                                                                                                         T
+ limit of nT <∼ 0.35 can  be  obtained  for the best LISA  configuration with six links, five million km arm length and a five year mission [4].
+                                                                                                                              5
+
+The paper is organised as follows. In section II we describe the equation of motion for the GWs and its solution; in
+section III we compute the power spectrum of the GWs, while their bispectrum is calculated in section IV. Numerical
+results are found in section V and in section VI we conclude. The paper contains also various Appendices with extra
+useful material.
+
+
+            II. EQUATION OF MOTION AND ITS SOLUTION FOR GRAVITATIONAL WAVES
+
+Our goal is to evaluate the amount of gravitational waves produced during the radiation phase by the SM Higgs
+perturbations which in turn owe their origin to the previous period of inflation. The correct formalism to evaluate
+the contribution to the generation at second-order of tensor modes from first-order scalar perturbations has been first
+discussed in [19–22]. The first two parts of this section follow quite closely the notation of Appendix A of [24]. Our
+convention for the signature of the metric is (− + ++), so that the perturbed metric in the conformal Newtonian
+gauge reads
+                                                                                
+                                                                            1
+                               ds = −a (1 + 2Φ)dη + a (1 − 2Ψ)δij + hij dxi dxj ,
+                                 2      2            2    2
+                                                                                                                   (12)
+                                                                            2
+
+where Φ, Ψ are the Bardeen potentials and the tensor perturbations hij are transverse and traceless: ∂i hij = hii = 0.
+In absence of anisotropy in the stress-energy tensor, we haven Φ = Ψ (including
+                                                                      o         stress gives only a small correction
+                                                                         (+)    (×)
+[22]). Furthermore, one can rewrite hij in terms of the basis           eij , eij      of polarisation tensors as follows
+                                            ˆ
+                                                 d3 k h (+)   (+)       (×)   (×)
+                                                                                    i
+                             hij (η, x) =            3
+                                                       hk (η)eij (k) + hk (η)eij (k) eik·x .                                (13)
+                                                (2π)
+
+The polarisation basis is given by
+
+                                          (+)       1
+                                         eij (k) = √ [ei (k)ej (k) − ēi (k)ēj (k)] ,                                      (14)
+                                                     2
+                                          (×)       1
+                                         eij (k) = √ [ei (k)ēj (k) + ēi (k)ej (k)] ,                                      (15)
+                                                     2
+where ei (k) and ēi (k) are two three-dimensional vectors orthonormal to k, and the normalisation factor guarantees
+      (+) (+)    (×) (×)        (+) (×)
+that eij eij = eij eij = 1, eij eij = 0.
+
+
+                                                Equation of motion of GWs
+
+The equation of motion for the GWs is obtained by extracting the tensor component of the Einstein equations expanded
+up to second order in perturbations
+
+                                            h00ij + 2Hh0ij − ∇2 hij = −4Tij lm Slm ,                                        (16)
+
+where 0 denotes the derivative with respect to conformal time, H = a0 /a is the conformal Hubble parameter, Slm is
+the source term defined below in Eq. (22). The projector Tij lm acting on the source term selects its transverse and
+traceless part. We define it in Fourier space (and use b, when needed, to denote quantities in the conjugate space) as
+                                                    (+)                  (×)
+                                     Tbij lm (k) = eij (k) e(+)lm (k) + eij (k) e(×)lm (k).                                 (17)
+
+Our convention for the Fourier transform is the following:
+                                                     ˆ
+                                                         d3 k b
+                                        Slm (η, x) =          Slm (η, k)eik·x ,                                             (18)
+                                                        (2π)3
+
+so that the equation of motion (16) reads, for each polarisation mode s = (+), (×),
+
+                                         hsk 00 (η) + 2H hsk 0 (η) + k 2 hsk (η) = Sbs (η, k),                              (19)
+                                                                                                                       6
+
+where Sbs (η, k) ≡ −4 es,lm (k)Sblm (η, k). The method of the Green function yields the solution
+                                                         ˆ η
+                                                     1
+                                          hsk (η) =          de              η ) Sbs (e
+                                                              η gk (η, ηe) a(e        η , k),                       (20)
+                                                    a(η)
+
+where the Green function gk (η, ηe) for a radiation-dominated (RD) Universe is
+
+                                                              sin [k(η − ηe)]
+                                               gk (η, ηe) =                   θ(η − ηe),                            (21)
+                                                                     k
+θ being the Heaviside step function.
+
+
+                                                    The source term for GWs
+
+The source term Sbij for GWs appearing in Eq. (16) arises at second order in the scalar perturbation Ψ [19]
+                                                                    0       0         
+                                                           4        Ψ            Ψ
+                         Sij = 4Ψ∂i ∂j Ψ + 2∂i Ψ∂j Ψ −          ∂i     + Ψ ∂j        +Ψ ,                           (22)
+                                                       3(1 + w)     H             H
+
+where w is the equation of state of the fluid permeating the Universe at a given epoch. Since the generation of GWs
+occurs mainly when the relevant modes re-enter the Hubble radius, which for the modes of our interest happens deeply
+into the RD era, we specialise to w = 1/3. We rewrite the source in Fourier space, introducing
+                                                      ˆ
+                                            Ψ(η, k) = d3 x Ψ(η, x) e−ik·x
+                                             b                                                                   (23)
+
+so the right hand side of Eq. (19) becomes (we omit the temporal dependence for brevity)
+                     ˆ
+                        d3 p s,ij
+                                                                                                    
+                                                                      1 b0                 1 b0
+      Sbs (η, k) = 4         e    (k)p  p
+                                       i j  2 Ψ(p)
+                                              b   Ψ(k
+                                                   b  − p) +   Ψ(p)
+                                                               b    +   Ψ  (p)  Ψ(k
+                                                                                 b  − p) +   Ψ  (k − p)    .        (24)
+                       (2π)3                                          H                    H
+
+The expression inside squared brackets is explicitly symmetric under the exchange of p and k − p.
+  The scalar perturbation Ψ(η, k) is directly related to the gauge invariant comoving curvature perturbation by Ψ = 32 ζ
+[12]. We define then the transfer function T (η, k) through the relation
+
+                                                      b k) = 2 T (η, k)ζ(k),
+                                                      Ψ(η,                                                          (25)
+                                                             3
+and its expression is given in the RD era by
+                                                                         "         √              #
+                                                                 9           sin(z/ 3)         √
+                              T (η, k) = T (kη),         T (z) = 2                √    − cos(z/ 3) .                (26)
+                                                                z               z/ 3
+
+We can rewrite the source term (24) as
+                                               ˆ
+                                           4          d3 p s
+                              Sbs (η, k) =                 e (k, p)f (p, |k − p|, η) ζ(p)ζ(k − p),                  (27)
+                                           9         (2π)3
+
+where we have introduced
+                                                                 (
+                                                                     √1 p2 sin2 θ cos 2φ   for s = (+),
+                               s             s,ij                      2
+                              e (k, p) ≡ e          (k)pi pj =                                                      (28)
+                                                                     √1 p2 sin2 θ sin 2φ   for s = (×),
+                                                                       2
+
+where (p, θ, φ) are the coordinates of p in a spherical coordinate system whose (x̂, ŷ, ẑ) axes are aligned with
+(e(k), ē(k), k), and
+                                                                                                             
+                                                                         1                          1
+                 f (k1 , k2 , η) ≡ 4 2T (η, k1 )T (η, k2 ) + T (η, k1 ) + T 0 (η, k1 )  T (η, k2 ) + T 0 (η, k2 ) . (29)
+                                                                         H                          H
+                                                                                                                                 7
+
+                      A compact expression for GWs with a numerical integration over time
+
+  Let us rewrite the solution for the GWs hsk (η) by collecting the results of (20), (21), (27)
+               ˆ η                                                  ˆ
+            1          sin(kη) cos(keη ) − cos(kη) sin(keη)       4    d3 p s
+ hsk (η) =          de
+                     η                                      a(e
+                                                              η)            e (k, p)f (p, |k − p|, ηe)ζ(p)ζ(k − p) =
+          a(η)                           k                        9   (2π)3
+            ˆ                                         η
+                d3 p 1 s
+                                                 ˆ                                                                         
+          4                                                                                             
+        =                  e (k, p)ζ(p)ζ(k − p)         kde
+                                                          η (ke                 η ) − cos(kη) sin(ke
+                                                               η ) sin(kη) cos(ke                     η ) f (p, |k − p|, ηe) , (30)
+          9    (2π)3 k 3 η
+
+where we have expressed the scale factor in terms of conformal time during RD, a(e      η )/a(η) = ηe/η.
+   The tensor modes begin to be generated at the time at which the wavelength 1/k re-enters the comoving Hubble
+radius, given that the source is damped on super-Hubble scales. We provide in Appendix D the analytical results both
+for a generic lower extreme of integration ηin and for two values which are equivalent in practice: ηin = 0 (strictly
+speaking, the exact result) and ηin = k −1 , which is the value that is chosen for the numerical results in the remainder
+of the paper. The transfer function (26) decays as η −2 , so that the generation of tensor modes is completed within
+a time which is a few orders of magnitude larger than k −1 , around η ∼ O(103 )k −1 . Therefore the extrema of the
+integral over ηe in Eq. (30) are ηe = ηin and the current time η  O(103 )k −1 , so that we can approximate it to ηe → ∞.
+   The dimensionless expression contained in square brackets in Eq. (30) can be computed analytically, in order to
+facilitate the calculation of the two- and three-point functions. We denote
+
+                                                        p            |k − p|
+                                                   x=     ,     y=           ,                                                (31)
+                                                        k               k
+and we use the dimensionless time variable τ ≡ ke   η , and we input the Hubble rate H = aH = η −1 during RD. We can
+then rewrite Eq. (30) as
+                               ˆ
+                             4    d3 p 1 s                        h                                        i
+                   hsk (η) =                 e (k, p)ζ(p)ζ(k −  p)  I c (x, y) cos(kη) + I s (x, y) sin(kη)  ,  (32)
+                             9   (2π)3 k 3 η
+
+where we have introduced two functions, Ic and Is , that can be computed analytically (the reader can find the
+analytical result in Appendix D)
+                          ˆ ∞                     n                  h                     ih                     io
+              Ic (x, y) =      dτ τ (− sin τ ) · 4 2T (xτ )T (yτ ) + T (xτ ) + xτ T 0 (xτ ) T (yτ ) + yτ T 0 (yτ ) ,
+                           η
+                          ˆ in
+                             ∞                  n                  h                     ih                     io   (33)
+             Is (x, y) =       dτ τ (cos τ ) · 4 2T (xτ )T (yτ ) + T (xτ ) + xτ T 0 (xτ ) T (yτ ) + yτ T 0 (yτ ) .
+                          ηin
+
+The domain in the (x, y) plane is shown in the left plot of Fig. 2: it consists of the configurations allowed by the
+triangular inequality applied to the triangle formed by the vectors k, p, k − p, and is given by
+
+                                          (x + y ≥ 1) ∧ (x + 1 ≥ y) ∧ (y + 1 ≥ x).                                            (34)
+
+It is useful to introduce two auxiliary variables (d, s) in terms of (x, y), which simplify the expression of Ic , Is for the
+purpose of an analytical integration,
+                             1                      1                                √        √
+                        d = √ |x − y|,         s = √ (x + y),         (d, s) ∈ [0, 1/ 3] × [1/ 3, +∞)                         (35)
+                              3                      3
+This redefinition of domain is illustrated in Fig. 2.
+The result for the analytical calculation of the integrals Ic , Is for each point (d, s) is shown in√Figs. 3 and 4.
+We observe that the numerical value of Ic (d, s), Is (d, s) is nearly independent of √ d = |x − y|/ 3. More interestingly,
+the integrals Ic , Is are spiked for a value of s ∼ 1 corresponding to p + |k − p| ∼ 3k. The reason for this is that the
+integrands of Ic and Is are products of trigonometric functions of τ times a rational√ function of τ , and the oscillating
+behaviour determines cancellations in the final result. Only for p + |k − p| ∼ 3k there appear some terms in the
+integrand with the square √ of a trigonometric function and √thus with a definite sign, and this increases the final result.
+Notice that the factor 3 is simply due to the factor w appearing in the arguments of the transfer function of
+Eq. (26), and not to geometrical reasons.
+                                                                                                                                  8
+
+
+
+                                    3
+
+
+
+
+                                    2
+
+
+
+
+                                    1
+
+
+
+
+                                    0
+                                     0                     1                   2                    3
+
+
+         FIG. 2: Domain for the variables x = p/k, y = |k − p|/k allowed by the triangular inequality, superimposed with the
+         (d, s) coordinates defined in Eq. (35).
+
+
+
+
+               FIG. 3: 3D plots of Ic (left plot) and Is (right plot), defined in Eq. (33), as a function of (d, s) (Eq. (35)).
+
+
+
+                        III. THE POWER SPECTRUM OF GRAVITATIONAL WAVES
+
+In this section we present the generic derivation of the two-point function and the power spectrum of gravitational
+waves. This result has been already derived and exposed in Refs. [19–22]. The goal of the present section is to match
+it with our notation, and to prepare an analogous derivation of the three-point function of GWs in the next section.
+In section V we will use the formulæ obtained here to calculate the power spectrum and the three-point function of
+GWs generated in our scenario.
+                                                                                                                                             9
+
+
+
+
+                                      0
+
+
+                                                                        102
+                                -100
+                                                                        100
+
+                                                                    10-2
+
+                                -200
+                                                                    10-4
+
+                                                                    10-6
+                                                                              100   101        102         103       104
+                                -300
+                                      1                    1                                                     2
+                                          3
+
+
+           FIG. 4: Behaviour
+                       √     of the integrals Ic , Is , defined in Eq. (33), as a function of s (Eq. (35)), for the two extremal values of
+           d = |x − y|/ 3.
+
+
+
+                                                      Two-point function of GWs
+
+We begin by writing the definition of two-point function, with the use of Eq. (32)
+                             2 ˆ 3 ˆ 3
+                              4       d p1       d p2      1                                    D                                    E
+ hhr (η, k1 )hs (η, k2 )i =                                        e r
+                                                                       (k 1 , p1 )e s
+                                                                                      (k2 , p2 ) ζ(p1 )ζ(k 1 − p1 )ζ(p2 )ζ(k2 − p 2 ) ·
+                              9       (2π)3      (2π)3 k13 k23 η 2                                                                      (36)
+                                                                                                                             
+                            · cos(k1 η)Ic (x1 , y1 ) + sin(k1 η)Is (x1 , y1 ) cos(k2 η)Ic (x2 , y2 ) + sin(k2 η)Is (x2 , y2 ) ,
+
+where xi = pi /ki , yi = |ki − pi |/ki . To evaluate the four-point function of the curvature perturbation ζ we proceed as
+usual, noting that at leading order it is a Gaussian variable defined by the dimensionless power spectrum Pζ
+
+                                                                                          2π 2
+                                              hζ(k1 )ζ(k2 )i ≡ (2π)3 δ (3) (k1 + k2 )          Pζ (k1 ),                                 (37)
+                                                                                           k13
+and the four-point function of ζ of the first line of (36) has two possible non-vanishing contractions for k1 , k2 6= 0. The
+two contributions give the same result, given that they correspond to each other up to a shift p2 → (k2 − p2 ), which is
+a symmetry of Eq. (36), see Appendix B for details. We can evaluate then Eq. (36) for any of the two configurations,
+and multiply the final result by 2. After integrating over p2 one gets
+                                                         2 ˆ 3
+                                                         4        d p1 1 r                             2π 2    2π 2
+  hhr (η, k1 )hs (η, k2 )i = (2π)3 δ (3) (k1 + k2 ) · 2               3   6 2
+                                                                              e (k1 , p1 )es (k1 , p1 ) 3                ·
+                                                         9        (2π) k1 η                             p1 |k1 − p1 |3
+               · Pζ (p1 )Pζ (|k1 − p1 |) cos2 (k1 η)Ic (x1 , y1 )2 + sin2 (k1 η)Is (x1 , y1 )2 + sin(2k1 η)Ic (x1 , y1 )Is (x1 , y1 ) . (38)
+                                                                                                                                    
+
+Let us refer to a system of spherical coordinates (p1 , θ, φ) oriented around the axis k1 , and denote x ≡ x1 = p1 /k1 ,
+y ≡ y1 = |k1 − p1 |/k1 . In these variables one has p1 = (k1 x, cos−1 (1 + x2 − y 2 )/2x , φ). We perform the following
+change of integration variables
+                                          ˆ              ¨              ˆ 2π
+                                             3         3             2y
+                                            d p1 −→ k1        dx dy x        dφ,                                   (39)
+                                                            S         x 0
+where S is the infinite strip shown in Fig. 2. The integral over φ can be easily solved analytically, and selects only
+some of the possible couples of polarisations (r, s) to give a non-vanishing result. With the use of Eq. (28) we obtain
+                               ˆ 2π                                                               2
+                                                                         k14 4   (1 + x2 − y 2 )2
+                                                                               
+                                      dφ er (k1 , p1 )es (k1 , p1 ) =       x 1−                     · π δ rs .                          (40)
+                                0                                        2            4x2
+                                                                                                                                   10
+
+By collecting the results of the last three equations we get the final expression for the two-point function of GWs:
+                                                                2          ¨                                     2
+                                                    2π 2                                x2        (1 + x2 − y 2 )2
+                                                                                             
+                                                                4       1
+  hhr (η, k1 )hs (η, k2 )i = (2π)3 δ (3) (k1 + k2 ) 3 δ rs · 2                   dx  dy       1 −                     ·
+                                                     k1         9     k12 η 2 S         8y 2            4x2
+                              · Pζ (k1 x)Pζ (k1 y) cos2 (k1 η)Ic (x, y)2 + sin2 (k1 η)Is (x, y)2 + sin(2k1 η)Ic (x, y)Is (x, y) . (41)
+                                                                                                                              
+
+
+The integrand is explicitly symmetric under exchange of x and y. From Eq. (41) and the definition of the power
+spectrum of GWs
+
+                                                                                               2π 2
+                                   hhr (η, k1 )hs (η, k2 )i ≡ (2π)3 δ (3) (k1 + k2 ) δ rs           Ph (k1 )                     (42)
+                                                                                                k13
+
+we can extract Ph (η, k):
+                         ¨                              2
+                                x2     (1 + x2 − y 2 )2
+                                   
+             4 1
+                                                           Pζ (kx)Pζ (ky) cos2 (kη)Ic2 + sin2 (kη)Is2 + sin(2kη)Ic Is , (43)
+                                                                                                                    
+Ph (η, k) =                dx dy 2 1 −
+            81 k 2 η 2   S      y           4x 2
+
+
+where for brevity we do not write the arguments of the functions Ic (x, y) and Is (x, y), defined in Eq. (33) and plotted
+in Figs. 3 and 4.
+
+
+                                                  The energy density of GWs
+
+In this section we derive the expression for the energy density of GWs, and its fraction ΩGW relative to the critical
+energy density. The energy density of GWs is [25]
+
+                                         m2P                                 m2P D
+                                                                      
+                                                 1 0 2 1            2                     2
+                                                                                             E
+                         ρGW (η, x) =              hij  +    (∇h ij )    ≃          (∇hij )    ,                (44)
+                                       16a2 (η) 2          2               16a2 (η)
+
+where the overlines denote an average over time. This expression for the energy density can be rewritten in terms of
+the power spectrum of GWs as follows
+                                                    ˆ
+                                          ρGW (η) = d ln k ρGW (η, k),                                          (45)
+                                                                                2
+                                                               m2P
+                                                                     
+                                                                          k
+                                              ρGW (η, k) =                           Ph (η, k).                                  (46)
+                                                                8        a(η)
+
+We can then define the density parameter of GWs per logarithmic interval of k,
+                                                                                        2
+                                                   ρGW (η, k)   1                  k
+                                      ΩGW (η, k) =            =                               Ph (η, k).                         (47)
+                                                     ρcr (η)    24                H(η)
+
+The expression for the power spectrum that we have computed in the previous section holds only during the RD era.
+The energy density of GWs decays as radiation, so we can easily estimate the fraction of energy density of GWs in
+terms of the current energy density of radiation Ωr,0 and ΩGW (ηf , k) at a generic time ηf during the RD era, before
+the SM degrees of freedom become non relativistic. Taking ηf at a time when the top quark is non relativistic, and
+assuming that there are no extra relativistic degrees on freedom on top of the SM value g∗,f = 106.75, the radiation
+density at ηf is related to its current value by the conservation of entropy:
+                                                                                  4/3
+                                                    a4f ρr,f
+                                                                      
+                                                               g∗,f       g∗S,0
+                                             cg ≡            =                           ≈ 0.4 .                                 (48)
+                                                    a40 ρr,0   g∗,0       g∗S,f
+
+We can then write the current energy density of GWs by rescaling it from ηf until today by a−4 :
+
+                                                                                     Ωr,0 k 2
+                               ΩGW (η0 , k) = (cg Ωr,0 ) ΩGW (ηf , k) = cg                       Ph (ηf , k).                    (49)
+                                                                                      24 H(ηf )2
+                                                                                                                                         11
+
+We can collect the results of Eqs. (43) and (49), plug H(ηf ) = 1/ηf (valid through RD until ηf ), and perform a
+simplification for the average over time justified by the fact that kη  1
+                                           cos2 (kη)   sin2 (kη)   1 1              sin(2kη)
+                                                     ∼           ∼      ,                    ∼ 0.                                      (50)
+                                              η2          η2       2 η2                η2
+We finally obtain the current energy density of GWs
+                                   ¨                               2
+                                           x2     (1 + x2 − y 2 )2
+                                              
+                           cg Ωr,0
+                                                                      Pζ (kx)Pζ (ky) Ic (x, y)2 + Is (x, y)2 .
+                                                                                                           
+            ΩGW (η0 , k) =            dx dy 2 1 −         2
+                                                                                                                                       (51)
+                            972     S      y           4x
+
+
+                                    IV. BISPECTRUM OF GRAVITATIONAL WAVES
+
+In this section we compute the bispectrum (three-point function) of GWs. Let us start from the solution (32) for
+GWs, and write the three-point function as
+                                         3 ˆ 3 ˆ 3 ˆ 3
+                                          4        d p1         d p2      d p3         1
+    hr (η, k1 )hs (η, k2 )ht (η, k3 ) =                                                        er (k1 , p1 )es (k2 , p2 )et (k3 , p3 )·
+                                          9        (2π)3       (2π)3     (2π)3 k13 k23 k33 η 3
+                D                                                          E                                                      
+               · ζ(p1 )ζ(k1 − p1 )ζ(p2 )ζ(k2 − p2 )ζ(p3 )ζ(k3 − p3 ) cos(k1 η)Ic (x1 , y1 ) + sin(k1 η)Is (x1 , y1 ) ·
+                                                                                                                                     
+                                   · cos(k2 η)Ic (x2 , y2 ) + sin(k2 η)Is (x2 , y2 ) cos(k3 η)Ic (x3 , y3 ) + sin(k3 η)Is (x3 , y3 ) , (52)
+where xi = pi /ki and yi = |ki − pi |/ki . The details of the calculation of the six-point function of the curvature
+perturbation ζ are given in Appendix B. We have eight possible contractions for ki 6= 0 that yield the same contribution
+to the bispectrum. We can evaluate the three-point function for any of these configurations and multiply by eight the
+result. The three-point function (52) becomes then (we understand that p2 = p1 − k1 , p3 = p1 + k3 , and y1 = x2 ,
+y2 = x3 , y3 = x1 ):
+                                                                             3 ˆ
+     r          s            t                   3 (3)                         4                     1
+    h (η, k1 )h (η, k2 )h (η, k3 ) = (2π) δ (k1 + k2 + k3 ) 8                      π 3 d3 p1 3 3 3 3 ·
+                                                                               9                k1 k2 k3 η
+                                                                                                                             
+                                                    Pζ (p1 ) Pζ (p2 ) Pζ (p3 )                 p1 p2                       p1 p2
+          · er (k1 , p1 )es (k2 , p2 )et (k3 , p3 )                             cos(k1 η)I c     ,        + sin(k1 η)I s     ,      ·
+                                                      p31      p32      p33                    k1 k1                       k1 k1
+                                                                                                                         
+                                       p2 p3                          p2 p3                      p3 p1                       p3 p1
+                  · cos(k2 η)Ic           ,        + sin(k2 η)Is        ,         cos(k3 η)Ic       ,       + sin(k3 η)Is      ,      . (53)
+                                       k2 k2                          k2 k2                      k3 k3                       k3 k3
+The polarisation tensors defined in Eq. (28) involve the angles θi , φi (shown in Fig. 5 for i = 1) which identify pi in
+spherical coordinates around the axis ki .
+With reference to Fig. 5, the vectors ki in blue are given and we can choose a reference frame such that
+                                   k1 = (k1x , k1y , 0) ,    k2 = (k2x , k2y , 0) ,    k3 = (−k3 , 0, 0) ;                             (54)
+the quantities `, r, and α in green are a convenient choice of cylindrical coordinates as integration variables,
+                                        ˆ           ˆ +∞      ˆ +∞       ˆ 2π
+                                            3
+                                           d p1 −→        d`        r dr      dα ;                                                     (55)
+                                                                −∞           0          0
+
+the quantities marked in red give the expressions to plug in Eq. (53),
+          p1 = (r cos α, r sin α, `) ,    p2 = (−k1x + r cos α, −k1y + r sin α, `) ,              p3 = (−k3 + r cos α, r sin α, `) ,
+                                                                         2                                                             (56)
+                                                                |pi · ki |                     ` ki
+                                          p2i sin2 θi = p2i −              ,     sin φi =              .
+                                                                   ki2                      |pi × ki |
+Eqs. (53), (28), and (33), with the replacements listed in (54), (55), (56), contain all the ingredients for the numerical
+calculation of the bispectrum of GWs.
+  Out of the eight possible polarisations (r, s, t) of the three-point function, four of them vanish due to parity arguments
+applied to the polarisation tensors, in analogy to what happens for the two-point function, see Eq. (40). Among the
+terms contained in Eq. (53), the only ones which are odd under the parity transformation ` → −` (that is, a parity
+transformation with respect to the plane containing k1 , k2 , k3 ) are the polarisation tensors e× , and all other terms are
+even. This implies that the only four non-vanishing polarisation combinations for the three-point functions are
+                                            (+ + +),        (+ × ×),     (× + ×),       (× × +).                                       (57)
+                                                                                                                                     12
+
+
+                                                                              p2
+
+
+
+                                                                          `
+
+
+
+
+                                                    p1
+
+
+
+
+                                                                                   p3
+                                                                k1
+
+
+
+
+                                                                                          k2
+                                                             φ1
+                                              θ1
+                                                       r
+                                                α
+                                                                     k3
+                  FIG. 5: Geometrical configuration for the contraction (i) of the 6-point function of ζ written in Eq. (B.5).
+
+
+
+         V. NUMERICAL RESULTS FOR THE ENERGY DENSITY AND BISPECTRUM OF GWS
+
+                                                     Energy density of GWs
+
+We devote this section to the results of the numerical integration for the scalar power spectra Pζ (k) obtained for a few
+illustrative cases of the mechanism discussed in [11] and summarised in the Introduction. We rewrite for convenience
+the energy density of GWs of Eq. (51) in terms of the variables (d, s) defined in Eq. (35) as
+                        ˆ √1      ˆ ∞  2                    2      √          !        √         !
+                cg Ωr,0      3           (d − 1/3)(s2 − 1/3)        k 3                k 3
+                                                                                            (s − d) Ic (d, s)2 + Is (d, s)2 ,
+                                                                                                                          
+ΩGW (η0 , k) =                 dd     ds          2    2
+                                                                Pζ       (s + d) Pζ
+                  36     0         √1           s −d                 2                   2
+                                     3
+                                                                                                                     (58)
+where the functions Ic , Is are defined in (33) and are plotted in Figs. 3 and 4.
+   We consider the running of the quartic Higgs coupling λ for some sample points in the parameter space (mtop , mHiggs )
+denoted by the number of standard deviations from the measured central values. We have taken the current LHC
+combination mHiggs = 125.09 ± 0.24 GeV [27] and mtop = 172.47 ± 0.5 GeV [28]. The corresponding running of the
+quartic Higgs coupling λ is shown in Fig. 6.
+Each of these points defines therefore a different Higgs potential, for which we run an evolution of the Higgs field
+completely analogous to what was described in Ref. [11], by keeping a fixed Hubble rate H = 1012 GeV. This
+evolution leads to the creation of PBH during the radiation dominated era, with a peak in the mass function for scales
+of the order of k∗ , the mode that leaves the Hubble radius at the time t∗ when the classical evolution of the Higgs
+field starts, as described in the Introduction. The corresponding Pζ has basically the same shape in all these cases,
+and what changes is the reference scale k∗ for the enhancement of the power spectrum as we show in Fig. 7.2
+The final result for the power spectra of GW is shown in Fig. 8, together with the comparison with the projected
+sensitivity of proposed future experiments. The sensitivity curve for LISA is estimated on the basis of the proposal
+[29]: the proposed design (4y, 2.5 Gm of length, 6 links) is expected to yield a sensitivity in between the ones dubbed
+C1 and C2 in Ref. [30]3 . We also include the projected design sensitivity for Advanced LIGO + Virgo from Ref.
+[31], the estimated sensitivity for the proposed Einstein Telescope (ET) [32], and the estimated reach for the 5-years
+program of MAGIS-100 at FERMILAB [33].
+   The GW power spectra are shown for different combinations of the values of the Higgs and top masses where the
+            (±nσ)          (±nσ)
+symbols mHiggs and mtop           indicate their values ±nσ away from their central values. A GW power spectrum for
+values of the Higgs boson mass mHiggs = 125.09 GeV (the current central value) and mtop = 171.47 GeV, is well
+
+
+
+2 If the same mechanism is supposed to give rise to PBHs, then these power spectra yield a final abundance Ω
+                                                                                                               PBH /ΩCDM ranging between
+  10−3 and 10−1 when no accretion is included [11].
+3 We thank G. Nardini for clarifying discussions about this point.
+                                                                                                                                  13
+
+
+
+                         0.04
+
+                         0.03
+
+                         0.02
+
+                         0.01
+
+                            0
+
+                       -0.01
+
+                            106           108         1010         1012        1014          1016        1018
+
+
+         FIG. 6: Running of the quartic Higgs coupling λ for the following Higgs and top masses: mHiggs = 125.09 ± 0.24 GeV
+         and mtop = 172.47 ± 0.5 GeV.
+
+
+
+                         0.04
+
+
+
+                         0.03
+
+
+
+                         0.02
+
+
+
+                         0.01
+
+
+
+                            0
+                            105     106      107     108     109     1010    1011     1012    1013    1014
+
+
+         FIG. 7: The power spectrum of the comoving curvature perturbation during the radiation phase obtained in Ref. [11] for
+         the following Higgs and top masses: mHiggs = 125.09 ± 0.24 GeV and mtop = 172.47 ± 0.5 GeV.
+
+
+
+within the reach of LISA. To relate the amount of GWs and the PBH abundance at formation following the proposal
+in Ref. [11], one can use the relation MPBH ≃ 50M (10−9 Hz/f )2 . In Fig. 8, we have used that relation to translate
+the frequencies of the GW signal in terms of the peak mass of the PBH distribution.
+  One fundamental information to be drawn from Fig. 8 is that the frequency at the peak depends in a sensitive
+way on the Higgs and top masses, ranging from 10−2 to about 10 Hz, see Table I. Therefore, according to the Higgs
+and top masses, the signal falls either within the LISA or the ET and Advanced-Ligo sensitivity curves. This implies
+that a detected signal can be cross-checked with the information obtained through colliders, thus either confirming or
+ruling out its Standard Model origin.
+  We draw the attention of the reader that our results for the GW power spectra in Fig. 8 are sensitive to the value
+                                                                                                                                             14
+
+
+
+                                  10-9            10-12                   10-15                       10-18                   10-21
+                           10-6
+                                                                                             )
+                           10-7                                                          y
+
+
+
+
+                                                                                                                                 O
+                                                                                      (5              ET
+
+
+
+
+                                                                                                                              RG
+                                                                                  0
+                                                                               10
+                                                                             S-
+
+
+
+
+                                                                                                                           VI
+                           10-8                                          I
+
+
+
+
+                                                                                                                         O+
+                                                                       AG
+                                                                      M
+
+
+
+
+                                                                                                                         IG
+                           10-9
+
+
+
+
+                                                                                                                      aL
+                          10-10
+
+                          10-11                 LISA
+
+                          10-12
+
+                          10-13
+
+                          10-14
+
+                          10-15
+
+                          10-16 -4
+                             10          10-3          10-2           10-1                   100           101          102           103
+
+
+          FIG. 8: Power spectra of GWs for the scalar power spectra generated by the mechanism discussed in Ref. [11], compared
+          with the estimated sensitivities for LISA, the Einstein Telescope, MAGIS-100, and the design sensitivity of Advanced
+          LIGO + Virgo. The Higgs and top mass values are mHiggs = 125.09 ± 0.24 GeV and mtop = 172.47 ± 0.5 GeV.
+
+
+
+of the Higgs field at the beginning of its classical dynamics. A per mill change in such a value can lead to variations
+of the power spectrum of the curvature perturbation by (2 − 4) orders of magnitude. However, from Fig. 8 it is clear
+that we can still afford a change in Pζ of three orders of magnitude.
+
+
+                                  The spectral tilt of GWs at low and high frequencies
+
+As we have mentioned in the introduction, the spectral tilt of the GW spectrum is a very interesting observable as
+GWs cover a large range of frequencies. For instance, writing the GW energy density as ΩGW = ΩCMB        GW (f /fCMB )
+                                                                                                                        nT
+                                                                                                                           ,
+                                                  −17
+being nT the spectral tilt and fCMB ∼ 7.7 · 10         Hz the CMB frequency, a limit of nT <   ∼  0.35 can in principle  be
+obtained for the best LISA configuration with six links, five million km arm length and a five year mission [4].
+  If the scalar power spectrum Pζ (k) is vanishing or negligible for k smaller than some scale k∗ , and approximately
+constant for k > k∗ as in our case, then at small k we have ΩGW ∼ k 3 . Indeed, in this case Pζ (kx) in Eq. (58) for
+k  k∗ selects s & 1/k in the integral over s, so that the tail at high s of Ic,s (d, s) is peaked up and it goes as 1/s2
+(see Fig. 4). The resulting overall integral is therefore of order
+                                                       ˆ
+                                                             ds
+                                                              4
+                                                                ∼ k3 .                                                (59)
+                                                        1/k s
+                                                                                    √
+                                                             √ (58) is peaked at s ∼ 3 due to the spike in Ic,s (d, s) (see
+As for the spectral tilt at k  k∗ , the integral over s in Eq.
+Fig. 4) and the dependence on k comes from Pζ (kx)Pζ (k( 3 − x)) which has a spectral tilt equal roughly to twice the
+spectral index of Pζ . In our case, Pζ (k) ∼ k −0.35 and ΩGW (k) turns out to go as ∼ k −0.6 . For a narrow scalar power
+spectrum Pζ (k), we would expect by similar arguments a spectral index ∼ +2 at small k and a quite sharp cutoff at
+high k.
+  The final parametrisation of the GW spectrum induced by the Higgs fluctuations is therefore
+                                                               nT                              
+                                                 −8        f                                         3           for f < f∗ ,
+                            ΩGW (f ) ≃ 3 · 10                         with nT =                                               .             (60)
+                                                           f∗                                        −0.6        for f > f∗ .
+
+
+The values of f∗ for the cases we consider are listed in Table I. The parametrisation of Eq. (60) is useful to deduce
+its detectability by LISA. The investigation of a generic GW background whose energy density is parametrised as
+                                                                                                                       15
+
+                                                          (xσ)     (yσ)
+                                                       mtop      mHiggs f∗ (Hz)
+                                                        (0σ)     (−2σ) 40.0
+                                                        (0σ)      (0σ)   21.8
+                                                        (0σ)     (+1σ) 13.0
+                                                        (0σ)     (+2σ) 7.74
+                                                       (−1σ)      (0σ)   2.02
+                                                       (−1σ)     (+1σ) 0.80
+                                                       (−2σ)      (0σ) 0.015
+                                                       (−2σ)     (+1σ) 0.0038
+
+                          TABLE I: Values of f∗ defined in Eq. (60) for each of the cases considered in Fig. 8.
+
+
+
+ΩGW (f ) = A(f /f∗ )nT can be found in Ref. [4] where it was imposed that the signal-to-noise ratio is larger than 10,
+see Fig. 2 of Ref. [4]. It seems that for the case of Higgs mass mHiggs = 125.09 GeV and mtop = 171.47 GeV not only
+the amplitude of the gravitational waves from Higgs perturbations, but also its spectral index can be measured with
+accuracy, opening the possibility of a full identification of the underlying mechanism.
+  Were GWs found, the value of the frequency f∗ would allow to identify the approximate position of the instability
+scale ΛI of the Higgs potential, defined by V (ΛI ) = 0. The instability scale ΛI can be identified by the relation
+                                                                         −0.65
+                                                                     f∗
+                                                ΛI ≃ 3 · 1011                        GeV.                            (61)
+                                                                     Hz
+
+We stress that this relation is robust in the sense that the frequency changes very little even when the overall amplitude
+of the GW signal decreases due to a variation of the initial condition of the classical Higgs field. It is remarkable that
+a measurement of the frequency of the GW signal can be directly related to such a high energy scale.
+
+
+                         The three-point correlator of GWs and its consistency relations
+
+In this subsection we present our findings for the three-point correlator of the GWs. As mentioned in the introduction,
+the community has already started discussing the detectability of such non-Gaussian signal at interferometers [34].
+The ultimate reason for measuring the GW bispectrum is to exploit the correspondence between the three-point and
+the two-point correlators in order to discriminate the different mechanisms which give rise to a GW signal hopefully
+measured by LISA. Unfortunately, such a non-Gaussian signal seems not an observable quantity with a GW detector,
+which unavoidably detects the sum of the GW signals from all patches of the sky. The sum of all these signals,
+independently from their primordial correlation, results as a Gaussian signal by virtue of the Central Limit Theorem
+(see [18] for a detailed discussion).
+  We define the bispectrum Bhrst (k1 , k2 , k3 ) (the temporal dependence on η is understood) as
+
+                         hr (η, k1 )hs (η, k2 )ht (η, k3 ) ≡ (2π)3 δ (3) (k1 + k2 + k3 ) Bhrst (k1 , k2 , k3 ).      (62)
+
+We also define a dimensionless normalised shape Shrst (k1 , k2 , k3 ) in order to cancel the time scaling of GWs as 1/η
+[see Eq. (32)]:
+
+                                                                             Bhrst (k1 , k2 , k3 )
+                                    Shrst (k1 , k2 , k3 ) = k12 k22 k32 p                              ,             (63)
+                                                                            Ph (k1 )Ph (k2 )Ph (k3 )
+
+where Ph (k) is the dimensionless power spectrum defined in Eq. (42). As for the oscillatory behaviour of the two-
+and three-point functions, we consider their envelope in time. This simplification is not physically adequate when
+considering the three-point function measured by a GW detector, given that the overall phase of would depend on
+the direction of propagation of the incoming wave and is crucial when assessing the non-Gaussianity of the signal. In
+the present discussion, it is motivated by our interest in the amplitude of the primordial bispectrum which could be
+measurable in principle on a constant time hypersurface. We replace then the oscillating function in squared brackets
+in the solution (32) by its envelope
+                                                                     p
+                              Ic (x, y) cos(kη) + Is (x, y) sin(kη) → Ic (x, y)2 + Is (x, y)2 ,                  (64)
+
+both for Bh and Ph in Eq. (63).
+                                                                                                                            16
+
+   We show the numerical results for the bispectrum by fixing the value of k3 and by ordering the momenta as
+k1 ≤ k2 ≤ k3 . Figs. 9 and 10 show contours of Sh (k1 , k2 , k3 ) in the plane (k1 /k3 , k2 /k3 ) for two values of k3 close to
+                                                                      (−2σ)   (0σ)
+the maximum of Pζ (k) (shown in Fig. 7). We choose the case (mtop , mhiggs ), as it falls into the window detectable
+by LISA, but we notice that the result is identical for the other cases, given that the shape of the power spectrum is
+identical, up to a rescaling of the momenta (k1 , k2 , k3 ). We also notice that the normalised shape defined in Eq. (63)
+is invariant under rescaling of the scalar power spectrum Pζ (k). In Fig. 9, together with the separate plots for each
+polarisation, we also show their sum in the lower two plots, both with contours and with a three-dimensional plot.
+From these numerical results we observe several features. First of all, we remind the reader that there are traditionally
+several configurations one can analyse: the local one where the signal is peaked for squeezed configurations k1 
+k2 ≃ k3 ; the equilateral configuration peaks for equilateral configurations k1 ≃ k2 ≃ k3 for which the strongest
+correlations between fluctuation modes happen when they cross the horizon approximately at the same time; the folded
+configuration for which the signal is boosted for k1 + k2 ≃ k3 ; and finally the orthogonal configuration (k1 ≃ k2 ) which
+creates a signal with a positive peak at the equilateral configuration and a negative peak at the folded configuration.
+   The signal is peaked in the equilateral configuration. This does not come as a surprise as the GWs are generated at
+Hubble crossing and the source depends on spatial gradients of the comoving curvature perturbations and this tends
+to enhance the signal when the scales involved are not too different. As a rule of thumb we can propose the following
+consistency relation for the largest signals
+
+                                     Sh+++ = O(−103 ) for equilateral configurations,
+                                                                                                                          (65)
+                                     Sh+×× = O(−104 ) for equilateral configurations.
+
+As for the signal summed for all the polarizations, the results are presented in the lower plot of Fig. 9. From it we
+can estimate
+                                  X
+                                        Sh = O(−3 · 104 ) for equilateral configurations.                                 (66)
+                                  pol
+
+
+
+
+                                                    VI. CONCLUSIONS
+
+In this paper we have characterized the GW signal possibly originated by physics of the Standard Model and its
+inherent instability scale appearing in the Higgs scalar sector. In this sense, GW physics allows a test, albeit indirect,
+of the behaviour of the Standard Model at large field values. The source of the GWs is generated by the Higgs
+perturbations created during a primordial epoch of inflation and amplified during the phase in which the Higgs probes
+the unstable part of the potential.
+   The energy density ΩGW can be as large as 10−8 and therefore measurable either by LISA or by the ET and
+Advanced-Ligo, the amplitude being sensitive to the initial conditions of the Higgs classical dynamics. Which exper-
+iment turns out to be relevant is dictated by the frequency at the peak of the signal, which in turn depends on the
+Higgs and top masses. This is indeed a bonus. The more knowledge from collider physics is collected on these masses,
+the more one could confirm or disprove the hypothesis that these GWs come from Standard Model physics.
+   We have also characterized the signal in terms of its spectral index as well as three-point correlator. This non-
+Gaussian feature of the signal would not be observable unfortunately in a GW detector, which could measure only the
+sum of signals from many patches in the sky, whose phases would have been further decorrelated by the propagation
+in the inhomogeneous background. Therefore a detection of both a two- and three-point function of a signal would
+indicate its non-primordial origin.
+   We close with some comments. The mechanism described in this paper makes use of the fact that we identify
+our observed Universe as one of those regions which have been thermally saved during the reheating stage following
+inflation after the Higgs has probed the unstable part of its potential during inflation. The choice of the parameters
+might therefore seem fine-tuned. However, anthropic arguments come to the rescue as the very same dynamics might
+create the dark matter of the Universe under the form of PBHs [11]. Put in other words, if the dark matter has to be
+ascribed to the Standard Model, then one should also detect the corresponding GW signal.
+
+                                                        Note added
+In this paper we have calculated the amount of gravitational waves induced by the Higgs perturbations generated thanks
+to the Higgs vacuum instability. This result is independent from the possibility that the same Higgs perturbations
+                                                                                                                                    17
+
+
+
+
+                                                                                                 (−2σ)    (0σ)
+         FIG. 9: Normalised shapes of GWs [defined in Eq. (63)] for the spectrum in the case (mtop , mhiggs ). Here k3 is fixed
+         to be 2k∗ , corresponding to 0.04 Hz. The upper four plots show the four non-vanishing polarisations listed in Eq. (57).
+         The two plots at the bottom show the sum over all the polarisations.
+
+
+
+are responsible for (a fraction of) the dark matter in the universe. Even assuming that the latter comes from physics
+beyond the Standard Model, the gravitational waves can be a cosmological signature of the Higgs vacuum instability.
+More comments on the PBH issue and fine-tuning can be found in Ref. [35].
+
+                                                    Acknowledgements
+We thank Nicola Bartolo and Germano Nardini for comments and for many useful discussions on LISA. We thank
+                                                                                                                         18
+
+
+
+
+                                   FIG. 10: Same as Fig. 9, for k3 = k∗ , corresponding to 0.02 Hz.
+
+
+
+also Kazunori Kohri and Takahiro Terada for useful discussions about the comparison of their results, and Subodh
+Patil for useful correspondence. A.R. and D.R. are supported by the Swiss National Science Foundation (SNSF),
+project Investigating the Nature of Dark Matter, project number: 200020-159223. The work of J.R.E. has been partly
+supported by the ERC grant 669668 – NEO-NAT – ERC-AdG-2014, the Spanish Ministry MINECO under grants
+2016-78022-P and FPA2014-55613-P, the Severo Ochoa excellence program of MINECO (grants SEV-2016-0588 and
+SEV-2016-0597) and by the Generalitat de Catalunya grant 2014-SGR-1450.
+
+
+                                Appendix A: Dynamics of the Higgs hitting the pole
+
+To understand Eq. (6) one solves the equation
+
+                                                       ḧc − λh3c = 0,                                                 (A.1)
+
+Taking the initial conditions hc (0) = h0 and ḣc (0) = ḣ0 , and using the fact that there is an integral of motion
+
+                                            1 2 λ 4          1      λ
+                                              ḣc − hc = −E = ḣ20 − h40 ,                                             (A.2)
+                                            2      4         2      4
+one finds the solution
+                                                   √                                  
+                                  hc (t) = h0 α0 cn i λh0 α0 t + cn−1 (1/α0 , 1/2), 1/2 ,                              (A.3)
+                                                                                                                                                 19
+
+where cn(z, k) is one of the Jacobian elliptic functions and
+                                                                                !1/4
+                                                                         2ḣ2
+                                                               α0 ≡   1 − 04           .                                                      (A.4)
+                                                                         λh0
+                                                                 √
+The function cn(ix, 1/2) has poles at x = K(1/2) with residue −i 2, where
+                                                   ˆ π/2
+                                                               dθ
+                                           K(k) =         p              .                                                                    (A.5)
+                                                    0       1 − k sin2 θ
+Around the pole the classical value of the Higgs can therefore be approximated by Eq. (6) with
+                                                        1
+                                                               K(1/2) + i cn−1 (1/α0 , 1/2) .
+                                                                                          
+                                             tp = √                                                                                           (A.6)
+                                                       λh0 α0
+
+
+                        Appendix B: Four and Six-Point Funtions of the Curvature Perturbation
+
+                                        Four-point function of the curvature perturbation
+
+The four-point function of the curvature perturbation ζ in the first line of (36) has two possible non-vanishing con-
+tractions for k1 , k2 6= 0
+                           D                                   E
+                    (i)      ζ(p1 )ζ(k1 − p1 )ζ(p2 )ζ(k2 − p2 )
+                              D                                     E                                                                         (B.1)
+                    (ii)          ζ(p1 )ζ(k1 − p1 )ζ(p2 )ζ(k2 − p2 )           (obtained from (i) by p2 → (k2 − p2 ) )
+
+The two contractions (i), (ii) correspond to the configuration of momenta shown in Fig. 11. The sum of the contractions
+
+                                                        (i)                                (ii)
+
+                                                                                            k1
+                                                               p2                                 −
+                                               p2
+
+
+
+
+                                                      k1                                              p1
+                                             p1
+
+
+
+
+                                                                          p1
+
+
+
+
+                                                           −
+                                          k2 −
+
+
+
+
+                                                               p1
+                                                        k1                             k1
+                                                        k2                             k
+                                                                                    k2 2
+                                                                                      −
+                                                                                        p2
+                                                                                                           p2
+
+
+
+
+              FIG. 11: Geometrical configurations for the non-vanishing contractions of the two-point function listed in Eq. (B.1).
+
+
+(i) and (ii) gives
+   D                                    E
+     ζ(p1 )ζ(k1 − p1 )ζ(p2 )ζ(k2 − p2 ) =
+                                           h                                        i 2π 2   2π 2
+                   = (2π)6 δ (3) (k1 + k2 ) δ (3) (k2 + p1 − p2 ) + δ (3) (p1 + p2 ) 3                Pζ (p1 )Pζ (|k1 − p1 |). (B.2)
+                                                                                       p1 |k1 − p1 |3
+The two contributions give the same result, given that they correspond to each other up to a shift p2 → (k2 − p2 ),
+which is a symmetry of Eq. (36).
+
+  To check the symmetry of the whole integral under the exchange of p, k − p, it is important to observe that, for a generic function f ,
+        ˆ                                     ˆ                                                      ˆ
+          d3 p es,ij (k)pi pj f (k − p)f (p) = d3 pe es,ij (k)(ki − pei )(kj − pej )f (e        e ) = d3 pe es,ij (k)e
+                                                                                       p)f (k − p                              p)f (k − p
+                                                                                                                     pi pej f (e        e ), (B.3)
+
+  since es,ij (k) is transverse to k.
+                                                                                                                                    20
+
+We can evaluate then Eq. (36) for any of the two configurations, and multiply the final result by 2, to get Eq. (38)
+after integration over p2 with a Dirac delta so that p2 = p1 − k1 , and k2 = −k1 .
+
+
+                                        Six-point function of the curvature perturbation
+
+To calculate the six-point function of ζ that appears in (52) we have eight possible contractions for ki 6= 0, listed
+in Eq. (B.4). This total number of eight can be understood as the product of four choices for the contraction of
+ζ(p1 ) times the number of contractions for the remaining four ζ’s, that is two. All these contractions yield the same
+contribution to the bispectrum, thanks to the invariance of Eq. (52) under the exchange of the subscripts 1 and 2 and
+under pi → ki − pi , as shown in Eq. (B.3) and (33).
+           D                                                     E
+      (i)    ζ(p1 )ζ(k1 − p1 )ζ(p2 )ζ(k2 − p2 )ζ(p3 )ζ(k3 − p3 )                                                  (B.4)
+              D                                                          E
+      (ii)        ζ(p1 )ζ(k1 − p1 )ζ(p2 )ζ(k2 − p2 )ζ(p3 )ζ(k3 − p3 )                    (obtained from (i) by p1 → (k1 − p1 ) )
+              D                                                          E
+      (iii)       ζ(p1 )ζ(k1 − p1 )ζ(p2 )ζ(k2 − p2 )ζ(p3 )ζ(k3 − p3 )                    (obtained from (i) by p3 → (k3 − p3 ) )
+              D                                                          E
+      (iv)        ζ(p1 )ζ(k1 − p1 )ζ(p2 )ζ(k2 − p2 )ζ(p3 )ζ(k3 − p3 )                    (obtained from (i) by p2 → (k2 − p2 ) )
+              D                                                          E
+       (v)        ζ(p1 )ζ(k1 − p1 )ζ(p2 )ζ(k2 − p2 )ζ(p3 )ζ(k3 − p3 )                               (obtained from (i) by 1 ↔ 2 )
+              D                                                          E
+      (vi)        ζ(p1 )ζ(k1 − p1 )ζ(p2 )ζ(k2 − p2 )ζ(p3 )ζ(k3 − p3 )        (obtained from (i) by p1 → (k1 − p1 ) and 1 ↔ 2 )
+              D                                                          E
+   (vii)          ζ(p1 )ζ(k1 − p1 )ζ(p2 )ζ(k2 − p2 )ζ(p3 )ζ(k3 − p3 )        (obtained from (i) by p3 → (k3 − p3 ) and 1 ↔ 2 )
+              D                                                          E
+  (viii)          ζ(p1 )ζ(k1 − p1 )ζ(p2 )ζ(k2 − p2 )ζ(p3 )ζ(k3 − p3 )        (obtained from (i) by p2 → (k2 − p2 ) and 1 ↔ 2 )
+
+
+In Fig. 12 we show the resulting geometrical configurations for the six momenta pi , (ki − pi ), projected on the plane
+of the triangle formed by the ki . Notice indeed that all the contractions result in a common factor δ (3) (k1 + k2 + k3 ).
+The labels of the vectors are printed only for the contraction (i) to facilitate the reading.
+We can evaluate the three-point function for any of these configurations and multiply by eight the result. We choose
+the contraction (i), which is equal to
+  D                                                      E
+      ζ(p1 )ζ(k1 − p1 )ζ(p2 )ζ(k2 − p2 )ζ(p3 )ζ(k3 − p3 ) =
+
+                                                             3 Pζ (p1 ) Pζ (p2 ) Pζ (p3 ) (3)
+                          (2π)9 δ (3) (k1 + k2 + k3 ) 2π 2                                δ (p1 + k3 − p3 )δ (3) (k1 − p1 + p2 ). (B.5)
+                                                                  p31      p32      p33
+
+We then proceed to the integration of the three-point function over the conjugate momenta. The Dirac deltas in
+Eq. (B.5) fix the geometrical configuration of the six momenta ki , pi as shown in Fig. 5. We can integrate over d3 p2
+and d3 p3 in Eq. (52) with the last two Dirac deltas in (B.5). The result is (53) and the remaining integral in d3 p1 has
+to be evaluated numerically.
+
+
+                            Appendix C: The final curvature perturbation in the radiation phase
+
+In this Appendix we follow the evolution of the perturbations during the reheating phase, which we consider for
+simplicity to be instantaneous (happening for instance in hybrid models in which a heavy waterfall field releases its
+vacuum energy providing a fast transition from inflation to radiation), and the subsequent radiation phase. To model
+the sudden transition from inflation to radiation one can imagine that the equations of motion of the Higgs and
+its perturbations possess a time-dependent term taking care of the fast appearance of the plasma correction to the
+potential under the form of the m2T h2 term. By continuity, hc (te ) = hc (tRH ), ḣc (te ) = ḣc (tRH ), δh(te ) = δh(tRH ),
+                                                                                                                                                    21
+                k1 −      (i)                                              (ii)                              (iii)                         (iv)
+                          p2
+
+
+                                  k2
+      k1
+
+
+                     p1
+
+
+
+
+                                 k2
+                                      −
+           p1                              p2
+                    p3                p3
+                −
+           k3
+                          k3
+
+
+
+                           (v)                                      (vi)                             (vii)                        (viii)
+
+
+
+
+                FIG. 12: Geometrical configurations for the eight non-vanishing contractions of the three-point function listed in
+                Eq. (B.4).
+
+
+
+and δ ḣ(te ) = δ ḣ(tRH ), where te is the time at the end of inflation and tRH is the time at the beginning of reheating.
+Assuming a fast reheating essentially amounts to saying that te ≃ tRH . Across this time boundary, energy is also
+conserved. At the end of inflation the energy density is
+
+                                                                                   ρe = ρinf + ρh,e ,                                             (C.1)
+
+with ρinf = 3H 2 m2P and ρh,e = ḣ2c,e /2 + V0 (hc,e ), with hc,e ≡ hc (te ). During the instantaneous reheating, ρinf is used
+up in reheating the plasma (populated through the inflaton decays). The total energy density at tRH is
+
+                                                                                  ρRH = ρpl + ρh,RH .                                             (C.2)
+
+In the plasma rest-frame
+
+                                                                                     ρpl = ω − P,                                                 (C.3)
+
+where P is the plasma pressure (equal to minus the free-energy density) and
+
+                                                                                              ∂P
+                                                                                       ω=T                                                        (C.4)
+                                                                                              ∂T
+is the enthalpy density. We also have ρh,RH = ḣ2c,RH /2 + V0 (hc,RH ), with hc,RH ≡ hc (tRH ). It is more convenient
+to arrange the splitting between plasma and Higgs background energies in a different way, by first separating a pure
+radiation part in ρpl by writing
+
+                                                                                  P = Pγ − VT (hc , T )                                           (C.5)
+
+and
+                                                                                                ∂VT
+                                                                                   ω = ωγ − T       ,                                             (C.6)
+                                                                                                ∂T
+where Pγ = π 2 g∗ T 4 /90, ωγ = 2π 2 g∗ T 4 /45 and VT (hc , T ) is the field-dependent thermal contribution of the plasma to
+the Higgs potential. Then, we assign this potential term to the Higgs energy density and write
+
+                                                        π2            ∂VT                    1 2
+                                                ρpl =      g∗ T 4 − T     ,        ρh,RH =    ḣ    + V0 (hc,RH ) + VT (hc,RH , T ).              (C.7)
+                                                        30            ∂T                     2 c,RH
+                                                                                                                       22
+                                                                                             √
+The reheating temperature can be obtained from ρe = ρRH , which gives TRH ≃ [90/(π 2 g∗ )]1/4 HmP . The small
+fluctuations in the Higgs background cause small fluctuations in TRH . Using VT ≃ m2T h2c /2 = κT 2 h2c /2 we get
+δT ≃ 15κhc δhc /(2π 2 g∗ T )  δh. By matching the fluctuations in the energy density across te ≃ tRH , that is,
+δρe = δρRH , we obtain
+
+                                                   δρh,e = δρpl + δρh,RH ,                                           (C.8)
+
+or, more explicitly,
+                                2                                                                         
+           1                      2π                                        1                     1
+       δ ḣ2c,e + V0 (hc,e )   =      g∗ T 3 δT − 2κT 2 hc,RH δhRH     + δ ḣ2c,RH + V0 (hc,RH ) + κT 2 h2c,RH
+           2                 h     15                               pl      2                     2             h
+                                                        
+                                    1 2
+                               = δ ḣc,RH + V0 (hc,RH ) ,                                                            (C.9)
+                                    2                      h
+
+where in the last equality we have used the result for δT above, which leads to a cancellation of the κT 2 hc δh terms.
+  Leaving aside Hubble friction, the energy density of plasma and Higgs background field are not conserved separately.
+We can still split the energy conservation equation ρ̇tot = 0 in a plasma and a Higgs one, taking into account Higgs
+decays into the plasma and write
+
+                                      ρ̇h = (∂ρh /∂hc )ḣc = (2hc + V 0 )ḣc = −γh ḣ2c ,                           (C.10)
+
+with V = V0 + VT , and γh ≃ 10−3 T the Higgs decay width, while ρ̇pl = +γh ḣ2c . The right-hand side in Eq. (C.10)
+introduces a friction term in the equation of motion for the Higgs field that is initially subleading in comparison
+with the Hubble friction term that it should also include, but is important for the late time behaviour of the Higgs
+condensate.
+   Having understood how to properly deal with the perturbations of the Higgs coupled to the plasma at a given
+temperature T , we are now ready to deal with their behaviour in the radiation phase. Introducing Hubble friction
+and neglecting the decay term we write the equations of motion of the classical value of the Higgs and its linear
+perturbation still in the flat gauge as
+                                                            3
+                                                    ḧc +      ḣc + m2T hc = 0,
+                                                            2t
+                                                         3
+                                               δ ḧ1 +      δ ḣ1 + m2T δh1 = 0.                                    (C.11)
+                                                         2t
+Notice that in the radiation phase the temperature scales as
+                                                           a 
+                                                             RH
+                                                 T = TRH                                                            (C.12)
+                                                             a
+and the scale factor follows the rule a = aRH (t/tRH )1/2 , so that H = 1/(2t). One finds
+                     r
+                        tRH            √              2ḣ(tRH )tRH + h(tRH )            √            
+     hc (t) = h(tRH )       cos 2mTRH ( ttRH − tRH ) +                √         sin 2mTRH ( ttRH − tRH ) ,          (C.13)
+                          t                                     2mTRH ttRH
+and δh1 tracks hc . Up to fast oscillations the classical Higgs field scales like
+                                                                    1
+                                                         hc (a) ∼     ∼T                                            (C.14)
+                                                                    a
+and one can show easily that averaging over the fast oscillations one gets hḣ2c i = hm2T h2c i, so that
+                                                              1
+                                  ρ̇h = ḣc ḧc + m2T hc ḣc + ṁ2T h2c = −3H ḣ2c − Hm2T h2c ,                     (C.15)
+                                                              2
+and upon averaging one gets
+
+                                                          ρ̇h = −4Hρh .                                             (C.16)
+
+The Higgs before decaying behaves therefore like a relativistic fluid. One obtains also (still in the flat gauge)
+
+                                          ρh = ρh + δρh,1 = m2T h2c + 2m2T hc δh1 ,                                 (C.17)
+                                                                                                                                           23
+
+so that
+                                               δρh,1    δh1 (t)    δh1 (tRH )    δh1 (te )
+                                                     =2         =2            =2           ,                                            (C.18)
+                                                ρh       hc (t)     hc (tRH )     hc (te )
+
+where in the next-to-last passage we have used the fact that δh1 is tracking hc and in the last passage the continuity
+in the Higgs sector. We have therefore that upon Higgs decay and using δ ρ̇h,1 = −4Hδρh,1 ,
+
+                                         δρ1 (tdec )               δρh,1 (tdec )    rh (tdec ) δρh,1 (tdec )
+                    −ζ1 (tdec ) = H                  = Hrh (tdec )               =−
+                                          ρ̇(tdec )                 ρ̇h (tdec )         4       ρh (tdec )
+                                         rh (tdec ) δh1 (tRH )    rh (tdec ) δh1 (te )    rh (tdec ) ḣc (te )
+                                  = −                          =−                      =−                      ζh,1 (te ),              (C.19)
+                                             2       hc (tRH )        2       hc (te )        2     Hhc (te )
+
+where we have made use of the fact that during inflation
+                                                                        δρh,1    δh1
+                                                         − ζh,1 = H           =H      .                                                 (C.20)
+                                                                         ρ̇h      ḣc
+In particular, notice that ζh during inflation does not coincide with the value during reheating, ζh ≃ (δh1 /2hc ),
+signalling that ζh is not conserved during the transition. This is not surprising, as the Higgs interacts with the hot
+plasma to suddenly acquire a plasma mass and therefore is not an isolated fluid. The final power spectrum reads
+                                                                                             2                       !2
+                                                k3                    rh2 (tdec )
+                                                                                    
+                                                                  2                     H             ḣc (te )
+                                  Pζ (tdec ) =      |ζk (t dec )|   =                                                      .            (C.21)
+                                               2π 2                        4            2π        hc (te )ḣc (tk )
+
+
+                                    Appendix D: Analytical results for the functions Ic , Is
+
+    To write down the analytical formulæ for the integrals Ic , Is defined in Eq. (33) we use the indefinite integrals
+                                                                   ∞
+ic (d, s, τ ) and is (d, s, τ ), so that Ic (d, s) = ic (d, s, τ )|1 and a similar formula for Is . We get
+
+                               288     n
+            ic (d, s, τ ) =              [A(s) cos τ + C(d, s) sin τ ] cos(dτ ) − [A(d) cos τ + C(s, d) sin τ ] cos(sτ )
+                           (s2 − d2 )3
+                         + (2/τ 2 ) cos τ + B(s) sin τ d sin(dτ ) − (2/τ 2 ) cos τ + B(d) sin τ s sin(sτ )
+                                                                                             
+
+                           1                                                                               o
+                         + (s2 + d2 − 2)2 (Si[(1 − s)τ ] + Si[(1 + s)τ ] − Si[(1 + d)τ ] − Si[(1 − d)τ ]) ,                             (D.1)
+                           8
+and
+                               288     n
+           is (d, s, τ ) =                [A(s) sin τ − C(d, s) cos τ ] cos(dτ ) + [−A(d) sin τ + C(s, d) cos τ ] cos(sτ )
+                           (s2 − d2 )3
+                         + (2/τ 2 ) sin τ − B(s) cos τ d sin(dτ ) + −(2/τ 2 ) sin τ + B(d) cos τ s sin(sτ )
+                                                                                                
+
+                           1                                                                                o
+                         + (s2 + d2 − 2)2 (Ci[(1 + d)τ ] + Ci[(1 − d)τ ] − Ci[|s − 1|τ ] − Ci[(1 + s)τ ]) ,                             (D.2)
+                           8
+where Si(x) is the sine integral function, Ci(x) is the cosine integral function and
+                1                                       1                                              1 
+                   2 + (x2 − 1)τ 2 ,                        6 + (x2 − 1)τ 2 ,                               6 − (1 + 2x2 − y 2 )τ 2 .
+                                                                                                                                 
+      A(x) ≡                                  B(x) ≡                                         C(x, y) ≡                                  (D.3)
+                τ3                                       τ3                                              τ4
+Noting that
+
+                                                          (s2 + d2 − 2)2
+                                  ic (d, s, ∞) = −36π                    θ(s − 1) ,               is (d, s, ∞) = 0 ,                    (D.4)
+                                                            (s2 − d2 )3
+we get
+
+                   288        n
+                                2c1 + (5 + d2 )s1 s sin s − 2c1 + (5 + s2 )s1 d sin d
+                                                                           
+  Ic (d, s) =
+                (s2 − d2 )3
+                                                                                                                          24
+
+                       + (1 + d2 )c1 + (5 + d2 − 2s2 )s1 cos s − (1 + s2 )c1 + (5 + s2 − 2d2 )s1 cos d
+                                                                                             
+
+                                    1                                                                        o
+                                 + (s2 + d2 − 2)2 [Si(1 + d) + Si(1 − d) − Si(1 − s) − Si(1 + s) − πθ(s − 1)] , (D.5)
+                                    8
+where c1 ≡ cos(1) ≃ 0.54, s1 ≡ sin(1) ≃ 0.84 and
+
+                    288     n
+                              2s1 − (5 + d2 )c1 s sin s + −2s1 + (5 + s2 )c1 d sin d
+                                                                          
+  Is (d, s) =     2     2 3
+                (s − d )
+                        + (1 + d2 )s1 − (5 + d2 − 2s2 )c1 cos s + −(1 + s2 )s1 + (5 + s2 − 2d2 )c1 cos d
+                                                                                               
+
+                                                 1                                                              o
+                                              − (s2 + d2 − 2)2 [Ci(1 + d) + Ci(1 − d) − Ci(|1 − s|) − Ci(1 + s)] . (D.6)
+                                                 8
+If instead of the lower integration limit τ0 = 1 one takes τ0 = 0, using
+
+                                                         (s2 + d2 − 2) (s2 + d2 − 2)    (1 − d2 )
+                                                                                                   
+                    ic (d, s, 0) = 0 , is (d, s, 0) = 36                             log 2        +2 ,                 (D.7)
+                                                           (s2 − d2 )2   (s2 − d2 )     |s − 1|
+one gets
+                                                           2     2      2
+                                                  ∞        (s + d − 2)
+                       Iˆc (d, s) ≡ ic (d, s, τ )|0 = −36π                  θ(s − 1) ,
+                                                              (s2 − d2 )3
+                                                                                                                       (D.8)
+                                                          (s2 + d2 − 2) (s2 + d2 − 2)       (1 − d2 )
+                                                                                                         
+                                                  ∞
+                       Iˆs (d, s) ≡ is (d, s, τ )|0 = −36                               log           + 2   .
+                                                            (s2 − d2 )2      (s2 − d2 )     |s2 − 1|
+
+  All our results for the sourced gravitational waves and their power spectrum are in agreement with Ref. [36]. The
+only difference is in the lower limit of integration, which they have taken to be τ0 = 0 as in Eq. (D.8). In our numerical
+results in this paper, we have instead chosen τ0 = 1 as in Eqs. (D.5) and (D.6). Strictly speaking, τ0 = 0 is the correct
+choice, but given that the source is damped on super-Hubble scales, the time integral receives the main contribution
+for τ & 1, and the final numerical difference is not particularly important.
+We have also compared our results with [21], finding some differences. In particular, their formulæ for the power
+                                                                16 32k2         2
+spectrum of GWs differ from ours by a total prefactor of 81         π 4 = 0.06k that they introduced throughout their
+                                                                                                                       i
+derivation, the sum over k in their Eq. (26) should start from k = 0 and a few of the entries of the matrices Mmn
+contain some typos.
+
+
+
+
+ [1] B. P. Abbott et al. [LIGO Scientific and Virgo Collaborations], Phys. Rev. Lett. 116 (2016) 061102 [gr-qc/1602.03837].
+ [2] M. Sasaki, T. Suyama, T. Tanaka and S. Yokoyama, [astro-ph.CO/1801.05235].
+ [3] C. Caprini and D. G. Figueroa, [astro-ph.CO/1801.04268]
+ [4] N. Bartolo et al., JCAP 1612 (2016) no. 12, 026 [astro-ph.CO/1610.06481].
+ [5] B. Sathyaprakash et al., Class. Quant. Grav. 29, 124013 (2012) Erratum: [Class. Quant. Grav. 30, 079501 (2013)]
+     [gr-qc/1206.0331].
+ [6] D. Hoakon [Ligo Scientific Collaboration], Nuovo Cim. C 40, no. 3, 119 (2017).
+ [7] B. P. Abbott et al. [LIGO Scientific Collaboration], Class. Quant. Grav. 34, no. 4, 044001 (2017)
+     [astro-ph.IM/1607.08697].
+ [8] M. Sher, Phys. Rept. 179 (1989) 273; P.B. Arnold, Phys. Rev. D 40 (1989) 613; G. Altarelli and G. Isidori, Phys. Lett. B
+     337 (1994) 141; J.A. Casas, J.R. Espinosa and M. Quirós, Phys. Lett. B 382 (1996) 374 [hep-ph/9603227]; T. Hambye
+     and K. Riesselmann, Phys. Rev. D 55 (1997) 7255 [hep-ph/9610272]; G. Isidori, G. Ridolfi and A. Strumia, Nucl. Phys.
+     B 609 (2001) 387 [hep-ph/0104016]; J. Ellis, J.R. Espinosa, G.F. Giudice, A. Hoecker and A. Riotto, Phys. Lett. B 679
+     (2009) 369 [hep-ph/0906.0954]; F. Bezrukov, M. Y. Kalmykov, B. A. Kniehl and M. Shaposhnikov, JHEP 1210 (2012)
+     140 [hep-ph/1205.2893]; A.V. Bednyakov, B.A. Kniehl, A.F. Pikelner and O.L. Veretin, Phys. Rev. Lett. 115 (2015)
+     201802 [hep-ph/1507.08833].
+ [9] J. Elias-Miró, J.R. Espinosa, G.F. Giudice, G. Isidori, A. Riotto and A. Strumia, Phys. Lett. B 709 (2012) 222
+     [hep-ph/1112.3022]; G. Degrassi, S. Di Vita, J. Elias-Miró, J.R. Espinosa, G.F. Giudice, G. Isidori and A. Strumia,
+     JHEP 1208 (2012) 098 [hep-ph/1205.6497]; D. Buttazzo, G. Degrassi, P.P. Giardino, G.F. Giudice, F. Sala, A. Salvio
+     and A. Strumia, JHEP 1312 (2013) 089 [hep-ph/1307.3536].
+[10] A. Salvio, A. Strumia, N. Tetradis and A. Urbano, JHEP 1609 (2016) 054 [hep-ph/1608.02555].
+[11] J. R. Espinosa, D. Racco and A. Riotto, Phys. Rev. Lett. 120, 121301 (2018) [hep-ph/1710.11196].
+[12] D.H. Lyth and A. Riotto, Phys. Rept. 314 (1999) 1 [hep-ph/9807278].
+                                                                                                                           25
+
+[13] J.R. Espinosa, G.F. Giudice and A. Riotto, JCAP 0805 (2008) 002 [hep-ph/0710.2484].
+[14] A. Kobakhidze and A. Spencer-Smith, Phys. Lett. B 722 (2013) 130 [hep-ph/1301.2846]; [hep-ph/1404.4709]; M. Fair-
+     bairn and R. Hogan, Phys. Rev. Lett. 112 (2014) 201801 [hep-ph/1403.6786]; K. Enqvist, T. Meriniemi and S. Nurmi,
+     JCAP 1407 (2014) 025 [hep-ph/1404.3699]; A. Hook, J. Kearney, B. Shakya and K.M. Zurek, JHEP 1501 (2015) 061
+     [hep-ph/1404.5953]; K. Kamada, Phys. Lett. B 742 (2015) 126 [hep-ph/1409.5078]; A. Shkerin and S. Sibiryakov,
+     Phys. Lett. B 746 (2015) 257 [hep-ph/1503.02586]; J. Kearney, H. Yoo and K.M. Zurek, Phys. Rev. D 91 (2015) 12,
+     123537 [hep-th/1503.05193]; W.E. East, J. Kearney, B. Shakya, H. Yoo and K.M. Zurek, Phys. Rev. D 95 (2017) 023526
+     [hep-ph/1607.00381].
+[15] M. Herranen, T. Markkanen, S. Nurmi and A. Rajantie, Phys. Rev. Lett. 113 (2014) 211102 [hep-ph/1407.3141].
+[16] J.R. Espinosa, G.F. Giudice, E. Morgante, A. Riotto, L. Senatore, A. Strumia and N. Tetradis, JHEP 1509 (2015) 174
+     [hep-ph/1505.04825].
+[17] Y. Ema, K. Mukaida and K. Nakayama, JCAP 1610 (2016) 043 [hep-ph/1602.00483]; K. Kohri and H. Matsui, Phys.
+     Rev. D 94 (2016) 103509 [hep-ph/1602.02100]; K. Enqvist, M. Karciauskas, O. Lebedev, S. Rusak and M. Zatta, JCAP
+     1611 (2016) 025 [hep-ph/1608.08848]; M. Postma and J. van de Vis, JCAP 1705 (2017) 004 [hep-ph/1702.07636];
+     Y. Ema, M. Karciauskas, O. Lebedev and M. Zatta, JCAP 1706 (2017) 054 [hep-ph/1703.04681]; A. Joti, A. Katsis,
+     D. Loupas, A. Salvio, A. Strumia, N. Tetradis and A. Urbano, JHEP 1707 (2017) 058 [hep-ph/1706.00792]; A. Rajantie
+     and S. Stopyra, Phys. Rev. D97 (2018) no. 2, 025012 [hep-th/1707.09175]; D.G. Figueroa, A. Rajantie and F. Torrenti,
+     [astro-ph.CO/1709.00398].
+[18] N. Bartolo, V. De Luca, G. Franciolini, A. Lewis, M. Peloso and A. Riotto, [astro-ph.CO/1810.12218]; N. Bartolo, V. De
+     Luca, G. Franciolini, M. Peloso, D. Racco and A. Riotto, [astro-ph.CO/1810.12224].
+[19] V. Acquaviva, N. Bartolo, S. Matarrese and A. Riotto, Nucl. Phys. B 667 (2003) 119 [astro-ph/0209156].
+[20] S. Mollerach, D. Harari and S. Matarrese, Phys. Rev. D 69 (2004) 063002 [astro-ph/0310711].
+[21] K. N. Ananda, C. Clarkson and D. Wands, Phys. Rev. D 75 (2007) 123518 [gr-qc/0612013].
+[22] D. Baumann, P. J. Steinhardt, K. Takahashi and K. Ichiki, Phys. Rev. D 76 (2007) 084019 [hep-th/0703290].
+[23] R. Saito and J. Yokoyama, Prog. Theor. Phys. 123 (2010) 867 Erratum: [Prog. Theor. Phys. 126 (2011) 351]
+     [astro-ph.CO/0912.5317].
+[24] K. Ando, K. Inomata, M. Kawasaki, K. Mukaida and T. T. Yanagida, [astro-ph.CO/1711.08956].
+[25] M. Maggiore, Phys. Rept. 331 (2000) 283 [gr-qc/9909001].
+[26] N. Bartolo et al., JCAP 1612, no. 12 (2016) 026 [astro-ph.CO/1610.06481].
+[27] G. Aad et al. [ATLAS and CMS Collaborations], Phys. Rev. Lett. 114 (2015) 191803 [hep-ex/1503.07589].
+[28] V. Khachatryan et al. [CMS Collaboration], Phys. Rev. D 93 (2016) no.7, 072004 [hep-ex/1509.04044]; The ATLAS
+     collaboration [ATLAS Collaboration], ATLAS-CONF-2017-071.
+[29] H. Audley et al., [astro-ph.IM/1702.00786].
+[30] C. Caprini et al., JCAP 1604 (2016) no.04, 001 [astro-ph.CO/1512.06239].
+[31] B. P. Abbott et al. [LIGO Scientific and Virgo Collaborations], Phys. Rev. Lett. 118 (2017) no.12, 121101 Erratum: [Phys.
+     Rev. Lett. 119 (2017) no.2, 029901] [gr-qc/1612.02029].
+[32] C. J. Moore, R. H. Cole and C. P. L. Berry, Class. Quant. Grav. 32 (2015) no.1, 015014 [gr-qc/1408.0740];
+     B. S. Sathyaprakash and B. F. Schutz, Living Rev. Rel. 12 (2009) 2 [gr-qc/0903.0338]; Einstein Telescope, design
+     at http://www.et-gw.eu/.
+[33] S. Dimopoulos, P. W. Graham, J. M. Hogan, M. A. Kasevich and S. Rajendran, Phys. Lett. B 678 (2009) 37
+     [gr-qc/0712.1250]; P. W. Graham, J. M. Hogan, M. A. Kasevich and S. Rajendran, Phys. Rev. Lett. 110 (2013) 171102
+     [quant-ph/1206.0818]; J. Coleman [MAGIS-100 Collaboration], [physics.ins-det/1812.00482]; O. Buchmuller, “The
+     atom interferometer observatory network”, 2018.
+[34] E. Thrane, Phys. Rev. D 87 (2013) no.4, 043009 [astro-ph.IM/1301.0263].
+[35] J. R. Espinosa, D. Racco and A. Riotto, Eur. Phys. J. C 78 (2018) no.10, 806 [hep-ph/1804.07731].
+[36] K. Kohri and T. Terada, Phys. Rev. D 97 (2018) no.12, 123532 [gr-qc/1804.08577].
+

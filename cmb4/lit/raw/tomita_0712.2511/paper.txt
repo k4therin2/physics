@@ -1,0 +1,806 @@
+                                                   Second-order power spectra of CMB anisotropies due to primordial
+                                                           random perturbations in flat cosmological models
+                                                                                                Kenji Tomita
+                                                          Yukawa Institute for Theoretical Physics, Kyoto University, Kyoto 606-8502, Japan
+                                                                                      (Dated: October 30, 2018)
+                                                      Second-order power spectra of Cosmic Microwave Background (CMB) anisotropies due to random
+                                                   primordial perturbations at the matter dominant stage are studied, based on the relativistic second-
+                                                   order theory of perturbations in flat cosmological models and on the second-order formula of CMB
+                                                   anisotropies derived by Mollerach and Matarrese. So far the second-order integrated Sachs-Wolfe
+                                                   effect has been analyzed using the three-point correlation or bispectrum. In this paper we derive the
+                                                   second-order term of power spectra given using the two-point correlation of temperature fluctuations.
+                                                      The second-order density perturbations are small, compared with the first-order ones. The second-
+arXiv:0712.2511v3 [astro-ph] 4 Jun 2008
+
+
+
+
+                                                   order power spectra of CMB anisotropies, however, are not small at all, compared with the first-order
+                                                   power spectra, because at the early stage the first-order integrated Sachs-Wolfe effect is very small
+                                                   and the second-order integrated Sachs-Wolfe effect may be dominant over the first-order ones. So
+                                                   their characteristic behaviors may be measured through the future precise observation and bring
+                                                   useful informations on the structure and evolution of our universe in the future.
+
+                                                   PACS numbers: 98.80.-k, 98.70.Vc, 04.25.Nx
+
+
+
+                                                                                        I.   INTRODUCTION
+
+                                             In most studies of Cosmic Microwave Background (CMB) anisotropies, the comparison between observed and
+                                          theoretical quantities have so far been done, assuming the linear approximation for cosmological perturbations.
+                                          It seems to be successful enough to determine the cosmological parameters [1, 2, 3]. The present state of our
+                                          universe is, however, locally complicated and associated with nonlinear behavior on various scales, and so the
+                                          observed quantities of CMB anisotropies may include some small effects caused through nonlinear process by
+                                          various primordial perturbations. So far the nonlinearity in CMB anisotropies has been treated as the second-
+                                          order integrated Sachs-Wolfe effect, which was analyzed using the three-point correlation and bispectrum.[4, 5, 6]
+                                          Recently a general treatment of second-order temperature fluctuations has been systematically studied by
+                                          Bartolo, Matarrese and Riotto[7, 8] due to the transfer function which was derived from the Boltzmann equation,
+                                          so as to be applied not only to the integrated Sachs-Wolfe effect at the matter-dominant stage, but also the
+                                          nonlinear effect at the recombination epoch and the primordial nonlinear effect.
+                                             In recent years, on the other hand, we have studied these nonlinear effects of inhomogeneities on CMB
+                                          anisotropies at the matter-dominant stage, based on the relativistic second-order theory of cosmological
+                                          perturbations,[9] and on Mollerach and Matarrese’s second-order formula of CMB anisotropies[10]. In previous
+                                          papers,[11, 12, 13, 14, 15] we have studied the second-order effects of a local special large-scale inhomogeneity
+                                          on CMB anisotropies, paying attention to the interaction between it and primordial random perturbations. In
+                                          this relativistic theory we used the first-order and second-order perturbations in pressureless matter which were
+                                          derived in compact and analytic forms. In the present paper we study the nonlinear effect of only primordial
+                                          random perturbations on CMB anisotropies and derive the second-order power spectra, which is given as the
+                                          second term in the two-point correlation of CMB anisotropies. This is a nonlinear correction to the first-order
+                                          power spectra and different from the three-point correlation and bispectrum which have been used in the above
+                                          other works to investigate uniquely the non-Gaussianity in the perturbations generated in various stages.
+                                             The second-order random density perturbations themselves are small, compared with the first-order ones.
+                                          In the Λ-dominated model, however, the second-order power spectra of CMB anisotropies are not small at all,
+                                          compared with the first-order power spectra, because at the early stage the first-order integrated Sachs-Wolfe
+                                          effect (ISW) is very small and the second-order ISW may be dominant over the first-order one. Especially
+                                          in the local void model with Λ = 0[18, 19, 20, 21], the exterior region is described by use of the Einstein-
+                                          de Sitter model, in which the first-order ISW vanishes and the second-order ISW is indispensable. So their
+                                          characteristic behaviors may be measured through the future precise observation and bring useful informations
+                                          on the structure and evolution of our universe in the future.
+                                             In Sec. II, we show the second-order perturbations in general flat cosmological models and the corresponding
+                                          CMB anisotropies. In Sec. III, we derive the expressions for the second-order power spectra of CMB anisotropies,
+                                          due to primordial random perturbations. Concluding remarks follow in Section IV.
+                                                                                                                      2
+
+   II.   SECOND-ORDER METRIC PERTURBATIONS AND TEMPERATURE ANISOTROPIES
+
+  First we review the background spacetime and the perturbations which were derived in the previous paper[11].
+The background flat model with dust matter is expressed as
+
+                                   ds2 = gµν dxµ dxν = a2 (η)[−dη 2 + δij dxi dxj ],                              (2.1)
+
+where the Greek and Latin letters denote 0, 1, 2, 3 and 1, 2, 3, respectively, and δij (= δji = δ ij ) are the Kronecker
+delta. The conformal time η(= x0 ) is related to the cosmic time t by dt = a(η)dη. The matter density ρ and
+the scale factor a have the relations
+
+                                      ρa2 = 3(a′ /a)2 − Λa2 ,   and ρa3 = ρ0 ,                                    (2.2)
+
+where a prime denotes ∂/∂η, Λ is the cosmological constant, ρ0 is an integration constant and the units
+8πG = c = 1 are used.
+  The first-order and second-order metric perturbations δ1 gµν (≡ hµν ) and δ2 gµν (≡ ℓµν ), respectively, were
+derived explicitly by imposing the synchronous coordinate condition:
+
+                                        h00 = h0i = 0     and ℓ00 = ℓ0i = 0.                                      (2.3)
+
+Here we show their expressions only in the growing mode:
+
+                                    hji = P (η)F,ij ,
+                                                                       |j
+                                    ℓji = P (η)Lji + P 2 (η)Mij + Q(η)N|i + Cij ,                                 (2.4)
+
+                                                                                                        |j
+where F is an arbitrary potential function of spatial coordinates x1 , x2 and x3 , hji = δ jl hli , N|i = δ jl N|li =
+N,ij , F,ij means ∂ 2 F/∂xi ∂xj , and P (η) and Q(η) satisfy
+
+                                                2a′ ′
+                                          P ′′ +    P − 1 = 0,
+                                                 a′
+                                                2a ′      h    5     i
+                                          Q′′ +     Q = − P − (P ′ )2 .                                           (2.5)
+                                                 a             2
+The three-dimensional covariant derivative |i are defined in the space with metric dl2 = δij dxi dxj and their
+suffixes are raised and lowered by use of δij . The functions Lji and Mij are defined by
+
+                               1h                         1          i
+                           Lji =  −3F,i F,j − 2F · F,ij + δij F,l F,l ,
+                               2 n                        2
+                           j   1                                  h                  io
+                          Mi =     19F,il F,jl − 12F,ij ∆F − 3δij F,kl F,kl − (∆F )2                              (2.6)
+                               28
+and N is defined by
+                                                    1h                   i
+                                            ∆N =       (∆F )2 − F,kl F,kl .                                       (2.7)
+                                                   28
+The last term Cil satisfies the wave equation
+                                              3              1h  5       i
+                                     ✷Cij =      (P/a)2 Gji + P − (P ′ )2 G̃ji ,                                  (2.8)
+                                              14             7   2
+
+where Gji and G̃ji are second-order traceless and transverse functions of spatial coordinates, and the operator
+✷ is defined by
+                                                                 2a′         
+                                ✷φ ≡ g µν φ;µν = −a−2 ∂ 2 /∂η 2 +     ∂/∂η − ∆ φ,                                 (2.9)
+                                                                   a
+
+where ; denotes the four-dimensional covariant derivative. So Cij represents the second-order gravitational waves
+caused by the first-order density perturbations.
+                                                                                                                   3
+
+  The velocity perturbations δ1 uµ and δ2 uµ vanish, i.e. δ1 u0 = δ1 ui = 0 and δ2 u0 = δ2 ui = 0, and the
+density perturbations are
+                           1  a′ ′        
+               δ ρ/ρ =             P   − 1  ∆F,
+               1          ρa2 a
+                            1   n 1      a′                          1
+               δ ρ/ρ =        2
+                                    (1 − P ′ )(3F,l F,l + 8F ∆F ) + P [(∆F )2 + F,kl F,kl ]
+               2          2ρa 2           a                          2
+                          1 h ′ 2 2 a′ ′ i           2               1 a′                              o
+                      +      (P ) −         Q [(∆F ) − F,kl F,kl ] −      P P ′ [4F,kl F,kl + 3(∆F )2 ] . (2.10)
+                          4            7a                            7a
+   Next let us consider the CMB temperature T = T (0) (1 + δT /T ), in which T (0) is the background temperature
+                                                                                        (0)
+and δT /T (= δ1 T /T + δ2 T /T ) is the perturbations. The present temperature To is related to the emitted
+                             (0)                                    (0)             (0)
+background temperature Te at the recombination epoch by Te = (1 + ze )To , the temperature perturbation
+τ ≡ (δT /T )e at the recombination epoch is determined by the physical state before that epoch, and the present
+temperature perturbations (δT /T )o is related to (δT /T )e by the gravitational perturbations along the light ray
+from the recombination epoch to the present epoch. The light ray in the unperturbed state is described using the
+background wave vector k µ (≡ dxµ /dλ), where λ is the affine parameter, and its component is k (0)µ = (1, −ei ),
+and the ray is given by x(0)µ = [λ, (λ0 − λ)ei ], where ei is the directional unit vector. Here and in the following
+the suffixes o and e for λ, η and r denote the present (observed) epoch and the recombination (emitted) epoch,
+respectively.
+   The first-order temperature perturbation is
+
+                                                      1 λe
+                                                        Z
+                                       δ T /T = τ +           dλP ′ (η)F,ij ei ej .                            (2.11)
+                                       1              2 λo
+
+Using the relations dP/dλ = P ′ and dF/dλ = −F,i ei , this equation (2.11) is expressed as
+
+                                                   δ T /T = Θ1 + Θ2                                           (2.12)
+                                                   1
+
+where
+                                                 1
+                                        Θ1 ≡ τ − [(P ′ F,i )e − (P ′ F,i )o ]ei ,
+                                               Z 2
+                                             1 λe
+                                        Θ2 ≡       dλP ′′ (η)F,i ei .                                         (2.13)
+                                             2 λo
+Θ1 and Θ2 represent the intrinsic and Sachs-Wolfe effects, respectively. The latter can be divided into the
+ordinary Sachs-Wolfe effect Θsac and the Integrated Sachs-Wolfe effect Θisw , where
+                                                  1
+                                            Θsac ≡  [(P ′′ F )e − (P ′′ F )o ],
+                                                  2Z
+                                                  1 λe
+                                           Θisw ≡          dλP ′′′ (η)F.                                      (2.14)
+                                                  2 λo
+The second-order temperature perturbation is
+                                    h1                                      Z λe
+                                                          (1) ′
+                                                   i
+                    δ T /T = I  (λ
+                              1 e  )   I (λ
+                                        1 e )  − τ   − [A e     + τ,i e i
+                                                                          ]      dλA(1)
+                    2                2
+                             Z λe n                                       Z λλo
+                                       1 (2) ′      (1) (1) ′     (1) ′′
+                                                                                           o ∂τ
+                           −       dλ A        +A A           −A               dλ̄A(1) (λ̄) + i d(1)i ,       (2.15)
+                               λo      2                                    λo               ∂d
+
+where (η, xi ) = (λ, λo − λ) in the integrands and
+
+                                               1 λe
+                                                 Z
+                                  I1 (λe ) = −      dλP ′ F,ij ei ej ,
+                                               2 λo
+                                               1
+                                    A(1) = − P F,ij ei ej ,
+                                               2
+                                               1
+                                    A(2) = − [P Lji + P 2 Mij + QN,ij + Cij ]ei ej .                          (2.16)
+                                               2
+These expressions were derived in §3 of a previous paper.[9]
+                                                                                                                                     4
+
+                   III.     POWER SPECTRA OF SECOND-ORDER CMB ANISOTROPIES
+
+  We consider primordial scalar perturbations with F defined by
+                                                 Z
+                                            F = dkα(k)eikx ,                                                                      (3.1)
+
+where the spatial average for α(k) is given by
+
+                                                 hα(k)α(k̄)i = (2π)−2 PF (k)δ(k + k̄),                                            (3.2)
+
+with
+
+                                                  PF (k) = PF 0 k −3 (k/k0 )n−1 Ts2 (k),                                          (3.3)
+
+where Ts (k) is the matter transfer function [22] and PF 0 is the normalization constant.
+ Then the first-order temperature perturbations are
+                                                                              Z λe
+                                                     1
+                                                               Z
+                                     δ T /T ≡ ΘP = −               dkα(k)            dλP ′ (η)(kµ)2 eikx ,                        (3.4)
+                                     1               2                          λo
+
+where x = re, kx = krµ, µ ≡ cos θk and θk is the angle between the wave vector k i and a unit vector ei . This
+equation can be rewritten as
+                      Z        n 1                            1X                             o
+                ΘP = dkα(k) − [(P ′′ )o + ik(P ′ )o P1 (µ)] +     (−i)l (2l + 1)ΘP (l) Pl (µ) ,           (3.5)
+                                   2                          2
+                                                                                           l
+
+where Pl (µ) is the Legendre polynomial and
+                  Z λe
+       ΘP (l) =          dλP ′′′ (η)jl (kr) − {k(P ′ )e (2l + 1)−1 [(l + 1)jl+1 (kre ) − ljl−1 (kre )] + jl (kre )(P ′′ )e }.     (3.6)
+                   λo
+
+In these equations, we have η = λ and r = λo − λ. In the derivation of Eq.(3.6), we used the relations[23, 24]
+                                                 X
+                                  eikx = eikrµ =   (−i)l (2l + 1)jl (kr)Pl (µ)                            (3.7)
+                                                                   l
+
+and
+
+                                           (2l + 1)µPl (µ) = (l + 1)Pl+1 (µ) + lPl−1 (µ).                                         (3.8)
+
+The components of the unit vector ei are expressed as e1 = sin θ cos φ, e2 = sin θ sin φ, e3 = cos θ with respect
+to x1 , x2 , x3 axes, respectively.
+  In order to derive the power spectra, we take the statistical average hi for the primordial perturbations, and
+h(δT /T )2 i is expressed for the first-order anisotropies as
+                                                                                      X 2l + 1
+                                          h(δ T /T )2 i = h(ΘP )2 i = (T0 )−2                       Cl .                          (3.9)
+                                            1                                                  4π
+                                                                                       l
+
+The power spectra Cl are
+                                                               Z
+                                                                                      (l)
+                                                 Cl = (T0 )2           dkk 2 PF (k)|HP (k)|2 ,                                   (3.10)
+
+where T0 is the present CMB temperature and
+                                                                                                 Z λe
+                          (0)               ′′           ′                     ′′
+                         HP (k)    = −(P )o − k(P )e j1 (kre ) − (P )e j0 (kre ) +                        dλP ′′′ j0 (kr),
+                                                                                                    λo
+                                                                                                    Z λe
+                          (1)          1                       (1)
+                         HP (k) =        k[(P ′ )o − (P ′ )e ]j1 (kre ) − (P ′′ )e j1 (kre ) +                dλP ′′′ j1 (kr).   (3.11)
+                                       3                                                                 λo
+                                                                                                                                 5
+
+For l ≥ 2, we have
+                                                                                           Z λe
+                              (l)                           (1)
+                            HP (k) = k(P ′ )e jl (kre ) − (P ′′ )e jl (kre ) +                    dλP ′′′ jl (kr).           (3.12)
+                                                                                             λo
+
+In the derivation of Cl , we used Eq.(3.2) for hα(k)α(k̄)i and a mathematical formula for Pl (µ):
+                              Z 1
+                                  Pl (µ)Pl′ (µ)dµ = 2/(2l + 1), 0 for l = l′ , l 6= l′ ,                                     (3.13)
+                                    −1
+
+respectively. For the two directions with unit vectors e1 and e2 , we have the correlation
+                                                                               X 2l + 1
+                                         (T0 )2 hΘP (e1 )ΘP (e2 )i =                      Cl Pl (cos β).                     (3.14)
+                                                                                    4π
+                                                                                l
+
+where the product e1 e2 is equal to cos β.
+  For the second-order temperature anisotropies, we obtain from Eqs.(2.15), (2.16) and (3.1)
+                     Z Z                    n 1 Z λe Z λe
+           δ T /T =         dkdk̄α(k)α( k̄)                  dλdλ̄P ′ (λ)P ′ (λ̄)(ke k̄e )2 ei(kx+k̄x̄)
+           2                                  8 λo λo
+                     Z λe h
+                               1                                      1 
+                  +        dλ P ′ (λ) 3ke k̄e + (ke )2 + (k̄e )2 − kk̄
+                      λo       8                                       2
+                      1                                                                                      
+                  +      P (λ)P (λ) 19ke k̄e kk̄ − 14(ke k̄e ) − 6(k̄e k)2 − 6(ke k̄)2 − 3(kk̄)2 + 3k 2 (k̄)2
+                                ′                                2
+                     56
+                       1 ′                                               i
+                  +       Q (λ)(ke + k̄e )2 k 2 k̄ 2 − (kk̄)2 /(k + k̄)2 ei(k+k̄)x
+                     112
+                     1 λe h ′′
+                        Z              Z λ                      i           o
+                  +          dλ P (λ)        dλ̄P (λ̄)(ke k̄e )2 ei(kx+k̄x̄) ,                                               (3.15)
+                     4 λo                 λo
+
+                                                                                                                     (1) ′
+where ke stands for ke, P ′ (λ) ≡ dP (λ)/dλ, and P ′ (λ̄) ≡ dP (λ̄)/dλ̄. Here τ and Ae in Eq.(2.15) were
+neglected, because we pay attentions to the Sachs-Wolfe effect after the recombination epoch, and also the term
+with Cij in Eq.(2.16) was neglected, because the contribution of gravitational radiation is very small. It is found
+from the above equation that the average hδ2 T /T i does not vanish in contrast to the vanishing first-order one
+(hδ1 T /T i), and we obtain
+
+                               1
+                                  Z                   nZ λe Z λe
+                                            −2
+                   hδ T /T i =      dk(2π) PF (k)                   dλdλ̄P ′ (λ)P ′ (λ̄)(ke )4 eik(x−x̄)
+                    2          8                         λo    λo
+                               Z λe h                      1                                         i
+                             +      dλ P ′ (λ) −(ke )2 + k 2 + P (λ)P ′ (λ) k 2 − 2(ke )2 (ke )2
+                                 λo                         2
+                                 Z λe            Z λ                          o
+                             + 2      dλP ′′ (λ)     dλ̄P (λ̄)(ke )4 eik(x−x̄) ,                              (3.16)
+                                         λo                       λo
+
+                                              2
+where ke ≡ ke = kµ and dk = dkk dφdµ. Here we have the relations x = re, x̄ = r̄e, and so kx = ke r =
+krµ, −kx̄ = kr̄(−µ). Thus eik(x−x̄) is expanded as
+                             X                                 X      ′
+                 eik(x−x̄) =     (−i)l (2l + 1)jl (kr)Pl (µ) ×   (−i)l (2l′ + 1)jl′ (kr̄)Pl′ (−µ)
+                                     l
+                                     X                                              l′
+                                                   l   l′                  ′
+                               =            (−i) i (2l + 1)(2l + 1) jl (kr)jl′ (kr̄) Pl (µ)Pl′ (µ).                          (3.17)
+                                     l,l′
+
+Here for the reduction of Eq.(3.16), we derive the following relations using Eq.(3.8)
+        X            X (1)          X              X (2)                   X             X (3)
+            jl µPl =    jl Pl ,         jl µ2 Pl =    jl Pl ,     and         jl µ3 Pl =  jl Pl ,                            (3.18)
+          l             l                      l                       l                           l                 l
+
+where
+        (1)             l               l+1
+        jl (kr) ≡           jl−1 (kr) +        jl+1 (kr),
+                     2l − 1             2l + 3
+                                                                                                                                 6
+
+        (2)          (l − 1)l                     1 h l2         (l + 1)2 i              (l + 1)(l + 2)
+       jl (kr) ≡                  jl−2 (kr) +                  +            jl (kr) +                    jl+2 (kr),
+                 (2l − 3)(2l − 1)              2l + 1 2l − 1 (2l + 3)                  (2l + 3)(2l + 5)
+        (3)           (l − 2)(l − 1)l                     l h       (l − 1)2
+       jl (kr) ≡                           jl−3 (kr) +
+                 (2l − 5)(2l − 3)(2l − 1)              2l − 1 (2l − 3)(2l − 1)
+                         l2               (l + 1)2     i              l+1 h           l2
+               +                   +                    jl−1 (kr) +
+                 (2l − 1)(2l + 1) (2l + 1)(2l + 3)                   2l + 3 (2l − 1)(2l + 1)
+                     (l + 1)2             (l + 2)2     i               (l + 1)(l + 2)(l + 3)
+               +                   +                    jl+1 (kr) +                              jl+3 (kr).         (3.19)
+                 (2l + 1)(2l + 3) (2l + 3)(2l + 5)                   (2l + 3)(2l + 5)(2l + 7)
+
+Then we have
+                                                                             (2)    (2)
+                                          X             ′
+                         µ4 eik(x−x̄) =          (−i)l il (2l + 1)(2l′ + 1)jl (kr)jl′ (kr̄)Pl (µ)Pl′ (µ).                   (3.20)
+                                          l,l′
+
+Using these relations and executing the integrations in Eq.(3.16) with respect to φ and µ, we obtain
+                                               Z         n1 X             hZ λe                   i2
+                                          −1           2      4                             (2)
+                      hδ T /T i = (2π)      dkk PF (k) k          (2l + 1)       dλP ′ (λ)jl (kr)
+                       2                                  4                  λo
+                                                                l
+                                   1                  17
+                                +    (Pe − Po )k 2 +     (P 2 − Po2 )k 4
+                                  24                 840 e
+                                                     λe                  Z λ
+                                  1 4X
+                                                   Z                                            o
+                                                             ′′   (2)                   (2)
+                                + k       (2l + 1)      dλP (λ)jl (kr)        dλ̄P (λ̄)jl (kr̄) ,                           (3.21)
+                                  2                 λo                     λo
+                                           l
+
+where we used the relation (3.13), and Pe = P (λe ) and Po = P (λo ).
+ When we take into account also the third-order anisotropies δ3 T /T , we have
+
+                                        δ T /T = δ T /T + δ T /T + δ T /T
+                                                       1            2        3
+                                                    = δ T /T + hδ T /T i + Θpp + δ T /T,                                    (3.22)
+                                                       1            2               3
+
+where Θpp ≡ δ2 T /T − hδ2 T /T i. Then the total average of (δT /T )2 is expressed as
+
+                               h(δ T /T )2 i = hΘ2p i + (hδ T /T i)2 + hΘ2pp i + 2hδ T /T δ T /T i.                         (3.23)
+                                                            2                       1      3
+
+The last term is of the same order as the second and third terms. At present we have not obtained any concrete
+expression of third-order metric perturbations yet and so the last term is not analyzed, while the formula for
+δ3 T /T and formal solutions have recently been derived by D’Amico et al.[16] and the perturbative equations to
+the third order were studied by Hwang and Noh[17] with respect to the relativistic-Newtonian correspondence.
+Here hδ2 T /T i is the monopole component without angular dependence and Θpp is the renormalized second-order
+temperature fluctuation, which have been discussed by Munshi et al.[5]
+   Now let us make a reduction of hΘ2pp i. It is expressed as
+
+                                                                                 ¯
+                                                                            ¯ )α(k̄
+                                                                                               
+                       hΘ2pp i = h δ T /T (α(k)α(k̄)) − hδ T /T i δ T /T (α(k̄      )) − hδ T /T i i,                       (3.24)
+                                    2                           2        2                      2
+
+                                                                                ¯
+                                                                          ¯ )α(k̄
+where δ2 T /T (α(k)α(k̄)) is given by Eq.(3.15) and δ2 T /T (α(k̄                 )) is obtained from Eq.(3.15) by replacing
+          ¯   ¯                                                                                                           ¯
+                                                                                                            ¯ )i, hα(k̄)α(k̄
+k, k̄ by k̄, k̄. The averaging process in Eq.(3.24) is performed in the two sets: hα(k)α(k̄                                  )i and
+          ¯             ¯ )i, and the average process for hα(k)α(k̄)i and hα(k̄               ¯
+                                                                                         ¯ )α(k̄
+hα(k)α(k̄ )i, hα(k̄)α(k̄                                                                         )i is excluded by subtracting
+                                                               ¯
+                                                          ¯ )α(k̄
+hδ2 T /T i from δ2 T /T (α(k)α(k̄)) and δ2 T /T (α(k̄             )). When we sum these average values in the above two
+sets and symmetrize the expression with respect to k and k̄, we obtain from Eq.(3.24)
+                  Z Z
+   hΘ2pp i = 2         dkdk̄(k k̄)2 dφk dφ̄k dµdµ̄(2π)−4 PF (k)PF (k̄)
+               n 1 Z λe Z λe                                             Z λe h
+                                                                                    1                                   1 
+                                      ′       ′           2 i(kx+k̄x̄)
+            ×                  dλdλ̄P (λ)P (λ̄)(ke k̄e ) e             +      dλ P ′ (λ) 3ke k̄e + (ke )2 + (k̄e )2 − kk̄
+                  8 λo λo                                                 λo        8                                    2
+                 1                                                                                       i
+            +      P (λ)P ′ (λ) 19ke k̄e kk̄ − 14(ke k̄e )2 − 6(k̄e k)2 − 6(ke k̄)2 − 3(kk̄)2 + 3k 2 (k̄)2 ei(k+k̄)x
+                56
+                                                                                                                                      7
+
+               1 λe
+                  Z               Z λ                              o
+                           ′′
+             +         dλP (λ)        P (λ̄)(ke k̄e )2 ei(kx+k̄x̄)
+               4 λo                λo
+               n 1 Z λe Z λe                                                 Z λe h
+                                                                                    1                                  1 
+             ×                 dηdη̄P ′ (η)P ′ (η̄)(ke k̄e )2 e−i(ky+k̄ȳ) +     dη P ′ (η) 3ke k̄e + (ke )2 + (k̄e )2 − kk̄
+                 8 λo λo                                                      λo    8                                   2
+                1        ′
+                               
+                                                            2           2         2        2       2   2
+                                                                                                         i
+                                                                                                              −i(k+k̄)y
+             +     P (η)P (η) 19ke k̄e kk̄ − 14(ke k̄e ) − 6(k̄e k) − 6(ke k̄) − 3(kk̄) + 3k (k̄)           e
+               56Z
+                    λe            Z η
+               1                                                      o
+             +         dηP ′′ (η)     dη̄P (η̄)(ke k̄e )2 e−i(ky+k̄ȳ) ,                                                  (3.25)
+               4 λo                λo
+
+                                                                                                                                     |j
+where x, x̄ and y, ȳ are functions of λ, λ̄ and η, η̄, respectively, and we neglected the terms with Q and N|i ,
+because we have Q/P 2 < 10−2 always and they are very small. Especially Q vanishes in the case Λ = 0. Here,
+when we consider an orthonormal triad vector ei(1) , ei(2) , and ei(3) (= ei ), the components of k and k̄ with respect
+to this triad are expressed as k = k(sin θk cos φk , sin θk sin φk , cos θk ) and k̄ = k̄(sin θ̄k cos φ̄k , sin θ̄k sin φ̄k , cos θ̄k ),
+and so µ = cos θk and µ̄ = cos θ̄k .
+  Next let us take a notice of terms with kk̄ and (kk̄)2 which can be expressed as
+
+                         kk̄ = k k̄ [sin θk sin θ̄k cos(φk − φ̄k ) + cos θk cos θ̄k ],
+                                                               1
+                      (kk̄)2 = (k k̄)2 {(cos θk cos θ̄k )2 + (sin θk sin θ̄k )2 [1 + cos 2(φk − φ̄k )]
+                                                               2
+                              + 2 sin θk sin θ̄k cos θk cos θ̄k cos(φk − φ̄k )}.                                     (3.26)
+                                                             RR                            RR
+By integrations   with respect to φRk Rand φ̄k , we obtain       dφk dφ̄k cos(φk − φ̄k ) =    dφk dφ̄k cos 2(φk − φ̄k ) = 0,
+         φk φ̄k [cos(φk − φ̄k )]2 =     dφk dφ¯k [cos 2(φk − φ̄k )]2 = (2π)2 /2.
+      RR
+while
+  Executing integrations in Eq.(3.25) with respect to φk and φ̄k , and using the relations Eq.(3.7) and
+                                   X                                         X
+              e−iky = e−iksµ =         (−i)m (2m + 1)jm (ks)Pm (−µ) =            im (2m + 1)jm (ks)Pm (µ),           (3.27)
+                                       m                                                m
+
+we can, therefore, reexpress Eq.(3.25) as
+                                                X X X X                                              
+                                 h(Θpp )2 i =                          AIll′ mm′ + AII         III
+                                                                                    ll′ mm′ + All′ mm′ ,                        (3.28)
+                                                l   l′   m       m′
+
+where the terms AIll′ mm′ , AII               III
+                               ll′ mm′ and All′ mm′ come from the terms without φk and φ̄k , the coefficients of
+cos2 (φk − φ̄k ), and the coefficients of cos2 2(φk − φ̄k ), and their lengthy expressions are shown in Appendix A.
+                                                                                 (1)       (2) (3)
+  Moreover let us replace the terms of µjl Pl , µ2 jl Pl and µ3 jl Pl by jl Pl , jl Pl and jl Pl using Eqs. (3.18)
+and (3.19) and execute integrations with respect to µ and µ̄ using Eq.(3.13). Then we obtain
+                                                    X X                               
+                                       h(Θpp )2 i =           BllI ′ + BllII′ + BllIII
+                                                                                    ′    ,                    (3.29)
+                                                             l    l′
+
+where
+
+             1
+                                            Z Z
+                   −2               ′
+  BllI ′   = (2π) (2l + 1)(2l + 1)                dkdk̄(k k̄)2 PF (k)PF (k̄)
+             8
+             n       Z λe Z λe                                                     Z λe            Z λ
+                                                       (2)      (2)                                              (2)    (2)
+           × (k k̄)2              dλdλ̄P ′ (λ)P ′ (λ̄)jl (kr)jl′ (k̄r̄) + 2(k k̄)2      dλP ′′ (λ)     dλ̄P (λ̄)jl (kr)jl′ (k̄r̄)
+                      λo     λo                                                     λo              λo
+             Z λe h           5                                                                    
+                                      (1)      (1)             (2)                         (2)
+           +      dλ P ′ (λ) k k̄jl (kr)jl′ (k̄r) + k 2 jl (kr)jl′ (k̄r) + k̄ 2 jl (kr)jl′ (k̄r)
+              λo                2
+              3                     
+                                                           (2)                        (2)
+           +    P (λ)P ′ (λ)(k k̄)2 jl (kr)jl′ (k̄r) − 3jl (kr)jl′ (k̄r) − 3jl (kr)jl′ (k̄r)
+             14
+             1 (2)                io  2
+                         (2)
+           + jl (kr)jl′ (k̄r)            ,                                                                                  (3.30)
+             3
+
+                             1
+                                                             Z Z
+                  BllII′ =      (2π)−2 (2l + 1)(2l′ + 1)               dkdk̄(k k̄)4 PF (k)PF (k̄)
+                             32
+                                                                                                                          8
+                           Z λe         h                     26                             i
+                                                      (2)                   (1)         (3)
+                      ×        dλP ′ (λ) jl (kr) − jl (kr) − k k̄P (λ) jl (kr) − jl (kr) jl′ (kr)
+                                                                7
+                        Zλλo e          h                     26                             i
+                                                      (2)                   (1)         (3)
+                      ×        dηP ′ (η) jl′ (k̄s) − jl′ (k̄s) − k k̄P (η) jl′ (k̄s) − jl′ (k̄s) jl (k̄s),           (3.31)
+                         λo                                      7
+
+                    3 2                            Z Z
+        BllIII
+            ′  = 2        (2π)−2 (2l + 1)(2l′ + 1)        dkdk̄(k k̄)6 PF (k)PF (k̄)
+                    56
+                 n Z λe               h                                                                         io2
+                                                           (2)                       (2)         (2)    (2)
+               ×        dλP (λ)P ′ (λ) jl (kr)jl′ (k̄r) − jl (kr)jl′ (k̄r) − jl (kr)jl′ (k̄r) + jl (kr)jl′ (k̄r)    , (3.32)
+                     λo
+
+where r = λo − λ, r̄ = λo − λ̄, s = ηo − η, ηe = λe , and ηo = λo .
+  Next let us consider two directions with unit directional vectors e1 and e1 . If we define µ1 , µ2 and β as
+µ1 = ke1 /k, µ2 = ke2 /k and cos β = e1 e2 , respectively, we have a mathematical relation
+                                                                        4π
+                               Z Z
+                                    dφk dθk sin θk Pl (µ1 )Pl (µ2 ) =        Pl (cos β).                (3.33)
+                                                                      2l + 1
+Using Eq.(3.33) it is found that the correlation between Θpp ’s in the two directions is expressed as
+                                                   1 X X I                     
+                          hΘpp (e1 )Θpp (e2 )i =         Bll′ + BllII′ + BllIII
+                                                                             ′    Pl (cos β)Pl′ (cos β).             (3.34)
+                                                   2
+                                                      l′  l
+
+Here let us expand Pl Pl′ by Pn as
+                                                                      X
+                                          Pl (cos β)Pl′ (cos β) =            bll′ n Pn (cos β).                      (3.35)
+                                                                         n
+
+The derivation of the coefficient bll′ n is shown in Appendix B. Then the correlation reduces to
+                                                                     X 2n + 1
+                                    (T0 )2 hΘpp (e1 )Θpp (e2 )i =                  Cn(2) Pn (cos β),                 (3.36)
+                                                                     n
+                                                                             4π
+
+where
+                                                 4π          X                          
+                                     Cn(2) =          (T0 )2    BllI ′ + BllII′ + BllIII
+                                                                                      ′    bll′ n .                  (3.37)
+                                               2n + 1         ′l,l
+
+The expressions for hδ2 T /T i, h(Θpp )2 i and hΘpp (e1 )Θpp (e2 )i in Eqs.(3.16), (3.29) and (3.36) are our new result
+which will be useful to derive the second-order power spectra.
+
+
+                                            IV.     CONCLUDING REMARKS
+
+                                                                                                              (2)
+  In this paper we derived the average value hδ2 T /T i and the second-order power spectra Cn of CMB
+anisotropies due to primordial random density perturbations, which include two random variables α(k) and
+α(k̄), using the average values of the products of α(k). The average value hδ2 T /T i does not vanish and
+has no angular dependence. It should be regarded as the monopole component of temperature fluctuations
+                                                                                  (2)
+and the second-order angular correlation is described by the power spectra Cn . Since we have not derived
+hδ1 T /T δ3 T /T i yet, our analysis of second-order power spectra is incomplete. But we think hΘ2pp i may repre-
+sent the essential feature of second-order power spectra, that is, their l-dependence. In the next step we will
+analyze hδ1 T /T δ3 T /T i with the third-order metric perturbations for completeness.
+  In the case Λ = 0, the first-order temperature fluctuations due to the integrated Sachs-Wolfe effect vanish,
+while the second-order ones do not vanish and play a dominant role in the integrated Sachs-Wolfe effect, which
+should not be neglected. In the cosmological local void model (LVM)[18, 19, 20, 21], the exterior region is
+described in terms of the Einstein-de Sitter model, and so the main part of the integrated Sachs-Wolfe effect in
+LVM is of second-order. In the interior region we use open low-density models with Ω0 < 1, in which we have
+nonzero first-order Sachs-Wolfe effect. It is important for showing the observational reality of LVM to derive
+them.
+                                                                                                                                        9
+
+   In the case Λ 6= 0, the first-order temperature fluctuations due to the integrated Sachs-Wolfe effect decrease
+rapidly with the increase of the redshift z, but the second-order temperature fluctuations due to the integrated
+Sach-Wolfe effect decrease more slowly, and so the latter fluctuations may be dominant over the first-order
+fluctuations at the early stage. This situation is explained in a separate paper[25] using a simple model of
+density perturbations. Thus a characteristic behavior of CMB power spectra due to second-order temperature
+fluctuations will be measured through the future precise observation and bring useful informations on the
+structure and evolution of our universe in the future.
+
+
+                                                         Acknowledgments
+
+  The author thanks K.T. Inoue and referees for helpful discussions and comments.
+
+
+                      APPENDIX A: FIRST EXPRESSIONS OF AIll′ mm′ , AII           III
+                                                                    ll′ mm′ AND All′ mm′
+
+
+
+
+               2
+                                                                                               Z Z
+                       −2       (l+l′ ) (m+m′ )                ′                        ′
+AIll′ mm′   = 2 (2π) (−i)              i        (2l + 1)(2l + 1)(2m + 1)(2m + 1)                       dkdk̄(k k̄)2 dµdµ̄PF (k)PF (k̄)
+              8
+              Z λe nZ λe                                                                             h       5
+            ×       dλ         dλ̄P ′ (λ)P ′ (λ̄)(k k̄)2 (µµ̄)2 jl (kr)jl′ (k̄r̄)Pl (µ)Pl′ (µ̄) + P ′ (λ)( k k̄µµ̄ + k 2 µ2 + k̄ 2 µ̄2 )
+                λo          λo                                                                               2
+              1          ′         2
+                                     
+                                              2          2      2          3         2          2
+                                                                                                   i
+            + P (λ)P (λ)(k k̄) 2(µµ̄) − 6(µ + µ̄ ) + 3 − (1 − µ )(1 − µ̄ )
+              7                                             Z λ            2
+                                                                                                                    o
+                                                    ′′
+            × jl (kr)jl′ (k̄r)Pl (µ)Pl′ (µ̄) + 2P (λ)            dλ̄P (λ̄)(k k̄µµ̄)2 jl (kr)jl′ (k̄r̄)Pl (µ)Pl′ (µ̄)
+              Z ηe nZ ηe                                      λo
+                                                                                                         h        5
+            ×       dη         dη̄P (η)P (η̄)(k k̄) (µµ̄)2 jm (ks)jm′ (k̄s̄)Pm (µ)Pm′ (µ̄) + P ′ (η)( k k̄µµ̄ + k 2 µ2 + k̄ 2 µ̄2 )
+                                    ′      ′           2
+                ηo         ηo                                                                                     2
+              1                                                           3                       i
+            + P (η)P (η)(k k̄)2 2(µµ̄)2 − 6(µ2 + µ̄2 ) + 3 − (1 − µ2 )(1 − µ̄2 )
+                         ′
+              7                                                  Z η       2                                                o
+                                                           ′′
+            × jm (ks)jm′ (k̄s)Pm (µ)Pm′ (µ̄) + 2P (η)                dη̄P (η̄)(k k̄µµ̄)2 jm (ks)jm′ (k̄s̄)Pm (µ)Pm′ (µ̄) ,            (A1)
+                                                                ηo
+
+
+
+                2
+                                                                                       Z Z
+                         −2       (l+l′ ) (m+m′ )             ′                 ′
+  AII
+   ll′ mm′ =         (2π)    (−i)        i        (2l + 1)(2l   + 1)(2m + 1)(2m   + 1)     dkdk̄(k k̄)4 dµdµ̄PF (k)PF (k̄)
+               162
+               Z λe            h      26              i
+             ×        dλP ′ (λ) 1 − P (λ)k k̄µµ̄ jl (kr)jl′ (k̄r)(1 − µ2 )Pl (µ)Pl′ (µ̄)
+               Zληo e                  7
+                               h     26               i
+             ×        dηP ′ (η) 1 − P (η)k k̄µµ̄ jm (ks)jm′ (k̄s)(1 − µ̄2 )Pm (µ)Pm′ (µ̄),                            (A2)
+                ηo                    7
+
+              3 2                                                                        Z Z
+                          −2        (l+l′ ) (m+m′ )             ′                   ′
+AIII
+ ll mm
+   ′   ′ = 2          (2π)    (−i)         i        (2l + 1)(2l   + 1)(2m +   1)(2m   + 1)     dkdk̄(k k̄)6 dµdµ̄PF (k)PF (k̄)
+               112
+           Z λe
+         ×        dλP (λ)P ′ (λ)jl (kr)jl′ (k̄r)(1 − µ2 )(1 − µ̄2 )Pl (µ)Pl′ (µ̄)
+           Zληo e
+         ×        dηP (η)P ′ (η)jm (ks)jm′ (k̄s)(1 − µ2 )(1 − µ̄2 )Pm (µ)Pm′ (µ̄),                                      (A3)
+                 ηo
+
+where r = |x|, s = |y|, r = λo − λ, r̄ = λo − λ̄, s = ηo − η, s̄ = ηo − η̄, ηe = λe , and ηo = λo .
+
+
+                                           APPENDIX B: DERIVATION OF bll′ n
+
+   Since the Legendre function Pm (z) is a finite power series of z j with integers j(≤ m), Pm (z)Pm′ (z) can be
+also expressed as a finite power series of z j with integers r satisfying 0 ≤ j ≤ m + m′ . On the other hand, z n
+                                                                                                                         10
+
+is expressed as a finite series of Pm (z) with 0 ≤ m ≤ n, so that Pm (z)Pm′ (z) can be expressed as a finite series
+of Pn (z) with 0 ≤ n ≤ m + m′ . Their examples are
+                                                      2      3
+                                              P1 P2 =   P1 + P3 ,
+                                                      5      5
+                                                      1      2    18
+                                             (P2 )2 = P0 + P2 + P4 ,
+                                                      5      7    35
+                                                      3      4
+                                             P1 P3 = P2 + P4 ,
+                                                      7      7
+                                                       9       4    10
+                                             P2 P3 =     P1 + P3 + P5 .                                                 (B1)
+                                                      35       15   21
+In these cases the coefficients bll′ n in Eq.(3.35) are
+                                   b121 = 2/5,                b123 = 3/5,
+                                   b220 = 1/5,                b222 = 2/7,           b224 = 18/35,
+                                   b132 = 3/7,                b134 = 4/7,
+                                   b231 = 9/35,                b233 = 4/15,               b235 = 10/21.                 (B2)
+The general formula of these series are classified into the following three cases.
+(1) even-even type
+                          ′
+                      m+m
+                       X
+       P2m P2m′ =             b2m 2m′ 2s P2s ,
+                       s=0
+                                         ′
+                             m m
+                     4s + 1 X X            ′      ′
+      b2m 2m′ 2s = 2m+2m′           (−1)m+m +j+j (2j + 2j ′ )!(2m + 2j)!(2m′ + 2j ′ )!
+                   2        j=0 j=0
+                   h                                                                                            i
+                 / (m + j)!(m − j)!(2j)!(m′ + j ′ )!(m′ − j ′ )!(2j ′ )!(2j + 2j ′ − 2s)!!(2j + 2j ′ + 2s + 1)!! , (B3)
+
+(2) odd-odd type
+                                 ′
+                              X+1
+                             m+m
+        P2m+1 P2m′ +1 =                b2m+1 2m′ +1 2s P2s ,
+                               s=0
+                                                     ′
+                                             m X
+                                               m
+                                4s + 1       X                      ′       ′
+      b2m+1 2m′ +1 2s =                                  (−1)m+m +j+j (2j + 2j ′ + 2)!(2m + 2j + 2)!(2m′ + 2j ′ + 2)!
+                              22m+2m′ +2
+                                       j=0 j =0  ′
+                          h
+                        / (m + j + 1)!(m − j)!(2j + 1)!(m′ + j ′ + 1)!(m′ − j ′ )!(2j ′ + 1)!
+                                                                      i
+                        × (2j + 2j ′ − 2s + 2)!!(2j + 2j ′ + 2s + 3)!! ,                                                (B4)
+
+(3) even-odd type
+                                   ′
+                               m+m
+                                X
+            P2m P2m′ +1 =              b2m 2m′ +1 2s+1 P2s+1 ,
+                                s=0
+                                                         ′
+                                               m
+                                             m X
+                                  4s + 3     X                          ′       ′
+        b2m 2m′ +1 2s+1 =                                    (−1)m+m +j+j (2j + 2j ′ + 1)!(2m + 2j)!(2m′ + 2j ′ + 2)!
+                               22m+2m′ +1j=0 j =0    ′
+                            h
+                          / (m + j)!(m − j)!(2j)!(m′ + j ′ + 1)!(m′ − j ′ )!(2j ′ + 1)!
+                                                                    i
+                          × (2j + 2j ′ − 2s)!!(2j + 2j ′ + 2s + 3)!! ,                                                  (B5)
+
+where the rules of ! and !! are
+                                       n! = 1 · 2 · · · · (n − 1) · n               for         n ≥ 1,
+                                       0! = 1,
+                                       n! = ∞         for      n < 0,                                                   (B6)
+and
+                                  (2n)!! = 2 · 4 · · · · (2n − 2) · 2n                    for     n ≥ 1,
+                                                                                                                   11
+
+                            (2n + 1)!! = 1 · 3 · · · · (2n − 1) · 2n + 1   for    n ≥ 0,
+                                   0!! = 1,
+                                   n!! = ∞         for      n < 0.                                               (B7)
+
+
+
+
+ [1] C.L. Bennet et al., Astrophys. J. Suppl. 148, 1 (2003).
+ [2] D.N. Spergel et al., Astrophys. J. Suppl. 148, 175 (2003).
+ [3] E. Komatsu et al., Astrophys. J. Suppl. 148, 119 (2003).
+ [4] S. Mollerach, A. Gangui, F. Lucchin and S. Matarrese, Astrophys. J. 453, 1 (1995).
+ [5] D. Munshi, T. Souradeep and A. Starobinsky, Astrophys. J. 454, 552 (1995).
+ [6] D.N. Spergel and D.M. Goldberg, Phys. Rev. D59, 103001 (1991).
+ [7] N. Bartolo, S. Mollerach and A. Riotto, JCAP 05, 010 (2006).
+ [8] N. Bartolo, S. Mollerach and A. Riotto, JCAP 06, 024 (2006).
+ [9] K. Tomita, Phys. Rev. D71, 083504 (2005). See also K. Tomita, Prog. Theor. Phys. 37, 831 (1967), H. Russ, et al.,
+     Phys. Rev. D53, 6881 (1996), and S. Matarrese, et al., Phys. Rev. D58, 043504 (1998).
+[10] S. Mollerach and S. Matarrese, Phys. Rev. D56, 4494 (1997).
+[11] K. Tomita, Phys. Rev. D72, 043526 (2005).
+[12] K. Tomita, Phys. Rev. D72, 103506 (2005).
+[13] K. Tomita, Phys. Rev. D73, 029901(E) (2006).
+[14] K.T. Inoue and J. Silk, Astrophys. J. 648, 23 (2006).
+[15] K.T. Inoue and J. Silk, Astrophys. J. 664, 650 (2007).
+[16] G. D’Amico et al., arxiv: 0707.2894.
+[17] J. Hwang and H. Noh, Phys. Rev. D72, 044012 (2005).
+[18] K. Tomita, Astrophys. J. 529, 26 (2000); K. Tomita, Astrophys. J. 529, 38 (2000); K. Tomita, MNRAS 326, 287
+     (2001); K. Tomita, Prog. Theor. Phys. 106, 929 (2001).
+[19] M.N. Célérier, Astron. Astrophys. 353,63 (2000); M.N. Célérier, New Adv. Phys. 1,29 (2007).
+[20] H. Alnes, M. Amarzguioui and O. Gron, Phys. Rev.D73, 083519 (2006).
+[21] T. Biswas, R. Mansouri and A. Notari, astro-ph/0606703.
+[22] N. Sugiyama, Astrophys. J. Suppl. 100, 281 (1995).
+[23] M. Zaldarriaga, Large-Scale Structure Formation (Kluwer Academic Publ., Netherlands, 2000), p 213.
+[24] W. Hu and M. White, Phys. Rev. D56, 596 (1997).
+[25] K. Tomita and K.T. Inoue, astro-ph/0712.1291, to be published in Phys. Rev. D.
+

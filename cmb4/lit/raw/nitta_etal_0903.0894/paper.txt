@@ -1,0 +1,1413 @@
+                                             CMB anisotropies at second order III: bispectrum
+                                             from products of the first-order perturbations
+arXiv:0903.0894v2 [astro-ph.CO] 7 May 2009
+
+
+
+
+                                                     Daisuke Nitta1 , Eiichiro Komatsu2,3 , Nicola Bartolo4 , Sabino
+                                                     Matarrese4 and Antonio Riotto4,5
+                                                     1
+                                                       Astronomical Institute, Tohoku University, Sendai 980-8578, Japan
+                                                     2
+                                                       Texas Cosmology Center, the University of Texas at Austin, Austin, TX 78712,
+                                                     USA
+                                                     3
+                                                       Institute for the Physics and Mathematics of the Universe (IPMU), University of
+                                                     Tokyo, Chiba 277-8582, Japan
+                                                     4
+                                                       Dipartimento di Fisica “G. Galilei”, Universita di Padova, INFN Sezione di Padova,
+                                                     I-35131 Padova, Italy
+                                                     5
+                                                       CERN, Theory Division, CH-1211 Geneva 23, Switzerland
+                                                     E-mail: nitta@astr.tohoku.ac.jp, komatsu@astro.as.utexas.edu,
+                                                     nicola.bartolo@pd.infn.it, sabino.matarrese@pd.infn.it and
+                                                     riotto@mail.cern.ch
+
+                                                     Abstract. We calculate the bispectrum of the Cosmic Microwave Background
+                                                     (CMB) temperature anisotropies induced by the second-order fluctuations in the
+                                                     Boltzmann equation. In this paper, which is one of a series of papers on the numerical
+                                                     calculation of the bispectrum from the second-order fluctuations, we consider the terms
+                                                     that are products of the first-order perturbations, and leave intrinsically second-order
+                                                     terms and perturbations in the recombination history to the subsequent papers. We
+                                                     show that the bispectrum has the maximum signal in the squeezed triangles, similar
+                                                     to the local-type primordial bispectrum, as both types generate non-linearities via
+                                                     products of the first-order terms in position space. However, detailed calculations show
+                                                     that their shapes are sufficiently different: the cross-correlation coefficient reaches 0.5
+                                                     at the maximum multipole of lmax ∼ 200, and then weakens to 0.3 at lmax ∼ 2000.
+                                                     The differences in shape arise from (i) the way the acoustic oscillations affect the
+                                                     bispectrum, and (ii) the second-order effects not being scale-invariant. This implies
+                                                     that the contamination of the primordial bispectrum due to the second-order effects
+                                                     (from the products of the first-order terms) is small. The expected signal-to-noise
+                                                     ratio of the products of the first-order terms is ∼ 0.4 at lmax ∼ 2000 for a full-sky,
+                                                     cosmic variance limited experiment. We therefore conclude that the products of the
+                                                     first-order terms may be safely ignored in the analysis of the future CMB experiments.
+                                                                                                                local
+                                                     The expected contamination of the local-form fN L is fN      L ∼ 0.9 at lmax ∼ 200, and
+                                                       local
+                                                     fN L ∼ 0.5 at lmax ∼ 2000.
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations2
+
+1. Introduction
+
+Primordial non-Gaussianity is now recognized as a powerful probe of the details of the
+physics of inflation [1], as detection of large primordial non-Gaussianity would rule out
+all classes of inflation models that satisfy the following four conditions simultaneously:
+single-field, canonical kinetic term, slow-roll, and initially vacuum state.
+      However, the extraction of the primordial non-Gaussianity may not be so simple,
+as there are various non-primordial effects that can also generate non-Gaussianity. Any
+non-linearities can make initially Gaussian perturbations non-Gaussian.
+      The angular bispectrum, Bl1 l2 l3 , the harmonic transform of the angular three-point
+function, of the Cosmic Microwave Background (CMB) is often used to measure non-
+Gaussianity (see, e.g., [2], for a review). Departures from any of the above conditions
+(single-field, canonical kinetic term, slow-roll, and initial vacuum state) would result in
+detectable non-Gaussian signals in specific triangle configurations of the bispectrum.
+      When we consider the effects of various non-primordial sources of non-Gaussianity
+on the extraction of the primordial signals, we must specify of which primordial non-
+Gaussianity we study the contamination from the non-primordial sources. Multiple-
+field models, non-canonical kinetic terms, and initially excited states can produce large
+signals in the squeezed triangles (l1 ≪ l2 ≈ l3 ) [3], the equilateral triangles (l1 = l2 = l3 )
+[4], and the flattened/folded triangles (l1 ≈ l2 ≈ l3 /2) [5, 6], respectively.
+      Throughout this paper we shall study the contamination of the squeezed triangles,
+parametrized in the form of the so-called local form of the bispectrum, which results from
+the primordial curvature perturbation (in comoving gauge) in position space, ζ(x), given
+by ζ(x) = ζL (x)+ 53 fN L ζL2 (x), where ζL is a Gaussian perturbation, and fN L characterizes
+the amplitude of the local-type non-Gaussianity. Our sign convention is such that the
+temperature anisotropy in the Sachs-Wolfe limit at the first-order in perturbations is
+given by ∆T (1) /T = (1/5)ζ (1) . The simplest class of inflation models satisfying all of the
+four conditions (single-field, canonical kinetic term, slow-roll, and initial vacuum state)
+produce very small non-Gaussian signals: fN L ∼ 10−2 at the horizon crossing during
+inflation [7, 8], whereas the best limit from the WMAP 5-year data with the optimal
+bispectrum estimator is fN L = 38 ± 21 (68% CL) [9]. How much would non-primordial
+contributions account for the measured value of fN L ?
+      The CMB bispectrum from the local-type primordial non-Gaussianity with the
+linear radiative transfer has been given in [10], and that arising from non-linearity
+in gravity has been considered in [11]; however, non-linearities exist also in the
+perturbations in the photon-baryon fluid, i.e., non-linearities in the Boltzmann equation
+[12, 13, 14].
+      In this paper we calculate the CMB bispectrum, taking into account the second-
+order perturbations in the Boltzmann equation. We shall include the second-order terms
+that are products of the first-order perturbations, and ignore the intrinsically second-
+order terms (some of them have been considered in [15, 16, 17]), or the effects of the
+perturbed recombination [18, 19, 20]. The calculations that also include the intrinsically
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations3
+
+second-order terms and the perturbed recombination will be presented elsewhere.
+
+2. CMB Bispectrum From Second-order Perturbations
+
+2.1. Definitions
+We expand the temperature fluctuation into the linear (first-order) part and the second-
+order part as
+               ∆T (n̂)   ∆T (1) (n̂) ∆T (2) (n̂)
+                       =            +            + ....                                (1)
+                 T          T             T
+The spherical harmonic coefficients of temperature anisotropy, alm = T −1 d2 n̂Ylm
+                                                                         R       ∗
+                                                                                   (n̂)∆T (n̂),
+are therefore expanded as
+                      (1)    (2)
+              alm = alm + alm + . . . .                                                (2)
+                                               (2)
+How do we calculate the second-order part, alm ? This can be calculated by expanding
+the Boltzmann equation up to the second order in perturbations [12].
+      To expand the Boltzmann equation up to the second order in perturbations, we
+first expand the distribution function,
+                                                            −1
+                                      n       p         o
+              f (x, p, n̂, η) = 2 exp                     −1     ,               (3)
+                                        T (η)eΘ(x,n̂,η)
+up to the second order in perturbations: Θ = Θ(1) + Θ(2) /2 + . . . , and accordingly
+f = f (0) + f (1) + f (2) /2 + . . ..
+     We compute the fractional perturbation in photon’s energy density at the i-th order
+in perturbations, ∆(i) , by multiplying f (i) by p, and integrating over p2 dp:
+                            dpp3 f (i)
+                          R
+                   (i)
+                 ∆ ≡R                  .                                             (4)
+                            dpp3 f (0)
+At the linear order, we recover the usual relation between the linear fractional
+temperature fluctuation, Θ(1) = ∆T (1) /T , and the linear fractional energy density
+                       (1)
+perturbation, ∆(1) = δργ /ργ , i.e., ∆(1) = 4Θ(1) .
+    At the second order we have
+              ∆(2) = 4Θ(2) + 16[Θ(1) ]2 ,                                              (5)
+which is related to the second-order temperature fluctuation as
+               ∆T (2) 1                   3
+                           ∆(2) − h∆(2) i −   [Θ(1) ]2 − h[Θ(1) ]2 i
+                                                                     
+                       =
+                T        8                  2
+                         1 (2)
+                           Θ − hΘ(2) i + [Θ(1) ]2 − h[Θ(1) ]2 i ,
+                                                               
+                       =                                                            (6)
+                         2
+where we have subtracted the average of the temperature fluctuation so that the average
+of ∆T (2) /T vanishes.
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations4
+                                  (2)
+         We compute alm from ∆T (2) /T using
+                                         ∆T (2)
+                        Z
+                 (2)         2    ∗
+                alm =       d n̂Ylm (n̂)
+                                          T
+                         (2)    3 X    X                    ′ m′′   (1) (1)            (1) (1)
+                     = ãlm −               (−1)m Gll−mm
+                                                      ′ l′′       (al′ m′ al′′ m′′ − hal′ m′ al′′ m′′ i),                         (7)
+                                2 ′ ′ ′′ ′′
+                                                       lm l m
+where weZ define
+  (2)     1
+ãlm ≡        d2 n̂Ylm
+                     ∗
+                        (n̂)(∆(2) (n̂) − h∆(2) (n̂)i),                                                                            (8)
+          8
+               Z
+   m1 m2 m3
+Gl1 l2 l3   ≡      d2 n̂Yl1 m1 (n̂)Yl2 m2 (n̂)Yl3 m3 (n̂)
+              r                                                 !                                                        !
+                  (2l1 + 1)(2l2 + 1)(2l3 + 1) l1 l2 l3                                                   l1 l 2 l 3
+            =                                                                                                                .    (9)
+                                  4π                      0 0 0                                          m1 m2 m3
+Here the matrix is the Wigner 3j symbol.
+     The CMB angular-averaged bispectrum, Bl1 l2 l3 , is related to the ensemble average
+of al1 m1 al2 m2 al3 m3 as
+                                          !
+                               X l1 l2 l3
+                   Bl1 l2 l3 ≡              hal1 m1 al2 m2 al3 m3 i.                (10)
+                                 m1 m2 m3
+                                         all m
+This definition guarantees rotational invariance for the bispectrum, and the Wigner 3j
+symbol ensures that the bispectrum must satisfy triangle conditions: |li −lj | ≤ lk ≤ li +lj
+for all permutations of indices, and selection rules: m1 + m2 + m3 = 0.
+     The ensemble average is given by
+                                        (1)      (1)     (2)
+hal1 m1 al2 m2 al3 m3 i = hal1 m1 al2 m2 al3 m3 i + cyclic
+                            (1)    (1)     (2)       3XX                 −m m′ m′′
+                        = hal1 m1 al2 m2 ãl3 m3 i −             (−1)m3 Gl3 l′ l3′′ 3 3
+                                                     2 ′ ′ ′′ ′′             3 3
+                                                                                l3 m3 l3 m3
+                                        (1)    (1)    (1)    (1)           (1)    (1)      (1)    (1)
+                                   × (hal1 m1 al2 m2 al′ m′ al′′ m′′ i − hal1 m1 al2 m2 ihal′ m′ al′′ m′′ i) + cyclic,           (11)
+                                                       3 3    3 3                           3 3    3 3
+
+where cyclic means that we have to sum the cyclic permutations of Eq. (11) for indices
+(1, 2, 3) → (3, 1, 2) → (2, 3, 1).
+                            (1)
+      As we assume that alm ’s are Gaussian random variables, the four-point function of
+ (1)
+alm ’s in Eq. (11) is given by the sum of products of all possible pairs. Each pair gives
+the angular power spectrum, Cl :
+                            (1) (1)
+                        halm al′ m′ i = (−1)m Cl δll′ δ−mm′ .                                                                    (12)
+We obtain
+   (1)      (1)   (1)       (1)                  (1)     (1)            (1)         (1)
+hal1 m1 al2 m2 al′ m′ al′′ m′′ i − hal1 m1 al2 m2 ihal′ m′ al′′ m′′ i
+                   3    3    3    3                                         3   3   3     3
+                                        m1 +m2
+                        = (−1)                   Cl1 Cl2 [δ    l1 l3′   δ
+                                                                        −m1 m′3         δl2 l3′′ δ−m2 m′′3 + (1 ↔ 2)].           (13)
+     Substituting the right hand side of equation (13) for the second term of equation
+(11), and using l1 + l2 + l3 = even, we obtain the angular averaged bispectrum,
+                        Bl1 l2 l3 = B̃l1 l2 l3 − 3Il1 l2 l3 (Cl1 Cl2 + cyclic),                                                  (14)
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations5
+
+where we have defined the quantities,
+                         r                                                        !
+                           (2l1 + 1)(2l2 + 1)(2l3 + 1)                l1 l2 l3
+             Il1 l2 l3 ≡                                                              ,
+                                       4π                             0 0 0
+                                                                                                     (15)
+and
+                                                       !
+                                X        l1 l 2 l 3          (1)    (1)   (2)
+                 B̃l1 l2 l3 =                              hal1 m1 al2 m2 ãl3 m3 i + cyclic.        (16)
+                                all m
+                                         m1 m2 m3
+
+2.2. Angular averaged bispectrum from second-order perturbations
+The Boltzmann equation governs the evolution of ∆(1) (k, µ, η) and ∆(2) (k, n̂, η), where
+µ = k̂ · n̂ and n is the direction of propagation of photons. Note that for the linear
+perturbation there is azimuthal symmetry such that ∆(1) depends only on the angle
+between k and n; however, for the second-order perturbation there is no such symmetry.
+The Boltzmann equations in Fourier space are given by
+                       ′
+                 ∆(1) + ikµ∆(1) − τ ′ ∆(1) = S (1) (k, µ, η),                                        (17)
+                   (2) ′
+                 ∆         + ikµ∆(2) − τ ′ ∆(2) = S (2) (k, n̂, η),                                  (18)
+where the primes denote derivatives with respect to the conformal time ∂/∂η, S (1) and
+S (2) are the source functions at the first and the second orders, respectively, and τ ′ is the
+differential optical depth which is defined by using the mean electron number density,
+n̄e , the Thomson scattering cross-section, σT , and the scale factor, a, as
+                 τ ′ = −n̄e σT a.                                                                    (19)
+We expand the angular dependence of ∆(i) as
+                                r
+                                    2l + 1
+                                              Z
+                   (i)        l
+               ∆lm (k, η) = i                     d2 n̂Ylm ∗
+                                                              (n̂)∆(i) (k, n̂, η),                     (20)
+                                       4π
+and that of the source terms as
+                               r
+                                    2l + 1
+                                             Z
+                  (i)        l
+               Slm (k, η) = i                     d2 n̂Ylm∗
+                                                             (n̂)S (i) (k, n̂, η),                     (21)
+                                      4π
+where i = 1, 2.
+     The source functions relate the observed alm ’s to the primordial curvature
+perturbations in comoving gauge, ζ(k). The relations contain the linear radiation
+                                                                                            l′ m′
+transfer function, gl (k), and the second-order radiation transfer function, Flm                  (k), and
+are given by
+                                       d3 k
+                                  Z
+                 (1)           l                        ∗
+               alm = 4π(−i)                   gl (k)Ylm    (k̂)ζ(k),                                   (22)
+                                     (2π)3
+                       4π               d3 k         d3 k ′
+                                  Z            Z             Z
+                 (2)            l
+               ãlm =     (−i)               3             3
+                                                                 d3 k ′′ δ 3 (k′ + k′′ − k)
+                        8             (2π)         (2π)
+                          X ′ ′
+                                   lm
+                        ×      Flm (k , k , k)Yl∗′ m′ (k̂)ζ(k′)ζ(k′′ ).
+                                          ′    ′′
+                                                                                                       (23)
+                                 l′ m′
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations6
+
+The linear transfer function is given by
+         Z η0
+                                                            3 d2
+                                                                   
+                 −τ   (1)          (1)       d  (1)                1
+gl (k) =      dηe    S00 (k, η) + S10 (k, η) + S20 (k, η)        +      jl (u),                                (24)
+          0                                 du              2 du2 2
+                                      (1)
+where u ≡ k(η0 − η) and Slm is the standard linear source function (e.g., [22]):
+                       (1)                  ′               (1)
+                     S00 (k, η) = 4Ψ(1) (k, η) − τ ′ ∆0 (k, η),                                                (25)
+                      (1)                               (1)
+                     S10 (k, η) = 4kΦ(1) (k, η) − 4τ ′ v0 (k, η),                                              (26)
+                      (1)         τ ′ (1)
+                     S20 (k, η) = ∆2 (k, η),                                         (27)
+                            2
+where Φ(1) (k, η) and Ψ(1) (k, η) are the metric perturbations at the linear order in the
+longitudinal gauge:
+                     ds2 = a2 (η)[−(1 + 2Φ(1) )dη 2 + (1 − 2Ψ(1) )δij dxi dxj ],
+                                                                                                               (28)
+      (1)        (1)             (1)
+and ∆0 (k, η), ∆1 (k, η), and ∆2 (k, η) are the coefficients of the expansion in Legendre
+                                      (1)                      (1)                    (1)
+polynomials of ∆(1) (k, µ, η), and ∆l (k, η) is related to ∆lm (Eq. (20)) via ∆lm =
+               (1)                                              (1)
+(−i)−l (2l +1)∆l δm0 . The first-order velocity perturbation, v0 (k, η), is the irrotational
+part of the baryon velocity defined by v(k) = −iv0 (k)k̂.
+     The new piece, the second-order transfer function, is the line-of-sight integral of
+the second-order source terms in the Boltzmann equation:
+                                                                 r
+                l′ m′ ′ ′′       l
+                                   X
+                                          m      λ−l′ −mm′ µ            4π
+              Flm (k , k , k) = i     (−1) (−i) Gll′ λ
+                                   λµ
+                                                                      2λ + 1
+                                 Z η0
+                                             (2)
+                              ×       dηe−τ Sλµ (k′ , k′′ , k, η)jl′ [k(η − η0 )].
+                                                    0
+                                                                                                               (29)
+                                                                  (2)
+Here, we have introduced a new function, Slm (k′ , k′′ , k, η), which is defined by the
+following equation:
+                d3 k ′
+             Z          Z
+  (2)                                                (2)
+Slm (k, η) =          3
+                          d3 k ′′ δ 3 (k′ + k′′ − k)Slm (k′ , k′′ , k, η)ζ(k′)ζ(k′′ ). (30)
+               (2π)
+               (2)
+Basically, Slm (k′ , k′′ , k, η) is the second-order source function divided by ζ(k′ )ζ(k′′).
+                                            (2)
+      The explicit expression for Slm (k, η) in terms of perturbation variables is given by
+Ref. [12]. Using equation (22) and (23), we calculate the first term in Eq. (14), B̃l1 l2 l3 ,
+as follows:
+                           (−i)l1 +l2 +l3 X Y
+                                                  Z
+  (1)    (1)     (2)
+                                                                  X
+                                                      3       3
+hal1 m1 al2 m2 ãl3 m3 i =                          d   k i δ   (   ki )Yl1∗m1 (k̂1 )Yl∗2 m2 (k̂2 )YL∗3 M3 (k̂3 )
+                             (2π)3        L M   i                 i
+                                                3       3
+
+                     ×gl1 (k1 )gl2 (k2 )Pζ (k1 )Pζ (k2 ){FlL3 m
+                                                              3 M3
+                                                                3
+                                                                   (k1 , k2 , k3 ) + FlL3 m
+                                                                                          3 M3
+                                                                                            3
+                                                                                               (k2 , k1 , k3 )}, (31)
+where Pζ (k) is the power spectrum of ζ given by the usual definition:
+                     hζ(k1 )i = 0,      hζ(k1 )ζ(k2 )i = (2π)3 δ 3 (k1 + k2 )Pζ (k1 ).                         (32)
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations7
+
+In order to perform the integral over angles, k̂, we expand the three-dimensional δ-
+function using Rayleigh’s formula,
+                        X ′ ′ ′ m′ m′ m′
+δ 3 (k1 + k2 + k3 ) = 8    il1 +l2 +l3 Gl′ l1′ l′ 2 3 Yl1′ m′1 (k̂1 )Yl2′ m′2 (k̂2 )Yl3′ m′3 (k̂3 )
+                                                            1 2 3
+                                  all l′ m′
+                                     Z
+                                 ×       drr 2jl1′ (rk1 )jl2′ (rk2 )jl3′ (rk3 ),                                            (33)
+                                                                            (2)
+and also expand the angular dependence of Slm (k1 , k2 , k3 , η) by introducing the
+transformed source function, Sλµ11λµ22λµ33 (k1 , k2 , k3 , η), as
+                                                  r           r
+  (2)
+                            X X
+                                           λ1 +λ2      4π         4π
+Sλ3 µ3 (k1 , k2 , k3 , η) =           (−i)
+                            λ ,µ λ ,µ
+                                                    2λ1 + 1 2λ2 + 1
+                                     1   1    2   2
+
+                                   × Sλµ11λµ22λµ33 (k1 , k2 , k3 , η)Yλ1 µ1 (k̂1 )Yλ2 µ2 (k̂2 ).                            (34)
+                                                      (2)                             (2)
+This result shows that Sλ3 µ3 (k1 , k2 , k3 , η) = Sλ3 µ3 (k1 , k2 , k3 , η), and thus
+  l′ m′
+Flm      (k1 , k2 , k3 ) follows (see Eq. (29)).
+        Now we can perform the angular integration of Eq. (31) to obtain
+                                                         s
+               4               X X X                                             4π                        ′   ′   ′
+B̃l1 l2 l3 = 2 (−i)l1 +l2 +l3                                                                            il1 +l2 +l3 −λ1 −λ2 −λ3
+              π                all m all l′ m′ all λµ
+                                                            (2λ1 + 1)(2λ2 + 1)(2λ3 + 1)
+                                        !
+                       l1 l2 l3                m′ m′ m′ m′ −m µ             m′ −m µ        m′ −m µ
+               ×                             Gl′ l1′ l′ 2 3 Gl′ l11 λ1 1 1 Gl′ l22 λ2 2 2 Gl′ l33 λ3 3 3
+                      m1 m2 m3                 1 2 3          1              2              3
+
+
+                  Y 3 Z         Z
+               ×          ki dki drr 2 jl1′ (rk1 )jl2′ (rk2 )jl3′ (rk3)gl1 (k1 )gl2 (k2 )Pζ (k1 )Pζ (k2 )
+                            2
+
+                 i=1
+                            Z
+             ×i   l3 +l3′
+                                dηe−τ {Sλµ11λµ22λµ33 (k1 , k2 , k3 , η) + Sλµ22λµ11λµ33 (k2 , k1 , k3, η)}jl3′ [k3 (η − η0 )]
+             + cyclic,                                                                                                      (35)
+where we have used the following relation of the Wigner 9j symbol,
+                                 !
+     l1′ +l2′ +l3′
+                   X   l1 l2 l3      m′ m′ m′ m′ −m µ             m′ −m µ        m′ −m µ
+(−1)                               Gl′ l1′ l′ 2 3 Gl′ l11 λ1 1 1 Gl′ l22 λ2 2 2 Gl′ l33 λ3 3 3
+                       m1 m2 m3      1 2 3          1              2              3
+                 allmm
+                     ′
+
+                                                                      l1 l2 l3                             !
+                       R                                                                     λ1 λ2 λ3
+                 = (−1) Il1′ l2′ l3′ Il1 l1′ λ1 Il2 l2′ λ2 Il3 l3′ λ3 l1′ l2′ l3′                                ,          (36)
+                                                                                             µ1 µ2 µ3
+                                                                       λ1 λ2 λ3
+where R ≡ l1 + l2 + l3 + l1′ + l2′ + l3′ + λ1 + λ2 + λ3 . The Wigner 9j symbols have the
+permutation symmetry:
+      l 1 l 2 l 3   l 2 l1 l 3   l 1 l 3 l 2 
+      R
+(−1)   l1′ l2′ l3′  =  l2′ l1′ l3′ =  l1′ l3′ l2′
+       λ1 λ2 λ3        λ2 λ1 λ3       λ1 λ3 λ2
+                                        l1′ l2′ l3′   l1 l2 l3 
+                                     =   l 1 l2 l 3   = λ1 λ2 λ3 ,                                                          (37)
+                                         λ1 λ2 λ3        l1′ l2′ l3′
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations8
+
+and the coefficients Il1′ l2′ l3′ , Il1 l1′ λ1 , Il2 l2′ λ2 , and Il3 l3′ λ3 , ensure l1′ + l2′ + l3′ = even,
+l1 + l1′ + λ1 = even, l2 + l2′ + λ2 = even, and l3 + l3′ + λ3 = even, respectively, which gives
+R = even. Hence the Wigner 9j coefficients are invariant under the permutations.
+        Finally, we obtain the angular averaged bispectrum,
+                         s                                                                                                l1 l 2 l 3 
+             4 X                        4π                       l3 −l3′ +R
+B̃l1 l2 l3 = 2                                                  i           Il1′ l2′ l3′ Il1 l1′ λ1 Il2 l2′ λ2 Il3 l3′ λ3 l1′ l2′ l3′
+            π              (2λ1 + 1)(2λ2 + 1)(2λ3 + 1)
+                all l′ λ                                                                                                   λ1 λ2 λ3
+                         Z      Y2 Z                                        Z
+                    × drr 2           dki ki2 Pζ (ki )gli (ki )jli′ (rki ) dk3 k32 jl3′ (rk3)
+                                    i=1
+                         Z
+                                        ′
+                     ×       dr ′ e−τ (r ) jl3′ (r ′ k3 )Sλ1 λ2 λ3 (k1 , k2 , k3 , r ′) + perm,                                     (38)
+
+where r ′ ≡ η0 − η and we have used the relation of the spherical Bessel function,
+jl (−x) = (−1)l jl (x), and have defined the “angular-averaged source function,”
+                                                             !
+                                            X λ1 λ2 λ3
+              Sλ1 λ2 λ3 (k1 , k2, k3 , r) ≡                    Sλµ11λµ22λµ33 (k1 , k2 , k3 , r). (39)
+                                            allµ
+                                                 µ 1 µ 2 µ 3
+
+Note that cyclic terms in Eq. (35) have become perm (permutations) because of
+invariance of the Wigner 9j coefficients under the permutations.
+        The final analytic formula (38) we have obtained is a general formula which can be
+applied to any second-order perturbations. The information about the specific second-
+order terms is contained in the angular-averaged source term, Sλ1 λ2 λ3 (see Eqs. (39) and
+(34) for the definition).
+        For products of the first-order terms, we shall show later that Sλ1 λ2 λ3 (k1 , k2 , k3 , η)
+does not depend on k3 , i.e., Sλ1 λ2 λ3 (k1 , k2 , k3 , η) = Sλ1 λ2 λ3 (k1 , k2, η). This property
+enables us to integrate Eq. (38) over k3 . We obtain
+                        s                                                                                                   l 1 l2 l 3 
+             2 X                            4π                     l3 −l3′ +R
+B̃l1 l2 l3 =                                                      i           Il1′ l2′ l3′ Il1 l1′ λ1 Il2 l2′ λ2 Il3 l3′ λ3 l1′ l2′ l3′
+             π ′          (2λ1 + 1)(2λ2 + 1)(2λ3 + 1)
+                all l λ                                                                                                      λ1 λ2 λ3
+    Z            Y 2 Z
+ × dre       −τ
+                         dki ki2 Pζ (ki )jli′ (rki )gli (ki )Sλ1 λ2 λ3 (k1 , k2 , r) + perm,                                         (40)
+                 i=1
+
+where r ≡ η0 − η, R = l1 + l2 + l3 + l1′ + l2′ + l3′ + λ1 + λ2 + λ3 , and we have used
+                                                   π
+              Z
+                dk3k32 jl3′ (rk3 )jl3′ (r ′ k3 ) = 2 δ(r − r ′ ).                      (41)
+                                                  2r
+       Finally, by adding the remaining term in the full bispectrum, Eq. (14), we obtain
+                      s                                                                                                    l 1 l2 l 3 
+            2 X                            4π                     l3 −l3′ +R
+Bl1 l2 l3 =                                                      i           Il1′ l2′ l3′ Il1 l1′ λ1 Il2 l2′ λ2 Il3 l3′ λ3 l1′ l2′ l3′
+            π all l′ λ (2λ1 + 1)(2λ2 + 1)(2λ3 + 1)
+                                                                                                                            λ1 λ2 λ3
+                 2
+                                                                                                3
+   Z           Y      Z
+× dre−τ                 dki ki2 Pζ (ki )jli′ (rki )gli (ki )Sλ1 λ2 λ3 (k1 , k2 , r) − Il1 l2 l3 Cl1 Cl2 + perm.                     (42)
+               i=1
+                                                                                                2
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations9
+
+The remaining task is to calculate the angular-averaged source term, Sλ1 λ2 λ3 (k1 , k2 , η),
+which will be given in the next section.
+
+3. Second-order bispectrum from products of the first-order terms
+
+3.1. Source Term
+The explicit expressions for the second-order source term in Fourier space are given
+by Eq. (5.19) of [12]. We will choose the coordinate system such that ê3 = k̂ in their
+expressions, i.e., ê1 ⊥ k̂, ê2 ⊥ k̂, and ê1 ⊥ ê2 , and adopt the following metric convention:
+               ds2 = a2 (η) −e2Φ dη 2 + 2ωi dxi dη + (e−2Ψ δij + χij )dxi dxj ,
+                                                                               
+                                                                                             (43)
+where Φ = Φ(1) + Φ(2) /2, Ψ = Ψ(1) + Ψ(2) /2, and the shift vector, ωi , and the transverse
+and traceless tensor metric perturbation, χij , are already at the second order. Note that
+the first-order part of this metric is equivalent to Eq. (28). The second-order source term
+is [12, 21] (also see [14]) ‡
+                    ′       (2)                                                        τ ′ (2)
+Slm (k, η) = (4Ψ(2) − τ ′ ∆00 )δl0 δm0 + 4kΦ(2) δl1 δm0 − 8ωm   ′             (2)
+                                                                  δl1 − 4τ ′ vm   δl1 − ∆lm δl2 − 4χ′m δl2
+              Z 3 n                                                                    10
+                  d k1                                 (1)            (1)        (1)
+           +              − 2τ ′ [(δe(1) + Φ(1) )(k1 )∆0 (k2 ) + 2iv0 (k1 )∆1 (k2 )]δl0 δm0
+                 (2π)3
+                                                                                  (1)              (1)         (1)
+           + 4kΦ(1) (k1 )Φ(1) (k2 )δl1 δm0 + τ ′ [(δe(1) + Φ(1) )(k1 )∆2 (k2 ) + 2iv0 (k1 )∆1 (k2 )]δl2 δm0
+                                                                                    o
+                  (1) ′               ′ (1)          (1)            (1)
+           + [8Ψ (k1 ) + 2τ (δe + Φ )(k1 )]∆l0 (k2 )δm0
+              Z 3
+                  d k1                n
+                                              (1)         (1)
+           −              3
+                            k̂1 · k̂2   2τ ′ v0 (k1 )v0 (k2 )δl0 − i(−i)−l (2l + 1)k1 (Ψ(1) + Φ(1) )(k1 )
+                 (2π)
+                                                                   ∂PL (µ) o
+                                                  Z
+                                       (1)
+                 X
+              ×         (2L + 1)∆L (k2 ) dµPl (µ)                                δm0
+                   L
+                                                                       ∂µ
+               h                                                                                  i
+                                                                             (1)             (1)
+           − 2 4Ψ(1) ∇Φ(1) + 4τ ′ (δe(1) + Φ(1) )v + 3τ ′ ∆0 v − τ ′ ∆2 v δl1
+                                                          1
+                                                                                                 !m                      !
+                                                                                   ′′                    ′′
+                                                X X                              l 1 l                 l       1      l
+           + i(−i)−l (−1)−m (2l + 1)                           (2l′′ + 1)                                        ′
+                                                                                  0 0 0                0 m −m
+                                                  l′′ m′ =−1
+                 h                                                                                                i
+                         (1)                                         (1)             (1)                    (1)
+              × 8∆l′′ ∇Φ(1) + 2(Ψ(1) + Φ(1) )∇∆l′′ + 2τ ′ ∆l′′ v + 5δl′′ 2 τ ′ ∆2 v
+                                                                                                                   m′
+                                                            1
+                                                                                      !                             !
+                                                          X              1    1   l            1    1          l
+           + 14τ ′ (−i)−l (−1)−m (2l + 1)
+                                                                         0 0 0                m′ m′′ −m
+                                                      m′ ,m′′ =−1
+                        Z 3
+                 4π           d k1 (1)            (1)          ∗             ∗
+              ×                    3
+                                     v0 (k1 )v0 (k2 )Y1m         ′ (k̂1 )Y1m′′ (k̂2 )
+                  3          (2π)
+                                              1
+                           r
+                               3l + 1 X X                                                                             ∂PL (µ)
+                                                                          Z
+           − 2i(−i)     −l
+                                                           (2L + 1) d2 n̂Y1m′ (n̂)Y1m′′ (n̂)Ylm               ∗
+                                                                                                                 (n̂)
+                                  4π m′ ,m′′ =−1 L                                                                      ∂µ
+                  2 Z 3
+                    4π              d k1                                    (1)
+              ×                            k1 (Ψ(1) + Φ(1) )(k1 )∆L (k2 )Y1m             ∗           ∗
+                                                                                           ′ (k̂1 )Y1m′′ (k̂2 ),              (44)
+                     3             (2π)3
+‡ We have corrected the source term given in Refs. [12, 21] for typos, errors, and some missing terms.
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations10
+
+where k = k1 + k2 , and µ = n̂ · k̂
+    Here, we have introduced several variables that require explanations. The first-
+order electron number density perturbation is defined by
+               ne = n̄e (1 + δe(1) ).                                                         (45)
+The first-order velocity perturbation, v(1) (k), consists only of the scalar (longitudinal)
+perturbation:
+                                (1)
+               v(1) (k) = −iv0 ê3 .                                                          (46)
+                                                                                               (2)
+The second-order velocity perturbation, v(2) (k), consists of the scalar perturbation, v0 ,
+                                             (2)
+and the vector (transverse) perturbation, vm :
+                            (2)           (2) ê2 ∓ ê1
+                                     X
+              v(2) (k) = −iv0 ê3 +      vm      √ .                                   (47)
+                                    m=±1
+                                                   2
+The second-order shift vector, ω(k), is decomposed in a similar way:
+                      X       ê2 ∓ ê1
+             ω(k) =        ωm √ .                                                             (48)
+                     m=±1
+                                   2
+In the gauge choice of [12], there is no scalar mode in the shift vector. For the tensor
+metric perturbation, χij , we have
+                     r
+                          3 X
+              χij = −            χm (ê1 ± iê2 )i (ê1 ± iê2 )j .                 (49)
+                          8 m=±2
+The quantities, (f v)m and (f ∇g)m , are given by
+                           r Z
+                             4π     d 3 k1                      ∗
+              (f v)m (k) =                 v0 (k1 )f (k − k1 )Y1m (k̂1 ),
+                              3    (2π)3
+                                                                                              (50)
+and
+                                      r
+                                          4π        d 3 k1
+                                               Z
+                                                                                  ∗
+               (f ∇g)m(k) = −                             3
+                                                            k1 g(k1 )f (k − k1 )Y1m (k̂1 ),
+                                           3       (2π)
+                                                                                              (51)
+respectively.
+     These perturbation variables of the source term can be split into two parts; the first
+line of Eq. (44) contains the variables that are intrinsically second-order. (The variables
+have superscripts (2), and ωm and χm are also intrinsically second-order.) Solving for
+these terms requires solving the full second-order Boltzmann equations coupled with the
+Einstein equations.
+     The other lines contain the terms that are products of two linear variables.
+Evaluation of these terms is much easier than that of the intrinsically second-order terms,
+as the first-order variables have already been calculated using the standard linearized
+Boltzmann code such as CMBFAST [22].
+     Throughout this paper, we shall evaluate only the products of the first-order
+perturbations. The intrinsically second-order perturbations are equally important, and
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations11
+
+therefore the final results must also include those second-order terms. We shall also
+neglect the contribution from perturbing the recombination history [18, 19, 20] for now;
+we shall present the full results elsewhere.
+     For the products of the first-order perturbations, the source terms, Sλ1 λ2 λ3 , are
+non-zero only for the following four cases (for notational simplicity we shall omit the
+superscripts (1)):
+S000 = 4iτ ′ v0 (k1 )∆1 (k2 ) + 8Ψ′ (k1 )∆0 (k2 ),
+        4                                              X
+S110 = √ { − 5τ ′ v0 (k1 )v0 (k2 ) + 2k1 (Ψ + Φ)(k1 )      (2L + 1)∆L (k2 )},
+         3                                            L=odd
+         √
+S101 = 2i 3{τ ′ v0 (k1 )(4δe + 4Φ + 2∆0 − ∆2 )(k2 )
+       + 4k1 Φ(k1 )(∆0 − Ψ)(k2) + k1 ∆0 (k1 )(Ψ + Φ)(k2 )},
+         r
+           10                                           X
+S112 = 2      {7τ ′ v0 (k1 )v0 (k2 ) − k1 (Ψ + Φ)(k1 )       (2L + 1)∆L (k2 )}.                                              (52)
+           3                                           L=odd
+From these results we find that Sλ1 λ2 λ3 does not depend on k3 , i.e., Sλ1 λ2 λ3 =
+Sλ1 λ2 λ3 (k1 , k2 , r). Note also that S011 (k1 , k2 , r) = S101 (k2 , k1 , r). We have obtained
+these results by performing the following summation over µ1 , µ2 , and µ3 :
+                                               !
+                           X λ1 λ2 λ3
+Sλ1 λ2 λ3 (k1 , k2 , r) =                         Sλµ11λµ22λµ33 (k1 , k2 , r)
+                                   µ1 µ2 µ3
+                           allµ
+                                  r          r                                    !
+                                    2λ 1 + 1   2λ 2 +   1   X          λ1 λ2 λ3
+                        = iλ1 +λ2
+                                      4π         4π allµ               µ 1 µ2 µ3
+                              Z       Z
+                           × d k̂1 d2 k̂2 Yλ∗1 µ1 (k̂1 )Yλ∗2 µ2 (k̂2 )Sλ3 µ3 (k1 , k2 , r),
+                                  2
+
+
+                                                                                                                             (53)
+where we have used the inverse relation of Eq. (34).
+
+3.2. Bispectrum from products of the first-order terms
+Since only four combinations of λ1 , λ2 , and λ3 are non-zero, we rewrite the expression
+for the bispectrum, Eq. (42), as
+            X (λ ,λ ,λ )                      (0,0,0)     (1,1,0)      (1,0,1)     (1,1,2)
+Bl1 l2 l3 =     Bl1 l12 l3 2 3 + BlCl
+                                   1 l2 l3
+                                           = Bl1 l2 l3 + Bl1 l2 l3 + 2Bl1 l2 l3 + Bl1 l2 l3 + BlCl
+                                                                                                1 l2 l3
+                                                                                                        , (54)
+           λ1 λ2 λ3
+                                    (0,1,1)       (1,0,1)
+where we have used Bl1 l2 l3 = Bl1 l2 l3 , and defined
+                  BlCl
+                    1 l2 l3
+                            ≡ −3Il1 l2 l3 Cl1 Cl2 + cyclic,                                                                  (55)
+and
+                              s                                                                                           l1 l2 l3 
+ (λ ,λ ,λ )      2X                           4π                    ′
+Bl1 l12 l3 2 3 ≡                                              il3 −l3 +R Il1′ l2′ l3′ Il1 l1′ λ1 Il2 l2′ λ2 Il3 l3′ λ3     l1′ l2′ l3′
+                 π ′              (2λ1 + 1)(2λ2 + 1)(2λ3 + 1)
+                      all l                                                                                                λ1 λ2 λ3
+                      Z                2 Z
+                                       Y
+                ×             dre −τ
+                                               dki ki2 Pζ (ki )jli′ (rki )gli (ki )Sλ1 λ2 λ3 (k1 , k2, r) + perm.                   (56)
+                                       i=1
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations12
+
+       To proceed further, we simplify the expression by introducing the following notation
+for the integral over k that appears many times:
+                             2
+                               Z
+                    (n)
+                [x]ll′ (r) ≡     dkk 2+n Pζ (k)jl′ (rk)gl (k)x(k, r).                                (57)
+                             π
+This function corresponds to the existing functions in the literature in the appropriate
+                                                                                    (n)
+limits. For example, for x(k, r) = π/2, this function is the same as βll′ (r) introduced
+                                                                                  (n)
+in [11]. In fact, we find that an order-of-magnitude estimate of [x]ll′ (r) is given by
+   (n)          (n)                                                                          (n)
+[x]ll′ (r) ∼ 2βll′ (r)/π × x(k = l′ /r, r) for a smooth function of x(k, r). As βll′ (r) is a
+                                                                                         (n)
+sharply peaked function at the decoupling epoch, r = r∗ , we find that [x]ll′ (r) is also
+sharply peaked at r = r∗ .
+                                                           (0,0,0) (1,1,0)   (1,0,1)            (1,1,2)
+       With these tools in hand, we shall calculate Bl1 l2 l3 , Bl1 l2 l3 , Bl1 l2 l3 , and Bl1 l2 l3 in
+the following subsections.
+
+          (0,0,0)         (1,1,0)
+3.2.1. Bl1 l2 l3 and Bl1 l2 l3 The contributions to the bispectrum from the second-order
+                                                   (0,0,0)      (1,1,0)
+monopole terms at the decoupling epoch are Bl1 l2 l3 and Bl1 l2 l3 . For the former the
+second-order monopole is created from products of the first-order monopole terms. For
+the latter it is created from products of the first-order dipole terms.
+                              (0,0,0)
+     First, we calculate Bl1 l2 l3 :
+                                                                    l 1 l 2 l3 
+ (0,0,0)    π   X
+                    l3 −l3′ +R
+                                 √
+Bl1 l2 l3 =        i   4πIl1′ l2′ l3′ Il1 l1′ 0 Il2 l2′ 0 Il3 l3′ 0 l1′ l2′ l3′
+          2 all l′
+                                                                      0 0 0
+          Z        n                                                             o
+                           (0)               (0)            −τ      ′ (0)    (0)
+        ×    dr − 4g(r)[v0]l1 l1 [i∆1 ]l2 l2 + 8e [Ψ ]l1 l1 [∆0 ]l2 l2 + perm,                      (58)
+
+where g(r) is visibility function defined by
+                                 Z η0
+                          ′ −τ
+              g(r) = −τ e ,           drg(r) = 1.                                                   (59)
+                                       0
+
+In the first term of the second line of Eq. (58), the readers might wonder why what-
+appears-to-be-dipole contributions, v0 and ∆1 , appeared. They should be interpreted
+as the monopole contributions, as these contributions here represent the absolute values
+of the bulk velocities of the electrons and the photons, respectively, rather than the
+                                                                          (1) (1)
+dipoles. See the second term on the second line of Eq. (44), 2iv0 ∆1 δl0 δm0 , which
+contributes only to the monopole of the source term, l = 0.
+     Eq. (58) may be simplified further by using
+                                  r
+                                    2l1 + 1
+               Il1 l1′ 0 = (−1)l1           δl1 l1′ ,                               (60)
+                                      4π
+and
+                l1 l2 l3 
+                                                δl1 l1′ δl2 l2′ δl3 l3′
+                    l1′ l2′ l3′   =p                                    .           (61)
+                                        (2l1 + 1)(2l2 + 1)(2l3 + 1)
+                     0 0 0
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations13
+
+We obtain
+           1
+                     Z  n                                                        o
+ (0,0,0)                           (0)         (0)               (0)        (0)
+Bl1 l2 l3 = Il1 l2 l3 dr − g(r)[v0]l1 l1 [i∆1 ]l2 l2 + 2e−τ [Ψ′ ]l1 l1 [∆0 ]l2 l2 + perm.                    (62)
+           2
+                                 (1,1,0)
+     Next, we calculate Bl1 l2 l3 :
+                                                                              l 1 l2 l 3 
+ (1,1,0)
+           p  π      X
+                             l1 +l2 +l1′ +l2′
+            2l3 + 1
+Bl1 l2 l3 = −               i                 Il1′ l2′ l3 Il1 l1′ 1 Il2 l2′ 1 l1′ l2′ l3
+         6
+                     all l′                                                    1 1 0
+ 4
+     Z   n                                                                                         o
+                   (0)        (0)                                 (1)                        (0)
+                                                                           X
+×√     dr 5g(r)[v0]l1 l′ [v0 ]l2 l′ + 2e−τ [Ψ + Φ]l1 l′                        (2L + 1)[i∆L ]l2 l′ + perm.   (63)
+   3                   1          2                                  1
+                                                                        L=odd
+                                                                                                 2
+
+
+
+We simplify this result further by using
+                      l1 l2 l3           ′
+                        ′  ′         (−1)l1 +l2 n l1 l2 l3 o
+                       l1 l2 l3 = − p              ′  ′     .                                                (64)
+                                      3(2l3 + 1) l2 l1 1
+                       1 1 0
+Both l1′ and l2′ satisfy the triangular conditions demanded by the Wigner 6j symbols:
+l1 − 1 ≤ l1′ ≤ l1 + 1 and l2 − 1 ≤ l2′ ≤ l2 + 1. The function Il1′ l2′ l3 , which contains the
+Wigner 3j symbols of (l1′ , l2′ , l3 ; 0, 0, 0), requires l1′ + l2′ + l3′ = even. The other functions,
+Il1 l1′ 1 and Il2 l2′ 1 , require l1 + l1′ + 1 = even and l2 + l2′ + 1 = even, respectively. These
+requirements suggest that one may write l1′ − l1 = n1 and l2′ − l2 = n2 , where n1 and n2
+are always odd. With this result and the above triangular conditions, we find that n1
+and n2 can be either +1 or −1. From these results we finally obtain
+  (1,1,0)     2π X n1 −n2                                            n l l l o
+Bl1 l2 l3 =                     i     Il1′ l2′ l3 Il1 l1′ 1 Il2 l2′ 1 1′ 2′ 3
+               9 n ,n =±1                                               l 2 l1 1
+                       1 2
+      Z     n                                                                                    o
+                            (0)   (0)                                (1)                    (0)
+                                                                           X
+                                                 −τ
+ × dr 5g(r)[v0]l1 l′ [v0 ]l2 l′ + 2e [Ψ + Φ]l1 l′                             (2L + 1)[i∆L ]l2 l′ + perm. (65)
+                         1       2                      1                            2
+                                                            L=odd
+
+
+          (1,0,1)
+3.2.2. Bl1 l2 l3 The contribution to the bispectrum from the second-order dipole terms
+                                         (1,0,1)
+at the decoupling epoch is Bl1 l2 l3 , which is created from products of the first-order
+monopole and dipole terms. We obtain
+  (1,0,1)   π X n1 +1                                      n l l l o
+                                                              1   3 2
+Bl1 l2 l3 =            i    Il1′ l2 l3′ Il1 l1′ 1 Il3 l3′ 1 ′ ′
+            3 n ,n =±1                                       l3 l1 1
+                Z1 3 n
+                                       (0)                            (0)
+            × dr − g(r)[v0 ]l1 l′ [4δe + 4Φ + 2∆0 − ∆2 ]l2 l2
+                                          1
+                                                                          o
+                   −τ  (1)                 (0)            −τ    (1)   (0)
+            + 4e [Φ]l1 l′ [∆0 − Ψ]l2 l2 + e [∆0 ]l1 l′ [Ψ + Φ]l2 l2 + perm,         (66)
+                             1                               1
+
+where l1′ = l1 + n1 and l3′ = l3 + n3 .
+
+           (1,1,2)
+3.2.3. Bl1 l2 l3 The contribution to the bispectrum from the second-order quadrupole
+                                  (1,1,2)
+terms at the decoupling epoch is Bl1 l2 l3 , which is created from products of the first-order
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations14
+
+dipole terms. We obtain
+               r                                                                                l 1 l 2 l3 
+  (1,1,2)    2 4π        l3
+                            X
+                                    l1 +l2 +l1′ +l2′
+Bl1 l2 l3 =         (−1)           i                 Il1′ l2′ l3′ Il1 l1′ 1 Il2 l2′ 1 Il3 l3′ 2 l1′ l2′ l3′
+            3π   5
+                            alll ′
+                                                                                                  1 1 2
+               r Z
+                 10         n
+                                                 (0)              (0)          −τ                (1)
+                                                                                                       X                  (0)
+                                                                                                                                o
+            ×2         dr − 7g(r)[v0 ]l1 l′ [v0 ]l2 l′ − e [Ψ + Φ]l1 l′                                     (2L + 1)[i∆L ]l2 l′
+                  3                                   1              2                              1
+                                                                                                      L=odd
+                                                                                                                              2
+
+
+               + perm,                                                                                                       (67)
+where l1′ , l2′ , and l3′ satisfy the triangular conditions: l1 −1 ≤ l1′ ≤ l1 +1, l2 −1 ≤ l2′ ≤ l2 +1,
+and l3 − 2 ≤ l3′ ≤ l3 + 2, which yields the conditions on n1 = l1′ − l1 , n2 = l2′ − l2 , and
+n3 = l3′ − l3 as −1 ≤ n1 ≤ 1, −1 ≤ n2 ≤ 1, and −2 ≤ n3 ≤ 2.
+       The Wigner 3j symbols in Il1′ l2′ l3′ , Il1 l1′ 1 , Il2 l2′ 1 , and Il3 l3′ 2 require n1 = odd, n2 = odd,
+n3 = even, and l1 + l2 + l3 = even; thus, only n1 , n2 = ±1 and n3 = ±2, 0 are allowed.
+We finally obtain
+                    r                                                                             l1 l2 l3 
+  (1,1,2)          8 6 X               X
+                                                n1 +n2
+Bl1 l2 l3 = −                                  i       Il1′ l2′ l3′ Il1 l1′ 1 Il2 l2′ 1 Il3 l3′ 2 l1′ l2′ l3′
+                   9 π n ,n =±1 n =±2,0
+                           1 2        3                                                            1 1 2
+              Z      n                                                                                           o
+                                  (0)     (0)                              (1)                               (0)
+                                                                                  X
+          ×        dr 7g(r)[v0]l1 l′ [v0 ]l2 l′ + e−τ [Ψ + Φ]l1 l′                         (2L + 1)[i∆L ]l2 l′ + perm. (68)
+                                        1        2                        1                                2
+                                                                              L=odd
+
+
+4. Shape and signal-to-noise of the second-order bispectrum from products
+of the first-order terms
+
+One of the motivations for calculating the second-order bispectrum is to see how
+much the second-order effects in gravity and the photon-baryon fluid contaminate the
+extraction of the primordial bispectrum. If, for example, the predicted shape of the
+second-order bispectrum is sufficiently different from that of the primordial bispectrum,
+then one would hope that the contamination would be minimal. To investigate this, we
+shall compare the numerical results of the second-order bispectrum with the so-called
+“local” model of the primordial bispectrum.
+     We extract the first-order perturbations from the CMBFAST code [22]. We use the
+following cosmological parameters: ΩΛ = 0.72, Ωm = 0.23, Ωb = 0.046, h = 0.70, and
+assume a power law spectrum, Pζ ∝ k n−4 , with n = 1. We determine the decoupling
+time, η∗ , from the peak of the visibility function. In this model we have cη0 = 14.9
+Gpc and cη∗ = 288 Mpc. While the most of the signal is generated in the region of
+the decoupling epoch, in the low-l regime we must also take into account the late time
+contribution due to the late integrated Sachs-Wolfe effect; thus, we integrate over the
+line-of-sight, r, in the following regions: c(η0 − 5η∗ ) < r < c(η0 − 0.7η∗ ) for l > 100, and
+0 < r < c(η0 − 0.7η∗ ) for l ≤ 100. The step size is ∆r = 0.1η∗ around the decoupling
+epoch, and we use the same time steps used by CMBFAST after the decoupling epoch.
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations15
+
+    The local primordial bispectrum is given by [10]
+                                    Z ∞
+             Bl1 l2 l3 = 2Il1 l2 l3     r 2 drbLl1 (r)bLl2 (r)bN L
+                                                               l3 (r) + cyclic,
+                                      0
+                                                                                         (69)
+where                         Z ∞
+                         2
+               bLl (r) ≡            k 2 dkPΦ (k)gTKSl (k)jl (kr),
+                          π   0
+                              Z ∞
+                    NL      2
+                   bl (r) ≡       k 2 dkfN L gTKSl (k)jl (kr).                           (70)
+                            π 0
+Note that our linear transfer function, gl (k), is related to that of [10], gTKSl (k), by
+gl (k) = 35 gTKSl (k).
+      Figure 1 shows a shape of the bispectrum generated by the products of the first-
+order terms, and compares it to the primordial bispectrum, for l3 = 200. Both
+shapes (second-order and primordial) have the largest signals in the squeezed triangles,
+l1 ≪ l2 ≈ l3 . This is an expected result: the local primordial bispectrum arises from the
+primordial curvature perturbation in position space written as ζ(x) = ζL (x)+ 53 fN L ζL2 (x),
+where ζL is a Gaussian perturbation. The second-order bispectrum that we have
+computed here arises from the products of the first-order terms, also products in position
+space. However, these two shapes are slightly different when l1 /l3 is not so small
+(l1 /l3 = O(0.1)): the ways in which the radiation transfer function (which gives the
+acoustic oscillations) enters into the bispectrum are different for the products of the
+first-order terms and the primordial bispectrum. The primordial bispectrum contains
+jl (kr∗ )gl (k), whereas the second-order bispectrum contains jl (kr∗ )gl (k)x(k, r∗ ) where
+x = ∆0 , v0 , etc., also has the oscillations. Therefore, the second-order bispectrum has
+more interferences between multiple radiation transfer functions. Moreover, the second-
+order effects contain derivatives that the local primordial effects do not have, which also
+makes the details of the two shapes different.
+      Notice, in particular, that most of these gradients in the source term, Eq. (44),
+are contracted with the direction vector, n̂. There is only one term that has a
+scalar product of two wave-vectors, k1 · k2 , which vanishes in the squeezed limit.
+The resulting bispectrum, Eq. (54), resembles that of a local form, except for the
+extra powers of k coming from the derivatives. These extra powers of k will affect
+the scale-dependence of the bispectrum, i.e., the second-order bispectrum is no longer
+scale-invariant. Nevertheless, the largest signal of the bispectrum still comes from the
+squeezed configurations, as the number of extra powers of k from the derivatives in the
+source term is not large enough to change the fact that we have the largest contribution
+when one of k1 , k2 , and k3 is very small. In other words, schematically the bispectrum
+looks like B(k1 , k2 , k3 ) ∼ (k1m1 k2m1 )/(k13 k23 ) + cyclic, where m1 and m2 are the extra
+powers of k from the derivatives. Therefore, the largest contribution is in the squeezed
+configurations as long as mi < 3.
+      Figure 2 shows the same for l3 = 1000. The results are similar to those for l3 = 200,
+but the acoustic oscillations are more clearly visible.
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations16
+
+
+      8                                                                               8
+      7                  22                                                           7                      22
+      6           × 10                                                                6            × 10
+      5                                                                               5
+      4                                                                               4
+      3                                                                               3
+      2                                                                               2
+      1                                                                               1
+      0                                                                               0
+     -1                                                                              -1
+
+
+     0.5                                                                             0.5
+           0.6                                                                           0.6
+                 0.7                                                                        0.7
+     l2/l3             0.8                                                           l2/l3     0.8
+                                                                       0.2   0                                                                      0
+                             0.9                                0.4                               0.9                                  0.4    0.2
+                                          0.8       0.6                                                                        0.6
+                                   1 1                        l1/l3                                                1 1   0.8         l1/l3
+
+
+
+
+                                   Figure 1. Shape dependence of the second-order bispectrum from products of the
+                                   first-order terms (top) and that of the local primordial bispectrum (bottom). We show
+                                           (1)    (1)    (2)
+                                   l1 l2 hal1 m1 al2 m2 al3 m3 i(Glm 1 m2 m3 −1
+                                                                   1 l2 l3
+                                                                            ) /(2π)2 × 1022 as a function of l1 /l3 and l2 /l3 where
+                                   l3 = 200. Both shapes have the largest signals in the squeezed triangles, l1 ≪ l2 ≈ l3 .
+
+
+
+      9                                                                               5                  24
+      8                  24                                                           4           × 10
+      7           × 10
+      6                                                                               3
+      5                                                                               2
+      4                                                                               1
+      3                                                                               0
+      2
+      1                                                                              -1
+      0                                                                              -2
+
+
+     0.5                                                                             0.5
+           0.6                                                                             0.6
+                 0.7                                                                             0.7
+     l2/l3             0.8                                                           l2/l3             0.8
+                                                                       0.2   0                                                                0.2   0
+                             0.9                                0.4                                          0.9                        0.4
+                                          0.8       0.6                                                                  0.8   0.6
+                                   1 1                        l1/l3                                                1 1                l1/l3
+
+
+
+
+                                   Figure 2. Same as Fig. 1 for l3 = 1000. The acoustic oscillations are clearly seen.
+
+
+     How similar are the second-order and the primordial bispectra? What is the
+contamination level? We shall quantify the degree to which these spectra are correlated,
+as well as the expected signal-to-noise ratio of the second-order bispectrum, following
+the standard method given in [10]. Namely, the Fisher matrix for the amplitudes of the
+bispectra, Fij , is given by
+                                                                      (i)    (j)
+                                                X  Bl1 l2 l3 Bl1 l2 l3
+                                   Fij ≡                               ,                                                                                (71)
+                                         2≤l ≤l ≤l
+                                                       σl21 l2 l3
+                                                1         2    3
+
+where
+                                   σl1 l2 l3 ≡ hBl21 l2 l3 i − hBl1 l2 l3 i2 ≈ Cl1 Cl2 Cl3 ∆l1 l2 l3 ,                                                  (72)
+and ∆l1 l2 l3 takes values 1, 2, and 6 when all l’s are different, two of them are equal and all
+are the same, respectively. The power spectrum, Cl , is the sum of the theoretical CMB
+and the detector noise. Throughout this paper we shall ignore the noise contribution.
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations17
+                                      0
+                                 10
+
+
+
+                                      -1
+                                 10
+
+
+
+                    S/N(<lmax)        -2
+                                 10
+                                                          products of the first-order
+                                                              primordial (for fNL=1)
+                                      -3
+                                 10
+
+
+
+                                           10             100                       1000
+                                                                lmax
+
+
+
+              Figure 3. Signal-to-noise ratios for the local primordial bispectrum for fN L = 1
+              (dashed), and the second-order bispectrum from the products of the first-order terms
+              (solid), for an ideal full-sky and cosmic-variance-limited (noiseless) experiment.
+
+
+In other words, we shall only consider ideal cosmic-variance limited experiments with
+full sky coverage.
+      The signal-to-noise ratio is given by
+                
+                  S         1
+                      = p −1 ,                                                   (73)
+                 N i        Fii
+and we define the cross-correlation coefficient between different shapes i and j, rij , as
+                      Fij
+             rij ≡ p          .                                                        (74)
+                      Fii Fjj
+     In Fig. 3 we show the cumulative signal-to-noise ratio, summed up to a maximum
+multipole of lmax , of the primordial bispectrum, assuming fN L = 1 and ignoring the
+second-order bispectrum, i.e., (S/N)prim = (Fprim,prim)1/2 , as well as that of the second-
+order bispectrum, ignoring the primordial bispectrum, i.e., (S/N)2nd = (F2nd,2nd )1/2 . In
+                                                               p
+both cases S/N increases roughly as S/N ∝ lmax (or ∝ Npix where Npix is the number
+of independent pixels in the map). A larger contribution to the second-order bispectrum
+at l . 50 comes from the terms involving the Integrated Sachs-Wolfe effect. The signal-
+to-noise ratio of the second-order bispectrum reaches ∼ 0.4 at lmax = 2000; thus, this
+signal is undetectable. While our calculation includes the temperature anisotropy only,
+including polarization would increase the signal-to-noise by a factor of two at most,
+which would not be enough to push the signal-to-noise above unity.
+     While the total signal-to-noise does not exceed unity, it may still be instructive to
+                         (λ ,λ ,λ )
+show which terms of Bl1 l12 l3 2 3 and BlC1 ll2 l3 are more important than the others. To do
+this we show the following quantity:
+                                                         1/2
+                
+                  S             X Bla l l Blb l l
+                        ≡               1 2 3      1 2 3
+                                                             ,                          (75)
+                 N ab                    σl21 l2 l3
+                                           2≤l1 ≤l2 ≤l3
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations18
+
+where a, b = 1, 2, 3, 4, and 0 correspond to (0, 0, 0), (1, 1, 0), (1, 0, 1), (1, 1, 2), and Cl ,
+respectively.
+                                                                                         (λ ,λ ,λ )
+      The results are shown in Fig. 4. We find that (S/N)2nd is dominated by Bl1 l12 l3 2 3
+for l . 100, whereas it is dominated by BlC1 ll2 l3 for l & 100 (see the top panel).
+                (λ ,λ ,λ )
+      Among Bl1 l12 l3 2 3 , the most dominant term is (1, 0, 1) (the bispectrum from the
+second-order dipole created by the first-order dipole and monopole). The second
+most dominant is (0, 0, 0) (from the second-order monopole created by the first-order
+monopole) for l . 400 and (1, 1, 0) (from the second-order monopole created by the first-
+order dipole) for l & 400. The cross terms (middle and bottom panels) are sub-dominant
+compared to the auto terms (top panel) at all multipoles.
+      How similar are the second-order and the primordial bispectra? In Fig. 5 we show
+the cross-correlation coefficient between the second-order bispectrum from the products
+of the first-order terms and the local primordial bispectrum. The cross-correlation
+coefficient reaches ∼ 0.5 for lmax = 200, and the shapes for l3 = 200 are shown in Fig. 1.
+After lmax = 200 the correlation weakens, and reaches ∼ 0.35 at lmax = 1000, and the
+shapes for l3 = 1000 are shown in Fig. 2. These results show that the second-order
+bispectrum from the products of the first-order perturbations and the local primordial
+bispectrum are fairly similar, with a sizable correlation coefficient. The next question
+is, “how large is the contamination of the primordial bispectrum?”
+      We quantify the contamination of the primordial bispectrum due to the second-
+order effects from the products of the first-order perturbations as follows: we fit the
+primordial bispectrum template to the second-order bispectrum, and find the best-fitting
+fNcon
+    L (“con” stands for contamination) by minimizing χ given by
+                                                                   2
+
+                                                              2
+                 2
+                           X      fN L Blprim
+                                         1 l2 l3
+                                                 − Bl2nd
+                                                      1 l2 l3
+               χ =                                               ,                            (76)
+                        2≤l ≤l ≤l
+                                           σl21 l2 l3
+                          1   2   3
+
+
+with respect to fN L . Here, Blprim
+                               1 l2 l3
+                                       is the local-type primordial bispectrum with fN L = 1
+[10]. We obtain
+                       1     X Bl2nd
+                                         1 l2 l3
+                                                 Blprim
+                                                    1 l2 l3
+               fNcon
+                   L =                        2
+                                                            ,
+                       N 2≤l ≤l ≤l         σl1 l2 l3
+                             1  2 3
+                                             2
+                          X       Blprim
+                                     1 l2 l3
+               N     =               2
+                                                 .                                            (77)
+                       2≤l ≤l ≤l
+                                   σl1  l2 l3
+                              1   2   3
+
+This is the value of fN L one would find, if one did not know that the primordial
+bispectrum did not exist but there was only the second-order bispectrum from the
+products of the first-order terms. In Fig. 6 we show fNcon
+                                                         L as a function of the maximum
+                                     con
+multipoles, lmax . We find that fN L reaches the maximum value, ∼ 0.9, when the
+correlation coefficient reaches the maximum at lmax ∼ 200, but then decreases to ∼ 0.5
+at lmax ∼ 2000. Therefore, we conclude that the contamination of the primordial
+bispectrum due to the second-order bispectrum is negligible for CMB experiments.
+     Finally, we calculate the 1-σ uncertainty of fN L , ∆fN L , with the second-order
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations19
+                                          0
+                                     10
+                                                           total
+                                                        (S/N)11
+                                                        (S/N)22
+                                          -1
+                                     10                 (S/N)33
+                                                        (S/N)44
+                                                        (S/N)00
+
+
+                    (S/N)ii(<lmax)
+                                          -2
+                                     10
+
+
+
+                                          -3
+                                     10
+
+
+
+                                          -4
+                                     10
+                                               10                  100          1000
+                                                                         lmax
+
+
+                                     10
+                                          0            total
+                                                    (S/N)12
+                                                    (S/N)13
+                                          -1        (S/N)14
+                                     10             (S/N)23
+                                                    (S/N)24
+                                                    (S/N)34
+                    (S/N)ij(<lmax)
+
+
+
+
+                                          -2
+                                     10
+
+                                          -3
+                                     10
+
+                                          -4
+                                     10
+
+                                          -5
+                                     10
+
+                                               10                  100          1000
+                                                                         lmax
+                                          0
+                                     10
+                                                        total
+                                                     (S/N)10
+                                                     (S/N)20
+                                          -1         (S/N)30
+                                     10
+                                                     (S/N)40
+                    (S/N)i0(<lmax)
+
+
+
+
+                                          -2
+                                     10
+
+
+                                          -3
+                                     10
+
+
+                                          -4
+                                     10
+
+                                               10                  100          1000
+                                                                         lmax
+
+
+
+              Figure 4. Absolute values of the contributions to the signal-to-noise ratio from each
+              component, (S/N )ab , as defined by Eq. (75).
+
+                                                         p
+bispectrum marginalized over. This is given by ∆fN L = (F −1 )prim,prim . Fig. 7 shows
+that an increase in the uncertainty of fN L due to marginalization is totally negligible.
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations20
+
+                                     0.6
+
+                                     0.5
+
+                                     0.4
+
+
+                  r2nd,prim(<lmax)
+                                     0.3
+
+                                     0.2
+
+                                     0.1
+
+                                       0
+
+                                     -0.1
+                                            100                1000
+                                                  lmax
+
+
+
+              Figure 5. The cross-correlation coefficient between the second-order bispectrum from
+              the products of the first-order terms and the local primordial bispectrum.
+
+                                       1
+
+
+                                     0.8
+
+
+                                     0.6
+                  fNL(<lmax)
+
+
+
+
+                                     0.4
+
+
+                                     0.2
+
+
+                                       0
+
+
+                                     -0.2
+                                            100                1000
+                                                  lmax
+
+
+                                                                                         con
+              Figure 6. Contamination of the local primordial bispectrum as measured by fN L
+              (Eq (77)).
+
+
+5. Conclusions
+
+We have presented the general formula of the CMB angular averaged bispectrum,
+Eq. (42), arising from the source terms that contain second-order perturbations in the
+Boltzmann equation, Eq. (44). In this paper we have considered the source terms that
+are products of the first-order perturbations. Since they are products in position space,
+similar to the local primordial non-Gaussianity, the predicted shapes of the angular
+bispectrum from the products of the first-order terms are similar to those of the local-
+type primordial bispectrum, with cross-correlation coefficients of ∼ 0.5 and 0.35 for
+lmax ∼ 200 and 1000, respectively.
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations21
+
+
+
+
+                                       2
+                                  10
+
+
+
+                    ∆fNL(<lmax)
+                                       1
+                                  10
+
+
+
+
+                                       0
+                                  10
+                                           100                  1000
+                                                  lmax
+
+
+
+              Figure 7. Projected uncertainty of fN L with (dashed) and without (solid) the second-
+              order bispectrum marginalized over.
+
+
+     The predicted signal-to-noise ratio of the products of the first-order perturbations
+is small: it reaches only up to S/N ∼ 0.4 for lmax = 2000, even with an ideal cosmic-
+variance-limited experiment. The contamination of the local primordial bispectrum is
+minimal: the contamination, fNcon L , is only 0.9 for lmax = 200 and 0.5 for lmax = 2000,
+and an increase in the uncertainty in fN L due to marginalization over the second-order
+bispectrum is negligible. This level of the contamination is completely negligible for the
+present analysis of the WMAP data [23, 9]. The contamination is negligible also for
+the Planck data, for which the expected 1-σ uncertainty is ∆fN L ∼ 5, or even for the
+ideal experiment, for which ∆fN L ∼ 3 [10]. Therefore, we conclude that the effects of
+the products of the first-order perturbations in the Boltzmann equation may be safely
+ignored when one tries to extract fN L from the CMB temperature data.
+     We shall present the numerical calculations of the bispectrum that include
+the contributions from the intrinsically second-order terms as well as those from
+the perturbed recombination, both of which were ignored in this paper, in future
+publications.
+
+Acknowledgments
+
+D. N. would like to thank Toshifumi Futamase for helpful discussions. This work
+is supported in part by NSF grant PHY-0758153 and the Grant-in-Aid for Tohoku
+University Global Center of Excellence (GCOE) Program, “Weaving Science Web
+beyond Particle-Matter Hierarchy,” from the Ministry of Education, Culture, Sports,
+Science and Technology (MEXT) of Japan. E. K. acknowledges support from the Alfred
+P. Sloan Foundation. N.B. and S.M. acknowledge partial financial support by ASI, under
+contracts I/016/07/0 “COFIS” and Planck LFI Activity of Phase E2.
+CMB anisotropies at second order III: bispectrum from products of the first-order perturbations22
+
+Reference
+
+ [1] N. Bartolo, E. Komatsu, S. Matarrese and A. Riotto, Phys. Rept. 402, 103 (2004) .
+ [2] E. Komatsu, ph.D. thesis at Tohoku University arXiv:astr-ph/0206039 .
+ [3] D. H. Lyth, C. Ungarelli and D. Wands, Phys. Rev. D 67, 23503 (2003) .
+ [4] D. Babich, P. Creminelli and M. Zaldarriaga, JCAP 0408, 009 (2004) .
+ [5] X. Chen, M.-x. Huang, S. Kachru and G. Shiu, JCAP 0701, 002 (2007) .
+ [6] R. Holman and A. J. Tolley, JCAP 0805, 001 (2008) .
+ [7] J. M. Maldacena, JHEP 05, 013 (2003) .
+ [8] V. Acquaviva, N. Bartolo, S. Matarrese and A. Riotto, Nucl. Phys. B 667, 119 (2003) .
+ [9] K. Smith, L. Senatore and M. Zaldarriaga, arXiv:0901.2572 [astro-ph] .
+[10] E. Komatsu and D.N.Spergel, Phys. Rev. D 63, 063002 (2001) .
+[11] M. Liguori, E. Komatsu, S. Matarrese and A. Riotto, Phys. Rev. D 73, 043505 (2006) .
+[12] N. Bartolo, S. Matarrese and A. Riotto, JCAP 0606, 024 (2006) .
+[13] N. Bartolo, S. Matarrese and A. Riotto, JCAP 0701, 019 (2007) .
+[14] C. Pitrou, Class. Quant. Grav. 24, 6127 (2007); C. Pitrou, Class. Quant. Grav. 26, 065006 (2009);
+        C. Pitrou, arXiv:0809.3245 [astro-ph]
+[15] N. Bartolo, S. Matarrese and A. Riotto, JCAP 0605, 010 (2006) .
+[16] C. Pitrou, J.-P. Uzan and F. Bernardeau, Phys. Rev. D 78, 063526 (2008) .
+[17] N. Bartolo and A. Riotto, arXiv:0811.4584 [astro-ph] .
+[18] R. Khatri and B. Wandelt, Phys. Rev. D 79, 023501 (2009) .
+[19] L. Senatore, S. Tassev and M. Zaldarriaga, arXiv:0812.3652v1 [astro-ph] .
+[20] L. Senatore, S. Tassev and M. Zaldarriaga, arXiv:0812.3658v1 [astro-ph] .
+[21] N. Bartolo, S. Matarrese and A. Riotto, arXiv:astr-ph/0703496 .
+[22] U. Seljak and M. Zaldarriaga, Astrophys. J. 469, 437-444 (1996) .
+[23] E. Komatsu et al., Astrophys. J. S. 180, 330 (2009) .
+

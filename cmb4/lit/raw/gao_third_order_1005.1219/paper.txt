@@ -1,0 +1,852 @@
+                                                                                                                                                                               CAS-KITPC/ITP-187
+
+                                                              On non-linear CMB temperature anisotropy from gravitational perturbations
+                                                                                                                  Xian Gao∗
+
+                                                                                                 Kavli Institute for Theoretical Physics China,
+                                                                                             Key Laboratory of Frontiers in Theoretical Physics,
+                                                                                       Institute of Theoretical Physics, Chinese Academy of Sciences,
+                                                                                                      No.55, ZhongGuanCun East Road,
+                                                                                                  HaiDian District, Beijing, 100190, China
+
+                                                                 Non-linear CMB temperature anisotropies up to the third-order on large scales are calculated. On large
+                                                              scales and in the Sachs-Wolfe limit, we give the explicit expression for the observed temperature anisotropy in
+                                                              terms of the primordial curvature perturbation up to third-order. We derived the final bispectrum and trispec-
+                                                              trum of anisotropies and the corresponding non-linear parameters, in which the contributions to the observed
+                                                              non-Gaussianity from primordial perturbations and from the non-linear mapping from primordial curvature per-
+                                                              turbation to the temperature anisotropy are transparently separated.
+arXiv:1005.1219v1 [astro-ph.CO] 7 May 2010
+
+
+
+
+                                                              PACS numbers: Valid PACS appear here
+
+
+
+
+                                                                                                            I. INTRODUCTION
+
+                                                In the past few years, extensive attention has been attracted to the investigation of cosmological perturbations [3] beyond
+                                             the linear order. The importance of studying non-linear perturbations comes two aspects. Firstly, forthcoming experiments
+                                             of Cosmic Microwave Background (CMB) and Large-scale Structure (LSS) will be able to detect the non-linear structures in
+                                             these perturbations. The observational detection of the non-linearities through the statistical non-Gaussianity (see [4] for a
+                                             comprehensive review and [2] for a review of recent observational progress ) of perturbations has become one the the primary
+                                             targets of the cosmology. On the other hand, non-linearities, which encode the interactions in the early universe, would definitely
+                                             bring us new understandings of both the early universe and the fundamental physics.
+                                                A large amount of efforts have been devoted to the calculation of the statistics of curvature perturbation ζ, like primordial bis-
+                                             pectrum and trispectrum on large scales, pioneered by Maldacena [57]1 . However, these are not the observed non-Gaussianities
+                                             of (e.g.) CMB temperature anisotropies ∆T                                                                ∆T       1       1
+                                                                                         T . Conventionally, one may use the linear order relation T = − 3 Φ = − 5 ζ to eval-
+                                             uate the angular bispectrum or trispectrum of CMB, assuming the contributions from the second-order or secondary effects are
+                                             negligible comparing to the primordial ones [1, 2, 6]. However, in light of increasingly precise observations, a full treatment of
+                                             the higher-order radiation transfer functions of the CMB anisotropies is needed, which will allow us to make definite prediction
+                                             of CMB non-Gaussianities (see [5] for a recent review for non-Gaussianity on the CMB).
+                                                The research on non-linear temperature anisotropy due to gravitational perturbations was pioneered by [8–10], in which the
+                                             second-order generalization of Sachs-Wolfe (SW) effect and Integrated Sachs-Wolfe (ISW) effect were derived. These results
+                                             were extended in [13, 14, 18–20] where the second-order radiation transfer function on large scales was calculated, and in [15]
+                                             where the general expression for anisotropy due to gravitational perturbations up to the third-order and in [16] where an elegant
+                                             and non-perturbative non-linear anisotropy were got. The non-linear anisotropies have also been analyzed in [11, 12] base on
+                                             the covariant approach to cosmological perturbations (see [54] for a recent review). Various secondary contributions to the non-
+                                             Gaussianities have also been extensively studied, including the weak gravitational lensing and its correlation with ISW effect
+                                                                                                                      local
+                                             [17, 21–26], which is expected to be the dominant contamination of fNL         , correlation between lensing and Sunyaev-Zel’dovich
+                                             (SZ) effect [22], inhomogeneous recombination [27–29], small-scale dark matter clustering [30, 34]. A systematic treatment of
+                                             the transfer function on all scales, which involves solving the full Boltzmann equations through the recombination phase and
+                                             then from the surface of last-scattering until today, has been performed in [31–38] at second-order.
+                                                In this note, we calculate the CMB temperature anisotropy up to the third-order in primordial curvature perturbation ζ, which
+                                             can be viewed as non-linear generalization of linear-order relation ∆T /T = −ζ/5. We follow the same strategy in [8–10, 13, 15].
+                                             First, we calculate the gravitational redshift of a given photon from the emission surface to today’s observer, which will give
+                                             the observed anisotropy in terms of metric perturbations ∆T          ∆T
+                                                                                                           T = T [Φ, Ψ, · · · ]. Then by using the conservation of curvature
+                                             perturbation ζ, in the large-scale limit, we determine the initial conditions for the metric perturbations in matter-dominated era,
+                                             more precisely, the values Φe = Φe [ζ] and Ψe = Ψe [ζ] on the emission surface. Combining these two procedures will give the
+                                             final non-linear mapping from ζ to ∆T      ∆T     ∆T
+                                                                                   T : T = T [ζ]. Together with previous results of primordial non-Gaussianities of ζ got in
+                                             the literature, our formalism is ready to make prediction of the final observed CMB non-Gaussianity. Obviously, since we match
+                                             the metric perturbations in matter era directly to those on the emission surface after last-scattering, our formalism includes only
+                                             the gravitational redshift of photons, without considering the dynamics of photon-baryon plasma. Thus our result is valid only
+                                             for large-scale anisotropies, which enter the horizon after decoupling.
+
+
+
+                                             ∗ Electronic address: gaoxian@itp.ac.cn
+                                             1 See e.g. [58] for a recent short review of methods and techniques in calculating and analyzing primordial non-Gaussianities from inflationary models and
+                                               references therein.
+                                                                                                                                                         2
+
+  This note is organized as follows. In the following section, we describe the temperature anisotropy induced by the gravitational
+perturbations from the emission surface to the observers. We give the general expression for the temperature anisotropy up to
+the third-order in metric perturbations. In the next section, by using the conserved curvature perturbation and taking the large-
+scale limit, we determine the initial conditions for metric perturbations in matter-dominated era. Then we give the non-linear
+mapping from primordial curvature perturbation to the temperature anisotropy, in the Sachs-Wolfe limit. Finally we give a short
+conclusion.
+
+
+                                                                 II.   FORMALISM
+
+  After decoupling, the CMB photon density remains as Planck distribution, which is determined by a single parameter — the
+photon temperature. The temperature shift of a Planck distribution of photons is exactly proportional to the energy shift of any
+given photon, i.e. T /ω = const, if there is no collision, which implies
+                                                                       Tf   ωf
+                                                                          =    ,                                                                     (2.1)
+                                                                       Ti   ωi
+where Tf and Ti are the final and initial temperature of the Planck distribution respectively, ωf and ωi are the final and initial
+energy of a given photon respectively. (2.1) is exact, which implies that in order to get the change in the temperature, we need
+to evaluate the change in the energy of a (any) given photon, which in our question is nothing but its gravitational redshift.
+Thus, the question becomes to follow the geodesic equation of a given photon from the last-scattering surface to us, taking the
+inhomogeneous spacetime background into account.
+   We work in the generalized Poisson gauge
+                                                                                                   
+                           ds2 = a2 gµν dxµ dxν = a2 −e2Φ dη 2 + 2σi dηdxi + e−2Ψ eγij dxi dxj ,                            (2.2)
+where2 σi,i = 0, γij is symmetric and satisfies γij,i = γii = 0 (thus det eγij = 1), a is the scale factor. The energy of a
+given photon with physical momentum P µ measured by an observer with 4-velocity uµ ≡ v µ /a (normalized as a2 gµν uµ uν =
+gµν v µ v ν = −1) is3
+                                                        ω = −a2 gµν uµ P ν = −gµν uµ pν ,                                                            (2.3)
+where pµ is the momentum associated with the conformal metric gµν (note pµ = P µ /a2 ). Under the perturbed metric (2.2) and
+using normalization for uµ and pµ to express u0 and p0 in terms of ui and pi , ω in terms of all relevant components takes the
+form:
+                                              q            q                       
+                                            1           i j      i j            i j
+                                       ω=         g̃ij p p g̃ij v v + 1 − g̃ij v p ,                                     (2.4)
+                                            a
+with
+                                                           g̃ij ≡ e−2Ψ eγij + e−2Φ σi σj .                                                           (2.5)
+From (2.4), on the background level ω̄ = |p̄i |/a = p̄0 /a, which we will normalize by setting p̄0 = 1 in the following. The
+explicit expression for ui (or v i ) requires details of the dynamics during recombination.
+   Assuming the “intrinsic” photon temperature anisotropy at emission point xe in the direction ne takes the form
+                                   
+T ηe , xie ; nie = T̄ ηe , x̄ie ; ni eτ (ηe ,xe ;ne ) , where ηe is the constant conformal time of emission, e.g. when the last-scattering
+                                              i   i
+
+
+takes place. The temperature measured by an observer at xo and in the direction n is given by
+                                                                                                    
+                           ∆T i i  T xio , ni − T̄ xio , ni                   ao ωo ηo , xio ; pµo τ (ηe ,xi ;ni )
+                                    xo , n ≡                                =                           e   e   e − 1,               (2.6)
+                            T                             T̄ (xio , ni )        ae ωe (ηe , xie ; pµe )
+where we have used T̄o = ω̄ω̄oe T̄e = aaoe T̄e . From (2.6) it is clear that the observed anisotropy comes from two aspects: the intrinsic
+anisotropy τ on the emission surface which depends on the dynamics during recombination and the gravity theory, the other is
+the gravitational redshift-induced anisotropy from the emission surface to the observer ao ωo /(ae ωe ), which is purely kinetic
+and is independent of the theory of gravitation. The intrinsic anisotropy τ is highly model-dependent and a full treatment needs
+solving the set of Boltzmann equations up to the third-order which is beyond the scope of this note. On super-Horizon (the sound
+horizon on the last-scattering surface) scales where microscopic physics is irrelevant, a simple and non-perturbative expression
+has been got [16]: τ = − 23 Φ, which is adequate for our purpose.
+   In the following, first we derive the gravitational redshift-induced anisotropy up to the third-order in terms of metric perturba-
+tions in (2.2), then use the Einstein equation to determine the initial condition at matter-dominated era, i.e. the values of metric
+perturbations in terms of the conserved curvature perturbation ζ on large scales.
+
+
+
+2 Here and in what follows, two repeated lower or upper spatial indices are contracted by δ
+                                                                                           ij
+3 As is well-known, metric g̃         2α g
+                              µν ≡ e       µν and gµν have the same null geodesics, but parameterized by different affine parameters λ̃ and λ with relation
+  dλ = e2α dλ̃. Thus the energy in metric g̃µν can be expressed as ω ≡ −g̃µν uµ p̃ν = −gµν uµ pν , where p̃µ = dxµ /dλ̃ and pµ = dxµ /dλ are momentum
+  in metric g̃µν and gµν respectively.
+                                                                                                                                                                     3
+
+                                                                A. Perturbed photon energy
+
+   After decoupling, the photons propagate freely and thus the physical content of its Boltzmann equation is completely encoded
+in the photon geodesic equation, which is much simpler to deal with. Null geodesics in perturbed spacetime has been investigated
+long before [7–10, 13, 15]. Although the whole thing we need to do is simply to follow the redshift of a photon, in a practical
+calculation, the complexities arise from several aspects. First, the energy ω should be evaluated at the “real” emission point
+xi (λe ) rather than at the “virtual image” at x̄i (λ̄e ) ≡ (λe − λo )ni . Here λ is the affine parameter along the photon geodesics,
+λe (λo ) is the corresponding values at emission surface (observer). Second, to determine the real position of emission we need
+to follow the photon geodesics, which we are able to solve only perturbatively.
+   The expansion of frequency ω around the background emission point xio and the direction ni ≡ −p̄i is straightforward [8–
+10, 14, 15]. Here we simply report the corresponding expansions of (2.4) up to the third-order in the metric perturbations (2.2),
+which involve the spatial components v i and pi . At the linear-order:
+                                                                               1
+                                                           i
+                                            aω(1) = v(1)      − pi(1) ni − Ψ + γij ni nj ,                                      (2.7)
+                                                                                 2
+where throughout this note we take the expansion of variable Q as Q = Q̄ + Q(1) + Q(2) + Q(3) + · · · . At second-order:
+                                                       1                     1                   2 1           2
+                        i
+               aω(2) = v(2) − pi(2) + x0(1) ṗi(1) ni + Ψ2 + Ψni pi(1) − 2v(1)
+                                                                             i
+                                                                                 +                i
+                                                                                         pi(1) − v(1)   −    ni pi(1)
+                                                       2                        2                     2
+                        1 2                              1                                       
+                                                 k k          k l        i j      i    j        j
+                      +     γ − 2 Ψ − n p(1) + γkl n n γij n n + γij n v(1) − p(1)                                                                              (2.8)
+                        4 ij                             4
+                                                             1
+                                                                         
+                                                                             1      2
+                      + xk(1) + x0(1) nk ∂k v(1)     i
+                                                       ni − Ψ + γij ni nj +    σi ni .
+                                                                2            2
+and
+               h                                                         1 k                                                        
+                                         j
+                i i         i
+   aω(3) =n v(3) − p(3) + x(1) + x(1) n           0     j          i
+                                                              ∂j v(2) +          x(1) + x(1) n ∂j ∂k v(1) + xj(2) − x0(1) pi(1) ∂j v(1)
+                                                                                            0    k           i                                 i
+                                                                            2
+                                                                               1             2       i
+             + x0(1) ṗi(2) + x0(2) − x0(1) p0(1) nj ∂j v(1)        i
+                                                                         + ṗi(1) −         x0(1) p̈i(1)
+                                                                                    2 
+                                          1                                                                         
+             + Ψ − nj pj(1) + γkl nk nl ni − γij nj + pi(1) − v(1)                      i
+                                                                                                pi(2) − x0(1) ṗi(1)
+                                          2
+                                                                                                  
+             + v(1) − p(1) + γij nj − 2Ψni v(2)
+                    i         i                                i
+                                                                    + xj(1) + x0(1) nj ∂j v(1)      i
+
+                                                                                                                                                     
+                                                                                    1 k                                                      1
+             − xk(2) + x0(2) nk − x0(1) p0(1) nk − x0(1) pk(1) ∂k +                       x(1) + x0(1) nk xl(1) + x0(1) nl ∂k ∂l Ψ − γij ni nj
+                                                                                    2                                                            2
+                                                                                                                                       
+                1                      2     1 i i         3                  2    1                 1 i i          1
+             + nk pk(1) pi(1) −                  n p(1) − Φ σi ni − Ψ3 − Ψ2                             n p(1) − γij ni nj − 2v(1)    i
+                                                                                                                                         ni
+                2                            2                                      6                 2              4
+                  h1              2 3             2 1                        
+             +Ψ           ni pi(1) −             i
+                                                v(1)      +           i
+                                                                  4v(1)   − pi(1) pi(1)
+                     2                     2                2
+                1                                                                                     1               2 i
+             +                k l          k k
+                       γkl n n − 4n p(1) γij − 2γij              2
+                                                                       ni nj + γij ni pj(1) − 2v(1)    j
+                                                                                                             +        σi ni
+                8                                                                                              2                                      
+                 1                                  2                2                                                  
+                             i j                                                                                                                  2 k l
+             +        γij n n         12 n p(1) − 4 p(1) + 8γkl n p(1) + γkl n n − 6nk pk(1) (γmn nm nn ) − 2γkl
+                                              k k                  k                  k l                k l
+                                                                                                                                                   n n
+                16
+                1 h i                                                           i           1 k k j                               1 3 i j
+             +         p(1) − 2nk pk(1) ni pj(1) + v(1)     i         j
+                                                                   v(1)   − 2pj(1) γij +              n p(1) n + 2v(1)   j       2 i
+                                                                                                                               γij n + γij    nn
+                2                                                                             4                                       12
+                                     n             1                                                  1                  2
+             + xk(1) + x0(1) nk               Ψ − γij ni nj + ni pi(1) − 2v(1)          i
+                                                                                                ∂k Ψ − ∂k γij ni nj
+                                                     2                                                    8
+                                        1                                                                                 o
+                          j                                                                   1
+             + ni v(1)          − pj(1) −          Ψ − nl pl(1) ni nj ∂k γij +                  γil ∂k γlj + σi ∂k σj ni nj
+                                               2                                              2
+                                            1                                             2  k 2
+                                                                                                                
+                               j
+             + σi σj ni v(1)        − pj(1) +          2ni pi(1) − γij ni nj           σk nk − v(1)                .
+                                                   4
+                                                                                                                                                          (2.9)
+In (2.7)-(2.9), a dot denotes derivative with respect to λ and subscripts “(i) ” denote the orders in metric perturbations and all
+quantities are evaluated on the background emission point (virtual image)4 . In deriving the above results, we have used the
+
+
+
+4 (2.7)-(2.9) are essentially equal to (e.g.) eq.(2.17)-(2.19) in [15]. The differences come from 1) here we have replaced v 0 and k 0 in terms of v i , k i and metric
+
+  perturbations through the constraints v2 = −1 and k 2 = 0, 2) we use Φ and Ψ rather than φ and ψ which are defined as 1 + 2φ ≡ e2Φ , 1 − 2ψ ≡ e−2Ψ
+  and 3) at this point we have not expanded Φ = Φ(1) + Φ(2) + Φ(3) etc.
+                                                                                                                                          4
+                                                                                                                              
+expansion of λe around its background value: λe = λ̄e + λ(1) + λ(2) where λ(1) = −x0(1) λ̄e and λ(2) = −x0(2) λ̄e +
+                  
+x0(1) λ̄e p0(1) λ̄e . This can be got by perturbing x0 (λe ) = x̄0 (λ̄e ) ≡ ηe , which is the definition of the emission surface as
+intersection of past light-cone of the observer and the spatial hypersurface at constant ηe .
+
+
+                                                                B.    Photon geodesics
+
+  (2.7)-(2.9) can be fully determined when the perturbed photon geodesics is solved. Geodesic equation in the conformal metric
+gµν is
+
+                                                                ṗµ + Γµρσ pρ pσ = 0 ,                                                (2.10)
+
+where pµ = dxµ /dλ, a dot denotes d/dλ, Γµρσ is the connection associated with the conformal metric gµν .
+   Since in (2.7)-(2.9) we have expressed the photon energy in terms of spatial momentum pi , it is adequate to solve pi perturba-
+tively [7–10, 13, 15]. In order to make (2.10) a close set of equations for xi , we also need the expression for x0 in terms of xi .
+This can be done by perturbing the constraint pµ pµ = 0 around the background geodesics, which yields (up to the second-order
+in metric perturbation)
+
+                                                                p0(1) = −ni pi(1) − A ,                                               (2.11)
+
+with
+                                                                           1
+                                                        A ≡ Φ + Ψ + σi ni − γij ni nj ,                                               (2.12)
+                                                                           2
+and
+                                                                                           
+                            1                                     1
+        p0(2) = − ni pi(2) +   δij − ni nj pi(1) pj(1) + Φ + Ψ + γjk nj nk ni + σi − γij nj pi(1)
+                            2                                      2
+                                                                                                                                    (2.13)
+                              1          2                 1              1       1 2            1          2
+               − xµ(1) ∂µ A + (Φ + Ψ) + 2Φσi ni −            (Φ + Ψ) γij − σi σj − γij   ni nj −   γij ni nj .
+                              2                            2              2       4              8
+
+Integration of (2.11) and (2.13) with respect to λ along the background geodesics x̄µ (λ) will give x0(1) and x0(2) in terms of xi(1)
+and xi(2) respectively.
+    Having deriving the general expressions for perturbed photon energy (2.7)-(2.9), in the following, we restrict ourselves to
+the large-scale limit. This is mainly because that in our formalism, to eventually determine the observed anisotropy in terms
+of conserved primordial curvature perturbation ζ, we use the values of metric perturbations at matter-dominated era as initial
+conditions for gravitational redshift of photons rather than for the full Boltzmann equations. Thus, our results are only valid
+for the large-scale perturbation modes, which enter the horizon after decoupling and never affected by the microphysics. In the
+following we neglect the vector and tensor metric perturbations, not only because on large scales vector and tensor modes are
+subdominant but also calculation involving these modes up to the third-order is rather cumbersome. We also assume the the
+observer is comoving with the emission point, i.e v i = 0. Under these assumptions, a non-perturbative approach to the null
+geodesics has also been developed in [15].
+    Following the logic in [7–10, 13, 15], for spatially-flat FRW background, the set of perturbed geodesic equations are ṗi(n) =
+ẍi(n) = f(n)
+          i
+              , with
+
+                i
+               f(1) = −Γiρσ(1) p̄ρ p̄σ ,                                                                                              (2.14)
+                i
+               f(2)   =   −Γiρσ(2) p̄ρ p̄σ − 2Γiρσ(1) p̄ρ ẋσ(1) − xλ(1) ∂λ Γiρσ(1) p̄ρ p̄σ ,                                         (2.15)
+                i
+               f(3)   =   −Γiρσ(3) p̄ρ p̄σ − 2Γiρσ(1) p̄ρ ẋσ(2) − 2Γiρσ(2) p̄ρ ẋσ(1) − Γiρσ(1) ẋρ(1) ẋσ(1)
+                                                                                                                        
+                                                                                               1
+                          −2xλ(1) ∂λ Γiρσ(1) p̄ρ ẋσ(1) − xλ(1) ∂λ Γiρσ(2) + xλ(2) ∂λ Γiρσ(1) + xλ(1) xτ(1) ∂λ ∂τ Γiρσ(1) p̄ρ p̄σ .   (2.16)
+                                                                                               2
+
+The perturbed Christofel symbol can be read from (B7). After some manipulations, we can solve, at first-order in Φ and Ψ,
+
+                                                               pi(1) = −2ni Ψ − I1i ,                                                 (2.17)
+                                                               p0(1) = −2Φ + I1 ,                                                     (2.18)
+
+with
+                                             Z λ                         Z λ
+                                     I1i =         dλ̃∂i A,       I1 =          dλ̃A′ ,      where A ≡ Φ + Ψ.                         (2.19)
+                                              λo                           λo
+                                                                                                                                                         5
+                                                                                    
+Here and in the following we will frequently use the trick: (e.g.) Ψ̇ = Ψ′ − ni ∂i Ψ + · · · . At second-order [8–10]:
+                                                                       
+                                        pi(2) = −2ni xµ(1) ∂µ Ψ + Ψ2 − 2ΨI1i + I2i ,                                                               (2.20)
+                                                     p0(2) = 2Φ2 − 2xµ(1) ∂µ Φ − 2I1 Φ + I12 + I2 ,                                                (2.21)
+
+with
+                                                                 Z λ       h                      i
+                                                       I2i ≡            dλ̃ 2 (Φ − I1 ) − xµ(1) ∂µ ∂i A,                                           (2.22)
+                                                                  λo
+                                                                 Z λ                         
+                                                       I2 ≡             dλ̃ xµ(1) ∂µ A′ − 2ΦA′ ,                                                   (2.23)
+                                                                   λo
+
+At the third-order [15],
+                                                                                                    
+                                               4 i 3                1 λ τ                   µ
+                                   pi(3)                i   λ
+                                            = − n Ψ − 2n x(2) ∂λ Ψ + x(1) x(1) ∂λ ∂τ Ψ + 2Ψx(1) ∂µ Ψ
+                                               3                    2
+                                                 −2Ψ2I1i + 2ΨI2i − 2I1i xλ(1) ∂λ Ψ + I3i ,                                                         (2.24)
+
+with
+                                           Z λ    h                                               1
+                             I3i    =          dλ̃ 2 (Φ − Ψ − I1 ) xµ(1) ∂µ ∂i A − xµ(2) ∂µ ∂i A − xλ(1) xτ(1) ∂λ ∂τ ∂i A
+                                            λo                                                    2
+                                                                                                                 i
+                                           − 2 Φ2 − 2ΨΦ + 3I12 + 2I2 + 4 (Ψ − Φ) I1 − 2xµ(1) ∂µ Φ ∂i A .                                           (2.25)
+
+  Finally, after plugging (2.17)-(2.24) into (2.7)-(2.9), the perturbed photon frequency up to the third-order in Φ and Ψ is given
+by
+
+                                                                        aω(1) = −Φ + I1 ,                                                          (2.26)
+
+                                                     1 2                                              
+                                        aω(2) =        Φ + I2 − ΦI1 + I12 − x0(1) A′ − xi(1) + x0(1) ni ∂i Φ,                                      (2.27)
+                                                     2
+and
+                       Φ3   Φ2 I1                                                                1  0 2 ′′
+         aω(3) = −        +       + I13 + I3 + I1 2I2 − x01 A′ + Φ x0(1) A′ − I12 − I2 − x0(2) A′ −    x    A
+                       6 h 2                                                             i      2 (1)
+                   − ∂i Φ ni  A + Ψ − 2x0(1) x0(1) + x0(2) + xi(2) + x0(1) I1i − xi(1) (Φ − I1 )                                                   (2.28)
+                    1                                       1                                            
+                   − ∂i ∂j Φ xi(1) + ni x0(1) xj(1) + nj x0(1) − x0(1) 4x0(1) ni ∂i Φ′ + ni x0(1) + 2xi(1) ∂i A′ .
+                    2                                           2
+In (2.26)-(2.28), all quantities are evaluated at the background emission point at x̄i (λ̄e ) ≡ (λe − λo )ni .
+
+
+                                      III.       TEMPERATURE ANISOTROPY UP TO THE THIRD-ORDER
+
+                                                        A.     Relation with primordial perturbations
+
+  Having derived the perturbed photon energy in terms of the metric perturbations at emission surface, the next goal is to relate
+the temperature anisotropy to the primordial curvature perturbation ζ, which encodes the information in the very early universe
+and is the most frequently used variable in evaluating the primordial non-Gaussianities in the literature. It is well-known that
+on large scales and for adiabatic perturbation, there is a non-perturbative and conserved quantity which can be identified as
+non-linear curvature perturbation in uniform-density slices [45–48], defined as5
+                                                                Z
+                                                              1 ρ       dρ̃
+                                                  ζ ≡ −Ψ +                    .                                             (3.1)
+                                                              3 ρ̄ 3(ρ̃ + p̃)
+
+Conserved and gauge-invariant ζ beyond the linear theory has also been constructed perturbatively in [49–51]. The conservation
+of ζ will allow us to relate the primordial era when modes exit the horizon during inflation and the era when modes re-enter the
+
+
+
+5 The existence of non-perturbative conserved perturbation has also been derived by using covariant formalism [52, 53], where the corresponding quantity is
+                                                         R
+  defined as a co-vector: ζa = ∂a α − α̇ ∂ ρ, α ≡ 13
+                                      ρ̇ a
+                                                             dτ ∇a ua is the local expansion. See [54] for a recent review.
+                                                                                                                                  6
+
+horizon, which is just the time of emission ηe for our purpose. Our next task is to set the initial conditions for Φ and Ψ in the
+matter dominated era up to the third-order in the primordial curvature perturbation ζ.
+  In matter-dominated era (p = 0), (3.1) can be integrated to give
+                                                                             1 ρm
+                                                                  ζ = −Ψ +    ln   .                                          (3.2)
+                                                                             3 ρ̄m
+On large scales, the matter density ρm can be related to metric perturbations through Einstein equation as (see Appendix (B11)-
+(B13)):
+                                                                     ρm
+                                                                         = e−2Φ ,                                             (3.3)
+                                                                     ρ̄m
+which implies [15, 16]
+                                                                           2
+                                                                   ζ = −Ψ − Φ.                                                (3.4)
+                                                                           3
+(3.4) is a non-perturbatively relation among ζ and Φ, Ψ on large scales during matter era.
+   At linear order, for fluid without anisotropic stress, Φ(1) = Ψ(1) , which gives the well-known relation ζ = − 53 Φ(1) . However,
+Φ 6= Ψ at non-linear orders even for perfect fluid [39, 40] (see also [41–44] for the discussion of evolution of higher-order
+cosmological perturbations). From the traceless part of (i − j)-component of Einstein equation and using (0 − 0) and (0 − i)
+components to express ρ and ui in terms of metric perturbations (see Appendix (B11)-(B12)), we are able to write a non-
+perturbative constraint between Φ and Ψ on large scales during matter-dominated era [15, 16],
+                               7 2 2 3 2 2 7                       1             14
+               ∂ 4 (Ψ − Φ) =     ∂ Φ −          ∂ Ψ + (∂i ∂j Φ)2 − (∂i ∂j Ψ)2 + ∂i Φ∂i ∂ 2 Φ − 2∂i Ψ∂i ∂ 2 Ψ
+                               2             2          6            2              3                                         (3.5)
+                                                    2  2             2             2
+                               + ∂i ∂j Φ∂i ∂j Ψ + 3∂ Φ∂ Ψ + 2∂i Φ∂i ∂ Ψ + 2∂i Ψ∂i ∂ Φ.
+In deriving (3.5) we have neglected higher-order spatial derivative terms since we are focusing on large scales. From (3.5) Ψ can
+be solved up to third-order in Φ as
+                                                                                            
+                                                          2 5                 20
+                                    Ψ = Φ + ∂ −4 5 ∂ 2 Φ + (∂i ∂j Φ)2 + ∂i Φ∂i ∂ 2 Φ .                                       (3.6)
+                                                                 3              3
+This is the generalization of the linear-order relation Ψ = Φ up to the third-order in Φ. It is interesting to note the third-order
+part of (3.6) exactly vanishes.
+  Combining (3.4) and (3.6), it is now straightforward to solve Φ = Φ[ζ] = Φ(1) + Φ(2) + Φ(3) + · · · perturbatively to give
+                                             3
+                                     Φ(1) = − ζ,                                                                              (3.7)
+                                             5
+                                             9    h       2                          i
+                                                                      2
+                                     Φ(2) = − ∂ −4 3 ∂ 2 ζ + (∂i ∂j ζ) + 4∂i ζ∂i ∂ 2 ζ ,                                      (3.8)
+                                             25
+and
+                                      54 −4 h                                                                   
+                         Φ(3) = −        ∂     3∂ 2 ζ∂ −2 + ∂i ∂j ζ∂i ∂j ∂ −4 + 2∂i ζ∂i ∂ −2 + 2∂i ∂ 2 ζ∂i ∂ −4
+                                     125                                               i                                    (3.9)
+                                                         2             2
+                                              × 3 ∂ 2 ζ + (∂i ∂j ζ) + 4∂i ζ∂i ∂ 2 ζ .
+
+(3.7)-(3.9) give the large-scale initial condition for Φ during the matter era, in terms of the conserved primordial curvature
+perturbation. In the above ∂ −2 etc. can be understood in momentum space. From (3.7)-(3.9) and (3.6) the corresponding initial
+condition Ψ = Ψ[ζ] up to the third-order in ζ can also be easily get.
+
+
+                                                       B. Non-linear temperature anisotropy
+
+   In the last part of this note, we will relate the observed temperature anisotropy ∆T
+                                                                                      T to the primordial curvature perturbation
+ζ, on large scales. To this end, we also need the intrinsic temperature at the emission surface in terms of metric perturbations.
+A fully treatment involves dynamics during recombination [31–38]. Here in this note, we take the large-scale non-perturbative
+                                                                                                       2
+expression found in [16], where in matter dominated era with adiabatic       assumption:
+                                                                                         Te = T̄e e− 3 Φ . Thus the large-scale
+temperature anisotropy up to the third-order in Φ is given by ∆T T =
+                                                                       ∆T
+                                                                        T (1) +
+                                                                                   ∆T
+                                                                                    T (2) +
+                                                                                              ∆T
+                                                                                              T (3) + · · · with
+                                        
+                                    ∆T                 Φ
+                                                   =     − I1 ,
+                                     T       (1)       3
+                                                                           ΦI                                            (3.10)
+                                    ∆T             Φ2  1                          1
+                                                 =    + ∂i Φ ni x0(1) + xi(1) −     − I2 + x0(1) A′ ,
+                                     T       (2)   18  3                        3
+                                                                                                                                               7
+
+and
+          
+      ∆T              Φ3     Φ2 I1                1                    1     h                                        i
+                  =       −        + x0(2) A′ + Φ x0(1) A′ − I2 − I3 + x0(1) ∂i A′ ni x0(1) + 2xi(1) − 2I1 A′ + x0(1) A′′
+      T     (3)       162     18                  3                      2
+                                                                                                         
+                              1 i                     1                                                                     (3.11)
+                      + ∂i Φ      x(2) + x0(1) I1i + ni 3x0(2) + x0(1) Φ + 6A − 18x0(1) − 6I1 + xi(1) (Φ − 3I1 )
+                              3                       9
+                        1                                                     2
+                      + ∂i ∂j Φ xi(1) + ni x0(1) xj(1) + nj x0(1) + 2ni ∂i Φ′ x0(1) .
+                        6
+  In the following, in order to further relate ∆TT to ζ, we take the SW contribution [16] where we neglect ISW and lensing
+               ∆T      Φ   Φ2     Φ3             Φ
+contributions: T = 3 + 18 + 162 + · · · ≃ e 3 − 1. Using (3.7)-(3.9), in momentum space, the non-linear mapping from ζ to
+∆T                                                                                              ∆T
+                                                                                                             1
+ T up to the third-order in ζ can be easily get. At linear order we find the familiar relation   T (1) = − 5 ζ, at the second-order
+and third-order we find
+                                        Z 3
+                     ∆T                1    d p1 d3 p2 3
+                              (k) =                3 δ (k − p1 − p2 ) β (k; p1 , p2 ) ζp1 ζp2 ,                              (3.12)
+                      T (2)            2      (2π)
+                                        Z 3
+                     ∆T                1     d p1 d3 p2 d3 p3 3
+                              (k) =                    6     δ (k − p1 − p2 − p3 ) γ (k; p1 , p2 , p3 ) ζp1 ζp2 ζp3 ,        (3.13)
+                      T (3)            3!         (2π)
+
+where the kernel
+                                                                               2                 
+                                                              1    9 p21 − p22       3 p21 + p22
+                                           β (k; p1 , p2 ) = −   +                −                 ,                                      (3.14)
+                                                              50       50k 4              25k 2
+                                                               1
+                                     γ (k; p1 , p2 , p3 ) = −     + [(1 − g (p1 , p23 )) g (p2 , p3 ) + 2 cyclic] ,                        (3.15)
+                                                              125
+with pij = pi + pj and
+                                                                    "                            2 #
+                                                                 3         p2 + q 2     p2 − q 2
+                                                     g (p, q) =       1+2          2 −3          4    .                                    (3.16)
+                                                                250       (p + q)       (p + q)
+
+It is interesting to note that β → 1/25 and g → 0 when p → 0 or q → 0, which implies that the non-linear mapping (3.12)-(3.13)
+would not contributes significantly in the so-called “squeezed” momenta configurations of non-Gaussianity [13, 15, 16].
+    Using (A5) and (A6), the bispectrum and trispectrum for ∆TT can be read as
+                                                                                                                         
+                            B (k1 , k2 , k3 ) = α3 Bζ (k1 , k2 , k3 ) + α2 Pζ (k1 ) Pζ (k2 ) β (k3 ; k1 , k2 ) + 2 cyclic                  (3.17)
+
+and
+                       T (k1, k2 , k3 , k4 ) =α4 Tζ (k1, k2 , k3 , k4 )
+                                                     + α3 Bζ (k1, k2 , k12 ) Pζ (k3 ) β (k4 ; k12 , k3 ) + 11perms
+                                                                                                                                           (3.18)
+                                                     + α3 Pζ (k1 ) Pζ (k2 ) Pζ (k3 ) γ (k4 ; −k1 , −k2 , −k3 ) + 3perms
+                                                     + α2 Pζ (k1 ) Pζ (k2 ) Pζ (k13 ) β (k3 ; k1 , k13 ) β (k4 ; k2 , k13 ) + 11perms.
+
+Here Bζ and Tζ are primordial bispectrum and trispectrum for the curvature perturbation ζ respectively.
+  In [6, 56], the non-Gaussianities are conventionally characterized by non-linear relation of the Bardeen potential6
+
+                                                                Φ = ΦL + fNL ∗ Φ2L + gNL ∗ Φ3L ,                                           (3.19)
+
+where ΦL is the Gaussian part of Φ and fNL and gNL are the so-called non-linear parameters, “∗” denotes possible integration in
+momentum space7 . To make contact with previous analysis and conventions in the literature, in the following we use the linear-
+order relations during matter-dominated era: ∆T      1        1       1
+                                              T ≡ − 3 Φ and 3 ΦL = 5 ζL , and make the ansatz for primordial non-Gaussianity:
+           3 ζ      2   9 ζ     3
+ζ = ζL + 5 fNL ∗ ζL + 25 gNL ∗ ζL . After some manipulations, the non-linear parameters defined in (3.19) can be calculated as
+
+                                                                         ζ                       25
+                                                    fNL (k; p1 , p2 ) = fNL (k; p1 , p2 ) −         β (k; p1 , p2 ) ,                      (3.20)
+                                                                                                 3
+
+
+6 Here the Bardeen potential Φ should not be confused with the metric perturbation Φ in (2.2). Actually at linear order, Φ
+                                                                                                                             L = −Φ(1) .
+                         2
+                               R d3 p1 d3 p2
+7 For example, f
+                   NL ∗ ΦL ≡       (2π)3
+                                               δ3 (k − p1 − p2 ) fNL (k; p1 , p2 ) ΦL (p1 ) ΦL (p2 ).
+                                                                                                                                      8
+
+and
+                                 ζ
+        gNL (k; p1 , p2 , p3 ) =gNL (k; p1 , p2 , p3 )
+                                   50 h                        ζ
+                                                                                                   i 125                          (3.21)
+                                −       β (k; p1 , |k − p1 |) fNL (|k − p1 | , p2 , p3 ) + 2 cyclic −    γ (k; p1 , p2 , p3 ) .
+                                    9                                                                 9
+        ζ        ζ
+where fNL  and gNL are non-linear parameters for primordial curvature perturbation ζ, the functions β and γ are given in (3.14)
+and (3.15). In (3.20)-(3.21), different contributions to the finally observed non-Gaussianity from primordial epoch and from
+non-linearity between ζ and ∆TT are transparent.
+
+
+
+                                                                    IV. CONCLUSION
+
+   In this note, following the approach developed in [8–10], the general expression for the observed CMB anisotropy up to the
+third-order is calculated [15]. In the Sachs-Wolfe limit, we derive the non-linear relation between the observed anisotropy and the
+conserved primordial curvature perturbation ζ, up to the third-order in ζ. (3.12)-(3.13) can be viewed as non-linear generalization
+of familiar linear relation ∆T /T = −ζ/5. Our formalism is valid for large-scale anisotropies, which re-enter the horizon after
+decoupling. The results (3.17)-(3.18) clearly show the different contributions to the observed non-Gaussianity from primordial
+non-Gaussianities in ζ and non-linear mapping from ζ to ∆T    T due to gravitational perturbations. We also derive the non-linear
+parameters fNL and gNL (eq.(3.20)-(3.21)), which enter the theoretical predictions for the angular bispectrum and trispectrum of
+CMB respectively.
+   We do not expect the non-linear mapping in the SW limit (3.12)-(3.13) would give a major contribution to the observed non-
+Gaussianities, especially comparing scenarios where large “primordial” non-Gaussianities can be generated (see [58] for a recent
+review and references therein). However, the other secondary anisotropies, especially the correlation between lensing and ISW
+effect which we do not discuss in this note, is expected to give contribution to the final non-Gaussianity [17, 21–26]. Another
+interesting issue is that, if an enhancement of non-linearity between ∆T T and ζ is possible, like the enhancement of primordial
+non-Gaussianity by small cs etc. in some inflationary scenarios. We wish to come back to these subjects in future investigations.
+
+
+                                                                        Acknowledgments
+
+  I appreciate Yi-Fu Cai, Tao-Tao Qiu and Yi Wang for useful discussion and comments. I am grateful to Prof. Miao Li for
+consistent encouragement and support. This work was supported by the NSFC grant No.10535060/A050207, a NSFC group
+grant No.10821504 and Ministry of Science and Technology 973 program under grant No.2007CB815401.
+
+
+                                          Appendix A: Non-Gaussianities from non-linear mapping
+
+  Non-Gaussian variables can be get from non-linear mapping from Gaussian/non-Gaussian variables. The δN -formalism is a
+non-linear mapping from inflaton fluctuation δφ to the curvature perturbation ζ on super-Hubble scales. In general, the non-linear
+mapping in real space from a single variable Q to ζ comes from three types: local products (e.g. δN -formalism), products of
+local derivative terms, products of non-local terms. In all cases, the mapping can be written in fourier space as:
+                                  Z                                  Z
+                                1        g2 β̃k;p ,p Qp Qp + 1
+                                     g1 dp                              g1 dp g3 γ̃k;p ,p ,p Qp Qp Qp + · · · ,
+                                                                           g2 dp
+                 ζk = α Qk +         dp          1 2     1    2         dp            1  2  3    1    2   3                  (A1)
+                               2!                                 3!
+              3
+     f ≡ d p3 , α is a k-independent number and
+with dp  (2π)
+
+                                                                    3
+                                      β̃k;p1 ,p2 ≡ (2π) δ (k − p1 − p2 ) β (k; p1 , p2 ) ,                                         (A2)
+                                                                    3
+                                    γ̃k;p1 ,p2 ,p3 ≡ (2π) δ (k − p1 − p2 − p3 ) γ (k; p1 , p2 , p3 ) ,                             (A3)
+where β (k; p1 , p2 ) and γ (k; p1 , p2 , p3 ) are normal functions. It is useful to note that β and γ are symmetric with respect to all
+pi ’s.
+   It is more convenient to calculate the correlation functions of ζ̂ ≡ ζ − hζi since hζ̂i = 0. Straightforward calculation gives
+(subscript “c” denotes connected contribution):
+                                                                                !
+                                            D               E            X 3
+                                                                   3 3
+                                              ζ̂k1 ζ̂k2 ζ̂k3 = (2π) δ         ki Bζ (k1 , k2 , k3 ) ,
+                                                                                i=1
+                                                                                           !                                       (A4)
+                                      D                         E               4
+                                                                                X
+                                                                            3
+                                          ζ̂k1 ζ̂k2 ζ̂k3 ζ̂k4       = (2π) δ          ki       Tζ (k1, k2 , k3 , k4 ) ,
+                                                                c
+                                                                                i=1
+
+with the leading contributions:
+                                                                                                                   
+                       Bζ (k1 , k2 , k3 ) = α3 BQ (k1 , k2 , k3 ) + α2 PQ (k1 ) PQ (k2 ) β (k3 ; k1 , k2 ) + cyclic ,              (A5)
+                                                                                                                                                              9
+
+and
+                     Tζ (k1, k2 , k3 , k4 ) =α4 TQ (k1, k2 , k3 , k4 )
+                                                       + α3 BQ (k1, k2 , k12 ) PQ (k3 ) β (k4 ; k12 , k3 ) + 11perms
+                                                                                                                                                            (A6)
+                                                       + α3 PQ (k1 ) PQ (k2 ) PQ (k3 ) γ (k4 ; −k1 , −k2 , −k3 ) + 3perms
+                                                       + α2 PQ (k1 ) PQ (k2 ) PQ (k13 ) β (k3 ; k1 , k13 ) β (k4 ; k2 , k13 ) + 11perms
+with kij ≡ |ki + kj |. In the above PQ is the power spectrum of Q, BQ and TQ are “intrinsic” bispectrum and trispectrum for Q
+respectively which vanish if Q is purely Gaussian.
+   In [55], based on the δN -formalism, Feynman-type diagrams were introduced to represent various contributions to non-
+Gaussianity from the non-linear mapping from δφ to ζ on large scales. In general this can be generalized straightforwardly for
+the non-linear mapping (A1), as we show in fig.1 and fig.2.
+
+
+                                                                                              k3
+
+
+                                                                                              β(k3, k1, k2)
+
+                                                                               k1                   k2
+
+
+                                                                            PQ (k1 )                PQ (k2)
+
+                                          FIG. 1: Diagrammatic representation of P (k1 )P (k2 )β(k3 , k1 , k2 ) in (A5).
+
+
+
+                     k1              k2
+                                                             PQ (k1)                           PQ (k2)
+                                                                                                                                                  PQ (k2)
+                                  BQ (k1, k2, k12)                     k1              k2                       PQ (k1)
+                          k12
+                                                                                                                          k1               k2
+
+                                                                                       γ(k4, −k1, −k2, −k3)                    PQ (k13)
+                                   β(k4, k12, k3)                                                             β(k3, k1, k13)               β(k4, k2, k13)
+
+               k3                          k4                          k3              k4
+                                                                                                                        k3                k4
+                                                             PQ (k3)
+         PQ (k3)
+
+                                      FIG. 2: Diagrammatic representation of the second, third and fourth line in (A6).
+
+
+
+
+                                                       Appendix B: Perturbed metric and related quantities
+
+  For the perturbed conformal metric gµν defined in (2.2), the components of Christoffel symbol are
+                                           e2Φ h                                      i
+                                    Γ000 = 2 Φ′ + e2(Ψ−Φ) e−γij σj σi′ + e2Φ ∂i Φ ,                                                                         (B1)
+                                           N
+                                                                                                                 
+                                          e2Φ          1                                        ′              
+                     Γ00i = Γ0i0 =               ∂i Φ + e2(Ψ−Φ) e−γjm σm e−2Ψ −2Ψ′ eγij + (eγij ) + ∂i σj − ∂j σi ,                                         (B2)
+                                          N2           2
+
+                                   e−2Φ n                                               ′
+                          Γ0ij =          − ∂i σj − ∂j σi − 2Ψ′ e−2Ψ eγij + e−2Ψ (eγij )
+                                   2N 2                                                                                 o                                   (B3)
+                                   − e−γkl σl [(2∂i Ψeγjk − ∂i eγjk ) + (2∂j Ψeγki − ∂j eγki ) − (2∂k Ψeγij − ∂k eγij )] .
+
+                                             2(Φ+Ψ)
+                                                                                                                  
+                                         e                                   2Ψ −γik               e2Ψ σk e−γjn σn                 
+                                Γi00 = −                Φe′ −γij
+                                                                   σj + e        e           δkj −                   σj′ + e2Φ ∂j Φ ,                       (B4)
+                                                N2                                                       N2
+
+       Γi0j ≡ Γij0
+                                                                               
+         e2(Φ+Ψ) −γik           1                             e2Ψ −γim  −γkn                      ′                     
+      =−        e     σk ∂j Φ +                       e −γik
+                                                             − 2 e    σm e   σn   −2Ψ′ eγjk + (eγjk ) + e2Ψ (∂j σk − ∂k σj ) ,
+           N2                   2                             N
+                                                                                                                             (B5)
+                                                                                                                                    10
+
+         1 e−γil σl  2Ψ                                     ′
+  Γijk =       2
+                     e (∂j σk + ∂k σj ) + 2Ψ′ eγjk − (eγjk )
+         2 N
+                                                    
+            1 −γil e2Ψ −γim  −γln 
+         −      e     − 2 e         σm e         σn [(2∂j Ψeγkl − ∂j eγkl ) + (2∂k Ψeγlj − ∂k eγlj ) − (2∂l Ψeγjk − ∂l eγjk )] .
+            2            N
+                                                                                                                            (B6)
+In the above N 2 = e2Φ + e2Ψ e−γij σi σj , where N is the corresponding laspe function in ADM formalism.
+   For metric ds2 = a2 −e2Φ dη 2 + e−2Ψ dxi dxi , the Christoffel connection is significantly simplified, with components:
+
+                        Γ000 = Φ′ ,        Γ00i = ∂i Φ,     Γ0ij = −Ψ′ e−2(Φ+Ψ) δij ,       Γi00 = e2(Φ+Ψ) ∂i Φ,
+                                                                                                                                   (B7)
+                        Γi0j = −Ψ′ δij ,        Γijk = − (∂j Ψδki + ∂k Ψδij − ∂i Ψδjk ) .
+
+The corresponding components of Einstein tensor are
+                                                                                  
+                                                         2                2
+                                        G00 = 3 (H − Ψ′ ) − e2(Φ+Ψ) (∂i Ψ) − 2∂ 2 Ψ ,                                              (B8)
+
+
+                                                    G0i = 2 [∂i Ψ′ + ∂i Φ (H − Ψ′ )] ,                                             (B9)
+
+                      n                                                                           o
+                                                                                    2
+                 Gij = e−2(Φ+Ψ) [−2H′ − (H − 2Φ′ − 3Ψ′ ) (H − Ψ′ ) + 2Ψ′′ ] + (∂i Φ) + ∂ 2 (Φ − Ψ) δij
+                                                                                                                                  (B10)
+                         + ∂i ∂j (Ψ − Φ) − ∂i Φ∂j Φ + ∂i Ψ∂j Ψ − (∂i Φ∂j Ψ + ∂i Ψ∂j Φ) .
+
+The above expressions are exact, which can be easily expanded to the desired orders.
+  The (00)-component of Einstein equation Gµν = Tµν gives,
+                                                                                    
+                                                   ′ 2     2(Φ+Ψ)         2      2
+                                  ρm     3 (H  − Ψ  )  − e         (∂ i Ψ)  − 2∂   Ψ   e−2Φ
+                                      =                                                     ,                                     (B11)
+                                  ρ̄m                  1 + a−2 e2Ψ ui ui               3H2
+                          2
+where we used ρ̄m = 3H
+                     a2 on the background level. From the (0i)-component of Einstein equation we can solve
+                                                     h                             i2
+                                                                           2
+                                                      3H2 − e2(Φ+Ψ) (∂i Ψ) − 2∂ 2 Ψ
+                       1 + a−2 e2Ψ ui ui = h                             i2                       .                             (B12)
+                                              2    2(Φ+Ψ)         2    2          2  2(Φ+Ψ)       2
+                                            3H − e          (∂i Ψ) − 2∂ Ψ     − 4H e        (∂i Φ)
+
+where we have set Ψ′ = 0. Finally, (B11) and (B12) imply
+                                                                                                 
+                                     2(Φ+Ψ)                  4e2(Φ+Ψ)                 2
+               ρm                  e                2                            (∂ Φ)
+                   = e−2Φ 1 −                (∂i Ψ) − 2∂ 2 Ψ −                  i               ,                             (B13)
+               ρ̄m                    3H2                        9H2 1 − e2(Φ+Ψ)
+                                                                              2
+                                                                                          2   2
+                                                                                   (∂i Ψ) − 2∂ Ψ
+                                                                                         3H
+
+
+which gives, on large scales, ρm /ρ̄m ≃ e−2Φ .
+
+
+
+
+ [1] E. Komatsu et al., arXiv:1001.4538 [astro-ph.CO].
+ [2] E. Komatsu, arXiv:1003.6097 [astro-ph.CO].
+ [3] D. H. Lyth and A. Riotto, Phys. Rept. 314 (1999) 1 [arXiv:hep-ph/9807278].
+ [4] N. Bartolo, E. Komatsu, S. Matarrese and A. Riotto, Phys. Rept. 402, 103 (2004) [arXiv:astro-ph/0406398].
+ [5] N. Bartolo, S. Matarrese and A. Riotto, arXiv:1001.3957 [astro-ph.CO].
+ [6] E. Komatsu and D. N. Spergel, Phys. Rev. D 63 (2001) 063002 [arXiv:astro-ph/0005036].
+ [7] T. Pyne and M. Birkinshaw, arXiv:astro-ph/9303020.
+ [8] T. Pyne and S. M. Carroll, Phys. Rev. D 53, 2920 (1996) [arXiv:astro-ph/9510041].
+ [9] S. Mollerach and S. Matarrese, Phys. Rev. D 56, 4494 (1997) [arXiv:astro-ph/9702234].
+[10] S. Matarrese, S. Mollerach and M. Bruni, Phys. Rev. D 58, 043504 (1998) [arXiv:astro-ph/9707278].
+[11] R. Maartens, T. Gebbie and G. F. R. Ellis, Phys. Rev. D 59, 083506 (1999) [arXiv:astro-ph/9808163].
+[12] P. K. S. Dunsby, Class. Quant. Grav. 14, 3391 (1997) [arXiv:gr-qc/9707022].
+[13] L. Boubekeur, P. Creminelli, G. D’Amico, J. Norena and F. Vernizzi, JCAP 0908, 029 (2009) [arXiv:0906.0980 [astro-ph.CO]].
+[14] N. Bartolo, S. Matarrese and A. Riotto, Phys. Rev. Lett. 93, 231301 (2004) [arXiv:astro-ph/0407505].
+[15] G. D’Amico, N. Bartolo, S. Matarrese and A. Riotto, JCAP 0801, 005 (2008) [arXiv:0707.2894 [astro-ph]].
+[16] N. Bartolo, S. Matarrese and A. Riotto, JCAP 0508 (2005) 010 [arXiv:astro-ph/0506410].
+[17] A. Cooray, Phys. Rev. D 65 (2002) 083518 [arXiv:astro-ph/0109162].
+[18] N. Bartolo, S. Matarrese and A. Riotto, JCAP 0605, 010 (2006) [arXiv:astro-ph/0512481].
+[19] K. Tomita, Phys. Rev. D 71, 083504 (2005) [arXiv:astro-ph/0501663].
+                                                                                                                            11
+
+[20] K. Tomita and K. T. Inoue, Phys. Rev. D 77 (2008) 103522 [arXiv:0712.1291 [astro-ph]].
+[21] U. Seljak and M. Zaldarriaga, Phys. Rev. D 60 (1999) 043504 [arXiv:astro-ph/9811123].
+[22] D. M. Goldberg and D. N. Spergel, Phys. Rev. D 59, 103002 (1999) [arXiv:astro-ph/9811251].
+[23] P. Serra and A. Cooray, Phys. Rev. D 77, 107305 (2008) [arXiv:0801.3276 [astro-ph]].
+[24] D. Hanson, K. M. Smith, A. Challinor and M. Liguori, Phys. Rev. D 80, 083004 (2009) [arXiv:0905.4732 [astro-ph.CO]].
+[25] A. Mangilli and L. Verde, Phys. Rev. D 80, 123007 (2009) [arXiv:0906.2317 [astro-ph.CO]].
+[26] P. Creminelli and M. Zaldarriaga, Phys. Rev. D 70 (2004) 083532 [arXiv:astro-ph/0405428].
+[27] R. Khatri and B. D. Wandelt, Phys. Rev. D 79, 023501 (2009) [arXiv:0810.4370 [astro-ph]].
+[28] L. Senatore, S. Tassev and M. Zaldarriaga, JCAP 0908, 031 (2009) [arXiv:0812.3652 [astro-ph]].
+[29] L. Senatore, S. Tassev and M. Zaldarriaga, JCAP 0909, 038 (2009) [arXiv:0812.3658 [astro-ph]].
+[30] N. Bartolo and A. Riotto, JCAP 0903, 017 (2009) [arXiv:0811.4584 [astro-ph]].
+[31] N. Bartolo, S. Matarrese and A. Riotto, JCAP 0606 (2006) 024 [arXiv:astro-ph/0604416].
+[32] N. Bartolo, S. Matarrese and A. Riotto, JCAP 0701 (2007) 019 [arXiv:astro-ph/0610110].
+[33] D. Nitta, E. Komatsu, N. Bartolo, S. Matarrese and A. Riotto, JCAP 0905, 014 (2009) [arXiv:0903.0894 [astro-ph.CO]].
+[34] C. Pitrou, J. P. Uzan and F. Bernardeau, Phys. Rev. D 78, 063526 (2008) [arXiv:0807.0341 [astro-ph]].
+[35] C. Pitrou, Class. Quant. Grav. 26 (2009) 065006 [arXiv:0809.3036 [gr-qc]].
+[36] C. Pitrou, Gen. Rel. Grav. 41 (2009) 2587 [arXiv:0809.3245 [astro-ph]].
+[37] C. Pitrou, J. P. Uzan and F. Bernardeau, arXiv:1003.0481 [astro-ph.CO].
+[38] M. Beneke and C. Fidler, arXiv:1003.1834 [astro-ph.CO].
+[39] V. Acquaviva, N. Bartolo, S. Matarrese and A. Riotto, Nucl. Phys. B 667 (2003) 119 [arXiv:astro-ph/0209156].
+[40] N. Bartolo, S. Matarrese and A. Riotto, JHEP 0404 (2004) 006 [arXiv:astro-ph/0308088].
+[41] N. Bartolo, S. Matarrese and A. Riotto, JCAP 0401 (2004) 003 [arXiv:astro-ph/0309692].
+[42] N. Bartolo, S. Matarrese and A. Riotto, Phys. Rev. D 69 (2004) 043503 [arXiv:hep-ph/0309033].
+[43] L. Boubekeur, P. Creminelli, J. Norena and F. Vernizzi, JCAP 0808 (2008) 028 [arXiv:0806.1016 [astro-ph]].
+[44] A. J. Christopherson and K. A. Malik, JCAP 0911 (2009) 012 [arXiv:0909.0942 [astro-ph.CO]].
+[45] D. S. Salopek and J. R. Bond, Phys. Rev. D 42 (1990) 3936.
+[46] E. W. Kolb, S. Matarrese, A. Notari and A. Riotto, Mod. Phys. Lett. A 20 (2005) 2705 [arXiv:astro-ph/0410541].
+[47] D. H. Lyth, K. A. Malik and M. Sasaki, JCAP 0505 (2005) 004 [arXiv:astro-ph/0411220].
+[48] G. I. Rigopoulos and E. P. S. Shellard, Phys. Rev. D 68 (2003) 123518 [arXiv:astro-ph/0306620].
+[49] K. A. Malik and D. Wands, Class. Quant. Grav. 21 (2004) L65 [arXiv:astro-ph/0307055].
+[50] D. H. Lyth and D. Wands, Phys. Rev. D 68 (2003) 103515 [arXiv:astro-ph/0306498].
+[51] D. H. Lyth and Y. Rodriguez, Phys. Rev. D 71 (2005) 123508 [arXiv:astro-ph/0502578].
+[52] D. Langlois and F. Vernizzi, Phys. Rev. Lett. 95 (2005) 091303 [arXiv:astro-ph/0503416].
+[53] D. Langlois and F. Vernizzi, Phys. Rev. D 72 (2005) 103501 [arXiv:astro-ph/0509078].
+[54] D. Langlois and F. Vernizzi, arXiv:1003.3270 [astro-ph.CO].
+[55] C. T. Byrnes, K. Koyama, M. Sasaki and D. Wands, JCAP 0711 (2007) 027 [arXiv:0705.4096 [hep-th]].
+[56] E. Komatsu et al. [WMAP Collaboration], Astrophys. J. Suppl. 148 (2003) 119 [arXiv:astro-ph/0302223].
+[57] J. M. Maldacena, JHEP 0305, 013 (2003) [arXiv:astro-ph/0210603].
+[58] K. Koyama, arXiv:1002.0600 [hep-th].
+[59] X. Gao, work in progress.
+

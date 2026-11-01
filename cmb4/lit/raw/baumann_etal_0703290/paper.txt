@@ -1,0 +1,1201 @@
+                                             Gravitational Wave Spectrum Induced by Primordial Scalar Perturbations
+                                                                Daniel Baumann1 ,∗ Paul Steinhardt1,2 ,† and Keitaro Takahashi1‡
+                                                                                  1
+                                                                                    Department of Physics, Jadwin Hall,
+                                                                               Princeton University, Princeton, NJ 08544
+                                                                        2
+                                                                          Princeton Center for Theoretical Physics, Jadwin Hall,
+                                                                               Princeton University, Princeton, NJ 08544
+
+                                                                                            Kiyotomo Ichiki§
+                                                                     Research Center for the Early Universe, University of Tokyo,
+                                                                           7-3-1 Hongo, Bunkyo-ku, Tokyo 113-0033, Japan
+
+                                                      We derive the complete spectrum of gravitational waves induced by primordial scalar perturba-
+                                                   tions ranging over all observable wavelengths. This scalar-induced contribution can be computed
+                                                   directly from the observed scalar perturbations and general relativity and is, in this sense, indepen-
+arXiv:hep-th/0703290v1 30 Mar 2007
+
+
+
+
+                                                   dent of the cosmological model for generating the perturbations. The spectrum is scale-invariant on
+                                                   small scales, but has an interesting scale-dependence on large and intermediate scales, where scalar-
+                                                   induced gravitational waves do not redshift and are hence enhanced relative to the background
+                                                   density of the Universe. This contribution to the tensor spectrum is significantly different in form
+                                                   from the direct model-dependent primordial tensor spectrum and, although small in magnitude, it
+                                                   dominates the primordial signal for some cosmological models. We confirm our analytical results by
+                                                   direct numerical integration of the equations of motion.
+
+
+
+
+                                                                                                Contents
+
+                                     1. Introduction                                                                                                        2
+
+                                     2. Second-Order Tensors from First-Order Scalars                                                                       3
+                                        2.1. Evolution Equations                                                                                            4
+                                        2.2. Power Spectrum                                                                                                 5
+
+                                     3. Analytical Description of the Spectrum                                                                              7
+                                        3.1. Power Spectrum at Horizon Crossing                                                                             8
+                                        3.2. Second-Order Tensor Transfer Function                                                                          9
+                                        3.3. Spectrum of Scalar-Induced Gravitational Waves                                                                 10
+
+                                     4. Numerical Results for the Exact Spectrum                                                                            12
+
+                                     5. Discussion                                                                                                          13
+
+                                         Acknowledgments                                                                                                    15
+
+                                     A. Green’s Function for Gravitational Waves                                                                            16
+
+                                     B. Transfer Function for First-Order Scalar Modes                                                                      16
+
+                                         References                                                                                                         18
+
+
+
+                                     ∗ Electronic address: dbaumann@princeton.edu
+                                     † Electronic address: steinh@princeton.edu
+                                     ‡ Electronic address: ktakahas@princeton.edu
+                                     § Electronic address: ichiki@resceu.s.u-tokyo.ac.jp
+                                                                                                                              2
+
+                                                  1.     INTRODUCTION
+
+   Arguably the most striking prediction of inflationary cosmology [1] is the causal generation of nearly scale-invariant
+spectra of both scalar (energy density) and tensor (gravitational wave, GW) perturbations. The natural prediction is
+that the scalar and tensor amplitudes are comparable within one or two orders of magnitude of one another by virtue
+of the fact that both are created by the same de Sitter quantum process. The existence of a scalar spectrum is now
+firmly established by measurements of the cosmic microwave background (CMB) [2] and large scale structure [3], and
+its amplitude is well-determined. Tensor fluctuations, on the other hand, have yet to be detected, although current
+measurements have only begun to probe the expected range of amplitudes.
+   Detecting primordial tensor fluctuations is an important milestone because it rules out a whole class of alterna-
+tive cosmological scenarios, like the ekpyrotic [4] and cyclic models [5], which produce virtually the identical scalar
+spectrum as inflation but a completely different tensor spectrum. In particular, the primordial tensor contribution in
+ekpyrotic/cyclic models is exponentially smaller and more blue [6]. Detection of a primordial tensor signal is therefore
+widely regarded as a smoking gun signature of inflation. However, failing to detect the tensor modes at the expected
+level does not necessarily rule out inflation. The inflationary tensor signal can be suppressed by extra fine-tuning of
+the inflationary model and/or the addition of extra fields (e.g. hybrid inflation [7]) so that the background equation
+of state of the Universe, instead of changing smoothly during the final stages of inflation, undergoes a sequence of
+jerks and gyrations [8]. A number of studies have discussed the limits to how far a search for the tensor spectrum can
+go based on detector sensitivity and foregrounds [9].
+
+                      ΩGW
+
+                                             -2
+                           -13
+                        10
+                        10 -14              +1
+                                                                   r=0.1 maximal first-order tensors
+                        10 -15
+                                                         -(2γ-2)                spectrum @ equality    10 7
+                                 +5
+
+                        10 -20
+                                                                            0       spectrum today
+
+
+
+                                       k0         k eq        kc                                       ln(k)
+
+FIG. 1: Spectra of first- and second-order gravitational waves: This schematic illustrates the conjectured form of
+ΩGW (k), the fraction of the critical density in gravitational waves per log-interval of wavenumber k, as derived in section 3.
+The topmost curve represents the typical first-order inflationary tensor spectrum. With fine-tuning, it can be suppressed below
+the level of the second-order, scalar-induced tensor perturbations (bottom curves). The bottom curves represent a sequence of
+times: matter-radiation equality (aeq ), redshift z = 100, and today (a0 ). The scalar-induced tensor spectra shown here are for
+a perfectly scale-invariant scalar input spectrum (ns = 1). If the scalar spectrum is blue (ns > 1) the induced tensor spectrum
+is enhanced on small scales (large k), while a red spectrum (ns < 1) suppresses tensor fluctuations on small scales (see section
+5 for cautionary remarks about extrapolating spectra to very small scales using the large-scale power law form of the scalar
+spectrum). ΩGW is of course ill-defined on superhorizon scales. On superhorizon scales (dashed lines) we therefore formally
+define the rescaled tensor power spectrum, k2 Ph (k), but do not interpret it as an energy density of gravitational waves (see
+section 3).
+
+   At second order in perturbation theory the observed scalar spectrum sources the generation of secondary tensor
+modes [10]. In this paper, we analyze the stochastic spectrum of second-order gravitational waves induced by the
+first-order scalar perturbations. Since the scalar spectrum is already measured, this contribution to the tensor
+spectrum must exist and must be the same for both inflationary and ekpyrotic models because their predictions for
+the scalar spectrum match. For inflation, this second-order contribution is generically negligible, orders of magnitude
+smaller than the first-order contribution except for models with extreme fine-tuning. For ekpyrotic and cyclic models,
+the scalar-induced second-order contribution computed here is actually the dominant contribution on astrophysical
+and cosmological scales, because the first-order tensor spectrum is always exponentially small compared to the scalar
+spectrum. Hence, the calculation here supersedes previous predictions of the tensor spectrum for ekpyrotic and
+                                                                                                                        3
+
+cyclic models [6]. Because the gravitational wave spectrum we compute here is purely a consequence of the observed
+scalar spectrum and general relativistic evolution, any mechanism that accounts for the observed spectrum of scalar
+fluctuations also generates the same secondary tensor spectrum, provided Einstein’s equations hold. Hence, this
+second-order signal provides an absolute lower limit on tensors from the early Universe.
+
+  Our work builds on important earlier work by Mollerach, Harari and Matarrese [11] and Ananda, Clarkson and
+Wands [12]. Mollerach et al. [11] computed the effect of second-order gravitational waves on large-scale CMB
+polarization. They found that the second-order tensors dominate over the first-order signal if the ratio of the
+tensor-to-scalar amplitude on the largest observable wavelengths is r < 10−6 . Then, more recently, Ananda, Clarkson
+and Wands [12] numerically studied the present spectrum of gravitational waves on very small scales accessible
+to direct detection experiments like the Big Bang Observer (BBO). Typically, the signal is expected to be at
+the extreme limit of the predicted sensitivity of BBO. Here we compute the complete spectrum of scalar-induced
+gravitational waves on all scales and discuss how it evolves with time. We analytically determine a critical scale
+above which second-order gravitational waves do not redshift. This non-trivial transfer function for second-order
+gravitational waves leads to an interesting feature in the current spectrum (see the schematic in Figure 1) with
+a factor 107 enhancement of modes of order the horizon size at matter-radiation equality relative to the scale-
+invariant small scale spectrum. We confirm our analytical findings by numerical integration of the equations of motion.
+
+  The outline of the paper is as follows: In §2, we derive the evolution equations for second-order tensor fluctuations
+sourced by first-order scalar fluctuations. Allowing for an anisotropic stress contribution to the energy momentum
+tensor, we derive a general expression for the power spectrum of scalar-induced gravitational waves. This generalizes
+the work of Ref. [12]. In §3, we analyze the spectrum using various approximations and scaling arguments. These
+analytical estimates are confirmed by direct numerical integration of the equations of motion in §4. Finally, we
+discuss the implications of these results in §5. In two appendices we recall the Green’s functions for gravitational
+waves and the transfer functions for first-order scalar fluctuations [13].
+
+  We use the following conventions: Throughout we employ natural units, ~ = c ≡ 1, and (reduced) Planck mass
+MP−2 = 8πG ≡ κ2 , as well as ’East coast’ signature for the metric, (−, +, +, +). Greek indices, µ, ν = 0, . . . , 3,
+denote four-dimensional spacetime indices, while roman indices, i, j = 1, . . . , 3, are reserved for spatial indices. The
+parameter η is conformal time, a(η) dη = dt.
+
+
+                       2.   SECOND-ORDER TENSORS FROM FIRST-ORDER SCALARS
+
+  Let us recall some basic facts about second-order perturbation theory, before deriving the explicit form of the evo-
+lution equations for second-order, scalar-induced tensors. We consider perturbations to a flat Friedmann-Robertson-
+                              (0)
+Walker (FRW) background, gµν = a2 (η)ηµν ,
+                                                                (0)
+                                                         gµν = gµν  + δgµν ,                                          (1)
+        (0)                                                    (0)        (0)
+where gµν satisfies the 0th-order Einstein equations, Gµν = κ2 Tµν ,
+
+                                      κ2 a2 (0)                   κ2 a2 (0)
+                              H2 =         ρ ,        H2 − H′ =        (ρ + P (0) ) ,   H ≡ ∂η ln a .                 (2)
+                                       3                           2
+Here ρ(0) and P (0) are the homogeneous background density and pressure, respectively, and (. . . )′ denotes a derivative
+with respect to conformal time, η. Including to linear order the small quantum perturbations to the metric and energy
+                                                             (1)       (1)
+density, the solution to the 1st-order Einstein equations, Gµν = κ2 Tµν , can be decomposed into independent scalar,
+vector and tensor modes. At linear order, different k-modes in Fourier space are independent. This is in contrast to
+                                     (2)       (2)
+the 2nd-order Einstein equations, Gµν = κ2 Tµν , where different k-modes mix and scalar, vector and tensor modes are
+not independent. However, it is important to notice that, at second order, there is no mixing between second-order
+                                                                                                                      (2)
+scalar, vector, and tensor modes. On the other hand, there is a second-order contribution to the tensor mode, hij ,
+that depends quadratically on the first-order scalar metric perturbation. This contribution, the ”scalar-induced”
+tensor mode, is the focus of this paper.1
+
+
+
+1 Scalar-induced vector modes were studied in [14].
+                                                                                                                              4
+
+                                                   2.1.       Evolution Equations
+
+  To compute the second-order, scalar-induced tensor mode we begin with the following perturbed metric
+                                                                                                
+                                         
+                                                   (2)
+                                                                                        1
+       ds2 = a2 (η) − 1 + 2Φ(1) + 2Φ(2) dη 2 + 2Vi dηdxi +      1 − 2Ψ(1) − 2Ψ(2) δij + hij dxi dxj ,                        (3)
+                                                                                         2
+              (2)
+where hij ≡ hij and we have ignored first-order vector and tensor perturbations. Here and in the following, the super-
+scripts are formal labels for the order of the perturbation. The second-order Einstein tensor and energy-momentum
+tensor are [15]
+                             "
+                (2)i           1 i ′′
+               G j = a−2          h + 2Hhij ′ − ∇2 hij + 2Φ(1) ∂ i ∂j Φ(1) − 2Ψ(1) ∂ i ∂j Φ(1) + 4Ψ(1) ∂ i ∂j Ψ(1)
+                                                      
+                               4 j
+                                + ∂ i Φ(1) ∂j Φ(1) − ∂ i Φ(1) ∂j Ψ(1) − ∂ i Ψ(1) ∂j Φ(1) + 3∂ i Ψ(1) ∂j Ψ(1)
+                                                                                          #
+                                                              
+                                       (2)    (2)  (2)                                  i
+                                + Φ , Ψ , Vi terms + (diagonal part) δj ,                                                    (4)
+
+and
+                                                    
+                              (2)i                            (1)        (2)i        (1)i
+                          T       j =    ρ(0) + P (0) v (1)i vj + P (0) Π j + P (1) Π j + P (2) δji ,                        (5)
+
+where ρ, P , v and Π are energy density, pressure, velocity and anisotropic stress, respectively. We act on the spatial
+components of the Einstein equations with the projection tensor T̂ijlm [12],
+                                                                (2)           (2)
+                                                     T̂ijlm Glm = κ2 T̂ijlm Tlm .                                            (6)
+
+We will define the operator T̂ijlm explicitly below, but we note here that it extracts the transverse, traceless part of
+                                                                       (2)                                       (2)i
+any tensor and eliminates the terms involving Φ(2) , Ψ(2) , Vi , P (2) and the scalar and vector parts of Π             j in the
+second-order Einstein equations. Using the following first-order relations,
+                                        P (1) ≡ c2s ρ(1) ,                                                                   (7)
+                                                     2 h                                 i
+                                        ρ(1) = − 2 2 3H HΦ(1) − Ψ(1)′ + ∇2 Ψ(1) ,                                            (8)
+                                                   κ a
+                                         (1)                 2         
+                                                                           (1)′      (1)
+                                                                                         
+                                        vi = − 2 2 (0)              ∂i   Ψ      + HΦ       ,                                 (9)
+                                                   κ a (ρ + P (0) )
+                                                                               
+                                          (1)i             1            1                     
+                                        Π j = − 2 2 (0) ∂ i ∂j − δji ∇2            Φ(1) − Ψ(1) ,                           (10)
+                                                     κ a P              3
+the evolution equation (6) can be written as follows,
+                                               h′′ij + 2Hh′ij − ∇2 hij = −4T̂ijlm Slm ,                                    (11)
+                                                     (2)i
+where we have neglected the tensor part of Π                j and defined
+
+           Sij ≡ 2Φ∂ i ∂j Φ − 2Ψ∂ i ∂j Φ + 4Ψ∂ i ∂j Ψ + ∂ i Φ∂j Φ − ∂ i Φ∂j Ψ − ∂ i Ψ∂j Φ + 3∂ i Ψ∂j Ψ
+                          4                                        2c2s 
+                                       ′              ′
+                                                                           3H(HΦ − Ψ′ ) + ∇2 Ψ ∂i ∂j (Φ − Ψ) .
+                                                                                                   
+                 −             2
+                                 ∂i (Ψ   + HΦ) ∂ j (Ψ   + HΦ)   −       2
+                                                                                                                           (12)
+                   3(1 + w)H                                      3wH
+Here, w ≡ P (0) /ρ(0) , Φ ≡ Φ(1) and Ψ ≡ Ψ(1) . We define the Fourier transform of tensor metric perturbations as
+                                                  d3 k ik·x 
+                                              Z
+                                                                                             
+                                 hij (x, η) =           e     hk (η)eij (k) + h̄k (η)ēij (k) ,                   (13)
+                                                (2π)3/2
+where the two time-independent polarization tensors eij and ēij may be expressed in terms of orthonormal basis
+vectors e and ē orthogonal to k,
+                                                         1
+                                             eij (k) ≡ √ [ei (k)ej (k) − ēi (k)ēj (k)] ,                                 (14)
+                                                          2
+                                                         1
+                                             ēij (k) ≡ √ [ei (k)ēj (k) + ēi (k)ej (k)] .                                (15)
+                                                          2
+                                                                                                                                5
+
+In terms of these polarization tensors, the projection tensor in (6) and (11) is
+
+                                            d3 k ik·x 
+                                       Z
+                          T̂ijlm Slm =                  eij (k)elm (k) + ēij (k)ēlm (k) Slm (k) ,
+                                                                                         
+                                               3/2
+                                                   e                                                                          (16)
+                                          (2π)
+
+where
+                                                               d3 x′ −ik·x′
+                                                          Z
+                                             Slm (k) =                e     Slm (x′ ) .                                       (17)
+                                                              (2π)3/2
+
+In Fourier space, the equation of motion for the gravitational wave amplitude h (for either polarization h or h̄) becomes
+
+                                                h′′k + 2Hh′k + k 2 hk = S(k, η) ,                                             (18)
+
+where the source term, S, is a convolution of two first-order scalar perturbations at different wavenumbers,
+
+        S(k, η) = −4elm (k)Slm (k)                                                                                            (19)
+                                               "                                                        !
+                          d3 k̃ lm                              2c2s                           2c2s k̃ 2
+                                                                     
+                                                   7 + 3w
+                    Z
+                = 4             e (k)k̃l k̃m                 −         Φk̃ (η)Φk−k̃ (η) + 1 −              Ψk̃ (η)Ψk−k̃ (η)
+                        (2π)3/2                   3(1 + w)       w                             3wH2
+                                      !
+                    2c2s         k̃ 2                                         2c2s 1
+                                                                                 
+                                                                    8
+                  +        1+           Φ k̃ (η)Ψ k−k̃ (η) +               +          Φ (η)Ψ′k−k̃ (η)
+                     w          3H2                            3(1 + w)        w    H k̃
+                                                                              #
+                     2c2s                           4
+                  −       Ψ (η)Ψ′k−k̃ (η) +                  Ψ′ (η)Ψ′k−k̃ (η) .                                               (20)
+                    wH k̃                      3(1 + w)H2 k̃
+
+Equation (20) reduces to the expression in [12] in the limit Ψ → Φ, w → 1/3 and c2s → 1/3. The limit Ψ → Φ, w → 0
+and c2s → 0 was discussed in [11].
+
+
+                                                   2.2.       Power Spectrum
+
+  The power spectrum of tensor metric perturbations, Ph (k, η), is defined as follows
+
+                                                                2π 2
+                                           hhk (η)hK (η)i =          δ(k + K)Ph (k, η) .                                      (21)
+                                                                 k3
+We now derive an expression for the power spectrum of second-order gravitational waves by solving equation (18).
+It is convenient to remove the Hubble damping term in (18) by defining ahk ≡ vk , where vk satisfies the following
+equation of motion
+                                                               a′′ 
+                                                   vk′′ + k 2 −       vk = aS .                                               (22)
+                                                                a
+The particular solution of (18) is then found by the Green’s function method
+
+                                                 1
+                                                     Z               h             i
+                                       hk (η) =        dη̃ gk (η; η̃) a(η̃)S(k, η̃) ,                                         (23)
+                                                a(η)
+
+where
+                                                            a′′ 
+                                                gk′′ + k 2 −       gk = δ(η − η̃) .                                           (24)
+                                                             a
+Exact solutions to (24) for both matter and radiation domination are derived in Appendix A. Substituting the solution
+(23) into the expression for the tensor power spectrum (21) we find
+                                       Z η      Z η
+                                    1
+                hhk (η)hK (η)i = 2         dη̃2     dη̃1 a(η̃1 )a(η̃2 )gk (η; η̃1 )gK (η; η̃2 ) hS(k, η̃1 )S(K, η̃2 )i . (25)
+                                  a (η) η0       η0
+                                                                                                                                                         6
+
+The source term (20) may be written in the following form
+                                              Z
+                                   S(k, η) ≡ d3 k̃ e(k, k̃)f (k, k̃, η) ψk−k̃ ψk̃ ,                                                                  (26)
+
+where
+
+                                                                                                       k · k̃
+                                            e(k, k̃) ≡ eij (k)k̃i k̃j = k̃ 2 [1 − µ2 ] ,          µ≡                                                 (27)
+                                                                                                        k k̃
+and
+                                "                                                            !
+                                                2c2s                                2c2s k̃ 2
+                                                     
+                                   7 + 3w
+             f (k, k̃, η) ≡ 4                −         Φ(k̃η)Φ(|k − k̃|η) + 1 −                 Ψ(k̃η)Ψ(|k − k̃|η)
+                                 3(1 + w)        w                                 3wH2
+                                                !
+                              2c2s         k̃ 2                                             2c2s 1
+                                                                                               
+                                                                                8
+                            +        1+           Φ(  k̃η)Ψ(|k − k̃|η) +              +             Φ(k̃η)Ψ′ (|k − k̃|η)
+                               w          3H2                              3(1 + w)          w    H
+                                                                                                  #
+                              2c2s                                4
+                            −       Ψ(k̃η)Ψ′ (|k − k̃|η) +               Ψ′ (k̃η)Ψ′ (|k − k̃|η) .                                                    (28)
+                              wH                            3(1 + w)H2
+
+Here we have split the first-order quantities into transfer functions, Φ(kη), Ψ(kη), and primordial fluctuations ψk ,
+
+                                                 Φk (η) ≡ Φ(kη) ψk ,          Ψk (η) ≡ Ψ(kη) ψk .                                                    (29)
+
+The primordial fluctuations are characterized by the power spectrum,
+
+                                                                       2π 2
+                                                         hψk ψk̃ i =        P (k) δ(k + k̃) .                                                        (30)
+                                                                        k3
+Observationally, it is found that P (k) is nearly scale-invariant, so that the following parameterization is appropriate
+                                                                                        ns −1
+                                                               4                    k
+                                                        P (k) = ∆2R (k0 )                         ,                                                  (31)
+                                                               9                    k0
+
+where recent CMB and large scale structure results [2, 3] imply ∆2R (k0 = 0.002 Mpc−1 ) = (2.40 ± 0.12) × 10−9 and
+ns (k0 ) ∼ 0.94 − 1.10 (0.95 ± 0.02; no tensors). Finally, the correlator in equation (25) can be computed using Wick’s
+theorem
+                                 Z                               Z
+        hS(k, η̃1 )S(K, η̃2 )i =   d3 k̃ e(k, k̃) f (k, k̃, η̃1 ) d3 K̃ e(K, K̃) f (K, K̃, η̃2 ) hψk−k̃ ψk̃ ψK−K̃ ψK̃ i
+                                                  Z                                  h                                     i P (|k − k̃|) P (k̃)
+                               = δ(k + K)             d3 k̃ e(k, k̃)2 f (k, k̃, η̃1 ) f (k, k̃, η̃2 ) + f (k, k − k̃, η̃2 )                      ,   (32)
+                                                                                                                              |k − k̃|3 k̃ 3
+
+and the power spectrum of second-order gravitational waves is
+                                          Z ∞ Z 1
+                              Ph (k, η) =    dk̃    dµ P (|k − k̃|)P (k̃) F (k, k̃, µ; η) ,                                                          (33)
+                                                        0         −1
+
+where
+                                           Z η
+                     [1 − µ2 ]2 k 3 k̃ 3                                                                        h                                   i
+ F (k, k̃, µ; η) ≡                               dη̃2 dη̃1 a(η̃1 )a(η̃2 )gk (η; η̃1 )gk (η; η̃2 )f (k, k̃, η̃1 ) f (k, k̃, η̃2 )+f (k, k − k̃, η̃2 ) . (34)
+                       a2 (η) |k − k̃|3     η0
+
+Notice that the power spectrum Ph (k, η) is defined completely in terms of the Green’s function gk (Appendix A), the
+transfer functions Φ and Ψ (Appendix B), and the primordial power spectrum of first-order scalar fluctuations, P (k)
+(WMAP [2]).
+                                                                                                                              7
+
+                            3.   ANALYTICAL DESCRIPTION OF THE SPECTRUM
+
+  In this section we estimate the complete spectrum of scalar-induced gravitational waves analytically. To simplify
+the analysis we neglect anisotropic stress and set Ψ = Φ. In section 4 we evaluate the exact spectrum numerically
+including anisotropic stress and show that this gives only a small correction. With Ψ = Φ, the source term of the
+equation of motion (18) can be expressed solely by the Bardeen potential Φ,
+
+                                              h′′k + 2Hh′k + k 2 hk = S(Φ(kη)) ,                                           (35)
+
+and f (k, k̃, η) in equation (28) is expressed by a single transfer function Φ,
+
+          3(1 + w)                                                                                    
+                   f (k, k̃, η) = 2(5 + 3w)Φ(|k − k̃|η)Φ(|k̃|η) + 4 2ηΦ(|k − k̃|η) + η 2 Φ′ (|k − k̃|η) Φ′ (|k̃|η) .       (36)
+              4
+In Appendix B we show that the transfer function for first-order scalar modes can be written in the following form
+                                                   (
+                                                          1
+                                                       1+k2 η 2 η < ηeq
+                                          Φ(kη) =         1                                                     (37)
+                                                       1+k2 η 2 η > ηeq
+                                                                        eq
+
+
+
+
+                      Amplitude
+
+                            S p /k2                  h(i) = S(i)/k2
+
+                                                                             -1
+
+                                                 h                                        S(f )/k2 = h(f )
+
+
+
+
+                             hp = 0
+                                                                                                      ln(a)
+                                                  ak             a eq               ak*
+
+FIG. 2: Evolution of scalar source and induced gravitational waves. Second-order tensors, h, are generated when the
+mode k enters the horizon at ak . If horizon entry occurs during the radiation dominated era, then the scalar source decays as
+a−γ until matter-radiation equality, aeq . During matter domination the scalar source terms remains at a constant value, S (f) .
+Gravitational waves redshift like a−1 as long as h > S (f) /k2 , but remain at a constant amplitude maintained by the constant
+source term after that, a > a∗k .
+
+
+  To study the generation of h induced by S we make the approximation that gravitational waves are produced
+instantaneously when the relevant mode enters the horizon. The subsequent evolution of the tensor mode is scale-
+dependent and determined by the time evolution of the scalar source term (see Figure 2). Scalar-induced gravitational
+waves redshift as long as their magnitude is greater than S/k 2 . After that they freeze at a constant value maintained
+by the constant source term during matter domination. We define the transfer function for scalar-induced gravitational
+waves, t(k, η), as follows
+                                                                              (i)
+                                                       hk (η) ≡ t(k, η)hk ,                                                (38)
+        (i)
+where hk is the value of hk just after the instantaneous generation of gravitational waves after horizon entry (see
+                        (i)
+Figure 2). We estimate hk by dropping time derivatives in the equation of motion (35) (since kη > 1 after horizon
+entry)
+
+                                                           (i)     1 (i)
+                                                         hk ∼         S .                                                  (39)
+                                                                   k2
+                                                                                                                                                          8
+
+In §3.1 we calculate the initial power spectrum at the time of horizon crossing,
+
+                                                                   (i)                 k3     (i)
+                                                               Ph (k, ηi (k)) ≡            h(hk )2 i ,                                                  (40)
+                                                                                      2π 2
+where ηi (k) ∼ k −1 is the conformal time when a comoving scale k enters the horizon. This initial spectrum is processed
+using the tensor transfer function, t(k, η), which we derive in §3.2. Finally, in §3.3, we put these results together and
+compute the relative energy density of scalar-induced gravitational waves
+
+                                                         (2)                    1                    (i)
+                                                       ΩGW (k, η) =                    k 2 t2 (k, η)Ph (k)
+                                                                           6π 2 H2 (η)
+                                                                           a(η)k 2 2            (i)
+                                                                         =      2
+                                                                                   t (k, η)Ph (k) .                                                     (41)
+                                                                           aeq keq
+
+
+                                                  3.1.     Power Spectrum at Horizon Crossing
+
+  In this section we estimate the k-scaling of the horizon power spectrum of scalar-induced gravitational waves. The
+                     (i)
+horizon amplitude hk is estimated from the equation of motion (35) as follows
+
+                                  1         1
+                                               Z
+                            (i)
+                           hk ∼ 2 S (i) ∼ 2 d3 k̃ k̃ 2 (1 − µ2 )Φ(k̃ηi )Φ(|k − k̃|ηi )ψk̃ ψk−k̃ ,                (42)
+                                 k         k
+and its power spectrum is,
+                  1
+                     Z
+     (i) (i)
+  hhk hK i ∼ 2 2        d3 k̃d3 K̃ k̃ 2 K̃ 2 (1 − µ2 )(1 − µ̃2 )Φ(k̃ηi )Φ(|k − k̃|ηi )Φ(K̃ηi )Φ(|K − K̃|ηi )hψk̃ ψk−k̃ ψK̃ ψK−K̃ i
+                k K
+                1                                                            P (k̃) P (|k − k̃|)
+                             Z
+             ∼ 4 δ(k + K) d3 k̃ k̃ 4 (1 − µ2 )2 Φ2 (k̃ηi )Φ2 (|k − k̃|ηi )                       .                              (43)
+                k                                                             k̃ 3 |k − k̃|3
+
+Hence,
+
+                                    k3              1                                                                  P (k̃) P (|k − k̃|)
+                                                               Z
+                      (i)                  (i)
+                  Ph (k) ≡              h(hk )2 i ∼                 d3 k̃ k̃ 4 (1 − µ2 )2 Φ2 (k̃ηi )Φ2 (|k − k̃|ηi )                       .            (44)
+                                   2π 2             k                                                                   k̃ 3 |k − k̃|3
+
+To compute (44) we use the transfer function for the scalar potential (37) and assume a scale-invariant spectrum,
+P (k) = 49 ∆2R . (The scale-dependence of the scalar spectrum can be reinserted at the end of the computation). Here
+we have defined ∆2R ≈ 10−9 as a measure of scalar power on COBE scales k0 ≈ 0.002 Mpc−1 . Hence, for the radiation
+dominated phase, we have,
+                                   Z ∞            Z 1
+      (i)                ∆4R                                                         k̃ 3                   1                           1
+     Ph (k, ηi (k))    ∼                    dk̃         dµ(1 − µ2 )2
+                          k            0           −1                     (k 2 + k̃ 2 − 2k k̃µ)3/2 [1 + (k̃/k)2 ]2 [1 + (k 2 + k̃ 2 − 2k k̃µ)/k 2 ]2
+                                  Z ∞            Z 1
+                                                                                   x3                 1                  1
+                       = ∆4R                dx          dµ(1 − µ2 )2
+                                      0           −1                      (1 + x2 − 2xµ)3/2 (1 + x2 )2 (2 + x2 − 2xµ)2
+                       ∝ ∆4R ,                                                                                                                          (45)
+
+where we defined x ≡ k̃/k. On the other hand, for the matter dominated phase, we have,
+                                  Z ∞            Z 1
+      (i)                   ∆4R                                                    k̃ 3                    1                             1
+    Ph (k, ηi (k)) ∼                       dk̃         dµ(1 − µ2 )2
+                             k     0              −1                     (k 2 + k̃ 2 − 2k k̃µ)3/2 [1 + (k̃/keq )2 ]2 [1 + (k 2 + k̃ 2 − 2k k̃µ)/keq
+                                                                                                                                                 2 ]2
+                                  Z ∞           Z 1
+                                                                                 x3         1                1
+                      = ∆4R                dx          dµ(1 − µ2 )2                                                        ,                            (46)
+                                  0              −1                      (1 + x − 2xµ) (1 + x y ) [1 + (1 + x − 2xµ)y 2 ]2
+                                                                               2      3/2    2 2 2           2
+                                                                                                                        9
+
+where x ≡ k̃/k and y ≡ k/keq ≪ 1. Neglecting the µ-terms we find
+                                               Z ∞
+                            (i)              4               x3            1
+                          Ph (k, ηi (k)) ∼ ∆R        dx        2 )3/2 (1 + x2 y 2 )4
+                                                 0      (1 +  x
+                                                 5(1 + 6y 2 ) arccos y 81 + 28y 2 − 4y 4
+                                                                                          
+                                            4
+                                         = ∆R                           −
+                                                   16y(1 − y 2 )9/2          48(1 − y 2 )4
+                                                4
+                                           5π∆R
+                                         ∼
+                                            32y
+                                               keq
+                                         ∝ ∆4R     .                                                                 (47)
+                                                k
+The power spectrum at horizon crossing therefore scales as follows
+                                                        keq
+                                          (i)                    k < keq
+                                        Ph (k) ∝ ∆4R       k                                                         (48)
+                                                         1       k > keq
+
+
+                                   3.2.     Second-Order Tensor Transfer Function
+
+  To compute the transfer function for second-order, scalar-induced gravitational waves we need to estimate the time
+evolution of the source term. In particular, the transfer function for modes that enter the horizon during radiation
+domination is sensitive only to ratio of the source terms at horizon crossing, S (i) and the asymptotic value after
+equality, S (f) (see Figure 2). We parameterize the decay of the source term during radiation domination as follows
+                                                                γ(k)
+                                                  S (f)
+                                                          
+                                                            ak
+                                                        =             ,                                          (49)
+                                                  S (i)     aeq
+where we have allowed for a scale-dependence of the effective decay rate. In the following we put limits on γ(k) by
+considering the asymptotic evolution of subhorizon modes (kη ≫ 1).
+
+  Let x ≡ |k − k̃|η and y ≡ |k̃|η. Using the following relations
+                         x(y, µ) 2           y 2         y                                        η3
+                                       =1+              −2       µ         and         ψk−k̃ ψk̃ ∝              ,    (50)
+                            kη                 kη             kη                                     x3/2 y 3/2
+the source term may be written as follows
+                                                 Z ∞         Z 1
+                                          2π                                        y 5/2
+                                 S(k, η) ∝ 2            dy         dµ [1 − µ2 ]              f (x, y) ,              (51)
+                                          η         0         −1                  x(y, µ)3/2
+where
+                                                           h                 i
+                                       2f (x, y) = Φ(x)Φ(y) 6 − y 2 Φ(x)Φ(y) ,                                       (52)
+                                                                                y2
+                                                                                    
+                                                     1      1            1
+                                                 = 2              6 −                  .                             (53)
+                                                   x + 1 y2 + 1       x2 + 1 y 2 + 1
+
+Let us estimate the integral (51). The limit y → 0 is clearly suppressed by the phase space factor y 5/2 in the integrand.
+The limit x → 0 (y → kη, µ → 1) is suppressed by the projection factor [1 − µ2 ]. To see this, first take the limit
+y → kη,
+                                    x 2                 1 − µ2
+                                          → 2[1 − µ] ,           → (1 − µ)1/4 (1 + µ) .                               (54)
+                                    kη                     x3/2
+This shows that the integrand vanishes in the limit x → 0. In addition, large x and y are suppressed by the transfer
+function f (x, y) (i.e. the decay of the Bardeen potential on subhorizon scales). The dominant contribution to the
+integral (51) therefore comes from regions of phase space where k̃ ∼ k (y ∼ kη) and |k − k̃| ∼ k (x ∼ kη, µ ∼ 0). Let
+us therefore write
+                                                               y 7/2 1                         y2
+                                                                                                   
+                        1                                                   1           1
+                          Z        Z
+                                                       2
+                  S∝ 2       d ln y d ln(1 − µ) (1 − µ) (1 + µ) 3/2 2             6− 2                           (55)
+                        η                                      x x + 1 y2 + 1         x + 1 y2 + 1
+                                                                                                                    10
+
+and take the subhorizon limit y, x → kη > 1, µ → 0
+
+                               1 (kη)7/2                      (kη)2
+                                                                      
+                                              1                            1 1      1
+                          S∝    2    3/2      2    2
+                                                       6 −      2    2
+                                                                         ≈ 2    2
+                                                                                  ∝ 4.                            (56)
+                               η (kη)    [(kη) + 1]        [(kη) + 1]     η (kη)   a
+
+Hence the source term decays at most as a−4 after the mode k enters the horizon during the radiation dominated
+era, i.e. γ(k) < 4. In fact, we expect the source term to decay considerably slower than that for a while after horizon
+crossing. The source will decay more and more quickly as the horizon grows much larger than the wavelength of the
+mode, finally reaching the asymptotic behavior that is proportional to a−4 . This leads us to expect that the effective
+γ in equation (49) will be significantly smaller than 4. Numerically, we find γ ≈ 3 (see §4).
+
+   The transfer function for second-order gravitational waves is considerably different from the transfer function for
+first-order gravitational waves. First of all, modes which enter the horizon during matter domination have constant
+source terms and hence do not decay
+
+                                                t(k, η) = 1 ,         k < keq .                                   (57)
+
+Next, consider the evolution of the scalar source term and induced gravitational waves for modes that enter the
+horizon during the radiation dominated era (see Figure 2). Here, k = ak H defines the time of horizon entry (ak ) for
+a mode of wavenumber k. We assume that h grows very rapidly after horizon entry to become of order the source
+term. Then S decays as a−γ (where our previous discussion implies γ < 4) while h redshifts as a−1 until h is equal
+to the final source term during matter domination at a∗k . For a > a∗k , h stays constant. We therefore have,
+
+                                             h(f)   ak    S (f)  ak γ
+                                                  =     ≈       =       ,                                         (58)
+                                             h(i)   a∗k   S (i)   aeq
+
+and find
+                                                ak     a γ  k −γ
+                                                         k
+                                                    =       =        .                                            (59)
+                                                a∗k    aeq    keq
+
+For a fixed time η, subhorizon modes with sufficiently large k have never settled down. The critical wave number at
+a time η can be obtained by substituting a∗k = a(η) into equation (59),
+                                                            a(η) 1/(γ−1)
+                                                kc (η) =                     keq .                                (60)
+                                                             aeq
+
+Modes with k > kc (η) simply redshift like a−1 ,
+                                                 ak    aeq 1
+                                    t(k, η) =        =           ,              k > kc (η) .                      (61)
+                                                a(η)   a(η) kηeq
+
+The transfer function for second-order gravitational waves therefore takes the following interesting form
+
+                                                     1               k < keq
+                                                   
+                                                   
+                                                      −γ
+                                                     k
+                                      t(k, η) =     keq              keq < k < kc (η)                             (62)
+                                                 aeq keq
+                                                
+                                                  a(η) k             k > kc (η)
+
+
+                             3.3.   Spectrum of Scalar-Induced Gravitational Waves
+
+  Substituting the power spectrum at horizon crossing (48) and the tensor transfer function (62) into equation (41)
+for the relative spectral energy density of gravitational waves at time η, we find
+                                                             a(η)
+                                                             aeq kkeq             k < keq
+                                               k 2(ns −1) 
+                                                                   −(2γ−2)
+                     (2)           (2)  4                     a(η)
+                    ΩGW (k, η) = AGW ∆R (k0 )                         k
+                                                                                   keq < k < kc (η)            (63)
+                                                k0            aeq   keq
+                                                             aeq
+                                                            
+                                                                                   k > k (η)
+                                                                   a(η)                        c
+                                                                                                                      11
+
+                                             (2)                                                               (2)
+where an overall normalization constant AGW hasn’t been fixed by our analytical arguments. In §4 we find AGW ≈ 10
+and γ ≈ 3 (This is consistent with the normalization of the small-scale spectrum in [12]). Figure 1 summarizes this
+conjectured form of the scalar-induced gravitational wave spectrum. If the scalar spectrum can be treated by a power
+law with constant spectral index over a large range of scales, then a blue scalar spectrum (ns > 1) enhances the tensor
+spectrum on small scales, while a red spectrum (ns < 1) suppresses secondary tensor fluctuations. For comparison,
+the first-order spectrum of primordial gravitational waves in inflationary models can be expressed as
+                                                                 
+                                                         k nt  aeq k −2
+                                                                          
+                            (1)           (1)     2                                  k < keq
+                           ΩGW (k, η) = AGW r0 ∆R (k0 )             a(η) keq                                       (64)
+                                                          k0      aeq               k  > keq
+                                                                    a(η)
+
+          (1)
+where AGW = 4.2 × 10−2 and r0 ≡ PPh(k
+                                    (k0 )
+                                      0)
+                                          is the first-order tensor-to-scalar ratio evaluated on the scale of today’s
+horizon, k = k0 ≈ 0.002 Mpc−1 . For single-field inflation, the spectral index of the primordial tensor spectrum, nt ,
+is related to the tensor-to-scalar ratio by the slow-roll consistency relation, nt = −r0 /8. Matter-radiation equality is
+normalized by recent observations [2] aeq ≈ a0 /3400.
+
+   The current tensor spectrum (η = η0 ) on large scales (k = keq ) and on very small scales (k ≫ keq ) (assuming
+inflation and nt ≈ 0 and ns ≈ 1) satisfies
+                                                               2
+                                        (1)               (1)   aeq
+                                      ΩGW (k = keq )     AGW a0          1
+                                        (2)
+                                                     ≈ r0 (2)  2 (k ) ∼ 10 r0                                (65)
+                                      Ω (k = keq )       A    ∆R 0
+                                        GW                         GW
+
+and
+                                       (1)                        (1)
+                                      ΩGW (k ≫ keq )             AGW     1           6
+                                       (2)
+                                                          ≈ r0    (2) 2       ∼ 10       r0 .                        (66)
+                                      ΩGW (k ≫ keq )             AGW ∆R (k0 )
+Hence, for inflation, on large scales the second-order, scalar-induced contribution today, in fact, dominates over the
+first-order contribution. This reflects the fact that second-order gravitational waves do not redshift on large scales,
+while first-order gravitational waves redshift on all scales. On small scales the first-order contribution dominates
+unless r0 < 10−6 . For ekpyrotic/cyclic models, the first-order contribution (due to direct quantum fluctuations of the
+metric) is suppressed at k = k0 by 60 orders of magnitude compared to the inflationary signal [6] and the spectrum is
+                                                                  (2)
+blue. Hence, in these models, the scalar-induced tensor modes, ΩGW , comprise the dominant contribution on all scales.
+
+     CMB observations probe the time of photon-baryon decoupling at aCMB ≈ 3 aeq and scales with k < kCMB =
+        1/2
+     aeq
+    aCMB      keq . The gravitational wave spectrum at that time satisfies
+                                                                       2
+                                (1)                        (1)      aeq         3
+                               ΩGW (k = kCMB )            AGW      aCMB      keq
+                                                   ≈ r0                             ∼ 106 r0                         (67)
+                                (2)
+                               ΩGW (k = kCMB )
+                                                           (2)
+                                                          AGW     ∆2R (k0 ) kCMB
+
+and
+                                       (1)                        (1)
+                                      ΩGW (k ≫ keq )             AGW     1           6
+                                       (2)
+                                                          ≈ r0    (2) 2       ∼ 10       r0 .                        (68)
+                                      ΩGW (k ≫ keq )             AGW ∆R (k0 )
+
+Hence, at decoupling the first-order tensor signal dominates over the second-order signal if r0 > 10−6 . (This is
+consistent with the result of Mollerach et al. [11] who claim that second-order gravitational waves only have a
+significant imprint on the CMB if r0 < 10−8 . This corresponds to second-order gravitational waves dominating
+over first-order gravitational waves at the time of recombination. Second-order effects can become visible for larger
+r0 < 10−6 if late time polarization generated by reionization is considered [11].)
+
+  For completeness, let us consider the power spectrum on superhorizon scales, e.g. during the matter dominated
+phase. On superhorizon scales, k ≪ H, the initial amplitude can be estimated from the equation of motion (35) by
+ignoring the gradient term and approximating the time derivatives by factor of H,
+                                                            (i)
+                                                      H2 hk≪H ∼ S ,                                                  (69)
+                                                                                                                                12
+
+          (i)                                                                                                             (i)
+while k 2 hk ∼ S estimates the initial amplitude on the horizon scale. Hence, the initial power spectrum, Ph , on
+superhorizon scales is simply (k/H)4 times the spectrum on the horizon scale
+                                        4
+                                (i)      k                keq
+                              Ph (k) ∝        × ∆4R (k0 )     ∝ k3 ,  k < khor ≤ keq .                       (70)
+                                         H                 k
+                                                                                                                    (2)
+Although the tensor power spectrum, Ph , is a well-defined gauge-invariant object on super-horizon scales, ΩGW is not.
+                                                                                                     (2)       (i)
+In particular, equation (41) is only defined on subhorizon scales. Nevertheless, we formally define ΩGW ∝ k 2 Ph ∝ k 5
+on superhorizon scales, but do not attribute physical meaning to it. This definition is useful, since all our results
+                            (2)
+are presented in terms of ΩGW and the shape of the superhorizon spectrum gives a simple consistency check for the
+numerical analysis.
+
+
+                          4.     NUMERICAL RESULTS FOR THE EXACT SPECTRUM
+
+  The spectrum of scalar-induced gravitational waves that we derived in §2 and discussed analytically in §3 can be
+evaluated exactly using standard numerical methods. The time evolution of the first-order perturbation variables
+necessary to compute the spectrum, Φ(kη) and Ψ(kη), is obtained from publicly available Einstein-Boltzmann codes
+such as CMBFAST [16] or CAMB [17]. We first store the time evolution of Φ and Ψ in k-space, then convolve
+them according to equation (32). In practice, the range of k is taken be [10−5 Mpc−1 , 500 Mpc−1 ] and variables are
+evaluated at 50 uniformly spaced points per log-interval of k. We have checked that our results are stable under
+variations of the k-space boundaries and the discretization.
+
+                               -10
+                          10
+                                       primordial tensors
+                                             (z = 0, r = 0.1)
+
+
+
+                               -15
+                          10
+                                      z=0
+                ΩGW
+                                               z = 100
+                                                            z = 3400
+                               -20
+                          10           scalar-induced tensors
+
+
+
+                               -24
+                         10
+                                     0.0001       0.001           0.01         0.1            1            10
+                                                                   k ( Mpc -1)
+FIG. 3: Numerical spectra of scalar-induced gravitational waves (lower curves) and the scale-invariant primordial tensor
+spectrum for an inflationary model with tensor-to-scalar ratio r = 0.1 (upper curve). The scalar-induced spectra are shown
+at three different epochs, z + 1 = 3400, 100, and 1. Each curve has been extended, for pedagogical reasons, to modes with
+small wavenumbers k that lie outside the horizon at the given epoch (dotted range of the three lower curves). Note that
+current (z + 1 = 1) scalar-induced contributions cross the primordial inflationary contribution at intermediate wavelengths, as
+suggested by the schematic in Figure 1. The simulation assumes a flat ΛCDM cosmology with the following model parameters:
+∆2R (k0 = 0.002 Mpc−1 ) = 2.4 × 10−9 , ns = 1, nt = 0, r = 0.1, Ωb h2 = 0.022, Ωm h2 = 0.11, h = 0.7.
+
+   In the numerical analysis it is possible to incorporate the difference between Φ and Ψ resulting from anisotropic
+stress of the fluid because the Boltzmann equations of photons and neutrinos are solved explicitly in the code by
+expanding their distribution functions into multipole moments. (Neglecting anisotropic stress from neutrinos implies
+                                                                                                                      13
+
+∼10% errors for both first-order scalar and tensor perturbations [18, 19]; see Figure 5 in Appendix B. For second-
+order tensors we find that the inclusion of anisotropic stress typically has less than 1% effect on the amplitude of
+the spectrum.) Finally, we should mention here that our definition of c2s , equation (7), relates first-order pressure
+and energy density perturbations in the total matter, P (1) and ρ(1) , including entropy perturbations, and thus it is
+scale-dependent. We have derived and incorporated this numerically.
+   The numerically calculated spectra are shown in Figure 3. The shape of the scalar-induced gravitational wave
+spectrum agrees well with the analytical results of the previous section and the schematic diagram in Figure 1,
+except for the fine-scale oscillations and the modest smoothing of the enhanced feature at large wavelengths. The
+scalar-induced spectrum is derived directly from observations of the scalar perturbations plus general relativity and
+is, in this sense, independent of the cosmological model for generating the primordial perturbations, e.g., inflation vs.
+ekpyrotic/cyclic. However, the transfer function does depend weakly on the expansion rate and composition of the
+universe, and, hence, the cosmological background parameters must be measured or otherwise specified.
+
+
+                                                         5.   DISCUSSION
+
+   Precise cosmological observations [2, 3] have confirmed the existence of a nearly scale-invariant spectrum of pri-
+mordial scalar fluctuations. These scalar fluctuations induce a second-order contribution to the spectrum of tensor
+perturbations that must be present for any cosmological model that accounts for the observed scalar spectrum. In
+particular, the computation of the second-order gravitational wave signal does not assume that the primordial per-
+turbation spectra were generated by inflation – it only relies on the observed spectrum of scalar perturbations and
+general relativity.
+   In this paper we have computed the scalar-induced spectrum of gravitational waves produced in the early Universe
+and used the Einstein equations to evolve it to the present. We have extended previous approaches to this problem
+[11, 12] by considering the complete cosmic history for the evolution of second-order gravitational waves and allowing
+for anisotropic stress in our numerical work.
+   Perhaps the most interesting theoretical feature is that second-order gravitational waves do not redshift on large and
+intermediate scales, but are maintained at a constant amplitude by the scalar source terms. This leads to a transfer
+function for the scalar-induced gravitational waves that produces a (nearly) scale-invariant spectrum on small scales
+and interesting scale-dependence on large and intermediate scales. In particular, there is a peak in the current
+spectrum of second-order gravitational waves at the scale of the comoving horizon at matter-radiation equality (see
+Figures 1, 3 and 4) that is likely to exceed the primordial tensor spectrum at the present epoch. Unfortunately, there
+are no known methods for directly probing the present gravitational wave spectrum on these scales (corresponding to
+the size of superclusters today). At earlier times, such as recombination, the feature was much smaller and so only
+has small effects, e.g. on the CMB [11]. Hence, this substantial feature is likely to remain of purely academic interest
+in the foreseeable future.
+   On much smaller scales, which may be accessible to space-based laser-interferometer experiments (for a nice
+discussion see Ref. [21]), there are no measurements of the scalar perturbation spectrum, so one must rely on
+extrapolating from what is known about scalar perturbations on large scales, e.g. from measurements of the CMB
+and large scale structure. Since these two wavelength regimes are separated by 16 orders of magnitude, extrapolation
+uncertainties can have important effects. For example, the dashed line in Figure 4, which illustrates the extrapolation
+of the tensor spectrum based on a perfectly scale-invariant (ns = 1) scalar spectrum, is an estimate of the induced
+small-scale tensor signal. Assuming that a nearly constant spectral index is a valid approximation from CMB scales
+to the smallest scales, a blue spectrum (ns > 1) enhances scalar-induced tensor modes on direct-detection scales,
+while a red spectrum (ns < 1) suppresses them. One might imagine improving on this simplistic extrapolation
+by including running of the scalar spectral index, αs ≡ dns /d ln k, although observationally αs is only weakly
+constrained. However, there are interesting cases where this approach is inadequate [21] and can even lead to
+qualitatively misleading conclusions [22]. Alternatively, for explicit inflationary models the whole spectrum can be
+computed directly from the inflaton potential V (φ) without  expanding   with respect to the CMB scale.2 In particular,
+                                                       h        i      p
+for hybrid inflation models of the form V (φ) = V0 1 + µφ      , where µ > MP and φ < µ, the exact computation
+predicts enhancement of the scalar-induced tensors on direct-detection scales, while the power law approximation
+(for p ≥ 3) with ns > 1 and αs < 0 predicts an overall suppression [22]. In a follow-up paper, we explore examples of
+this type that may produce large signals at BBO scales [24].
+
+
+
+2 For the first-order inflationary tensor spectrum this approach was followed by [23].
+                                                                                                                              14
+
+
+
+
+                                                                          k (Mpc-1)
+                                                      0              5              10            15              20
+                                                  10            10             10             10                 10
+                                                                     PULSARS
+                                             CMB(2)
+                                     -10      WMAP3 bound:
+                                  10          scalar-induced only                                      LIGO II
+                                                                                                       (2013)
+                                                                                    LISA
+                                                                                (2013 ?)
+                                             CMB(1)
+                                              WMAP3 bound:
+                       ΩGW (f )               primordial only
+                                                                                                   BBO I
+                                                                                                   (2025 ?)
+                                       -15
+                                  10               inflation: primordial tensors
+
+
+
+                                                                                           BBO Corr
+                                                                                            (2030 ?)
+
+                                              scalar-induced tensors
+                                       -20
+                                  10
+                                                    -15             -10         -5                0                   5
+                                                 10             10             10             10                 10
+                                                                         Frequency (Hz )
+FIG. 4: Observational prospects. Shown are the theoretical predictions for the present spectrum of primordial inflationary
+gravitational waves and scalar-induced gravitational waves, as well as current (solid bars) and future (dashed bars) experimental
+bounds (figure modified from [8]). The range of amplitudes for the primordial tensors corresponds to minimally tuned models
+of inflation as described in [8]. With more fine-tuning this signal can be suppressed. In contrast, the amplitude of the scalar-
+induced tensors is fixed by the observed amplitude of scalar fluctuations and therefore provides an absolute lower limit on
+the stochastic gravitational wave background. The CMB constraints depend on assumptions about the transfer function for
+gravitational waves to extrapolate constraints obtained at decoupling to the current spectrum. Since second-order gravitational
+waves do not redshift on CMB scales, the CMB observations imply separate constraints on the current first- and second-
+order spectra. These constraints are labeled CMB(1) and CMB(2), respectively. The dashed section of the scalar-induced
+tensor spectrum illustrates extrapolation from CMB to direct-detection scales using a scale-invariant scalar spectrum (ns = 1).
+Important uncertainties in the extrapolation between CMB and BBO scales are discussed in the main text.
+
+
+  Finally, let us consider the possible scenarios for future observations of the first- and second-order tensor signals
+and what they would signify:
+    • If a spectrum of gravitational waves is observed that conforms to a nearly scale-invariant, first-order tensor
+      signal and with r > 10−2 (as shown in Figure 4), this would be a spectacular confirmation of the inflationary
+      model of the universe and completely rule out ekpyrotic/cyclic models. The observation of such a signal with
+      r < 10−2 would also rule out ekpyrotic/cyclic models but, in addition, inflationary models would be pushed into
+      a fine-tuned region of parameter space [8].
+    • If no nearly scale-invariant, first-order tensor spectrum is detected but the scalar-induced, second-order tensor
+      spectrum is observed (either by extremely sensitive CMB polarization experiments or small scale direct detection
+      interferometers like BBO), then inflation could only be compatible with extreme enough fine-tuning to suppress
+      the first-order contribution to the tensor signal, and alternatives like the ekpyrotic/cyclic models would be
+      favored.
+    • If future experiments show that there is no tensor signal at or above the level of the predicted scalar-induced
+      tensor spectrum, either general relativity or the interpretation of the scalar fluctuations would have to be amiss.
+In practice, observing the second-order tensor signal is a long way off, at best, and perhaps even impossible given
+our current understanding of astrophysical foregrounds and detector limitations for both CMB and direct detection
+                                                                                                                   15
+
+experiments [9, 20]. Nevertheless, we consider it interesting that the observed level of scalar fluctuations implies a
+model-independent lower limit on gravitational waves from the early Universe whose detailed features can be computed
+from a general relativistic description of cosmic evolution.
+
+
+                                                 Acknowledgments
+
+  It is a pleasure to thank Latham Boyle for a very careful reading of a draft of this paper. PJS and DB thank
+Jo Dunkley and David Spergel for initial discussions that helped inspire this work. KI thanks Kouji Nakamura
+for useful discussions on second-order perturbations. KI and KT acknowledge the support by a Grant-in-Aid for
+the Japan Society for the Promotion of Science. PJS and DB are supported by US Department of Energy grant
+DE-FG02-91ER40671.
+                                                                                                                                     16
+
+                  APPENDIX A: GREEN’S FUNCTION FOR GRAVITATIONAL WAVES
+
+ In this section we derive exact Green’s functions of equation (18) for both the radiation and matter dominated eras.
+The Green’s function of a general second-order differential equation, L̂g = δ(η − η̃) is defined as follows
+                                                                v1 (η)v2 (η̃) − v1 (η̃)v2 (η)
+                                                  g(η; η̃) ≡                                      ,                                (A1)
+                                                                v1′ (η̃)v2 (η̃) − v1 (η̃)v2′ (η̃)
+
+in terms of the two homogeneous solutions v1 and v2 , which satisfy L̂vi = 0, for a general differential operator L̂.
+During the radiation dominated era the Green’s function for the gravitational wave problem (24) reduces to
+
+                                                           gk′′ + k 2 gk = δ(η − η̃) ,                                             (A2)
+
+which has the following homogeneous solutions
+                                                    v1 = sin(kη) ,          v2 = cos(kη) .                                         (A3)
+
+Hence, the Green’s function during the radiation dominated era is
+                                               1
+                            gk (η; η̃) =         [sin(kη) cos(k η̃) − sin(k η̃) cos(kη)] ,             η < ηeq .                   (A4)
+                                               k
+During matter domination equation (24) reduces to
+                                                     2
+                                         gk′′ + k 2 − 2 gk = δ(η − η̃) ,                                                           (A5)
+                                                     η
+which has the following homogeneous solutions
+
+                                              v1 = η j1 (x) ,      v2 = η y1 (x) ,          x ≡ kη ,                               (A6)
+where j1 (x) and y1 (x) are spherical Bessel functions. The Green’s function during the matter dominated era therefore
+is
+                                               xx̃ h                             i
+                                gk (η; η̃) = −      j1 (x)y1 (x̃) − j1 (x̃)y1 (x) , η > ηeq .                    (A7)
+                                                k
+
+             APPENDIX B: TRANSFER FUNCTION FOR FIRST-ORDER SCALAR MODES
+
+  The first-order scalar perturbations Φ and Ψ in equation (3) satisfy the following constraint equation [13]
+
+                                                k 2 (Φ − Ψ) = −4κ2 a2 [ργ Θ2 + ρν N2 ] ,                                           (B1)
+
+where Θ2 and N2 characterize the quadrupole moments of the photon (γ) and neutrino (ν) anisotropies, respectively.
+Θ2 and N2 are determine by the solution to the Einstein-Boltzmann equations. In practice, these are solved
+numerically using CMBFAST [16] or CAMB [17] (see Figure 5).
+
+  Since, Θ2 and N2 are typically negligibly small, analytical studies often assume Φ ≈ Ψ. In this case, the first-order
+equation of motion for the Bardeen potential is (e.g. [13])
+                                                                               
+                             Φ′′ + 3(1 + c2s )HΦ′ − c2s ∆Φ + 2H′ + (1 + 3c2s )H2 ∝ δS ,                            (B2)
+
+where the RHS is non-zero only in the presence of entropy perturbations, δS. For p = wρ and in the absence of
+entropy perturbations (i.e. δS = 0) this becomes
+                                                           6(1 + w) 1 ′
+                                                  Φ′′k +             Φ + wk 2 Φk = 0 .                                             (B3)
+                                                            1 + 3w η k
+Equation (B3) has the following exact solution
+                                                                                       √
+                                                                                                                          
+                                −α
+                                     h                              i                                     1       5 + 3w
+                   Φk (η) = y            C1 (k)Jα (y) + C2 (k)Yα (y) ,              y ≡ wkη ,          α≡                      ,   (B4)
+                                                                                                          2       1 + 3w
+                                                                                                                                    17
+
+                                                  1
+                                                                                                               5
+                                                                                                         1+z=10
+                                              0.1                                                    4
+                                                                                          1+z=10
+
+
+
+
+                       Transfer Functions
+                                                                            1+z=100
+                                             0.01
+
+                                            0.001
+
+                                               -4
+                                             10
+                                                               Φ
+                                               -5
+                                             10                Ψ
+
+
+                                                          0.001      0.01       0.1              1          10        100
+                                                                             k (Mpc -1 )
+ FIG. 5: Transfer functions for Φ and Ψ. Neutrino anisotropic stress leads to O(10)% difference between Φ and Ψ [18].
+
+
+where Jα and Yα are Bessel functions of order α. During the matter dominated era (w = 0) this becomes
+
+                                                                                      C2 (k)
+                                                                Φk (η) = C1 (k) +            ,                                    (B5)
+                                                                                       y5
+
+whereas during the radiation dominated era (w = 13 ) we find
+                                                                                   
+                                    1         sin y                 cos y
+                           Φk (η) = 2 C1 (k)         − cos y + C2 (k)        + sin y .                                            (B6)
+                                   y             y                       y
+                  √
+At early times y = wkη ≪ 1 this becomes asymptotically the primordial value,
+
+                                                               lim Φk (η) = C1 (k) = ψk ,                                         (B7)
+                                                               y→0
+
+where we have dropped the decaying mode (C2 ≡ 0). For the growing mode solution we therefore obtain the following
+transfer function
+                                          (                        
+                                              1    sin[kη]
+                                                           − cos[kη]  η < ηeq
+                                  Φ(kη) = (kη)2      kη                                                      (B8)
+                                                      const.          η > ηeq
+
+From this we see that superhorizon modes (kη ≪ 1) freeze during the radiation era
+
+                                                      Φ(kη) = 1 + O((kη)2 ) ,    kη ≪ 1 ,        η < ηeq ,                        (B9)
+
+while subhorizon modes (kη > 1) oscillate and decay as a−2
+
+                                              cos[kη]      η 2              a 2
+                                                             k                  k
+                   Φ(kη) = −                          = −        cos[kη] = −        cos[kη] ,              kη > 1 ,   η < ηeq .   (B10)
+                                               (kη)2        η                  a
+
+Ignoring oscillations we therefore may write the following expression valid for both superhorizon and subhorizon modes
+                                                                           1
+                                                             Φ(kη) =             ,     η < ηeq .                                  (B11)
+                                                                       1 + (kη)2
+
+The Bardeen potential freezes on all scales during matter domination.
+                                                                                                                            18
+
+
+
+
+ [1] A. H. Guth, “The Inflationary Universe: A Possible Solution To The Horizon And Flatness Problems,” Phys. Rev. D 23,
+    347 (1981);
+    A. D. Linde, “A New Inflationary Universe Scenario: A Possible Solution Of The Horizon, Flatness, Homogeneity,
+    Isotropy And Primordial Monopole Problems,” Phys. Lett. B 108, 389 (1982);
+    A. Albrecht and P. J. Steinhardt, “Cosmology For Grand Unified Theories With Radiatively Induced Symmetry
+    Breaking,” Phys. Rev. Lett. 48, 1220 (1982).
+ [2] D. N. Spergel et al. [WMAP Collaboration], “First Year Wilkinson Microwave Anisotropy Probe (WMAP) Observations:
+    Determination of Cosmological Parameters,” Astrophys. J. Suppl. 148, 175 (2003) [arXiv:astro-ph/0302209];
+    H. V. Peiris et al., “First year Wilkinson Microwave Anisotropy Probe (WMAP) observations: Implications for inflation,”
+    Astrophys. J. Suppl. 148, 213 (2003) [arXiv:astro-ph/0302225];
+    D. N. Spergel et al., “Wilkinson Microwave Anisotropy Probe (WMAP) three year results: Implications for cosmology,”
+    [arXiv:astro-ph/0603449].
+ [3] M. Tegmark et al., “Cosmological Constraints from the SDSS Luminous Red Galaxies,” arXiv:astro-ph/0608632.
+ [4] J. Khoury, B. A. Ovrut, P. J. Steinhardt and N. Turok, “The ekpyrotic universe: Colliding branes and the origin of the
+    hot big bang,” Phys. Rev. D 64, 123522 (2001) [arXiv:hep-th/0103239].
+ [5] P. J. Steinhardt and N. Turok, “A cyclic model of the universe,” Science 296, 1436 (2002);
+    P. J. Steinhardt and N. Turok, “Cosmic evolution in a cyclic universe,” Phys. Rev. D 65, 126003 (2002)
+    [arXiv:hep-th/0111098].
+ [6] L. A. Boyle, P. J. Steinhardt and N. Turok, “The cosmic gravitational wave background in a cyclic universe,” Phys. Rev.
+    D 69, 127302 (2004) [arXiv:hep-th/0307170].
+ [7] A. D. Linde, “Hybrid inflation,” Phys. Rev. D 49, 748 (1994) [arXiv:astro-ph/9307002].
+ [8] L. A. Boyle, P. J. Steinhardt and N. Turok, “Inflationary predictions reconsidered,” Phys. Rev. Lett. 96, 111301 (2006)
+    [arXiv:astro-ph/0507455].
+ [9] J. Bock et al., “Task Force on Cosmic Microwave Background Research,” arXiv:astro-ph/0604101.
+[10] S. Matarrese, O. Pantano and D. Saez, “A General relativistic approach to the nonlinear evolution of collisionless
+    matter,” Phys. Rev. D 47, 1311 (1993);
+    S. Matarrese, O. Pantano and D. Saez, “General relativistic dynamics of irrotational dust: Cosmological implications,”
+    Phys. Rev. Lett. 72, 320 (1994) [arXiv:astro-ph/9310036];
+    S. Matarrese, S. Mollerach and M. Bruni, “Second-order perturbations of the Einstein-de Sitter universe,” Phys. Rev. D
+    58, 043504 (1998) [arXiv:astro-ph/9707278];
+    H. Noh and J. c. Hwang, “Second-order perturbations of the Friedmann world model,” Phys. Rev. D 69, 104011 (2004);
+    C. Carbone and S. Matarrese, “A unified treatment of cosmological perturbations from super-horizon to small scales,”
+    Phys. Rev. D 71, 043508 (2005) [arXiv:astro-ph/0407611];
+    K. Nakamura, “Second-order gauge invariant cosmological perturbation theory: Einstein equations in terms of gauge
+    invariant variables,” Prog. Theor. Phys. 117, 17 (2007) [arXiv:gr-qc/0605108].
+[11] S. Mollerach, D. Harari and S. Matarrese, “CMB polarization from secondary vector and tensor modes,” Phys. Rev. D
+    69, 063002 (2004) [arXiv:astro-ph/0310711].
+[12] K. N. Ananda, C. Clarkson and D. Wands, “The cosmological gravitational wave background from primordial density
+    perturbations,” arXiv:gr-qc/0612013.
+[13] V. Mukhanov, Physical foundations of cosmology, (Cambridge Univ. Press, Cambridge, 2006);
+    S. Dodelson, Modern cosmology, (Academic Press, San Diego, 2003) .
+[14] S. Matarrese, S. Mollerach, A. Notari and A. Riotto, “Large-scale magnetic fields from density perturbations,” Phys.
+    Rev. D 71, 043502 (2005) [arXiv:astro-ph/0410687];
+    R. Gopal and S. Sethi, “Generation of Magnetic Field in the Pre-recombination Era,” Mon. Not. Roy. Astron. Soc. 363,
+                                                                                                                         19
+
+    529 (2005) [arXiv:astro-ph/0411170];
+    K. Takahashi, K. Ichiki, H. Ohno and H. Hanayama, “Magnetic field generation from cosmological perturbations,” Phys.
+    Rev. Lett. 95, 121301 (2005) [arXiv:astro-ph/0502283];
+    K. Ichiki, K. Takahashi, H. Ohno, H. Hanayama and N. Sugiyama, “Cosmological Magnetic Field: a fossil of density
+    perturbations in the early universe,” arXiv:astro-ph/0603631;
+    K. Ichiki, K. Takahashi, N. Sugiyama, H. Hanayama and H. Ohno, “Magnetic Field Spectrum at Cosmological
+    Recombination,” arXiv:astro-ph/0701329;
+    T. Kobayashi, R. Maartens, T. Shiromizu and K. Takahashi, “Cosmological magnetic fields from nonlinear effects,”
+    arXiv:astro-ph/0701596.
+[15] V. Acquaviva, N. Bartolo, S. Matarrese and A. Riotto, “Second-order cosmological perturbations from inflation,” Nucl.
+    Phys. B 667, 119 (2003) [arXiv:astro-ph/0209156].
+[16] U. Seljak and M. Zaldarriaga, “A Line of Sight Approach to Cosmic Microwave Background Anisotropies,” Astrophys. J.
+    469, 437 (1996) [arXiv:astro-ph/9603033]; http://www.cmbfast.org
+[17] A. Lewis and A. Challinor; http://camb.info
+[18] W. Hu, D. Scott, N. Sugiyama and M. J. White, “The Effect Of Physical Assumptions On The Calculation Of Microwave
+    Background Anisotropies,” Phys. Rev. D 52, 5498 (1995) [arXiv:astro-ph/9505043].
+[19] S. Weinberg, “Damping of tensor modes in cosmology,” Phys. Rev. D 69, 023503 (2004) [arXiv:astro-ph/0306304];
+    Y. Watanabe and E. Komatsu, “Improved calculation of the primordial gravitational wave spectrum in the standard
+    model,” Phys. Rev. D 73, 123515 (2006) [arXiv:astro-ph/0604176].
+[20] David Spergel and Lyman Page, private communication.
+[21] Latham Boyle, PhD Thesis, Princeton University (2006).
+[22] D. Baumann and K. Takahashi, unpublished.
+[23] T. L. Smith, M. Kamionkowski and A. Cooray, “Direct detection of the inflationary gravitational wave background,”
+    Phys. Rev. D 73, 023504 (2006) [arXiv:astro-ph/0506422].
+[24] D. Baumann, K. Ichiki, P. Steinhardt, K, Takahashi, in preparation.
+

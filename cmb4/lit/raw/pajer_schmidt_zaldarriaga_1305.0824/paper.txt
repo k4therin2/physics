@@ -1,0 +1,1547 @@
+                                                         The Observed Squeezed Limit of Cosmological Three-Point Functions
+
+                                                                             Enrico Pajer,1 Fabian Schmidt,2, 3 and Matias Zaldarriaga4
+                                                                        1
+                                                                          Department of Physics, Princeton University, Princeton, NJ 08544, USA
+                                                               2
+                                                                   Department of Astrophysical Sciences, Princeton University, Princeton, NJ 08544, USA
+                                                                                                      3
+                                                                                                        Einstein fellow
+                                                                                4
+                                                                                  Institute for Advanced Study, Princeton, NJ 08544, USA
+                                                                                                  (Dated: October 15, 2013)
+                                                              The squeezed limit of the three-point function of cosmological perturbations is a powerful dis-
+                                                           criminant of different models of the early Universe. We present a conceptually simple and complete
+                                                           framework to relate any primordial bispectrum in this limit to late time observables, such as the
+                                                           CMB temperature bispectrum and the scale-dependent halo bias. We employ a series of convenient
+                                                           coordinate transformations to capture the leading non-linear effects of cosmological perturbation
+arXiv:1305.0824v2 [astro-ph.CO] 14 Oct 2013
+
+
+
+
+                                                           theory on these observables. This makes crucial use of Fermi Normal Coordinates and their con-
+                                                           formal generalization, which we introduce here and discuss in detail. As an example, we apply our
+                                                           formalism to standard slow-roll single-field inflation. We show explicitly that Maldacena’s results
+                                                           for the squeezed limits of the scalar bispectrum [proportional to (ns − 1) in comoving gauge] and the
+                                                           tensor-scalar-scalar bispectrum lead to no deviations from a Gaussian universe, except for projection
+                                                           effects. In particular, the primordial contributions to the squeezed CMB bispectrum and scale de-
+                                                           pendent halo bias vanish, and there are no primordial “fossil” correlations between long-wavelength
+                                                           tensor perturbations and small-scale perturbations. The contributions to observed correlations are
+                                                           then only due to projection effects such as gravitational lensing and redshift perturbations.
+
+
+                                                              I.     INTRODUCTION                              ing through a point P in which the metric is Minkowski
+                                                                                                               with corrections going as the spatial distance rF from
+                                                                                                               the central geodesic squared. In an unperturbed FRW
+                                                 In this paper we present a simple and complete frame-
+                                                                                                               Universe, the corrections thus scale as (HrF )2 , while in
+                                              work to derive the late-time physical observables pro-
+                                                                                                               the presence of a metric perturbation hµν the corrections
+                                              duced by the squeezed limit of primordial three-point
+                                                                                                               involve second derivatives of hµν (in particular, a con-
+                                              functions, in particular those produced during inflation.
+                                                                                                               stant or pure gradient metric perturbation is removed on
+                                              These observables include the squeezed limit of the CMB
+                                                                                                               all scales). The last step consists in relating the signals
+                                              bispectrum and the scale-dependent bias for large-scale
+                                                                                                               from the point of emission, for example the last scatter-
+                                              structure tracers which crucially depends on the bispec-
+                                                                                                               ing surface, or the position of a halo, to the observables
+                                              trum in the squeezed limit [1–3]. The main obstacle one
+                                                                                                               measured on Earth, where scientists most naturally use
+                                              encounters is the fact that, in order to calculate the bis-
+                                                                                                               FNC centered on the Earth’s world line.
+                                              pectrum consistently, one has to work to second order in
+                                              perturbation theory throughout. We show how this ob-                In general, calculating the evolution of the bispectrum
+                                              stacle is overcome when one is interested in the squeezed        of perturbations in any coordinate frame including modes
+                                              limit. We take advantage of the fact that different sets         outside the horizon requires a full second-order relativis-
+                                              of coordinates are convenient in different cosmological          tic calculation in cosmological perturbation theory, in-
+                                              epochs and there is a careful choice that makes the com-         cluding gravity, baryon physics, radiation transfer, etc.
+                                              putation easy and transparent. In the remainder of the           This is in general a very complicated problem. How-
+                                              introduction, we present a convenient way to choose co-          ever, a drastic simplification takes place when we limit
+                                              ordinates by discussing the different steps that are sum-        ourselves to a particular configuration of the bispectrum
+                                              marized in Fig. 1.                                               in which two of the momenta, say k1 and k2 are much
+                                                 A first step consists in computing the primordial corre-      larger than the third, k3 . This is often referred to as the
+                                              lators generated during the phase of primordial inflation.       squeezed limit with k3 ≡ kL being the long mode and
+                                              For this purpose, coordinates are used that are comoving         k1 ∼ k2 ∼ kS being the short modes.
+                                              with respect to some unperturbed universe (see e.g. [4]).           Then, as described above, we can make use of the fact
+                                              A second step consists in describing the local late-time         that in a kL /kS  1 expansion, the leading and next-to-
+                                              physical processes, such as for example the decoupling           leading order gravitational effects of the long-wavelength
+                                              of photons during recombination or the formation of a            perturbation kL on the short modes can be removed by
+                                              dark matter halo, that lead to the generation of some            transforming to the local FNC frame, as was empha-
+                                              light signal that eventually will reach the Earth. Since         sized in [7–10]. The first non-trivial effect comes from
+                                              these processes take place in regions that are smaller in        the second spatial and time derivatives of the perturba-
+                                                                                                                                                   2
+                                              size than the curvature of the background metric (horizon        tion, which are suppressed by O(kL    /kS2 ) (see Sec. III for
+                                              scale H −1 ), they are best described in Fermi Normal Co-        a more precise statement). We will ignore terms of this
+                                              ordinates (FNC [5]): this is the unique frame (up to three       order in this paper, as they correspond to actual physi-
+                                              Euler angles) constructed along a timelike geodesic pass-        cal interactions, which will need to be treated in detail.
+                                                                                                                               2
+
+                            kS < aH                        τem                                   τobs
+     Generation                           Evolution                      Emission                                Observation
+                            −−−−−→                       −−−−−→                            −−−−−−−−−−−→
+ comoving coordinates                       FNC                         FNC(emitter)                            FNC(observer)
+                            Eq. (12)                     Eq. (38)                          cosmic rulers [6]
+
+FIG. 1: Sequence of coordinates employed in the computation of observables predicted by a primordial bispectrum in the
+squeezed limit. The arrows represent the change from one set of coordinates to the next, indicating when this transformation
+is most conveniently performed and with a reference to the relevant equations. τem and τobs denote the conformal times at
+which the observed photons were emitted and observed, respectively.
+
+
+However, up to this order, in the local FNC frame we can            we will adopt the “standard ruler” approach [6, 16] since
+simply use linear theory. The non-Gaussian correlation              it conveniently encompasses all projection effects for var-
+will then be captured by averaging over an ensemble of              ious observables. Specifically, the derivation in Schmidt
+FNC, each constructed to remove a different long mode.              and Jeong [6] assumes that a ruler, such as a ξ(r) = const
+   In going from comoving coordinates to FNC, one sub-              contour, corresponds to a fixed physical spatial scale on
+tlety arises from the fact that FNC are affected not only           a constant-proper-time hypersurface for a comoving ob-
+by perturbations but also by the expansion of the Uni-              server, equivalent to a fixed spatial scale in FNC at emis-
+verse. Because of this, no matter when the change of co-            sion.
+ordinates is performed, when using FNC we cannot avoid
+a period when the evolution at second order in perturba-
+tions becomes relevant. To see this, consider an expand-               Finally, at leading order, any physical (and necessarily
+ing universe with a single long-wavelength perturbation,            non-gravitational) correlations between long-wavelength
+in addition to short-wavelength modes as in Fig. 2. The             modes and small scale modes imprinted at early times
+metric in standard FNC takes a simple flat space form               and present in FNC then simply add to these projection
+only on scales smaller than the Hubble scale H −1 or the            effects. The framework discussed above, which we sum-
+physical wavelength of the long mode a/kL , whichever               marize in Fig. 1, thus connects the bispectrum calculated
+is smaller. Therefore for the FNC metric to be valid in             in any convenient gauge during inflation with late-time
+a region larger than the short modes, which is what we              observables such as the CMB bispectrum or the large-
+want to describe, we need kS  aH (kS  kL being                    scale clustering of tracers. It can be applied to any model,
+always true by assumption). But as soon as the short                and we will give some examples for single clock infla-
+modes re-enter the horizon, kS & aH, they start evolv-              tion and the “fossil” scenarios studied in [17–20]. We
+ing, and acquire a non-trivial transfer function. In order          should mention that the importance of FNC in applica-
+to see that the evolution needs to be followed at non-              tions to the calculation of inflationary perturbations has
+linear order, consider our result for a general squeezed            been recognized and crucially used previously in the lit-
+bispectrum Eq. (9). This expression contains terms in-              erature, e.g. in deriving various consistency relations [10],
+volving the derivatives with respect to scale and time of           in proving that ζ is constant at large distances at all loop
+the short mode power spectrum, which in general be-                 orders [9] and in deriving the subleading corrections in
+come non-trivial when kS & aH and the short modes                   kl /ks to Maldacena’s consistency condition [8]. The issue
+start evolving with time. It is clear that these terms can-         of gauge artifacts in the squeezed limit of the bispectrum
+not be accounted for by just multiplying each of the per-           was also discussed in [21].
+turbations with the respective transfer function as linear
+perturbation theory would suggest.                                     The outline of the paper is as follows: in Sec. II we de-
+   A nice way out of this complication is to use conformal          rive some useful formulae to transform correlators from
+Fermi Normal Coordinates (FNC), in which the metric                 one set of coordinates to another. In Sec. III we in-
+is locally in the FLRW form, i.e. a homogeneous isotropic           troduce FNC, and show how the squeezed-limit three-
+expanding Universe, rather than in the Minkowski form.              point correlations calculated in the standard way trans-
+                                                −1
+These coordinates are valid up to a scale kL       , where kL       form to this frame. In Sec. IV we derive how correlations
+denotes the wavenumber of the long-wavelength pertur-               in FNC translate to observables, illustrating that, apart
+bation considered. At late times, the small-wavelength              from projection effects such as lensing, the squeezed-limit
+modes are well inside the horizon and have in general               three-point function in conformal Fermi coordinates is
+been subject to non-linear evolution. Then, transform-              in fact the observed squeezed limit. In other words, if
+ing from the FNC frame to the usual FNC frame at a                  squeezed-limit correlations vanish in FNC, then the ob-
+given spacetime point simply corresponds to a rescaling             served squeezed limit is only due to projection effects. We
+of the spatial coordinates.                                         conclude in Sec. V and leave some technical details to the
+   The final step is to relate quantities defined in the local      appendices. App. A and App. B derive the transforma-
+FNC frame (e.g. temperature of the gas, or halo mass) to            tion of the two and three point function in the squeezed
+the photons actually measured on Earth. This involves               limit, respectively, as one moves from one set of coordi-
+the photon propagation (“projection”) effects, such as              nates to another. In App. C we review the derivation of
+lensing and redshift-space distortions [6, 11–15]. Here,            FNC and discuss their uniqueness in App. D.
+                                                                                                                                                           3
+
+   II.    TRANSFORMATION OF SMALL-SCALE                                       scalar, but we suppress all tensor indices), such as for
+         CORRELATIONS AND THE SQUEEZED                                        example density perturbations or tensor modes. Strictly
+                  BISPECTRUM                                                  speaking, X is to be understood as coarse-grained on
+                                                                              a scale R > |x2 − x1 |. In the following, we will drop
+   In this section we present some useful formulae to                         the primes on coordinates for clarity, since we will not
+transform the two-point correlation function, Eq. (4),                        employ the unprimed coordinates anymore. Further, we
+and three-point function and bispectrum in the squeezed                       adopt the notation X 0 (x) = X(x), that is, the long-
+limit, Eq. (9), from any one set of coordinates to another.                   wavelength (coarse-grained) field X is not modified un-
+The details of the derivation are left to appendix App. A                     der the small-scale coordinate transformation within the
+and App. B.                                                                   patch. In the squeezed limit, the three-point function
+   Consider a scalar field ρ(x), where x = (τ, x) denotes                     describes the modulation of the local two-point function
+the spacetime position. We work in comoving coordinates                       ξ 0 (|x1 − x2 |; x0 ) at the location x0 = (x1 + x2 )/2 by the
+throughout, so that x0 = τ is the conformal time. Under                       long-wavelength field X evaluated at the distant point
+a general coordinate transformation x → x0 (x), the field                     x3 :
+transforms as                                                                                                             squeezed
+                                                                                             hX 0 (x3 )δ 0 (x1 )δ 0 (x2 )i =
+                           0   0            0
+                          ρ (x ) = ρ(x(x )) .                          (1)                       hX 0 (x3 ) ξ 0 (x1 − x2 ; τ )|X 0 (x0 ) i .             (5)
+Consider a patch on a τ 0 = const surface centered around                     The precise location of the point x0 in fact does not mat-
+the position x00 . We would like to derive the correlation                    ter in the squeezed limit (as we prove in App. B), but we
+ξ 0 (r0 , τ 0 ) within that patch (defined with respect to the                have chosen the midpoint as the most natural choice.
+mean density ρ0 (τ 0 ) over the patch) in terms of the two-                   We can now express hX 0 δ 0 δ 0 i in terms of the three-point
+point correlation function ξ(r, τ ) of ρ in the unprimed                      function in unprimed coordinates hXδδi and contribu-
+coordinate system. Throughout the paper, we are consid-                       tions from the transformation of small-scale correlations
+ering the case where the coordinate transformation varies                     [Eq. (4)]. This yields
+slowly over the spatial patch, that is where we can ex-                                                          
+pand x in terms of x0 as                                                           0     0     0      squeezed
+                                                                               hX (x3 )δ (x1 )δ (x2 )i =          1 − ξXaij (|x3 − x0 |)ri ∂rj
+                                                   
+                    xi (x0 ) = xi0 + Ai j x0j − x0j
+                                                  0
+                                                                                                      
+                                                                              + ξX∆τ (|x3 − x0 |) ∂τ ξ(x1 − x2 ; τ )
+                     τ (x0 ) = τ0 + Tj x0j − x0j0   ,      (2)
+                                                                                + hX(x3 )δ(x1 )δ(x2 )i ,                                                 (6)
+          0       0   0
+where x = (τ , x ), and                                                       where ξXY (r) denotes the cross-correlation between X
+                  x0 = x(x00 , τ 0 )                                          and Y = aij , ∆τ . This expression gives the squeezed-
+                                                                              limit three-point function of X 0 and δ 0 (in the primed
+                  τ0 = τ (x00 , τ 0 ) = τ 0 + ∆τ                              coordinates) in terms of derivatives of ξ(r, τ ) and the
+                        ∂xi (x00 , τ 0 )                                      three-point function of X and δ in the unprimed coor-
+                 Ai j =          0j
+                                         = δ ij − ai j .               (3)    dinate frame. As shown in App. B, we can derive an
+                               ∂x
+                                                                              analogous expression in Fourier space, corresponding to
+Note that ai j and ∆τ are functions of x00 and τ 0 . Here we                  the squeezed limit of the bispectrum:
+have separated Ai j into a zeroth and first order piece (the
+                                                                                                           squeezed
+sign is chosen so that ai j maps xj to x0i at linear order).                  BX 0 δ0 δ0 (kL , k1 , k2 )     =
+The expansion to linear order in x0 −x00 is sufficient, since
+                                                                                                   "                                           !
+                                                                                                                     ki kj     d
+we will only be interested in Fourier space contributions                                           PXaij (kL ) δij + S 2 S                        P (kS , τ )
+to the coordinate transformations up to order kL                     2
+                                                                       (see                                           kS d ln kS
+App. A). As shown in App. A, the correlation function
+                                                                                                                              #
+                                                                                                                   ∂
+ξ 0 (r0 , τ 0 ) of ρ0 then becomes                                                                   + PX∆τ (kL ) P (kS , τ )
+                                                                                                                  ∂τ
+                            h                        i                                                                                   kS =k1 +kL /2
+           ξ 0 (r0 , τ 0 ) = 1 − aij r0i ∂rj0 + ∆τ ∂τ ξ(r0 , τ 0 ) .    (4)                        + BXδδ (kL , k1 , k2 ) .                              (7)
+
+The dependence on x0j of the time shift Eq. (2) does not                      As before, PXY (k) denote cross-power spectra between
+contribute at leading order.                                                  X and Y , while P (k, τ ) denotes the power spectrum of
+  We now turn to the squeezed limit of the three-point                        ρ. We can now further decompose aij as
+function hX 0 (x03 )δ 0 (x01 )δ 0 (x02 )i, where δ = δρ/ρ̄ denotes                                              1
+the fractional perturbation to ρ (the results are identi-                                            aij =        aδij + aTij ,                          (8)
+                                                                                                               nD
+cal when considering δρ instead of δ). This limit corre-
+sponds to the case where |x3 − x1 |  |x1 − x2 |. Here,                       where nD is the dimensionality of the space in which
+X stands for any other field (X is not necessarily a                          we define the correlations, and aTij is traceless. Allowing
+                                                                                                                                          4
+
+nD 6= 3, in particular nD = 2 will become useful when                        consider Fig. 2. Each one of the four panels shows the
+dealing with projected observables such as the CMB. We                       Hubble scale (solid circle) and the region of validity of
+then obtain                                                                  the FNC (dashed line) at a different moment in time.
+                                                                             The long (red line) and short (blue line) modes are also
+                              squeezed
+ BX 0 δ0 δ0 (kL , k1 , k2 )     =                                            shown for comparison. One can immediately appreciate
+                      "                                                      the fact that from very early time when the long mode is
+                                              d ln(kSnD P (kS , τ ))         still inside (or about to leave) the horizon all the way un-
+                       PXa (kL )P (kS , τ )
+                                                    d ln kS                  til late time when the long mode has re-entered the hori-
+                                                                             zon, the region of validity of FNC amply encompasses the
+                                       k i k j dP (kS , τ )
+                         + PXaTij (kL ) S 2 S                                short modes. This is in contrast with standard FNC for
+                                         kS     d ln kS                      which the presence of the Hubble scale makes this im-
+                                                     
+                                        ∂                                    possible. The primordial correlators, typically computed
+                         + PX∆τ (kL ) P (kS , τ )
+                                       ∂τ              kS =k1 +kL /2
+                                                                             in comoving coordinates, take a simple form once both
+                                                                             the short and long modes have left the horizon and cease
+                      + BXδδ (kL , k1 , k2 ) .                         (9)   to evolve. Any time after that moment and before the
+                                                                             small-scale modes reenter the horizon constitutes a good
+Note that the contribution of the trace of aij scales as
+                                                                             time to transform from global conformal coordinates to
+the logarithmic derivative of k nD P (k), while the trace-
+                                                                             FNC.
+free component aTij couples to the logarithmic derivative
+of P (k) itself. Instead of writing the bispectrum in terms                     Let us assume we are given the primordial correlations
+of kS , one can also expand in kL /k1 , yielding zeroth order                during inflation in some gauge, where the metric is writ-
+terms (with kS → k1 ) and first-order terms ∝ kL /k1 . The                   ten as
+corresponding expression is given in App. B.
+   The results of this section are useful when, say, BXδδ is                   ds2 = a2 (τ ) [ηµν + hµν ] dxµ dxν = a2 (τ )ḡµν dxµ dxν .
+easy to calculate, while BX 0 δ0 δ0 is more readily related to                                                                         (10)
+observations. This will be the case we encounter below.
+                                                                             Here we have denoted the conformal metric with a bar.
+                                                                             In the absence of perturbations, hµν = 0 and ḡµν = ηµν .
+        III.     CONFORMAL FERMI NORMAL                                      We will work up to linear order in metric perturbations.
+                     COORDINATES
+                                                                                As in the usual Fermi normal coordinate construction,
+                                                                             we consider a central timelike geodesic of a comoving ob-
+   Our goal is to derive what the observable consequences                    server. However, instead of constructing the FNC with
+are (as opposed to coordinate artifacts) of a given primor-                  respect to gµν , we construct conformal Fermi normal co-
+dial bispectrum. For this purpose we follow the steps in
+                                                                             ordinates (FNC) with respect to ḡµν . That is, within a
+Fig. 1, starting with conformal Fermi Normal Coordi-
+                                                                             region around the central geodesic, the metric in these
+nates (FNC). As we discussed in the introduction, if we                                                      F
+                                                                             coordinates is approximately ḡµν   = a2 (τF )ηµν . The cor-
+want to avoid studying second order cosmological pertur-
+                                                                             rections to this metric, which determine the size of this
+bation theory, it is not possible to directly connect the
+                                                                             region which we will call “FNC patch”, are given by sec-
+statistics of perturbations in the standard FNC frame of
+                                                                             ond derivatives of the metric perturbations. Correspond-
+galaxies or the CMB (at the time when the photons we
+                                                                             ingly, the size of the FNC patch is linked to the wave-
+observe were emitted) with the statistics calculated when
+                                                                             length of the metric perturbations considered. In the
+all perturbations are superhorizon. The reason is that the
+                                                                             following, we will be interested in (long-wavelength) per-
+perturbative corrections to the Fermi frame metric are of
+                                                                             turbations with wavenumber kL , so that the size of the
+order (HxF )2 , where xF are the physical FNC coordi-                                                  −1
+                                                                             FNC patch is of order kL     .
+nates, so that the metric in FNC is not approximately
+flat on the scales of superhorizon perturbations. On the                       The transformation from coordinates xµ to FNC, for
+other hand, if we were to move from the global coordi-                       a patch centered at the spatial origin at time x0 = τF is
+nates to FNC at a later time when the short wavelength                       given by (see App. C 2)
+modes have long re-entered the horizon, we would have
+to take into account their evolution after horizon entry                                            Z x0
+                                                                                                1
+at second order in the global coordinates.                                    x̄0F (xα ) = x0 −       h00 (τ )dτ − (vi + h0i )xi
+                                                                                              2 0
+   To overcome this obstacle, in this section we introduce
+                                                                                            1
+a new coordinate frame which is valid throughout infla-                                       h0i,j + h0j,i + h0ij xi xj + O[(xi )3 ] (11)
+                                                                                                                   
+                                                                                         −
+tion and the hot big bang era (assuming nothing dramatic                                    4
+happens to superhorizon perturbations during this time),                                                        1
+                                                                              x̄F (x ) = x − v k (x0 − τF ) + hki xi
+                                                                                k   α     k
+and further connects easily with the FNC frame at late                                                          2
+times. This provides a well-defined framework for study-                                    1h k                     i
+                                                                                         +     h i,j + h j,i − hij ,k xi xj + O[(xi )3 ] .
+                                                                                                        k
+ing observables related to primordial non-Gaussianities in                                  4
+the squeezed limit. To visualize the advantage of FNC,                                                                                  (12)
+                                                                                                                                               5
+
+    a)                             b)                              c)                           d)
+
+
+
+
+ τ ∼ −kL                         τ ∼ −kS                           τ ∼0                         τ = τ0
+
+FIG. 2: Illustration of the FNC patch throughout cosmic history, in comoving units. The wavy lines indicate perturbations.
+The solid circles denote the comoving horizon 1/aH, which coincides with the size of the usual Fermi coordinate patch during
+                                                                                                                         F
+inflation. The dashed circles denote the size of the FNC patch, i.e. the region within which the metric is of the form ḡµν = a2 ηµν
+with small corrections. a) During inflation, when the long wavelength perturbation hij (kL ) is generated (i.e. leaves the horizon),
+thin red line. b) Later on during inflation; hij (kL ) is far outside the horizon when the short wavelength modes ϑ(k) are generated
+(thick blue line). The perturbations are generated well within the FNC patch corresponding to the long-wavelength mode. c)
+Near the end of inflation. All perturbations are far outside the horizon. Nevertheless, the small-scale modes are still well within
+the FNC patch. d) At observation time, after the long-wavelength mode has reentered the horizon (solid circle indicating present
+horizon). The FNC patch now coincides with the usual Fermi coordinate patch, which is much larger than the small-scale modes
+which have been processed by nonlinear evolution since horizon entry (distorted thick wavy line).
+
+
+                                                                                                                                F
+The inverse of this transformation is at linear order                     freedom to change the quadratic term in ḡij              if one allows
+                        Z 0                                               the spatial coordinate lines to be non-geodesic at order
+                     1 x̄F                                                (xi )3 .
+ x0 (x̄α
+       F ) = x̄ 0
+                F +           h00 (τ )dτ + (vi + h0i )x̄iF
+                     2 0                                                     In summary,
+                  1 0
+                     h i,j + h0j,i − h0ij x̄iF x̄jF + O[(x̄iF )3 ]
+                                          
+              −                                                                      F
+                                                                                        = ηµν + O [h00ij , ∂j h0µi , ∂i ∂j hµν ]x̄2F .
+                                                                                                                                     
+                  4                                                                ḡµν                                                      (15)
+                                        1
+ x (x̄F ) = v (x̄F − τF ) + x̄kF − hki x̄iF
+  k α          k 0
+                                                                  (13)    Let us disregard the corrections ∝ h00ij , ∂j h0µi for the mo-
+                                        2                                 ment. The remaining corrections to the conformal Fermi
+                  1 k
+                    h                       i
+              −       h i,j + hkj,i − hij ,k x̄iF x̄jF + O[(x̄iF )3 ] .   frame metric scale as second derivatives of the metric per-
+                  4                                                       turbation multiplied by the spatial coordinate squared.
+The metric in FNC then becomes                                            Thus, instead of being order (HxF )2 as the usual FNC
+                                                                          corrections , they are of order (kL x̄F )2 , where kL is
+    F             1h                                  i
+                                                                          the comoving wavenumber of the perturbation (in slight
+ ḡ00  = −1+         ∂m ∂l h00 + h00lm − 2∂(l h00m) x̄lF x̄m
+                                                           F (14)
+                  2                                                       abuse of notation, we drop the bar over k since we will
+    F        2 h                       i                                  only be dealing with comoving Fourier wavenumbers).
+ ḡ0i  = −      ∂[i ∂l h0m] + ∂[m h0li] x̄lF x̄mF                         Within the FNC patch of size ∼ kL     −1
+                                                                                                                   , we can remove the
+             3
+    F           1                                                        effects of the long-mode perturbation (in comoving coor-
+                    ∂[j ∂l him] + ∂[m ∂i hlj] x̄lF x̄m
+                                              
+  ḡij = δij −                                       F.                   dinates) at all times — through horizon exit and reentry.
+                3
+                                                                             This very useful result only holds if h00ij , ∂j h0µi are of
+Here, X(ab) = (Xab + Xba )/2, X[ab] = (Xab − Xba )/2,                     order ∂i ∂j hµν or smaller, which is the case for all models
+and primes denote derivatives with respect to τ , while                   of single field inflation in which the background is an at-
+spatial derivatives are with respect to xi . The linear                   tractor solution. In principle one can engineer a model in
+and quadratic coefficients in the coordinate transform                    which, for a short period of time, the background is not
+Eq. (12) are uniquely determined by the requirement that                  close to an attractor solution, but rather it is evolving
+                                   F
+the lowest order contribution to ḡµν − ηµν is order (x̄iF )2 .           towards one. In this case, the superhorizon modes can
+However, given that the quadratic corrections are deter-                  have, for a short period of time, sizable time derivatives
+mined by the cubic order terms in the coordinate trans-                   [22, 23]. For example, if h00ij is larger than ∂i ∂j hµν , cor-
+formation, one might wonder whether the quadratic cor-                    responding to significant superhorizon evolution of the
+              F
+rections to ḡµν are unique. One can show (see App. D)                    spatial metric perturbation, then we cannot follow the
+       F         F
+that ḡ00 and ḡ0i are indeed unique. However, there is                   conformal Fermi frame through the entire duration of in-
+                                                                                                                                               6
+
+flation. In case the evolving part of hij is isotropic (or       With this, Eq. (4) yields
+can be made so by a suitable change of coordinates),                  ¯ τ̄ ) =
+                                                                      ξ(r̄;                                                                  (20)
+           hij (0, τ ) = f (τ )δij + O(∂i ∂j hµν ),      (16)                                        Z τ0            !      
+                                                                                1               1
+                                                                             1 − hij r̄i ∂r̄j +              h00 dτ       ∂τ̄ ξ(r̄, τ̄ ) ,
+where 0 denotes the origin in comoving coordinates                              2               2      0
+around which we construct the FNC frame, then we can
+absorb its effect into a modified scale factor,                           ¯ τ̄ ) denotes the correlation function of ϑ in
+                                                                 where ξ(r̄,
+                                                               the local FNC frame. Now consider the bispectrum
+                                 1                               hX(kL )ϑ(k1 )ϑ(k2 )i, where X is any perturbation. The
+               ã(τ ) = a(τ ) 1 − f (τ ) .      (17)
+                                 2                               results from Sec. II immediately show how this bispec-
+                                                                 trum transforms into FNC. Denoting FNC quantities as
+In a modified FNC frame constructed with the scale fac-          X̄, ϑ̄, we obtain
+tor ã(τ ) the rapidly evolving part now disappears. We
+                                                                                           squeezed
+thus see that in this case, a long-wavelength metric per-        BX̄ ϑ̄ϑ̄ (kL , k1 , k2 ; τ̄ ) =
+turbation does not simply shift the time and rescale spa-                                "
+tial coordinates, but rather corresponds to a change in                                      1                   d ln(kS3 Pϑ (kS ))
+                                                                                               PXh (kL )Pϑ (kS )
+the entire background cosmology. This is possible only                                       2                        d ln kS
+because the original “unperturbed” background cosmol-
+ogy, namely f (τ ) = 0, was unstable (i.e. not an attrac-                                   1           k i k j dPϑ (kS )
+                                                                                          + PXhTij (kL ) S 2 S
+tor). Given that the generation of small-scale pertur-                                      2             kS d ln kS
+bations depends on the background cosmology, we in
+                                                                                                                  
+                                                                                                       ∂
+general expect a non-trivial coupling between very long                                   + PX∆τ (kL ) Pϑ (kS )
+                                                                                                      ∂τ            kS =k1 +kL /2
+wavelength metric perturbations and small-scale modes
+in this case. If h00ij is not isotropic, then we cannot absorb                         + BXϑϑ (kL , k1 , k2 ; τ̄ ) ,                         (21)
+its effect into a modified scale factor. Instead, the differ-    where all correlations on the r.h.s. are evaluated at τ̄ .
+ent spatial coordinates are rescaled differently, leading to     Here h = hi i /3 is the trace of the spatial metric pertur-
+an anisotropically expanding Universe of Bianchi I type.         bation while hTij is the trace-free part. The significance of
+   Similar arguments apply to the case where ∂j h0µi is          this result will become clear in the application to single-
+larger than ∂i ∂j hµν . Here the lowest order effect will be     field inflation which we will consider next.
+a Bianchi I-type Universe, since isotropy is necessarily
+violated.
+                                                                      B.    Single-field inflation in comoving gauge
+
+    A.   Bispectra in global and FNC coordinates
+                                                                   In the following, we restrict hµν to comoving gauge. In
+                                                                 the notation of [4], we have
+   Let us assume that we can calculate the statistics of
+a scalar field ϑ(τ, x) in the global coordinates Eq. (10).                           h00 = − 2N1
+Specifically, we consider fluctuations at a given epoch                              h0i = Ni
+during inflation, typically evaluated right after horizon
+crossing. For simplicity, we will restrict to a scalar field,                         hij = 2ζδij + hTij (τ, x),                             (22)
+although the extension to other spins is straightforward.
+                                                                 where hTij is tranverse-traceless and contains the tensor
+Given the results from Sec. II and the coordinate trans-
+                                                                 perturbations. For the attractor solution of single-field
+form Eqs. (12)–(13), we can then immediately derive the
+                                                                 inflation, the constraint equations in this gauge yield [4]
+transformation of the two-point correlation ξϑ (r, τ ) mea-
+sured in a patch around position x0 at conformal time τ                                  ζ̇    ζ0     k2
+from the global coordinates to the FNC frame. Note that                          N1 =       =     ∝       .                                  (23)
+                                                                                         H    aH    (aH)2
+if ϑ is non-Gaussian, then the correlation function mea-
+                                                                                 2
+sured in a given patch will correlate with long-wavelength       To order kL       /kS2 , we can thusR neglect the contribution
+perturbations.                                                   from the time shift ∆τ = − N1 dτ . Note that this is
+   In the present case, the primed coordinate system of          merely a consequence of the particular gauge chosen. The
+Sec. II is x̄α          ν
+             F , while x denote the global coordinates in        only remaining contribution to the transformation of the
+the gauge chosen. We can then read off ai j and ∆τ from          bispectrum [Eq. (21)] then comes from ζ and the tensors
+Eq. (13):                                                        hTij . For the scalar contribution, which we indicate with
+                                                                 and “S” over the equal sign, we obtain
+                        1
+                  ai j = hi j                            (18)                                                                      
+                        2                                                                   S                         ∂ ln Pϑ (kS )
+                          Z 00                                     BX̄ ϑ̄ϑ̄ (kL , k1 , k2 ) = PXζ (kL )Pϑ (kS ) 3 +
+                        1 x                                                                                              ∂ ln kS
+                  ∆τ =         h00 (τ )dτ .              (19)
+                        2 0                                                                   + BXϑϑ (kL , k1 , k2 ),            (24)
+                                                                                                                                                       7
+
+where throughout kS = k1 + kL /2 = (k1 − k2 )/2. We                     we obtain (the “T” over the equal sign now stands for
+are in particular interested in the bispectrum of the cur-              tensor)
+vature perturbation ζ, i.e. ϑ = ζ. Since ζ is not a scalar,
+                                                                                                   T
+our derivation in Sec. II does not strictly apply. How-                   BX̄ ϑ̄ϑ̄ (kL , k1 , k2 ) =
+ever, it is straightforward to show that for the purposes
+                                                                                   1X                                            ∂ ln Pϑ (kS )
+of this transformation, the small-scale ζ modes behave                                    PXhs (kL )Pϑ (kS )esij (k̂L )k̂Si k̂Sj
+as a scalar. Recall that only the spatial transformation                           2 s                                              ∂ ln kS
+is relevant at the order we are interested. The comoving                          + BXϑϑ (kL , k1 , k2 ).                                        (31)
+gauge condition, δφ = 0 where δφ is the inflaton pertur-
+bation is thus still satisfied in the FNC frame. Further,               Assuming that the different polarization states are sta-
+the spatial components of the metric transform as                       tistically independent, we obtain for the tensor-scalar-
+                                                                        scalar bispectrum [again using the transformation prop-
+                  F             ∂xk ∂xl                                 erty Eq. (26)]
+                ḡij (x̄F ) =                 gkl (x) .         (25)
+                                ∂ x̄iF ∂ x̄jF
+                                                                                Bh̄s ζ̄ ζ̄ (kL , k1 , k2 ) =
+We now write ζ(x) = ζL (x) + ζS (x), separating into                               1                                      ∂ ln Pζ (kS )
+                                                                                     Ph (kL )Pζ (kS )esij (k̂L )k̂Si k̂Sj
+long- and short-wavelength pieces on the scale of the                              2 s                                       ∂ ln kS
+patch within which the correlation function is measured.                              + Bhs ζζ (kL , k1 , k2 ).                                  (32)
+Then, the transformation to FNC removes ζL up to sec-
+ond derivatives, while ζS is not affected since it does not             The squeezed-limit bispectrum in comoving gauge was
+contain any long-wavelength components. We thus ob-                     also derived in [4]:
+tain
+                                                                                                                                        d
+                                                                         Bhs ζζ (kL , k1 , k2 ) = −Phs (kL )esij (k̂L )kSi kSj              Pζ (kS )
+                  ζ̄(x̄F ) = ζS (x) + O(∂i ∂j ζL )                                                                                     dkS2
+                 ζ̄S (x̄F ) = ζS (x) .                          (26)                                           1 d
+                                                                            = −Phs (kL )esij (k̂L )k̂Si k̂Sj             Pζ (kS ) .              (33)
+                                                                                                               2 d ln kS
+Thus, the short-wavelength ζ perturbations transform ef-
+fectively as a scalar [Eq. (1)]. We obtain for the bispec-              We again see that the two terms in Eq. (32) cancel in
+trum of curvature perturbations in the FNC frame:                       single-field inflationary models. Thus, in single-field in-
+                                                                        flation, the tensor-scalar-scalar bispectrum vanishes in
+                                              ∂ ln(kS3 Pζ (kS ))        the squeezed limit in FNC, so that there are no corre-
+    Bζ̄ ζ̄ ζ̄ (kL , k1 , k2 ) = Pζ (kL )Pζ (kS )                        lations between long-wavelength tensor modes and small-
+                                                     ∂ ln kS
+                                                                        scale fluctuations in this frame. The lowest correction
+                                + Bζζζ (kL , k1 , k2 ),          (27)
+                                                                        are again of order (kL /kS )2 .
+                                                                           We can phrase the main result of this section as follows:
+where Bζζζ is the three-point function calculated in co-
+                                                                        at leading order, the squeezed-limit three-point correla-
+moving gauge. As shown in [4, 24], this is in the squeezed
+                                                                        tions in single-field inflation, which obey the “consistency
+limit given by
+                                                                        relation”, are equivalent to the statement that there is no
+                                                                        correlation between infinitely long and short wavelength
+     Bζζζ (kL , k1 , k2 ) = −[ns − 1]Pζ (kL )Pζ (kS ) ,         (28)
+                                                                        modes in the conformal Fermi frame, specifically,
+where ns is defined through Pζ (k) ∝ k −4+ns . Eq. (28) is                                                           
+                                                                                                                         kL
+                                                                                                                              2
+usually referred to as the consistency relation. We now                               Bh̄ζ̄ ζ̄ (kL , k1 , k2 ) = O                 ,             (34)
+see that the first term in Eq. (27) exactly cancels the                                                                  kS
+contribution from Bζζζ , leading to
+                                                                        where h stands for any component of hij , and kS = |k1 −
+                                                      2               k2 |/2.
+                                                  kL                      Since this latter is a physical, gauge-invariant state-
+              Bζ̄ ζ̄ ζ̄ (kL , k1 , k2 ) = O                 .   (29)
+                                                  kS                    ment, it is expected to hold not only at leading order
+                                                                        in spacetime perturbations but at higher orders as well.
+We thus conclude that in single-field inflation, the bispec-            The FNC approach can also help elucidate why there is
+trum in the squeezed limit is zero in the conformal Fermi                                                 2
+                                                                        no such correlation up to order kL  in single field models.
+frame, with corrections going as (kL /kS )2 .                           One might wonder why such a correlation cannot be im-
+   The case for non-scalar metric perturbations follows                 printed at early times when the long wavelength pertur-
+analogously. Decomposing the long-wavelength metric                     bation was inside the horizon, kL  aH. Far inside the
+perturbation into polarization states,                                  horizon, we can neglect gravity and are essentially dealing
+                             X                                          with a scalar field in vacuum which adiabatically tracks
+             hTij (kL ) =           esij (k̂L )hTs (kL ),       (30)    the slowly evolving background, and a given mode is only
+                            s=+,×                                       excited once its wavelength becomes of order the horizon.
+                                                                                                                             8
+
+Contributions to correlations from within the horizon are        the horizon, either the order H or the order ∂∂hµν cor-
+exponentially suppressed [9, 10] (see also [25]). On the         rections will be dominant; however, this is not relevant
+other hand, when kS ∼ aH, the long-wavelength mode               for the discussion that follows. Eq. (38) corresponds to
+is far outside the horizon and its effects can be removed        a rescaling of the time coordinate, leaving the timelike
+                                               2
+by a coordinate transformation up to order kL    .               unit vector and τ = const hypersurfaces unchanged, and
+                                                                 a time-dependent rescaling of the spatial coordinates.
+                                                                 Since the spatial rescaling is the same everywhere on a
+       IV.    CONNECTION TO LATE-TIME                            x0F = const hypersurface, this implies that, for models
+                 OBSERVATIONS                                    that obey the consistency condition, Eq. (34) is still valid
+                                                                 at late times in the FNC frame:
+   As explained in Sec. III, we can follow the FNC patch                                                      2
+all the way through the end of inflation and horizon re-                                                      kL
+                                                                         BhF δF δF (kL , k1 , k2 ; τem ) = O      ,      (40)
+entry of both long and short modes, provided that pertur-                                                     kS
+bations do not evolve significantly when they are outside
+                                                                 where hF , δF denote perturbations in the FNC frame.
+the horizon. In this section, we show how the squeezed-
+                                                                 Recall that the squeezed limit of three-point functions
+limit correlations in the FNC frame can be related to
+                                                                 corresponds to the modulation of local two-point func-
+observations made from Earth today.
+                                                                 tions by long-wavelength perturbations. Thus, another
+   Let us assume we observe correlations of some field
+                                                                 way of phrasing this result is that a surface of constant
+δ(x) at late times, i.e. at or after recombination. In
+                                                                 correlation in the FNC frame, ξδF (rF ) = const, defines
+linear theory, assuming adiabatic initial conditions, we
+                                                                 a standard ruler—a fixed spatial scale—as considered in
+can relate δ to the curvature perturbation through some
+                                                                 [6], with corrections proportional to second derivatives
+transfer function α,
+                                                                 of hµν only. Hence, in standard single-field inflation and
+                 δ(k, τ ) = α(k, τ )ζ(k).                (35)    any other case where Eq. (34) holds, the ruler scale rF is
+                                                                 statistically the same everywhere on a x0F = const hyper-
+For matter density perturbations, α is defined in Eq. (71)       surface, and there is no correlation with long-wavelength
+below. Similarly, we assume the long-wavelength pertur-          perturbations.
+bation is evolved with some transfer function,                      The apparent correlations induced between long-
+                                                                 wavelength modes and small-scale correlations are then
+               hij (kL , τ ) = G(τ )hij (kL ),           (36)    given by the ruler perturbations derived in [6]. We can
+                                                                 use their results together with Sec. II to derive these con-
+where we have assumed the kL → 0 limit (the lowest or-           tributions to observed squeezed-limit three-point func-
+                                        2
+der kL dependence of G(τ ) will be kL     ; of course, G will    tions, and make the connection with known results.
+differ for scalar and tensor perturbations). As long as su-         In general, there are two effects modifying the observed
+perhorizon perturbations evolve slowly (in the sense that        two-point correlation within a given patch. First, there
+h00 , ∂j h0 are smaller than or of order ∂i ∂j h), the confor-   is the transformation from the local FNC xµF to the ob-
+mal Fermi coordinate patch, i.e. the region over which           served comoving coordinates x̃µ , which are inferred from
+corrections to the FNC metric are small, is essentially          the observed position n̂ of the source in the sky and its
+constant in (comoving) size throughout horizon exit and          redshift z̃ through x̃0 = τ0 − χ̄(z̃), x̃i = n̂i χ̄(z̃), where
+reentry of the short-wavelength modes. As we have seen,          χ̄ is the comoving distance-redshift relation in the back-
+this applies in particular to single-field inflation models.     ground (in case of the CMB, this is slightly modified, as
+Thus, at the conformal time τem at which the photons             we will discuss in Sec. IV A). Let us assume we observe
+we observe today were emitted, the metric in FNC is              a scalar field ρ̃(x̃) (whose perturbation is δ). Then, as
+               F                                                 described in Sec. II, ρ̃ is given in terms of the field in the
+             ḡµν = a2 (τem )ηµν + O(∂i ∂j h) .          (37)
+                                                                 Fermi frame ρ as
+If we transform coordinates through
+                                                                                     ρ̃(x̃) = ρ(xF (x̃)) .                (41)
+                     Z τ
+               x0F =     a(τ 0 )dτ 0 ≡ t(τ )                     At fixed observed redshift, we can write the transforma-
+                                                                 tion from xF to x̃ as
+                 xiF = a(τ )x̄iF ,                       (38)
+                                                                                                       1
+                                                                                       x̃0 = x0F +        T
+the metric in the coordinates {xµF } becomes                                                         ãH̃
+                                                                                            1
+          F
+         gµν = ηµν + O[(HxiF )2 , (∂∂hµν )x2F ].         (39)                          x̃i = Ai j xjF .                   (42)
+                                                                                            ã
+In other words, xµF are the usual Fermi coordinates              Here ã = (1 + z̃)−1 , T is the perturbation in proper time
+(FNC) defined around the same timelike geodesic as the           from a constant observed redshift surface [16], and Ai j
+FNC. Depending on whether the long-wavelength modes              can be seen as the generalization to three dimensions
+for which we constructed the FNC patch have entered              of the magnification matrix. Note that T and Ai j are
+                                                                                                                                       9
+
+gauge-invariant. Specifically, using the notation of [6],                  where again `S = `1 + `L /2.
+Aij is given by                                                               The bispectrum BδF δF δF in FNC frame is equivalent
+                                                                           up to transfer functions (and radial projection, in the 2D
+           Aij = δij + aij                                                 case) to the bispectrum in FNC, which as we have seen
+            aij = C n̂i n̂j + n̂(i Pj)k B k + Pik Pjl Akl ,      (43)      vanishes in the squeezed limit for single-field inflation.
+                                                                           In this case, the terms due to “projection effects” are the
+where P ij = δ ij − n̂i n̂j is the projection operator per-                only remaining contributions.
+pendicular to the line of sight. C, Bi , and Aij are the                      In the following we present two applications of
+gauge-invariant ruler perturbations derived in terms of                    Eqs. (46)–(47): the CMB bispectrum in the squeezed
+the metric perturbations in [6]. For example, the trans-                   limit, and the scale-dependent non-Gaussian halo bias.
+verse matrix Aij contains the magnification and shear.
+   The second effect is a rescaling of the observed field by
+projection effects. If there are multiplicative projection                                   A.   CMB bispectrum
+effects, then we have
+    ρobs (x̃) = [1 + c(x̃)] ρ̃(x̃) = [1 + c(x̃)] ρ(xF (x̃)) . (44)           In this section, we illustrate the main result of the pre-
+                                                                           vious section on the observed squeezed-limit bispectrum,
+Here we think of c as averaged over the patch within                       Eq. (47), with the CMB. We will make direct connection
+which we measure the correlation function of small-scale                   with the results of [13, 14]. A more sophisticated and
+perturbations. For example, in case ρ is the number den-                   accurate treatment which is based on an closely related
+sity of some tracer, then projection effects such as grav-                 approach has been presented in [15].
+itational lensing modify the physical volume that corre-                     We assume single-field inflation so that the FNC frame
+sponds to a fixed region in the observed coordinates x̃,                   contribution vanishes. We will adopt the conformal-
+thus rescaling the number density. Gravitational redshift                  Newtonian gauge in this section,
+and ISW effect lead to an analogous rescaling in case of
+the CMB. The factor 1 + c also rescales the fluctuations                        ds2 = a2 (τ )[−(1 + 2Φ)dτ 2 + (1 − 2Ψ)dx2 ] ,       (48)
+in ρ within the region considered, and correspondingly
+rescales the correlation function by (1 + c)2 , leading to                 although it is straightforward to derive the results in a
+                                                                           general gauge.
+ ˜ τ̃ ) = [1 + 2c(x̃)] ξ(rF , τF )
+ ξ(r̃,                                                                        The observed CMB photons originate from the last
+          
+                                   1
+                                                                          scattering surface, which occurred at a fixed physical age
+        = 1 − aij (x̃)r̃i ∂r̃j +      T (x̃)∂τ + 2c(x̃) ξ(r̃; τ̃ )         t∗ of the Universe, that is, at constant proper time tF =
+                                 ãH̃
+                                                                           t∗ for the comoving primordial plasma. The proper time
+                                                            (45)
+                                                                           of a comoving source passing through x at coordinate
+where we have used Eq. (4) in the second line. Straight-                   time τ is given in the metric convention Eq. (48) by
+forward application of the results of Sec. II then yields                                                Z τ
+the bispectrum of the observed density perturbation δ̃ in                             tF |τ,x = t̄(τ ) +     Φ(x, τ 0 )a(τ 0 )dτ 0 , (49)
+the squeezed limit, in terms of the projection effects and                                              0
+the bispectrum of δF in the FNC frame:
+                                                                           where t̄(τ ) and τ̄ (t) are the physical-time – conformal
+Bδ̃δ̃δ̃ (kL , k1 , k2 ) = BδF δF δF (kL , k1 , k2 )                        time relations in the background.
+                                                1             ∂               The value of t∗ is obtained by combining atomic
+              + 2PδF c (kL )PδF (kS ) +            PδF T (kL ) PδF (kS )   physics with the mean observed temperature of the CMB
+                                              ãH̃            ∂τ
+                                                                           today. The CMB temperature perturbations on scales
+                 1 ∂ ln(kS3 PδF (kS ))                                     that were super-horizon at recombination (` . 100) orig-
+              +                           PδF a (kL )PδF (kS )
+                 3        ∂ ln kS                                          inate entirely from projection effects; in other words, the
+                                        ∂PδF (kS )                         large-scale CMB temperature perturbations can be seen
+              + PδF aTij (kL )k̂Si k̂Sj             ,             (46)     as a special case of the evolving ruler described in [16].
+                                         ∂ ln kS
+                                                                           Essentially, the standard ruler is in this case given by
+where kS = k1 + kL /2. The bispectrum of a two-                            the photon occupation number Iν /ν 3 . In fact, since lens-
+dimensional projected field (in the flat-sky limit) corre-                 ing conserves surface brightness, the only contribution
+spondingly becomes                                                         to the fractional CMB temperature perturbation Θ(n̂) is
+     Bδ̃δ̃δ̃ (`L , `1 , `2 ) = BδF δF δF (`L , `1 , `2 )                   the redshift perturbation on a fixed proper time surface,
+                                                                           which is equivalent to minus the quantity T defined in
+                                       1                 ∂
+     + 2CδF c (`L )CδF (`S ) +            CδF T (`L ) CδF (`S )            [16]:
+                                     ãH̃                ∂τ
+         1 ∂ ln(`2S PδF (`S ))                                                               T (n̂)     d ln T (a)
+     +                           CδF a (`L )CδF (`S )                              Θ(n̂) ≡          −1=            T = −T           (50)
+         2         ∂ ln `S                                                                     T̄         d ln a
+                               ∂CδF (`S )                                  where have used that T ∝ a−1 for a free-streaming black-
+     + CδF aTij (`L )`ˆiS `ˆjS             ,                    (47)
+                                ∂ ln `S                                    body. As shown in [16], this immediately yields the CMB
+                                                                                                                                         10
+
+temperature perturbation in the gauge Eq. (48) as                          which leads to
+                                                                                                          Z τ∗
+                   Z t∗                          Z t0                                 a(x0em )
+                                  0       0                                                    = 1 − H∗            Φ(x, τ )adτ ,       (56)
+  Θ(n̂) = − H̃∗           Φ[x, τ̄ (t )]dt + H0            Φ(0, τ̄ (t))dt                a∗                    0
+                    0                             0
+         − Φo + Φ − vk + vko + δνISW                                       so that
+                 Z t0                                                                                    Z τ∗
+     1
+  ≃ Φ− vk + H0        Φ(0, τ̄ (t))dt − Φo + vko + δνISW                                ∆ ln a∗ = −H∗              Φ(x, τ )adτ .        (57)
+     3            0                                                                                       0
+                                                      (51)
+         Z χ∗                                                              We now use this result in the general-gauge expression
+ δνISW =      dχ [Φ0 + Ψ0 ] .                         (52)                 Eq. (51) of [6],
+            0
+                                                                                                    1 i               2
+In the second line, we have assumed that the relevant                        M = − 2∆ ln a∗ −         h i − hk + 2κ̂ −    ∆xk . (58)
+                                                                                                    2                  χ∗
+perturbations are superhorizon, Φ(x) ≈ const (since we
+are interested in ` . 100 where the acoustic contributions                 In Eq. (58), κ̂ is the coordinate convergence, i.e. the
+can be neglected), and that recombination happened long                    transverse (with respect to the line of sight) divergence
+after matter-radiation equality so that H∗ t∗ = 2/3.                       of the transverse displacements, and ∆xk is the displace-
+                                                                           ment along the line of sight. In the metric Eq. (48) we
+                                                                           have [6]
+    1.   Transforming from FNC to observer coordinates
+                                                                                                  1 χ∗      χ
+                                                                                                    Z
+                                                                                    κ̂ = − vko +          dχ (χ∗ − χ)∇2⊥ (Φ + Ψ)
+                                                                                                  2 0       χ∗
+   As we have seen, the CMB temperature on large scales
+                                                                                                                                (59)
+is modified by the temperature perturbation Eq. (51),                                    Z χ∗
+which is entirely due to the effects on photons as they                                                       1
+                                                                                ∆xk =         dχ [Φ + Ψ] −        ∆ ln a∗
+propagate from the last scattering surface to the observer.                               0                 a∗ H∗
+Thus, the CMB temperature that would be measured in                                         Z t0
+the local Fermi frame at emission is rescaled by 1 + Θ(n̂)                               −       Φ(0, t)dt                      (60)
+                                                                                             0
+in the observer frame, so that in the notation of Sec. IV,
+                                                                                        2
+c(n̂) = Θ(n̂).                                                               ∆ ln a∗ = − Φ ,                                           (61)
+   The second ingredient is the coordinate transformation                               3
+from FNC to the observer frame. Projected onto the sky,                    where H∗ = H(a∗ ), and we have made the same assump-
+the matrix aij becomes the usual weak lensing distortion                   tions about superhorizon perturbations and matter dom-
+tensor Aij , which we can write to linear order as                         ination as in Eq. (51). The magnification then becomes
+                                                                                           4                   2
+                                                 
+                        M/2 + γ1   γ2                                                   M = Φ − (−2Ψ) + 2κ̂ −     ∆xk
+           aij =                                      .             (53)
+                          γ2     M/2 − γ1                                                  3                   χ∗
+                                                                                           10         2
+In particular, a = M. The magnification (a gauge-                                         = Φ + 2κ̂ −    ∆xk .                         (62)
+                                                                                            3         χ∗
+invariant quantity) is easily adapted from the results of
+[6]. The key difference is the meaning of the perturbation                 Here we have used that Ψ = Φ during matter domination.
+to the logarithm of the scale factor at emission, which                      Using the relation between convergence κ and shear γ
+here we call ∆ ln a∗ . By definition,                                      in `-space, we then have in the flat-sky approximation
+
+                                a(x0em )                                    CT c (`) = CT T (`)
+                   ∆ ln a∗ ≡             − 1.                       (54)                              10                            2
+                                  a∗                                        CT a (`) = CT M (`) =         CT Φem (`) + 2CT κ̂ (`) −    CT ∆xk
+                                                                                                       3                            χ∗
+Whereas the quantity ∆ ln a of [6] is derived for photons                              ≈ 10CTnoT ISW (`) + 2CT κ̂ (`)                   (63)
+arriving with a fixed observed redshift, in the present                                                       
+case we need the corresponding expression for a constant                                            `i `j
+                                                                           CT hTij (`) = CT κ̂ (`) 2 2 − δij .                          (64)
+proper time at emission. This is easily derived from the                                             `
+expression for the proper time Eq. (49). Requiring tF =
+t∗ and solving for τ yields                                                In Eq. (63), we have approximated CT Φem (`)/3 as the
+                                                                           CMB temperature power spectrum without ISW contri-
+                         Z τ∗                                          bution, and neglected the contribution from the line-of-
+         0
+      a(xem ) = a τ̄ t∗ −       Φ(x, τ ) adτ                               sight displacement ∆xk . The latter is small due to cance-
+                            0
+                             Z τ∗                                        lation along the line of sight except for the very smallest
+              = a∗ × 1 − H∗        Φ(x, τ ) adτ ,    (55)                  ` for the time delay [first √term in Eq. (60)], and sup-
+                                      0                                    pression by (H∗ χ∗ )−1 ∼ 1089 in case of the second
+                                                                                                                                            11
+
+term of Eq. (60) (the third term in Eq. (60) only con-                    CTnoT ISW (`L ). We then have
+tributes to the monopole). See [15] for a quantitative
+evaluation of these contributions. Finally, for the contri-               B(`L , `1 , `2 )
+                                                                                                       ∂ ln `2S CT T (`S )
+                                                                            
+bution from the time shift, CT T (`L ) = −CT T (`L ) since
+                                                                          = 2CT T (`L ) − CT T (`L )
+Θ = −T . However, the CMB power spectrum observed                                                           ∂ ln `S
+today CT T (`S ) only evolves on the Hubble scale today,                                          ∂ ln CT T (`S )
+                                                                                                                  
+so that                                                                     − 6 cos 2θ CT T (`L )                   CT T (`S )
+                                                                                                      ∂ ln `S
+                                                                                                                        ∂ ln `2S CT T (`S )
+                                                                                                                                           
+     1            ∂             H0
+        CT T (`L ) CT T (`S ) ∼      CT T (`L )CT T (`S ) . (65)          = CT T (`L )CT T (`S ) (1 + 6 cos 2θ) 2 −                           .
+   ãH̃           ∂τ            ãH̃                                                                                         ∂ ln `S
+                                             √                                                                                          (69)
+Thus, this contribution is suppressed by ∼ 1/ 1089 with
+                                                                          This agrees with the final result of [13], while it differs
+respect to the leading contributions, and we will neglect
+                                                                          from [14] because a subset of the lensing contributions
+it in what follows.
+                                                                          was neglected there.
+                                                                             One can show (App. C of [6]) that the contribution
+                                                                          of metric perturbations with wavenumber k to the CMB
+              2.   Squeezed-limit CMB bispectrum                          temperature as well as the ruler perturbations M, γ scale
+                                                                          as (k/H0 )2 in the limit k → 0. The contributions in the
+                                                                          low-k limit can be interpreted as the lowest order correc-
+  Inserting these results into Eq. (47) then yields                       tions to our local conformal Fermi patch. Unless there
+                                                                          is some physical coupling between currently superhori-
+B(`L , `1 , `2 ) = 2CT c (`L )CT T (`S )                                  zon and subhorizon modes [27], the observable imprint
+                            1 ∂ ln `2S CT T (`S )                         of any superhorizon perturbation (scalar or tensor) is
+   + CT a (`L )CT T (`S )                                                 suppressed by (k/H0 )2 .
+                            2      ∂ ln `S
+                          ∂CT T (`S )
+   + CT aTij (`L )`ˆS `ˆS
+                    i   j
+                           ∂ ln `S                                                        B.    Non-Gaussian halo bias
+   (
+                                                     ∂ ln `2S CT T (`S )
+ = 2CT T (`L ) + 5CTnoT ISW (`L ) + CT κ̂ (`L )
+                                                           ∂ ln `S           For Gaussian initial conditions, the distribution of
+                                           )                              large-scale structure tracers (such as galaxies, clusters,
+                           ∂ ln CT T (`S )                                etc.) in the large-scale limit follows the distribution of
+      + cos 2θ CT κ̂ (`L )                   CT T (`S ),        (66)
+                               ∂ ln `S                                    matter. More accurately, this holds on a constant proper
+                                                                          time slice [7, 28]. While the abundance of tracers depends
+                                                                          on the amplitude and shape of local small-scale fluctua-
+where `S = `L +`1 /2, and cos θ = `ˆL · `ˆS . Apart from the              tions, in the Gaussian case these are statistically the same
+very small contribution from ∆xk , this is an exact result                everywhere. That is, at fixed proper time in their respec-
+for the squeezed-limit CMB bispectrum as long as the                      tive FNC frame, all observers see statistically the same
+approximation of the Sachs-Wolfe limit is accurate for                    small-scale fluctuations. These then do not contribute to
+modes of wavenumber `L (`L . 100). Note that no such                      correlations in the tracer abundance on large scales. Non-
+assumption has been made about the short-wavelength                       Gaussianity in the primordial perturbations can however
+modes `S . The cross-correlation between CMB temper-                      couple small-scale fluctuations to large-scale perturba-
+ature and κ̂ can further be decomposed as                                 tions. As we discussed in Sec. II, this in fact precisely
+                                                                          corresponds to the squeezed limit of (at lowest order)
+                      1                                                   the three-point function. Thus, neglecting for the time
+         CT κ̂ (`L ) = CΦem κ̂ (`L ) + CδνISW κ̂ (`L ),         (67)
+                      3                                                   being any projection effects in going from the FNC frame
+                                                                          to the observed positions and redshifts of tracers, there
+i.e. an early-time correlation with the potential Φem , and               is a non-Gaussian scale-dependent bias if and only if the
+a late-time correlation between κ̂ and the ISW contribu-                  amplitude of small-scale fluctuations in the FNC frame
+tion. The latter contribution has recently been detected                  correlates with long-wavelength perturbations—that is,
+by the Planck satellite [26].                                             if there is a non-zero squeezed-limit bispectrum BδF δF δF ,
+   In order to compare with [13, 14], we neglect the ISW-                 where δF denotes the matter density perturbation in the
+lensing correlation, and use the result of [12] for early-                FNC frame.
+time correlations in the Sachs-Wolfe regime,                                 Using Eqs. (35)–(36), the bispectrum of δF is re-
+                                                                          lated to the bispectrum of curvature perturbations in the
+              1                                                           FNC frame through
+                CΦ κ̂ (`L ) = −6 CTnoT ISW (`L ).               (68)
+              3 em
+                                                                          BδF δF δF (kL , k1 , k2 ; τem ) = α(kL , τem )α(k1 , τem )α(k2 , τem )
+Further, we neglect the distinction between CT T (`L ) and                                                  × Bζ̄ ζ̄ ζ̄ (kL , k1 , k2 ),  (70)
+                                                                                                                                                  12
+
+where                                                                        observed scale-dependent bias from projection effects, i.e.
+                                                                             from transforming from the tracer FNC frame to ob-
+                            5 2 k 2 T (k)g(z)                                served positions and redshifts (in our own FNC frame).
+                  α(k) =                                          (71)
+                            3 3 Ωm H02 (1 + z)                               Those have been derived in [7, 34–37], but are generally
+                                                                             quite small. Matching to the scale-dependent bias from
+is the relation in Fourier space between the density and                     local non-Gaussianity, they correspond to fNL < 1 for a
+the curvature perturbation, T (k) is the matter transfer                     wide range of tracer parameters [37].
+function normalized to unity as k → 0, and g(z) is the
+linear growth rate of the gravitational potential normal-
+ized to unity during the matter dominated epoch.
+   In order to derive the scale-dependent bias, we now as-                                        V.    CONCLUSIONS
+sume that the tracer abundance is mostly sensitive to the
+variance of the density field on a scale R, typically chosen                                In this work we have presented a simple and complete
+to correspond to the Lagrangian scale of the tracer. See                                 framework to translate the squeezed limit of any pri-
+[28, 29] for a more general and detailed discussion. The                                 mordial three-point function into observables such as the
+contribution to the tracer two-point function is then pro-                               squeezed limit of the CMB temperature bispectrum and
+portional to hδF (0)(δF,R )2 (r)i, where δF,R denotes the                                the scale-dependent halo bias. In Fig. 1 we have spelled
+FNC-frame density field smoothed on scale R. As shown                                    out the various steps of the computation and the respec-
+in, e.g. [30, 31], the large-scale scale-dependent bias is                               tive choices of gauge. The different gauges have been
+then given by                                                                            chosen in such a way that the whole computation from
+                                                                                         horizon exit during inflation until observation on earth
+                     ∂ ln n̄h −1           2                                             can be performed using only linear perturbation theory.
+  ∆b(kL ) =               2 α     (kL )∆σR (kL )
+                       ∂σR                                                               This required the introduction of a conformal version of
+                     Z 3
+                          d k 1                      B ζ̄ ζ̄ ζ̄ (k L , k1 , |k  + k 1 |) the well known Fermi Normal Coordinates (used in [9, 10]
+     2
+∆σR      (kL ) =                α(k 1 )α(|k + k1  |)                                     for inflationary correlators), in which the spacetime is lo-
+                         (2π)3                                     Pζ̄ (kL )
+                                                                                         cally FLRW as opposed to Minkowski. As an example
+                             × W̃R (k1 )W̃R (|k + k1 |),                       (72)      we have applied our formalism to standard single-field
+                                                                                         slow-roll inflation. We have shown that Maldacena’s con-
+where W̃R (k) is the filter function in Fourier space, and                               sistency condition [4] in the squeezed limit of the scalar
+we have dropped the τem arguments for brevity. As long                                   bispectrum implies that the signal in the CMB bispec-
+as kL is much less than the typical values of k1 in the                                  trum and halo bias vanishes exactly. Although this re-
+integrand (k1  0.01 h Mpc−1 ), the bispectrum here is                                   sult was already known, our approach provides a simple,
+evaluated in the squeezed limit [32]. Let us perform a                                   concise and physically clear derivation. This calculation
+leading order expansion in this limit,                                                   can straightforwardly be generalized to higher N-point
+                                                                                         functions in the squeezed limit.
+                                                2
+                                                  
+                                              kL                                            In addition, our approach sheds light on the proposal
+ Bζ̄ ζ̄ ζ̄ (kL , k1 , |k + k1 |) = f0 + f2 2 Pζ̄ (kL )Pζ̄ (kS ),
+                                              kS                                         that there are observable correlations between long wave-
+                                                                                         length tensor modes and short wavelength scalar pertur-
+where kS is as defined before. Here, we have assumed                                     bations [17–19] (see also [20]). These authors state that
+a scale-invariant bispectrum (otherwise, the coefficients                                the correlation vanishes as long as the long tensor mode
+f0 , f2 are in general functions of kS ), and no dependence                              is outside of the Hubble radius k  aH. This can be un-
+on the angle between kL and kS as is typically the case                                  derstood using the results of our section Sec. III, where
+(but see [33] for a counterexample). The lowest order                                    we show that a constant and a pure gradient mode of the
+piece ∝ f0 leads to a scale dependence of                                                metric are absorbed by the change of coordinates when
+                                −1              −2 −1                                    going to the Fermi Normal frame. The physical effects of
+             ∆b(kL ) ∝ f0 α (kL ) ∝ f0 kL T (kL ),                             (73)
+                                                                                         a long mode that a local observer can measure are hence
+which corresponds to the usual scale-dependent bias from                                 suppressed at least by (k/aH)2 and are therefore small
+local non-Gaussianity. The second part leads to a scale-                                 for superhorizon perturbations. Notice in particular that
+dependence of                                                                            the standard result for the tensor-scalar-scalar bispec-
+                                                                                         trum in single field inflation [4] is just a restatement of
+             ∆b(kL ) ∝ f2 kL    2 −1
+                                  α (kL ) ∝ f2 T −1 (kL ),                     (74)      this fact but using comoving coordinates. In these coor-
+                                                                                         dinates the tensor-scalar-scalar bispectrum takes exactly
+which is much weaker and only relevant on scales kL &                                    the right form such that, changing to Fermi Normal coor-
+0.02 h Mpc−1 where the transfer function departs from                                    dinates, one finds vanishing correlation up to corrections
+unity. Since f0 = 0 in single field inflation [Eq. (34)],                                of order (k/aH)2 as we saw in Sec. III B. After the tensor
+we conclude there is no scale-dependent bias induced on                                  mode enters the horizon, it starts oscillating and decays.
+scales kL . 0.02 h Mpc−1 in these models.                                                During the epoch around horizon crossing, k ∼ aH, the
+   The scale-dependent bias discussed here refers to the                                 tensor mode can induce some tidal effects on the short
+FNC frame of the tracers; there are contributions to the                                 scale scalar power spectrum (see [38] for an evaluation
+                                                                                                                                      13
+
+of this effect for the shear). We did not compute this         nect the squeezed-limit correlators in multifield inflation
+effect here, and leave this interesting possibility for fu-    to late-time observables in a similar way as outlined here
+ture work. Further, as discussed in Sec. IV, there are         for single-field inflation.
+projection (photon propagation) effects induced by the
+long-wavelength tensor mode [38–40]. However, these are
+again suppressed by (k/H0 )2 in the k → 0 limit. In sum-                               Acknowledgments
+mary, just as for the scalar bispectrum, a detection of
+a squeezed-limit tensor-scalar-scalar bispectrum through         We acknowledge useful discussions with Liang Dai,
+the measurements described in [17, 20], at a level larger      Raphael Flauger, Steven Giddings, Donghui Jeong, Marc
+than expected from tidal and projection effects, would         Kamionkowski, Justin Khoury, Kiyoshi Masui, Ue-Li
+rule out single-field inflation.                               Pen, and Martin Sloth. E. P. is supported in part by
+   The framework we have developed in this paper is also       the Department of Energy grant DE-FG02-91ER-40671.
+useful in other classes of models that have not yet been       F. S. is supported by NASA through Einstein Postdoc-
+directly related to observations. One example is resonant      toral Fellowship grant number PF2-130100 awarded by
+non-Gaussianity [41–45], which is a generic prediction of      the Chandra X-ray Center, which is operated by the
+many models of axion inflation (see [46] and references        Smithsonian Astrophysical Observatory for NASA un-
+therein), in particular inflation from axion monodromy         der contract NAS8-03060. M. Z. is supported in part by
+[47–49]. In these models the inflationary potential has        the National Science Foundation grants PHY-0855425,
+sinusoidal modulations, which lead to oscillations in the      AST-0907969, PHY-1213563 and by the David & Lucile
+time evolution of the background. Since these oscillations     Packard foundation.
+average to zero over a period, they can give corrections to
+the slow-roll parameter that are larger than is usually al-
+lowed and nevertheless be perfectly compatible with cur-            Appendix A: Coordinate transformation of
+rent power spectrum data (see e.g. [48, 50, 51]). The reso-                  two-point correlations
+nant bispectrum satisfies Maldacena’s consistency condi-
+tion [43, 52], but because of oscillations the amplitude         Consider a scalar field ρ(x) = ρ(x, τ ). Under a general
+of the primordial bispectrum in the squeezed limit is          coordinate transformation x → x0 (x), ρ transforms as
+not suppressed by small slow-roll corrections. In light
+of this, one might wonder whether these models lead to                                ρ0 (x0 ) = ρ(x(x0 )) .                        (A1)
+some detectable signal in the scale dependent halo bias.
+Cyr-Racine and Schmidt [53] showed that indeed reso-           We define the unequal-time two-point correlation of ρ,
+nant non-Gaussianity produces oscillations in the mass         measured within a patch p through
+dependence of the non-Gaussian halo bias, which is a very
+unique signature. However, the leading contribution in             hρ(x, τ1 )ρ(x + r, τ2 )ip
+the large-scale limit to the effect derived in that paper is          = h [ρ(τ1 ) + δρ(x, τ1 )] [ρ(τ2 ) + δρ(x + r, τ2 )] ip
+only a coordinate artefact as shown here. While the halo
+bias thus has to asymptote to a scale-independent value                = ρ(τ1 )ρ(τ2 ) + ξ(r, τ1 , τ2 ) ,                            (A2)
+in the large-scale limit, we expect some interesting effects
+                                                               where a subscript p indicates an average over the patch,
+on intermediate scales. To compute the actual size of this
+                                                               and we have defined ρ(τ ) = hρ(x, τ )ip , so that by con-
+effect it is important to re-write the primordial resonant
+                                                               struction the average over the patch of δρ(x, τ ) vanishes.
+bispectrum in terms of FNC. It would be very interesting
+                                                               The correlation function introduced above is then defined
+to perform this analysis using the framework constructed
+                                                               as
+in this paper. There are also other models of the early
+universe (both inflationary and not) in which the metric                ξ(r, τ1 , τ2 ) ≡ hδρ(x, τ1 )δρ(x + r, τ2 )ip .              (A3)
+perturbations do not freeze outside of the horizon. For
+example, it has been argued in [22, 23] (see also [54]) that   We will consider an alternative definition, the correlation
+this allows one to violate Maldacena’s consistency condi-      function of δρ/ρ, below and show that it transforms in
+tion. Another interesting model with a peculiar behavior       the same way. Further, we will denote the equal time cor-
+in the squeezed limit is Khronon inflation, studied in [55].   relation function as ξ(r, τ ) in the following for simplicity.
+It would be interesting to use our approach to derive the         Now let us consider the equal-time two-point correla-
+observational prediction of these and similar models.          tion for ρ0 , measured in the same patch:
+   On the other hand, multifield inflationary models in
+general feature a non-trivial bispectrum in the squeezed          hρ0 (x01 , τ 0 )ρ0 (x02 , τ 0 )ip = hρ(x1 , τ1 )ρ(x2 , τ2 )ip ,   (A4)
+limit. In this case, curvature perturbations evolve outside
+the horizon, and the small-scale fluctuations are sensitive    where x02 − x01 = r0 , and we have defined for conve-
+to their presence as they essentially evolve in a different    nience x1 ≡ x(x01 , τ 0 ), x2 ≡ x(x02 , τ 0 ), and analogously
+FRW background (or, more generally, in a homogeneous           for τ1 , τ2 . By assumption, the coordinate transform is
+anisotropic Universe). This reasoning can be used to con-      slowly varying over the patch. We then Taylor expand
+                                                                                                                                                              14
+
+the coordinate transformations around the center point                          Now we define the correlation function of ρ0 in the same
+x00 = (x01 + x02 )/2,                                                           way as that for ρ [Eq. (A2)], which yields
+          1 ∂xi (x00 , τ 0 ) 0j              1 ∂xi (x00 , τ 0 ) 0j
+                                                                                                                                   h                   i
+xi1 = xi0 −                  r ; xi2 = xi0 +                    r                 hρ0 (x0 , τ 0 )ρ0 (x0 + r0 , τ 0 )ip = ρ02 (τ 0 ) 1 + ξ˜0 (r0 , τ 0 ) .
+          2     ∂x  0j                       2     ∂x0j
+          1 ∂τ (x00 , τ 0 ) 0j             1 ∂τ (x00 , τ 0 ) 0j                                                                                            (A13)
+τ1 = τ0 −                  r   ; τ2 = τ0 +                  r ,
+          2     ∂xj                        2     ∂xj
+                                                             (A5)               Thus, we see that ξ˜ transforms in the same way as ξ,
+                                                                                namely
+where x0 = x(x00 , τ 0 ), and τ0 = τ (x00 , τ 0 ). We will discuss
+below why going to linear order in r0 is sufficient. We                               ξ˜0 (r0 , τ 0 ) = ξ(x
+                                                                                                        ˜ 2 − x1 , τ0 ) = ξ˜ (Ar0 , τ (x0 , τ 0 )) . (A14)
+                                                                                                                                        0
+then have
+                                                                                There are thus two ways in which the general affine
+hρ0 (x01 , τ 0 )ρ0 (x02 , τ 0 )ip                                               coordinate transform affects the correlation function in
+                             i 0 0                                            primed coordinates: first, there is the spatial transfor-
+                                ∂x (x0 , τ ) 0j
+ = ρ(τ1 )ρ(τ2 ) + ξ                         r , τ1 , τ2                         mation of the separation vector, r → Ar0 ; second, the
+                                    ∂x0j                                        primed correlation function is evaluated at a different
+             1 ∂τ (x00 , τ 0 ) 0j ∂         1 ∂τ (x00 , τ 0 ) 0j ∂
+                                                                   
+                                                                                point in space and time (here, we have only made the
+ = 1+                            r       −                   r
+             2      ∂xj             ∂τ1     2     ∂xj           ∂τ2             time shift explicit in the notation, but note that the cor-
+                                    i 0 0
+                                      ∂x (x0 , τ ) 0j
+                                                                              rrelation function on the right hand side is to be evalu-
+       × ρ(τ1 )ρ(τ2 ) + ξ                          r , τ1 , τ2                  ated within a patch centered on x(x00 , τ 0 )).
+                                          ∂x0j
+                      i 0 0                  
+                                                                   τ1 =τ2 =τ0        The linear order expansion in Eq. (A5) neglects higher
+                         ∂x (x0 , τ ) 0j                                        derivative terms in the coordinate transformation, i.e. it
+ = ρ2 (τ0 ) + ξ                         r , τ0 ,                        (A6)
+                               ∂x0j                                             is valid in the limit that the transformation is slowly
+                                                                                varying over the patch. The terms we are neglecting
+since ξ(r, τ1 , τ2 ) is symmetric in τ1 and τ2 . Thus, at linear                in Eq. (A5) correspond to terms of order kL       2
+                                                                                                                                    and higher,
+order in r0 , the equal time correlator in primed coordi-                       where kL is the wavenumber of the long-wavelength mode
+nates is an equal time correlator in unprimed coordinates.                      that contributes to the coordinate transformation. Since
+We thus have                                                                    we are neglecting terms of order kL       2
+                                                                                                                            throughout this pa-
+                                                                                per, it is sufficient to expand to linear order.
+      hρ0 (x0 , τ 0 )ρ0 (x0 + r0 , τ 0 )ip = ρ2 (τ0 ) + ξ(Ar0 , τ0 )
+                                                                                     A second simplification occurs because we are only con-
+                                               ∂xi (x00 , τ 0 )                 sidering three-point correlations in this paper. In this
+                                    Ai j =                      .       (A7)
+                                                  ∂x0j                          case, it is sufficient to consider the linear response of
+                                                                                ξ 0 (r0 , τ 0 ) to the coordinate transformation. We thus write
+We now define the correlation function of ρ0 in the same
+way as that for ρ [Eq. (A2)], which yields                                                                 Ai j = δ ij − ai j
+      0   0   0   0   0     0   0         02      0       0   0     0
+   hρ (x , τ )ρ (x + r , τ )ip = ρ (τ ) + ξ (r , τ ) ,                  (A8)                               ∆τ = τ (x00 , τ 0 ) − τ 0                       (A15)
+where                                                                           and work to linear order in ai j and ∆τ . Further, we can
+    ρ0 (τ 0 ) = hρ0 (x0 , τ 0 )ip = hρ(x(x0 , τ 0 ))ip = ρ(τ0 ) . (A9)          neglect the effect of the spatial shift in the position at
+                                                                                which ξ is evaluated. This is because the contribution
+The second equality again holds to linear order in x0 −x00 ,                    from this shift,
+at which order the average of τ over the patch at fixed τ 0
+is just τ0 . We will discuss this definition of ρ0 in App. A 1                          ξ 0 (r0 , τ 0 ) ⊃ [x(x00 , τ 0 ) − x00 ] · ∇x00 ξ(r0 , τ 0 )|x00   (A16)
+below. Thus, the first term in each of Eqs. (A7)–(A8)
+agrees, and hence so must the second term:                                      is second order, since both the spatial shift and the lo-
+                                                                                cation dependence of ξ are at least linear order in the
+    ξ 0 (r0 , τ 0 ) = ξ(x2 − x1 , τ0 ) = ξ (Ar0 , τ (x00 , τ 0 )) . (A10)       long-wavelength perturbations. Eq. (A10) then simpli-
+                                                                                fies to Eq. (4),
+We can similarly derive what happens to ξ˜ = ξ/ρ2 , which                                              h                        i
+is the correlation function defined in terms of δρ/ρ. In                              ξ 0 (r0 ; τ 0 ) = 1 − aij r0i ∂rj0 + ∆τ ∂τ ξ(r0 ; τ 0 ) . (A17)
+this case, we have
+                                     h         i
+                                          ˜ τ) .
+     hρ(x, τ )ρ(x + r, τ )i = ρ2 (τ ) 1 + ξ(r,      (A11)
+                                                                                 1.     Coordinate transformations in the presence of
+                                                                                                non-trivial backgrounds
+For ρ0 , this yields
+                                               h                   i
+                                                    ˜ 2 − x1 , τ0 ) .
+hρ0 (x0 , τ 0 )ρ0 (x0 + r0 , τ 0 )ip = ρ2 (τ0 ) 1 + ξ(x                           There is a conceptual point to clarify about the trans-
+                                                                                formation properties of perturbations under changes of
+                                                                        (A12)   coordinates. There are two different but equivalent ways
+                                                                                                                                          15
+
+to work with coordinate transformations when study-                               Notice that in both approaches ρ0 (x0 ) = ρ(x(x0 )), while
+ing perturbations on top of some non-trivial background.                          the two different conventions above concern only the
+The first one consists in changing every field in the same                        transformations of background and perturbations. A
+way, whether it is going to be treated as a background                            similar discussion can be given for tensor fields such as
+or not in the rest of the computation. This “democratic”                          the metric. Again one has two choices: either one defines
+approach is conceptually very simple. For example, if a                           metric perturbations that transform like the component
+scalar field transforms as ρ0 (x0 ) = ρ(x(x0 )), so does its                      of a tensor, in which case the metric background changes
+background ρ̄0 (x0 ) = hρ0 (x0 )i = hρ(x)i = ρ̄(x). Using                         when one changes coordinates or the background is as-
+this point of view, perturbation of the scalar field around                       sumed fixed in any coordinates and metric perturbations
+that same background must transform in the same way                               have additional terms in their transformations.
+as well. To see this, consider δ(x) ≡ ρ(x) − ρ̄(x) (notice
+that hδi = 0). Then
+
+   δ 0 (x0 ) = ρ0 (x0 ) − ρ̄0 (t0 ) = ρ(x) − ρ̄(t) = δ(x) ,         (A18)
+
+In the second approach to the problem one splits the
+field in perturbation and background in such a way that                              We warn the reader that in the derivation of App. A
+the latter is invariant under coordinate transformations,                         we have used the “democratic convention” as opposed
+i.e. ρ̄0 (x) = ρ̄(x) (in the cosmological context, the back-                      to the fixed background convention which is standard in
+ground quantity is only a function of τ ). This simplifica-                       the cosmological literature (e.g. [56]). However, it should
+tion comes at the cost of more complicated transforma-                            be kept in mind that around a homogeneous background
+tion laws for the perturbations, which now do not trans-                          with a long wavelength perturbation, the additional con-
+form as a scalar field. Considering the same example as                           tribution in the last term of Eq. (A19) is just a con-
+above and a transformation x0 = x + , at linear order in                         stant or a pure gradient at the order we are working in,
+ one gets                                                                        and hence does not contribute to the correlation function
+                                                                                  evaluated on much smaller scales r. This means that our
+ δ 0 (x0 ) = ρ0 (x0 ) − ρ̄0 (x0 ) = ρ0 (x0 ) − ρ̄(x0 )   (A19)                    final result Eq. (A17) is valid independently of the con-
+                                  µ                    µ
+           = ρ(x) − ρ̄(x) +  ∂µ ρ̄(x) = δ(x) +  ∂µ ρ̄(x) .                      vention used for defining the perturbations.
+
+
+            Appendix B: Squeezed-limit three-point function from transformed two-point correlation
+
+  This section derives the squeezed-limit three-point function and bispectrum from a coordinate transformation of
+the two-point function given by Eq. (A17),
+                                     ξ 0 (r; τ ) = 1 − aij ri ∂rj + ∆τ ∂τ ξ(r; τ ) ,
+                                                                        
+                                                                                                             (B1)
+where we have dropped the prime on coordinates since we will only deal with primed coordinates in this section.
+Specifically, we want to derive the three point function hX 0 (x3 )δ 0 (x1 )δ 0 (x2 )i in the limit where |x3 − x1 |  |x1 − x2 |
+(squeezed limit). Here, X and δ stand for any perturbation variables with mean zero (of course, the auto-three-point
+function X = δ is a special case). In this limit, the three-point function quantifies the modulation of the local two-point
+function ξ 0 (|x1 − x2 |) by a long-wavelength perturbation X 0 (modes with wavelength much less than |x3 − x1 | will
+not contribute to this correlation). As discussed in Sec. II, the coordinate transformation only acts on the small-scale
+fluctuations, so that we set X 0 (x) = X(x). Thus,
+                                                                    squeezed
+                                    hX 0 (x3 )δ 0 (x1 )δ 0 (x2 )i     =        hX 0 (x3 )ξ 0 (x1 − x2 ; τ )|X 0 (xc ) i,                (B2)
+where we have defined the point of evaluation of the long-wavelength X perturbation as
+                                                           xc = cx1 + (1 − c)x2 .                                                       (B3)
+Choosing xc along the axis connecting x1 and x2 is necessary since Eq. (B2) describes a homogeneous and isotropic
+three-point function. The midpoint x0 = (x1 + x2 )/2 corresponds to c = 1/2. We will see that the choice of c does
+not influence the final result below. Using Eq. (B1), this yields
+                              squeezed 
+ hX 0 (x3 )δ 0 (x1 )δ 0 (x2 )i =        −ξXaij (|x3 − xc |)ri ∂rj + ξX∆τ (|x3 − xc |) ∂τ ξ(x1 − x2 ; τ ) + hX(x3 )ξ(x1 − x2 ; τ )|X(xc ) i
+                                                                                        
+
+                                    = −ξXaij (|x3 − xc |)ri ∂rj + ξX∆τ (|x3 − xc |) ∂τ ξ(x1 − x2 ; τ ) + hX(x3 )δ(x1 )δ(x2 )i . (B4)
+                                                                                       
+
+This expression gives the squeezed-limit three-point function of X 0 and δ 0 (in the primed coordinates) in terms of
+derivatives of ξ(r, τ ) and the three-point function of X and δ in the unprimed coordinate frame.
+                                                                                                                                       16
+
+  The left-hand side of Eq. (B4) is clearly symmetric under x1 ↔ x2 . For a general choice of xc , this does not hold
+for the right-hand side, so we should symmetrize:
+                                      
+       0     0      0      squeezed 1
+    hX (x3 )δ (x1 )δ (x2 )i =           − ξXaij (|x3 − xc |)ri ∂rj − ξXaij (|x3 − x0c |)ri ∂rj
+                                    2
+                                                                                         
+                                                                                 0
+                                       + ξX∆τ (|x3 − xc |) ∂τ + ξX∆τ (|x3 − xc |) ∂τ ξ(x1 − x2 ; τ ) + hX(x3 )δ(x1 )δ(x2 )i ,
+                                                                                                                                     (B5)
+
+where x0c = (1 − c)x1 + cx2 . Of course, if we choose xc to be the midpoint of x1 and x2 , the two permutations are
+identical.
+  We now derive the Fourier-space analog of Eq. (B5). In terms of the cross-power spectra PXaij (k), PX∆τ (k) and
+the auto power spectrum Pδ (k), we have
+
+                                                              d3 k L
+                                                           Z
+                                     hX(x3 )aij (xc )i =             PXaij (kL )eikL [x3 −xc ]
+                                                             (2π)3
+                                                           Z 3
+                                                              d kL
+                                    hX(x3 )∆τ (xc )i =               PX∆τ (kL )eikL [x3 −xc ]
+                                                             (2π)3
+                                                           Z 3
+                                                              d kS
+                                        r̄j ∂i ξ(r, τ ) =            Pδ (kS , τ )r̄j ∂i eikS r
+                                                             (2π)3
+                                                             Z 3
+                                                                 d kS ∂  i
+                                                                                kS Pδ (kS ) eikS r
+                                                                                             
+                                                         = −          3     j
+                                                                 (2π) ∂kS
+                                                           Z 3
+                                                              d kS
+                                           ∂τ̄ ξ(r̄, τ ) =           ∂τ Pδ (kS , τ )eikS r .                                         (B6)
+                                                             (2π)3
+
+The bispectrum in the squeezed limit kL  k1 , k2 becomes
+                                Z       Z        Z
+        0     0      0
+     hX (kL )δ (k1 )δ (k2 )i =     d x3 d x1 d3 x2 e−i(kL x3 +k1 x1 +k2 x2 ) hX(x3 )δ 0 (x1 )δ 0 (x2 )i
+                                    3        3
+
+                                  ("                                                      #                                      )
+                       squeezed 1                 ∂  i                       ∂
+                          =           PXaij (kL ) j kS Pδ (kS ) + PX∆τ (kL ) Pδ (kS )                              + (c → 1 − c)
+                                2                ∂kS                          ∂τ
+                                                                                                     kS =k1 +ckL
+                                    × (2π)3 δD (k1 + k2 + kL ) + hX(kL )δ(k1 )δ(k2 )i .                                              (B7)
+
+Thus, the transformed bispectrum has the proper delta function ensuring the triangle condition, and we can identify
+the X 0 δ 0 δ 0 −bispectrum in the squeezed limit as
+                                      ("                                               #              )
+                           squeezed 1               ∂  i                    ∂
+ BX 0 δ0 δ0 (kL , k1 , k2 ) =           PXaij (kL ) j kS Pδ (kS ) + PX∆τ (kL ) Pδ (kS )  + (c → 1 − c)
+                                    2              ∂kS                        ∂τ
+                                                                                                 kS =k1 +ckL
+                              + BXδδ (kL , k1 , k2 )
+                                ("                                !                               #                                   )
+                              1                      kSi kSj d                           ∂
+                            =     PXaij (kL ) δij + 2               Pδ (kS ) + PX∆τ (kL ) Pδ (kS )                     + (c → 1 − c)
+                              2                        kS d ln kS                        ∂τ
+                                                                                                                   kS =k1 +ckL
+                               + BXδδ (kL , k1 , k2 ) .                                                                              (B8)
+
+Since we are working in the squeezed limit, we can expand in k1 /kL . We have
+
+                                                                   kL d                    2
+                           F (|k1 + ckL |) = F (k1 ) + ck̂1 · k̂L             F (k1 ) + O(kL /k12 )
+                                                                   k1 d ln k1
+                                                                                 (i j)
+                                    kSi kSj   k1i k1j          k1 · kL
+                                                                      
+                                                                               k1 kL         2
+                                            =           1 − 2c            + 2c         + O(kL  /k12 )
+                                      kS2      k12               k12              k12
+                                 dPδ (ks )   dPδ (k1 )              kL    d2                    2
+                                           =           + ck̂1 · k̂L               Pδ (k1 ) + O(kL /k12 ) .                           (B9)
+                                  d ln kS     d ln k1               k1 d(ln k1 )2
+                                                                                                                                      17
+
+We already see that all corrections are linear in c, so that the two permutations c, 1 − c add up to 1. Thus, the result
+                                                                                                               2
+becomes independent of the choice of c, and the squeezed limit bispectrum in terms is, to order (kL              /k12 ),
+                                                                   !
+                           squeezed                    k1i k1j d                            ∂
+ BX 0 δ0 δ0 (kL , k1 , k2 ) = PXaij (kL ) δij + 2                     Pδ (k1 ) + PX∆τ (kL ) Pδ (k1 )
+                                                        k1 d ln k1                         ∂τ
+                                                     (                                     !                                     )
+                                                                         k1i k1j
+                                                                                 
+                                                kL 1                               d          dPδ (k1 )               ∂ dPδ (k1 )
+                                    + k̂1 · k̂L       PXaij (kL ) δij + 2              −2               + PX∆τ (kL )
+                                                k1 2                      k1 d ln k1           d ln k1               ∂τ d ln k1
+                                                (i j)
+                                             k k dPδ (k1 )
+                                + PXaij (kL ) 1 2L         + BXδδ (kL , k1 , k2 ) .                                               (B10)
+                                               k1 d ln k1
+
+Since k2 = −k1 + O(kL /k1 ), this expression can be equivalently written in terms of k2 instead of k1 . Since the choice
+of c is arbitrary, we will use the most natural choice, c = 1/2, in which case Eq. (B8) becomes simply
+                                           "                              !                               #
+                                  squeezed                   kSi kSj d                           ∂
+        BX 0 δ0 δ0 (kL , k1 , k2 ) =        PXaij (kL ) δij + 2             Pδ (kS ) + PX∆τ (kL ) Pδ (kS )
+                                                               kS d ln kS                        ∂τ
+                                                                                                                  kS =k1 +kL /2
+                                       + BXδδ (kL , k1 , k2 ) .                                                                   (B11)
+                                                                     2
+While this expression is equivalent to Eq. (B10) up to order kL        , we will work with this result since it is more compact
+and convenient.
+  Including the effect of a mean density modulated by X following Eq. (44) in Sec. IV is now an obvious generalization.
+We obtain
+                                   "                               !                                                     #
+                          squeezed                    kSi kSj d                           ∂
+BX 0 δ0 δ0 (kL , k1 , k2 ) =         PXaij (kL ) δij + 2             Pδ (kS ) + PX∆τ (kL ) Pδ (kS ) + 2PXc (kL )Pδ (kS )
+                                                        kS d ln kS                        ∂τ
+                                                                                                                                  kS =k1 +kL /2
+                               + BXδδ (kL , k1 , k2 ) .                                                                           (B12)
+
+We can now further decompose aij as
+
+                                                                   1
+                                                          aij =      aδij + aTij ,                                                (B13)
+                                                                  nD
+
+where nD is the dimensionality of the space in which we define the correlations, and aTij is traceless. In particular
+nD = 3 for three-dimensional observables such as galaxy densities or 21cm flux, and nD = 2 for projected quantities
+on the sky such as the CMB. We then obtain
+
+                                                                                             k i k j dPδ (kS )
+                                                                
+                             squeezed                  1     d
+   BX 0 δ0 δ0 (kL , k1 , k2 ) =        PXa (kL ) 1 +                 Pδ (kS ) + PXaTij (kL ) S 2 S
+                                                     nD d ln kS                                kS d ln kS
+                                                                                        
+                                                     ∂
+                                        + PX∆τ (kL ) Pδ (kS ) + 2PXc (kL )Pδ (kS )                        + BXδδ (kL , k1 , k2 )
+                                                     ∂τ                                  kS =k1 +kL /2
+
+                                                       d ln(kSnD Pδ (kS ))                k i k j dPδ (kS )
+                                      
+                                   = PXa (kL )Pδ (kS )                     + PXaTij (kL ) S 2 S
+                                                            d ln kS                         k       d ln kS
+                                                                                         S
+                                                     ∂
+                                        + PX∆τ (kL ) Pδ (kS ) + 2PXc (kL )Pδ (kS )                        + BXδδ (kL , k1 , k2 ) . (B14)
+                                                     ∂τ                                  kS =k1 +kL /2
+
+Note that the contribution of the trace of aij scales as the logarithmic deerivative of k nD Pδ (k), while the trace-free
+component aTij couples to the logarithmic derivative of Pδ (k) itself.
+
+
+       Appendix C: Fermi Normal Coordinates                               do lead to a metric of the form
+
+           1.   FNC construction and metric
+
+                                                                                           F
+  In this section, we show how for a general metric, the                                  gµν = ηµν + O(x2F ) .                    (C1)
+coordinates xµF defined through Eq. (C2) below in fact
+                                                                                                                                              18
+
+To quadratic order, the Fermi coordinate transformation                   2.   Transformation from general coordinates to FNC
+is given by
+                                µ      1                                     We now explicitly derive the transformation Eqs. (12)–
+xµ (xiF )      = xµ (P ) + (ei )P xiF − Γµαβ (ei )α      β i j
+                                                  P (ej )P xF xF .        (13) into the FNC frame. We write the conformal metric
+            tP                         2    P
+                                                           (C2)           as
+Straightforward algebra yields the transformation matrix                                          ḡµν = ηµν + hµν ,                       (C12)
+as
+            ∂xα                                                           and work to linear order in hµν . The tetrad around P is
+                              α j
+                 = (eµ )α                 2
+                        P + Aµj xF + O(xF ),       (C3)                   given by
+            ∂xµF
+                                                                                                             
+where a subscript P denotes the evaluation at the point                                   µ         1       i
+                                                                                     (e0 ) = 1 + h00 , v
+on the central geodesic specified by x0F . Here,                                                    2
+                                                                                                                   
+                              β                                                                                 1 i
+                   Aα                    α
+                    0j = (e0 )P [∂β (ej ) ]P
+                                                                                          µ                 i
+                                                                                     (ej ) = vj + h0j , δj − hj .           (C13)
+                                                                                                                2
+                    Aα       α
+                     ij = − Γβγ            (ei )βP (ej )γP         (C4)
+                                       P                                  Note that we treat v as O(h) here, as we are assuming
+Using the fact that the unit vectors (ej )α are assumed                   comoving observers. Since (eα )µ = δαµ +O(h) and Γµαβ =
+to be parallel-transported along the central geodesic, we                 O(h), we have for the transformation into FNC at lowest
+have                                                                      order in h:
+0 = (e0 )βP [∇β (ej )α ]P = (e0 )βP ∂β (ej )α + Γα        λ
+                                   
+                                                 βλ (ej )     ,                                     µ i    1 µ
+                                                            P
+                                                                               xµ (x̄α      µ
+                                                                                     F ) = P + (ei )P x̄F − Γij   xiF xjF ,                (C14)
+which can be used to bring Aα                                                                              2    P
+                            µj into a uniform expression:
+                                                                          where P µ ≡ xµ (P ) are the global coordinates of the cen-
+                  Aα      α
+                   µj = −Γβγ              (eµ )βP (ej )γP .        (C5)   tral geodesic, so that v i = ∂P i /∂x0 and we define analo-
+                                      P
+Next, we expand                                                           gously P̄ µ ≡ x̄µF (P ) for FNC. The conformal proper time
+                                                                          P̄ 0 defines the time coordinate of FNC, namely P̄ 0 = x̄0F .
+       gαβ (x(xF )) = gαβ            + (ej )γP [∂γ gαβ ]P xjF .    (C6)   Without loss of generality, we can choose the spatial ori-
+                                 P                                        gin so that P̄ i (τF ) = 0 at some fixed proper time τF .
+Finally, using that                                                       To lowest order in h and v, the conformal proper time is
+                                         β                                related to the global time by
+                   gαβ       (eµ )α
+                                  P (eν )P = ηµν                   (C7)
+                         P                                                                                      Z x̄0F
+                                                                                                     1
+by construction of the orthonormal tetrad (note that this                            x (P ) = x̄0F +
+                                                                                       0
+                                                                                                                         h00 (0, τ )dτ .   (C15)
+holds for any velocity vi at order v), we obtain                                                            2    0
+
+                         ∂xα ∂xβ                                          The Christoffel symbols are given by
+     F
+    gµν (xF ) = gαβ (x(xF ))
+                         ∂xµF ∂xνF                                                                1 µ
+                                                                                        Γµij =      h i,j + hµj,i − hij ,µ ,
+                                                                                                                          
+                                              β      γ j                                                                                   (C16)
+     = ηµν + ∂γ gαβ − 2gλβ Γλαγ (e(µ )α
+                              
+                                      P (eν) )P (ej )P xF                                         2
+       + O(x2F ).                                                  (C8)   where indices are raised and lowered with ηµν . Thus,
+Assuming that we have a metric connection so that                                                 Z x̄0F
+                                                                                              1
+              ∇γ gαβ = ∂γ gαβ − 2Γλγ(α gλβ) = 0,                   (C9)   x0 (x̄α       0
+                                                                                F ) = x̄F +                h00 (τ )dτ + (vi + h0i )x̄iF
+                                                                                              2    0
+                                                                                           1 0
+we see that the order xjF correction to the metric van-                                      h i,j + h0j,i − h0ij x̄iF x̄jF
+                                                                                                                  
+                                                                                      −
+ishes.                                                                                     4
+                                                                                                Z 0
+   So far, we have not used the condition that the central                              0     1 x̄F
+                                                                                    = x̄F +          h00 (τ )dτ + (vi + h0i )x̄iF
+curve whose tangent vector is (e0 )µ is a geodesic. How-                                      2 0
+ever, if we want the metric in FNC to be of the form                                       1
+                                                                                             h0i,j + h0j,i + h0ij x̄iF x̄jF
+                                                                                                                  
+Eq. (C1) at more than just one point along the central                                 +                                              (C17)
+                                                                                           4
+curve, we clearly need at lowest order                                                        1 k i      1 k
+                                                                                                           h                       i
+                                                                          xk (x̄α        k
+                                                                                F ) = P − h i x̄F −          h i,j + hkj,i − hij ,k x̄iF x̄jF .
+            (e0 )γ ∇γ gαβ (eµ )α (eν )β P = 0.
+                                      
+                                                    (C10)                                     2          4
+                                                                                                                                      (C18)
+This in particular implies
+                                                                          Here all terms linear in perturbations, namely hµν and
+                       (e0 )γ ∇γ (e0 )µ = 0                       (C11)
+                                                                          v i , should be evaluated along the central geodesic P µ .
+along the curve, which is precisely the condition for the                 For x̄0F 6= τF , the spatial position of the geodesic differs
+central curve to be a geodesic.                                           from the origin in the xµ coordinate system by an amount
+                                                                                                                              19
+
+∆x0F v i , which is linear in perturbations (we will shortly         Here, Sµνij in general depends on the affine parameter
+find v i from the geodesic equation). Therefore, up to               along the central geodesic, i.e. the Fermi-frame time coor-
+terms quadratic in metric perturbations, we can evaluate             dinate tF . Let us consider a general inertial frame {x0µ }
+hµν and v i at the origin of the FNC x̄iF = P̄ i (x0F ∗ ) ≡ 0.       constructed around point P . Without loss of generality,
+   At linear order in h, the inverse transformation is very          we let P be at the origin of both the {x0µ } and {xµF }
+easily derived:                                                      coordinate systems. The requirement that {x0µ } be in-
+                                                                                        0
+                      Z 0                                            ertial, i.e. that gµν  = ηµν at P and that ∂α0 gµν
+                                                                                                                      0
+                                                                                                                         = 0 at
+                    1 x                                              P , restricts the relation between the coordinates to be at
+  x̄0F (xα ) = x0 −         h00 (τ )dτ − (vi + h0i )xi
+                    2 0                                              least of cubic order:
+                  1                                                                   1 α
+                     h0i,j + h0j,i + h0ij xi xj
+                                          
+               −                                            (C19)            x0α = xα          β γ δ        4
+                  4                                                                 F + C βγδ xF xF xF + O(xF )
+                                                                                       3
+                    1          1 kh                       i
+  x̄kF (xα ) = xk + hki xi +        h i,j + hkj,i − hij ,k xi xj .           xα     0α 1 α     0β 0γ 0δ      04
+                    2          4                                               F = x − C βγδ x x x + O(x ).                 (D2)
+                                                            (C20)                      3
+                                                                     Here,
+Note that when h0i 6= 0 there is no solution in which
+the observer is at rest. We now focus on this case now,                                             ∂ 3 x0α
+where we can set hij = h00 = 0, since their effect is                                  C αβγδ =                    ,        (D3)
+                                                                                                  ∂xβF xγF xδF P
+simply additive and was considered above. For hi0 6= 0,
+one needs to know the relation between v i and h0i that is           which implies
+enforced by the geodesic equation for P. Assuming as we
+did previously that the velocity v i = ∂P i /∂x0 is of the                    C αβγδ = C α(βγ)δ = C αβ(γδ) = C α(βγδ) ,     (D4)
+same order as h0i , the geodesic equations at linear order
+in perturbations in global coordinates are given by                  i.e. the last equality states that C αβγδ = C αδγβ . The
+      2                  2           0 2                       metric in the primed frame then becomes to order x02 :
+    ∂      0             ∂      i    i   ∂P
+          P = 0,               P + Γ00            = 0,                         0
+                                                                                  = ηµν + Sµνγδ − 2C(µν)γδ x0γ x0δ .
+                                                                                                           
+   ∂x0                  ∂x0              ∂x0                                 gµν                                          (D5)
+where we used the fact that Γµνσ is at least linear in met-          By assumption, Sµνγδ obeys the “FNC condition”
+ric perturbations. The first equation tells us that proper
+time coincides with the global time coordinate at this or-                              Sµν0δ = 0 = Sµνγ0 .                 (D6)
+der, up to two arbitrary integration constants, which we                                               0
+fix by choosing P 0 = x0 . This is no surprise since we are          Imposing the same restriction on gµν leads to the condi-
+assuming h00 = 0. Then, from the second equation, we                 tion
+find v i = ∂P i /∂x0 = −h0i , where we have set another in-
+                                                                                      C(µν)0δ = 0 = C(µν)γ0 .               (D7)
+tegration constant to zero following the assumption that
+∂0 P i is linear in h0i . Specifically, for x̄0F close to τF , we    Using the symmetry properties Eq. (D4), we obtain
+have
+                                                                                             C(µ0)γδ = 0.                   (D8)
+                   xi (P ) = v i (x̄0F − τF ),             (C21)
+so that to leading order                                             This says that there is no freedom in the order O(x2F ) cor-
+                                                                                                                          F
+                                                                     rections to the Fermi-frame metric components g00       and
+                                        1 k i                         F
+                                                                     g0i for coordinates satisfying the condition Eq. (D1) (but
+     xk (x̄α      k 0              k
+           F ) = v (x̄F − τF ) + x̄F − h i x̄F
+                                        2                            see below). However, there is some freedom in choosing
+                    1h k                     i                                          F
+                                                                     the spatial part gij , since a non-zero Cijkl is allowed by
+                 −     h i,j + h j,i − hij ,k x̄iF x̄jF
+                                k
+                                                           (C22)
+                    4                                                Eq. (D1).
+                                       1                               Finally, there is an additional freedom in the choice of
+     x̄F (x ) = x − v k (x0 − τF ) + hki xi
+       k   α      k
+                                       2                             coordinates which does not affect the metric at order x2F .
+                    1h k                     i
+                                                                     Namely, we can choose C[0µ]ij 6= 0. Specifically,
+                 +     h i,j + h j,i − hij ,k xi xj .
+                                k
+                                                           (C23)
+                    4
+                                                                                     C0kij = −Ck0ij = 3αk Aij ,             (D9)
+
+      Appendix D: Uniqueness of Fermi Normal                         where we have introduced a 3-vector αk and a sym-
+                   Coordinates                                       metric 3-tensor Aij . By construction, C(0µ)γδ = 0.
+                                                                     This corresponds to a coordinate transform of (note that
+   In this section we investigate what residual coordinate           C 0kij = −αk Aij )
+freedom remains when requiring that the metric be of
+“FNC form”:                                                                           x00 = x0F − αk xkF Aij xiF xjF
+                  F
+                 gµν = ηµν + Sµνij xiF xjF .                (D1)                      x0i = xiF − αi x0F Alj xlF xjF .    (D10)
+                                                                                                                           20
+
+In other words, this coordinate transform is a spatially        which vanishes quadratically on the central geodesic.
+location-dependent Lorentz boost with a velocity given          This type of coordinate transform leaves the Fermi frame
+by                                                              metric entirely invariant at order x2F .
+
+                v k (xlF ) = αk Aij xiF xjF ,         (D11)
+
+
+
+
+ [1] N. Dalal, O. Doré, D. Huterer, and A. Shirokov, Phys.          (2012), 1212.0868.
+     Rev. D 77, 123514 (2008), 0710.4560.                       [29] F. Schmidt, ArXiv e-prints (2013), 1304.1817.
+ [2] S. Matarrese and L. Verde, Astrophys. J. Lett. 677, L77    [30] V. Desjacques, D. Jeong, and F. Schmidt, Phys. Rev. D
+     (2008), 0801.4826.                                              84, 063512 (2011), 1105.3628.
+ [3] F. Schmidt and M. Kamionkowski, Phys. Rev. D 82,           [31] R. Scoccimarro, L. Hui, M. Manera, and K. C. Chan,
+     103002 (2010), 1008.0638.                                       Phys. Rev. D 85, 083002 (2012), 1108.5512.
+ [4] J. Maldacena, Journal of High Energy Physics 5, 013        [32] F. Schmidt, ArXiv e-prints (2013), 1304.1817.
+     (2003), arXiv:astro-ph/0210603.                            [33] S. Endlich, A. Nicolis, and J. Wang, ArXiv e-prints
+ [5] F. K. Manasse and C. W. Misner, Journal of Mathemat-            (2012), 1210.0569.
+     ical Physics 4, 735 (1963).                                [34] J. Yoo, A. L. Fitzpatrick, and M. Zaldarriaga, Phys. Rev.
+ [6] F. Schmidt and D. Jeong, Phys. Rev. D 86, 083527                D 80, 083514 (2009), 0907.0707.
+     (2012), 1204.3625.                                         [35] A. Challinor and A. Lewis, ArXiv e-prints (2011),
+ [7] T. Baldauf, U. Seljak, L. Senatore, and M. Zaldarriaga,         1105.5292.
+     JCAP 10, 031 (2011), 1106.5507.                            [36] C. Bonvin and R. Durrer, ArXiv e-prints (2011),
+ [8] P. Creminelli, J. Noreña, and M. Simonović, JCAP 7,           1105.5280.
+     052 (2012), 1203.4595.                                     [37] D. Jeong, F. Schmidt, and C. M. Hirata, Phys. Rev. D
+ [9] L. Senatore and M. Zaldarriaga (2012), 1210.6048.               85, 023504 (2012), 1107.5427.
+[10] L. Senatore and M. Zaldarriaga, JCAP 1208, 001 (2012),     [38] F. Schmidt and D. Jeong, Phys. Rev. D 86, 083513
+     1203.6884.                                                      (2012), 1205.1514.
+[11] P. Creminelli and M. Zaldarriaga, Phys. Rev. D 70,         [39] N. Kaiser and A. Jaffe, Astrophys. J. 484, 545 (1997),
+     083532 (2004), arXiv:astro-ph/0405428.                          arXiv:astro-ph/9609043.
+[12] L. Boubekeur, P. Creminelli, G. D’Amico, J. Noreña, and   [40] S. Dodelson, E. Rozo, and A. Stebbins, Physical Review
+     F. Vernizzi, JCAP 8, 029 (2009), 0906.0980.                     Letters 91, 021301 (2003), arXiv:astro-ph/0301177.
+[13] P. Creminelli, C. Pitrou, and F. Vernizzi, JCAP 11, 025    [41] X. Chen, R. Easther, and E. A. Lim, JCAP 0706, 023
+     (2011), 1109.1822.                                              (2007), astro-ph/0611645.
+[14] N. Bartolo, S. Matarrese, and A. Riotto, JCAP 1202,        [42] X. Chen, R. Easther, and E. A. Lim, JCAP 0804, 010
+     017 (2012), 1109.2043.                                          (2008), 0801.3295.
+[15] A. Lewis, JCAP 1206, 023 (2012), 1204.5018.                [43] R. Flauger and E. Pajer, JCAP 1101, 017 (2011),
+[16] D. Jeong and F. Schmidt, ArXiv e-prints (2013),                 1002.0833.
+     1305.1299.                                                 [44] L. Leblond and E. Pajer, JCAP 1101, 035 (2011),
+[17] K. W. Masui and U.-L. Pen, Physical Review Letters              1010.4565.
+     105, 161302 (2010), 1006.4181.                             [45] S. Hannestad, T. Haugbolle, P. R. Jarnhus, and M. S.
+[18] S. B. Giddings and M. S. Sloth, JCAP 1, 023 (2011),             Sloth, JCAP 1006, 001 (2010), 0912.3527.
+     1005.1056.                                                 [46] E. Pajer and M. Peloso (2013), to appear.
+[19] S. B. Giddings and M. S. Sloth, Phys. Rev. D 84, 063528    [47] L. McAllister, E. Silverstein, and A. Westphal, Phys.Rev.
+     (2011), 1104.0002.                                              D82, 046003 (2010), 0808.0706.
+[20] D. Jeong and M. Kamionkowski, Physical Review Letters      [48] R. Flauger, L. McAllister, E. Pajer, A. Westphal, and
+     108, 251301 (2012), 1203.0302.                                  G. Xu, JCAP 1006, 009 (2010), 0907.2916.
+[21] T. Tanaka and Y. Urakawa, JCAP 1105, 014 (2011),           [49] M. Berg, E. Pajer, and S. Sjors, Phys.Rev. D81, 103535
+     1103.1251.                                                      (2010), 0912.1341.
+[22] M. H. Namjoo, H. Firouzjahi, and M. Sasaki, Euro-          [50] M. Aich, D. K. Hazra, L. Sriramkumar, and
+     phys.Lett. 101, 39001 (2013), 1210.3692.                        T. Souradeep, Phys. Rev. D87, 083526 (2013),
+[23] X. Chen, H. Firouzjahi, M. H. Namjoo, and M. Sasaki             1106.2798.
+     (2013), 1301.5699.                                         [51] H. Peiris, R. Easther, and R. Flauger (2013), 1303.2616.
+[24] P. Creminelli, G. D’Amico, M. Musso, and J. Noreña,       [52] P. Creminelli, G. D’Amico, M. Musso, and J. Norena,
+     JCAP 11, 038 (2011), 1106.1462.                                 JCAP 1111, 038 (2011), 1106.1462.
+[25] R. Flauger, D. Green, and R. A. Porto, ArXiv e-prints      [53] F.-Y. Cyr-Racine and F. Schmidt, Phys.Rev. D84,
+     (2013), 1303.1430.                                              083505 (2011), 1106.2806.
+[26] Planck Collaboration, P. A. R. Ade, N. Aghanim,            [54] W. H. Kinney, Phys.Rev. D72, 023515 (2005), gr-
+     C. Armitage-Caplan, M. Arnaud, M. Ashdown, F. Atrio-            qc/0503017.
+     Barandela, J. Aumont, C. Baccigalupi, A. J. Banday,        [55] P. Creminelli, J. Norena, M. Pena, and M. Simonovic,
+     et al., ArXiv e-prints (2013), 1303.5079.                       JCAP 1211, 032 (2012), 1206.1083.
+[27] F. Schmidt and L. Hui, ArXiv e-prints (2012), 1210.2965.   [56] S. Weinberg (2008).
+[28] F. Schmidt, D. Jeong, and V. Desjacques, ArXiv e-prints
+

@@ -1,0 +1,896 @@
+                                                       Second-order gravitational effects of local inhomogeneities
+                                                      on CMB anisotropies in nonzero-Λ flat cosmological models
+                                                                                             Kenji Tomita
+                                                       Yukawa Institute for Theoretical Physics, Kyoto University, Kyoto 606-8502, Japan
+                                                                                      (Dated: July 6, 2018)
+                                                  Nonlinear gravitational effects of large-scale local inhomogeneities on Cosmic Microwave Back-
+                                                ground (CMB) anisotropies are studied, based on the relativistic second-order theory of pertur-
+                                                bations in nonzero-Λ flat cosmological models, which has been analytically derived by the present
+                                                author, and on the second-order formula of CMB anisotropies derived by Mollerach and Matar-
+                                                rese. In this paper we derive the components of the CMB anisotropy power spectra in the range of
+                                                l = 1 − 22 which are caused by asymmetric local inhomogeneities on scales of 300 Mpc. Using our
+                                                results it is found that there is a possibility to explain the small north-south asymmetry of CMB
+                                                anisotropies which has recently been observed.
+arXiv:astro-ph/0505157v6 6 Jan 2006
+
+
+
+
+                                                PACS numbers: 98.80.-k, 98.70.Vc, 04.25.Nx
+
+
+
+                                                                                     I.   INTRODUCTION
+
+                                         In most studies of Cosmic Microwave Background (CMB) anisotropies, the comparison between observed and
+                                      theoretical quantities have so far been done, assuming the linear approximation for cosmological perturbations.
+                                      It seems to be successful enough to determine the cosmological parameters [1, 2, 3]. The present state of
+                                      our universe is, however, locally complicated and associated with nonlinear behavior on various scales, and
+                                      so the observed quantities of CMB anisotropies may include some small effects caused by large-scale local
+                                      inhomogeneities through nonlinear process. Recently it has been reported by Eriksen et al.[4, 5], Hansen et
+                                      al.[6, 7, 8], Vielva et al.[9] and Park[10] that there is a non-trivial north-south asymmetry in various quantities
+                                      about CMB anisotropies. These observational results may suggest the existence of the above effect.
+                                         In this paper we study these nonlinear effects of large-scale local inhomogeneities on CMB anisotropies, based
+                                      on the relativistic second-order theory of cosmological perturbations, which we have recently derived[11] and on
+                                      Mollerach and Matarrese’s second-order formula of CMB anisotropies[12]. In Sec. II, we show the second-order
+                                      perturbations in nonzero-Λ flat cosmological models and the corresponding CMB anisotropies. In Sec. III,
+                                      we derive the expressions for the second-order power (∆Cl ) of CMB anisotropies, assuming a dipole form of
+                                      local inhomogeneities. In Sec. IV, we derive numerically the first-order and second-order anisotropy power
+                                      spectra, and consider the condition that the local inhomogeneities can cause the observed asymmetry of the
+                                      CMB anisotropy, assuming four simple model types of the radial dependence in local inhomogeneities. It is
+                                      found that there is a possibility that the observed decrease of low multipoles of CMB anisotropy[13, 14] also
+                                      may be explained together with the above asymmetry. The derivation of main equations in Sec. II and III are
+                                      shown in Appendix. Concluding remarks follow in Section V.
+
+
+                                                      II.   SECOND-ORDER PERTURBATIONS AND CMB ANISOTROPIES
+
+                                       First we review the background spacetime and the perturbations which were derived in the previous paper.
+                                      The background flat model with dust matter is expressed as
+                                                                         ds2 = gµν dxµ dxν = a2 (η)[−dη 2 + δij dxi dxj ],                              (2.1)
+                                      where the Greek and Latin letters denote 0, 1, 2, 3 and 1, 2, 3, respectively, and δij (= δji = δ ij ) are the Kronecker
+                                      delta. The conformal time η(= x0 ) is related to the cosmic time t by dt = a(η)dη. The matter density ρ and
+                                      the scale factor a have the relations
+                                                                            ρa2 = 3(a′ /a)2 − Λa2 ,   and ρa3 = ρ0 ,                                    (2.2)
+                                      where a prime denotes ∂/∂η, Λ is the cosmological constant, ρ0 is an integration constant and the units
+                                      8πG = c = 1 are used.
+                                        The first-order and second-order metric perturbations δ1 gµν (≡ hµν ) and δ2 gµν (≡ ℓµν ), respectively, were
+                                      derived explicitly by imposing the synchronous coordinate condition:
+                                                                               h00 = h0i = 0     and ℓ00 = ℓ0i = 0.                                     (2.3)
+                                                                                                                        2
+
+Here we show their expressions only in the growing mode:
+
+                                     hji = P (η)F,ij ,
+                                                                        |j
+                                     ℓji = P (η)Lji + P 2 (η)Mij + Q(η)N|i + Cij ,                                   (2.4)
+
+                                                                                                      |j
+where F is an arbitrary potential function of spatial coordinates x1 , x2 and x3 , hji = δ jl hli , N|i = δ jl N|li = N,ij
+and P (η) and Q(η) satisfy
+
+                                                   2a′ ′
+                                             P ′′ +    P − 1 = 0,
+                                                    a′
+                                                   2a           5
+                                             Q′′ +     Q′ = P − (P ′ )2 .                                            (2.5)
+                                                    a           2
+The three-dimensional covariant derivative |i are defined in the space with metric dl2 = δij dxi dxj and their
+suffices are raised and lowered by use of δij . The functions Lji and Mij are defined by
+                                1h                         1          i
+                            Lji =  −3F,i F,j − 2F · F,ij + δij F,l F,l ,
+                                2 n                        2
+                            j   1                                  h                  io
+                           Mi =     19F,il F,jl − 12F,ij ∆F − 3δij F,kl F,kl − (∆F )2                                (2.6)
+                                28
+and N is defined by
+                                                       1h                   i
+                                            ∆N =          (∆F )2 − F,kl F,kl .                                       (2.7)
+                                                      28
+The last term Cil satisfies the wave equation
+                                              3              1h  5       i
+                                     ✷Cij =      (P/a)2 Gji + P − (P ′ )2 G̃ji ,                                     (2.8)
+                                              14             7   2
+where Gji and G̃ji are second-order traceless and transverse functions of spatial coordinates, and the operator
+✷ is defined by
+                                                                  2a′         
+                                 ✷φ ≡ g µν φ;µν = −a−2 ∂ 2 /∂η 2 +     ∂/∂η − ∆ φ.                                   (2.9)
+                                                                    a
+
+So Cij represents the second-order gravitational waves caused by the first-order density perturbations.
+  The velocity perturbations δ1 uµ and δ2 uµ vanish, i.e. δ1 u0 = δ1 ui = 0 and δ2 u0 = δ2 ui = 0, and the
+density perturbations are
+                          1  a′ ′       
+                 δ ρ/ρ =         P   − 1   ∆F,
+                 1       ρa2 a
+                                         ′
+                           1  n 1      a                            1
+                 δ ρ/ρ =          (1 − P ′ )(3F,l F,l + 8F ∆F ) + P [(∆F )2 + F,kl F,kl ]
+                 2       2ρa2 2         a                           2
+                         1 h ′ 2 2 a′ ′ i                           1 a′                              o
+                       +    (P ) −        Q [(∆F )2 − F,kl F,kl ] −      P P ′ [4F,kl F,kl + 3(∆F )2 ] .           (2.10)
+                         4           7a                             7a
+  Next let us consider the CMB temperature T = T (0) (1 + δT /T ), which T (0) is the background temperature
+                                                                                        (0)
+and δT /T (= δ1 T /T + δ2 T /T ) is the perturbations. The present temperature To is related to the emitted
+                             (0)                                 (0)                (0)
+background temperature Te at the decoupling epoch by Te = (1 + ze )To , the temperature perturbation
+τ ≡ (δT /T )e at the decoupling epoch is determined by the physical state before that epoch , and the present
+temperature perturbations (δT /T )o is related to (δT /T )e by the gravitational perturbations along the light
+ray from the epoch to the present epoch. The light ray is described using the background wave vector k µ (≡
+dxµ /dλ), where λ is the affine parameter, and its component is k (0)µ = (1, −ei ), and the ray is given by
+x(0)µ = [λ, (λ0 − λ)ei ], where ei is the directional unit vector.
+  The first-order temperature perturbation is
+
+                                                       1 λe
+                                                        Z
+                                         δ T /T = τ +         dλP ′ (η)F,ij ei ej .                     (2.11)
+                                         1             2 λo
+                                                                                                                 3
+
+Using the relation dP/dλ = P ′ and dF/dλ = −F,i ei , this equation is expressed as
+
+                                                    δ T /T = Θ1 + Θ2                                        (2.12)
+                                                    1
+
+where
+                                                 1
+                                        Θ1 ≡ τ − [(P ′ F,i )e − (P ′ F,i )o ]ei ,
+                                               Z 2
+                                             1 λe
+                                        Θ2 ≡       dλP ′′ (η)F,i ei .                                       (2.13)
+                                             2 λo
+
+Θ1 and Θ2 represent the intrinsic and Sachs-Wolfe effects, respectively. The latter can be divided into the
+ordinary Sachs-Wolfe effect Θsac and the Integral Sachs-Wolfe effect Θisw , where
+                                                  1
+                                            Θsac ≡  [(P ′′ F )e − (P ′′ F )o ],
+                                                  2Z
+                                                  1 λe
+                                           Θisw ≡          dλP ′′′ (η)F.                                    (2.14)
+                                                  2 λo
+
+The second-order temperature perturbation is
+                                    h1                                      Z λe
+                                                          (1) ′
+                                                   i
+                                                                        i
+                    δ T /T = I  (λ
+                              1 e  )   I (λ
+                                        1 e )  − τ   − [A e     + τ,i e   ]      dλA(1)
+                    2                2
+                             Z λe n                                       Z λλo
+                                       1 (2) ′      (1) (1) ′     (1) ′′
+                                                                                           o ∂τ
+                           −       dλ A        +A A           −A               dλ̄A(1) (λ̄) + i d(1)i ,     (2.15)
+                               λo      2                                    λo               ∂d
+
+where (η, xi ) = (λ, λo − λ) in the integrands and
+
+                                               1 λe
+                                                 Z
+                                  I1 (λe ) = −      dλP ′ F,ij ei ej ,
+                                               2 λo
+                                               1
+                                    A(1) = − P F,ij ei ej ,
+                                               2
+                                               1
+                                    A(2) = − [P Lji + P 2 Mij + QN,ij + Cij ]ei ej .                        (2.16)
+                                               2
+  Now let us assume an appropriate form of F as follows, to represent a situation including local inhomogeneities:
+
+                                               F (x) = FP (x) + FL (x),                                     (2.17)
+
+where the part of primordial density perturbations (FP ) and the part of local homogeneities (FL ) are expressed
+as
+                                                    Z
+                                            FP =      dkα(k)eikx ,
+                                                FL = R(r)Ylm (θ, φ).                                        (2.18)
+
+In the former equation, α(k) is a random variable, Ylm (θ, φ) is spherical harmonics, and (r, θ, φ) is the polar
+coordinates, i.e. r2 = (x1 )2 + (x2 )2 + (x3 )2 . For the above F (x), we have the first-order density perturbation
+
+                                    1  a′ ′     
+                         δ ρ/ρ =     2
+                                          P − 1 (∆FP + ∆FL ),
+                         1         ρa a
+                                    1  a′ ′     h Z                                i
+                                 =   2
+                                          P  − 1   − dkα(k)k 2 eikx + R̃(r)Ylm (θ, φ) ,                     (2.19)
+                                   ρa a
+where
+                                                    1 d 2            l(l + 1)
+                                          R̃(r) =         (r R,r ) −          R                             (2.20)
+                                                    r2 dr               r2
+with R,r ≡ dR/dr.
+                                                                                                                                    4
+
+  The part of ∆FP is for the ordinary primordial perturbations, so that by the averaging process, we have
+
+                                               hα(k)α(k′ )i = (2π)−2 PF (k)δ(k + k′ ),                                          (2.21)
+
+with
+
+                                                 PF (k) = PF 0 k −3 (k/k0 )n−1 Ts2 (k),                                         (2.22)
+
+where Ts (k) is the matter transfer function [15] and PF 0 is the normalization constant. Then the average value
+of (δ1 ρ/ρ)2 is
+                               h 1  a′         i2 h       Z                            i
+                         2                ′              −2                4           2
+                 h(δ ρ/ρ) i =           P   − 1      (2π)       dkP F (k)k   + (∆F L )
+                   1            ρa2 a
+                               h 1  a′         i2 h             Z                                  i
+                                          ′              −2                     n−1 2              2
+                            =           P   − 1      (2π)   P F 0   dkk(k/k  0 )   T s (k) + (∆FL )   .   (2.23)
+                                ρa2 a
+The part of local inhomogeneities represents a realization of cosmic variance (in our neighborhood) in primordial
+perturbations with small l. In order to consider directly the north-south asymmetry, we assume in the following
+a simplest case with l = 1 and m = 0, i.e. FL = R(r) cos θ. As the observational background of this dependence,
+there is an asymmetric distribution of galaxies within 200 − 300 Mpc around us. According to the studies of
+galaxy number counts in the Sloan Digital Sky Survey (Yasuda et al.[16]), the galactic number density in the
+stripes toward the Southern Galactic Cap is larger than that in the stripes toward Northern Galactic Cap. Such
+an asymmetry of matter distribution may extend to the region on these scales.
+   Then the first-order temperature perturbations are
+
+                                                        δ T /T = ΘP + ΘL cos θ,                                                 (2.24)
+                                                        1
+
+where
+                                                              Z λe
+                                                  1
+                                                    Z
+                                           ΘP = −     dkα(k)       dλP ′ (η)(kµ)2 eikx ,
+                                                  2            λo
+                                                1 λe
+                                                  Z
+                                           ΘL =       dλP ′ (η)R,rr ,                                                           (2.25)
+                                                2 λo
+
+and τ in Eq.(2.11) was here neglected, because we pay attentions to the Sachs-Wolfe effect in the low-l cases
+such as l < 30.
+  The former equation can be rewritten as
+                     Z         n 1                            1X                             o
+                ΘP = dkα(k) − [(P ′′ )o + ik(P ′ )o P1 (µ)] +     (−i)l (2l + 1)ΘP (l) Pl (µ) ,        (2.26)
+                                   2                          2
+                                                                                    l
+
+where
+                  Z λe
+       ΘP (l) =          dλP ′′′ (η)jl (kr) − {k(P ′ )e (2l + 1)−1 [(l + 1)jl+1 (kre ) − ljl−1 (kre )] + jl (kre )(P ′′ )e }.   (2.27)
+                   λo
+
+In these equations, we have η = λ and r = λo − λ. In the derivation of Eq.(2.27), we used the relations[17, 18]
+                                                 X
+                                  eikx = eikrµ =   (−i)l (2l + 1)jl (kr)Pl (µ)                           (2.28)
+                                                                l
+
+and
+
+                                           (2l + 1)µPl (µ) = (l + 1)Pl+1 (µ) + lPl−1 (µ),                                       (2.29)
+
+where µ ≡ cos θk and θk is the angle between the vectors k i and ei . In the above equation for ΘL , θ is the angle
+between x3 -axis and the vector ei , i.e. e1 = sin θ cos φ, e2 = sin θ sin φ, e3 = cos θ.
+  The second-order temperature perturbation consists of three components:
+
+                                                    δ T /T = ΘLP + ΘLL + ΘP P ,                                                 (2.30)
+                                                    2
+                                                                                                                          5
+
+where ΘLP is a component including the product of primordial perturbations and local inhomogeneities, ΘLL is
+a component including only the product of local inhomogeneities, and ΘP P is a component including only the
+product of primordial perturbations. In this paper we are concerned mainly with studying how CMB anisotropies
+are influenced by local inhomogeneities, and ΘP P is small enough, compared with ΘP in the first-order. From
+now, therefore, we neglect ΘP P and treat only ΘLL and ΘLP .
+                                                                       |j                           |j
+  In Eq. (2.15) for δ2 T /T , the term with A(2) includes Pij , Mij , N|i and Cij . The terms with N|i and Cij are
+small, compared with the terms with Pij and Mij , because we have Q/P 2 < 10−2 always and the contribution
+of gravitational radiation is very small. So they are neglected in the following.
+   For ΘLL , we obtain from Eq. (2.15)
+                                                           (0)       (2)
+                                                  ΘLL = ΘLL + ΘLL cos2 θ,                                             (2.31)
+
+where
+                                     Z λe
+                       (0)      1                    n    2                                    o
+                     ΘLL =               dλP ′ (η)r−2 R2 + P [13(R,r )2 + 12R,r R/r − 6(R/r)2 ] ,                     (2.32)
+                                16    λo                  7
+
+
+                    1  λe             2 1 Z λe                     1 λe
+                        Z                                             Z               Z λ
+            (2)
+          ΘLL =              dλP ′ R,rr −         dλP P ′ (R,rr )2 +      dλP ′′ R,rr     dλ̄P (λ̄)R,rr (λ̄)
+                    8 λo                     4 λo                    4 λo              λo
+                    1 λe          n 5                  1
+                       Z
+                  +         dλP ′ − (R,r )2 − RR,rr − (R/r)2
+                    4 λo             4                 4
+                     1                                                                            o
+                  +     P [7(R,rr ) − 7(R,r /r) − 6r R,rr (R,r − R/r2 ) − 6r−3 R(2R,r − R/r)] .
+                                   2           2    −1
+                                                                                                                      (2.33)
+                    14
+  For ΘLP , we obtain from Eq.(A23) in Appendix using the relation (2.29) and performing partial integrations
+
+                                          1
+                                            Z
+                                                                       (l)
+                                                     X
+                            ΘLP / cos θ =     dkα(k)   (−i)l (2l + 1)HLP Pl (µ),                       (2.34)
+                                          4
+                                                                 l
+
+where
+                      h                    Z λe                i Z λe
+             (l)              ′′                     ′′′
+            HLP     = −(P )e jl (kre ) +         dλP jl (kr) ×           dλ̄P ′ (λ̄)R,r (λ̄)
+                                             λo                      λo
+                      Z λe           n
+                                         ′ ′′             ′′′           5 d
+                    −       dλjl (kr) P P R,rr + (P )e P R,rr +              (P ′ R,r )
+                        λo                                              2 dλ
+                                  1 d2
+                    + P ′ R,rr +        [7P ′ R + P P ′ (4R,rr + 9R,r /r − 9R/r2 )]
+                                  7 dλ2
+                      3                                        d2 h ′′ λ
+                                                                       Z                      io
+                             ′ 2                        2
+                    − P P k (R,rr − R,r /r + R/r ) − 2 P                    dλ̄P (λ̄)R,rr (λ̄)
+                      7                                       dλ
+                      Z λe              Z λ                      Z λe λo
+                                 ′′              ′′                                (1)
+                    +       dλP R,rr        dλ̄P (λ̄)jl (kr̄) +       dλR,rr {kjl (kre )[(P ′ )e P ′ + (P )e P ′′ ]
+                         λo                 λo                       λo
+                              (2)
+                    + k 2 jl (kre )(P ′ )e P },                                                                       (2.35)
+
+and we neglected the terms with φk in Eq.(A23) because they vanish in the k integration. Since the primordial
+random perturbations are rotationally symmetric and the local inhomogeneity is assumed to be proportional to
+cos θ, it is reasonable that ΘLP is represented as the product of cos θ and rotationally symmetric perturbations
+(cf. Eq.(2.34). The latter can be expanded using the Legendre polynomials.
+   In the above equations, we used the auxiliary functions defined by
+
+          (1)         1
+         jl (kr) =        [ljl−1 (kr) − (l + 1)jl+1 (kr)],
+                   2l + 1
+          (2)         1 h (2l2 + 2l − 1)(2l + 1)             l(l − 1)             (l + 1)(l + 2)          i
+         jl (kr) =                                 jl (kr) −          jl−2 (kr) −                jl+2 (kr) .          (2.36)
+                   2l + 1      (2l − 1)(2l + 3)               2l − 1                  2l + 3
+                                                                                                                                                            6
+
+                              III.   POWER SPECTRA OF CMB ANISOTROPIES
+
+  The CMB anisotropies in the present analysis include the contributions from primordial perturbations and
+local homogeneities, and only the former perturbations are regarded as statistically random quantities. In order
+to derive the power spectra, therefore, we take the statistical average hi only for the contribution from the
+primordial perturbations, and h(δT /T )2 i is expressed as
+
+                                       h(δT /T )2 i = h(δ T /T )2 i + 2hδ T /T δ T /T i,                                                                 (3.1)
+                                                           1                          1            2
+
+where we took first two terms and neglected higher order terms. For the first-order anisotropies, we have
+
+                                            h(δ T /T )2 i = h(ΘP )2 i + (ΘL )2 cos2 θ,                                                                   (3.2)
+                                              1
+
+where ΘL is defined in Eq.(2.25) and
+                                                                            X 2l + 1
+                                                  (T0 )2 h(ΘP )2 i =                            Cl .                                                     (3.3)
+                                                                                      4π
+                                                                             l
+
+The power spectra Cl are
+                                                           Z
+                                                                                           (l)
+                                             Cl = (T0 )2       dkk 2 PF (k)|HP (k)|2 ,                                                                   (3.4)
+
+where T0 is the present CMB temperature and
+                                                                                                             Z λe
+                       (0)
+                     HP (k) = −(P ′′ )o − k(P ′ )e j1 (kre ) − (P ′′ )e j0 (kre ) +                                 dλP ′′′ j0 (kr),
+                                                                                                              λo
+                                                                                                               Z λe
+                      (1)        1                     (1)
+                     HP (k)    = k[(P ′ )o − (P ′ )e ]j1 (kre ) − (P ′′ )e j1 (kre ) +                                   dλP ′′′ j1 (kr).                (3.5)
+                                 3                                                                                 λo
+
+For l ≥ 2, we have
+                                                                                                 Z λe
+                              (l)               (1)
+                             HP (k) = k(P ′ )e jl (kre ) − (P ′′ )e jl (kre ) +                              dλP ′′′ jl (kr).                            (3.6)
+                                                                                                   λo
+                                                                                                                                       R1
+In the derivation of Cl , we used Eq.(2.21) for hα(k)α∗ (k′ )i, and the formulas for Pl (µ) :                                           −1
+                                                                                                                                             Pl (µ)Pl′ (µ)dµ =
+2/(2l + 1), 0 for l = l′ , l 6= l′ , respectively.
+  For the second term of Eq. (3.1), we have
+
+                                       hδ T /T δ T /T i = hΘP ΘLP i + ΘL ΘLL cos θ,                                                                      (3.7)
+                                        1         2
+
+where
+                                                               (0)                        (2)
+                                             ΘLL cos θ = ΘLL cos θ + ΘLL cos3 θ                                                                          (3.8)
+
+and
+                                               1
+                                                                                      Z
+                                                                                                                        (l)   (l)
+                                                       X
+                             hΘP ΘLP i/ cos θ = (2π)−1   (2l + 1)                           dkk 2 PF (k)HP HP L .                                        (3.9)
+                                               4
+                                                                   l
+
+If we put hΘP ΘLP i in the form
+                                                                       X 2l + 1
+                                            (T0 )2 hΘP ΘLP i =                            ∆Cl cos θ,                                                   (3.10)
+                                                                                 4π
+                                                                        l
+
+we have
+                                                 1
+                                                               Z
+                                                                                             (l)       (l)
+                                            ∆Cl = (T0 )2           dkk 2 PF (k)HP HP L ,                                                               (3.11)
+                                                 2
+                                                                                                                              7
+
+        (l)
+where HP is expressed by performing the λ differentiation in Eq.(2.35) as
+                        Z λe                                        Z λe                      Z λe
+               (l)
+              HP L =          dλ Φ jl (kr) + [−(P ′′ )e jl (kre ) +        dλP ′′′ jl (kr)] ×      dλ̄P ′ (λ̄)R,r (λ̄)
+                       Zλλo e            Z λ                       Z λλoe                      λo
+                                  ′′             ′′                                     (1)
+                     +        dλP R,rr       dλ̄P (λ̄)jl (kr̄) +          dλR,rr {kjl (kre )[(P ′ )e P ′ + (P )e P ′′ ]
+                          λo                λo                       λo
+                               (2)
+                     + k 2 jl (kre )(P ′ )e P },                                                                          (3.12)
+
+where
+                                          h            1               i      1
+                      Φ ≡ − P P ′′ R,rrr + 2P ′′′ P + P ′ − (P ′′′ )e P R,rr − P ′′ R,r − P ′′′ R
+                                                       2                      2     Z λ
+                            1
+                          − (3P P + P P )(4R,rr + 9R,r /r − 9R/r ) + P ′′′′
+                                   ′ ′′        ′′′                         2
+                                                                                        dλ̄P R,rr
+                            7                                                        λo
+                            2
+                          + [(P ′ )2 + P P ′′ ](4R,rrr + 9R,rr /r − 18R,r /r2 + 18R/r3 )
+                            7
+                            1
+                          − P P ′ (4R,rrrr + 9R,rrr /r − 27R,rr /r2 + 54R,r /r3 − 54R/r4 )
+                            7
+                            3
+                          + P P ′ k 2 (R,rr − R,r /r + R/r2 ).                                                            (3.13)
+                            7
+It is found by numerical calculations that the dominant contribution to ∆Cl comes from the last two terms
+(proportional to P P ′ ) in Φ, especially the terms with highest-order differentiations with respect to r.
+   The total anisotropies in Eq.(3.1) consist of the rotationally symmetric component (h(ΘP )2 i), the asymmetric
+component (hΘP ΘLP i), and the dipole and quadrupole components with (ΘL )2 and ΘL ΘLL . The key point
+in this paper is that the north-south asymmetry affecting the CMB power spectra of l > 2 is caused by the
+component hΘP ΘLP i which is proportional to cos θ.
+
+
+               IV.     SIMPLE MODELS OF LARGE-SCALE LOCAL INHOMOGENEITIES
+
+  In order to study the gravitational influence of local inhomogeneities on CMB, we consider a simple model
+with north-south asymmetry, in which FL (x) is expressed as
+
+                                                      FL (x) = R(r) cos θ.                                                 (4.1)
+
+This corresponds to the case l = 1 and m = 0 in Eq.(2.18). For R, four types of functional forms are considered
+and compared :
+                                                              1
+                                R=    R0 exp[−α(x − 1)2 ],      R0 [1 + cos 2π(x − 1)],
+                                                              2
+                                                                    1
+                                      R0 x2 exp[−α(x − 1)2 ], and R0 x2 [1 + cos 2π(x − 1)]                                (4.2)
+                                                                    2
+in the interval x = [x1 , x2 ] with x ≡ r/rc , where x1 ≡ r1 /rc = 0.5 and x2 ≡ r2 /rc = 1.5. In all types we have
+R = 0 for x > x2 or x < x1 . R0 is the normalization constant and a constant α is chosen as 20. Here a0 rc is
+assumed to be ≈ 300h−1Mpc (H0 = 100h km/s/Mpc). These types are called in the following the Gaussian
+type (G), the sine type (S), the modified Gaussian type (MG), and the modified sine type (MS), respectively.
+In the first two types, R is radially symmetric around the surface x = 1. In the second two types, R has small
+asymmetry around it.
+   First, we derive the first-order CMB anisotropies for comparison. They are calculated using Eq.(3.4). In Table
+I, the behavior of l(l + 1)Cl is shown for n = 0.97. The root mean square (A1 ) of l(l + 1)Cl ξ for l = 2 − 11
+                                        P11
+is 0.172 for n = 0.97, where A1 ≡ { l=2 [l(l + 1)Cl ]2 /10}1/2ξ, ξ ≡ 2π/[PF 0 (T0 )2 ] and T0 is the present CMB
+temperature. The normalization constant PF 0 can be determined as PF 0 = [870(µK)2 /(2.7K)2 ](2π)/A1 =
+2.1 × 10−8 , so that it may be consistent with the observed CMB anisotropy.
+   The first-order anisotropy ΘL due to local inhomogeneities is derived from Eq.(2.25) in the four types and
+the ratios of their values to R0 in the four types are shown in Table II.
+   Next we derive the second-order anisotropy for local inhomogeneities of the above four types, using Eq.(3.11).
+The behavior of ∆Cl is shown in Table I for l = 1 ∼ 22. It is found that ∆Cl change the signs often in this
+interval of l , but their absolute values are comparable and increase slowly with the increase of l. The total
+                                                                                                                     8
+
+
+TABLE I: CMB anisotropy powers l(l + 1)Cl and l(l + 1)∆Cl in the case n = 0.97. The latter is caused by the coupling
+of cosmological perturbations and local inhomogeneities of types G, S, MG and MS. Here ξ ≡ 2π/[PF 0 (T0 )2 ], and PF 0
+and R0 are the normalization factors.
+                                      l(l + 1)Cl ξ     10−3 × 2l(l + 1)∆Cl ξ/R0
+                                  l                      G      S     MG       MS mean
+                                  1      4.550        −1.07 −2.37 −0.99 −1.73 −1.54
+                                  2      0.184        −0.54 −0.61 −0.48 −0.55 −0.54
+                                  3      0.177         0.50 −0.13     0.68 −0.016  0.27
+                                  4      0.170        −0.66 −0.86 −0.11 −0.22 −0.46
+                                  5      0.168         1.88 0.021     1.58 0.084   0.89
+                                  6      0.166         1.69 0.58      2.41   1.65  1.58
+                                  7      0.167         2.26 1.03 −0.031 −0.32      0.74
+                                  8      0.165         2.99 1.26      2.21   0.51  1.74
+                                  9      0.172        −5.32 −3.62 −7.52 −3.93 −5.10
+                                 10      0.173        −1.49 −1.08 −3.44 −3.36 −2.34
+                                 11      0.179        −5.04 1.02 −1.69       3.41 −0.58
+                                 12      0.176        −4.29 −1.79 −3.31      0.43 −2.24
+                                 13      0.191         5.37 3.11 10.26       2.78  5.38
+                                 14      0.191         4.26 2.73      6.15   7.43  5.14
+                                 15      0.203         7.27 −9.40     4.51 −9.52 −1.78
+                                 16      0.197         2.39 3.36      0.40 −0.84   1.33
+                                 17      0.215        −2.04 9.66 −11.56      3.02 −0.23
+                                 18      0.220        −4.90 −2.12 −4.33 −4.31 −3.92
+                                 19      0.230       −19.76 −8.06 −8.44      1.24 −8.76
+                                 20      0.231         2.80 −6.55     3.65   2.13  0.51
+                                 21      0.240        32.68 13.26 35.11 12.92 23.49
+                                 22      0.260         2.49 13.18 −0.79      1.44  4.08
+
+
+TABLE II: CMB anisotropies caused by only local inhomogeneities of types G, S, MG and MS. R0 is the normalization
+factor.
+                    model types       G            S        MG           MS        mean
+                    ΘL /R0           0.75        0.022      0.92         0.23      0.48
+                    ΘLL0 /(R0 )2 −9.1 × 103 −9.1 × 102 −9.1 × 102 −8.7 × 102 −9.0 × 102
+                    ΘLL2 /(R0 )2 2.6 × 104 1.6 × 104 3.1 × 104 2.4 × 104 2.4 × 104
+
+
+power is Cl + 2∆Cl cos θ, and the north-south asymmetry is represented by the factor cos θ in the second term,
+which is positive and negative for the northern and southern hemispheres, respectively.
+   The ratios (A2 /A1 ) are shown in Table III, where A2 is defined as the mean square root (A2 ) of 2l(l + 1)∆Cl ξ
+                               P11
+in l = 2 ∼ 11, that is, A2 ≡ { l=2 [2l(l + 1)∆Cl ]2 /10}1/2 ξ. The dipole component (l = 1) is separately treated
+from the multiple components (l ≥ 2). Here we remark that we have not specified the value of a0 rc yet, and R0
+is arbitrary. From Table III, we find that, as the mean value, we have
+                                                 |R0 | = 7.5 × 10−5 (A2 /A1 ).                                   (4.3)
+
+
+  The second-order anisotropies ΘLL0 /(R0 )2 and ΘLL2 /(R0 )2 are derived using Eqs.(2.32) and (2.33), and
+
+
+TABLE III: Ratios of second-order CMB anisotropies (A2 ) to first-order CMB anisotropies (A1 ). The former is caused by
+the coupling of cosmological perturbations and local inhomogeneities of types G, S, MG and MS. R0 is the normalization
+factor.
+                          model types        G          S         MG          MS      mean
+                         (A2 /A1 )/|R0 | 1.6 × 104 0.81 × 104 1.7 × 104 1.2 × 104 1.3 × 104
+                                                                                                                9
+
+their values in four types are shown in Table II. For the above values of PF 0 and R0 , ΘL , ΘLL0 and ΘLL2 are
+≈ 3.6 × 10−5 (A2 /A1 ), −5.1 × 10−6 (A2 /A1 )2 and 1.2 × 10−3 (A2 /A1 )2 , respectively.
+  In order to examine the significance of R0 given in Eq.(4.3), we consider here the first-order density pertur-
+bation due to local inhomogeneities. It is expressed as
+                                                        1  a′ ′     
+                                         (δ ρ/ρ)L =           P  − 1  R̃ cos θ,                              (4.4)
+                                          1            ρa2 a
+where
+
+                                         R̃ = (rc )−2 [(x2 R,x ),x /x2 − 2R/x2 ].                            (4.5)
+
+The ratio (δM/M ) of perturbed mass (δM ) to background mass (M ) in the interval x = [x1 , x2 ] is defined by
+                          Z x2 Z 1                     n1                    Z 1 o
+                    J ≡           (δ ρ/ρ)L x2 dxdµ/ [(x2 )3 − (x1 )3 ]            dµ
+                          x1   0 1                        3                    0
+                                         a′                                    x2
+                               3                                            Z
+                                               ′               3        3 −1
+                       =                     P   − 1    [(x 2 )  − (x1 ) ]         [(x2 R,x ),x − 2R]dx.     (4.6)
+                         2(ρa2 )0 (rc )2 a            0                       x1
+
+The factor [(a′ /a)P ′ − 1] can be regarded as having the value at present epoch, because the inhomogeneities are
+at the place of z = 0.05 ∼ 0.15, and it is equal to −0.456 for the concordant background model with Ω0 = 0.27
+and Λ0 = 0.73. Moreover, (ρa2 )0 (rc )2 = 3[arc /(c/H0 )]2 , where we have used the unit c = 8πG = 1 in this
+paper. Therefore we have
+                                                             Z x2
+                               J = −7.0(300h−1Mpc/a0 rc )2        [(x2 R,x ),x − 2R]dx,                     (4.7)
+                                                                  x1
+
+where x2 − 1 = −(x1 − 1) = 0.5 and c/H0 = 3000h−1 Mpc. After performing the integration in Eq.(4.7), we
+obtain
+
+                                J = (2.4, 14.0, 13.6, 10.3) R0 (300h−1 Mpc/a0 rc )2 ,                        (4.8)
+
+for types G, S, MG and MS, respectively, and their mean value is J¯ = 10.1 R0 (300h−1Mpc/a0 rc )2 . For R0
+given in Eq.(4.3), J¯ leads to
+
+                             J¯ = 7.6 × 10−4 (A2 /A1 ) (300h−1 Mpc/a0 rc )2 × R0 /|R0 |.                     (4.9)
+
+   On the other hand, the observed value of h(δM/M )2 i1/2 is about 1 on the scale of 8h−1 Mpc and for the power
+spectrum P (k) ∝ k n , we have δM/M ∝ M −(n+3)/6 ∝ r−(n+3)/2 = r−1.985 for n = 0.97. Since we are considering
+a local inhomogeneity included in the sphere of radius 2a0 rc , its scale is regarded as 4ǫa0 rc (≃ 1200ǫh−1Mpc)
+with ǫ ≈ 1, so that the value of δM/M for the inhomogeneity is
+
+             (δM/M )power = (8h−1 /4ǫa0rc )1.985 /b = 4.8 × 10−5 (bǫ1.985 )−1 (300h−1 Mpc/a0 rc )1.985 ,   (4.10)
+                                                     ¯ = (δM/M )power , we obtain from Eqs.(4.9) and (4.10)
+where b is the biasing factor[19, 20]. If we assume |J|
+
+                                 A2 /A1 = 0.063(bǫ1.985)−1 (300h−1 Mpc/a0 rc )0.015 .                      (4.11)
+
+  For this value of A2 /A1 , we have
+
+ |ΘL | = 2.3×10−6/(bǫ1.985 ), ΘLL0 = −2.0×10−8/(bǫ1.985 )2 , ΘLL2 = 4.8×10−6/(bǫ1.985 )2 for n = 0.97, (4.12)
+                                                                              √                       √
+                                                                 compared with C1 /T0 (∼ 5 × 10−5) and C2 /T0 (∼
+neglecting the factor of a0 rc . If bǫ1.985 ∼ 1, these are small,√
+10−5 ). If bǫ1.985 < 0.5, however, ΘLL2 is comparable with C2 /T0 or larger than it.
+   Finally let us compare our above theoretical results with the observed anisotropy spectra by Eriksen et al.[4].
+Here we assume that the matter density perturbations in the Southern and Northern hemispheres are positive
+and negative, respectively, corresponding to the galactic number counts in SDSS[16]. Then we have R0 < 0 in
+order that the directions θ = 0 and π may be in the Galactic North and South, respectively. In our results
+of calculations (from Table I), we find the trend that ∆Cl for l = 2, 3 and 4 are positive for R0 < 0 and ∆Cl
+for l ≥ 5 change their signs in the period of ∆l = 3. This trend seems to be seen in Fig.2 of Eriksen et al.’s
+paper[4]. It is found, moreover, that corresponding to the north-south asymmetry (proportional to cos θ) the
+                                                                                                                10
+
+ratio ∆Cl /Cl seems to be 0.3 ∼ 0.5 by reading the points in Fig. 2 of their paper. From Eq.(4.11) and Eriksen
+et al.’s observational result, accordingly, we obtain the condition bǫ1.985 = 0.1 ∼ 0.2. This condition can be
+satisfied in the reasonable range of b. For instance√we have ǫ = 0.45 ∼ 0.63 for b = 0.5.
+   Under this condition, ΘLL2 is comparable with C2 /T0 , so that the √ measured value of C2 may be disturbed
+by ΘLL2 , because of their similar angular dependence. ΘLL2 and C2 depend on P2 (cos θ) and P2 (cos θk ),
+where θ and θk are the angles between a directional vector e and the x3 -axis and between e and k, respectively
+(cf. Appendix), but both of them may be measured as the quadrupole components. So its measured value may
+have been given a value smaller than its theoretical expected value by the offset effect.
+
+
+                                         V.    CONCLUDING REMARKS
+
+  In this paper we derived the asymmetry of CMB anisotropy powers (proportional to cos θ) with comparatively
+low l using the second-order perturbation theory by assuming the local matter distribution is dipole-like. This
+assumption seems to be rough, but it is consistent with the observed situation that the asymmetry of CMB
+anisotropies disappears when they are averaged in the whole sky and the asymmetry in the distribution of
+galaxies is also disappears similarly in the whole sky, though it has only a small north-south asymmetry. If we
+add a correction term ∝ cos2 θ to FL , more realistic simulations to observed ∆Cl may be obtained, especially
+for l > 20. Moreover, to clarify the relation between the derived asymmetry and non-Gaussianity, it is necessary
+to investigate the multi-point correlations of anisotropies. Detailed analyses on these points are to be done in
+the next step.
+  In our result, ∆Cl /Cl depend not so on the distance to the local inhomogeneity (i.e. the value of a0 rc ), but
+sensitively on bǫ(n+3)/2 . It was found that the behavior of ∆Cl in the case n = 0.90 is not so different from that
+in the case n = 0.97, so the conclusion in our result does not depend on n.
+  The northern and southern hemispheres were assumed here as those in the Galactic coordinate frame. However
+our theory itself does not depend on any coordinate frames and can treat any local inhomogeneities which can
+be supposed.
+  When the measurements of CMB anisotropies are more accurate, the relation between the local matter
+distribution and the CMB asymmetry will be more realistic through the second-order perturbation theory.
+
+
+                                                    Acknowledgments
+
+  The author thanks K.T. Inoue for helpful discussions on the asymmetry of CMB anisotropies. Numerical
+computation in this work was carried out at the Yukawa Institute Computer Facility.
+
+
+                                    APPENDIX A: DERIVATION OF δ2 T /T
+
+  From Eq.(2.15), we obtain
+                                                            Z λe
+                                     1                    ′
+                            δ T /T =   [I1 (λe )]2 − A(1)
+                                                       e         dλA(1)
+                            2        2                       λo
+                                     Z λe n                                     Z λ
+                                                 1 (2) ′     (1) (1) ′   (1) ′′
+                                                                                                o
+                                   −       dλ A          +A A          −A           dλ̄A(1) (λ̄) ,            (A1)
+                                      λo         2                               λo
+
+neglecting the terms with τ at the decoupling epoch. Each term in Eq.(A1) is expressed as follows:
+                                             1 λe
+                                              Z
+                                I1 (λe ) = −      dλP ′ (FL,ij ei ej + FP,ij ei ej ),                         (A2)
+                                             2 λo
+so that
+                             1  λe                    2 1 Z λe
+                                 Z                                               Z λe
+                        2                   ′      i j                ′      i j
+               [I1 (λe )] =             dλP FL,ij e e    +        dλP FL,ij e e       dλP ′ FP,ij ei ej ,     (A3)
+                             4 λo                          2 λo                   λo
+                Rλ
+where the term ( λoe dλP ′ F,ij ei ej ) is neglected by the reason described in the text. Similarly we obtain
+                                        ′     1
+                                A(1) A(1) =     P P ′ [(FL,ij ei ej )2 + 2FL,ij ei ej FP,kl ek el ],          (A4)
+                                              4
+                                                                                                                                                 11
+                 Z λe                                       Z λe                                                   Z λe
+        (1) ′′              (1)    1 h                                                                                                   i
+      A                 dλA       = P ′′ FL,kl ek el                                         i j
+                                                                   dλP (FL,ij + FP,ij )e e + FP,kl e e       k l
+                                                                                                                          dλP FL,ij ei ej ,   (A5)
+                  λo               4                          λo                                                    λo
+
+and
+                                                Z λe                     Z λe
+                                                              ′      1
+                                                       dλA(2) = −               dλ[P ′ Lji + 2P P ′ Mij ]ei ej ,                              (A6)
+                                                 λo                  2    λo
+
+where
+                                3                             1
+                 Lji ei ej = − (FL,i ei )2 − FL FL,ij ei ej + FL,l FL,l − 3FL,i ei FP,j ej
+                                2                             4
+                                                     i j    1
+                           − (FL FP,ij + FP FL,ij )e e + FL,l FP,l ,
+                                                            2
+                              1
+                 Mij ei ej =     {[19FL,il FL,jl − 12∆FL FL,ij ]ei ej − 3[FL,kl FL,kl − (∆FL )2 ]
+                             28
+                           + [38FL,il FP,jl − 12∆FL FP,ij − 12∆FP FL,ij ]ei ej − 6[FL,kl FP,kl − ∆FL ∆FP ]}.                                  (A7)
+Using the radial coordinate r, we have
+                                                            FL,j ej = R      m
+                                                                      Z ,r Yl ,
+                                                            FP,j ej =           dkα(k)ikµeikx ,                                               (A8)
+
+corresponding to Eq.(2.18), where kx = krµ, and
+                                                                         Z
+                                                        FP,j FP,j = i          dkα(k)FL,j k j eikx ,
+                                                                          Z
+                                                       FP,jl FP,jl = −          dkα(k)FL,jl k j k l eikx .                                    (A9)
+
+To express FL,j k j and FL,jl k j k l in terms of polar coordinates, we introduce two unit (three-dimensional) vectors
+eiθ and eiφ together with ei , and make an orthonormal triad vectors with components:
+
+                                                        (ei ) = (sin θ cos φ, sin θ sin φ, cos θ),
+                                                       (eiθ ) = (cos θ cos φ, cos θ sin φ, − sin θ),
+                                                       (eiφ ) = (− sin φ, cos φ, 0),                                                          (A10)
+
+respectively, where θ is the angle between the vector ei and the x3 -axis. Using these vectors, we have ∂r/∂xi =
+ei , ∂θ/∂xi = r−1 eθi and ∂φ/∂xi = (r sin θ)−1 eφi for the polar coordinates (r, θ, φ).
+    Moreover, the projection of k to the triad is expressed using another angles θk and φk as
+                                            k i (eθi , eφi , ei ) = k(sin θk cos φk , sin θk sin φk , cos θk ),                               (A11)
+where ei = δij ej , etc, and the angle θk is the angle between the vectors ei and k i . Then we have
+
+                         FL,i k i = FL,l (el k i ei + elθ k i eθi + elφ k i eφi )
+                                  = k[FL,r cos θk + FL,θ r−1 sin θk cos φk + FL,φ (r sin θ)−1 sin θk sin φk ],                                (A12)
+
+                        FL,ij k i k j = k i k j [FL,rr ei ej + (FL,θθ + rFL,r )r−2 eθi eθj + (FL,φφ + r sin2 θFL,r
+                                      + sin θ cos θFL,θ )(r sin θ)−2 eφi eφj
+                                      + 2(FL,rθ − r−1 FL,θ )r−1 ei eθj + 2(FL,φφ − r−1 FL,φ )(r sin θ)−1 ei eφj
+                                      + (FL,θφ − cot θFL,φ )(r2 sin θ)−1 eθi eφj ].                                                           (A13)
+  Substituting FP and FL in Eq.(2.18) with l = 1 and m = 0 into Eq.(A3), we obtain
+
+                     1  λe                     1 λe
+                        Z             2         Z                    Z λe        Z
+            (I1 )2 =        dλP ′ R,rr cos2 θ +      dλP ′ R,rr cos θ      dλP ′ i dkα(k)kµeikx ,                                             (A14)
+                     4 λo                       2 λo                   λo
+
+
+                                                 1
+                                                                                                Z
+                                        (1) ′
+                                                       h                                                            i
+                                  (1)
+                              A         A       = P P ′ (R,rr )2 cos2 θ − 2iR,rr cos θ              dkα(k)(kµ)2 eikx ,                        (A15)
+                                                 4
+                                                                                                                                 12
+                  Z λ                             Z λ                                       Z λ
+                                         1 ′′ h
+                                                                                                    Z
+         (1) ′′               (1)                                           2
+        A               dλA            = P R,rr       dλ̄P (η̄)R,rr (r̄) cos θ − R,rr cos θ     dλ̄P dkα(k)(kµ)2 eikx
+                   λo                    4         λo                                        λo
+                                         Z                   Z λ                i
+                                                      2 ikx
+                                       −   dkα(k)(kµ) e          dλ̄P R,rr cos θ .                                    (A16)
+                                                                     λo
+
+                              (2) ′
+ For the terms in A                   , we have
+                                                                       Z
+                                      F F,ij ei ej = RR,rr cos2 θ +        dkα(k)eikx [R,rr − (kµ)2 R] cos θ,                 (A17)
+
+                                                                Z
+                          2           2         2    2    2
+       F,l F,l = (R,r ) cos θ + R sin θ/r + 2                       dkα(k)eikx ik[R,r cos θµ − r−1 R sin θ sin θk cos φk ],   (A18)
+
+                                                                                      Z
+                   F,il F,jl ei ej = (R,rr )2 cos2 θ + (R,r )2 sin2 θ/r2 + 2              dkα(k)eikx [−R,rr cos θ(kµ)2
+                                          − R,r sin θk 2 µ sin θk cos φk ],                                                   (A19)
+
+
+                        ∆F F,ij ei ej = (R        −1       −2         2
+                                        Z ,rr + 2r R,r − 2r R)R,rr cos θ
+                                            −       dkα(k)eikx [(R,rr + 2r−1 R,r − 2r−2 R)(kµ)2 + R,rr k 2 ] cos θ,           (A20)
+
+
+            F,ij F,ij − (∆F )2 = −4r
+                                  Z
+                                     −1
+                                        (R,r − r−1 R)(R,rr + r−1 R,r − r−2 R) cos2 θ + 2r−2 (R,r − r−1 R)2
+                                          − 2       dkα(k)k 2 eikx {R,rr µ2 cos θ + r−1 (R,r − r−1 R)[cos θ sin2 θk
+                                          − 2 sin θ sin θk cos θk cos φk ] − (R,rr + 2r−1 R,r − 2r−2 R) cos θ}.               (A21)
+
+ Using the above equations, we obtain ΘLL and ΘLP as follows:
+
+                  1  λe                   2 1 Z λe
+                      Z
+         ΘLL =             dλP ′ R,rr cos θ −             dλP P ′ (R,rr cos θ)2
+                  8 λo                            4 λo
+                  1 λe
+                     Z                Z λ
+              +           dλP ′′ R,rr     dλ̄P (η̄)R,rr (r̄) cos2 θ
+                  4 λo                 λo
+                  1 λe                         5                    1
+                     Z         n h                      i
+              +           dλP ′ − RR,rr + (R,r )2 cos2 θ + r−2 R2 sin2 θ
+                  4 λo                         4                    4
+                   1                                          2
+              +       P [19(R,rr ) cos θ + 19(R /r) sin θ − 12R,rr (R,rr + 2r−1 R,r − 2r−2 R) cos2 θ
+                                  2    2           ′   2
+                  14                                                                   o
+              + 12r−1 (R,r − r−1 R)(R,rr + r−1 R,r − r−2 R) cos2 θ − 6(R,r − r−1 R)2 ]                                        (A22)
+
+and
+                  1 λe
+                     Z                       Z λe       Z
+      ΘLP = −             dλP ′ R,rr cos θ ×      dλP ′ dkα(k)(kµ)2 eikx
+                  4 λo
+                                           Z λo
+               1 λe
+                  Z
+             +          dλP P ′ R,rr cos θ dkα(k)(kµ)2 eikx
+               2 λo
+               1 λe
+                  Z            Z                    h     Z λ                         Z λ                     i
+                            ′′                2 ikx                      ikx̄    ikx
+             −          dλP      dkα(k)(kµ) e        R,rr     dλ̄P (η̄)e      +e          dλ̄P (η̄)R,rr P (η̄) cos θ
+               4 λo                                        λo                          λo
+               1 λe           n 5
+                  Z                           Z                    Z
+                            ′                                ikx
+             +          dλP − R,r cos θ i dkα(k)kµe              − dkα(k)e [R,rr − (kµ)2 R] cos θ
+                                                                                  ikx
+               4 Zλo             2
+               1                                              o
+             −        dkα(k)eikx r−1 R sin θ ik sin θk cos φk
+               2
+                   Z λe
+                1
+                                 Z
+             +           dλP P ′ dkα(k)eikx {19[−R,rr cos θ(kµ)2 + R,r sin θk 2 µ sin θk cos φk ]
+               28 λo
+             + 6k 2 [(R,rr + 2r−1 R,r − 2r−2 R)µ2 + R,rr ] cos θ + 3k 2 [R,rr cos θµ2
+                                                                                                                   13
+
+           + r−1 (R,r − r−1 R)(cos θ sin2 θk − 2 sin θ sin θk cos θk cos φk ) − (R,rr + 2r−1 R,r − 2r−2 R) cos θ]}
+                                          Z λe
+             1
+                     Z
+           + (P ′ )e dkα(k)(kµ)2 eikx          dλP R,rr cos θ.                                                   (A23)
+             4                             λo
+
+  By integrating Eq.(A23) partially with respect to λ, we obtain Eq.(2.34). In the process of integrations, it is
+to be noticed that we use the boundary condition (R)e = (R)o = 0 and (dm R/drm )e = (dm R/drm )o = 0 for
+1 ≤ m ≤ 4.
+
+
+
+
+ [1] C.L. Bennet et al., Astrophys. J. Suppl. 148, 1 (2003).
+ [2] D.N. Spergel et al., Astrophys. J. Suppl. 148, 175 (2003).
+ [3] E. Komatsu et al., Astrophys. J. Suppl. 148, 119 (2003).
+ [4] H.K. Eriksen, D.I. Novikov, P.B. Lilje, A.J. Banday and K.M. Górski, Astrophys. J. 605, 14 (2004).
+ [5] H.K. Eriksen, D.I. Novikov, P.B. Lilje, A.J. Banday and K.M. Górski, Astrophys. J. 612, 64 (2004).
+ [6] F.K. Hansen, A.J. Banday and K.M. Górski, Mon. Not. R. Astron. Soc. 354, 641 (2004).
+ [7] F.K. Hansen, A. Balbi, A.J. Banday and K.M. Górski, Mon. Not. R. Astron. Soc. 354, 905 (2004).
+ [8] F.K. Hansen, P. Cabella, D. Marinucci and N. Vittorio, Astrophys. J. 607, L67 (2004).
+ [9] P. Vielva et al., Astrophys. J. 609, 22 (2004).
+[10] C.-G. Park, Mon. Not. R. Astron. Soc. 349, 313 (2004).
+[11] K. Tomita, Phys. Rev. D71, 083504 (2005).
+[12] S. Mollerach and S. Matarrese, Phys. Rev. D56, 4494 (1997).
+[13] A. de Oliveira-Costa et al., Phys. Rev. D69, 063516 (2004).
+[14] C.R. Contaldi et al., J. Cosmol. Astropart. Phys. 7, 2 (2003).
+[15] N. Sugiyama, Astrophys. J. Suppl. 100, 281 (1995).
+[16] N. Yasuda et al., Astron. J. 122, 1104 (2001).
+[17] M. Zaldarriaga, Large-Scale Structure Formation (Kluwer Academic Publ., Netherlands, 2000), p 213.
+[18] W. Hu and M. White, Phys. Rev. D56, 596 (1997).
+[19] Y. Suto, Prog. Theor. Phys. 90, 1173 (1993).
+[20] A.R. Liddle and D.H. Lyth, Cosmological Inflation and Large-Scale Structure (Cambridge Univ. Press, 2000), p 264.
+

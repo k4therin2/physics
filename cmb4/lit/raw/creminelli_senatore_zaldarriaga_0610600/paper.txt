@@ -1,0 +1,517 @@
+                                                                                                                                   IC/2006/108
+                                                                                                                               HUTP-06/A0041
+
+
+
+
+                                             Limits on fNL parameters from WMAP 3yr data
+
+                                                               Paolo Creminellia, Leonardo Senatoreb,
+arXiv:astro-ph/0610600v2 5 Mar 2007
+
+
+
+
+                                                              Matias Zaldarriagab,c and Max Tegmarkd
+                                                          a Abdus Salam International Centre for Theoretical Physics
+
+                                                                     Strada Costiera 11, 34014 Trieste, Italy
+                                                                         b Jefferson Physical Laboratory,
+
+                                                                Harvard University, Cambridge, MA 02138, USA
+                                                                            c Center for Astrophysics,
+
+                                                               Harvard University, Cambridge, MA 02138, USA
+                                                                             d Department of Physics,
+
+                                                      Massachusetts Institute of Technology, Cambridge, MA 02139, USA
+
+
+
+                                      Abstract
+
+                                      We analyze the 3-year WMAP data and look for a deviation from Gaussianity in the form of a
+                                      3-point function that has either of the two theoretically motivated shapes: local and equilateral.
+                                      There is no evidence of departure from Gaussianity and the analysis gives the presently tightest
+                                                                 local and f equil. , which define the amplitude of respectively the local and
+                                      bounds on the parameters fNL          NL
+                                      the equilateral non-Gaussianity: −36 < fNL local < 100, −256 < f equil. < 332 at 95% C.L.
+                                                                                                        NL
+
+
+
+
+                                      1    Introduction
+                                      During the last few years our understanding of primordial non-Gaussianities of cosmological pertur-
+                                      bations has improved significantly.
+                                          On the theoretical side it has been firmly established [1, 2] that the simplest models of inflation
+                                      sharply predict a level of non-Gaussianity (. 10−6 ) far below the detection threshold of foreseable
+                                      CMB experiments. Non-Gaussianity therefore represents a smoking gun for deviations from this min-
+                                      imal scenario; in fact many alternatives have been studied which give a much larger non-Gaussianity,
+                                      an incomplete list including [3, 4, 5, 6, 7, 8, 9, 10]. In all these models the deviation from pure Gaus-
+                                      sian statistics shows up in the 3-point correlator of density perturbations. This 3-point function
+                                      contains all the information about deviation from Gaussianity: no additional information to con-
+                                      strain these models can be obtained looking for other signatures of non-Gaussianity, e.g. Minkowski
+
+                                                                                         1
+functionals or the 4-point function [11]. Moreover it has been noted that, as every model gives a
+definite prediction for the dependence of the 3-point function on the 3-momenta, information about
+the source of non-Gaussianity in the early Universe can be recovered by the study of the shape
+dependence of the 3-point correlator [12].
+     From the experimental point of view the progress has been dramatic. The WMAP experiment
+has greatly tightened the limits on departures from Gaussianity. Given the relative simplicity of
+the physics describing the CMB, which allows a linearized treatment of perturbations, and the large
+data set provided by WMAP, this experiment alone gives practically all the information we have
+about non-Gaussianity nowadays. In [13] the recent 3-year data have been analyzed by the WMAP
+collaboration; no evidence for non-Gaussianity has been found and new bounds are obtained.
+     The purpose of this paper is to extend this analysis of WMAP 3 year data, similarly to what was
+done for the 1 year data release in [14]. The main difference with respect to the WMAP collaboration
+analysis [13] is that we look for two different shapes of the 3-point function. Instead of concentrating
+only on the so-called “local” shape, we also do the analysis for the other theoretically motivated
+shape dependence, dubbed “equilateral”. As explained in [12, 15, 14], it is justified to concentrate
+on these two possibilities, both because these are quite different (so that a single analysis in not good
+for both) and because they describe with good approximation all the proposed models producing
+a high level of non-Gaussianity. Roughly speaking the local shape is typical of multi-field models,
+while the equilateral one characteristic of single field models. Given one of the two shapes one puts
+constraints on the overall amplitude of the 3-point function, namely on the two parameters fNL        local
+        equil.
+and fNL [14].
+     Another relevant difference with respect to [13] is the way we cope with the anisotropies of the
+noise, which is caused by the fact that some regions of the sky are observed by the satellite more
+often than others. We use an improved version of the estimator as explained in [14], which allows a
+∼ 20% tightening of the limits on fNL    local .
+
+     As this paper is an updated version of [14] we will concentrate (section 2) on the new features
+of the analysis, referring the reader to the 1st year paper [14] for all the details. The new limits on
+  local and f equil. are discussed in section 3 and conclusions are drawn in section 4.
+fNL            NL
+
+
+
+2     Differences with respect to the 1st year analysis
+2.1   Introduction of the tilt in the analysis.
+As data now favor a deviation from a scale invariant spectrum, the analysis of the 3-point function has
+been updated to take into account the presence of a non-zero tilt. This is completely straightforward
+in the case of the local shape; the non-Gaussianity for the Newtonian potential Φ is generated by a
+quadratic term which is local in real space
+                                                  local
+                                 Φ(x) = Φg (x) + fNL    (Φ2g (x) − hΦ2g i) ,                           (1)
+
+where Φg is a Gaussian variable. In the presence of a non-zero tilt this gives in Fourier space
+
+                      hΦ(k1 )Φ(k2 )Φ(k3 )i = (2π)3 δ3 k1 + k2 + k3 F (k1 , k2 , k3 )
+                                                                  
+                                                                                                       (2)
+
+
+
+
+                                                     2
+with
+                       local
+ F (k1 , k2 , k3 ) = 2fNL    · [P (k1 )P (k2 ) + P (k1 )P (k3 ) + P (k2 )P (k3 )]                                        (3)
+                                                                                                                         !
+                       local                          1                          1                          1
+                    = fNL    · 2∆2Φ ·        3−(n −1) 3−(n −1)
+                                                                   +    3−(n −1) 3−(n −1)
+                                                                                              +    3−(n −1) 3−(n −1)
+                                            k1 s k2 s                  k1 s k3 s                  k2 s k3 s
+
+where P (k) is the power spectrum hΦ(k1 )Φ(k2 )i ≡ (2π)3 δ3 k1 + k2 P (k1 ), with normalization ∆Φ
+                                                                   
+
+and tilt ns : P (k) ≡ ∆Φ · k−3+(ns −1) . We remind the reader that the function F enters in the
+estimator as:
+                                                                  Z∞
+              1 X
+                        Z
+       E   =    ·          2
+                          d n̂ Yl1 m1 (n̂)Yl2 m2 (n̂)Yl3 m3 (n̂) r 2 dr jl1 (k1 r)jl2 (k2 r)jl3 (k3 r) Cl−1     Cl−1 Cl−1
+             N                                                                                                1   2    3
+                  li mi                                           0
+               2k12 dk1 2k22 dk2 2k32 dk3
+             Z
+                                           F (k1 , k2 , k3 )∆Tl1 (k1 )∆Tl2 (k2 )∆Tl3 (k3 ) al1 m1 al2 m2 al3 m3 ,         (4)
+                     π       π        π
+
+where ∆Tl (k) is the CMB transfer function, and where for simplicity we have neglected the term linear
+in the data discussed in [14]. It is straightforward to check that the only modification introduced
+in the analysis is that the function βl (r) defined in [16] now depends on the tilt, while the function
+αl (r) remains unchanged:
+
+                                      2 +∞
+                                         Z
+                           αl (r) ≡           dk k2 ∆Tl (k)jl (kr)                                  (5)
+                                      π 0
+                                         Z +∞
+                                      2
+                           βl (r) ≡           dk k−1+(ns −1) ∆Tl (k)jl (kr)∆Φ .                     (6)
+                                      π 0
+
+As discussed in [14] the analysis of the equilateral shape is done using a template function F (k1 , k2 , k3 ),
+which is very similar (with few percent corrections) to the different shapes predicted by equilateral
+models, and at the same time sufficiently simple to make the analysis feasible. For the equilateral
+case the way to take into account a non-zero tilt is not unique. In models which predict this shape
+of non-Gaussianity the evolution with scale of the 3-point function is not fixed by the tilt of the
+spectrum1 .
+    For consistency with the local shape we can define new γl (r) and δl (r) functions as
+
+                                        2 +∞
+                                          Z
+                                                        1                        1/3
+                           γl (r) ≡            dk k1+ 3 (ns −1) ∆Tl (k)jl (kr)∆Φ                          (8)
+                                       π 0
+                                        2 +∞
+                                          Z
+                                                    2                         2/3
+                           δl (r) ≡            dk k 3 (ns −1) ∆Tl (k)jl (kr)∆Φ .                          (9)
+                                       π 0
+   1
+   What is fixed by the spectrum is the squeezed limit of any single field model [1, 15]. Without any slow-roll
+approximation
+                                                                                      3
+                             lim hζ~k1 ζ~k2 ζ~k3 i = −(2π)3 δ 3 (   ~ki )Pk Pk d log k3 Pk3 .
+                                                                  X
+                                                                           1  3                            (7)
+                            k1 →0
+                                                                  i
+                                                                                 d log k3
+This just tells us that the signal of non-Gaussianity is very small in the squeezed limit, but it does not help in fixing
+the scale dependence of the 3-point function for configurations close to equilateral, where the signal is concentrated.
+
+
+
+
+                                                              3
+       The new template shape will be of the form2
+
+                       equil.                            1                                 2
+               F    = fNL     · 6∆2Φ ·     − 3−(n −1) 3−(n −1) + (2 perm.) −                  2
+                                              k1 s k2 s                         (k1 k2 k3 )2− 3 (ns −1)
+                                                                            
+                                             1
+                         +                                       + (5 perm.) .                                      (10)
+                            1− 1 (ns −1) 2− 23 (ns −1) 3−(ns −1)
+                           k1 3         k2            k3
+
+As discussed above we expect that the difference between a given model and this template shape,
+taking also into account differences in the evolution with scale, to be small. Until a clear detection
+of non-Gaussianity is found, the use of a single template shape for the whole class of “equilateral
+models” is justified.
+
+2.2       Improved combination of the maps.
+In the non-Gaussianity analysis [17, 13] and [14] the 8 maps at different frequency Q1, Q2, V1,
+V2, W1, W2, W3 and W4 were combined making a pixel by pixel average weighted by the noise
+σ02 /Nobs , where Nobs is the number of observations of the pixel and σ0 is a band dependent constant.
+As the Nobs maps are very similar to each other, the procedure amounts to take a pixel-independent
+combination of the maps, weighted by the average noise. This procedure however is not really
+optimal because it neglects the effect of the beams: at high l one should give more weight to the
+W bands as they have the narrowest beam. In other words the optimal procedure is an l-dependent
+combination with signal-to-noise weight [18]. The difference with the naive combination becomes
+more and more relevant going to higher multipoles, when the effect of the beams is relevant. Thus
+the improvement becomes more important as time passes and noise reduces, allowing to explore
+regions of higher l. Making a combination in Fourier space has however some disadvantage: given
+the non-locality of the combination in real space it is not clear how to proceed in masking the
+contaminated regions of the sky.
+     We choose to use an intermediate procedure. We combine the maps with a constant coefficient
+as in the previous analyses, but instead of using the noise as weight, we use a weight based on the
+signal-to-noise ratio at a given fixed multipole lcomb . If we choose a very small lcomb , the signal is the
+same in all the maps and we are back to a noise weight, which is optimal for the lowest multipoles.
+On the other hand if lcomb is large we are making an optimal combination at high l, but not so good
+at low l. We tried many values of lcomb to get a result which is as close as possible to the optimal
+combination. The choice lcomb = 235 turns out to be the best one. We estimated that it improves
+the limits on the fNL parameters by ∼ 1.4% with respect to the original noise weighting. A very
+small further improvement, of order 0.4%, could be theoretically achieved with the optimal signal-
+to-noise weighting. Given the problems in dealing with the masking of foregrounds, it is clearly
+not worthwhile using an l-dependent combination. In figure (1) we compare the different ways of
+combining the maps, showing the effective noise as a function of l, compared with the signal. We
+see that lcomb = 235 gives something very close to optimal.
+   2
+       Notice that the relationship between the new and the old, scale invariant, template function used in [14] is simply
+                           1− 1 (ns −1)   1− 1 (ns −1)   1− 1 (ns −1)                                         −1+ 1 (ns −1)
+Fnew (k1 , k2 , k3 ) = Fold (k1 3   , k2 3       , k3 3    ). From this we see that the function goes as k1       3
+
+                                                                               −3+(ns −1)
+for k1 → 0, while in the local case the signal is much more enhanced going as k1          .
+
+
+
+
+                                                                    4
+             Cl HΜK2 L
+             0.1
+
+           0.08
+
+           0.06
+
+           0.04
+
+           0.02
+
+                                                                                       l
+                           100        200       300        400        500        600
+
+
+Figure 1: Effective noise for different combinations of the maps compared with the signal (short-
+dashed). Optimal signal-to-noise combination (solid); the combination used in the analysis, with
+lcomb = 235 (dotted); and the noise weighted combination, equivalent to lcomb = 0 (long-dashed)
+used in the 1st year analysis [14] and in the 3yr analysis by the WMAP collaboration [13].
+
+
+
+2.3   Variation of the cosmological parameters.
+We use for our analysis the Power Law ΛCDM Model which gives the best fit to WMAP 3 year data
+(see Table 2 of [13]). The cosmological parameters are given by: Ωb h2 = 0.0223, Ωm h2 = 0.128,
+h = 0.73, τ = 0.092, ns = 0.958. The most notable differences with respect to the first year
+parameters are the drop in the optical depth and the presence of a non-zero tilt of the spectrum.
+    Let us try to estimate the effect of these changes on the variance of the estimators for the fNL
+parameters. Roughly speaking the reionization optical depth τ enters as a multiplicative factor
+e−τ in front of the transfer function ∆Tl (k) for l corresponding to scales shorter than the horizon
+at reionization. In first approximation one can assume that the points on the first peak remain
+unchanged: as their error is very small the normalization will change to keep the power unchanged
+there. This means that the reduction of the best fit value for τ from τ = 0.17 to τ = 0.092 will be
+compensated by a decrease in the amplitude of perturbations: ∆Φ will decrease by approximately
+                                                                            1/2
+16%. The level of non-Gaussianity of the fluctuations is given by fNL · ∆Φ , so that a decrease in
+the amplitude of perturbation will relax the constraints on the fNL parameters. The decrease in the
+optical depth enlarges the error on the fNL parameters by ∼ 8%.
+    Let us now discuss the effect of the tilt. We can schematize the addition of a red tilt as a
+reduction of the power ∆short at scales shorter than the first peak and an enhancement for larger
+scales (∆long ). What is the effect of this on the limits we can put on the fNL parameters? For the
+
+
+                                                 5
+local shape the signal is mostly coming from squeezed triangles in Fourier space, with one side much
+shorter than the others [12]. The non-Gaussian signal for these triangles goes as ∆long · ∆short (see
+eq. (3)), while the error, i.e. the typical value in a realization with pure Gaussian statistics, will go
+     1/2       1/2    1/2                          local will become tighter proportionally to ∆1/2 . For
+as ∆long · ∆short · ∆short . Thus the limits on fNL                                              long
+the equilateral shape the signal is coming from equilateral configurations. The contribution from
+triangles with l smaller than the first peak will have more signal while triangles on shorter scale
+will have less. There is a mild cancellation between these effects giving a rather small effect in
+the equilateral case. One can check this intuition with a numerical analysis of the variance of the
+estimator varying the tilt. Going from a flat spectrum to the value of ns favored by WMAP 3yr
+data, the constraint on fNL  local becomes tighter by 9%, while the one on f equil. becomes looser by 5%.
+                                                                              NL
+    Obviously this way of taking into account the variation in the knowledge of the cosmological
+parameters is quite naive. One should properly marginalize over all parameters when quoting the
+final limits on the non-Gaussianity. This would slightly enlarge the allowed range, roughly by an
+amount comparable to the variation induced by the change of the cosmological parameters discussed
+above. This approach is numerically very demanding but it will be mandatory if a significant
+detection of non-Gaussianity will be achieved.
+    One can put together the variations induced by the change in the cosmological parameters with
+the reduction of the noise given the additional amount of data, to estimate the final improvement
+                                                                                                       √
+on the allowed range for fNL . With a scale invariant signal the noise reduction would give a 3
+improvement. But this is not a good approximation, both because the transfer function imprints
+features on the scale invariant primordial spectrum and because the beams cut off the signal at
+high l. A good estimate of the improvement is to look at the multipole where signal and noise
+intersect, with 1st and 3yr data. The constraints on the non-Gaussianity parameters will scale as
+   −1/2
+Npixels ∝ lmax
+             −1 . The multipole of intersection increases by ∼ 20%, so that we naively expect a ∼ 20%
+
+reduction of the limits. If one puts this together with the discussion above a ∼ 20% improvement
+      local is expected, while the improvement on f equil. will be really marginal.
+for fNL                                                 NL
+
+
+
+3     Results of the analysis
+Aside from the few differences discussed above, the analysis of the 3-year data strictly follows what
+was done for the 1st year release in [14].
+    For the local shape analysis, the inhomogeneity of the noise, which reflects the fact that different
+regions of the sky are observed a different number of times, causes some trouble when one extends
+the analysis to high l where the noise is relevant. The variance of the naive trilinear estimator, which
+would be optimal in the presence of rotational invariance, starts increasing at a certain point while
+including more and more data at short scale (see figure 2). This was already noted by the WMAP
+collaboration in [17]. A partial solution of the problem was given in [14], with the introduction
+of an improved estimator. The improvement simply consists in an additional term which is linear
+in the multipoles alm . We stress that this additional term by construction vanishes on average,
+independently of the value of fNLlocal . In other words it does not bias the estimator, just reduces its
+
+variance. In figure 2 we see that the behavior at high l of the new estimator is greatly improved,
+with a resulting ∼ 20% improvement on the limits on fNL     local . The estimator has minimum variance
+
+for lmax = 370, with a standard deviation of 34. Unfortunately this is not a big improvement with
+
+
+                                                   6
+respect to the 1st year analysis which had a standard deviation of 37. From figure 2 we see that an
+optimal analysis, which would require the full inversion of the covariance matrix, should be able to
+further reduce the standard deviation to 25, a ∼ 25% improvement with respect to our result.
+
+                   Df local NL
+                   70
+
+                    60
+
+                    50
+
+                    40
+
+                    30
+
+                                                                                        l
+                                 300       350       400        450        500       550
+
+
+Figure 2: Standard deviation for estimators of fNL local as a function of the maximum l used in the
+
+analysis. The combination of the maps is done using lcomb = 235. Lower curve: lower bound deduced
+from the full sky variance. Lower data points: standard deviation for the trilinear + linear estimator
+(see details in [14]). Upper data points: the same for the estimator without linear term used in [13].
+The error bars are not independent as the results at different l are all based on the same set of
+MonteCarlo maps.
+
+
+    We applied the estimator to the foreground reduced WMAP sky maps data (see [19] for a
+discussion about foreground removal) and we obtain fNLlocal = 32. There is therefore no evidence of
+                                    3
+deviation from a Gaussian statistics . The new limits on fNLlocal are:
+
+
+                                             local
+                                     − 36 < fNL    < 100     at 95% C.L.                                  (11)
+
+    As explained in [14] the effect of the noise inhomogeneities is small for the equilateral shape,
+so that any improvement of the estimator is useless (see figure 3). Following the discussion in the
+section above, it is easy to understand that the red tilt makes the curve in figure 3 flatten out faster
+than in the local case (figure 2): the contribution at high l is suppressed. The estimator does not
+get worse going to higher l and we can do the analysis at lmax = 475. The standard deviation of the
+estimator is 147. As expected the improvement with respect to the first year analysis is marginal,
+                                                           equil.
+only ∼ 3%. The value obtained on the real maps is fNL             = 38. Again there is no evidence of
+  3
+    We notice that if we apply our estimator to the WMAP sky maps data without foreground subtraction, we still
+                                                                   local         equil.
+see no evidence of deviation from Gaussianity both in the case of fNL    and of fNL     .
+
+
+                                                      7
+non-Gaussianity of this shape and the new allowed range is given by
+                                           equil.
+                                  − 256 < fNL     < 332     at 95% C.L.                           (12)
+
+An optimal analysis should be able to reduce the range by ∼ 15% (see figure 3).
+
+                  Df equil. NL
+                  200
+
+                  180
+
+                  160
+
+                  140
+
+                  120
+
+                                                                                 l
+                                 300      350       400      450      500     550
+
+
+                                                    equil.
+Figure 3: Standard deviation of the estimator of fNL       as a function of the maximum l used in
+the analysis. The combination of the maps is done using lcomb = 235. Lower curve: lower bound
+deduced from the full sky variance. Data points: standard deviation for the estimator used in the
+analysis. The error bars are not independent as the results at different l are all based on the same
+set of MonteCarlo maps.
+
+
+
+
+4    Conclusions
+We have analyzed the 3-year WMAP data and looked for theoretically motivated deviations from
+Gaussianity. Inflationary models which give an observable amount of non-Gaussianity predict a
+3-point function of either local or equilateral form. In the data there is no evidence of deviation
+from Gaussianity, so that we derive bounds on the parameters fNL  local and f equil. , the amplitude of
+                                                                             NL
+the local and equilateral shape, respectively. The results are
+
+                                 − 36 <    local
+                                          fNL       < 100   at 95% C.L.                           (13)
+                                           equil.
+                                 −256 <   fNL       < 332   at 95% C.L.                           (14)
+
+The improvement with respect to the 1st year analysis is marginal (∼ 10% in the local case and
+∼ 3% for the equilateral case): the expected ∼ 20% improvement from noise reduction is partially
+compensated by a change in the best fit cosmological parameters. A further ∼ 20% improvement
+
+
+                                                    8
+is expected with 8-year statistics. In the future, this kind of analysis will allow to extract in a
+numerically feasible way almost all the information about fNL    local and f equil. from Planck data. The
+                                                                            NL
+signal should be dominant until l ∼ 1500, so that one expects a factor of 4 improvement. In addition,
+polarization measurements can further enhance the sensitivity by a factor of 1.6 [20].
+    We stress that our approach is to look only for forms of non-Gaussianity which are theoretically
+motivated within the inflationary paradigm. Our results are not in contradiction with some claims
+in the literature of detection of a non-Gaussian statistics different from ours (see for example [22, 23]
+and references therein). Given the fact there are infinite ways of deviating from Gaussiannity, it
+remains difficult to assess the statistical significance of those results.
+
+
+Acknowledgments
+We would like to thank Eiichiro Komatsu and Alberto Nicolis for their help during the project,
+Daniel Babich and Suvendra Nath Dutta for help with analysis software, and Liam McAllister for
+pointing out an error in the first version of this paper. The numerical analysis necessary for the
+completion of this paper was performed on the Sauron cluster, at the Center for Astrophysics,
+Harvard University, making extensive use of the HEALPix package [21]. MZ was supported by the
+Packard and Sloan foundations, NSF AST-0506556 and NASA NNG05GG84G. MT was supported
+by NASA grant NNG06GC55G, NSF grants AST-0134999 and 0607597, the Kavli Foundation and
+the Packard Foundation.
+
+
+References
+ [1] J. Maldacena, “Non-Gaussian features of primordial fluctuations in single field inflationary models,” JHEP 0305,
+     013 (2003) [astro-ph/0210603].
+ [2] V. Acquaviva, N. Bartolo, S. Matarrese and A. Riotto, “Second-order cosmological perturbations from inflation,”
+     Nucl. Phys. B 667, 119 (2003) [astro-ph/0209156].
+ [3] D. H. Lyth, C. Ungarelli and D. Wands, “The primordial density perturbation in the curvaton scenario,” Phys.
+     Rev. D 67, 023503 (2003) [astro-ph/0208055].
+ [4] M. Zaldarriaga, “Non-Gaussianities in models with a varying inflaton decay rate,” Phys. Rev. D 69, 043508
+     (2004) [astro-ph/0306006].
+ [5] L. Boubekeur and P. Creminelli, “Right-handed neutrinos as the source of density perturbations,” Phys. Rev. D
+     73, 103516 (2006) [hep-ph/0602052].
+ [6] P. Creminelli, “On non-Gaussianities in single-field inflation,” JCAP 0310, 003 (2003) [astro-ph/0306122].
+ [7] N. Arkani-Hamed, P. Creminelli, S. Mukohyama and M. Zaldarriaga, “Ghost inflation,” JCAP 0404, 001 (2004)
+     [hep-th/0312100].
+ [8] M. Alishahiha, E. Silverstein and D. Tong, “DBI in the sky,” Phys. Rev. D 70, 123505 (2004) [hep-th/0404084].
+ [9] L. Senatore, “Tilted ghost inflation,” Phys. Rev. D 71, 043512 (2005) [astro-ph/0406187].
+[10] X. Chen, M. x. Huang, S. Kachru and G. Shiu, “Observational signatures and non-Gaussianities of general single
+     field inflation,” hep-th/0605045.
+[11] P. Creminelli, L. Senatore and M. Zaldarriaga, “Estimators for local non-Gaussianities,” arXiv:astro-ph/0606001.
+[12] D. Babich, P. Creminelli and M. Zaldarriaga, “The shape of non-Gaussianities,” JCAP 0408, 009 (2004)
+     [astro-ph/0405356].
+[13] D. N. Spergel et al., “Wilkinson Microwave Anisotropy Probe (WMAP) three year results: Implications for
+     cosmology,” astro-ph/0603449.
+
+
+                                                         9
+[14] P. Creminelli, A. Nicolis, L. Senatore, M. Tegmark and M. Zaldarriaga, “Limits on non-Gaussianities from WMAP
+     data,” JCAP 0605, 004 (2006) [astro-ph/0509029].
+[15] P. Creminelli and M. Zaldarriaga, “Single field consistency relation for the 3-point function,” JCAP 0410, 006
+     (2004) [astro-ph/0407059].
+[16] E. Komatsu, D. N. Spergel and B. D. Wandelt, “Measuring primordial non-Gaussianity in the cosmic microwave
+     background,” Astrophys. J. 634, 14 (2005) [astro-ph/0305189].
+[17] E. Komatsu et al., “First Year Wilkinson Microwave Anisotropy Probe (WMAP) Observations: Tests of Gaus-
+     sianity,” Astrophys. J. Suppl. 148, 119 (2003) [astro-ph/0302223].
+[18] M. Tegmark, A. de Oliveira-Costa and A. Hamilton, “A high resolution foreground cleaned CMB map from
+     WMAP,” Phys. Rev. D 68, 123523 (2003) [astro-ph/0302496].
+[19] G. Hinshaw et al., “Three-year Wilkinson Microwave Anisotropy Probe (WMAP) observations: Temperature
+     analysis,” astro-ph/0603451.
+[20] D. Babich and M. Zaldarriaga, “Primordial Bispectrum Information from CMB Polarization,” Phys. Rev. D 70,
+     083005 (2004) [astro-ph/0408455].
+[21] K. M. Gorski, E. Hivon, A. J. Banday, B. D. Wandelt, F. K. Hansen, M. Reinecke and M. Bartelman, “HEALPix –
+     a Framework for High Resolution Discretization, and Fast Analysis of Data Distributed on the Sphere,” Astrophys.
+     J. 622, 759 (2005) [astro-ph/0409513].
+[22] J. D. McEwen, M. P. Hobson, A. N. Lasenby and D. J. Mortlock, Mon. Not. Roy. Astron. Soc. Lett. 371 (2006)
+     L50 [arXiv:astro-ph/0604305].
+[23] K. Land and J. Magueijo, arXiv:astro-ph/0611518.
+
+
+
+
+                                                        10
+

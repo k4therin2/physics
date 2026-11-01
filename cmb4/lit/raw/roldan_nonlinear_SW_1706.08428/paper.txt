@@ -1,0 +1,1423 @@
+                                               Accepted for publication in JCAP
+
+
+
+
+                                               CMB anisotropies at all orders: the
+                                               non-linear Sachs-Wolfe formula
+arXiv:1706.08428v2 [astro-ph.CO] 14 Aug 2017
+
+
+
+
+                                               Omar Roldan
+                                                Instituto de Física, Universidade Federal do Rio de Janeiro, 21941-972,
+                                                Rio de Janeiro, RJ, Brazil
+                                                E-mail: oaroldan@if.ufrj.br
+
+                                               Abstract. We obtain the non-linear generalization of the Sachs-Wolfe + integrated Sachs-
+                                               Wolfe (ISW) formula describing the CMB temperature anisotropies. Our formula is valid at all
+                                               orders in perturbation theory, is also valid in all gauges and includes scalar, vector and tensor
+                                               modes. A direct consequence of our results is that the maps of the logarithmic temperature
+                                               anisotropies are much cleaner than the usual CMB maps, because they automatically remove
+                                               many secondary anisotropies. This can for instance, facilitate the search for primordial non-
+                                               Gaussianity in future works. It also disentangles the non-linear ISW from other effects.
+                                               Finally, we provide a method which can iteratively be used to obtain the lensing solution at
+                                               the desired order.
+
+                                               Keywords: CMB theory, non-linear CMB, Sachs-Wolfe formula, integrated Sachs-Wolfe,
+                                               CMB second-order perturbations, lensing.
+Contents
+
+1 Introduction and main results                                                              1
+  1.1 Main results: Discussion                                                               2
+  1.2 Main results: Obtaining the generalized Sachs-Wolfe formula                            5
+
+2 Quick review of fundamental concepts                                                       8
+  2.1 Tetrads                                                                                8
+  2.2 Photons and observers                                                                  9
+  2.3 Observed CMB temperature                                                              11
+
+3 The metric and tetrad components                                                          11
+  3.1 The geodesic equation                                                                 13
+  3.2 Sachs-Wolfe at first order                                                            14
+  3.3 Gauge invariance                                                                      15
+
+4 The lensing term                                                                          16
+  4.1 Lensing term at first order                                                           17
+  4.2 Sachs-Wolfe at second order: photon’s curved path                                     18
+  4.3 Sachs-Wolfe at second order: the Born approximation                                   19
+  4.4 Lensing and time-delay                                                                20
+
+5 Future work and conclusions                                                               21
+  5.1 Future work and comparison with literature                                            21
+  5.2 Conclusions                                                                           21
+
+1   Introduction and main results
+The Cosmic Microwave Background (CMB) temperature anisotropies is one of the most im-
+portant observables in cosmology. The CMB data is used for instance to constrain models
+of inflation [1], the amount of primordial non-Gaussianity [2], isocurvature perturbations [1],
+and to extract the cosmological parameters of the ΛCDM model [3]. Because of that, many
+efforts have been made to properly understand the physics of the CMB, this physics can be
+separated into three stages: before, during and after the period of recombination. Regard-
+ing the latter case, we can formally split the CMB anisotropies into primary and secondary
+anisotropies. While the primary anisotropies (those already present at the emission time) are
+supposed to be known (for instance, by solving the Boltzmann and the Einstein’s equations
+during and before recombination), secondary gravitational anisotropies must be obtained by
+solving the geodesic equation of photons in its way down to the observer. Note that addi-
+tional anisotropies can arise due to secondary scatterings of photons with hot gas during the
+reheating period, however, this process is not covered here.
+      Temperature anisotropies were systematically investigated for the first time by Sachs
+and Wolfe [4] in 1967 by using first-order perturbation theory, and their famous formula is
+quite easy to understand
+                       ∆To
+                            = Te + (Φe − Φo ) − (ve · ne − vo · no ) + I0 ,               (1.1)
+                        T̄o
+
+
+
+
+                                              –1–
+where, the subscripts e and o means that quantities must be evaluated at the emission and
+observation event respectively. Here T , Φ and I0 are respectively the intrinsic temperature
+anisotropies, the gravitational potential and the integrated Sachs-Wolfe effect (ISW). The
+ISW is an integrated term due to the time variation of the metric perturbations along the
+path of the photon (it gives the accumulated redshift of photons when traveling along the
+evolving inhomogeneities). Finally, (ve · ne − vo · no ) gives the linear Doppler effect due to
+the observer’s and emitter’s peculiar velocity (vo and ve ), with no the direction of observation
+and −ne the direction of emission.
+      The CMB temperature anisotropies are so small that the previous equation gives a very
+good description of the observed data, at least on large scales where secondary scatterings are
+negligible. Second-order perturbation theory of the CMB is however important to describe
+in a unified picture several important effects which are not taken into account by Eq. (1.1).
+These are for instance, lensing [5, 6], time delay [7], Doppler modulation and aberration
+[8, 9] and the Rees-Sciama effect [10, 11]. These effects although smaller than the first-
+order ones are very relevant for a correct understanding of the CMB physics, so second-order
+perturbation theory represents an essential tool for an accurate analysis of current and future
+CMB data. The full second-order generalization of the Sachs-Wolfe formula was obtained
+in 1997 by Mollerach and Matarrese [12] by using a method introduced in [13, 14]. Their
+second-order expression is somehow big and a direct interpretation of each term is difficult.
+Further progress in obtaining simple formulas have been given in [15, 16]
+      In the search for non-Gaussianity, second-order perturbations is enough to study the
+three-point function (or its Fourier counterpart, the bispectrum). However, if one wants to go
+to the four-point function (or the trispectrum) for instance, third-order perturbation theory is
+needed to fully account for all the contributions. The CMB anisotropies up to third order were
+first computed in [17] by using two methods, the first one is the same used by [12] in 1997,
+and the second one which is simpler and closer to our method, allowed them to obtain a fully
+non-linear Sachs-Wolfe formula for the specific case in which the metric is totally determined
+by two scalars variables, Φ and Ψ. Additional effort to obtain the non-linear description of
+the CMB can be found in [18–20].
+
+1.1   Main results: Discussion
+Choosing a particular parametrization of the metric is essential for obtaining exact solutions
+in cosmology, and this was the case in this work. By writing the line element as ds2 =
+a2 (η)e2Φ dŝ2 with the conformal metric given by
+
+                      dŝ2 ≡ −dη 2 + 2βj e−M ji dxi dη + e−2M ij dxi dxj ,
+                                                              
+                                                                                         (1.2)
+
+we were able to obtain an exact expression for the observed CMB temperature, To = T̄o eΘ ,
+where T̄o is the observed mean temperature and
+                                                                                   
+                                                                  γe (1 − ne · ve )
+               Θ ≡ (Te − To ) + (Φe − Φo ) + I0 (xe , xo ) + ln                       . (1.3)
+                                                                  γo (1 − no · vo )
+
+Here T , Φ and I0 are respectively, the non-linear generalization of the intrinsic temperature
+anisotropies, the gravitational potential and the integrated Sachs-Wolfe effect. The logarithm
+term corresponds to the Doppler effect, with γ the Lorentz factor. xe = (η, xi )e and xo =
+(η, xi )o are the spacetime coordinates of the emission and observation events, and η is the
+conformal time.
+
+
+
+
+                                             –2–
+       In terms of Θ, we can easily obtain the temperature anisotropies as
+
+                                    ∆To                Θ2
+                                        = eΘ − 1 = Θ +    + ··· ,                                      (1.4)
+                                    T̄o                2
+and in the case of perturbation theory we just need to truncate the series at the desired order.
+Because of the relation Θ = ln 1 + ∆To /T̄o we will call Θ the logarithmic temperature
+anisotropies. Note that:
+
+      • The intrinsic temperature anisotropies Te are defined through the relation (this notation
+        was also used in [19]) Te = hT ie eTe where hT ie is the background temperature at the
+        time of emission. Note also the presence of the factor To in Eq. (1.3), which is absent
+        in previous works in literature. This factor is important for two reasons: it makes the
+        expression for Θ symmetric in the emission and observation points and it ensures the
+        gauge invariance of Θ. Without this factor, neither Θ nor T̄o would be gauge invariant
+        (although the To would). So introducing To ensures also the gauge invariance of the
+        mean temperature T̄o as it should be. The definition of To is given in the next section.
+
+      • Although To contains crossed terms involving the fields at the emission and observation
+        point (for instance, at second order it contains terms of the form Φe Φo ), Θ does not
+        contain such mixed terms. That is, Θ is composed of a sum of locally defined terms. In
+        particular the Doppler term is just: ln (γo (1 − no · vo )) − ln (γe (1 − ne · ve )).
+
+      • Note also that, in Θ the ISW effect is clearly separated from other terms (although
+        it is correlated with lensing §4.4) like Φ, T and v. It makes the study of the ISW (as
+        well as lensing) easier by directly using Θ rather than ∆To /T̄o . In previous expressions
+        in literature (see for instance [12, 17]), many integrated terms are coupled with other
+        quantities making it difficult to isolate the ISW effect from the rest. So our results can
+        be stated in a different way: by taking the logarithm of the temperature anisotropies
+        we are making kind of “resummations” and removing these spurious non-linearities.
+        This is similar to what happens in quantum field theory, in which the disconnected
+        Feynman diagrams are removed by taking the logarithm of the propagators. Finally,
+        since propagators in quantum mechanics are just correlation functions, we expect that
+        the correlation functions of Θ are much simpler than those of ∆To /T̄o . For instance,
+        by considering ∆To /T̄o instead of Θ, we are considering spurious quadratic, cubic, ...,
+        terms which could create bias in the search for primordial non-Gaussianity.
+
+      • Even if we treat Θ as a first-order quantity, ∆To /T̄o will not be linear as it contains all
+        powers of Θ. This shows that even if Θ is a Gaussian distributed quantity (which in
+        general is not the case, but it would be a good approximation if we evolve Θ linearly
+        from single-field initial conditions during inflation), ∆To /T̄o is not Gaussian.1 Because of
+        this, it seems better to use Θ as the variable to be studied in future CMB experiments.
+        That is, we propose
+                                to study the maps of the logarithmic temperature anisotropies
+        ln 1 + ∆To /T̄o . Such a map will be free of Doppler modulation (see below) and other
+        couplings2 which otherwise will be present in a normal map of ∆To /T̄o . In practice,
+  1
+      In particular, the off-diagonal part of the two-point correlation function does not vanish.
+  2
+      Note that the couplings induced by aberration and lensing cannot be removed by such procedure.
+
+
+
+
+                                                   –3–
+        what is measured in an experiment like Planck are the variations in the intensity
+                                                   2hν 3          1
+                                   Iobs (ν, n) =                                    ,              (1.5)
+                                                    c2 exp
+                                                                          
+                                                                  hν
+                                                               kB To (n)       −1
+
+        so that Θ can be calculated directly from the variation δIobs without explicitly giving
+        To .
+      • If we still want to analyze the data in terms of ∆T /T̄ rather than Θ, the theoretical
+        n-point correlation function of ∆T /T̄ and Θ are easily related for the specific case of a
+        Gaussian distributed Θ (see for instance [21]).
+      • Within the linear regime, it is well known that for adiabatic perturbations, in the Poisson
+        gauge and in the large scale limit (where we can neglect ve · ne and the ISW term) we
+        have T = −2Φ/3, so that Θ ≈ Φe /3 (here without considering the contributions at
+        the observer). It has been shown in [21] that this relation continues to hold at the
+        non-linear level. So, this result in conjunction with the formula Eq. (1.3) suggest that
+        the metric parametrization introduced in this work and our definition of the non-linear
+        intrinsic perturbations T are appropriated to extend the results of the linear theory to
+        the non-perturbative level.
+      • Since conformal transformations yield null geodesics into null geodesics, the photon’s
+        path is totally determined by the conformal metric dŝ2 . Therefore the integrated Sachs-
+        Wolfe term I0 , as well as the lensing terms encoded into xe and ne are totally determined
+        by βi and Mij . The explicit form of these quantities are given in the next sections.
+      • In principle Φ, βi and Mij are independent quantities, but in the linear regime (and
+        during matter domination) general relativity predicts that Mii /3 = 2Φ. So by measuring
+        Φ by an independent method like the use of the Poisson equation [22], and comparing
+        with the lensing and ISW measurements, we can test general relativity. Note that by
+        having the non-linear version of the ISW and lensing effects we could make a better
+        interpretation of future data, this is because even if Einstein’s gravity is correct, the
+        inadequate use of the linear approximation to analyze the data could indicate a deviation
+        from the expected relation between Φ and Mii .
+      • An immediate consequence of Eq. (1.4) is that Doppler modulation of the temperature
+        anisotropies always exist regardless of the nature of the dipole. Let’s explain it a bit
+        more. Split the logarithmic anisotropies as Θ = Θd + Θ̃, where in a multipolar expansion
+        Θd refers to the dipole of the logarithmic anisotropies and Θ̃ contains all the remaining
+        multipolar components, that is, ` ≥ 2. Then we see from Eq. (1.4) that the observed
+        temperature anisotropies up to second order are given by
+                                   ∆To              Θ̃2 + Θ2d
+                                        = Θd + Θ̃ +           + Θd Θ̃ .                            (1.6)
+                                    T̄o                 2
+        The last term is what we call the Doppler modulation3 of the temperature anisotropies,
+        and it leads to coupling between neighbors multipolar components (`, ` ± 1) in the two-
+        point correlation function that are proportional to the magnitude of the CMB dipole.
+  3
+    The appropriate name will be dipolar modulation, but in the case in which the dipole is mainly of
+kinematical origin this modulation is due to the Doppler effect. We will adopt this name here because the
+CMB dipole is believed to be due to our peculiar velocity.
+
+
+
+
+                                                   –4–
+        These couplings (as well as aberration couplings) were measured by Planck4 in [24].
+        The results were consistent in amplitude and direction (at the 3σ-level) with the well
+        known measured CMB dipole, that is, they are consistent with the prediction of simple
+        formula Θd Θ̃.
+        According to Eq. (1.6), Planck’s measurements tell us nothing about the nature of the
+        CMB dipole. However, measuring Doppler modulation is important for the following
+        reason: suppose that a more precise measurement of Doppler modulation is made by
+        a future CMB experiment like CoRE [25], suppose also that the results show a signifi-
+        cant deviation from the simple expectation Θd Θ̃, then that would imply that the term
+        Θ̃ in Eq. (1.6) contains dipolar-like modulation couplings, and they necessarily come
+        from primordial non-Gaussianity terms that couple the long-mode (dipolar components)
+        with the short-modes (the higher multipoles). Such a result will rule-out single-field-
+        inflationary models and would require a non-negligible amplitude for the dipolar com-
+        ponents. These facts were first noted in [26]. Although the previous results follows
+        immediately from Eq. (1.6), they were far from obvious by using previously existing
+        formulas, like the one given in [12]. Finally, we want to mention that the conclusions of
+        [26] regarding dipolar modulation were restricted to the large scale case, but here the
+        proof holds at any scale.
+
+      We want to stress that in our results we have assumed a perfect blackbody spectrum
+for the CMB (Eq. (1.5)). However, it is known that spectral distortions (deviations from
+the blackbody spectrum) start been relevant at second order. A non-linear treatment of
+theses spectral distortions was introduced in the nice paper5 of Stebbins [27]. There, Stebbins
+considered the observed spectrum as a superposition of blackbody with different temperatures
+and introduced the concept of mean logarithmic temperature which must be related to our
+definition of Θ. On the other hand, in the same way as we are proposing the use Θ =
+ln 1 + ∆To /T̄o for the future CMB maps, it was also advocated in [28] the use of the
+logarithmically averaged temperature moments to describe the spectral distortions. In [29] it
+was also noted the importance of the used of the exponential notation, though they considered
+particular cases.
+      Finally, note that in order to make quantitative predictions, the Sachs-Wolfe formula is
+not enough as we need to specify the fields T , Φ, β i , etc. as well as the integration path xi (η).
+In this sense further progress is needed to obtain (analytical or numerical) non-linear solutions
+of the Einstein’s (or Boltzmann’s) equations. On the other hand, as perturbative solutions
+are still of high importance, in §4.2 we obtain the full second-order Sachs-Wolfe formula.
+Perturbative solutions of the metric and fluid perturbations are known in some specific cases
+(e.g., by assuming matter domination or the large scale limit), see for instance [30, 31]. For
+other useful results at second order, see [32–35].
+
+1.2     Main results: Obtaining the generalized Sachs-Wolfe formula
+In §3.1 we solve the time-component of the geodesic equation, which allow us to relate the
+observed temperature To with the emission temperature Te by a simple relation. The results
+  4
+      Two independent works realized that such effect could be observed by the Planck satellite, [9, 23].
+  5
+      I am very grateful to Cyril Pitrou for let me know about the works I cite in this paragraph.
+
+
+
+
+                                                     –5–
+are given in Eq. (3.17), and can be expressed as6
+                                          ae Φe −Φo +I0 γe (1 − ne · ve )
+                                To = Te      e                            ,                              (1.7)
+                                          ao            γo (1 − no · vo )
+where vo (and ve ) is the peculiar velocity of the observer (and the emitter). Note that, given
+an observer with four-velocity u, its peculiar velocity is defined according to7
+                                                                      1
+                        ucom = γ (u − v) ,          γ = −u · ucom = √      ,                             (1.8)
+                                                                     1−v·v
+where, u · v = 0 and ucom is the four-velocity of comoving observers. In pp.5 of [27] a similar
+result to Eq. (1.7) was obtained but without including vector and tensor perturbations, and
+without considering the velocity of the emitter and observer.
+     We now define the logarithmic intrinsic temperature anisotropies and clarify some con-
+cepts about the mean values. After that, we will get the final form of the generalized Sachs-
+Wolfe formula.
+
+(Logarithmic) Intrinsic temperature anisotropies
+Before the epoch of recombination, the Universe was so hot and dense that photons frequently
+interacted with the free electrons via Thomson scattering,8 while the electrons frequently in-
+teracted with protons via Coulomb scattering, thus forming the so called photon-baryon fluid.
+As a result, the fluid reached a state of thermal equilibrium and the photons are well described
+by a blackbody distribution function. However, because of the inhomogeneities the thermal
+equilibrium is just local, meaning that different local observers9 in the rest frame of the fluid
+will measure different values for the temperature T , that is, T = T (x). During recombination
+the Compton scattering rate decreases and anisotropies in the photon’s distribution function
+will appear, that is, T = T (x, n).
+      We will write the temperature of the photon’s fluid as
+
+                           T (x, n) = hT i eT ,        where       T = T (x, n) ,                        (1.9)
+
+and hT i ∝ 1/a(η) is the background temperature. We will call T the logarithm perturba-
+tions. This expression is meaningful for η ≤ ηe , when the photons and baryons are still in
+equilibrium. That is, T is not defined for η > ηe . Below we will provide an extension of T
+for η > ηe , so that T is a field defined in the whole spacetime.
+      Note that η = const is defined by the physical argument that hT i = const as in Mirbabayi
+& Zaldarriaga [16]. In that sense, when transforming the CMB temperature, it is better to
+use gauge transformations (active transformations, acting on the fields) rather than passive
+transformations (transformations on the coordinates), because in the latter case the transfor-
+mation of the time-coordinate becomes intricate. This issue will be discussed in details in a
+future work. See also [16] for an specific example. We stress that the mean hi is taken on the
+space-like 3D-hypersurfaces of constant η. However, what is important for the CMB is the
+mean taken on the last scattering surface10 Se,o . Here we define Se,o as the 2D-surface (usually
+   6
+     The explicit form of I0 is given in Eq. (3.19).
+   7
+     Note that v is related to vcom , the velocity of comoving-observers w.r.t u by the relation vcom = −v, see
+§2.2.
+   8
+     See sections 8.7.1 and 11.3.1 of [36] for further details on this.
+   9
+     Here, an observer can be for instance an electron.
+  10
+     Again, hT ie is relevant for defining the time of emission ηe .
+
+
+
+
+                                                    –6–
+Figure 1. Different observers define different hypersurfaces Se,o each one with its own mean value
+temperature T̄e . The deviation of T̄e from the mean temperature at the hypersurface η = ηe will
+therefore depend on the observer’s position xo , and that information is encoded into To .
+
+
+thought as a deformed spherical shell) formed at the intersection between the hypersurface
+of η = ηe and the past light-cone of the observer. It follows from Eq. (1.7) that the observed
+mean temperature is
+                                                   ae
+                                  T̄o (xo ; ηe ) =    hT ie eTo ,                       (1.10)
+                                                   ao
+where we have defined the intrinsic temperature anisotropies at the observer’s spacetime
+position xo as a mean value on the last scattering surface11 Se,o
+
+         eTo ≡ exp (Te + Φe − Φo + I0 + ln γo (1 − no · vo ) − ln γe (1 − ne · ve )) .               (1.11)
+From Eq. (1.10) it follows that To = To (xo ; ηe ) transforms under gauge transformations in the
+same way as the logarithmic anisotropies Te but evaluated at the observer’s position. Since
+this definition is valid for any observer with ηo > ηe , it provides a natural extension for the
+field T to the whole spacetime. Note however that by construction To depends only on the
+spacetime position xo not on the direction of observation no . This is in contrast with intrinsic
+temperature anisotropies Te which according to the discussion at the beginning of this section,
+could depend12 on ne . It follows from Eqs. (1.7) and (1.10) that the observed temperature can
+be written as To = T̄o eΘ , with
+                                                                              
+                                                             γe (1 − ne · ve )
+                    Θ ≡ (Te − To ) + (Φe − Φo ) + I0 + ln                        .        (1.12)
+                                                             γo (1 − no · vo )
+Finally, we define the mean temperature T̄e of the last scattering surface as
+                                         T̄e (xo ; ηe ) ≡ hT ie eTo .                                (1.13)
+Because in general T̄e 6= hT ie , then through the previous equation, To tell us how anisotropic
+the last scattering surface is (see figure 1). From Eq. (1.10) it follows that
+                                                     ae
+                                            T̄o = T̄e .                                   (1.14)
+                                                     ao
+  11
+     Mean values on Se,o represent integrations w.r.t the direction of observation no .
+  12
+     In it does, as the intrinsic temperature anisotropies have a quadrupole component which act as a source
+for the CMB polarization [37, 38].
+
+
+
+
+                                                   –7–
+The previous relation is simply the statement that the mean temperature evolves only through
+the cosmological expansion. Additionally, the quantity Θ is what we call the logarithmic
+CMB temperature anisotropies, Eq. (1.12) is the non-linear generalization of the Sachs-Wolfe
+formula, and I0 (given in Eq. (3.19)) is the non-linear generalization of the integrated Sachs-
+Wolfe effect. As we will show in §3.2, the presence of the factor To will guarantee the gauge
+invariance of Θ and T̄o . Eq. (1.12) is the main result of this paper.
+      In the remaining sections we do the explicit calculations and consider particular cases.
+So for instance, in §2 give a quick review of fundamental concepts and introduce the notation.
+In §3 we introduce a tetrad basis which facilitates the resolution of the geodesic equation and
+allow us to interpret the metric components βi as the tetrad components of the four-velocity
+of comoving observers. Then we compare our results with the previous ones in literature.
+Firstly, we consider the first-order case in §3.2 and discuss the gauge invariance. In §4.4 we
+show how to obtain the lensing term up to the desired order, and then in §4.2 we obtain
+the second-order Sachs-Wolfe formula which is simpler than the previous ones in literature
+and then we give the conclusions. In a companion paper [39] we discuss the subtle issue of
+second-order gauge transformations on the CMB, prove the gauge invariance of our second-
+order formula and introduce the concept of a cosmological river-frame. Further applications
+of our results and comparison with existing ones will appear elsewhere [40].
+
+2        Quick review of fundamental concepts
+
+In this section we quickly review some concepts which will be important to find the exact
+solution for the Sachs-Wolfe formula and at the same time give us a clear geometrical meaning
+of each terms in that formula.
+
+2.1       Tetrads
+An orthonormal dual tetrad ea (x), is a set of dual vectors ea ≡ e0 , e1 , e2 , e3
+                                                                
+                                                                                                 attached to
+each point xµ of the spacetime in which the line element looks Minkowskian13
+
+                                                ds2 = ηab ea eb ,                                        (2.1)
+
+and so the tetrad axes form (at each point) a locally inertial orthonormal frame. We can
+                                                                                 a
+transform between the tetrad frame and the coordinate frame by using the matrix e b and its
+         a
+inverse e b ,
+                                            a
+                                    ea = e b dxb ,        dxa = eba eb .                                 (2.2)
+
+     Now, the orthonormal tetrads ea (that is, the duals of ea ) are related to the coordinate
+vectors ∂a (the duals of dxa ) by
+
+                                      ea = eab ∂b ,       ∂a = eba eb .                                  (2.3)
+
+Since any vector (or tensor) can be expressed in any base, we can write for instance (for a
+vector v and co-vector k)
+
+                              v = v a ∂a = v b e b ,      k = ka dxa = kb eb ,                           (2.4)
+    13
+    For an introduction to the tetrads we refer the reader to [41, 42]. Here, I am using the very nice notation
+used [43].
+
+
+
+
+                                                       –8–
+and by using the change of basis matrices, we can obtain the transformation rules for the
+components
+
+                                        v a = v b eba ,      ka = k b eba ,
+                                        v b = v a eba ,         kb = ka eba .                                  (2.5)
+
+The same analysis can be made for tensors. In particular, for the metric tensor we have that
+the components transform as: gab = eaµ ebν gµν , but we defined the tetrads to be orthonormal,
+in the sense that the metric looks Minkowskian (Eq. (2.2)), therefore gab = ηab , and we get
+
+                                  ηab = eaµ ebν gµν ,           gµν = eaµ ebν ηab ,                            (2.6)
+
+with similar expressions for the inverse matrices g ab and η ab . Finally, since the metric g is
+used to rise and lower spacetime indexes, we can easily see that the metric η is used to rise
+and lower tetrad indexes, that is: v a = η ab vb and va = ηab v b .
+
+2.2    Photons and observers
+In this paper we use the signature −1 for the metric. So, the four-velocity of a given observer
+satisfies u · u = −1, where a “·” represents the scalar product between four-vectors, that is,
+u · u = ua ua = ua ua .
+      Two observers u2 and u1 are related by14
+                                          
+                   u2 = γ(1),2 u1 + v(1),2 ,    where
+                                                                  1
+                   u1 · v(1),2 = 0 ,  γ(1),2 = −u1 · u2 = p                     ,         (2.7)
+                                                            1 − v(1),2 · v(1),2
+
+and v(1),2 is the relative velocity of u2 w.r.t u1 . For an observer ua , the four-momentum pa
+of given a photon can be written as15
+
+                       p = E (u − n) ,          with        u · n = 0,          E = −p · u ,                   (2.8)
+
+where E and na are the observed energy and direction of arrival. Note that n · n = 1 and
+that da ≡ −na is the direction of propagation of the photon. In the following, it will be useful
+to introduce the concepts of comoving-observers ucom and tetrad-comoving observers ũ, they
+are defined by the relations
+
+                               uicom = 0 ,        comoving-observers ,                                         (2.9)
+                                    i
+                                   ũ = 0 ,       tetrad-comoving-observers .                                (2.10)
+
+Note that in general, a comoving observer do not coincide with a tetrad-comoving observer.
+                                                                         a      a
+In fact, for the former the tetrads components of the four-velocity are ucom = e 0 u0 , showing
+that in general ui do not vanish. For tetrad-comoving-observers the energy and direction of
+incoming photons has a simple form
+                                                             
+                                 Ẽ = −p0 ,   ña = 0, pi /p0 ,                           (2.11)
+  14
+     Eqs. (2.7)-(2.8) are given in a series of articles that follow the so-called 1 + 3 covariant approach to general
+relativity. See for instance [44–46].
+  15
+     Note that we are writing scalars in capital letters and vectors and tensors in small letters.
+
+
+
+
+                                                          –9–
+additionally the decomposition of the four-velocity u = γ̃ (ũ + ṽ) is quite simple
+                                  q
+                             0
+                                                    ṽ a = 0, ui /u0 .
+                                                                     
+                       γ̃ = u = 1 + ui ui ,                                                   (2.12)
+
+Using these results we can relate the energy E and direction n as observed by u, with the
+energy Ẽ and direction ñ as seen by tetrad-comoving-observers simply by
+
+                                     E = Ẽ u0 + ñ · u ,
+                                                       
+                                                                                   (2.13)
+                                               ni − ui
+                                       ñi =           .                                      (2.14)
+                                               u0 − n0
+For comparison with other works in the literature, let’s now relate the observed energy E to
+the energy seen by comoving observers Ecom . We can obtain two equivalent expressions: the
+first one is obtained by applying Eq. (2.13) two times16
+
+                                               u0 + ñ · u
+                                                          
+                                E = Ecom                    ,                        (2.15)
+                                             0
+                                            ucom + ñ · ucom
+
+and the other one follows by applying the boost directly from the comoving observer to the
+u-observer
+                                         Ecom               Ecom
+                              E=                      =               ,                       (2.16)
+                                    γ (1 + n · vcom )   γ (1 − n · v)
+
+where vcom is the velocity of ucom w.r.t u, and we have introduced the peculiar velocity
+v ≡ −vcom , that is, ucom = γ (u − v). Although we will call v the peculiar velocity of the
+observer, it is clear that this is not the velocity of u with respect to ucom . We have introduced
+this concept in order to be closer to the notation used in many other works, see for instance
+Eq.(1) of [24]. It follows from the previous equations that
+
+                                                      u0 + ñ · u
+                                                                 
+                                       1
+                                               =                  .                        (2.17)
+                                 γ (1 − n · v)      0
+                                                  ucom + ñ · ucom
+
+Although the photons’s energy has a simply form in the comoving frame,
+                                                         p0
+                                   Ecom = −p0 u0com = − √     ,                               (2.18)
+                                                          g00
+
+most of the time we prefer to work with tetrad-comoving-observers because of the nice prop-
+erties given in this frame (see Eqs. (2.11)-(2.12)). In particular, for the direction ñ we have
+na = na making it safe to use bold-notation (see below). By contrast, in the comoving
+frame we have (ncom )0 = 0 but in general n0com 6= 0. Additionally, the physics becomes more
+transparent when using locally orthonormal basis (tetrads) instead of coordinates basis.
+  16
+    That is, we apply two boost: one from the comoving frame to the tetrad-comoving one, and then one
+additional boost to the u-observer frame.
+
+
+
+
+                                                – 10 –
+2.3    Observed CMB temperature
+It is well known (see for instance pp.588 of [47]) that in absence of secondary scatterings the
+CMB temperature at the point of observation To is related with the temperature at emission
+Te by (this is a consequence of the Liouville theorem)
+
+                                                    Eo
+                                            To =       Te ,                                   (2.19)
+                                                    Ee
+where Ee (Eo ) is the energy of photons at the emission (observation) point. Note that in
+general, the temperature is a function of both: the spacetime position x and direction n
+
+                              To = T (xo , no ) ,      Te = T (xe , ne ) .                    (2.20)
+
+The direction of emission (as seen by a local observer) is de = −ne . Note that before the
+period of recombination it is expected that the temperature of the photon fluid is isotropic,
+in that sense it will not depend on the direction of emission. However, during the period of
+recombination a small quadrupole anisotropy arise in the photon distribution function [48, 49],
+that is why we kept the ne dependence in the emission temperature.
+     By using Eqs. (2.11) and (2.13), the observed temperature can be written as
+
+                                        p0 (xo ) u0 + ñ · u o
+                                                             
+                                To = Te                         ,                       (2.21)
+                                        p0 (xe ) (u0 + ñ · u)e
+
+This can also be written in bold notation as
+                                             p
+                                     p0 (xo ) 1 + u2o + ño · uo
+                             To = Te         p                   ,                            (2.22)
+                                     p0 (xe ) 1 + u2e + ñe · ue
+
+where the bold notation is used as a shorthand to express the spatial components in the
+tetrad basis, that is ñ = (ñi ), u = (ui ), and u · ñ = ui ñi . We stress that ñ is the observed
+direction of incoming photons as seen by the tetrad-comoving-observers, which is related to
+the direction of observation n by Eq. (2.14). The previous equation is equivalent to that given
+in appendix A of [16], although there the authors were only interested in obtaining the CMB
+temperature up to second order in the Poisson gauge, and by neglecting primordial vector
+and tensor perturbations. In this paper however, we will not use the bold-notation.
+
+3     The metric and tetrad components
+
+In this section we introduce the metric and tetrads which will allow us to obtain the Sachs-
+Wolfe formula. Note that two common notations for the metric are
+
+           ds2 = a2 (η) − (1 + 2φ) dη 2 + 2ωi dxi dη + {(1 − 2ψ)δij + 2γij } dxi dxj ,
+                                                                                   
+                                                                                       (3.1)
+                  2
+                        2Φ 2              i
+                                                  −2Ψ               i  j
+                                                                          
+               = a (η) −e dη + 2ωi dx dη + e           δij + 2γij dx dx ,              (3.2)
+
+where δij is the delta Kronecker tensor, xµ = (η, xi ), η the conformal time, a is the scale
+factor and γij is defined as traceless in order to make the separation of the spatial part of the
+metric unambiguous. Usually each quantity is expanded perturbatively into first, second, or
+
+
+
+
+                                                – 11 –
+third order perturbations. Here however, we will treat each quantity non-perturbatively. We
+propose to use the following parametrization of the metric
+                                                                              
+             2    2        2Φ  2         Φ−Ψ−Γ         i       −2(Ψ+Γ)     i   j
+                                                
+           ds = a (η) −e dη + 2βj e               ji
+                                                     dx dη + e           dx dx
+                                                                                      ij
+                     2     2Φ   2
+                = a (η)e dŝ ,                                                                     (3.3)
+
+where Γ is a symmetric and traceless matrix, and the notation Ψ + Γ really means Ψ1 + Γ
+where 1 is the identity matrix, that is, (Ψ + Γ)ij = Ψδij + Γij . The conformal metric is
+
+                    dŝ2 ≡ −dη 2 + 2βj e−M ji dxi dη + e−2M ij dxi dxj ,
+                                                                
+                                                                                          (3.4)
+
+with M = Φ + Ψ + Γ. Note that indexes in βi and Mij are raised and lowered with δij .
+     Hereafter, we will mainly work with the conformal metric Eq. (3.4), and whenever we
+need to express quantities in the physical metric we just multiply by the appropriated con-
+formal factor, as given for instance in Eq. (3.3) (more details below).
+     We will still rewrite the conformal metric in a different way that will allow us to give an
+interesting interpretation of βi and to easily express the metric in terms of tetrads,17
+                              2 h       j             ih                      i
+               dŝ2 = − β 0 dη + e−M i dxi + β j dη         e−M jk dxk + βj dη ,
+                                                                
+                                                                                           (3.5)
+                                     p
+where we have introduced β 0 ≡ 1 + βi β i . It is interesting to note that null paths in the
+conformal s-t are18 also null paths in the physical s-t, that implies that the path of photons
+is totally determined by just two quantities: βi and Mij (and its derivatives, which enter the
+geodesic equation). This is important for effects like lensing, time-delay and the integrated
+Sachs-Wolfe (ISW). The conformal metric in the form given in Eq. (3.5) provides a natural
+                                          a
+basis of orthonormal dual vectors ea = e µ dxµ , whose tetrads components are
+                                          i              i         i
+                        e0µ = β 0 δµ0 ,  e 0 = βi ,     e j = e−M j .                     (3.6)
+
+The tetrads for the physical s-t are obtained from the above ones, simply multiplying by the
+conformal factor aeΦ . We now note that β a are the tetrad components of the four-velocity of
+comoving-observers. In fact, for a comoving observer (uicom = 0) we have
+                                                    a                a
+                                  uacom = (aeΦ )e 0 u0com = e 0 = β a ,                            (3.7)
+
+where we have multiplied by the conformal factor aeΦ in order to get quantities in the physical
+s-t. Additionally, we used the normalization condition to obtain aeΦ u0com = 1.
+      Below, we provide some relations which will be useful in the next section. They are the
+inverse tetrads,
+                           1 0                    1 M i                              i
+                   ea0 =     δ ,        e0i = −      e     βj ,          e j i = eM            ,   (3.8)
+                           β0 a                   β0     j                                 j
+
+and the derivative of the exponential matrix, the Baker-Campbell-Hausdorff formula (or the
+Zassenhaus formula) [50]
+                                                   Z 1
+                      −M           −M
+                                                       ds e−sM (∂µ M ) esM .
+                         
+                  ∂µ e     = −Aµ e     ,     Aµ ≡                                    (3.9)
+                                                                 0
+ 17
+    This is basically the ADM decomposition of the metric.
+ 18
+    Hereafter we will use “s-t” as a short-hand for spacetime.
+
+
+
+
+                                                   – 12 –
+3.1     The geodesic equation
+In order to obtain the explicit form of ñ and p0 needed to obtain the observed CMB tempera-
+ture in Eq. (2.21), we need to solve the geodesic equation. Since photons follow null paths, we
+can use the conformal s-t instead of the physical s-t, this will make calculations easier. Note
+that, if pµ is the photon four-momentum in physical s-t, then p̂µ = (aeΦ )2 pµ is the photon
+four-momentum in conformal s-t (Appendix D of [51]), consequently, p̂a = (aeΦ )pa . Note also
+that according to Eq. (2.11), the direction of observation as seen in the tetrad-comoving-frame
+is ñi = −pi /p0 = −p̂i /p̂0 . With those considerations in mind, we can now proceed to obtain
+the observed CMB temperature. We start with the geodesic equation in the conformal s-t
+[42]
+                                 dp̂µ  1
+                                      = (∂µ ĝαβ ) p̂α p̂β = (∂µ eaν ) eb ν p̂a p̂b ,                           (3.10)
+                                 dλ    2
+                                       d        d
+                                                                                                                2
+where λ is an affine parameter. Using dλ = p̂0 dη , and after dividing on each size by p̂0                           we
+get
+
+                                             1 p̂˙µ                  p̂a p̂b
+                                         −    0
+                                                    = (∂µ eaν ) eb ν         ,                                  (3.11)
+                                             β p̂0                   p̂0 p̂0
+
+where we used p̂0 = −β 0 p̂0 , and a “dot” over a variable means total derivative w.r.t conformal
+time. By noting that p̂0 = β 0 p̂0 + β i p̂i , we can write
+                                                               
+                                       1        1    0    i p̂i
+                                           =        β +β          ,                         (3.12)
+                                      p̂0      p̂0          p̂0
+
+and therefore the geodesic equation takes the form
+
+           p̂˙µ     1        n
+                                    0
+                                            i
+                                               h
+                                                                      j
+                                                                        i
+                                                                              0 i            j
+                                                                                               o
+                = 0            ∂µ β     + ñ     (∂  β
+                                                    µ i ) + (A  )
+                                                               µ ij β     + β  ñ (A  )
+                                                                                     µ ij ñ     ,              (3.13)
+           p̂0   β + β i ñi
+
+where we have used Eq. (3.9) for Aµ . The equation above can be integrated for µ = 0, yielding
+
+      p̂0 (xo ) = p̂0 (xe )eI0 ,
+                  Z ηo
+                             dη    n
+                                           0
+                                                   i
+                                                      h
+                                                                                 j
+                                                                                   i
+                                                                                         0 i            j
+                                                                                                          o     (3.14)
+            I0 ≡           0     i
+                                     ∂ 0 β     + ñ     (∂ 0 β i ) + (A 0 ) ij β     + β  ñ (A0 )ij ñ     ,
+                    ηe β + β ñi
+
+which after substituting into Eq. (2.21) yields (multiplying by the conformal factor)
+
+                                aeΦ e I0 β 0 + ñi βi e u0 + ñ · u o
+                                                                      
+                       To = Te         e                                   ,                                    (3.15)
+                               (aeΦ )o     (β 0 + ñi βi )o (u0 + ñ · u)e
+
+where we have used Eq. (3.12). Note that Eq. (3.12) is nothing else that the relation between
+the energy in the comoving frame Ecom = −p0 , and the energy in the tetrad-comoving-frame
+Ẽ = −p0 , that is,
+
+                               Ecom = Ẽ u0com + ñ · ucom ,
+                                                          
+                                                                                        (3.16)
+                                                                                    0
+which follows from Eq. (2.13). We see that β 0 + ñi βi = ucom + ñ · ucom represents a
+Doppler boost. This is however, a point-to-point (along the photon’s path) boost which
+
+
+
+
+                                                         – 13 –
+takes the observed temperature by tetrad-comoving-observers into the observed temperature
+by comoving observers. On the other hand, since this boost is determined by β i , which is
+directly related to the 0 − i components of the metric, we will call this “a metric-Doppler
+effect”.
+      By using Eq. (3.15) together with Eq. (2.17) we can equivalently write
+
+                                        ae Φe −Φo +I0 γe (1 − n · v)e
+                              To = Te      e                          .                      (3.17)
+                                        ao            γo (1 − n · v)o
+
+This is the equation we used in §1.2 to obtain the generalized Sachs-Wolfe formula Eq. (1.12).
+     To complete the solution for the observed temperature, we need to obtain both ñi and
+the coordinates xµ of the photon’s path. We will address this problem in §4.4. Finally, we
+can write the ISW in a covariant way by noting that
+
+                                       β̃ a ≡ 0, β i /β 0 ,
+                                                         
+                                                                                        (3.18)
+
+is the velocity of comoving observers w.r.t tetrad-comoving-observers (it follows from Eq. (2.12)).
+In terms of β̃ we have
+                                                                             
+                           Z ηo               0   ñ · β̃ 0 + ñ · A · ñ + β̃
+                                      β̃ · β̃                       0
+                      I0 ≡      dη             +                               .        (3.19)
+                             ηe      1 − β̃ 2                 1 + β̃ · ñ
+
+Here, we are treat (A0 )ij as the non-vanishing components of a (space-like) tensor A0 in the
+tetrad-frame, that is: (A0 )ij ≡ (A0 )ij and (A0 )0a = 0.
+
+3.2   Sachs-Wolfe at first order
+In this section we use the generalized Sachs-Wolfe formula Eq. (1.12) to obtain the well known
+results at first order. Then we will discuss the gauge invariance of our result, emphasizing
+the importance of the factor To .
+      From the definition of Aµ , Eq. (3.9), we have up to first order Aµ = ∂µ M . Additionally,
+since we are interested in writing the observed temperature up to first order, we can take ñ
+at zero-order as it is always multiplying first-order quantities. That has several consequences.
+i) We can drop the “tilde” in the direction of observation as it is the same (at zero-order) for
+all observers, that is, ñ = ncom = n, ii) all quantities are evaluated along the unperturbed
+                                i     i
+path for which we can set no = ne = ni . This is called the Born approximation, and the
+unperturbed path has coordinates xi (η) = xio + (ηo − η) nio . Under these considerations the
+Sachs-Wolfe formula up to first order is
+                                                                          
+                                                               1 − ne · ve
+                       Θ = (Te − To ) + (Φe − Φo ) + I0 + ln                 ,            (3.20)
+                                                               1 − no · vo
+                            Z ηo
+                                   i 0
+                       I0 =        n βi + ni Mij nj ,                                     (3.21)
+                            ηe
+
+where a “prime” means partial derivative w.r.t conformal time, and we have used β 0 = 1 = γ
+valid up to first order.
+                                                                                         i     i
+     Although the components of no are equal to the components of ne , that is, no = ne , we
+have written ne · ve instead of no · ve because in general, the quantity no · ve is not well defined
+
+
+
+
+                                               – 14 –
+as it represents the scalar product of two four-vectors which are defined at different points in
+the s-t.
+      Remembering that Mij = (Φ + Ψ)δij + Γij (see after Eq. (3.4)), and expanding the
+logarithm up to first order we obtain
+
+                         Θ = (Te − To ) + (Φe − Φo ) − (ve · ne − vo · no ) + I0 ,                   (3.22)
+                              Z ηo
+                                    i 0
+                         I0 =       n βi + Φ0 + Ψ0 + ni Γ0ij nj .                                    (3.23)
+                                 ηe
+
+This is (apart from the factor To ) the very well known first-order Sachs-Wolfe formula given
+in Eq. (1.1).
+
+3.3     Gauge invariance
+We now discuss the gauge invariance of Eq. (3.22). The gauge invariance of our results up
+to second order are discussed in a companion paper [39]. There we will provide the full set
+of transformation rules for the metric components and additional relevant quantities. We
+will use the following notation: under a gauge transformation a geometrical object T (scalar,
+vector, tensor, connections, etc.) will transform as T → T + ∆T . Here we just need the
+first-order gauge transformations induced by the gauge generator ξ µ = (α, ξ i ), so we have19
+
+
+                        ∆T = −Hα ,              ∆Φ = α0 + H α ,             ∆vi = −ξi0 ,             (3.24)
+                       ∆βi = ξi0 − α,i ,                          0
+                                                        ∆Mij = α δij − ξ(i,j) ,                      (3.25)
+
+where H ≡ a0 /a is the Hubble’s expansion rate, a “comma” means derivative, so that α,i = ∂i α.
+The parenthesis in the expression ξ(i,j) means symmetrization, so ξ(i,j) = (ξi,j + ξj,i )/2.
+     With these expressions, it is easy to show the gauge invariance of Θ, that is ∆Θ = 0.
+Indeed, for the integrated Sachs-Wolfe term, we get
+                             Z ηo
+                                   00
+                                     α − ni ∂i α0 + nj ξj00 − ni ∂i ξj0
+                                                                       
+                       ∆I0 =
+                                      ηe
+                                                  o
+                                 = α0 + nj ξj0          ,                                            (3.26)
+                                                    e
+
+where we made used of the fact that along the unperturbed path, the following relations holds
+∂0 − ni ∂i = d/dη. Additionally, we have
+                                                                                            e
+                  ∆ {(Te − To ) + (Φe − Φo ) − (ve · ne − vo · no )) = α0 + nj ξj0               ,   (3.27)
+                                                                                            o
+
+showing explicitly that Θ is gauge invariant. Since the full temperature To = T̄o eΘ is an
+observable, it has also to be gauge invariant, as a consequence the mean value T̄o also is.
+Note that this result was possible thanks to the presence of To inside Θ. Without it, each
+time we perform a gauge transformation, the temperature anisotropies would acquire an
+additional monopole term.
+ 19
+      These transformation rules can also be obtained easily from the rules given in [52, 53].
+
+
+
+
+                                                     – 15 –
+4        The lensing term
+To complete our analysis we need to obtain ñi and the coordinates xµ along the photon’s
+path. These quantities are needed for a fully computation of the ISW effect. Additionally,
+they provide the so called lensing and time-delay terms (see §4.3). In this section we arrive
+at an expression which can by solved easily by iteration, allowing us to obtain the solution
+perturbatively up to the desired order.
+     By manipulating Eq. (3.13), we can obtain a differential equation for ni . We however
+choose to follow a different way which yields a compact expression and can be used to easily
+obtain the coordinates of the photon’s path. We start by defining q a (which is not a four-
+vector) by the relation
+                                     p̂a   pa                         dxa
+                              qa ≡                           qa =         = 1, ẋi ,
+                                                                                  
+                                         =    ,       ⇒                                      (4.1)
+                                     p̂0   p0                         dη
+and we remind the reader that a “hat” means that quantities belong to the conformal s-t.
+                                   i
+Now, by using ñi = −pi /p0 = −e a pa /(β 0 p0 ) we get
+                                        1             i   
+                               ñi = − 0 β i + e−M j q j .                              (4.2)
+                                       β
+Then if we manage to obtain q i , we automatically get both ni and xi = dη q i . Therefore,
+                                                                          R
+
+we now focus on q i . Before proceeding, we stress that the previous relation is nothing else
+that transformation of the direction vector, from the comoving-frame to the tetrad-comoving-
+observers, Eq. (2.14). That is, the previous relation can be written as
+                                                        i         i
+                                                      ncom − ucom
+                                              ñi =     0         0     .                    (4.3)
+                                                      ucom − ncom
+         Consider now the geodesic equation in conformal s-t
+                                            p̂0 p̂˙a + Γ̂ab c q b q c = 0 ,                  (4.4)
+
+then by using p̂˙a /p̂0 = q̇ a + q a p̂˙0 /p̂0 we get
+                                                                                
+                                     −q̇ a = q b Γ̂ab c q c − q a q b Γ̂0b c q c
+                                           = q · Γa · q − q a q · Γ0 · q ,
+                                                                              
+                                                                                             (4.5)
+
+where for simplicity of notation we have written on the second line q b Γ̂ab c q c = q · (Γa ) · q,
+that is, we treat Γ̂ab c as the components of a matrix Γa . The relevant part of Eq. (4.5) is that
+for the spatial indices a = i and the a = 0 component is automatically satisfied, with q 0 = 1.
+Eq. (4.5) is a autonomous cubic equation in q, without an obvious analytic solution.20 This
+                                                                            a the solution up to
+can however easily be solved perturbatively, so for instance, if we call q(n)
+n-order, we can immediately obtained (n + 1)-solution as
+                                       Z ηo
+                                   ηo                            
+                              a
+                           −q(n+1) =        dη q(n) · Γa − q(n)
+                                                             a
+                                                                Γ0 · q(n) .                  (4.6)
+                                      η       η
+
+We now detail the first-order solution which is needed to obtain the second-order logarithmic
+temperature anisotropies.
+    20
+    I thank Yves Daoust user from stackexchange.com for useful comments on this point. See:
+https://math.stackexchange.com/questions/2205149/non-linear-matrix-differential-equation
+
+
+
+
+                                                       – 16 –
+4.1   Lensing term at first order
+As described before, we can just use Eq. (4.6) to easily obtain the first-order solution for q a .
+Before doing the integration, however, let’s write down the integrand on the r.h.s of Eq. (4.5)
+in a suitable way. Let’s start with
+                                           1
+                          Γ̂ab c q b q c = ĝ aµ (−ĝbc,µ + ĝµb,c + ĝcµ,b ) q b q c
+                                           2
+                                             1
+                                         = − (ĝ aµ ĝbc,µ ) q b q c + ĝ aµ q b ĝ˙ bµ ,          (4.7)
+                                             2
+where we have used the fact that q c ∂c = d/dη. Now, since ĝab,c is already first order we can
+set ĝ ab = η ab on the previous equation, so we got from Eq. (4.5)
+                              1                                                    
+                     −q̇ j = − q b q c ĝbc,j + ĝbc,0 q j − q b ĝ˙ jb + ĝ˙ 0b q j ,
+                                                         
+                                                                                                   (4.8)
+                              2
+then noting that ∂0 = d/dη − q i ∂i , and defining the transverse gradient as
+
+                      ∂i⊥ = ∂i − ñi (ñ · ∂) ,            where          ñ · ∂ ≡ ñi ∂i ,        (4.9)
+
+we arrive, after integration, to
+                                                Z                             η o
+        η
+       i o
+                                                        
+                  i            i i                    ⊥
+    −q     = β̃ + 2 (M · ñ) − ñ (ñ · M · ñ) + dη ∂i ñ · β̃ + ñ · M · ñ        .            (4.10)
+         η                                                                                    η
+
+
+Here we have used that up to second order β i = β̃ i (see Eq. (3.18)), and we treat Mij as the
+non-vanishing components of a (space-like) tensor M in the tetrad-frame, that is: Mij ≡ Mij
+and M0a = 0. This is pretty much the same as we did in Eq. (3.19) for A0 .
+      It is clear that on the r.h.s of the previous equation we should keep ñ at zero order, this
+fact was taken into account in passing from Eq. (4.7) to Eq. (4.10) by setting q i = −ñi valid
+                                                        i    i
+at zero-order. Additionally at zero-order we have ñe = ño = ñi and we can also remove the
+tilde from ñ, so that ñi = ni .
+      Now that we are in possession of q a , we can immediately obtain ñ and xa up to first
+order.
+Direction vector ñ up to first order  In order to obtain ñ, we see from Eq. (4.2) that
+up to first order ñi = − β̃ i + q i + Mij ñj , so we get
+
+                  h                             i ηo Z ηo                            
+      ñi = ñio − (M · ñ)i − ñi (ñ · M · ñ)    −     dη ∂i⊥ ñ · β̃ + ñ · M · ñ .          (4.11)
+                                                       η       η
+
+Coordinates of the photon’s path             Since q a = dxa /dη, the coordinates of the photon’s
+trajectory are simply given by xa = dη q a . There is one important point we want to stress
+                                        R
+
+here. Since q i depends on the fields β i and Mij , the coordinates of the photon’s path will
+depend on these quantities. That means for instance that under a gauge transformation
+the coordinates xi will necessarily change. The same happens if we consider two different
+realizations of the Universe, each one with the same background evolution but with different
+field perturbations (that is, different β i and Mij ). On the other hand, by construction q 0 = 1,
+so the coordinate x0 = η is independent on these fields, and so x0 = η is insensible to any
+
+
+
+
+                                                     – 17 –
+gauge transformation.21 By construction, the value of x0 = η is totally determined by the
+background evolution of the Universe (or the FLRW spacetime), in particular it is defined by
+the hypersurface of constant hT i (see §1.2, and [16]).
+     To obtain xi , we will use
+                        Z ηo     Z ηo             Z ηo
+                                        0    0
+                              dη      dη f (η ) =      dη (η − ηe ) f (η) ,            (4.12)
+                               ηe       η                    ηe
+                                                      ηo
+                       i
+and the relation ño = − β̃ i + q i + Mij ñj           which is valid up to first order. So from
+Eq. (4.10) we get
+             h                                   i ηo
+  xi = xio + ñi − (M · ñ)i + ñi (ñ · M · ñ)      (ηo − η)                                      (4.13)
+       Z ηo     h                                     i Z ηo                                        
+     +      dη̄ β̃ i + 2 (M · ñ)i − ñi (ñ · M · ñ) −       dη̄ (η̄ − η) ∂i⊥ ñ · β̃ + ñ · M · ñ .
+          η                                                       η
+
+In Eqs. (4.10)-(4.13) all the integrations are along the unperturbed path. Note that we have
+parametrized q i , ñi and xi in terms of the conformal time η. This is in contrast with several
+other works, in which the coordinates xµ and the four-momentum pµ are obtained in terms
+of the affine parameter. See for instance Eqs. (2.20)-(2.24) of [12]. For comparison, note that
+Eq. (4.10) can be obtained by properly (i.e. by taking into account our Eq. (4.1)) dividing
+Eqs. (2.22) by Eqs. (2.20) of [12].
+     We have now all the elements to compute the logarithmic anisotropies up to second
+order.
+
+4.2    Sachs-Wolfe at second order: photon’s curved path
+In this section we expand the logarithmic anisotropies up to second order. We will keep
+quantities evaluated along the photons’s curved path. In the next subsection, we express
+each quantity along the unperturbed path (the Born approximation). Let’s start with the
+ISW. Firstly, it follows from Eq. (3.9) that up to second order Aµ = ∂µ M + [∂µ M, M ]/2, then
+from Eq. (3.19) we get
+                                                                [M 0 , M ]
+           Z ηo                                                                        
+                           0          0           0         0
+     I0 =       dη β̃ · β̃ + ñ · M · β̃ + ñ · β̃ + ñ · M +               · ñ 1 − β̃ · ñ
+            ηe                                                     2
+           Z ηo     h                                     i
+                       0          0          0         0
+        =       dη β̃ + ñ · M · ñ + β̃ + ñ · M · β̃⊥ ,                                      (4.14)
+              ηe
+
+where β̃⊥ is the orthogonal projection of β̃ on ñ, that is, β̃⊥ = β̃ − ñ(ñ · β̃). We have also
+                                                                   j
+used the fact that ñ · [M 0 , M ] · ñ = ñi Mik
+                                               0 M − M M0
+                                                  kj     ik kj ñ = 0.
+     From Eq. (4.14) we see that there are two kind of contributions to the ISW. The term
+that is explicitly linear in the fields is projected along the direction ñ, while the one which
+is quadratic in the fields is projected in an orthogonal direction to ñ.22 Note also that,
+  21
+      Though it is sensible to the introduction of new physical field perturbations, or different Universe realiza-
+tions. This is so, because field perturbations will affect the energy-momentum tensor which determines the
+time-evolution via the Einstein’s equations. Even if the perturbations are small, they give a back reaction on
+the background [54, 55].
+   22
+      Of course the term ñ · M 0 is a vector formed by the projection of M onto ñ. In that sense, the full term
+ñ · M 0 · β̃⊥ represents a “double” projection of M , one along ñ and other along β̃⊥ which is perpendicular
+direction to ñ.
+
+
+
+
+                                                     – 18 –
+                                                                                              
+    β̃ 0 + ñ · M 0 · β̃⊥ = β̃ 0 + ñ · M 0   · β̃ = β̃ 0 + ñ · M 0   · β̃⊥ , where β̃ 0 + ñ · M 0             is
+                                           ⊥                              ⊥                                  ⊥
+defined in the same manner as β̃⊥ .
+     To compute the logarithmic anisotropies, it remains to expand the Doppler effect up to
+second order. It can be written as
+                              "                       #
+                                         v 2 − (v · n)2 ηe h
+         
+           γe (1 − ne · ve )                                               v⊥ i ηe
+      ln                      = −v · n +                    = −v · n + v ·         . (4.15)
+           γo (1 − no · vo )                   2         ηo                 2 ηo
+
+Again we see the same behavior as for the ISW effect. That is, terms that are linear in the
+fields (here v) are projected along23 n, while the quadratic terms only receive contribution
+from the orthogonal direction to n (here, v⊥ ).
+      Finally, by using Eq. (2.17) (see also Eq. (3.15)) we can also write
+                                         "                    i − u ui
+                                                                         #
+                       γe (1 − ne · ve )                 i  βi β⊥    i ⊥   ηe
+                  ln                      = (βi − ui ) ñ +                   .       (4.16)
+                       γo (1 − no · vo )                          2        ηo
+
+
+Depending on the situation, one can find it more convenient to use either the first or the
+second version of the Doppler effect (Eq. (4.15) or Eq. (4.16)). We will take the latter, as
+it involves ñ. Before going further, we write the previous equation in a covariant manner
+by using the velocity of comoving observer w.r.t the tetra-frame     β̃ and the velocity of the
+                                              a
+observer u w.r.t the tetrad-frame, that is, ṽF ≡ 0, ui /u0 . Up to second order we have
+                                                           
+
+                                                        a
+                            β̃ a = 0, β i             ṽF = 0, ui .
+                                                                
+                                               and                                       (4.17)
+
+Here, the subscript F is because we can think of the observer u as being a fish moving through
+a river (the tetrad frame). This idea is explored in a companion paper [39]. Joining all the
+previous results we have up to second order
+                              ηe Z ηo                             
+ Θ = T + Φ + (β̃ − ṽF ) · ñ     +     dη ñ · β̃ 0 + ñ · M 0 · ñ
+                                    ηo     ηe
+                                             β̃ · β̃⊥ − ṽF · ṽF⊥ ηe
+                                                                          Z ηo                    
+                                         +                            +          dη β̃ 0 + ñ · M 0 · β̃⊥ . (4.18)
+                                                      2            ηo      ηe
+
+We have written the logarithmic anisotropies in this way to stress that the first line is for-
+mally24 equal to the first-order logarithmic anisotropies. So (formally), the difference comes
+only from the second part. These two lines are different in nature, so they could be mea-
+sured independently. Note that −ñ is the direction of propagation of photons as seem by
+the tetrad-comoving-observers, so the plane perpendicular to ñ is the plane of the photon’s
+polarization. We conclude that only the projection on the plane of polarization of the field
+perturbations, contribute to the explicitly quadratic terms of Θ (second line of Eq. (4.18)).
+
+4.3      Sachs-Wolfe at second order: the Born approximation
+In this section the second-order logarithmic anisotropies are given by using the Born approx-
+                                                                       i
+imation, that is, we express each quantity along the path xi = xio + ño (ηo − η), which is the
+    23
+     We remind the reader that n is the direction of observation in the u-frame, while ñ is the direction of
+observation in the tetrad-comoving-frame.
+  24
+     I said formally, because here each quantity is considered up to second order. Additionally they evaluated
+along the photon’s curved path, while at first order, Θ is computed using the background trajectory.
+
+
+
+
+                                                    – 19 –
+path inferred by the observer ignoring perturbations. This can be useful for numeric compu-
+tations and also because the notation of previous results in literature (e.g., those in [26]) is
+closer to the one we use below.
+                                         i                                                       i
+h                   i the deviation δx from the Born approximation by the relation x =
+       We will define
+          i                                                     i
+  xio + ño (ηo − η) + δxi . Analogously, we will write ñi = ño + δñi . The explicit expression of
+δxi and δñi , follow directly from Eqs. (4.11) and (4.13). With theses definitions we can Taylor
+expand the logarithmic temperature anisotropies around the Born approximation’s path, as
+                                h                                              i
+                 Θ = ΘBorn + δT + δΦ + ñ · δ(β̃ − ṽF ) + (β̃ − ṽF ) · δñ
+                                                                                e
+                      Z ηo     h                                                    i
+                    +      dη     ñ · δ β̃ + ñ · δM · ñ + δñ · β̃ + 2δñ · M 0 · ñ ,
+                                           0         0               0
+                                                                                           (4.19)
+                     ηe
+
+where ΘBorn is the same as Eq. (4.18) but with everything evaluated in the Born approxi-
+mation. Here the notation must be intuitive. For instance, (δM 0 )ij = δxk ∂k Mij0 with sim-
+ilar expressions for the other fields. The only difference is with the intrinsic logarithmic
+anisotropies Te which in general will depend not only on the position xe but also on the
+direction of emission −ñe , that is, Te = T (xe , −ñe ). So we must use
+                                                               
+                                             i          i ∂
+                                  δTe = δxe ∂i + δñe i Te .                           (4.20)
+                                                          ∂ ñe
+4.4   Lensing and time-delay
+To end this section, we remind the reader about the concepts of lensing and time-delay, which
+are encoded into δxi and are correlated with the ISW. To obtain the time-delay, we project
+δxi along the radial direction (see Eq. (4.13))
+                                      Z ηo                         
+                                i
+                             δx ñi =      dη̄ ñ · β̃ + ñ · M · ñ ,                  (4.21)
+                                         η
+
+this quantity tells us that photons are not coming from a spherical shell of radius r but from
+a distorted surface whose “radius” in direction ñ is distorted by (δxi ñi )e . There are two types
+of lensing terms: the first one is given by the transverse component of δxi ,
+                                 Z ηo     h                 i Z ηo                                       
+                    i                       i             i
+δxi⊥ = − (Mo · ño )⊥ (ηo − η) +      dη̄ β̃⊥ + 2 (M · ñ)⊥ −       dη̄ (η̄ − η) ∂i⊥ ñ · β̃ + ñ · M · ñ ,
+                                   η                              η
+
+and the second one is just the local deflection angle δñ, which from Eq. (4.11) is
+                           h         i ηo Z ηo                              
+                                   i
+                 δñi = − (M · ñ)⊥       −      dη ∂i⊥ ñ · β̃ + ñ · M · ñ .               (4.22)
+                                          η     η
+
+Lensing and time-delay are correlated with the ISW effect due to the second line of Eq. (4.19).
+Note that, regarding the logarithmic anisotropies Θ, these are the only quantities that are
+correlated with the ISW. This is not true however for ∆To /T̄o which involves powers of Θ
+and therefore will automatically correlate the ISW with other terms like T and Φ. Because
+of that, making maps of the logarithmic anisotropies will provide an optimal tool for study
+the ISW.
+     Below we briefly comment on the comparison with other works and also briefly cite some
+of the results that will publish in a companion paper.
+
+
+
+
+                                               – 20 –
+5        Future work and conclusions
+5.1        Future work and comparison with literature
+The results of appendix A of [26] (and therefore, the results of [12]) are equivalent to the ones
+given in the previous section.25 In particular compare Eq. (4.19) with Eqs. A.32-A.35 of [26].
+In comparing the results of [26], we must take into account the following relationship
+                                                          i
+                                  δei = δñi + β̃ + ñ · M    ,
+                                                                       ⊥
+
+where the quantity δe was defined in Eq.A.29 of [26]. The previous relation follows directly
+from Eq. (4.22) and Eq.A.28 of [26]. This shows that the interpretation given in [26] for the
+quantity δe as the local deflection angle is wrong, because the true local deflection angle is
+given by δñi . Apart from this fact, the results of [26] are correct. A more detailed comparison
+of our results with those already present in literature will be discussed in a future paper [40].
+     On the other hand, since we have introduced several new concepts: a new parametriza-
+tion of the metric, the logarithmic intrinsic temperature anisotropies T , the direction of ob-
+servation by tetrad-comoving-observers ñ, etc, the gauge transformations of theses quantities
+have not been discussed before in literature. In addition, gauge transformations when applied
+to the CMB anisotropies involves several subtle issues as it was firstly discussed in [16]. In
+a companion paper [39], we will discuss the gauge transformations of the relevant quantities
+introduced in this paper and explicitly show the gauge invariance of our second-order formula
+Eq. (4.19). Special emphasis is put on the subtle issues of gauge transformations on the CMB.
+
+5.2        Conclusions
+We have obtained the non-linear generalization of the Sachs-Wolfe + integrated Sachs-Wolfe
+formula describing the CMB temperature anisotropies Eq. (1.12). Our result is valid at all
+orders in perturbation theory, includes scalar, vector and tensor perturbations, and is valid in
+any gauge. Direct observational consequences of our result have been discussed,    in particular
+the fact that the logarithmic temperature anisotropies Θ = ln 1 + ∆To /T̄o is more suitable
+for data analysis than the usual temperature anisotropies ∆To /T̄o . The reason is that by
+taking the logarithm we automatically remove many secondary effects which otherwise would
+bias the analysis of the data. This will be of particular importance for the search of primordial
+non-Gaussianity and for analysis of the ISW effect and lensing.
+Then we expanded our exact expression up to second order and got results which are very
+simple and intuitive, see Eqs. (4.18) and (4.19) for two different versions. Finally, several
+concepts have been introduced as the logarithmic intrinsic anisotropies T and To (see §1.2),
+the tetrad-comoving-observers in §2.2 and an useful parametrization of the metric §3 which
+expresses the 0 − i metric components in terms of the four-velocity of comoving observers.
+
+Acknowledgments
+I thank Thiago Pereira and Elvis Soares for useful discussions and suggestions. I also thank
+Mauricio Calvão for introducing me to the 1 + 3 - covariant formalism, and for useful dis-
+cussions on aberration. I thank Cyril Pitrou for drawing my attention on the importance of
+the logarithmic transform on spectral distortions. Finally, I thank the anonymous referee of
+paper [26] because his (her) useful comments somehow influenced the style of this article.
+    25
+         Although in [26] we took the perturbations to vanish at the observer position.
+
+
+
+
+                                                       – 21 –
+References
+ [1] Planck Collaboration, P. A. R. Ade et al., Planck 2015 results. XX. Constraints on inflation,
+     arXiv:1502.02114.
+ [2] Planck Collaboration, P. A. R. Ade et al., Planck 2015 results. XVII. Constraints on
+     primordial non-Gaussianity, arXiv:1502.01592.
+ [3] Planck Collaboration, P. A. R. Ade et al., Planck 2015 results. XIII. Cosmological parameters,
+     Astron. Astrophys. 594 (2016) A13, [arXiv:1502.01589].
+ [4] R. K. Sachs and A. M. Wolfe, Perturbations of a cosmological model and angular variations of
+     the microwave background, Astrophys. J. 147 (1967) 73–90. [Gen. Rel. Grav.39,1929(2007)].
+ [5] U. Seljak, Gravitational lensing effect on cosmic microwave background anisotropies: A Power
+     spectrum approach, Astrophys. J. 463 (1996) 1, [astro-ph/9505109].
+ [6] M. Zaldarriaga and U. Seljak, Gravitational lensing effect on cosmic microwave background
+     polarization, Phys. Rev. D58 (1998) 023003, [astro-ph/9803150].
+ [7] W. Hu and A. Cooray, Gravitational time delay effects on cosmic microwave background
+     anisotropies, Phys. Rev. D63 (2001) 023504, [astro-ph/0008001].
+ [8] A. Challinor and F. van Leeuwen, Peculiar velocity effects in high resolution microwave
+     background experiments, Phys.Rev. D65 (2002) 103001, [astro-ph/0112457].
+ [9] L. Amendola, R. Catena, I. Masina, A. Notari, M. Quartin, et al., Measuring our peculiar
+     velocity on the CMB with high-multipole off-diagonal correlations, JCAP 1107 (2011) 027,
+     [arXiv:1008.1183].
+[10] M. J. Rees and D. W. Sciama, Large scale Density Inhomogeneities in the Universe, Nature
+     217 (1968) 511–516.
+[11] R. G. Crittenden and N. Turok, Looking for Lambda with the Rees-Sciama effect, Phys. Rev.
+     Lett. 76 (1996) 575, [astro-ph/9510072].
+[12] S. Mollerach and S. Matarrese, Cosmic microwave background anisotropies from second order
+     gravitational perturbations, Phys. Rev. D56 (1997) 4494–4502, [astro-ph/9702234].
+[13] T. Pyne and M. Birkinshaw, Null geodesics in perturbed space-times, Astrophys. J. 415 (1993)
+     459, [astro-ph/9303020].
+[14] T. Pyne and S. M. Carroll, Higher order gravitational perturbations of the cosmic microwave
+     background, Phys. Rev. D53 (1996) 2920–2929, [astro-ph/9510041].
+[15] L. Boubekeur, P. Creminelli, G. D’Amico, J. Norena, and F. Vernizzi, Sachs-Wolfe at second
+     order: the CMB bispectrum on large angular scales, JCAP 0908 (2009) 029,
+     [arXiv:0906.0980].
+[16] M. Mirbabayi and M. Zaldarriaga, CMB Anisotropies from a Gradient Mode, JCAP 1503
+     (2015), no. 03 056, [arXiv:1409.4777].
+[17] G. D’Amico, N. Bartolo, S. Matarrese, and A. Riotto, CMB temperature anisotropies from
+     third order gravitational perturbations, JCAP 0801 (2008) 005, [arXiv:0707.2894].
+[18] J. P. Zibin and D. Scott, Gauging the cosmic microwave background, Phys. Rev. D78 (2008)
+     123529, [arXiv:0808.2047].
+[19] X. Gao, On non-linear CMB temperature anisotropy from gravitational perturbations, Phys.
+     Rev. D82 (2010) 103004, [arXiv:1005.1219].
+[20] R. Saito, A. Naruko, T. Hiramatsu, and M. Sasaki, Geodesic curve-of-sight formulae for the
+     cosmic microwave background: a unified treatment of redshift, time delay, and lensing, JCAP
+     1410 (2014), no. 10 051, [arXiv:1409.2464].
+
+
+
+
+                                              – 22 –
+[21] N. Bartolo, S. Matarrese, and A. Riotto, Non-Gaussianity of Large-Scale Cosmic Microwave
+     Background Anisotropies beyond Perturbation Theory, JCAP 0508 (2005) 010,
+     [astro-ph/0506410].
+[22] L. Amendola et al., Cosmology and Fundamental Physics with the Euclid Satellite,
+     arXiv:1606.00180.
+[23] A. Kosowsky and T. Kahniashvili, The Signature of Proper Motion in the Microwave Sky,
+     Phys.Rev.Lett. 106 (2011) 191301, [arXiv:1007.4539].
+[24] Planck Collaboration, N. Aghanim et al., Planck 2013 results. XXVII. Doppler boosting of the
+     CMB: Eppur si muove, Astron. Astrophys. 571 (2014) A27, [arXiv:1303.5087].
+[25] CORE Collaboration, C. Burigana et al., Exploring cosmic origins with CORE: effects of
+     observer peculiar motion, arXiv:1704.05764.
+[26] O. Roldan, A. Notari, and M. Quartin, Interpreting the CMB aberration and Doppler
+     measurements: boost or intrinsic dipole?, JCAP 1606 (2016), no. 06 026, [arXiv:1603.02664].
+[27] A. Stebbins, CMB Spectral Distortions from the Scattering of Temperature Anisotropies,
+     Submitted to: Phys. Rev. D (2007) [astro-ph/0703541].
+[28] C. Pitrou and A. Stebbins, Parameterization of temperature and spectral distortions in future
+     CMB experiments, Gen. Rel. Grav. 46 (2014), no. 11 1806, [arXiv:1402.0968].
+[29] Z. Huang and F. Vernizzi, Cosmic Microwave Background Bispectrum from Recombination,
+     Phys. Rev. Lett. 110 (2013), no. 10 101303, [arXiv:1212.3573].
+[30] L. Boubekeur, P. Creminelli, J. Norena, and F. Vernizzi, Action approach to cosmological
+     perturbations: the 2nd order metric in matter dominance, JCAP 0808 (2008) 028,
+     [arXiv:0806.1016].
+[31] N. Bartolo, S. Matarrese, and A. Riotto, The full second-order radiation transfer function for
+     large-scale cmb anisotropies, JCAP 0605 (2006) 010, [astro-ph/0512481].
+[32] C. Pitrou, The Radiative transfer at second order: A Full treatment of the Boltzmann equation
+     with polarization, Class. Quant. Grav. 26 (2009) 065006, [arXiv:0809.3036].
+[33] L. Senatore, S. Tassev, and M. Zaldarriaga, Cosmological Perturbations at Second Order and
+     Recombination Perturbed, JCAP 0908 (2009) 031, [arXiv:0812.3652].
+[34] N. Bartolo, S. Matarrese, and A. Riotto, CMB Anisotropies at Second Order I, JCAP 0606
+     (2006) 024, [astro-ph/0604416].
+[35] N. Bartolo, S. Matarrese, and A. Riotto, CMB Anisotropies at Second-Order. 2. Analytical
+     Approach, JCAP 0701 (2007) 019, [astro-ph/0610110].
+[36] D. H. Lyth and A. R. Liddle, The primordial density perturbation: Cosmology, inflation and
+     the origin of structure. 2009.
+[37] M. J. Rees, Polarization and Spectrum of the Primeval Radiation in an Anisotropic Universe,
+     apjl 153 (July, 1968) L1.
+[38] A. Ferté, Statistics of the CMB polarised anisotropies. PhD thesis, Orsay, IAS, 2014.
+     arXiv:1506.05940.
+[39] O. Roldan, CMB in the river-frame and gauge invariance at second-order, arXiv:1708.00441.
+[40] O. Roldan, A. Notari, and M. Quartin, Observational signatures of a gradient mode on the
+     CMB, To appear.
+[41] G. F. R. Ellis and H. van Elst, Cosmological models: Cargese lectures 1998, NATO Sci. Ser. C
+     541 (1999) 1–116, [gr-qc/9812046].
+[42] S. M. Carroll, Lecture notes on general relativity, gr-qc/9712019.
+
+
+
+
+                                               – 23 –
+[43] G. W. Pettinari, The intrinsic bispectrum of the Cosmic Microwave Background. PhD thesis,
+     Portsmouth U., ICG, 2013-09. arXiv:1405.2280.
+[44] A. R. King and G. F. R. Ellis, Tilted homogeneous cosmological models, Commun. Math. Phys.
+     31 (1973) 209–242.
+[45] R. Maartens, T. Gebbie, and G. F. R. Ellis, Covariant cosmic microwave background
+     anisotropies. 2. Nonlinear dynamics, Phys. Rev. D59 (1999) 083506, [astro-ph/9808163].
+[46] C. G. Tsagas, A. Challinor, and R. Maartens, Relativistic cosmology and large-scale structure,
+     Phys. Rept. 465 (2008) 61–147, [arXiv:0705.4397].
+[47] C. W. Misner, K. S. Thorne, and J. A. Wheeler, Gravitation. W. H. Freeman, San Francisco,
+     1973.
+[48] N. Kaiser, Small-angle anisotropy of the microwave background radiation in the adiabatic
+     theory, mnras 202 (Mar., 1983) 1169–1180.
+[49] W. T. Hu, Wandering in the Background: A CMB Explorer. PhD thesis, UC, Berkeley, 1995.
+     astro-ph/9508126.
+[50] R. M. Wilcox, Exponential Operators and Parameter Differentiation in Quantum Physics, J.
+     Math. Phys. 8 (1967) 962–982.
+[51] R. M. Wald, General Relativity. 1984.
+[52] K. A. Malik and D. Wands, Cosmological perturbations, Phys. Rept. 475 (2009) 1–51,
+     [arXiv:0809.4944].
+[53] S. Matarrese, S. Mollerach, and M. Bruni, Second order perturbations of the Einstein-de Sitter
+     universe, Phys. Rev. D58 (1998) 043504, [astro-ph/9707278].
+[54] L. R. W. Abramo, R. H. Brandenberger, and V. F. Mukhanov, The Energy - momentum tensor
+     for cosmological perturbations, Phys. Rev. D56 (1997) 3248–3257, [gr-qc/9704037].
+[55] V. F. Mukhanov, L. R. W. Abramo, and R. H. Brandenberger, On the Back reaction problem
+     for gravitational perturbations, Phys. Rev. Lett. 78 (1997) 1624–1627, [gr-qc/9609026].
+
+
+
+
+                                              – 24 –
+

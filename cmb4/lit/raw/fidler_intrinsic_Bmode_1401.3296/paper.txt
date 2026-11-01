@@ -1,0 +1,1503 @@
+                                             TUM-HEP-924/14         Prepared for submission to JCAP
+
+
+
+
+                                             The intrinsic B-mode polarisation of
+                                             the Cosmic Microwave Background
+arXiv:1401.3296v2 [astro-ph.CO] 5 Jun 2014
+
+
+
+
+                                             Christian Fidler,1 Guido W. Pettinari,1,2 Martin Beneke,3 Robert
+                                             Crittenden,1 Kazuya Koyama1 and David Wands1
+                                             1 Institute of Cosmology and Gravitation, University of Portsmouth, Portsmouth PO1 3FX,
+
+                                              UK
+                                             2 Department of Physics & Astronomy, University of Sussex, Brighton BN1 9QH, UK
+                                             3 Physik Department T31, Technische Universität München, D – 85748 Garching, Germany
+
+                                              E-mail: Christian.Fidler@port.ac.uk, Guido.Pettinari@sussex.ac.uk,
+                                              Robert.Crittenden@port.ac.uk, Kazuya.Koyama@port.ac.uk,
+                                              David.Wands@port.ac.uk
+
+                                             Abstract. We estimate the B-polarisation induced in the Cosmic Microwave Background
+                                             by the non-linear evolution of density perturbations. Using the second-order Boltzmann code
+                                             SONG, our analysis incorporates, for the first time, all physical effects at recombination. We
+                                             also include novel contributions from the redshift part of the Boltzmann equation and from
+                                             the bolometric definition of the temperature in the presence of polarisation. The remaining
+                                             line-of-sight terms (lensing and time-delay) have previously been studied and must be cal-
+                                             culated non-perturbatively. The intrinsic B-mode polarisation is present independent of the
+                                             initial conditions and might contaminate the signal from primordial gravitational waves. We
+                                             find this contamination to be comparable to a primordial tensor-to-scalar ratio of r ≃ 10−7
+                                             at the angular scale ` ≃ 100 , where the primordial signal peaks, and r ≃ 5 × 10−5 at ` ≃ 700 ,
+                                             where the intrinsic signal peaks. Therefore, we conclude that the intrinsic B-polarisation from
+                                             second-order effects is not likely to contaminate future searches of primordial gravitational
+                                             waves.
+Contents
+
+1 Introduction                                                                               1
+
+2 Boltzmann equation                                                                         3
+  2.1 Generation mechanisms                                                                  6
+
+3 Line-of-sight                                                                              7
+  3.1 Treating the redshift contribution                                                     8
+  3.2 Temperature definition                                                                10
+
+4 Power spectrum computation                                                                10
+
+5 Results                                                                                   13
+  5.1 Comparison with previous results                                                      15
+  5.2 Convergence tests                                                                     17
+
+6 Conclusions                                                                               18
+
+A Coupling coefficients                                                                     20
+
+
+1   Introduction
+
+The polarisation of the cosmic microwave background (CMB) encodes important information
+about the origin of the primordial perturbations, as well as their subsequent evolution. The
+linear polarisation of the CMB is usually described in terms of its curl-free and gradient-free
+components, the E and B polarisation modes. The E-polarisation has been detected [1, 2] and
+is routinely used jointly with the CMB temperature fluctuations to constrain the cosmological
+parameters and to break their degeneracies [3–5]. At leading order, the B-polarisation of the
+CMB is only induced by primordial gravitational waves, i. e. the tensor modes of the metric.
+The mechanism of cosmic inflation naturally generates a stochastic background of primordial
+gravitational waves; its amplitude is proportional to the energy scale of inflation. Therefore,
+measuring the primordial B-polarisation would directly constrain models of inflation and
+provide an indirect detection of the gravitational waves [6–8].
+      The amplitude of the gravitational waves background produced in the early Universe is
+usually parametrised via the tensor-to-scalar ratio r , the ratio in power between the primor-
+dial tensor and scalar perturbations. The current CMB observations are consistent with the
+absence of primordial B-polarisation and translate to an upper limit on the tensor-to-scalar
+ratio of order r < O(10−1 ) , as found by both space-based (WMAP [4]) and ground-based
+experiments (QuAD [9], QUIET [10], BICEP1 [11]). A huge effort is currently being made
+to design CMB polarisation experiments that significantly improve these constraints [12–17].
+In particular, the LiteBIRD [18, 19], PIXIE [14] and PRISM [17] space-borne experiments
+promise to determine r with a precision of ∆ r = O(10−3 ) , O(10−3 ) and O(10−4 ), respec-
+tively.
+      There are, however, a number of non-linear effects that induce some degree of B-
+polarisation even in absence of primordial gravitational waves. This happens because, at
+
+
+
+
+                                            –1–
+the non-linear level, scalar, vector and tensor perturbations naturally couple and source each
+other; thus, tensor perturbations always arise due to the non-linear evolution of the primor-
+dial scalar fluctuations. This mechanism could bias the measurement of the B-polarisation
+of primordial origin, especially if r is as small as the detection threshold of PRISM. B-
+polarisation from non-linear effects cannot be treated with linear perturbation theory [6–8]:
+either second-order perturbation theory or a non-perturbative approach is needed to correctly
+account for them.
+      The most important contamination is weak lensing, which converts E-polarisation to
+B-polarisation as the CMB photons travel through the inhomogeneous universe [20]. Weak
+lensing becomes large at small scales and late times, when perturbation theory breaks down;
+the usual treatment of weak lensing therefore avoids perturbation theory by considering the
+small deflection angles of the photon trajectories [21]. The B-polarisation from lensing limits
+a detection of tensor modes to r > O(10−3 ) [22–24]; however delensing techniques can be
+used to bring this limit to r > O(10−6 ) in absence of a sky cut [21, 25, 26]. These B-
+modes generated by lensing have been detected in the CMB by the SPTpol experiment at
+∼ 8 σ [27]. Another non-perturbative effect that accumulates along the photon paths is the
+gravitational time-delay. Similarly to lensing, time-delay converts E-modes to B-modes, but
+its amplitude is strongly suppressed with respect to lensing for geometrical reasons [28]. As a
+result, the time-delay bias on a measurement of the primordial tensor modes is smaller than
+the detection threshold of a PRISM-like experiment.
+      The remaining sources of B-polarisation from non-linear evolution can be treated using
+second-order perturbation theory. The Einstein and Boltzmann equations at second order
+have been studied in great detail [29–34]. They are significantly more complicated than at
+first order and solving them numerically is a daunting task. Mollerach, Harari and Matarrese
+(2004) [35] (hereafter MHM2004) simplified the problem by studying only the linear response
+of the CMB photons to the second-order vector and tensor perturbations, which are known
+analytically [36–43]; by doing so, they found that the B-modes from this non-linear effect
+dominate over the primordial ones unless the tensor-to-scalar ratio is of order r > O(10−6 ) .
+The complementary effect of the second-order collisions between photons and electrons during
+recombination has been computed by Beneke, Fidler and Klingmüller (2011) [44] (hereafter
+BFK2011) using a full second-order approach. They found the effect to be small compared
+to the lensing contribution, but of comparable order to that of the metric sources considered
+by MHM2004.
+      In this paper we use the second-order Boltzmann code SONG [45] to compute the power
+spectrum of the B-polarisation from non-linear evolution. With respect to the perturbative
+studies described above, we adopt a more general treatment whereby:
+
+   • We consider all the second-order sources generating B-polarisation at the time of recom-
+     bination and take into account their correlation. These include the Liouville sources,
+     which we compute for the first time, and the collision and metric sources.
+
+   • We compute for the first time the B-mode polarisation generated by the redshift term
+     in the Boltzmann equation along the line-of-sight.
+
+   • We compute the bolometric temperature and account for its implications on polarisa-
+     tion.
+
+
+
+
+                                            –2–
+Our approach is the most complete to date and only lacks the late-time lensing and time
+delay effects. As we have discussed above, these effects have already been computed in the
+literature non-perturbatively.
+
+Outline of the paper In section 2 we present the second-order polarised Boltzmann
+equations, establish our notation and discuss how B-modes are generated at second order. In
+section 3 we introduce the line-of-sight formalism in order to compute the polarised transfer
+functions today. We also show that the polarised redshift terms in the Boltzmann equation
+can be absorbed by a transformation of variables, and provide a consistent definition of tem-
+perature including the implications for polarisation. Section 4 summarises the computation
+of the B-mode power spectrum. Our results are presented in section 5, where we also discuss
+how they relate to the previous literature and investigate the numerical stability of SONG.
+Finally we report our conclusions is section 6.
+
+Metric We employ the Poisson or conformal Newtonian gauge [46, 47], where the metric
+is given by:
+
+        ds2 = a2 (η) −(1 + 2Ψ)dη 2 + 2ωi dxi dη + [ (1 − 2Φ)δij + 2 γij ] dxi dxj .
+                    
+                                                                                    (1.1)
+
+The vector potential is transverse ∂i ωi = 0 , while the spatial metric is both transverse
+∂ i γij = 0 and traceless γ i i = 0 .
+
+Cosmological parameters Throughout this paper we assume a flat ΛCDM model with
+Planck parameters [5]: h = 0.678, Ωb = 0.0483, Ωcdm = 0.259, ΩΛ = 0.693, As = 2.214×10−9 ,
+ns = 0.961, κreio = 0.095, Neff = 3.04. conformal age η0 = 14210 Mpc and recombination
+happens at z = 1089, corresponding to a conformal time of ηrec = 281 Mpc. (The above
+parameters are given in natural units where c = 1.) We assume adiabatic initial conditions
+with a vanishing primordial tensor-to-scalar ratio (r = 0), and therefore focus only on the B-
+polarisation that is generated in the absence of primordial tensor perturbations. We consider
+Gaussian initial conditions (fNL = 0) without loss of generality, because, for purely-scalar
+initial conditions, the contribution to the power spectrum from the three-point function is at
+least fifth-order in the primordial perturbations and thus negligible (Section 4).
+
+2   Boltzmann equation
+
+The Boltzmann equation describes how the distribution function of a particle species evolves
+in perturbed space-time, given its interactions with the other species. To describe polarised
+radiation in the Boltzmann formalism, one has to introduce a Hermitian tensor-valued dis-
+tribution function, fµν (η, x, q) , with q = qn being the comoving momentum in a locally
+inertial frame, such that
+
+                                      ˆµ ˆ∗ν fµν (η, x, q)                               (2.1)
+
+is the number density of photons at (x, q) in phase space and at time η in the polarisation
+state ˆ (see Refs. [32–34] and references therein). The polarised distribution function can be
+decomposed on the so-called helicity basis of the spherical coordinate system,
+                                             X
+                                     f µν =       fab νb ∗µ
+                                                           a ,                             (2.2)
+                                             ab
+
+
+
+
+                                             –3–
+given by the two vectors
+                       1                                         1
+                + = − √ ( eθ + i eφ )          and      − = − √ ( eθ − i eφ ) ,               (2.3)
+                        2                                         2
+where θ and φ are the polar and azimuthal angles of the direction of propagation of the
+photon, n, while the vectors eθ = ∂θ n and eφ = ∂φ n/ sin θ span the plane orthogonal to n.
+The a and b indices are called helicity indices and can assume the values ab = ++, −−, −+,
++− . We follow the conventions used in Ref. [33] for the choice of coordinate system and the
+polarisation basis.
+     The four physical degrees of freedom of fab can also be expressed in terms of the Stokes
+parameters,
+                                                                  
+                                f++ f+−             fI − fV fQ − ifU
+                      fab =                  =                         ,                (2.4)
+                                f−+ f−−            fQ + ifU fI + fV
+
+where fI is the intensity, fV the circular polarisation, fQ and fU the two components of
+linear polarisation. The intensity is related to the photon temperature; what we have been
+referring to as f in Ref. [45] is, in the formalism of polarised radiation, fI . We shall see
+below that fQ and fU are related to the E and B-polarisation by multipole decomposition.
+The circular polarisation, fV , is not sourced by any mechanism in the standard cosmological
+paradigm, and we shall therefore ignore it.
+      The time evolution of the photon distribution function fab (η, x, q) at second order is
+determined by the Boltzmann equation. Before multipole decomposition, this simply reads
+                                                                             !
+     ∂fab dxi ∂fab      dq ∂fab dni ∂fab               ∂j∗
+                                                         c             ∂j
+                                                                         c
+          +          +            +             + a j      fcb + ∗b j i fac = C[fab ] . (2.5)
+      ∂η     dη ∂xi     dη ∂q        dη    ∂ni         ∂ni             ∂n
+
+The Liouville term on the left-hand side describes particle propagation in an inhomoge-
+neous space-time and the collision term on the right-hand side describes the interactions
+between photons and electrons through Compton scattering. (Note that the a, b, c indices
+refer to helicity, a, b, c = +, −, while the other latin indices are spatial, i, j, k = 1, 2, 3.) The
+                    i ∂f
+gradient term ( dx      ab
+                  dη ∂xi ) encodes free streaming; at higher order this term also includes time-
+                                                    dq ∂fab
+delay effects. The momentum-derivative term ( dη        ∂q ) causes the redshifting of photons at
+background level and at higher-order includes the well-known Sachs-Wolfe (SW), integrated
+                                                                           i
+Sachs-Wolfe (ISW) and Rees-Sciama (RS) effects. The terms in dn          dη vanish to first order and
+describe the small-scale effect of gravitational lensing on the CMB. The polarisation vectors
+appearing in these lensing terms encode the physical effect whereby a change in the direction
+of propagation of the photon results into a rotation of the polarisation basis. This is the
+second-order equivalent of the well known non-perturbative effect [20] that mixes different
+polarisation types.
+     It is convenient to express the Boltzmann equation using the brightness ∆ab , defined as
+the momentum-integrated distribution function normalised to the background energy density,
+
+                                                    dq q 3 fab (η, x, qn)
+                                                  R
+                          δab + ∆ab (η, x, n) =      R                     ,                     (2.6)
+                                                        dq q 3 f (0) (q)
+
+where f (0) is the background intensity distribution function, which takes the form of a black-
+body spectrum. The total time derivatives in the Liouville term can be evaluated using the
+
+
+
+
+                                                –4–
+geodesic equation [29, 33, 48, 49] in Newtonian gauge, yielding1
+ dxi ∂fab
+               → (1 + Ψ + Φ) ni ∂i ∆ab ,
+ dη ∂xi
+ dq ∂fab
+               → 4 (ni ∂i Ψ − Φ̇ + ni ω̇i + ni nj γ̇ij ) (δab + ∆ab ) − 4(Ψ − Φ) ni ∂i Ψ δab − 8ΦΦ̇ δab ,
+ dη ∂q
+ dni ∂fab                                                          ∂k∗              k
+                                                                                           
+                                                    ∂∆ab              c         ∗ ∂c
+               → − (δ ij − ni nj ) ∂j (Ψ + Φ)               +  ak      ∆ cb + bk     ∆ ac   .     (2.7)
+ dη ∂ni                                              ∂ni           ∂ni             ∂ni
+We represent the terms containing only metric perturbations by
+                  h                                                             i
+     Mab = δab 4 (ni ∂i Ψ − Φ̇ + ni ω̇i + ni nj γ̇ij ) − 4(Ψ − Φ) ni ∂i Ψ − 8ΦΦ̇ ,                          (2.8)
+
+and the remaining quadratic terms, including the photon distribution ∆, by
+
+  QL             i                i
+   ab = (Ψ + Φ) n ∂i ∆ab + 4 (n ∂i Ψ − Φ̇) ∆ab
+                                                            ∂k∗              k
+                                                                                    
+                                                 ∂∆ab         c          ∗ ∂c
+                  − (δ ij − ni nj ) ∂j (Ψ + Φ)        + ak      ∆ cb + bk     ∆ ac   . (2.9)
+                                                  ∂ni       ∂ni             ∂ni
+The first term of QL contributes to the time-delay effect, while we shall refer to the second
+and third ones as redshift and lensing terms, respectively. The above expressions are valid
+only when ∆ and the metric variables are expanded up to second order ∆ = ∆(1) + ∆(2) and
+        (1)            (1)
+when ωi = 0 and γij = 0 , that is, when the first-order initial perturbations are purely
+scalar.
+     We perform a Fourier transform from real space, x, into comoving wavevector, k, and
+a decomposition from photon direction, n, into spherical harmonics, (`, m). This transforms
+the Boltzmann and Einstein equations from partial differential equations into hierarchies
+of ordinary differential equations. The off-diagonal helicity components of the distribution
+function, f+− = fQ − ifU and f−+ = fQ + ifU , transform under rotations around the
+direction of photon propagation with spin s = 2 and −2, respectively [21]. Hence, they are
+decomposed into multipole space using spin-weighted spherical harmonics [6–8], thus defining
+the polarisation modes E and B:
+                                     r        Z
+                                   `   2` + 1        ∓2∗
+              fE,`m ± ifB,`m = i                dΩ Y`m   (n) [ fQ (n) ± ifU (n) ] ,     (2.10)
+                                         4π
+                                     r        Z
+                                   `   2` + 1        ∗
+                         fI,`m = i              dΩ Y`m (n) fI (n) ,
+                                         4π
+where we have used the fact that fI = (f++ + f−− )/2 transforms with spin zero. Note
+that while Q and U transform under rotations around the direction of photon propaga-
+tion, E and B are invariant by construction. The E-polarisation has the same parity as
+the intensity field, fE,`m → (−1)` fE,`m , while the B-polarisation has the opposite parity,
+fB,`m → (−1)`+1 fB,`m .
+     We shall use a single composite index, n, to express the harmonic and polarisation
+dependence of the distribution function, so that ∆n will denote ∆X,`m with X = I, E, B.
+Then, the Boltzmann equation (2.5) and (2.7) simply reads
+                                 ˙ n + k Σnn0 ∆n0 + Mn + QL
+                                 ∆                        n = Cn ,                                         (2.11)
+  1
+      Note that we have corrected a typographical error in the sign of ni ω̇i in Eq. (2.3) of Ref. [45].
+
+
+
+
+                                                       –5–
+where Σnn0 is the free-streaming matrix that arises from the decomposition of ni ∂i ∆ into
+spherical harmonics. This term couples neighbouring multipoles leading to the excitation
+of high-` moments over time and, as we shall see in Section 2.1, it also couples E and B
+polarisation. The collision term
+
+                                           ∆n − Γnn0 ∆n0 − QC
+                                                                   
+                             Cn = −|κ̇|                     n          ,                      (2.12)
+
+is proportional to the Compton scattering rate |κ̇| and consists of three distinct contributions:
+the purely second-order loss term −|κ̇| ∆n , describing scatterings out of a given mode ∆n ,
+the purely second-order gain term |κ̇| Γnn0 ∆n0 , and quadratic contributions in ∆ and in the
+electron velocity, |κ̇| QC
+                         n . When the scattering rate is large, photons and baryons behave as
+a tightly coupled fluid where the polarisation and all temperature moments larger than the
+quadrupole are suppressed. For the explicit expressions of the terms in Eq. (2.11) and (2.12),
+refer to Eq. (143) to (146) of Ref. [33]. In order to connect this abstract notation to the
+well-known linear equations (see, for example, Eqs. (61), (63) and (64) of Ref. [8]), we report
+the purely second-order collision gain term:
+                                                                           √
+              Γ(I,`m)n0 ∆n0 = δ`0 ∆I,00 + δ`1 4 ve[m] + δ`2 ( ∆I,2m −          6 ∆E,2m )/10
+                                    √               √
+              Γ(E,`m)n0 ∆n0 = −δ`2 6 ( ∆I,2m − 6 ∆E,2m )/10 ,
+
+              Γ(B,`m)n0 ∆n0 = 0 ,                                                             (2.13)
+
+        [m]
+where ve      is the electron velocity and m is the considered azimuthal mode.
+
+
+2.1   Generation mechanisms
+
+Only non-scalar sources can generate B-polarisation [8]. In general, a perturbation X(k)
+in Fourier space is a scalar if it is invariant under rotations around k. A second-order
+perturbation ∆(2) (k) is sourced by the convolution of two first-order ones, e.g. ∆(1) (k1 ) and
+∆(1) (k2 ). Even if these are scalars with respect to k1 and k2 , in general they are non-scalar
+with respect to k, unless the three wave-vectors are aligned. This means that the non-linear
+structure of the second-order equations naturally induces a variety of non-scalar sources even
+when the linear perturbations are scalar; these can in turn generate B-mode polarisation.
+This is in sharp contrast to the first-order case, where non-scalar modes cannot be induced
+unless they are present in the initial conditions, as is the case for primordial gravitational
+waves.
+      We present the second-order Boltzmann equation for B-mode polarisation explicitly, and
+discuss its different sources. In this context, we refer to the parts quadratic in the first-order
+quantities as sources and to the linear structure of the differential system as couplings; note
+that, at first order, only the latter are present. The vector and tensor modes of the metric
+do not directly induce B-polarisation [33], meaning that the coupling between the B-modes
+and the metric vanishes, MB,`m = 0 . Similarly, at the linear level, Compton scattering
+does not directly generate B-polarisation from other polarisation patterns, and therefore
+Γ(B,`m)n0 ∆n0 = 0 . It follows that the only non-vanishing coupling in the B-mode hierarchy
+is the free streaming, Σ(B,`m)n0 ∆n0 , while the only sources are the quadratic Liouville and
+
+
+
+
+                                              –6–
+scattering sources, QL         C
+                     B,`m and QB,`m , which read
+                                                2
+
+
+                                  +,`             −,`           0,`
+        Σ(B,`m)n0 ∆n0 = ∆B,`+1 m Dm m − ∆B,`−1 m Dm m − ∆E,` m Dm m ,                                    (2.14)
+                      n                                                               o
+                           [m ]                          [m ]         [m ]
+        QL
+         B,`m = i         k2 2 (Ψ + Φ) + 4 k1 2 Ψ − k1 2 ( Ψ + Φ )                         0,`
+                                                                                          Dm 1m
+                                                                                                ∆E,`m1   (2.15)
+                                                         √
+                                 n                         6          √          o
+        QC
+         B,`m   =   κ̇ ve[m2 ]       ∆E,`m1 − δ`2                                  0,`
+                                                             (∆I,2m1 − 6 ∆E,2m1 ) Dm 1m
+                                                                                        ,                (2.16)
+                                                          5
+where we have followed the notation in Ref. [33, 44]. In particular, the indices m1 and
+m2 = m − m1 are implicitly summed over m1 = −1, 0, +1: scalar, vector and tensor modes
+are mixed at second order. The coupling coefficients D are shorthand for the multipole de-
+compositions of ni f and of (δij −ni nj ) ∂f /∂nj ; we report their explicit form in Appendix A.
+     The free-streaming matrix Σ(B,lm)n0 in Eq. (2.14) couples E and B modes, so that the
+two types of polarisation source each other. This coupling is effective in converting E to
+B-polarisation all the way from recombination to today. Therefore, the sources appearing
+in the hierarchy for the E-modes are as efficient as the ones in Eq. (2.15) and Eq. (2.16)
+in generating the B-modes. For this reason, we shall refer to the quadratic sources QC     B,`m ,
+  L       C           L
+QB,`m , QE,`m and QE,`m as direct sources for the B-modes.
+     As in the first-order case, the intensity and E-polarisation quadrupoles are coupled via
+Γ(E,lm)n0 ∆n0 , whose expression can be found in Eq. (2.13). This coupling is active only
+during recombination as Γnn0 multiplies the Compton scattering rate. Hence, all non-scalar
+sources that affect the intensity will lead to the generation of B-modes in an indirect way:
+during recombination they are converted into E-modes, which in turn couple to the B-modes
+by the efficient free-streaming mechanism encoded by Σnn0 . For this reason, we shall call
+such sources indirect. The indirect sources include QC                 L
+                                                          I,`m and QI,`m , but also the metric
+sources MI,`m . Since all species are coupled to the metric, this means that any non-scalar
+source (e. g. from the cold dark matter and neutrino sectors) will be indirectly coupled to
+B-mode polarisation if it is active before or during recombination. This is indeed the way
+B-polarisation is generated at first order if a background of primordial gravitational waves is
+present.
+
+
+3       Line-of-sight
+
+After recombination, photons stream so that at time η higher multipoles with ` ≈ k(η − ηrec )
+are excited, making a full numerical computation of the photon brightness moments ∆`m
+increasingly expensive. In SONG we instead compute the moments using the line-of-sight
+integration                     Z                 η0
+                                 ∆n (η0 ) =            dη e−κ(η) jnn0 (k(η0 − η)) Sn0 (η) ,               (3.1)
+                                              0
+
+which is an integral representation for the solution of the differential equation [50]
+
+                                        ˙ n + k Σnn0 ∆n0 = −|κ̇|∆n + Sn .
+                                        ∆                                                                 (3.2)
+    2
+    The quadratic sources of the Boltzmann equation are a convolution integral over two dummy wavemodes,
+k1 and k2 . In the following, for brevity, we shall report only the kernels of the convolution and assume that
+the first term in a product is assigned k1 and the second k2 , e. g. Φ ∆E,`m1 = Φ(k1 ) ∆E,`m1 (k2 ) .
+
+
+
+
+                                                                –7–
+The source function Sn contains both couplings and quadratic sources, and it is obtained by
+comparing equation (3.2) with the full Boltzmann equation (2.11):
+
+                           Sn = −Mn − QL                    C
+                                                                   
+                                       n + |κ̇| Γnn0 ∆n0 + Qn          .                    (3.3)
+
+      The excitation of higher multipoles through streaming and the mixing of E- and B-modes
+is encoded in the projection functions jnn0 , which are linear combinations of spherical Bessel
+functions [44]. Because the free-streaming coupling does not mix intensity with polarisation
+(as shown in Eq. (2.14)) the projection function j(B,`m)n0 vanishes for n0 = (I, `0 m0 ). As a
+result, to compute ∆B,`m (η0 ) one only needs to integrate the source functions for the E and
+B-modes, that is, SE,`0 m0 and SB,`0 m0 .
+      The quadratic part of the line-of-sight sources for polarisation is given by −QL     B,`m +
+     C             L           C
+|κ̇|QB,`m and −QE,`m +|κ̇|QE,`m , which we identified in the previous section as direct sources.
+These depend only on linear perturbations squared and are therefore easy to compute. The
+metric terms in Mn vanish for both polarisation types, while |κ̇|Γ(B,`m)n0 = 0 only for the
+B-modes. Therefore, the only other contribution to ∆B,`m (η0 ) comes from |κ̇|Γ(E,`m)n0 ∆n0 ,
+which involves the second-order photon perturbation ∆n0 . This term encodes the indirect
+generation of B-modes by sources that affect the intensity or the E-modes, that is, the indirect
+sources. For B-polarisation, these are only relevant before recombination as they depend on
+Compton scattering. To obtain them one has to solve the second-order Boltzmann-Einstein
+differential system until the time of recombination; for this purpose, we use the second-order
+Boltzmann code SONG [45].
+      We split our computation into two steps. First we solve the full differential equation
+system (2.11) including all second-order sources (metric, collision and Liouville) up to the
+end of recombination. This is possible because during the tight-coupling regime all the
+multipoles with ` > 2 are suppressed and, towards the end of recombination, they are only
+slowly generated. Thus we can cut the hierarchy at relatively small ` ≈ 15 (for details on this
+step we refer to Ref. [45]). The resulting transfer functions are used to construct the indirect
+sources, |κ̇|Γ(E,`m)n0 ∆n0 , which are added to the direct ones to obtain the line-of-sight source
+functions Sn0 . Finally, these are numerically convolved with the projection functions jnn0 in
+Eq. (3.1) to obtain the B-mode polarisation today.
+      The lensing and time-delay terms in QL     n are impractical to compute numerically in
+the line-of-sight formalism, as they involve photon moments that are active all the way to
+today. A full treatment of these terms is beyond the scope of this work and non-perturbative
+computations for these effects have already been performed. For these reasons, in this work
+we neglect the lensing and time-delay terms and refer to the non-perturbative results for
+lensing [20, 21, 25, 26] and time-delay [51]. We further refer the reader to Huang & Vernizzi
+(2013) [52] for a second-order treatment of such terms for the photon intensity.
+
+3.1   Treating the redshift contribution
+For the intensity, it was shown by Huang & Vernizzi [53] that the quadratic redshift con-
+tribution, that is, the second term in Eq. (2.9), can be included in the computation by a
+transformation of variables (see also Ref. [45] or, for an alternative treatment of the redshift
+terms, Ref. [54]). Here, we generalise this approach to polarised radiation and consider the
+following transformation:
+                                    e ab ≡ [ ln(1 + ∆) ]ab .
+                                    ∆                                                      (3.4)
+
+
+
+
+                                              –8–
+The logarithm of matrices is defined by the Mercator series; up to second order we obtain:
+                                    e ab = ∆ab − ∆ac ∆cb .
+                                    ∆                                                   (3.5)
+                                                       2
+Expanding the above expression in multipole space, and neglecting the contribution from the
+first-order B-modes, gives rise to a non-trivial mixing between the I, E, B modes:
+                              0 00           0 00 
+                         L−1    ` ` `           ` ` `
+     ∆B,`m = ∆B,`m − i
+     e
+                                  0    00               ∆I,`0 m0 ∆E,`00 m00  if L odd , (3.6)
+                                m m m           0 2 2
+                            0 00           0 00 
+                         L    ` ` `          ` ` `
+     ∆E,`m = ∆E,`m − i
+     e                                                ∆I,`0 m0 ∆E,`00 m00   if L even , (3.7)
+                             m0 m00 m         0 2 2
+
+and ∆                e E,`m = ∆E,`m otherwise with L = ` − `0 − `00 and where
+    e B,`m = ∆B,`m , ∆
+                             0 00     
+                              ` ` `
+                                         = `0 m0 `00 m00 |`m                                          (3.8)
+                              m0 m00 m
+are the Clebsch-Gordan coefficients. A sum over `0 , `00 , m0 , m00 is implicit, a convention that
+will be assumed also for the equations that follow. The transformation for the unpolarised
+brightness reads
+                            0 00          0 00 
+    e I,`m = ∆I,`m − i 1 L    `   `    `    ` ` `
+    ∆                                                ∆I,`0 m0 ∆I,`00 m00
+                       2      m0 m00 m      0 0 0
+                            0 00          0 00 
+                       1 L    ` ` `         ` ` `
+                    − i         0   00                 ∆E,`0 m0 ∆E,`00 m00      if L even ,  (3.9)
+                       2      m m m         2 −2 0
+
+and ∆ e I,`m = ∆I,`m otherwise. It can be shown that it is not necessary to include the
+∆E,`0 m0 ∆E,`00 m00 term in the second line in order to absorb the redshift term for the intensity;
+indeed, Refs. [45, 53] neglect it.
+      The time derivative of ∆  e ab up to second order is then given by
+                     "                 #
+                            ˙ + ∆∆
+                           ∆∆        ˙                                               
+           ˙e
+           ∆ab = ∆     ˙ −                           e ab − Mab + C − C ∆ + ∆ C
+                                           = −ni ∂ i ∆
+                                2                                              2       ab
+                                         ab
+
+                                                 − QL        i
+                                                    ab + 4 (n ∂i Ψ − Φ̇)∆ab ,                        (3.10)
+where we have used the first-order Boltzmann equation
+                          ˙ ab = −ni ∂ i ∆ab − 4 (ni ∂i Ψ − Φ̇) δab + Cab ,
+                          ∆                                                                          (3.11)
+to replace the quadratic terms including ∆  ˙ ab and the second-order one, Eq. (2.11), to replace
+∆˙ ab . The new contribution 4 (n ∂i Ψ − Φ̇)∆ab exactly cancels the redshift term in QL so that
+                                  i
+
+the second line of Eq. (3.10) reduces to only the time-delay and lensing contributions. In
+addition, the collision term Cab is replaced by [C − (C∆ + ∆C)/2]ab .3
+        The transformation works because the second-order source we are eliminating is pre-
+cisely the first-order ∆ times part of the first-order source. Its cost is that it makes the
+scattering term more complex and requires an additional transformation to relate ∆      e ab back
+                                                                        L
+to ∆ab . Unfortunately, this still leaves other problematic terms in Q , the lensing and time-
+delay terms.
+   3
+    Note that since ∆˜ = ∆ to first order, we can replace ∆ by ∆
+                                                               ˜ in the non-linear terms, so that Eq. (3.10)
+                                          ˜
+becomes a closed system of equations for ∆.
+
+
+
+
+                                                   –9–
+3.2      Temperature definition
+At second order it is not possible to unambiguously define a temperature for the photon dis-
+tribution function, as its blackbody spectrum is distorted by collisions during recombination
+and reionisation [29, 45, 51, 55–58]. However, one can choose between a number of “effec-
+tive” temperatures, each corresponding to a different moment of the distribution function;
+in the limit of a blackbody spectrum these all coincide. In this paper, we adopt the so-called
+bolometric temperature Θab , which is the temperature of a blackbody distribution with the
+same energy density of the photons [57, 59]. For polarised radiation, the brightness is related
+to the bolometric temperature by:
+
+                                       δab + ∆ab = (δ + Θ)4ab ,                                         (3.12)
+
+Note that this definition connects the bolometric temperature for the intensity, E-mode and
+B-mode polarisation to the brightness moments in a non-trivial way. Expanding this relation
+to second order,
+
+                                      ∆ab = 4 Θab + 6 Θac Θcb ,                                         (3.13)
+
+we obtain the product Θac Θcb , which is expanded into multipole space similarly to Eq. (3.6)
+and thus contains quadratic couplings between the B-mode, the E-mode and intensity. Note
+that [Θ2 ]ab contributes to the B-polarisation component of ∆ab at second order even in the
+absence of B-polarisation of the temperature anisotropies at first order. This effect is present
+regardless of the choice of temperature definition; in particular, it exists even for a blackbody
+spectrum where all choices are equivalent.
+
+4       Power spectrum computation
+
+The angular power spectrum of the intrinsic B-polarisation, C`BB , is defined as
+
+                                    aB,`m a∗B,`0 m0     = C`BB δ``0 δmm0 ,                               (4.1)
+
+where the observed multipoles aX,`m , with X = I, E, B, are conventionally related to the
+temperature perturbation ΘX,`m by 4
+
+                                 d3 k
+                             Z                r
+                                            `     4π
+                   aX,`m =           3
+                                       (−i)            ΘX,`m (k) eik·x0 .           (4.2)
+                                (2π)            2` + 1
+                                                                                                  (1)
+For purely scalar initial conditions, no B-polarisation is generated at first order (aB,`m = 0)
+and, as a result, C`BB is fourth-order in the primordial perturbations. For the same reason,
+the contribution to C`BB from the three-point function is at least fifth order and we neglect
+it.
+     The correction needed to absorb the redshift term from the Boltzmann equation Eq. (3.5)
+and the quadratic term in the relation Eq. (3.13) between brightness and the bolometric tem-
+perature have the same structure. After enforcing ∆ab = 4 Θab up to first order, they partially
+    4
+    The extra `-dependent factors in the integral counter the factors included in the multipole decomposition
+of Θ`m in order to simplify the Boltzmann equations. Also note that the position x0 where the a`m ’s are
+computed is not important, as it will cancel in the power spectrum after enforcing the statistical homogeneity
+of the Universe.
+
+
+
+
+                                                      – 10 –
+cancel to yield an expression for the second-order temperature perturbation:5
+                                      (2)     1 e (2) 1     (1)
+                                    Θab =       ∆ab + Θ(1)
+                                                        ac Θcb ,                                        (4.3)
+                                              4       2
+where the partial cancellation is encoded by the factor 1/2 = 2 − 3/2, and we have reinstated
+the suffix denoting the perturbative order to avoid confusion. We recall that ∆       e ab is the
+transformed distribution function that was introduced in Section 3.1 to treat the redshift
+contribution of the Boltzmann equation. The helicity indices a, b, c can be converted to
+polarisation multipoles using Eq. (2.10). For the B-polarisation, this results in
+                                            0 00    0 00 
+         (2)     1 e (2)      `−`0 −`00 +1  ` ` `      ` ` `        (1)     (1)
+       ΘB,`m = ∆B,`m − i                      0 00                ΘI,`0 m0 ΘE,`00 m00       (4.4)
+                 4                          m m m       0 2 2
+for ` − `0 − `00 odd, while for even ` − `0 − `00 the non-linear term is absent. (We recall that,
+here and in the following, a sum is implicit over the primed indices, as well as a convolution
+product over the Fourier wave-vector.) The computation of the angular power spectrum C`BB
+is straightforward as our assumption is that there are no first-order B-modes. The leading
+                        (2)
+term is quadratic in ΘB,`m and will therefore contain three contributions:
+                                       1 Be Be  1 B(IE)    (IE)(IE)
+                            C`BB =             − C`
+                                                   e
+                                          C`            + C`        .                                   (4.5)
+                                       16       2
+                                                                                    e (2) :
+       The first term in Eq. (4.5) is the power spectrum of the transformed B-modes ∆ B,`m
+                              Z    3     3 0
+                                  d k d k 4π        D                       E
+                    C`B B =
+                       ee                             e (2) (k) ∆
+                                                      ∆         e (2)∗ (k0 ) ,          (4.6)
+                                 (2π)3 (2π)3 2` + 1     B,`m      B,`m
+
+
+with no summation over m.6 To compute this power spectrum we rotate the coordinate
+system such that the polar axis of the spherical harmonics, ẑ , is aligned with the Fourier
+mode k ; the perturbation in the new coordinate system is given by a Wigner rotation, which
+in turn is expressed using spin-weighted spherical harmonics [8, 44, 60]:
+                                     r           `
+                    (2)                  4π     X
+                                                       −m0      e (2) 0 (k ẑ) .
+                  ∆B,`m (k) −→
+                  e                                  Y`m   (k̂) ∆ B,`m                 (4.7)
+                                       2` + 1 0
+                                                       m =−`
+
+The statistical isotropy of the Universe ensures that all the relevant physical information
+is contained in ∆e (2) (k ẑ) , which hereafter we shall simply denote as ∆  e (2) (k). We also
+                   B,`m                                                        B,`m
+                                          (2)
+express the second-order perturbation ∆ e      (k) in terms of the second-order transfer function
+                                               B,`m
+  (2)
+TeB,`m (k, k1 , k2 ) and the primordial perturbation Φ:
+                                     Z 3
+                          (2)            d k1 e(2)
+                        ∆B,`m (k) =
+                        e                     T     (k, k1 , k2 ) Φ(k1 ) Φ(k2 ) ,                       (4.8)
+                                        (2π)3 B,`m
+   5
+     In BFK2011 the quadratic term in the relation (3.13) between brightness and bolometric temperature
+                                               (2)      (2)
+was mistakenly omitted and the relation Θab = 41 ∆ab was used to compute the angular power spectrum.
+Given the above-mentioned cancellation with the redshift contribution, which was neglected in BFK2011,
+their numerical result is fortuitously close to that where both effects are included.
+   6
+     The power spectrum C`B B does not depend on the value of the azimuthal mode m because there is no
+                              ee
+
+preferred direction. In the following we shall choose to rotate the coordinate system so to align the symmetry
+axis of the spherical harmonics to k; this does not change the previous statement, but C`B B will then be
+                                                                                                ee
+
+expressed as a sum over the different m modes. We shall call the m = ±1 and m = ±2 contributions as vector
+and tensor modes, respectively.
+
+
+
+
+                                                   – 11 –
+with k2 = k − k1 . Finally, we use Wick’s theorem to express the expectation values of the
+four primordial perturbations resulting from substituting Eq. (4.8) into Eq. (4.6) as a product
+of two power spectra, PΦ . We thus obtain an expression that only contains quantities that
+can be computed by SONG:
+                            X Z            Z 3
+        B
+        eB     2     1                   2   d k1
+      C`    =                       dk k           PΦ (k1 ) PΦ (k2 )
+          e
+               π (2` + 1) 2                  (2π)3
+                                   m6=0
+                                                                                                           
+                      (2)                  (2)∗                   (2)                  (2)∗
+                    TeB,lm (k, k1 , k2 ) TeB,lm (k, k1 , k2 ) + TeB,lm (k, k1 , k2 ) TeB,lm (k, k2 , k1 )       . (4.9)
+
+This formula does not involve scalar contributions (m = 0), as the scalar modes do not
+generate B-mode polarisation. In principle, the sum over m goes as far as m = ±` but, in
+practice, there are two reasons why the dominant contribution is expected to come from the
+vector (m = ±1) and tensor (m = ±2) parts. First, the |m| > 2 contributions only arise
+from ` > 2 multipoles which are tight-coupling suppressed during recombination. Secondly,
+being Y`m (θ, φ) proportional to sinm θ , the |m| > 0 sources are increasingly suppressed
+for “squeezed” configurations, where either one of the k1 or k2 wavevectors is aligned with
+the polar axis of the spherical harmonics, k. This suppression diminishes as k1 and k2
+become more orthogonal with respect to k. Because the three wavevectors form a triangle,
+k = k1 +k2 , these large-angle configurations correspond to increasingly large values of k1 and
+k2 , which, in turn, are suppressed by the PΦ (k1 ) and PΦ (k2 ) terms in the power spectrum
+formula. We have verified the above arguments numerically by running SONG with sources
+up to |m| = 4, and found that the m = ±3 and m = ±4 sources indeed give a negligible total
+contribution of about 1% to C`B B .
+                                ee
+
+                                                                               B(IE)
+     The second term in C`BB is the mixed contribution C`
+                                                                               e
+                                                                               , given by the statistical
+                               (2)
+average of the product of ∆B,`m with the quadratic part of Eq. (4.4); it takes the form of a
+                            e
+bispectrum that is folded with two Clebsch-Gordan coefficients:
+
+                                                                           d3 k d3 k0 d3 k̂ d3 k̂0
+                                       0 00          0 00  Z
+        B(IE)      4π         0    00   ` ` `           ` ` `
+                         i`−` −` +1
+         e
+      C`      =                          0     00
+                 2` + 1                 m m m           0 2 2             (2π)3 (2π)3 (2π)3 (2π)3
+                                       D                                            E
+                                           (1)         (1)              e (2)∗ (k0 ) .
+                 (2π)3 δ(k − k̂ − k̂0 ) ΘI,`0 m0 (k̂) ΘE,`00 m00 (k̂0 ) ∆ B,`m                     (4.10)
+
+After introducing the transfer functions Eq. (4.8) and rotating the coordinate system so
+                                                                           B(IE)
+that the z-axis is aligned with k0 , we are able to express C`
+                                                                           e
+                                                                   in terms of the quantities
+computed by SONG:
+                                           2 X `0 `00 `
+                                                            0 00 
+          B(IE)
+          e          `−`0 −`00 +1    4π                        ` ` `
+        C`       = i                               0  00
+                                  (2` + 1) π     m m m         0 2 2
+                                                  m6=0
+
+                                      d3 k1
+                       Z           Z
+                                                             Y`0 m0 (k1 ) Y`00 m00 (k2 )
+                           dkk 2            PΦ (k1 )PΦ (k2 ) √ 0          √
+                                      (2π)3                    2` + 1        2`00 + 1
+                       1 (1)           1 (1)         
+                                                         (2)∗                       (2)∗
+                                                                                                 
+                         TI,`0 0 (k1 ) TE,`00 0 (k2 ) T̃B,`m (k, k1 , k2 ) + T̃B,`m (k, k2 , k1 ) , (4.11)
+                       4               4
+                                                                         (1)
+where we have expressed the first-order transfer functions T`0 m0 (k0 ) by their scalar component
+                             (1)
+  4π/(2`0 + 1) Y`0 m0 (k0 ) T`0 0 (k 0 ). The integration is numerically challenging because it is
+p
+
+
+
+
+                                                     – 12 –
+                                                                      (2)
+highly oscillatory in all directions. The second-order perturbation TeB,`m depends on an
+                                                                    B(IE)
+                                                                    e
+additional Fourier wavevector, so that the integrations in C`      cannot be disentangled and
+computed separately. To perform the integration we use the bispectrum module of SONG,
+which will be publicly released within the CLASS code [61, 62] in 2014 [63].
+     The final term appearing in the intrinsic power spectrum comes from the square of the
+quadratic part of Eq. (4.4). This contribution depends only on the first-order perturbations
+and can be reduced to the product of two linear power spectra:
+
+                4π −`0 −`00 +`ˆ0 +`ˆ00 `0 `00 `                `ˆ `ˆ `      `ˆ `ˆ `
+                                                 0 00   0 00         0 00 
+  (IE)(IE)                                         ` ` `
+ C`        =         i                   0  00                   0  00                  (4.12)
+              2` + 1                    m m m      0 2 2      m̂ m̂ m        0 2 2
+
+                  d3 k d3 k0 d3 k̂ d3 k̂0 d3 k              e0
+                                                       e d3 k
+              Z
+                                                               (2π)3 δ(k − k̂ − k̂0 ) (2π)3 δ(k0 − k e0 )
+                                                                                                   e−k
+                 (2π) (2π) (2π) (2π) (2π) (2π)3
+                       3       3      3         3       3
+
+              D                                                             E
+                 (1)            (1)               (1)∗    e Θ(1)∗ (k
+                ΘI,`0 m0 (k̂) ΘE,`00 m00 (k̂0 ) Θ ˆ0 0 (k)      ˆ00 00
+                                                                       e0 )
+                                            I,` m̂         E,` m̂
+                                 "              2                                            #
+        1 (2`0 + 1)(2`00 + 1)         `0 `00 `
+                                                                    0 00   0 00 
+                                                                    ` `  `   ` `  `
+     =                                                C`II0 C`EE
+                                                              00 +                   C`IE  EI
+                                                                                        0 C`00   .
+       4π       2` + 1                0 2 2                         0 2 2    2 0 2
+
+The three different contributions to the B-polarisation are all of comparable order; each is of
+fourth order in the perturbations and contains two polarised quantities that are suppressed
+compared to the unpolarised ones.
+
+5   Results
+
+We compute the angular power spectrum of the intrinsic B-polarisation by first solving the
+Boltzmann equation Eq. (3.10) and then obtaining C`BB via Eq. (4.5). In order to accomplish
+this task, we have updated SONG with the Boltzmann treatment of polarised radiation at
+the level of the differential system and of the line-of-sight integration. We have also imple-
+mented functions to compute polarised bispectra in an efficient way, as these are necessary
+                    B(IE)
+to compute the C`          contribution in Eq. (4.10). We obtain an independent check of our
+results by comparing SONG’s polarised transfer functions against a second numerical code
+based on Green functions. This code was used by BFK2011 to compute the collisional in-
+trinsic B-modes, and we have updated it since to include the metric and Liouville terms at
+recombination and the redshift terms along the line-of-sight. Finally, we use adiabatic initial
+conditions with a vanishing tensor-to-scalar ratio, in agreement with BFK2011. Note that
+this implies that the initial conditions for the second-order vector and tensor perturbations
+vanish outside the Hubble horizon [60].
+      In the upper panel of Figure 1 we show the full C`BB together with a breakdown between
+its contributions according to Eq. (4.5). The dominant component is given by B        e B,
+                                                                                        e which
+arises from sources active at recombination. The other contributions, B(IE)e     and (IE)(IE),
+arise from the bolometric-temperature correction Eq. (3.13) and the redshift term Eq. (3.5).
+Their smallness with respect to B  eB
+                                    e is due to the partial cancellation between the two effects,
+as explained after Eq. (4.3). If we neglect the redshift contribution along the line-of-sight,
+the C` from B(IE)
+              e       is three times larger and negative and the contribution from (IE)(IE)
+is nine times larger and, as a result, the total BB spectrum changes significantly in shape.
+
+
+
+
+                                                  – 13 –
+                                                                                      Full C BB
+                     14×10−8
+                                                                                      C BB / 16
+                                       12                                             C B(IE) / 2
+                                                                                      C (IE)(IE)
+                                       10
+                             C [μK2]
+                                                                                      r = 10-6
+
+                                        8
+                     · ( +1 ) BB
+
+
+
+
+                                        6
+                        2π
+
+
+
+
+                                        4
+
+                                        2
+
+                                        0
+
+                    −2×10−8
+                                            0                 500       1000       1500             2000
+                                                                     multipole
+
+                                   102
+
+
+                                        1                                         Lensed E-modes
+
+
+                                10−2                                             Lensed B-modes
+                      C [μK2]
+
+
+
+
+                                                r = 10 -1
+                                10−4
+              · ( +1 ) BB
+
+
+
+
+                                                r = 10 -3
+                                10−6
+                 2π
+
+
+
+
+                                                r = 10 -5
+                                10−8
+                                                                                 Intrinsic B-modes
+                                                         -7
+                                                r = 10
+                                10−10
+
+                                                r = 10 -9
+                                10−12
+                                                      10                 100                 1000
+                                                                     multipole
+
+Figure 1: Angular power spectrum C`BB of the intrinsic B-polarisation in the CMB. In this
+                                                                         2 = (2.7255×106 µK)2
+and in the following figures, we show the C` ’s multiplied by a factor Tcmb
+with respect to the equations in the text. Upper panel: Breakdown of the intrinsic signal
+(solid blue curve) into its components, according to Eq. (4.5). The B    eB
+                                                                          e contribution (solid)
+dominates over the quadratic contributions B(IE) (dotted) and (IE)(IE) (dot-dashed), due
+                                               e
+to the partial cancellation between the redshift and temperature corrections Eq. (3.13), as
+explained in the text. Lower panel: The intrinsic signal (solid blue curve) is comparable to
+that from primordial gravitational waves (dashed orange curves) with r ≈ 10−7 at ` = 100
+and r ≈ 5 × 10−5 at ` ≈ 700. It is always subdominant with respect to the lensing-induced
+B-modes (red curve) and the E-modes (green curve).
+
+
+
+
+                                                                    – 14 –
+35×10−8                                                                        12×10−8
+                                                                                                               C BB / 16
+                  30                        BFK2011 (only collisions)                                          vector (m=1) part
+                                                                                    10
+                                                                                                               tensor (m=2) part
+                  25
+        C [μK2]
+
+
+
+
+                                                                                     8
+
+                  20
+· ( +1 ) BB
+
+
+
+
+                                                                                     6
+                  15
+   2π
+
+
+
+
+                                            Full C BB
+                                                                                     4
+                  10
+
+                                                                                     2
+                   5
+
+
+                   0                                                                 0
+                       0         500      1000          1500            2000             0   500      1000      1500               2000
+                                       multipole                                                   multipole
+
+
+Figure 2: Left panel: Comparison of the full intrinsic B-modes (solid blue curve) with a
+calculation including only collision effects and neglecting both the redshift and bolometric
+temperature corrections (solid red curve). The latter curve is consistent with what is com-
+puted by BFK2011. Right panel: The power spectrum C`B̃ B̃ (solid black curve) split into
+vector (dashed black curve) and tensor (dotted black curve) contributions.
+
+
+      In the lower panel of Figure 1 we show a logarithmic comparison of the intrinsic B-
+modes with polarised signals from other sources. At its peak at ` = 700, the intrinsic signal
+is comparable to a primordial signal with tensor-to-scalar ratio of r ≈ 5 × 10−5 , while it
+corresponds to r ≈ 10−7 at ` = 100, where the primordial signal peaks. The intrinsic
+spectrum is five to six orders of magnitude smaller than the the lensing-induced B-modes,
+which in turn is roughly 500 times smaller than the E-modes spectrum at ` = 700. The
+B-polarisation signal from the time-delay effect, computed in Ref. [28] and not shown in the
+figure, also peaks at ` ≈ 700 and is approximately 80 times larger than the intrinsic B-modes.
+      In the left panel of Figure 2 we show the full intrinsic B-modes compared to the approx-
+imation used in BFK2011, considering only collision sources and neglecting both the redshift
+term and the temperature correction. In this case we find that the signal is enhanced by a
+factor of two. This is due to the modification of the collision term due to the absorption of
+the redshift terms, Eq. (3.10). The extra collision term − (C∆ + ∆C)/2 partially cancels with
+the quadratic sources in C . It should be noted that this is not the only effect of the redshift
+term, as the variable transformation needs to be reversed using the power spectra of B(IE)   e
+and (IE)(IE). However, as discussed earlier these partially cancel with the temperature
+corrections, and together do not change the power spectrum significantly.
+      The right panel of Figure 2 shows a split of C`B̃ B̃ into its vector and tensor contributions
+(m = ±1 and ±2 respectively in Eq. (4.9)). The tensor contribution is relatively smooth,
+while the vector contribution is similar in shape to that induced from collision sources in
+BFK2011. We conclude that the features are generated from the collision sources and are
+slightly distorted from the correlation with the other recombination effects.
+
+5.1                        Comparison with previous results
+In the recent years several authors have treated parts of the full second-order computation.
+Here, we compare our results to their work.
+
+
+
+
+                                                                        – 15 –
+                           Vector mode ω (m=1)                                               Tensor mode γ (m=2)
+    16
+                          Numerical solution                                                Numerical solution
+                          LCDM approximation                                                CDM approximation
+     8                                                                0.3
+
+     4
+
+                                                                      0.2
+     2
+
+
+     1
+                                                                      0.1
+
+    0.1                                                               0.1
+   0.01                                                              0.01
+  0.001                                                             0.001
+ 0.0001          abs ( 1 - num/approx )                            0.0001          abs ( 1 - num/approx )
+  10−5                                                              10−5
+          10−3                 10−2                    10−1    1            10−3                 10−2                    10−1   1
+                                      scale factor a                                                    scale factor a
+
+
+Figure 3: Evolution of the vector (left panel) and tensor (right panel) modes of the met-
+ric as obtained numerically by SONG (continuous red curves) and approximately using
+the formulas in MHM2004 (dotted blue curves), for the Fourier mode k1 = 0.029 Mpc−1 ,
+k2 = 0.007 Mpc−1 and k3 = 0.032 Mpc−1 . The vertical lines represent the time of recombi-
+nation and that of matter-Λ equality. The lower panels show the fractional difference between
+the numerical and analytical curves.
+
+
+Collision term BFK2011 quantified the generation of B-modes from the second-order
+Compton scattering during recombination. In order to reproduce their result, we restrict
+SONG to include only the collisional sources, and to ignore the temperature and redshift
+corrections. The resulting C` spectrum is shown in red in the left panel of Figure 2. When
+using the same cosmology as in BFK2011, our result agrees with theirs within the statistical
+error bars resulting from the Monte-Carlo integration used in BFK2011. (SONG does not
+have such statistical errors because it performs the integration using a different technique
+involving splines optimised for Bessel functions.)
+
+Metric sources MHM2004 computed the linear response of the photon perturbations to
+the second-order metric perturbations, which they obtained using an analytical approach in
+a radiation-free Universe. The evolution of the second-order vector and tensor modes of the
+metric is approximately known for a standard ΛCDM Universe without radiation [35, 64, 65].
+In Figure 3 we show a comparison between the numerical result from SONG, which includes
+the effect of radiation, compared with the analytical formula in MHM2004, for a standard
+ΛCDM cosmology and a medium-scale Fourier mode. For the vector modes ω we use the
+Λ 6= 0 approximation (Eq. (10) of MHM2004), while for the tensor modes γ we use the
+simpler formula for a Λ = 0 Universe (Eq. (15) of MHM2004), similarly to what is done in
+the B-mode analysis of MHM2004. As expected, the match is not accurate (> 10% difference)
+around the time of recombination, when the fraction in energy density of radiation is still
+significant. The agreement improves during the CDM-dominated era to reach the 0.1% level,
+and it slightly worsens when the dark energy component becomes important. Today (a = 1),
+the numerical and analytical curves match to the few-percent level. We remark that when
+considering larger-scale Fourier modes we find an improved agreement at early times; as
+suggested by MHM2004, this is due to the fact that the small-scale modes enter the horizon
+when the fraction of radiation is still significant, i. e. when the analytical approximation
+
+
+
+
+                                                              – 16 –
+                  8                                 8                                         8
+        C [μK2]
+
+
+                  7                                 7                                         7
+· ( +1 ) BB
+
+
+
+
+                  6                                 6                                         6
+   2π
+
+
+
+
+                  5                                 5                                         5
+  108
+
+
+
+
+                  4                                 4                                         4
+                        50        100     150           0.1    0.2     0.3        0.4   0.5       2    3       4     5
+                                                                             -1
+                              N                                k max / Mpc                            Lmax sources
+
+
+Figure 4: Numerical convergence of the vector contribution to C`BB , for ` = 500 (upper
+red points) and ` = 1500 (lower green points), for three numerical parameters: kmax , the
+maximum Fourier magnitude considered; N , the number of points in the Fourier and time
+grids; Lmax , the highest multipole source considered in the line-of-sight integration. The
+horizontal dotted lines represent the value of the parameter at which the numerical result is
+stable at the 1% level.
+
+
+fails. Despite the approximate agreement for the second-order metric, our result seems to
+be in tension with that of MHM2004, as the intrinsic B-mode power spectrum computed
+by SONG, which includes also the effect computed in MHM2004, is one order of magnitude
+smaller. A similar tension was found by Schiffer [66], who computed the linear response
+to the second-order metric perturbations to be a factor of seven smaller than the result
+of MHM2004; in the same reference, it is claimed that the difference is mainly due to the
+evaluation of the integral over the visibility function going from Eq. (49) to Eq. (50) in
+MHM2004. Indeed, the authors of MHM2004 confirmed7 that their computation of C`BB
+contained two numerical inaccuracies pertaining, respectively, to the width of the visibility
+function and to the ratio η0 /ηD between the conformal time today and at decoupling, thus
+leading to a result approximately an order of magnitude too large.
+
+5.2               Convergence tests
+Following BFK2011 we test the numerical stability and convergence of our results by com-
+puting the power spectrum of the intrinsic B-modes at ` = 500 and ` = 1500 with varying
+numerical parameters; each parameter is varied while keeping all the others fixed. Doing so
+allows us to explore the dependence of the final result on the numerical assumptions made in
+SONG, and thus determine the optimal parameter values needed to obtain a target precision.
+As a result of these convergence tests, we find that the results of Section 5 are stable at the
+1%-level for all the relevant parameters.
+      In Figure 4 we show the convergence of the three main numerical parameters relevant for
+B-polarisation. First we consider the number of points N in our grid in comoving wavevector
+k and conformal time η. Increasing N is numerically very expensive as the second-order
+differential system needs to be solved for approximately N 3 times. For the computation of
+our results we use N = 120.
+      Next we show the convergence with respect to kmax , the maximum wavenumber con-
+sidered. The power spectrum receives contributions from arbitrarily large wavevectors, but
+in practice these are strongly suppressed by the k −3 dependence of the primordial power
+         7
+             S. Matarrese, private communication.
+
+
+
+
+                                                              – 17 –
+spectrum. Similar to the first-order case, we find that kmax can be truncated to a few times
+`max · η0 , where `max is the maximum angular resolution needed (`max = 2000 in our case)
+and η0 is the conformal age of the Universe (η0 ≈ 14 Gpc for a standard ΛCDM Universe).
+Our results presented in this paper use a value of kmax = 0.35 Mpc−1 .
+       Finally we investigate up to which multipole moment the second-order sources need to
+be considered. This number, Lmax , is the upper limit of the implicit summation over ` in
+the line-of-sight integral, Eq. (3.1). Because of the anisotropy suppression due to the tight-
+coupling regime at recombination, we expect the sources with ` > 2 to give progressively
+smaller contributions. We indeed find that we can safely choose Lmax = 3, with the octupole
+still adding a significant contribution to the B-mode polarisation [44].
+
+
+6   Conclusions
+
+We have used the Boltzmann code SONG [45] to compute the intrinsic B-mode polarisation
+induced in the CMB by the evolution of primordial density perturbations at second order.
+This intrinsic signal is completely determined by the standard cosmological parameters, is
+unavoidable and is not affected by the details of cosmic inflation. Our analysis extends the
+previous result from Beneke, Fidler and Klingmüller (2011) [44], which focused on second-
+order scattering sources, by including the second-order metric sources, the quadratic Liouville
+terms at recombination and the non-linear transport terms related to the redshift effects in
+the Boltzmann hierarchy. The intrinsic B-polarisation is a guaranteed contribution to the
+B-mode power spectrum that exists even in the absence of primordial gravitational waves
+and might therefore contaminate their measurement. It is complementary to other contri-
+butions such as from weak lensing [20] and the time-delay effect [28], which have already
+been calculated in the literature using non-perturbative approaches. We have considered the
+second-order sources of B-polarisation consistently by taking into account their correlations,
+in contrast with the previous literature [35, 44], which focussed on specific limits and par-
+ticular physical effects. Furthermore, we have tested the robustness of our computations by
+performing extensive convergence tests on the numerical parameters of SONG (Figure 4),
+and by matching analytical limits for the vector and tensor modes of the metric at second
+order (Figure 3).
+
+      At second order, many sources contribute to the B-polarisation. In this work, we have
+considered all those arising from the Boltzmann equation, excluding the well-known lensing
+and time-delay effects along the line-of-sight, which are better treated using non-perturbative
+approaches. We have found that the major contribution to the intrinsic power spectrum
+comes from the sources at recombination (named C`B̃ B̃ in Section 5). These include the non-
+linear Compton collisions of the CMB photons off the electrons (Eq. (2.12)) and the indirect
+effect of the non-scalar perturbations, which include metric perturbations (Eq. (2.8)), but
+also the quadratic Liouville terms (Eq. (2.9)), which are computed in this paper for the first
+time. The first two contributions have previously been separately estimated in the literature,
+while in our computation we consider them simultaneously and thus take into account their
+correlation. When including only the collisional sources in SONG, we agree with the results
+of Ref. [44]. The B-modes spectrum from these sources alone is twice as big as our full result
+(Figure 2), showing that there is a partial cancellation with the remaining effects considered.
+On the other hand, we are not able to confirm the result of Mollerach, Harari & Matarrese
+[35] (2004), as the intrinsic power spectrum computed by SONG in an approximation similar
+
+
+
+
+                                            – 18 –
+to Ref. [35] is one order of magnitude smaller. As discussed in Section 5.1, this discrepancy
+is merely numerical and is due to an inaccurate parametrisation of the visibility function and
+of the conformal-time ratio used in Ref. [35].
+
+     For the first time, we have treated the redshift contributions along the line-of-sight,
+extending the method proposed in Ref. [53] to the case of polarisation (Eq. (3.5) and (3.10)).
+This effect is the modification of the distribution function due to changes in the photon’s
+momentum as it propagates through the inhomogeneous Universe, and needs to be integrated
+across the whole Hubble length. We also express our results in terms of the bolometric tem-
+perature, Θ , which we expect to be more closely related to observations than the brightness,
+∆ (Section 3.2). The B-modes in the bolometric temperature are connected to those in the
+brightness in a non-trivial way, which mixes E and B-polarisation. We have included this
+novel contribution in our analysis, and found that the resulting B-modes partly cancel with
+those from the redshift contribution (Eq. (4.3)). Considered separately, the redshift and
+bolometric-temperature corrections are comparable to the recombination effects; together,
+they are subdominant.
+
+     After including all the effects described above, we have found that, at its peak (` ≈ 700),
+the power spectrum of the intrinsic B-polarisation is comparable to a primordial signal with
+a tensor-to-scalar ratio of r ≈ 5 × 10−5 (Figure 1). The primordial signal, however, peaks on
+much larger angular scales (` ≈ 100), where the intrinsic spectrum is smaller and amounts
+to an equivalent r of roughly 10−7 . This minimal overlap suggests that the measurements
+from future CMB experiments such as LiteBird [18, 19], PIXIE [14] and PRISM [17], with
+the latter claiming a sensitivity of ∆r = 3 × 10−4 , will not be biased by the intrinsic B-
+polarisation. Therefore, the limiting factors for such experiment are likely to be the efficiency
+of the foreground-removal and de-lensing algorithms.
+
+
+Note Added When we were completing this work, the BICEP2 collaboration [67, 68] has
+released the final results from the homonymous polarimeter, along with preliminary data from
+its successor, the Keck array [13]. Both data sets show an excess of power in the B-polarisation
+that is well fitted by a ΛCDM model with a tensor-to-scalar ratio of r = 0.20+0.07
+                                                                               −0.05 , with r = 0
+disfavoured at 5.9σ . Planck’s polarised maps and Keck’s complete data are planned to be
+released by the end of 2014 and should provide a verification of this potentially far-reaching
+result. If confirmed, such a high value of r will make the study of primordial gravitational
+waves in the CMB less dependent on the contaminations discussed in this paper.
+
+
+
+Acknowledgments
+
+We wish to thank Christian Byrnes for an insightful discussion on the expected value of r.
+C. Fidler, R. Crittenden, K. Koyama and D. Wands are supported by the UK Science and
+Technology Facilities Council grants number ST/K00090/1 and ST/L005573/1, G. Pettinari
+acknowledges support from grant number ST/I000976/1. The work of M. Beneke is supported
+in part by the Gottfried Wilhelm Leibniz programme of the Deutsche Forschungsgemeinschaft
+(DFG).
+
+
+
+
+                                             – 19 –
+A    Coupling coefficients
+
+In order to write the Boltzmann equation for the B-modes in a compact way (see Eqs. 2.14
+to 2.16), we have used the D coefficients. These arise from the decomposition into spherical
+harmonics of the general Boltzmann equation Eq. (2.5), and were introduced in Ref. [33].
+They are defined as
+                                                                 
+                         ±,`        1 `±1 `           1     `±1 `
+                       Dm 1 m ≡
+                                    0 2 2         m − m1 m1 m
+                                                             
+                         0,`           1 ` `        1      ` `
+                       Dm 1 m ≡ −                                 ,                   (A.1)
+                                       02 2      m − m1 m1 m
+
+and they explicitly read
+               p                                                         √         √
+   +,`            (` − 1) (` + 3) (` + 1 ± m) (` + 2 ± m)        −,`       `2 − 4 `2 − m2
+ Dm±1 m = −                 √                                , Dm m =                        ,
+                              2 (` + 1) (2` + 3)                             `       2` − 1
+           p                  p                                 p
+   +,`       (` − 1) (` + 3) (` + 1)2 − m2           −,`          (`2 − 4) (` − 1 ∓ m) (` ∓ m)
+ Dm m =                                           , Dm±1 m =             √                     ,
+                 `+1                2` + 3                                 2 ` (2` − 1)
+               p
+   0,`            2(` + 1 ± m) (` ∓ m)        0,`          2m
+ Dm±1 m = ∓                               , Dm   m = −            .                         (A.2)
+                        `(` + 1)                         `(` + 1)
+
+The D0 coefficients encode the mixing between the E and B modes, while the D± ones
+determine how the large `-multipoles are generated from the lower ones via free-streaming.
+
+
+
+
+                                             – 20 –
+References
+ [1] J. M. Kovac, E. M. Leitch, C. Pryke, J. E. Carlstrom, N. W. Halverson, and W. L. Holzapfel,
+     Detection of polarization in the cosmic microwave background using DASI, Nature 420 (Dec.,
+     2002) 772–787, [astro-ph/0209478].
+ [2] C. L. Bennett, M. Halpern, G. Hinshaw, N. Jarosik, A. Kogut, et al., First-Year Wilkinson
+     Microwave Anisotropy Probe (WMAP) Observations: Preliminary Maps and Basic Results,
+     ApJS 148 (Sept., 2003) 1–27, [astro-ph/0302207].
+ [3] G. Hinshaw, D. Larson, E. Komatsu, D. N. Spergel, et al., Nine-Year Wilkinson Microwave
+     Anisotropy Probe (WMAP) Observations: Cosmological Parameter Results, ArXiv e-prints
+     (Dec., 2012) [arXiv:1212.5226].
+ [4] C. L. Bennett, D. Larson, J. L. Weiland, N. Jarosik, G. Hinshaw, et al., Nine-Year Wilkinson
+     Microwave Anisotropy Probe (WMAP) Observations: Final Maps and Results, ArXiv e-prints
+     (Dec., 2012) [arXiv:1212.5225].
+ [5] Planck Collaboration, P. A. R. Ade, N. Aghanim, C. Armitage-Caplan, M. Arnaud,
+     M. Ashdown, F. Atrio-Barandela, J. Aumont, C. Baccigalupi, A. J. Banday, and et al., Planck
+     2013 results. XVI. Cosmological parameters, ArXiv e-prints (Mar., 2013) [arXiv:1303.5076].
+ [6] M. Kamionkowski, A. Kosowsky, and A. Stebbins, A Probe of Primordial Gravity Waves and
+     Vorticity, Physical Review Letters 78 (Mar., 1997) 2058–2061, [astro-ph/9609132].
+ [7] U. Seljak and M. Zaldarriaga, Signature of Gravity Waves in the Polarization of the Microwave
+     Background, Physical Review Letters 78 (Mar., 1997) 2054–2057, [astro-ph/9609169].
+ [8] W. Hu and M. White, CMB anisotropies: Total angular momentum method, Phys. Rev. D 56
+     (July, 1997) 596–615, [astro-ph/9702170].
+ [9] M. L. Brown, P. Ade, J. Bock, M. Bowden, et al., Improved Measurements of the Temperature
+     and Polarization of the Cosmic Microwave Background from QUaD, ApJ 705 (Nov., 2009)
+     978–999, [arXiv:0906.1003].
+[10] QUIET Collaboration, Second Season QUIET Observations: Measurements of the Cosmic
+     Microwave Background Polarization Power Spectrum at 95 GHz, ApJ 760 (Dec., 2012) 145,
+     [arXiv:1207.5034].
+[11] BICEP1 Collaboration, Degree-Scale CMB Polarization Measurements from Three Years of
+     BICEP1 Data, ArXiv e-prints (Oct., 2013) [arXiv:1310.1422].
+[12] B. P. Crill, P. A. R. Ade, E. S. Battistelli, S. Benton, et al., SPIDER: a balloon-borne
+     large-scale CMB polarimeter, in Society of Photo-Optical Instrumentation Engineers (SPIE)
+     Conference Series, vol. 7010, Aug., 2008. arXiv:0807.1548.
+[13] C. D. Sheehy, P. A. R. Ade, R. W. Aikin, M. Amiri, S. Benton, Bischoff, et al., The Keck
+     Array: a pulse tube cooled CMB polarimeter, in Society of Photo-Optical Instrumentation
+     Engineers (SPIE) Conference Series, vol. 7741, July, 2010.
+[14] A. Kogut, D. J. Fixsen, D. T. Chuss, J. Dotson, et al., The Primordial Inflation Explorer
+     (PIXIE): a nulling polarimeter for cosmic microwave background observations, J. Cosmology
+     Astropart. Phys. 7 (July, 2011) 25, [arXiv:1105.2044].
+[15] J. E. Austermann, K. A. Aird, J. A. Beall, D. Becker, et al., SPTpol: an instrument for CMB
+     polarization measurements with the South Pole Telescope, in Society of Photo-Optical
+     Instrumentation Engineers (SPIE) Conference Series, vol. 8452, Sept., 2012.
+     arXiv:1210.4970.
+[16] Z. Staniszewski, R. W. Aikin, M. Amiri, S. J. Benton, et al., The Keck Array: A Multi Camera
+     CMB Polarimeter at the South Pole, Journal of Low Temperature Physics 167 (June, 2012)
+     827–833.
+
+
+
+
+                                             – 21 –
+[17] PRISM Collaboration, The Polarized Radiation Imaging and Spectroscopy Mission, ArXiv
+     e-prints (Oct., 2013) [arXiv:1310.1554].
+[18] M. Hazumi, J. Borrill, Y. Chinone, M. A. Dobbs, et al., LiteBIRD: a small satellite for the
+     study of B-mode polarization and inflation from cosmic background radiation detection, in
+     Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series, vol. 8442 of
+     Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Sept., 2012.
+[19] T. Matsumura, Y. Akiba, J. Borrill, Y. Chinone, et al., Mission design of LiteBIRD, ArXiv
+     e-prints (Nov., 2013) [arXiv:1311.2847].
+[20] M. Zaldarriaga and U. Seljak, Gravitational lensing effect on cosmic microwave background
+     polarization, Phys. Rev. D 58 (Jun, 1998) 023003.
+[21] A. Lewis and A. Challinor, Weak gravitational lensing of the CMB, Phys. Rep. 429 (June,
+     2006) 1–65, [astro-ph/0601594].
+[22] A. Lewis, A. Challinor, and N. Turok, Analysis of CMB polarization on an incomplete sky,
+     Phys. Rev. D 65 (Jan., 2002) 023505, [astro-ph/0106536].
+[23] L. Knox and Y.-S. Song, Limit on the Detectability of the Energy Scale of Inflation, Physical
+     Review Letters 89 (July, 2002) 011303, [astro-ph/0202286].
+[24] W. Hu, Dark synergy: Gravitational lensing and the CMB, Phys. Rev. D 65 (Jan., 2002)
+     023003, [astro-ph/0108090].
+[25] U. Seljak and C. M. Hirata, Gravitational lensing as a contaminant of the gravity wave signal
+     in the CMB, Phys. Rev. D 69 (Feb., 2004) 043005, [astro-ph/0310163].
+[26] K. M. Smith, A. Cooray, S. Das, O. Doré, et al., Gravitational Lensing, in American Institute
+     of Physics Conference Series (S. Dodelson et al., eds.), vol. 1141, pp. 121–178, June, 2009.
+     arXiv:0811.3916.
+[27] SPTpol collaboration, Detection of B-Mode Polarization in the Cosmic Microwave Background
+     with Data from the South Pole Telescope, Physical Review Letters 111 (Oct., 2013) 141301,
+     [arXiv:1307.5830].
+[28] W. Hu and A. Cooray, Gravitational time delay effects on cosmic microwave background
+     anisotropies, Phys. Rev. D 63 (Jan., 2001) 023504, [astro-ph/0008001].
+[29] N. Bartolo, S. Matarrese, and A. Riotto, Cosmic microwave background anisotropies at second
+     order: I, Journal of Cosmology and Astro-Particle Physics 6 (June, 2006) 24,
+     [astro-ph/0604416].
+[30] N. Bartolo, S. Matarrese, and A. Riotto, CMB anisotropies at second-order II: analytical
+     approach, Journal of Cosmology and Astro-Particle Physics 1 (Jan., 2007) 19,
+     [astro-ph/0610110].
+[31] C. Pitrou, Gauge-invariant Boltzmann equation and the fluid limit, Classical and Quantum
+     Gravity 24 (Dec., 2007) 6127–6158, [arXiv:0706.4383].
+[32] C. Pitrou, The radiative transfer for polarized radiation at second order in cosmological
+     perturbations, General Relativity and Gravitation 41 (Nov., 2009) 2587–2595,
+     [arXiv:0809.3245].
+[33] M. Beneke and C. Fidler, Boltzmann hierarchy for the cosmic microwave background at second
+     order including photon polarization, Phys. Rev. D 82 (Sept., 2010) 063509, [arXiv:1003.1834].
+[34] A. Naruko, C. Pitrou, K. Koyama, and M. Sasaki, Second order Boltzmann equation : gauge
+     dependence and gauge invariance, ArXiv e-prints (Apr., 2013) [arXiv:1304.6929].
+[35] S. Mollerach, D. Harari, and S. Matarrese, CMB polarization from secondary vector and tensor
+     modes, Phys. Rev. D 69 (Mar., 2004) 063002, [astro-ph/0310711].
+
+
+
+
+                                               – 22 –
+[36] T. H.-C. Lu, K. Ananda, C. Clarkson, and R. Maartens, The cosmological background of vector
+     modes, JCAP 0902 (2009) 023, [arXiv:0812.1349].
+[37] A. J. Christopherson, K. A. Malik, and D. R. Matravers, Vorticity generation at second order
+     in cosmological perturbation theory, Phys.Rev. D79 (2009) 123523, [arXiv:0904.0940].
+[38] A. J. Christopherson and K. A. Malik, Can cosmological perturbations produce early universe
+     vorticity?, Class.Quant.Grav. 28 (2011) 114004, [arXiv:1010.4885].
+[39] A. J. Christopherson, K. A. Malik, and D. R. Matravers, Estimating the amount of vorticity
+     generated by cosmological perturbations in the early universe, Phys.Rev. D83 (2011) 123512,
+     [arXiv:1008.4866].
+[40] K. N. Ananda, C. Clarkson, and D. Wands, The Cosmological gravitational wave background
+     from primordial density perturbations, Phys.Rev. D75 (2007) 123518, [gr-qc/0612013].
+[41] B. Osano, C. Pitrou, P. Dunsby, J.-P. Uzan, and C. Clarkson, Gravitational waves generated by
+     second order effects during inflation, JCAP 0704 (2007) 003, [gr-qc/0612108].
+[42] D. Baumann, P. J. Steinhardt, K. Takahashi, and K. Ichiki, Gravitational Wave Spectrum
+     Induced by Primordial Scalar Perturbations, Phys.Rev. D76 (2007) 084019, [hep-th/0703290].
+[43] F. Arroja, H. Assadullahi, K. Koyama, and D. Wands, Cosmological matching conditions for
+     gravitational waves at second order, Phys.Rev. D80 (2009) 123526, [arXiv:0907.3618].
+[44] M. Beneke, C. Fidler, and K. Klingmüller, B polarization of cosmic background radiation from
+     second-order scattering sources, J. Cosmology Astropart. Phys. 4 (Apr., 2011) 8,
+     [arXiv:1102.1524].
+[45] G. W. Pettinari, C. Fidler, R. Crittenden, K. Koyama, and D. Wands, The intrinsic bispectrum
+     of the cosmic microwave background, J. Cosmology Astropart. Phys. 4 (Apr., 2013) 3,
+     [arXiv:1302.0832].
+[46] E. Bertschinger, COSMICS: Cosmological Initial Conditions and Microwave Anisotropy Codes,
+     ArXiv Astrophysics e-prints (June, 1995) [astro-ph/9506070].
+[47] M. Bruni, S. Matarrese, S. Mollerach, and S. Sonego, Perturbations of spacetime: gauge
+     transformations and gauge invariance at second order and beyond, Classical and Quantum
+     Gravity 14 (Sept., 1997) 2585–2606, [gr-qc/9609040].
+[48] C. Pitrou, The radiative transfer at second order: a full treatment of the Boltzmann equation
+     with polarization, Classical and Quantum Gravity 26 (Mar., 2009) 065006, [arXiv:0809.3036].
+[49] L. Senatore, S. Tassev, and M. Zaldarriaga, Non-gaussianities from perturbing recombination,
+     J. Cosmology Astropart. Phys. 9 (Sept., 2009) 38, [arXiv:0812.3658].
+[50] U. Seljak and M. Zaldarriaga, A line of sight approach to cosmic microwave background
+     anisotropies, Astrophys. J. 469 (1996) 437–444, [astro-ph/9603033].
+[51] W. Hu, Reionisation Revisited: Secondary Cosmic Microwave Background Anisotropies and
+     Polarization, ApJ 529 (Jan., 2000) 12–25, [astro-ph/9907103].
+[52] Z. Huang and F. Vernizzi, The full CMB temperature bispectrum from single-field inflation,
+     ArXiv e-prints (Nov., 2013) [arXiv:1311.6105].
+[53] Z. Huang and F. Vernizzi, Cosmic microwave background bispectrum from recombination, Phys.
+     Rev. Lett. 110 (Mar, 2013) 101303.
+[54] S.-C. Su, E. A. Lim, and E. P. S. Shellard, CMB Bispectrum from Non-linear Effects during
+     Recombination, ArXiv e-prints (Dec., 2012) [arXiv:1212.6968].
+[55] S. Dodelson and J. M. Jubas, Reionisation and its imprint of the cosmic microwave
+     background, ApJ 439 (Feb., 1995) 503–516, [astro-ph/9308019].
+
+
+
+
+                                              – 23 –
+[56] W. Hu, D. Scott, and J. Silk, Reionisation and cosmic microwave background distortions: A
+     complete treatment of second-order Compton scattering, Phys. Rev. D 49 (Jan., 1994) 648–670,
+     [astro-ph/9305038].
+[57] C. Pitrou, F. Bernardeau, and J.-P. Uzan, The y-sky: diffuse spectral distortions of the cosmic
+     microwave background, J. Cosmology Astropart. Phys. 7 (July, 2010) 19, [arXiv:0912.3655].
+[58] S. Renaux-Petel, C. Fidler, C. Pitrou, and G. W. Pettinari, Spectral distortions in the cosmic
+     microwave background polarization, ArXiv e-prints (Dec., 2013) [arXiv:1312.4448].
+[59] C. Pitrou and A. Stebbins, Parameterization of temperature and spectral distortions in future
+     CMB experiments, ArXiv e-prints (Feb., 2014) [arXiv:1402.0968].
+[60] C. Pitrou, J. Uzan, and F. Bernardeau, The cosmic microwave background bispectrum from the
+     non-linear evolution of the cosmological perturbations, J. Cosmology Astropart. Phys. 7 (July,
+     2010) 3, [arXiv:1003.0481].
+[61] J. Lesgourgues, The Cosmic Linear Anisotropy Solving System (CLASS) I: Overview, ArXiv
+     e-prints (Apr., 2011) [arXiv:1104.2932].
+[62] D. Blas, J. Lesgourgues, and T. Tram, The Cosmic Linear Anisotropy Solving System
+     (CLASS) II: Approximation schemes, arXiv:1104.2933.
+[63] G. W. Pettinari, C. Fidler, R. Crittenden, K. Koyama, and D. Wands, Efficient computation of
+     the Cosmic Microwave Background bispectrum in CLASS, In preparation.
+[64] L. Boubekeur, P. Creminelli, G. D’Amico, J. Noreña, and F. Vernizzi, Sachs-Wolfe at second
+     order: the CMB bispectrum on large angular scales, J. Cosmology Astropart. Phys. 8 (Aug.,
+     2009) 29, [arXiv:0906.0980].
+[65] S. Matarrese, S. Mollerach, and M. Bruni, Relativistic second-order perturbations of the
+     Einstein-de Sitter universe, Phys. Rev. D 58 (Aug., 1998) 043504, [astro-ph/9707278].
+[66] P. Schiffer, Induzierte B-Polarisation der Hintergrundstrahlung durch Fluktuationen zweiter
+     Ordnung. PhD thesis, Rheinisch-Westfälische Technische Hochschule, Aachen, 2007.
+[67] BICEP2 Collaboration, BICEP2 I: Detection Of B-mode Polarization at Degree Angular
+     Scales, ArXiv e-prints (Mar., 2014) [arXiv:1403.3985].
+[68] BICEP2 Collaboration, BICEP2 II: Experiment and Three-Year Data Set, ArXiv e-prints
+     (Mar., 2014) [arXiv:1403.4302].
+
+
+
+
+                                              – 24 –
+

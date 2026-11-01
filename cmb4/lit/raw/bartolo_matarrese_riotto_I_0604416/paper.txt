@@ -1,0 +1,1965 @@
+                                                                              CMB Anisotropies at Second-Order I
+                                                                                                Nicola Bartolo∗
+                                                  The Abdus Salam International Centre for Theoretical Physics, Strada Costiera 11, 34100 Trieste, Italy
+
+                                                                                               Sabino Matarrese†
+                                                                         Dipartimento di Fisica “G. Galilei”, Università di Padova,
+                                                                     and INFN, Sezione di Padova, via Marzolo 8, Padova I-35131, Italy
+
+                                                                                                Antonio Riotto‡
+                                                                           CERN, Theory Division, CH-1211 Geneva 23, Switzerland
+                                                                                         (Dated: August 9, 2021)
+                                                     We present the computation of the full system of Boltzmann equations at second-order describing
+arXiv:astro-ph/0604416v4 5 May 2006
+
+
+
+
+                                                     the evolution of the photon, baryon and cold dark matter fluids. These equations allow to follow
+                                                     the time evolution of the Cosmic Microwave Background (CMB) anisotropies at second-order at all
+                                                     angular scales from the early epoch, when the cosmological perturbations were generated, to the
+                                                     present through the recombination era. This paper sets the stage for the computation of the full
+                                                     second-order radiation transfer function at all scales and for a a generic set of initial conditions
+                                                     specifying the level of primordial non-Gaussianity. In a companion paper, we will present the
+                                                     computation of the three-point correlation function at recombination which is so relevant for the
+                                                     issue of non-Gaussianity in the CMB anisotropies.
+
+                                                     PACS numbers: 98.80.Cq                                                               DFPD 06/A/05
+
+
+
+
+                                                                                          I.    INTRODUCTION
+
+                                      Cosmological inflation [1] has become the dominant paradigm to understand the initial conditions for the CMB
+                                      anisotropies and structure formation. In the inflationary picture, the primordial cosmological perturbations are
+                                      created from quantum fluctuations “redshifted” out of the horizon during an early period of accelerated expansion of
+                                      the universe, where they remain “frozen”. They are observable as temperature anisotropies in the CMB. This picture
+                                      has recently received further spectacular confirmations by the Wilkinson Microwave Anisotropy Probe (WMAP) three
+                                      year set of data [2]. Since the observed cosmological perturbations are of the order of 10−5 , one might think that
+                                      first-order perturbation theory will be adequate for all comparisons with observations. This might not be the case,
+                                      though. Present [2] and future experiments [3] may be sensitive to the non-linearities of the cosmological perturbations
+                                      at the level of second- or higher-order perturbation theory. The detection of these non-linearities through the non-
+                                      Gaussianity (NG) in the CMB [4] has become one of the primary experimental targets.
+                                         There is one fundamental reason why a positive detection of NG is so relevant: it might help in discriminating among
+                                      the various mechanisms for the generation of the cosmological perturbations. Indeed, various models of inflation, firmly
+                                      rooted in modern particle physics theory, predict a significant amount of primordial NG generated either during or
+                                      immediately after inflation when the comoving curvature perturbation becomes constant on super-horizon scales [4].
+                                      While single-field [5] and two(multi)-field [20] models of inflation predict a tiny level of NG, ‘curvaton-type models’,
+                                      in which a significant contribution to the curvature perturbation is generated after the end of slow-roll inflation by the
+                                      perturbation in a field which has a negligible effect on inflation, may predict a high level of NG [7]. Alternatives to the
+                                      curvaton model are those models characterized by the curvature perturbation being generated by an inhomogeneity
+                                      in the decay rate [8, 9], the mass [10] or the interaction rate [11] of the particles responsible for the reheating after
+                                      inflation. In that case the reheating can be the first one (caused by the scalar field(s) responsible for the energy density
+                                      during inflation) or alternatively the particle species causing the reheating can be a fermion [12]. Other opportunities
+                                      for generating the curvature perturbation occur at the end of inflation [13], during preheating [14], and at a phase
+                                      transition producing cosmic strings [15].
+                                         Statistics like the bispectrum and the trispectrum of the CMB can then be used to assess the level of primordial NG
+
+
+
+                                      ∗ Electronic address: nbartolo@ictp.trieste.it
+                                      † Electronic address: sabino.matarrese@pd.infn.it
+                                      ‡ Electronic address: antonio.riotto@pd.infn.it
+                                                                                                                          2
+
+on various cosmological scales and to discriminate it from the one induced by secondary anisotropies and systematic
+effects [4, 16, 17, 18]. A positive detection of a primordial NG in the CMB at some level might therefore confirm
+and/or rule out a whole class of mechanisms by which the cosmological perturbations have been generated.
+   Despite the importance of NG in the CMB anisotropies, little effort has ben made so far to provide accurate
+theoretical predictions of it. On the contrary, the vast majority of the literature has been devoted to the computation
+of the bispectrum of either the comovig curvature perturbation or the gravitational potential on large scales within
+given inflationary models. These, however, are not the physical quantities which are observed. One should instead
+provide a full prediction for the second-order radiation transfer function. A firt step towards this goal has been
+taken in Ref. [19] (see also [20]) where the full second-order radiation transfer function for the CMB anisotropies
+on large angular scales in a flat universe filled with matter and cosmological constant was computed, including the
+second-order generalization of the Sachs-Wolfe effect, both the early and late Integrated Sachs-Wolfe (ISW) effects
+and the contribution of the second-order tensor modes.
+   There are many sources of NG in the CMB anisotropies, beyond the primordial one. The most relevant sources are
+the so-called secondary anisotropies, which arise after the last scattering epoch. These anisotropies can be divided
+into two categories: scattering secondaries, when the CMB photons scatter with electrons along the line of sight,
+and gravitational secondaries when effects are mediated by gravity [21]. Among the scattering secondaries we may
+list the thermal Sunyaev-Zeldovich effect, where hot electrons in clusters transfer energy to the CMB photons, the
+kinetic Sunyaev-Zeldovich effect produced by the bulk motion of the electrons in clusters, the Ostriker-Vishniac effect,
+produced by bulk motions modulated by linear density perturbations, and effects due to reionization processes. The
+scattering secondaries are most significant on small angular scales as density inhomogeneities, bulk and thermal
+motions grow and become sizeable on small length scales when structure formation proceeds.
+   Gravitational secondaries arise from the change in energy of photons when the gravitational potential is time-
+dependent, the ISW effect, and gravitational lensing. At late times, when the Universe becomes dominated by the
+dark energy, the gravitational potential on linear scales starts to decay, causing the ISW effect mainly on large angular
+scales. Other secondaries that result from a time dependent potential are the Rees-Sciama effect, produced during
+the matter-dominated epoch at second-order and by the time evolution of the potential on non-linear scales.
+   The fact that the potential never grows appreciably means that most second order effects created by gravitational
+secondaries are generically small compared to those created by scattering ones. However, when a photon propagates
+from the last scattering to us, their path may be deflected because of the gravitational lensing. This effect does not
+create anisotropies, but it only modifies existing ones. Since photons with large wavenumbers k are lensed over many
+regions (∼ k/H, where H is the Hubble rate) along the line of sight, the corresponding second-order effect may be
+sizeable. The three-point function arising from the correlation of the gravitational lensing effect and the ISW effect
+generated by the matter distribution along the line of sight [22, 23] and the Sunyaev-Zeldovich effect [24] are large
+and detectable by Planck [25].
+   Another relevant source of NG comes from the physics operating at the recombination. A naive estimate leads to
+think that these non-linearities are tiny being suppressed by an extra power of the gravitational potential. However,
+the dynamics at recombination is quite involved because all the non-linearities in the evolution of the baryon-photon
+fluid at recombination and the ones coming from general relativity should be accounted for. This complicated dynamics
+might lead to unexpected suppressions or enhancements of the NG at recombination. A step towards the evaluation
+of the three-point correlation function has been taken on Ref. [26] where it was computed in the in so-called squeezed
+triangle limit, when one mode has a wavelength much larger than the other two and is outside the horizon.
+   In this paper we present the computation of the full system of Boltzmann equations at second-order describing the
+evolution of the photon, baryon and CDM fluids, neglecting polarization. These equations allow to follow the time
+evolution of the CMB anisotropies at second-order at all angular scales from the early epoch, when the cosmological
+perturbations were generated, to the present through the recombination era. This paper sets therefore the stage for the
+computation of the full second-order radiation transfer function at all scales and for a a generic set of initial conditions
+specifying the level of primordial non-Gaussianity. In a companion paper [27], we will present the computation of the
+three-point correlation function at recombination which is so relevant for the issue of NG in the CMB anisotropies.
+Of course on small angular scales, fully non-linear calculations of specific effects like Sunyaev-Zel’dovich, gravitational
+lensing, etc. would provide a more accurate estimate of the resulting CMB anisotropy, however, as long as the leading
+contribution to second-order statistics like the bispectrum is concerned, second-order perturbation theory suffices.
+   The paper is organized as follows. In Section II we provide the second-order metric and corresponding Einstein
+equations. In Section III the left-hand-side of the Boltzmann equation for the photon distribution function is derived
+at second-order. The collision term is computed in Section IV. In Section V, we present the second-order Boltzmann
+equation for the photon brightness function, its formal solution with the method of the integration along the line of
+sight and the corresponding hierarchy equations for the multipole moments. Sections VI contains the derivation of the
+Boltzmann equations at second-order for baryons and Cold Dark Matter (CDM). Section VII contains the expressions
+for the energy momentum tensors and, finally, Section VIII contains our summary.
+                                                                                                                          3
+
+  In performing the computation presented in this paper, we have mainly followed Ref. [28] (in particular chapter
+4) where an excellent derivation of the Boltzmann equations for the baryon-photon fluid at first-order is given. Since
+the derivation at second-order is straightforward, but lenghty, the reader might benefit from reading the appropriate
+sections of [28]. At the end of the paper we have provided a Table which summarizes the many symbols adopted
+appearing throughout the paper.
+
+
+                                           II.   PERTURBING GRAVITY
+
+Before tackling the problem of interest – the computation of the Boltzmann equations for the baryon-photon and
+CDM fluids – we first provide the necessary tools to deal with perturbed gravity, giving the expressions for the Einstein
+tensor perturbed up to second-order around a flat Friedmann-Robertson-Walker background, and the relevant Einstein
+equations. In the following we will adopt the Poisson gauge which eliminates one scalar degree of freedom from the
+g0i component of the metric and one scalar and two vector degrees of freedom from gij . We will use a metric of the
+form
+
+                            ds2 = a2 (η) −e2Φ dη 2 + 2ωi dxi dη + (e−2Ψ δij + χij )dxi dxj ,
+                                                                                         
+                                                                                                                    (2.1)
+
+where a(η) is the scale factor as a function of the conformal time η, and ωi and χij are the vector and tensor
+peturbation modes respectively. Each metric perturbation can be expanded into a linear (first-order) and a second-
+order part, as for example, the gravitational potential Φ = Φ(1) + Φ(2) /2. However in the metric (2.1) the choice of
+the exponentials greatly helps in computing the relevant expressions, and thus we will always keep them where it
+is convenient. From Eq. (2.1) one recovers at linear order the well-known longitudinal gauge while at second-order,
+one finds Φ(2) = φ(2) − 2(φ(1) )2 and Ψ(2) = ψ (2) + 2(ψ (1) )2 where φ(1) , ψ (1) and φ(2) , ψ (2) (with φ(1) = Φ(1) and
+ψ (1) = Ψ(1) ) are the first and second-order gravitational potentials in the longitudinal (Poisson) gauge adopted in
+Refs. [4, 29] as far as scalar perturbations are concerned. For the vector and tensor perturbations, we will neglect linear
+vector modes since they are not produced in standard mechanisms for the generation of cosmological perturbations (as
+inflation), and we also neglect tensor modes at linear order, since they give a negligible contribution to second-order
+perturbations. Therefore we take ωi and χij to be second-order vector and tensor perturbations of the metric.
+   Let us now give our definitions for the connection coefficients and their expressions for the metric (2.1). The
+number of spatial dimensions is n = 3. Greek indices (α, β, ..., µ, ν, ....) run from 0 to 3, while latin indices
+(a, b, ..., i, j, k, ....m, n...) run from 1 to 3. The total spacetime metric gµν has signature (−, +, +, +). The connection
+coefficients are defined as
+                                                                                   
+                                                α     1 αρ ∂gργ       ∂gβρ     ∂gβγ
+                                               Γβγ = g              +       −         .                                (2.2)
+                                                      2        ∂xβ     ∂xγ     ∂xρ
+
+The Riemann tensor is defined as
+
+                                      Rαβµν = Γα       α       α   λ     α   λ
+                                               βν,µ − Γβµ,ν + Γλµ Γβν − Γλν Γβµ .                                     (2.3)
+
+  The Ricci tensor is a contraction of the Riemann tensor
+
+                                                      Rµν = Rαµαν ,                                                   (2.4)
+
+and in terms of the connection coefficient it is given by
+
+                                    Rµν = ∂α Γα        α     α   σ     α   σ
+                                              µν − ∂µ Γνα + Γσα Γµν − Γσν Γµα .                                       (2.5)
+
+The Ricci scalar is given by contracting the Ricci tensor
+
+                                                        R = Rµµ .                                                     (2.6)
+
+The Einstein tensor is defined as
+                                                             1
+                                                  Gµν = Rµν − gµν R .                                                 (2.7)
+                                                             2
+                                                                                                                        4
+
+                                           A.   The connection coefficients
+
+For the connection coefficients we find
+                    Γ000 = H + Φ′ ,
+                           ∂Φ
+                    Γ00i =     + Hωi ,
+                           ∂xi
+                              ′                 ∂Φ
+                    Γi00 = ω i + Hω i + e2Ψ+2Φ      ,
+                                                ∂xi
+                                            
+                              1 ∂ωj      ∂ωi                            1
+                    Γ0ij = −        i
+                                      +    j
+                                               + e−2Ψ−2Φ (H − Ψ′ ) δij + χ′ij + Hχij ,
+                              2 ∂x       ∂x                             2
+                                                                 
+                                           1      1   ∂ω i   ∂ω j
+                    Γi0j = (H − Ψ′ ) δij + χ′ij +          −        ,
+                                           2      2 ∂xj      ∂xi
+                                                                                                   !
+                                      ∂Ψ       ∂Ψ        ∂Ψ        1        ∂χi j   ∂χi k   ∂χjk
+                    Γijk          i
+                           = −Hω δjk − k δ ij − j δ ik +     δjk +            k
+                                                                                  +    j
+                                                                                          +            .             (2.8)
+                                      ∂x       ∂x        ∂xi       2        ∂x      ∂x       ∂xi
+
+
+                                                B.   Einstein equations
+
+The Einstein equations are written as Gµν = κ2 Tµν , so that κ2 = 8πGN , where GN is the usual Newtonian gravitational
+constant. They read
+              e−2Φ  2
+    G00 = −         3H − 6HΨ′ + 3(Ψ′ )2 − e2Φ+2Ψ ∂i Ψ∂ i Ψ − 2∇2 Ψ = κ2 T 00 ,
+                                                                       
+                  2
+                                                                                                                     (2.9)
+                a
+             e2Ψ                                                a′′ ω i
+                                                                    
+                                             1
+    Gi 0 = 2 2 ∂ i Ψ′ + (H − Ψ′ ) ∂ i Φ − 2 ∇2 ω i + 4H2 − 2              = κ2 T i0 ,
+                                       
+                                                                                                                   (2.10)
+              a                             2a                   a a2
+                              a′′
+                                                                           
+            1
+    Gi j = 2 e−2Φ H2 − 2          − 2Ψ′ Φ′ − 3(Ψ′ )2 + 2H (Φ′ + 2Ψ′ ) + 2Ψ′′
+           a                  a
+                                                e2Ψ
+         + e2Ψ ∂k Φ∂ k Φ + ∇2 Φ − ∇2 Ψ δji + 2 −∂ i Φ∂j Φ − ∂ i ∂j Φ + ∂ i ∂j Ψ − ∂ i Φ∂j Ψ + ∂ i Ψ∂j Ψ − ∂ i Ψ∂j Φ
+                                                                                                                  
+                                                 a                                 
+           H i                    1  i ′         ′
+                                                       1      ′    1 ′′ 1
+         − 2 ∂ ωj + ∂j ω − 2 ∂ ωj + ∂j ω i + 2 Hχij + χij − ∇2 χij = κ2 T ij .
+                          i
+                            
+                                                                                                                   (2.11)
+           a                    2a                     a            2        2
+Here T µν is the energy momentum tensor accounting for different components, photons, baryons, dark matter. We
+will give the expressions later for each component in terms of the distribution functions.
+
+
+                  III.     THE COLLISIONLESS BOLTZMANN EQUATION FOR PHOTONS
+
+We are now interested in the anisotropies in the cosmic distribution of photons and inhomogeneities in the matter.
+Photons are affected by gravity and by Compton scattering with free electrons. The latter are tightly coupled to
+protons. Both are, of course, affected by gravity. The metric which determines the gravitational forces is influenced
+by all these components plus CDM (and neutrinos). Our plan is to write down Boltzmann equations for the phase-
+space distributions of each species in the Universe.
+   The phase-space distribution of particles g(xi , P µ , η) is a function of spatial coordinates xi , conformal time η,
+and momentum of the particle P µ = dxµ /dλ where λ parametrizes the particle path. Through the constraint
+P 2 ≡ gµν P µ P ν = −m2 , where m is the mass of the particle one can eliminate P 0 and g(xi , P j , η) gives the number
+of particles in a differential volume dx1 dx2 dx3 dP 1 dP 2 dP 3 in phase space. In the following we will indicate the
+distribution function for photons with f .
+   The photons’ distribution evolves according to the Boltzmann equation
+                                                      df
+                                                         = a C[f ] ,                                                 (3.1)
+                                                      dη
+where the collision term is due to scattering of photons off free electrons. In the following we will derive the left-hand
+side of Eq. (3.1) while in the next section we will compute the collision term.
+                                                                                                                      5
+
+  For photons we can impose P 2 ≡ gµν P µ P ν = 0 and using the metric (2.1) in the conformal time η we find
+
+                                                           p2
+                                                                        
+                                  P 2 = a2 −e2Φ (P 0 )2 + 2 + 2ωi P 0 P i = 0 ,                                    (3.2)
+                                                           a
+
+where we define
+
+                                                      p2 = gij P i P j .                                           (3.3)
+
+From the constraint (3.2)
+                                                        2            1/2
+                                                        p
+                                           P 0 = e−Φ              0 i
+                                                           + 2ωi P P       .                                       (3.4)
+                                                        a2
+
+Notice that we immediately recover the usual zero and first-order relations P 0 = p/a and P 0 = p(1 − Φ(1) )/a.
+  The components P i are proportional to pni , where ni is a unit vector with ni ni = δij ni nj = 1. We can write
+P = Cni , where C is determined by
+ i
+
+
+                                       gij P i P j = C 2 a2 (e−2Ψ + χij ni nj ) = p2 ,                             (3.5)
+
+so that
+                                                                           
+                             i p i −2Ψ        k m −1/2
+                                                       p i Ψ     1     k m
+                            P = n e    + χkm n n       = ne    1 − χkm n n    ,                                    (3.6)
+                               a                        a         2
+
+where the last equality holds up to second order in the perturbations. Again we recover the zero and first-order
+relations P i = pni /a and P i = pni (1 + Ψ(1) )/a respectively. Thus up to second order we can write
+                                                            p
+                                                P 0 = e−Φ     1 + ω i ni .
+                                                                        
+                                                                                                                   (3.7)
+                                                            a
+Eq. (3.6) and (3.7) allow us to replace P 0 and P i in terms of the variables p and ni . Therefore, as it is standard in
+the literature, from now on we will consider the phase-space distribution f as a function of the momentum p = pni
+with magnitude p and angular direction ni , f ≡ f (xi , p, ni , η).
+  Thus in terms of these variables the total time derivative of the distribution function reads
+                                       df   ∂f  ∂f dxi   ∂f dp   ∂f dni
+                                          =    + i     +       +        .                                          (3.8)
+                                       dη   ∂η  ∂x dη    ∂p dη   ∂ni dη
+
+In the following we will compute dxi /dη, dp/dη and dni /dη:
+
+a) dxi /dη:
+
+From
+                                                    dxi   dxi dη   dxi 0
+                                             Pi =       =        =    P                                            (3.9)
+                                                    dλ    dη dλ    dη
+
+and from Eq. (3.6) and (3.7)
+
+                                      dxi
+                                                                      
+                                            i Φ+Ψ          j 1     k m
+                                          =ne      1 − ωj n − χkm n n    .                                       (3.10)
+                                      dη                     2
+
+b) dp/dη:
+
+For dp/dη we make use of the time component of the geodesic equation dP 0 /dλ = −Γ0αβ P α P β where we can
+replace the derivative d/dλ with (dη/dλ) d/dη = P 0 d/dη so that
+
+                                                  dP 0         P αP β
+                                                       = −Γ0αβ        ,                                          (3.11)
+                                                   dη            P0
+                                                                                                                       6
+
+Using the metric (2.1) we find
+                                  
+    0   α β       0ν    ∂gνα   ∂αβ
+ 2Γαβ P P = g          2 β − ν P αP β
+                        ∂x     ∂x
+                                                                                                         
+                                2                                                             1
+             = 2(H + Φ′ ) P 0 + 4Φ,i P 0 P i + 4Hωi P 0 P i + 2e−2Φ (H − Ψ′ )e−2Ψ δij − ωi,j + χ′ij + Hχij P i P j .
+                               
+                                                                                              2
+                                                                                                             (3.12)
+On the other hand the expression (3.7) of P 0 in terms of p and ni gives
+                       dP 0    p dΦ −Φ                            d(p/a) p −Φ d(ωi ni )
+                                       1 + ωi ni + e−Φ 1 + ωi ni
+                                                
+                            =−      e                                    + e             .                        (3.13)
+                        dη     a dη                                  dη   a      dη
+Thus Eq. (3.11) allows us express dp/dη as
+                                 1 dp                                   1
+                                      = −H + Ψ′ − Φ,i ni eΦ+Ψ − ωi′ ni − χ′ij ni nj ,                             (3.14)
+                                 p dη                                   2
+where in Eq. (3.12) we have replaced P 0 and P i by Eqs. (3.7) and (3.6). Notice that in order to obtain Eq. (3.14) we
+have used the following expressions for the total time derivatives of the metric perturbations
+                                   ∂Φ dxi
+                                                                                         
+                      dΦ    ∂Φ                 ∂Φ    ∂Φ i Φ+Ψ              j   1      k m
+                          =      + i        =      + in e          1 − ωj n − χkm n n       ,                    (3.15)
+                      dη     ∂η    ∂x dη       ∂η    ∂x                        2
+and
+                               d(ωi ni )                 ∂ωi dxj
+                                                                  
+                                                    ∂ωi                    ∂ωi i ∂ωi i j
+                                         = ni           + j            =      n + jn n ,                          (3.16)
+                                 dη                 ∂η   ∂x dη             ∂η    ∂x
+where we have taken into account that ωi is already a second-order perturbation so that we can neglect dni /dη which
+is at least a first order quantity, and we can take the zero-order expression in Eq. (3.10), dxi /dη = ni . In fact there
+is also an alternative expression for dp/dη which turns out to be useful later and which can be obtained by applying
+once more Eq. (3.15)
+                                  1 dp        dΦ                     1
+                                       = −H −    + Φ′ + Ψ′ − ωi′ ni − χ′ij ni nj .                                (3.17)
+                                  p dη        dη                     2
+
+
+c) dni /dη:
+
+We can proceed in a similar way to compute dni /dη. Notice that since in Eq. (3.8) it multiplies ∂f /∂ni
+which is first order, we need only the first order perturbation of dni /dη. We use the spatial components of the
+geodesic equations dP i /dλ = −Γiαβ P α P β written as
+
+                                                     dP i         P αP β
+                                                          = −Γiαβ        .                                        (3.18)
+                                                      dη            P0
+For the right-hand side we find up to second-order
+                                            
+    i    α β      iν ∂gαν      ∂gβν     ∂gαβ
+ 2Γαβ P P = g               +        −         P αP β
+                       ∂xβ     ∂xα       ∂xν
+                                                                                            
+                                                                    ∂Φ                         2  ∂Ψ
+               = 4(H − Ψ′ )P i P 0 + 2 χi′k + ω,k
+                                                i
+                                                  − ωk,i P 0 P k + 2 i e2Φ+2Ψ + 2ω i′ + 2Hω i P 0 − 4 k P i P k
+                                                                      ∂x                             ∂x
+                                     "                                   !#
+                   ∂Ψ       k m            i
+                                                    ∂χi j   ∂χi k   ∂χjk
+               + 2 i δkm P P − 2Hω δjk −                  +       +         P jP k ,                     (3.19)
+                  ∂x                                ∂xk     ∂xj      ∂xi
+
+while the expression (3.6) of P i in terms of our variables p and ni in the left-hand side of Eq. (3.18) brings
+
+                                                                                p i Ψ 1 d χkm nk nm
+                                                                                                     
+              dP i    p Ψ dΨ i a d(p/a) i dni
+                                                                        
+                                                               1      k m
+                   = e          n +            n +         1 − χkm n n       − ne                      .          (3.20)
+               dη     a      dη       p dη          dη         2                a     2       dη
+                                                                                                                          7
+
+Thus, using the expression (3.6) for P i and (3.4) for P 0 in Eq. (3.19), together with the previous result (3.14), the
+geodesic equation (3.18) gives the following expression dni /dη (valid up to first order)
+                                             dni
+                                                 = (Φ,k + Ψ,k ) nk ni − Φ,i − Ψ,i .                                  (3.21)
+                                             dη
+  To proceed further we now expand the distribution function for photons around the zero-order value f (0) which is
+that of a Bose-Einstein distribution
+                                                                               1
+                                                 f (0) (p, η) = 2         n           o        ,                     (3.22)
+                                                                                p
+                                                                    exp       T (η)       −1
+
+where T (η) is the average (zero-order) temperature and the factor 2 comes from the spin degrees of photons. The
+perturbed distribution of photons will depend also on xi and on the propagation direction ni so as to account for
+inhomogeneities and anisotropies
+                                                                                        1
+                            f (xi , p, ni , η) = f (0) (p, η) + f (1) (xi , p, ni , η) + f (2) (xi , p, ni , η) ,    (3.23)
+                                                                                        2
+where we split the perturbation of the distribution function into a first and a second-order part. The Boltzmann
+equation up to second-order can be written in a straightforward way by recalling that the total time derivative of a
+given i-th perturbation, as e.g. df (i) /dη is at least a quantity of the i-th order. Thus it is easy to realize, looking at
+Eq. (3.8), that the left-hand side of Boltzmann equation can be written up to second-order as
+
+                  df (1)   1 df (2)     ∂f (0) d                       ∂f (0) ∂
+                                                                                                            
+           df                                        (1)   1 (2)                   (1)   (1)    1 (2) 1 (2)
+               =         +          −p             Φ + Φ           +p             Φ +Ψ + Φ + Ψ
+           dη       dη     2 dη          ∂p dη             2            ∂p ∂η                   2        2
+                     ∂f (0) ∂ωi i 1 ∂f (0) ∂χij i j
+               − p             n − p           nn ,                                                                  (3.24)
+                      ∂p ∂η       2 ∂p ∂η
+where for simplicity in Eq. (3.24) we have already used the background Boltzmann equation (df /dη)|(0) = 0. In
+Eq. (3.24) there are all the terms which will give rise to the integrated Sachs-Wolfe effects (corresponding to the terms
+which explicitly depend on the gravitational perturbations), while other effects, such as the gravitational lensing, are
+still hidden in the (second-order part) of the first term. In fact in order to obtain Eq. (3.24) we just need for the time
+being to know the expression for dp/dη, Eq. (3.17).
+
+
+                                                    IV.     COLLISION TERM
+
+
+
+
+                                                   A.     The Collision Integral
+
+In this section we focus on the collision term due to Compton scattering
+                                                     e(q)γ(p) ←→ e(q′ )γ(p′ ) ,                                       (4.1)
+where we have indicated the momentum of the photons and electrons involved in the collisions. The collision term
+will be important for small scale anisotropies and spectral distortions. The important point to compute the collision
+term is that for the epoch of interest very little energy is transferred. Therefore one can proceed by expanding the
+right hand side of Eq. (3.1) both in the small perturbation, Eq. (3.23), and in the small energy transfer. Part of the
+computation up to second-order has been done in Refs. [30, 31, 32] (see also [33]). In particular Refs. [30, 31] are
+focused on the effects of reionization on the CMB anisotropies thus keeping in the collision term those contributions
+relevant for the small scale effects due to reionization and neglecting the effects of the metric perturbations on the
+left-hand side of Eq. (3.1). We will mainly follow the formalism of Ref. [31] and we will keep all the terms arising
+from the expansion of the collision term up to second-order.
+   The collision term is given by
+                             1            dq           dq′          dp′
+                                 Z
+                                                                                                                 2
+                 C(p) =                                                       (2π)4 δ 4 (q + p − q ′ − p′ ) |M |
+                           E(p)     (2π)3 2E(q) (2π)3 2E(q′ ) (2π)3 2E(p′ )
+                        × {g(q′ )f (p′ )[1 + f (p)] − g(q)f (p)[1 + f (p′ )]}                                      (4.2)
+                                                                                                                                                  8
+
+where E(q) = (q 2 +m2e )1/2 , M is the amplitude of the scattering process, δ 4 (q+p−q ′ −p′ ) = δ 3 (q+p−q′ −p′ )δ(E(q)+
+p − E(q′ ) − p′ ) ensures the energy-momentum conservation and g is the distribution function for electrons. The Pauli
+suppression factors (1 − g) have been dropped since for the epoch of interest the density of electrons ne is low. The
+electrons are kept in thermal equilibrium by the Coulomb interactions with protons and they are non-relativistic, thus
+we can take a Boltzmann distribution around some bulk velocity v
+                                                        3/2
+                                                                     (q − me v)2
+                                                                                
+                                                   2π
+                                     g(q) = ne               exp −                                                   (4.3)
+                                                 me T e                2me Te
+By using the three dimensional delta function the energy transfer is given by E(q) − E(q + p − p′ ) and it turns out
+to be small compared to the typical thermal energies
+                                                                                   (p − p′ ) · q
+                                             E(q) − E(q + p − p′ ) ≃                             = O(T q/me ) .                                (4.4)
+                                                                                       me
+In Eq. (4.4) we have used E(q) = me + q 2 /2me and the fact that since the scattering is almost elastic (p ≃ p′ ) (p − p′ )
+is of order p ∼ T , with q much bigger than (p − p′ ). In general, the electron momentum has two contributions, the
+bulk velocity (q = me v) and the thermal motion (q ∼ (me T )1/2 ) and thus the parameter expansion q/me includes
+the small bulk velocity v and the the ratio (T /me )1/2 which is small because the electrons are non-relativistic.
+   The expansion of all the quantities entering the collision term in the energy transfer parameter and the integration
+over the momenta q and q′ is described in details in Ref. [31]. Here we just note that it is easy to realize that
+we just need the scattering amplitude up to first order since at zero order g(q′ ) = g(q + p − p′ ) = g(q) and
+                                                                                              2
+δ(E(q) + p − E(q′ ) − p′ ) = δ(p − p′ ) so that all the zero-order quantities multiplying |M | vanish. To first order
+                                       2
+                                  |M | = 6πσT m2e [(1 + cos2 θ) − 2cosθ(1 − cosθ)q · (p̂ + p̂′ )/me ] ,                                        (4.5)
+where cosθ = n · n′ is the scattering angle and σT the Thompson cross section. The resulting collision term up to
+second order is given by [31]
+                              dΩ′ (1)
+                                                                                                                                 
+              3ne σT
+                     Z
+                                                 (2)                             (2)                                 (2)
+     C(p) =            dp′ p′      c (p, p′ ) + c∆ (p, p′ ) + c(2)
+                                                               v   (p, p ′
+                                                                           ) + c ∆v  (p, p ′
+                                                                                             ) + c (2)
+                                                                                                   vv  (p, p ′
+                                                                                                               ) + c K   (p, p ′
+                                                                                                                                 )  , (4.6)
+                4p            4π
+where we arrange the different contributions following Ref. [31]. The first order term reads
+                               "                                                                                                #
+                                                                                                                            ′
+                                                                                                                   ∂δ(p − p   )
+         c(1) (p, p′ ) = (1 + cos2 θ) δ(p − p′ )(f (1) (p′ ) − f (1) (p)) + (f (0) (p′ ) − f (0) (p))(p − p′ ) · v                ,            (4.7)
+                                                                                                                      ∂p′
+
+while the second-order terms have been separated into four parts. There is the so-called anisotropy suppression term
+                                       (2)                    1
+                                    c∆ (p, p′ ) =               1 + cos2 θ δ(p − p′ )(f (2) (p′ ) − f (2) (p)) ;
+                                                                          
+                                                                                                                                               (4.8)
+                                                              2
+a term which depends on the second-order velocity perturbation defined by the expansion of the bulk flow as v =
+v(1) + v(2) /2
+                                                       1                                                       ∂δ(p − p′ )
+                            c(2)    ′
+                             v (p, p ) =                 (1 + cos2 θ)(f (0) (p′ ) − f (0) (p))(p − p′ ) · v(2)             ;                   (4.9)
+                                                       2                                                          ∂p′
+a set of terms coupling the photon perturbation to the velocity
+                                    "                                                                          #
+   (2)      ′
+                
+                  (1)  ′     (1)
+                                  
+                                             2
+                                                      ′     ∂δ(p − p′ )                         ′       ′
+  c∆v (p, p ) = f (p ) − f (p)        1 + cos θ (p − p ) · v             − 2cosθ(1 − cosθ)δ(p − p )(n + n ) · v ,
+                                                                ∂p′
+                                                                                                                                              (4.10)
+and a set of source terms quadratic in the velocity
+                                                                                            "
+                                                                                                            (p − p′ ) · v ∂ 2 δ(p − p′ )
+                    c(2)     ′
+                     vv (p, p )    =         f   (0)     ′
+                                                       (p ) − f   (0)
+                                                                        (p) (p − p′ ) · v       1 + cos2 θ
+                                                                                                                    2             ∂p′2
+                                                                             #
+                                                                 ∂δ(p − p′ )  ′
+                                   − 2cosθ(1 − cosθ)(n + n ) · v               .
+                                                                    ∂p′
+                                                                                                                                              (4.11)
+                                                                                                                          9
+
+The last contribution are the Kompaneets terms describing spectral distortions to the CMB
+                                               "
+        (2)                    2
+                                   (p − p′ )2  (0) ′                    ∂ 2 δ(p − p′ )
+                ′
+       cK (p, p ) = 1 + cos θ                      f (p ) − f (0) (p) Te
+                                       2me                                        ∂p′2
+                                                                                  #
+                                                                    ∂δ(p − p′ )
+                   − f (0) (p′ ) + f (0) (p) + 2f (0) (p′ )f (0) (p)
+                                                                         ∂p′
+                                                   "                                                              #
+                      2(p − p′ )cosθ(1 − cos2 θ)               ′ (0) ′          (0)
+                                                                                       
+                                                                                          (0) ′ (0)
+                                                                                                     ∂δ(p − p′ )
+                   +                                 δ(p − p )f (p )(1 + f (p)) f (p ) − f (p)                      . (4.12)
+                                  me                                                                     ∂p′
+
+Let us make a couple of comments about the various contributions to the collision term. First, notice the term
+ (2)
+cv (p, p′ ) due to second-order perturbations in the velocity of electrons which is absent in Ref. [31]. In standard
+cosmological scenarios (like inflation) vector perturbations are not generated at linear order, so that linear velocities
+are irrotational v (1)i = ∂ i v (1) . However at second-order vector perturbations are generated after horizon crossing as
+non-linear combinations of primordial scalar modes. Thus we must take into account also a transverse (divergence
+                                        (2)i        (2)i
+free) component, v (2)i = ∂ i v (2) + vT with ∂i vT = 0. As we will see such vector perturbations will break azimuthal
+symmetry of the collision term with respect to a given mode k, which instead usually holds at linear order. Secondly,
+notice that the number density of electrons appearing in Eq. (4.6) must be expanded as ne = n̄e (1 + δe ) and then
+
+                                                       δe(1) c(1) (p, p′ )                                           (4.13)
+                                                                                               (1)   (2)
+gives rise to second-order contributions in addition to the list above, where we split δe = δe + δe /2 into a first- and
+second-order part. In particular the combination with the term proportional to v in c(1) (p, p′ ) gives rise to the so
+called Vishniac effect as discussed in Ref. [31].
+
+
+                         B.   Computation of different contributions to the collision term
+
+  In the integral (4.6) over the momentum p′ the first-order term gives the usual collision term
+                                                                             ∂f (0)
+                                                                                        
+                             (1)           (1)      1 (1)              (1)
+                           C (p) = ne σT f0 (p) + f2 P2 (v̂ · n) − f − p            v·n ,                            (4.14)
+                                                    2                          ∂p
+where one uses the decomposition in Legendre polynomials
+                                                                 (1)
+                                                      X
+                                    f (1) (x, p, n) =   (2ℓ + 1)fℓ (p)Pℓ (cosϑ) ,                                    (4.15)
+                                                         ℓ
+
+where ϑ is the polar angle of n, cosϑ = n · v̂.
+  In the following we compute the second-order collision term separately for the different contributions, using the
+notation C(p) = C (1) (p) + C (2) (p)/2. We have not reported the details of the calculation of the first-order term
+                                          (2)       (2)
+because for its second-order analog, c∆ (p, p′ ) + cv (p, p′ ), the procedure is the same. The important difference is
+that the second-order velocity term includes a vector part, and this leads to a generic angular decomposition of the
+distribution function (for simplicity drop the time dependence)
+                                                    ℓ                   r
+                                                 X X     (i)                4π
+                               f (i) (x, p, n) =        fℓm (x, p)(−i)ℓ          Yℓm (n) ,                      (4.16)
+                                                                          2ℓ + 1
+                                                ℓ    m=−ℓ
+
+such that
+                                                       r
+                                                             2ℓ + 1
+                                                                      Z
+                                         (i)
+                                        fℓm = (−i)−ℓ                      dΩf (i) Yℓm
+                                                                                    ∗
+                                                                                      (n) .                          (4.17)
+                                                               4π
+Such a decomposition holds also in Fourier space [34]. The notation at this stage is a bit confusing, so let us restate
+it: superscripts denote the order of the perturbation; the subscripts refer to the moments of the distribution. Indeed
+at first order one can drop the dependence on m setting m = 0 using the fact that the distribution function does not
+                                                                   (1)
+depend on the azimuthal angle φ. In this case the relation with fl is
+                                               (1)                               (1)
+                                             fℓm = (−i)−ℓ (2ℓ + 1)δm0 fℓ               .                             (4.18)
+                                                                                                                                10
+
+
+
+      (2)
+a)   c∆ (p, p′ )
+
+The integral over p′ yields
+               3ne σT            dΩ′ (2)          3ne σT                       dΩ′
+                       Z                                 Z                   Z
+      (2)
+    C∆ (p) =              dp′ p′    c∆ (p, p′ ) =          dp′ p′ δ(p − p′ )       [1 + (n · n′ )2 ][f (2) (p′ ) − f (2) (p)] .
+                  4p             4π                 4p                         4π
+                                                                                                                             (4.19)
+
+To do the angular integral we write the angular dependence on the scattering angle cosθ = n · n′ in terms of the
+Legendre polynomials
+                                                         "       2
+                                                                                            #
+                              ′ 2    4      1         ′        1 X             ∗   ′    4π
+                   [1 + (n · n ) ] =     1 + P2 (n · n ) = 1 +        Y2m (n)Y2m (n )          ,          (4.20)
+                                     3      2                  2 m=−2                 2ℓ + 1
+
+where in the last step we used the addition theorem of spherical harmonics
+                                                               2
+                                                         4π    X
+                                                                            ∗
+                                                Pℓ =               Yℓm (n)Yℓm (n′ ) .                                       (4.21)
+                                                       2ℓ + 1 m=−2
+
+Using the decomposition (4.17) and the orthonormality of the spherical harmonics we find
+                                       "                        2   √                  #
+                         (2)              (2)               1  X      4π  (2)
+                       C∆ (p) = ne σT f00 (p) − f (2) (p) −              f (p) Y2m (n) .                                    (4.22)
+                                                            2 m=−2 53/2 2m
+
+It is easy to recover the result for the corresponding first-order contribution in Eq. (4.14) by using Eq. (4.18).
+      (2)
+b)   cv (p, p′ )
+
+Let us fix for simplicity our coordinates such that the polar angle of n′ is defined by µ′ = v̂(2) · n′ with φ′
+                                                                   (2)
+the corresponding azimuthal angle. The contribution of cv (p, p′ ) to the collision term is then
+
+                                                               ∂δ(p − p′ ) 1 dµ′
+                                                                                               Z 2π ′
+                 3ne σT (2)                                                                        dφ
+                            Z                                             Z
+     Cv(2) (p) =       v      dp′ p′ [f (0) (p′ ) − f (0) (p)]       ′
+                                                                                 (pµ − p ′ ′
+                                                                                          µ  )        [1 + (p · p′ )2 ] . (4.23)
+                   4p                                             ∂p       −1 2                 0  2π
+
+We can use Eq. (4.20) which in our coordinate system reads
+                                                     m
+                                            "                                                     #
+               ′ 2    4      1         ′    4     1 X (2 − m)! m          (2) m  ′    (2) im(φ′ −φ)
+    [1 + (n · n ) ] =     1 + P2 (n · n ) =    1+                P (n · v̂ )P2 (n · v̂ )e             ,                     (4.24)
+                      3      2              3     2 m=−2 (2 + m)! 2
+
+so that
+                                     dφ′
+                                 Z
+                                         P2 (n · n′ ) = P2 (n · v̂(2) )P2 (n′ · v̂(2) ) = P2 (µ)P2 (µ′ ) .                  (4.25)
+                                     2π
+By using the orthonormality of the Legendre polynomials and integrating by parts over p′ we find
+
+                                                                         ∂f (0) (2)
+                                                Cv(2) (p) = −ne σT p           v ·n.                                        (4.26)
+                                                                          ∂p
+
+As it is clear by the presence of the scalar product v(2) · p the final result is independent of the coordinates choosen.
+      (2)
+c)   c∆v (p, p′ )
+
+Let us consider the contribution from the first term
+                        (2)                                                            ∂δ(p − p′ )
+                       c∆v(I) (p, p′ ) = 1 + cos2 θ f (1) (p′ ) − f (1) (p) (p − p′ ) · v             ,                     (4.27)
+                                                                                             ∂p′
+                                                                                                                              11
+
+where the velocity has to be considered at first order. In the integral (4.6) it brings
+
+                                    ∂δ(p − p′ ) 1 dµ′ (1) ′
+                                                                                          Z 2π ′
+       1 (2)      3ne σT v                                                                    dφ
+                           Z                   Z
+                                                                    (1)
+         C∆v(I) =            dp′ p′       ′
+                                                      [f   (p ) − f     (p)](pµ − p ′ ′
+                                                                                     µ  )        (1 + cos2 θ) ,           (4.28)
+       2             4p                ∂p       −1 2                                       0  2π
+
+The procedure to do the integral is the same as above. We use the same relations as in Eqs. (4.24) and (4.25) where
+now the angles are those taken with respect to the first-order velocity. This eliminates the integral over φ′ , and
+integrating by parts over p′ yields
+
+                 3ne σT v 1 dµ′ 4 2                                                                      (1)
+                                                                                                             (p, µ′ )
+                                                                                                                   
+ 1 (2)                                                                                              ′ ∂f
+                         Z
+                                                    ′           ′   (1)  ′     (1)          2
+  C      (p) = −                     + P2 (µ)P2 (µ ) p(µ − 2µ )(f (p, µ ) − f (p, µ)) + p (µ − µ )                      .
+ 2 ∆v(I)           4p      −1 2     3 3                                                                    ∂p
+                                                                                                                 (4.29)
+We now use the decomposition (4.15) and the orthonormality of the Legendre polynomials to find
+
+       dµ′ ′ (1)                   X Z dµ′                          X Z dµ′  2                   
+                                                                                         3
+     Z
+                      ′     ′               ′     ′      ′ (1)                                              (1)
+           µ f (p, µ )P2 (µ ) =            µ P2 (µ )Pl (µ )fℓ (p) =             P1 (µ ) + P3 (µ ) Pℓ (µ′ )fℓ (p)
+                                                                                     ′          ′
+         2                               2                                 2 5           5
+                                      ℓ                                     ℓ
+                                   2 (1)   3 (1)
+                                 = f1 (p) + f3 (p) ,                                                                      (4.30)
+                                   5       5
+where we have used µ′ P2 (µ′ )Pl (µ′ ) = 25 P1 (µ′ ) + 35 P3 (µ′ ), with P1 (µ′ ) = µ′ . Thus from Eq. (4.29) we get
+                          (        "                                                                             !#
+                                                                    (1)                                  (1)
+    1 (2)                                           (1)         ∂f      (p)   1             (1)       ∂f     (p)
+      C     (p) = ne σT v · n f (1) (p) − f0 (p) − p 0                      − P2 (v̂ · n) f2 (p) + p 2
+    2 ∆v(I)                                                         ∂p        2                          ∂p
+                      "                                                                                               !# )
+                                           (1)                                          (1)                       (1)
+                          (1)          ∂f1 (p) 1                          (1)       ∂f1 (p)       (1)      3 ∂f3 (p)
+                + v 2f1 (p) + p                    + P2 (v̂ · n) 2f1 (p) + p                 + 3f3 (p) + p                 (4.31)
+                                                                                                                           .
+                                           ∂p          5                                ∂p                 2      ∂p
+
+In c(2) (p, p′ ) there is a second term
+                                                                           
+                           (2)
+                          c∆v(II) = −2cosθ(1 − cosθ) f (1) (p′ ) − f (1) (p) δ(p − p′ )(n + n′ ) · v ,                    (4.32)
+
+whose contribution to the collision term is
+                                                 Z 1                             Z 2π ′
+    1 (2)             3ne σT v                       dµ′ (1) ′                       dφ
+                               Z
+                                    ′ ′       ′                    (1)        ′
+      C      (p) = −              dp p δ(p − p )        (f (p ) − f (p))(µ + µ )        cosθ(1 − cosθ) .                  (4.33)
+    2 ∆v(II)            2p                        −1  2                           0  2π
+                                                                  (2)
+This integration proceeds through the same steps as for C∆v(I) (p). In particular by noting that cosθ(1 − cosθ) =
+−1/3 + P1 (cosθ) − 2P3 (cosθ)/3, Eqs. (4.24) and (4.25) allows to compute
+
+                                dφ′                    1                  2
+                             Z
+                                    cosθ(1 − cosθ) = − + P1 (µ)P1 (µ′ ) − P2 (µ)P2 (µ′ ) ,                  (4.34)
+                                2π                     3                  3
+and using the decomposition (4.15) we arrive at
+                                                                                               
+        1 (2)                         (1)                         1            
+                                                                                  (1)       (1)
+          C      (p) = −ne σT v · n f2 (p)(1 − P2 (v̂ · n)) + v     P2 (v̂ · n) 3f1 (p) − 3f3 (p)    .                    (4.35)
+        2 ∆v(II)                                                  5
+
+Thus summing Eq. (4.29) and (4.35) we obtain
+                      (      "                                                                      !#
+                                                     (1)                                       (1)
+     1 (2)                      (1)      (1)      ∂f0 (p)    (1)     1              (1)     ∂f2 (p)
+       C (p) = ne σT v · n f (p) − f0 (p) − p             − f2 (p) + P2 (v̂ · n) f2 (p) − p
+     2 ∆v                                            ∂p              2                         ∂p
+                  "                                                                                !# )
+                                    (1)                             (1)                      (1)
+                      (1)        ∂f1 (p) 1               (1)      ∂f1 (p)       (1)     3 ∂f3 (p)
+             + v 2f1 (p) + p            + P2 (v̂ · n) −f1 (p) + p         + 6f3 (p) + p                 .(4.36)
+                                    ∂p      5                       ∂p                  2    ∂p
+
+As far as the remaining terms, these have already been computed in Ref. [31] (see also Ref. [30]) and here we just
+report them
+                                                                                                                                     12
+
+        (2)
+d)     cvv (p, p′ )
+
+The term proportional to the velocity squared yield a contribution to the collision term
+
+                                             ∂f (0) 11 2 ∂ 2 f (0)         ∂f (0)     3 2 ∂ 2 f (0)
+                                                                                                
+               1 (2)                     2                             2
+                 C (p) = ne σT (v · n) p            + p              +v p          + p                 .                         (4.37)
+               2 vv                            ∂p      20    ∂p2             ∂p      20     ∂p2
+
+
+        (2)
+e)     cK (p, p′ )
+
+The terms responsible for the spectral distortions give
+
+                                                           ∂f (0)
+                                                                              
+                                1 (2)         1 ∂      4             (0)    (0)
+                                 C (p) = 2            p Te        + f (1 + f )     .                                             (4.38)
+                                2 K          me ∂p          ∂p
+
+Finally we write also that part of the collision term coming from Eq. (4.13)
+
+                                                                                                         ∂f (0)
+                                                                                                                  
+                                                                      (1)    1 (1)
+                 δe(1) c(1) (p, p′ ) → δe(1) C (1) (p) = ne σT δe(1) f0 (p) + f2 P2 (v̂ · n) − f (1) − p        v·n .            (4.39)
+                                                                             2                            ∂p
+
+
+                                              C.   Final expression for the collision term
+
+Summing all the terms we find the final expression for the collision term (4.6) up to second order
+                                                                             1
+                                                           C(p) = C (1) (p) + C (2) (p)                                          (4.40)
+                                                                             2
+with
+                                                                                                    (0)
+                                                                                                               
+                                   (1)                      (1)    1 (1)                       ∂f
+                               C         (p) = ne σT       f0 (p) + f2 P2 (v̂ · n) − f (1) − p            v·n                    (4.41)
+                                                                     2                         ∂p
+
+and
+                       (               2    √
+                                                                                                                                      ∂f (0)
+                                                                                                                                                
+1 (2)                   1 (2)       1 X       4π (2)                 1 (2)           (1)     (1)       1 (1)                 (1)
+  C (p) = ne σT           f (p) −                 f (p) Y2m (n) − f (p) + δe f0 (p) + f2 P2 (v̂ · n) − f − p                                 v·n
+2                       2 00        4 m=−2 53/2 2m                   2                                 2                               ∂p
+                                        "                                                                                           !#
+                                                                    (1)                                                     (1)
+                1 ∂f (0) (2)                          (1)        ∂f     (p)      (1)        1                (1)        ∂f      (p)
+              − p         v · n + v · n f (1) (p) − f0 (p) − p 0            − f2 (p) + P2 (v̂ · n) f2 (p) − p 2
+                2 ∂p                                                ∂p                      2                               ∂p
+                 "                                                                                                !#
+                                   (1)                                       (1)                           (1)
+                      (1)       ∂f (p) 1                     (1)         ∂f (p)            (1)       3 ∂f (p)
+              + v 2f1 (p) + p 1          + P2 (v̂ · n) −f1 (p) + p 1                 + 6f3 (p) + p 3
+                                   ∂p       5                                ∂p                      2     ∂p
+                             (0)          2 (0)
+                                                           (0)             2 (0)
+                                                                                                           (0)
+                                                                                                                                       )
+                           ∂f       11   ∂  f             ∂f         3     ∂  f           1    ∂          ∂f
+              + (v · n)2 p        + p2             + v2 p        + p2                + 2           p4 T e         + f (0) (1 + f (0) )       .
+                             ∂p     20     ∂p2             ∂p       20       ∂p2         me ∂p              ∂p
+                                                                                                                                           (4.42)
+
+Notice that there is an internal hierarchy, with terms which do not depend on the baryon velocity v, terms
+proportional to v · n and then to (v · n)2 , v and v 2 (apart from the Kompaneets terms). In particular notice the term
+                  (1)
+proportional to δe v · n is the one corresponding to the Vishniac effect. We point out that we have kept all the terms
+                                                                                        (2)
+up to second-order in the collision term. In Refs. [30, 31] many terms coming from c∆v have been dropped mainly
+because these terms are proportional to the photon distribution function f (1) which on very small scales (those of
+interest for reionization) is suppressed by the diffusion damping. Here we want to be completely general and we have
+to keep them.
+                                                                                                                          13
+
+                                        V.    THE BRIGHTNESS EQUATION
+
+
+
+
+                                                     A.    First-order
+
+The Boltzmann equation for photons is obtained by combining Eq. (3.24) with Eqs. (4.41)-(4.42). At first-order the
+left-hand side reads
+                                    df   df (1)    ∂f (0) ∂Φ(1) dxi     ∂f (0) ∂Ψ(1)
+                                       =        −p                  + p              .                                 (5.1)
+                                    dη    dη        ∂p ∂xi dη            ∂p ∂η
+At first-order it is useful to characterize the perturbations to the Bose-Einstein distribution function (3.22) in terms
+of a perturbation to the temperature as
+                                                                                  −1
+                                        i      i                      p
+                                    f (x , p, n , η) = 2 exp                      −1     .                          (5.2)
+                                                               T (η)(1 + Θ(1) )
+Thus it turns out that
+                                                                ∂f (0) (1)
+                                                   f (1) = −p         Θ ,                                              (5.3)
+                                                                 ∂p
+where we have used that ∂f /∂Θ|Θ=0 = −p∂f (0) /∂p. In terms of this variable Θ(1) the linear collision term (4.41) will
+now become proportional to −p∂f (0) /∂p which contains the only explicit dependence on p, and the same happens
+for the left-hand side, Eq. (5.1). This is telling us that at first order Θ(1) does not depend on p but only on xi , ni , η,
+Θ(1) = Θ(1) (xi , ni , τ ). This is well known and the physical reason is that at linear order there is no energy transfer in
+Compton collisions between photons and electrons. Therefore the Boltzmann equation for Θ(1) reads
+                 ∂Θ(1)             (1)
+                                         ∂Φ(1) i ∂Ψ(1)
+                                                                                                          
+                              i ∂Θ                                    (1)   1 (1)               (1)
+                           +n          +      n −        = ne σT a Θ0 + Θ2 P2 (v̂ · n) − Θ + v · n ,                    (5.4)
+                   ∂η            ∂xi      ∂xi       ∂η                      2
+                       (1)                   (1)
+where we used that fℓ = −p∂f (0) /∂pΘℓ according the decomposition of Eq. (4.15), and we have taken the zero-
+order expressions for dxi /dη, dropping the contribution from dni /dη in Eq. (3.8) since it is already first-order.
+  Notice that since Θ(1) is independent on p it is equivalent to consider the quantity
+                                                                 dpp3 f (1)
+                                                               R
+                                              (1) i   i
+                                            ∆ (x , n , τ ) = R              ,                                       (5.5)
+                                                                 dpp3 f (0)
+                                                         ∆(1) = 4Θ(1) .                                                (5.6)
+The physical meaning of ∆(1) is that of a fractional energy perturbation (in a given direction). From Eq. (3.24)
+another way to write an equation for ∆(1) – the so called brightness equation – is
+                                                                                                 
+             d h (1)      (1)
+                              i    ∂  (1)      (1)
+                                                    
+                                                                 (1)   1 (1)           (1)
+                ∆ + 4Φ          −4    Φ +Ψ            = ne σT a ∆0 + ∆2 P2 (v̂ · n) − ∆ + 4v · n .         (5.7)
+            dη                     ∂η                                  2
+
+
+                                                    B.    Second-order
+
+The previous results show that at linear order the photon distribution function has a Planck spectrum with the
+temperature that at any point depends on the photon direction. At second-order one could characterize the perturbed
+photon distribution function in a similar way as in Eq. (5.2)
+                                                                             −1
+                                                                      p
+                                     f (xi , p, ni , η) = 2 exp            − 1      ,                          (5.8)
+                                                                  T (η) eΘ
+where by expanding Θ = Θ(1) + Θ(2) /2 + ... as usual one recovers the first-order expression. For example, in terms of
+Θ, the perturbation of f (1) is given by Eq. (5.3), while at second-order
+                              f (2)    p ∂f (0) (2) 1         2 (0)
+                                                                       ∂f (0)  (1) 2
+                                                                            
+                                                            2∂ f
+                                    =−         Θ +        p         +p         Θ       .                         (5.9)
+                                2      2 ∂p           2       ∂p2       ∂p
+                                                                                                                          14
+
+However, as discussed in details in Refs. [30, 31], now the second-order perturbation Θ(2) will not be momentum
+independent because the collision term in the equation for Θ(2) does depend explicitly on p (defining the combination
+−(p∂f (0) /∂p)−1 f (2) does not lead to a second-order momentum independent equation as above). Such dependence is
+evident, for example, in the terms of C (2) (p), Eq. (4.42), proportional to v or v 2 , and in the Kompaneets terms. The
+physical reason is that at the non-linear level photons and electrons do exchange energy during Compton collisions.
+As a consequence spectral distorsions are generated. For example, in the isotropic limit, only the Kompaneets terms
+survive giving rise to the Sunyaev-Zeldovich distorsions. As discussed in Ref. [30], the Sunyaev-Zeldovich distorsions
+can also be obtained with the correct coefficients by replacing the average over the direction electron hv 2 i with the mean
+                              2
+squared thermal velocity hvth   i = 3Te /me in Eq. (4.42). This is due simply to the fact that the distinction between
+thermal and bulk velocity of the electrons is just for convenience. This fact also shows that spectral distorsions due
+to the bulk flow (kinetic Sunyaev-Zeldovich) has the same form as the thermal effect. Thus spectral distorsions can
+be in general described by a global Compton y-parameter (see Ref. [30] for a full discussion of spectral distorsions).
+However in the following we will not be interested in the frequency dependence but only in the anisotropies of the
+radiation distribution. Therefore we can integrate over the momentum p and define [30, 31]
+
+                                                                   dpp3 f (2)
+                                                                 R
+                                                 (2) i   i
+                                               ∆ (x , n , τ ) = R             ,                                        (5.10)
+                                                                   dpp3 f (0)
+as in Eq. (5.5).
+  Integration over p of Eqs. (3.24)-(4.42) is straightforward using the following relations
+
+                                                        ∂f (0)
+                                              Z
+                                                 dpp3 p          = −4 N ,
+                                                           ∂p
+                                                       ∂ 2 f (0)
+                                           Z
+                                               dpp3 p2           = 20 N ,
+                                                         ∂p2
+                                                 Z
+                                                    dpp3 f (1) = N ∆(1) ,
+
+                                                        ∂f (1)
+                                              Z
+                                                 dpp3 p          = −4 N ∆(1) ,
+                                                           ∂p
+                                                                   Z
+                                                              N =     dpp3 f (0) .                                    (5.11)
+
+where N is the normalization factor in Eq. (5.10) (it is just proportional the background energy density of photons
+ρ̄γ ). At first-order one recovers Eq. (5.7). At second-order we find
+       1 d h (2)            i    d h (1)         i            ′      (1)
+                                                                               ∂  (2)           ∂ωi i     ∂χij i j
+              ∆ + 4Φ(2) +           ∆ + 4Φ(1) − 4∆(1) Ψ(1) − Φ,i ni − 2            Ψ + Φ(2) + 4         n +2     nn
+       2 dη                     dη                                            ∂η                    ∂η        ∂η
+               "                    2    √
+            τ′
+                                                                                                       
+                  (2)     (2)   1 X        4π (2)            (1)     (1)  1 (1)
+       =−        ∆00 − ∆ −                    ∆ Y2m (n) + 2δe      ∆0 + ∆2 P2 (v̂ · n) − ∆ + 4v · n + 4v(2) · n
+                                                                                             (1)
+            2                   2 m=−2 53/2 2m                            2
+                                                                                                  #
+                      (1)     (1)     (1)      5                 (1)                           2    2
+       +2(v · n) ∆ + 3∆0 − ∆2              1 − P2 (v̂ · n) − v∆1 (4 + 2P2 (v̂ · n)) + 14(v · n) − 2v ,           (5.12)
+                                               2
+
+where we have expanded the angular dependence of ∆ as in Eq. (4.16)
+                                               ℓ                r
+                               (i)
+                                         X X        (i)       ℓ     4π
+                             ∆ (x, n) =           ∆ℓm (x)(−i)            Yℓm (n) ,                                    (5.13)
+                                                                  2ℓ + 1
+                                                 ℓ   m=−ℓ
+
+with
+                                                       r
+                                                            2ℓ + 1
+                                                                     Z
+                                         (i)
+                                        ∆ℓm = (−i)−ℓ                     dΩ∆(i) Yℓm
+                                                                                  ∗
+                                                                                    (n) ,                             (5.14)
+                                                              4π
+where we recall that the superscript stands by the order of the perturbation. At first order one can drop the dependence
+                               (1)                         (1)
+on m setting m = 0 so that ∆ℓm = (−i)−ℓ (2ℓ + 1)δm0 ∆ℓ . In Eq. (5.12) we have introduced the differential optical
+depth
+                                                       τ ′ = −n̄e σT a .                                              (5.15)
+                                                                                                                                                   15
+
+It is understood that on the left-hand side of Eq. (5.12) one has to pick up for the total time derivatives only those
+terms which contribute to second-order. Thus we have to take
+                                                                 
+ 1 d h (2)       (2)
+                     i    d h (1)    (1)
+                                         i (2)   1 ∂         i ∂       (2)      (2)
+                                                                                    
+       ∆ + 4Φ          +     ∆ + 4Φ            =         +n          ∆     + 4Φ       + ni (Φ(1) + Ψ(1) )∂i (∆(1) + 4Φ(1) )
+ 2 dη                    dη                      2 ∂η         ∂xi
+                                                 h                                  i ∂∆(1)
+                                                     (1)    (1)
+                                               + (Φ,j + Ψ,j )ni nj − (Φ,i + Ψ,i )            ,                       (5.16)
+                                                                                       ∂ni
+where we used Eqs. (3.10) and (3.21). Notice that we can write ∂∆(1) /∂ni = (∂∆(1) /∂xi )(∂xi /∂ni ) = (∂∆(1) /∂xi )(η−
+ηi ), from the integration in time of Eq. (3.10) at zero-order when ni is constant in time.
+
+
+                                          C.    Hierarchy equations for multipole moments
+
+Let us now move to Fourier space. In the following for a given k mode we will choose the coordinate system such that
+e3 = k̂ and the polar angle of the photon momentum is ϑ, with µ = cosϑ = k̂ · n. Then Eq. (5.12) can be written as
+
+                                                  ∆(2)′ + ikµ∆(2) − τ ′ ∆(2) = S(k, n, η) ,                                                   (5.17)
+where S(k, n, η) can be easily read off Eq. (5.12). We now expand the temperature anisotropy in the multipole
+            (2)
+moments ∆ℓm in order to obtain a system of coupled differential equations. By applying the angular integral of
+Eq. (5.14) to Eq. (5.17) we find
+                                                                      
+                            (2)′            κℓm (2)       κℓ+1,m (2)            (2)
+                          ∆ℓm (k, η) = k         ∆      −       ∆        + τ ′ ∆ℓm + Sℓm ,              (5.18)
+                                           2ℓ − 1 ℓ−1,m   2ℓ + 3 ℓ+1,m
+where the expansion coefficients of the source term are given by
+        
+                         (2)
+                                                                                                       τ ′ (2)
+Sℓm = 4Ψ(2)′ − τ ′ ∆00 δℓ0 δm0 + 4kΦ(2) δℓ1 δm0 − 4 ω±1 δℓ1 − 8τ ′ vm                        (2)
+                                                                                                 δℓ1 − ∆ℓm δℓ2 − 2χ±2 δℓ2
+                                                                                                       10
+            Z 3                                                                                                
+          ′     d k1       (1)        (1)                        (1)           (1)           2          (1)
+    − 2τ                 v (k1 )v0 (k2 )k̂2 · k̂1 + δe (k1 )∆0 (k2 ) − i v(k1 )∆10 (k2 ) δℓ0 δm0
+               (2π)3 0                                                                       3
+          Z 3
+              d k1  h
+                         (1)         (1)
+                                                i                  h
+                                                                         (1)       (1)           ′ (1)              ′    (1)          ′   (1)
+                                                                                                                                                  i
+    + k               Φ      (k 1 )Φ     (k  2 )   δ ℓ1 δ m0 −   2   (Ψ      ∇Φ        )m  + 8τ   (δ e v) m + +6τ     (∆ 0   v)m − 2τ   (∆2   v)m   δℓ1
+             (2π)3
+          Z 3                                                                                Z 3
+              d k1       (1)         (1)               2           (1)                             d k1 h (1)
+    + τ′               δ e   (k1 )∆  2   (k  2 )  −  i    v(k 1 )∆ 10   (k 2 )   δ ℓ2  δ m0 +              8Ψ (k1 ) + 2τ ′ δe(1) (k1 )
+             (2π)3                                     3                                           (2π)3
+                                                      i
+                                                           (1)
+    − (η − ηi )(Ψ(1) + Φ(1) )(k1 ) k1 · k2 ∆ℓ0 (k2 )δm0
+                                                   1                                                                   i  ′′           ′′            
+                                                                                                                              ℓ 1 ℓ         ℓ 1       ℓ
+                                                                      h
+                                                                            (1)                                   (1)
+                                       X X
+    − i(−i)−ℓ (−1)−m (2ℓ + 1)                           (2ℓ′′ + 1) 8∆ℓ′′ ∇Φ(1) − 2(Φ(1) + Ψ(1) )∇∆ℓ′′ ′
+                                                                                                                        m      0 0 0         0 m′ −m
+                                          ℓ
+                                          ′′   m =−1
+                                                 ′
+
+                                                1                                                    
+                                                                                                         ℓ′′ 1 ℓ
+                                                                                                                   
+                                                                                                        ℓ′′ 1
+                                                                                                                       
+                                                                                                                    ℓ
+                                                                h                       i
+                                                                   (1)              (1)
+                                              X X
+            ′      −ℓ       −m                             ′′
+      + τ i(−i) (−1) (2ℓ + 1)                           (2ℓ + 1) 2∆ℓ′′ v + 5δℓ′′ 2 ∆2 v
+                                                                                     m′                  0 m′ −m
+                                                                                                          0 0 0
+                                       ℓ′′ m′ =−1
+                                   1
+                                                     "                                                               #
+                                           Z 3                  (1)
+            ′     −ℓ       −m
+                                  X            d k1     (1)    v0 (k2 ) 4π ∗         
+                                                                                         ∗               ∗
+                                                                                                                   
+      + 14τ (−i) (−1)                                  v (k1 )             Y ′ (k̂1 ) kY1m′′ (k̂) − k1 Y1m′′ (k̂1 )
+                                              (2π)3 0              k2    3 1m
+                              m′ ,m′′ =−1
+                                     
+           1 1 ℓ         1 1       ℓ
+      ×
+           0 0 0        m′ m′′ −m
+                                   r                    1     Z 3 r                2
+                                       2ℓ + 1 X X                 d k1      4π      4π     (1)
+                        −ℓ
+      + 2(η − ηi )(−i) (−1)    −m
+                                                                      3
+                                                                                         ∆L (k1 )(Φ(1) + Ψ(1) )(k2 )
+                                          4π                     (2π)     2L + 1 3
+                                                L m ,m =−1
+                                                     ′   ′′
+
+                                                   Z
+             ∗             ∗               ∗
+      × k1 Y1m′ (k̂1 ) kY1m′′ (k̂) − k1 Y1m′′ (k̂1 )      dΩY1m′ (n)Y1m′′ (n)YL0 (n)Yℓ−m (n) ,                                                   (5.19)
+
+where
+                                                                  k2 = k − k1 .                                                               (5.20)
+                                                                                                                          16
+
+and k2 = |k2 |. In Eq. (5.19) it is understood that |m| ≤ ℓ.
+   Let us explain the notations we have adopted in writing Eq. (5.19). The baryon velocity at linear order is irrotational,
+meaning that it is the gradient of a potential, and thus in Fourier space it is parallel to k̂, and following the conventions
+of Ref. [37], we write
+                                                                    (1)
+                                                  v(1) (k) = −iv0 (k)k̂ .                                             (5.21)
+
+For the second-order velocity perturbation, it will contain a transverse (divergence-free) part whose components are
+orthogonal to k̂ = e3 , and we can write
+
+                                                        (2)
+                                                                     X           e2 ∓ ie1
+                                      v(2) (k) = −iv0 (k)e3 +              (2)
+                                                                          vm        √     ,                           (5.22)
+                                                                   m=±1
+                                                                                     2
+
+where ei form an orhtonormal basis with k̂. The second-order perturbation ωi is decomposed in a similar way, and
+ω±1 are the corresponding components (in this case in the Poisson gauge there is no scalar component). Similarly for
+the tensor perturbation χij we have indicated its amplitudes as χ±2 in the decomposition [36]
+                                                  r
+                                           X        3
+                                    χij =       −     χm (e1 ± ie2 )i (e1 ± ie2 )j .                         (5.23)
+                                          m=±2
+                                                    8
+
+We have taken into account that in the gravitational part of the Boltzmann equation and in the collsion term there
+                       (1)
+are some terms, like δe v, which still can be decomposed in the scalar and transverse parts in Fourier space as in
+Eq. (5.22). For a generic quantity f (x)v we have indicated the corresponding scalar and vortical components with
+(f v)m and their explicit expression is easily found by projecting the Fourier modes of f (x)v along the k̂ = e3 and
+(e2 ∓ ie1 ) directions
+                                                Z 3                                r
+                                                    d k1 (1)               ∗         4π
+                                  (f v)m (k) =          3
+                                                          v0 (k1 )f (k2 )Y1m (k̂1 )     .                      (5.24)
+                                                   (2π)                               3
+
+Similarly for a term like f (x)∇g(x) we used the notation
+                                                                                          r
+                                                         d3 k1                              4π
+                                                    Z
+                                                                                  ∗
+                                  (f ∇g)m (k) = −             3
+                                                                k1 g(k1 )f (k2 )Y1m (k̂1 )     .                      (5.25)
+                                                         (2π)                                3
+
+Finally, the first term on the right-hand side of Eq. (5.18) has been obtained by using the relation
+                     X (2)         k h                              i    X  κℓm (2)            κℓm (2)
+                                                                                                        
+           (2)
+  ik · n ∆ (k) =        ∆ℓm (k)        κℓm G̃ℓ−1,m − κℓ+1,m G̃ℓ+1,m = k             ∆       −        ∆    G̃ℓm ,
+                                2ℓ + 1                                        2ℓ − 1 ℓ−1,m 2ℓ + 3 ℓ+1,m
+                     ℓm                                                  ℓm
+                     p                                                                                       (5.26)
+where G̃ℓm = (−i)ℓ 4π/(2ℓ + 1)Yℓm (n) is the angular mode for the decomposition (5.13) and
+                                                          p
+                                                   κℓm = l2 − m2 .                                           (5.27)
+
+This relation has been discussed in Refs. [34, 36] and corresponds to the term ni ∂∆(2) /∂xi in Eq. (5.12).
+  As expected at second-order we recover some intrinsic effects which are characteristic of the linear regime. In
+Eq. (5.18) the relation (5.26) represents the free streeming effect: when the radiation free streems the inhomogeneities
+of the photon distribution are seen by the obsever as angular anisotropies. At first order it is responsible for the
+hierarchy of Boltzmann equations coupling the different ℓ modes, and it represents a projection effect of fluctuations
+                                                            (2)
+on a scale k onto the angular scale ℓ ∼ kη. The term τ ′ ∆ℓm causes an exponential suppression of anisotropies in the
+absence of the source term Sℓm . The first line of the source term (5.19) just reproduces the expression of the first
+order case. Of course the dynamics of the second-order metric and baryon-velocity perturbations which appear will
+be different and governed by the second-order Einstein equations and continuity equations. The remaining terms in
+the source are second-order effects generated as non-linear combinations of the primordial (first-order) perturbations.
+We have ordered them according to the increasing number of ℓ modes they contribute to. Notice in particular that
+                                             (1)
+they involve the first-order anisotropies ∆ℓ and as a consequence such terms contribute to generate the hierarchy
+of equations (apart from the free streeming effect). The source term contains additional scattering processes and
+gravitational effects. On large scales (above the horizon at recombination) we can say that the main effects are due
+                                                                                                                                                     17
+
+to gravity, and they include the Sachs-Wolfe and the (late and early) Sachs-Wolfe effect due to the redshift photons
+suffer when travelling through the second-order gravitational potentials. These, toghether with the contribution due
+to the second-order tensor modes, have been already studied in details in Ref. [19]. Another important gravitational
+effect is that of lensing of photons as they travel from the last scattering surface to us. A contribution of this type
+is given by the last term of Eq. (5.19). On small scales scattering effects around the epoch of recombination are
+important and we will study them in details in a companion paper [27].
+
+
+                               D.     Integral solution to the second-order Boltzmann equation
+
+As in linear theory, one can derive an integral solution to the Boltzmann equation (5.12) in terms of the source term
+S. Following the standard procedure (see e.g. Ref. [28, 35]) for linear perturbations, we write the left-hand side as
+∆(2)′ + ikµ∆(2) − τ ′ ∆(2) = e−ikµ+τ d[∆(2) eikµη−τ ]/dη in order to derive the integral solution
+                                                      Z η0
+                                     (2)
+                                   ∆ (k, n, η0 ) =         dηS(k, n, η)eikµ(η−η0 )−τ ,                          (5.28)
+                                                                          0
+                                                                                                                 (2)
+where η0 stands by the present time. The expression of the photon moments ∆ℓm can be obtained as usual from
+Eq. (5.14). In the previous section we have already found the coefficients for the decomposition of source term S
+                                                 ℓ                  r
+                                           X X
+                                                                  ℓ     4π
+                              S(k, n, η) =          Sℓm (k, η)(−i)           Yℓm (n) .                         (5.29)
+                                                                      2ℓ + 1
+                                                          ℓ    m=−ℓ
+
+In Eq. (5.28) there is an additional angular dependence in the exponential. It is easy to take it into account by
+recalling that
+                                               X
+                                       eik·x =   (i)ℓ (2ℓ + 1)jℓ (kx)Pℓ (k̂ · x̂) .                         (5.30)
+                                                                      ℓ
+
+Thus the angular integral (5.14) is computed by using the decomposition of the source term (5.29) and Eq. (5.30)
+                                               Z η0                             ℓ2
+    (2)
+                                                                              X X                          X
+  ∆ℓm (k, η0 ) = (−1)−m (−i)−ℓ (2ℓ + 1)                       dη e−τ (η)                   (−i)ℓ2 Sℓ2 m2        iℓ1 (2ℓ1 + 1)jℓ1 (k(η − η0 ))(2ℓ1 + 1)
+                                                  0                           ℓ2 m2 =−ℓ2                   ℓ1
+                                                           
+                           ℓ1 ℓ2 ℓ         ℓ1 ℓ2 ℓ
+                   ×                                              ,                                                                              (5.31)
+                           0 0 0           0 m2 −m
+where the Wigner 3 − j symbols appear because of the Gaunt integrals
+                                 Z
+                   Glm 1 m2 m3
+                     1 l2 l3
+                               ≡   d2 n̂Yl1 m1 (n̂)Yl2 m2 (n̂)Yl3 m3 (n̂)
+                                 r                                                       
+                                   (2l1 + 1) (2l2 + 1) (2l3 + 1) ℓ1 ℓ2 ℓ3          ℓ1 ℓ2 ℓ3
+                               =                                                              ,
+                                                  4π                      0 0 0    m1 m2 m3
+Since the second of the Wigner 3-j symbols in Eq. (5.31) is nonzero only if m = m2 , our solution can be rewritten to
+recover the corresponding expression found for linear anisotropies in Refs. [34, 36]
+                                     (2)          Z η0                          ℓ2
+                                 ∆ℓm (k, η0 )                                 X X                   (l ,m)
+                                              =                dη e−τ (η)                   Sℓ2 m2 jℓ 2      [k(η0 − η)] ,                       (5.32)
+                                   2ℓ + 1             0                       ℓ2 m2 =−ℓ2
+
+          (l ,m)
+where jℓ 2 [k(η0 − η)] are the so called radial functions. Of course the main information at second-order is included
+in the source term containing different effects due to the non-linearity of the perturbations. In the total angular
+momentum method of Refs. [34, 36] Eq. (5.32) is interpreted just as the intergration over the radial coordinate
+(χ = η0 − η) of the projected source term. Another important comment is that, as in linear theory, the integral
+solution (5.31) is in fact just a formal solution, since the source term S contains itself the second-order photon
+moments up to l = 2 (see Eq. (5.19)). This means that one has anyway to resort to the hierarchy equations for
+photons, Eq. (5.18), to solve for these moments. Neverthless, as in linear theory [35], one expects to need just a
+few moments beyond ℓ = 2 in the hierarchy equations, and once the moments entering in the source function are
+computed the higher moments are obtained from the integral solution. Thus the integral solution should in fact be
+more advantageous than solving the system of coupled equations (5.18).
+                                                                                                                          18
+
+                      VI.    THE BOLTZMANN EQUATION FOR BARYONS AND CDM
+
+In this section we will derive the Boltzmann equation for massive particles, which is the case of interest for baryons
+and dark matter. These equations are necessary to find the time evolution of number densities and velocities of the
+baryon fluid which appear in the brightness equation, thus allowing to close the system of equations. Let us start from
+the baryon component. Electrons are tightly coupled to protons via Coulomb interactions. This forces the relative
+energy density contrasts and the velocities to a common value, δe = δp ≡ δb and ve = vp ≡ v, so that we can identify
+electrons and protons collectively as “baryonic” matter.
+   To derive the Boltzmann equation for baryons let us first focus on the collisionless equation and compute therefore
+dg/dη, where g is the distribution function for a massive species with mass m. One of the differences with respect
+to photons is just that baryons are non-relativistic for the epochs of interest. Thus the first step is to generalize the
+formulae in Section II up to Eq. (3.21) to the case of a massive particle. In this case one enforces the constraint
+Q2 = gµν Qµ Qν = −m2 and it also useful to use the particle energy
+                                                         p
+                                                   E = q 2 + m2 ,                                                   (6.1)
+where q is defined as in Eq. (3.3). Moreover in this case it is very convenient to take the distribution function as a
+function of the variables q i = qni , the position xi and time η, without using the explicit splitting into the magnitude
+of the momentum q (or the energy E) and its direction ni . Thus the total time derivative of the distribution functions
+reads
+                                              dg   ∂g  ∂g dxi  ∂g dq i
+                                                 =    + i     + i      .                                               (6.2)
+                                              dη   ∂η ∂x dη    ∂q dη
+We will not give the details of the calculation since we just need to replicate the same computation we did for the
+photons. For the four-momentum of the particle notice that Qi has the same form as Eq. (3.6), while for Q0 we find
+                                                    e−Φ            qi
+                                                                     
+                                              Q0 =      E 1 + ωi        .                                     (6.3)
+                                                      a            E
+In the following we give the expressions for dxi /dη and dq i /dη.
+
+a) As in Eq. (3.10) dxi /dη = Qi /Q0 and it turns out to be
+                                  dxi                                        
+                                        q i Φ+Ψ            i q      1     k m
+                                      = ne         1 − ωi n       1 − χkm n n    .                                     (6.4)
+                                  dη    E                     E      2
+
+
+b) For dq i /dη we need the expression of Qi which is the same as that of Eq. (3.6)
+                                                 qi Ψ
+                                                                      
+                                             i              1      k m
+                                           Q = e        1 − χkm n n       .                                            (6.5)
+                                                 a          2
+The spatial component of the geodesic equation up to second-order reads
+dQi                                                  ∂Ψ q 2 i k Φ+2Ψ ∂Φ E Φ+2Ψ ∂Ψ q 2 Φ+2Ψ
+                                     
+                             1    k m    q i Ψ                                                                         E
+                   ′
+     = −2(H − Ψ ) 1 − χkm n n              n e +2 k           nn e          − i e     − i      e      − (ω i′ + Hω i )
+ dη                          2           a           ∂x aE                   ∂x a       ∂x aE                          a
+                                                                       j k
+                            E  h                                    i q q
+     − (χi′k + ω′ik − ωk,i ) + Hω i δjk − (χi j,k + χi k,j + χjk,i )       .                                      (6.6)
+                            a                                          Ea
+Proceeding as in the massless case we now take the total time derivative of Eq. (6.5) and using Eq. (6.6) we find
+       dq i                          q i q k Φ+Ψ                     q2
+            = −(H − Ψ′ )q i + Ψ,k            e   − Φ,i EeΦ+Ψ − Ψ,i eΦ+Ψ − E(ω i′ + Hω i ) − (χi′k + ω′ik − ωk,i )E
+       dη                              E                             E
+               h                                   i qj qk
+            + Hω i δjk − (χi j,k + χi k,j + χjk,i )        .                                                            (6.7)
+                                                      E
+We can now write the total time derivative of the distribution function as
+                                                                                        q i q k Φ+Ψ                  q2
+                                                             
+ dg     ∂g    q                            1             ∂g
+     =      + ni eΦ+Ψ 1 − ωi ni − χkm nk nm                i
+                                                             +   −(H − Ψ′ )q i + Ψ,k           e    − Φ,i EeΦ+Ψ − Ψ,i eΦ+Ψ
+ dη     ∂η    E                            2            ∂x                                E                          E
+                                                                                       q j q k  ∂g
+     − E(ω i′ + Hω i ) − (χi′k + ω′ik − ωk,i )E + Hω i δjk − (χi j,k + χi k,j + χjk,i )                 .               (6.8)
+                                                                                              E    ∂q i
+                                                                                                                         19
+
+This equation is completely general since we have just solved for the kinematics of massive particles. As far as the
+collision terms are concerned, for the system of electrons and protons we consider the Coulomb scattering processes
+between the electrons and protons and the Compton scatterings between photons and electrons
+                                          dge
+                                              (x, q, η) = hcep iQQ′ q′ + hceγ ipp′ q′                                 (6.9)
+                                          dη
+                                         dgp
+                                             (x, Q, η) = hcep iqq′ Q′ ,                                              (6.10)
+                                         dη
+
+where we have adopted the same formalism of Ref. [28] with p and p′ the initial and final momenta of the photons, q
+and q′ the corresponding quantities for the electrons and for protons Q and Q′ . The integral over different momenta
+is indicated by
+
+                                                       d3 p     d3 p′    d3 q ′
+                                                    Z        Z        Z
+                                    h· · ·ipp′ q′ ≡        3        3
+                                                                                ... ,                          (6.11)
+                                                      (2π)     (2π)     (2π)3
+
+and thus one can read ceγ as the unintegrated part of Eq. (4.2), and similarly for cep (with the appropriate amplitude
+|M |2 ). In Eq. (6.9) Compton scatterings between protons and photons can be safely neglected because the amplitude
+of this process has a much smaller amplitude than Compton scatterings with electrons being weighted by the inverse
+squared mass of the particles.
+   At this point for the photons we considered the perturbations around the zero-order Bose-Einstein distribution
+function (which are the unknown quantities). For the electrons (and protons) we can take the thermal distribution
+described by Eq. (4.3). Moreover we will take the moments of Eqs. (6.9)-(6.10) in order to find the energy-momentum
+continuity equations.
+
+
+                                           A.    Energy continuity equation
+
+We now integrate Eq. (6.8) over d3 q/(2π)3 . Let us recall that in terms of the distribution function the number density
+ne and the bulk velocity v are given by
+
+                                                              d3 q
+                                                         Z
+                                                   ne =             g,                                            (6.12)
+                                                             (2π)3
+
+and
+                                                     1         d3 q   qni
+                                                          Z
+                                                  i
+                                                 v =                g     ,                                          (6.13)
+                                                     ne       (2π)3 E
+where one can set E ≃ me since we are considering non-relativistic particles. We will also make use of the following
+relations when integrating over the solid angle dΩ
+                                                                  dΩ i j      1
+                                 Z          Z                  Z
+                                         i         i j k
+                                    dΩ n = dΩ n n n = 0 ,             n n = δ ij .                             (6.14)
+                                                                   4π         3
+Finally notice that dE/dq = q/E and ∂g/∂q = (q/E)∂g/∂E.
+   Thus the first two integrals just brings n′e and (ne v i ),i . Notice that all the terms proportional to the second-order
+vector and tensor perturbations of the metric give a vanishing contribution at second-order since in this case we can
+take the zero-order distribution functions which depends only on η and E, integrate over the direction and use the
+fact that δ ij χij = 0. The trick to solve the remaining integrals is an integration by parts over q i . We have an integral
+like (the one multiplying (Ψ′ − H))
+
+                                              d3 q i ∂g               d3 q
+                                          Z                       Z
+                                                   q     =    −3           g = −3ne ,                                 (6.15)
+                                             (2π)3 ∂q i              (2π)3
+
+after an integration by parts over q i . The remaining integrals can be solved still by integrating by parts over q i . The
+integral proportional to Φ,i in Eq. (6.8) gives
+
+                                                        d3 q   ∂g
+                                                    Z
+                                             Φ+Ψ ,i
+                                          −e    Φ            E     = eΦ+Ψ Φ,i vi ,                                   (6.16)
+                                                       (2π)3 ∂q i
+                                                                                                                             20
+
+where we have used that dE/dq i = q i /E. For the integral
+                                                          d3 q q i q k ∂g
+                                                      Z
+                                              Φ+Ψ
+                                            e     Ψ,k                     ,                                              (6.17)
+                                                         (2π)3 E ∂q i
+the integration by parts brings two pieces, one from the derivation of q i q k and one from the derivation of the energy
+E
+                       d3 q q k                  d3 q q 2 q k                                     d3 q q 2 q k
+                   Z                          Z                                                Z
+       − 4eΦ+Ψ Ψ,k          g    + e Φ+Ψ
+                                         Ψ ,k        g        = −4e Φ+Ψ
+                                                                        Ψ  ,k v k
+                                                                                  + e Φ+Ψ
+                                                                                          Ψ ,k        g        .   (6.18)
+                      (2π)3 E                   (2π)3 E E                                        (2π)3 E 2 E
+The last integral in Eq. (6.18) can indeed be neglected. To check this one makes use of the explicit expression (4.3)
+for the distribution function g to derive
+                                                        ∂g      qi   me
+                                                           i
+                                                             =g    −    vi g ,                                           (6.19)
+                                                        ∂v      Te   Te
+and
+                                                 d3 q
+                                            Z
+                                                      gq i q j = δ ij ne me Te + ne m2e v i v j .                        (6.20)
+                                                (2π)3
+Thus it is easy to compute
+                          Ψ,k        d3 q                          Te                   Te
+                                Z
+                   eΦ+Ψ                   gq 2 q k = −eΦ+Ψ Ψ,k v 2    + 3eΦ+Ψ Ψ,k vk ne    + eΦ+Ψ Ψ,k vk v 2 ,           (6.21)
+                          m3e       (2π)3                          me                   me
+which is negligible taking into account that Te /me is of the order of a thermal velocity squared.
+   With these results we are able to compute the left-hand side of the Boltzmann equation (6.9) integrated over
+d3 q/(2π)3 . The same operation must be done for the collision terms on the right hand side. For example for the first
+of the equations in (6.9) this brings to the integrals hcep iQQ′ qq′ + hceγ ipp′ qq′ . However looking at Eq. (4.2) one realizes
+that hceγ ipp′ qq′ vanishes because the integrand is antisymmetric under the change q ↔ q′ and p ↔ p′ . In fact this
+is simply a consequence of the fact that the electron number is conserved for this process. The same argument holds
+for the other term hcep iQQ′ qq′ . Therefore the right-hand side of Eq. (6.9) integrated over d3 q/(2π)3 vanishes and we
+can give the evolution equation for ne . Collecting the results from Eq. (6.15) to (6.21) we find
+                          ∂ne        ∂(v i ne )
+                              + eΦ+Ψ            + 3(H − Ψ′ )ne − 2eΦ+Ψ Ψ,k v k + eΦ+Ψ Φ,k v k = 0 .                      (6.22)
+                          ∂η           ∂xi
+Similarly, for CDM particles, we find
+                ∂nCDM        ∂(v i nCDM )
+                      + eΦ+Ψ              + 3(H − Ψ′ )nCDM − 2eΦ+Ψ Ψ,k vCDM
+                                                                        k
+                                                                            + eΦ+Ψ Φ,k vCDM
+                                                                                        k
+                                                                                            = 0.                         (6.23)
+                  ∂η              ∂xi
+
+
+                                             B.    Momentum continuity equation
+
+Let us now multiply Eq. (6.8) by (q i /E)/(2π)3 and integrate over d3 q. In this way we will find the continuity equation
+for the momentum of baryons. The first term just gives (ne v i )′ . The second integral is of the type
+                                          d3 q qnj qni
+                                                                                       
+                                 ∂                          ∂         Te ij
+                                       Z
+                                                                                    i j
+                                              g         =         n e    δ  + n e v  v    ,                        (6.24)
+                                ∂xj      (2π)3 E E         ∂xj        me
+where we have used Eq. (6.20) and E = me . The third term proportional to (H − Ψ′ ) is
+                                     d3 q k ∂g q i             d3 q q 2 q i
+                                  Z                         Z
+                                          q        = 4n e +        g        ,                                            (6.25)
+                                    (2π)3 ∂qk E               (2π)3 E 2 E
+where we have integrated by parts over q i . Notice that the last term in Eq. (6.25) is negligible being the same integral
+we discussewd above in Eq. (6.21). By the same arguments that lead to neglect the term of Eq. (6.21) it is easy to
+check that all the remaining integrals proportional to the gravitational potentials are negligible except for
+                                                       d3 q ∂g i
+                                                    Z
+                                            Φ+Ψ
+                                       −e       Φ,k              q = ne eΦ+Ψ Φ,i .                                  (6.26)
+                                                      (2π)3 ∂qk
+                                                                                                                                 21
+
+The integrals proportional to the second-order vector and tensor perturbations vanish as vector and tensor pertur-
+bations are traceless and divergence-free. The only one which survives is the term proportional to ω i′ + Hω i in
+Eq. (6.8).
+  Therefore for the integral over d3 qq i /E of the left-hand side of the Boltzmann equation (6.8) for a massive particle
+with mass me (mp ) and distribution function (4.3) we find
+                                                                                    ,i
+     d3 q q i dge   ∂(ne v i )                                                                                    ∂ω i
+                                                                           
+                                                                                 Te         Φ+Ψ ∂
+Z
+                                                  i     ,i Φ+Ψ         Φ+Ψ                                j i
+                  =            + 4(H − Ψ ′
+                                           )n e v   + Φ   e    n e + e       n e        + e        (n e v  v  ) +      ne + Hω i ne .
+    (2π)3 E dη        ∂η                                                         me            ∂xj                ∂η
+                                                                                                                                 (6.27)
+
+  Now, in order to derive the momentum conservation equation for baryons, we take the first moment of both
+Eq. (6.9) and (6.10) multiplying them by q and Q respectively and integrating over the momenta. Since previously
+we integrated the left-hand side of these equations over d3 qq i /E, we just need to multiply the previous integrals by
+me for the electrons and for mp for the protons. Therefore if we sum the first moment of Eqs. (6.9) and (6.10) the
+dominant contribution on the left-hand side will be that of the protons
+
+                                  d3 Q i dgp
+                              Z
+                                       Q      = hcep (q i + Qi )iQQ′ qq′ + hceγ q i ipp′ qq′ .                   (6.28)
+                                 (2π)3     dη
+
+Notice that the integral of the Coulomb collision term cep (q i + Qi ) over all momenta vanishes simply because of
+momentum conservation (due to the Dirac function δ 4 (q + Q − q ′ − Q′ )). As far as the Compton scattering is
+concerned we have that, following Ref. [28],
+
+                                                 hceγ q i ipp′ qq′ = −hceγ pi ipp′ qq′ ,                                     (6.29)
+
+still because of the total momentum conservation. Therefore what we can compute now is the integral over all momenta
+of ceγ pi . Notice however that this is equivalent just to multiply the Compton collision term C(p) of Eq. (4.2) by pi
+and integrate over d3 p/(2π 3 )
+
+                                                                   d3 p i
+                                                                Z
+                                             hceγ pi ipp′ qq′ =         p C(p) .                                (6.30)
+                                                                  (2π)3
+
+where C(p) has been already computed in Eqs. (4.41) and (4.42).
+  We will do the integral (6.30) in the following. First let us introduce the definition of the velocity of photons in
+terms of the distribution function
+                                                                d3 p
+                                                            Z
+                                                        i
+                                             (ργ + pγ )vγ =          f pi ,                                     (6.31)
+                                                               (2π)3
+
+where pγ = ργ /3 is the photon pressure and ργ the energy density. At first-oder we get
+
+                                              4 (1)i     dΩ (1) i
+                                                       Z
+                                                vγ =         ∆ n ,                                                           (6.32)
+                                              3           4π
+
+where ∆ is the photon distribution anisotropies defined in Eq. (5.10). At second-order we instead find
+                                                (2)i
+                                             4 vγ        1       dΩ (2) i 4 (1) (1)i
+                                                             Z
+                                                       =            ∆ n − δγ vγ .                                            (6.33)
+                                             3 2         2       4π       3
+
+Therefore the terms in Eqs. (4.41) and (4.42) proportional to f (1) (p) and f (2) (p) will give rise to terms containing
+                                                                                   (1)       (2)
+the velocity of the photons. On the other hand the terms proportional         to f0 (p) and f00 (p), once integrated, vanish
+                                                                i        i
+                                                                    R
+because of the integral over the momentum direction n , dΩn = 0. Also the integrals involving P2 (v̂ · n) =
+[3(v̂ · n)2 − 1]/2 in the first line of Eq. (4.41) and (4.42) vanish since
+                                         Z                            Z
+                                                            i    k j
+                                             dΩP2 (v̂ · n) n = v̂ v̂    dΩnk nj ni = 0 ,                              (6.34)
+
+where we are using the relations (6.14). Similarly all the terms proportional to v, (vR· n)2 and v 2 do not give any
+contribution to Eq. (6.30) and, in the second-order collision term, one can check that dΩY2 (n)ni = 0. Then there
+                                                                                                                               22
+
+                                                                                       (1)
+are terms proportional to (v · n)f (0) (p), (v · n)p∂f (0) /∂p and (v · n)p∂f0 /∂p for which we can use the rules (5.11)
+when integrating over p while the integration over the momentum direction is
+                                             dΩ                    dΩ k i 1 i
+                                          Z                     Z
+                                                 (v · n)ni = vk       n n = v .                                   (6.35)
+                                             4π                    4π         3
+Finally from the second line of Eq. (4.42) we get three integrals. One is
+
+                                      d3 p i                            dΩ (1)
+                                 Z                                    Z
+                                                       (1)
+                                          3
+                                            p (v · n)f     (p) = ρ̄ γ      ∆ (v · n)ni ,                                    (6.36)
+                                     (2π)                               4π
+where ρ̄γ is the background energy density of the photons. The second comes from
+                                                            !
+                                                      (1)
+            d3 p i
+                                                                                                                
+     1                                              ∂f2 (p)     5                       dΩ i j k l        dΩ i j
+       Z                                                                              Z                 Z
+                                        (1)                            (1)
+                 p (v · n)P2 (v̂ · n) f 2   (p) − p           =   ρ̄  ∆
+                                                                     γ 2     3v v̂ v̂
+                                                                               j k l       n n n n − vj      n n
+     2     (2π)3                                      ∂p        4                       4π                4π
+                                                                     1      (1)
+                                                                 =     ρ̄γ ∆2 v̂ i ,                                        (6.37)
+                                                                     3
+where we have used the rules (5.11), Eq. (6.14) and (dΩ/4π) ni nj nk nl = (δ ij δ kl + δ ik δ lj + δ il δ jk )/15. In fact the
+                                                     R
+third integral
+
+                                                  d3 p i
+                                              Z
+                                                                 (1)
+                                            −          p (v · n)f2 (p) ,                                                (6.38)
+                                                 (2π)3
+exactly cancels the previous one. Summing the various integrals we find
+                          "                                                                                             #
+                                                     (2)        (2)
+     dp                     4 (1)               dΩ ∆        4         4                         dΩ
+Z                                            Z                                                Z
+                                                              v                                                     (1)
+         C(p)p = ne σT ρ̄γ (v − vγ(1) ) −                n+         + δe(1) (v(1) − vγ(1) ) +      ∆(1) (v · n)n + ∆0 v .
+   (2π)3                    3                   4π 2        3 2       3                         4π
+                                                                                                                    (6.39)
+                                                      (1)    (1)
+Eq. (6.39) can be further simplified. Recalling that δγ = ∆0 we use Eq. (6.33) and notice that
+                                         dΩ (1)                         1 i (1)
+                                      Z
+                                                              (1)
+                                             ∆ (v · n)ni = vj Πji   γ + v ∆0 ,                                      (6.40)
+                                         4π                             3
+
+where Πij
+        γ is the quantity defined in Eq. (7.5).
+  Thus our final expression for the integrated collision term (6.30) reads
+                                  "                                     !                              #
+                                                                   (2)i
+           d3 p                     4 (1)i            4 v (2)i    vγ       4 (1) (1)i
+      Z
+                     i                        (1)i                                       (1)i   (1) ji
+                C(p)p = ne σT ρ̄γ     (v   − vγ ) +            −          + δe (v     − vγ ) + vj Πγ .                      (6.41)
+          (2π)3                     3                 3     2       2      3
+
+  We are now able to give the momentum continuity equation by for baryons by combining mp dgp /dη from Eq. (6.27)
+with the collision term (6.41)
+                                                                           ,i
+             ∂(ρb v i )                                                                                 ∂ω i
+                                                                   
+                                       i       ,i Φ+Ψ         Φ+Ψ       Tb             ∂
+                                    ′
+                        + 4(H − Ψ )ρb v + Φ e         ρb + e         ρb        + eΦ+Ψ j (ρb v j v i ) +      ρb + Hω i ρb
+               ∂η                                                       mp            ∂x                ∂η
+                             "                                         !                                  #
+                                                         (2)i     (2)i
+                               4 (1)i              4   v        vγ         4  (1)                   (1)
+             = −ne σT a ρ̄γ      (v   − vγ(1)i ) +            −          + δb (v (1)i − vγ(1)i ) + vj Πji
+                                                                                                        γ    ,              (6.42)
+                               3                   3      2        2       3
+
+where ρb is the baryon energy density and, as we previously explained, we took into account that to a good
+approximation the electrons do not contribute to the mass of baryons. In the following we will expand explicitly at
+first and second-order Eq. (6.42).
+
+First-order momentum continuity equation for baryons
+
+At first order we find
+                                      ∂v (1)i                     4 ρ̄γ  (1)i         
+                                              + Hv (1)i + Φ(1),i = τ ′   v     − vγ(1)i .                                   (6.43)
+                                       ∂η                         3 ρ̄b
+                                                                                                                                        23
+
+
+
+Second-order momentum continuity equation for baryons
+
+At second-order there are various simplifications. In particular notice that the term on the right-hand side of
+Eq. (6.42) which is proportional to δb vanishes when matched to expansion of the left-hand side by virtue of the
+first-order equation (6.45). Thus at the end we find a very simple equation
+                                                                                                                                ,i
+          ∂v (2)i                ∂ω i                         ∂Ψ(1) (1)i
+                                                                                                                     
+        1                                                                                                                  Tb
+                  + Hv (2)i + 2       + 2Hωi + Φ(2),i       −      v     + v (1)j ∂j v (1)i + (Φ(1) + Ψ(1) )Φ(1),i +
+        2   ∂η                   ∂η                            ∂η                                                          mp
+                 "                 !             #
+                              (2)i
+         4 ′ ρ̄γ    v (2)i   vγ         3 (1) ji
+        = τ                −          + vj Πγ ,                                                                                   (6.44)
+         3 ρ̄b         2       2        4
+
+with τ ′ = −n̄e σT a.
+
+First-order momentum continuity equation for CDM
+
+Since CDM particles are collisionless, at first order we find
+                                                (1)i
+                                              ∂vCDM     (1)i
+                                                    + HvCDM + Φ(1),i = 0 .                                                        (6.45)
+                                                ∂η
+
+
+Second-order momentum continuity equation for CDM
+
+At second-order we find
+                                             !
+      (2)i                                                                                                ,i
+                       ∂ω i                      ∂Ψ(1) (1)i
+                                                                                                   
+1   ∂vCDM      (2)i                    (2),i                  (1)j    (1)i                           TCDM
+           + HvCDM + 2      + 2Hωi + Φ         −      vCDM + vCDM ∂j vCDM + (Φ(1) + Ψ(1) )Φ(1),i +            = 0.
+2     ∂η               ∂η                         ∂η                                                 mCDM
+                                                                                                            (6.46)
+
+
+                                     VII.    ENERGY MOMENTUM TENSORS
+
+In this section we provide the expressions for the energy-momentum tensors for photons and massive particles in
+terms of their distribution fucntions.
+
+
+                                      A.    Energy momentum tensor for photons
+
+The energy momentum tensor for photons is defined as
+
+
+                                                      2               d3 P P µ Pν
+                                                                 Z
+                                             Tγµ ν = √                            f,                                                  (7.1)
+                                                      −g             (2π)3 P 0
+
+where g is the determinant of the metric (2.1) and f is the distribution function. We thus obtain
+
+                                                                     !
+                                                      (2)
+                                                 (1) ∆
+                           Tγ0 0   = −ρ̄γ   1 + ∆00 + 00                 ,                                                            (7.2)
+                                                             2
+                                                                       
+                                      4 Ψ+Φ            1 (2)i  (1) (1)i     1
+                           Tγi 0 = − e            (1)i
+                                            ρ̄γ vγ + vγ + ∆00 vγ           + ρ̄γ eΨ−Φ ω i ,                                           (7.3)
+                                      3                2                    3
+                                                                    !!
+                                                                (2)
+                                                1         (1) ∆
+                           Tγi j = ρ̄γ Πiγ j + δ ij 1 + ∆00 + 00         ,                                                            (7.4)
+                                                3               2
+                                                                                                                       24
+
+where ρ̄γ is the background energy density of photons and
+
+
+                                                                       ∆(2)
+                                                                         
+                                                dΩ         1 ij
+                                            Z
+                                     Πij
+                                      γ =
+                                                       i j
+                                                      nn − δ       (1)
+                                                                  ∆ +         ,                                      (7.5)
+                                                4π         3            2
+
+are the quadrupole moments of the photons. The photon velocity is defined in Eqs. (6.31), (6.32) and (6.33).
+
+
+                                B.   Energy momentum tensor for massive particles
+
+The energy momentum tensor for massive particles of mass m, number density n and degrees of freedom gd is
+
+
+                                               gd              d3 Q Qµ Qν
+                                                          Z
+                                        µ
+                                       Tm ν = √                           g(q i , xµ , η) ,                          (7.6)
+                                                −g            (2π)3 Q0
+
+where g is the distribution function. For electrons (or protons) gd = 2 (we are not counting antiparticles). We obtain
+
+                                                                           
+                            0                                 (1)  1
+                           Tm 0   = −ρm = −ρ̄m           1 + δm   + δ (2)
+                                                                     ,                                               (7.7)
+                                                                     2
+                                                                                           
+                            i        Ψ+Φ       i       Ψ+Φ      (1)i    1 (2)i     (1) (1)i
+                           Tm 0 = −e       ρm vm = −e      ρ̄m vm + vm + δm vm                ,                      (7.8)
+                                                                        2
+                                                                                     
+                            i                Tm                        Tm      (1)i (1)
+                           Tm j = ρm    δ ij        i
+                                                 + vm vm j = ρ̄m δ ij      + vm    vm j .                            (7.9)
+                                             m                         m
+
+where ρ̄m is the background energy density of the massive particles and we have included the equilibrium temperature
+Tm . The velocity are defined in terms of the distribution function in Eq. (6.13).
+
+
+                                                     VIII.     SUMMARY
+
+In this paper we took the first step towards the evaluation of the full radiation transfer at second order in perturbation
+theory by computating the second-order Boltzmann equations describing the evolution of the baryon-photon fluid.
+They allow to follow the time evolution of the CMB anisotropies at second-order and at all scales from the early epoch,
+when the cosmological perturbations were generated, to the present through the recombination era. The dynamics
+at the second order is particularly important when dealing with the issue of NG in the CMB anisotropies: many
+mechanisms for the generation of the primordial inhomogeneities predict a level of NG in the curvature perturbation
+which might be detectable by present and future experiments. Having an accurate theoretical prediction of the CMB
+anisotropy NG in terms of the primordial non-Gaussian seeds is somewhat mandatory. This paper will be followed
+by a companion one where we will present the computation of the three-point correlation function at recombination
+making use of the set of Boltzmann equations derived here.
+
+                                                     Acknowledgments
+
+A.R. is on leave of absence from INFN, Padova. N.B. is partially supported by INFN.
+                                                                                                                         25
+
+                    Symbol                                   Definition                            Equation
+
+                     Φ, Ψ                      Gravitational potentials in Poisson gauge               (2.1)
+                       ωi                  2nd-order vector perturbation in Poisson gauge              (2.1)
+                      χij                  2nd-order tensor perturbation in Poisson gauge              (2.1)
+                       η                                    Conformal time                             (2.1)
+                       f                             Photon distribution function                      (3.8)
+                        g                     Distribution function for massive particles         (4.3) & (6.2)
+                      f (i)          i-th order perturbation of the photon distribution function      (3.23)
+                        (i)
+                      fℓm                    Moments of the photon distribution function              (4.17)
+                     C(p)                                    Collision term                       (4.2) & (4.6)
+                        p                    Magnitude of photon momentum (p = pni )                   (3.3)
+                       ni                                Propagation direction                         (3.6)
+                ∆(1) (xi , ni , η)         First-order fractional energy photon fluctuations           (5.5)
+                ∆(2) (xi , ni , η)       Second-order fractional energy photon fluctuations           (5.10)
+                       ne                               Electron number density                       (6.12)
+                    δe (δb )                    Electron (baryon) density perturbation                (4.13)
+                       k                                      Wavenumber                              (5.17)
+                      vm                             Baryon velocity perturbation                (5.21) & (5.22)
+                      (2)i
+                    vCDM                               Cold dark matter velocity                      (6.46)
+                       (2)i
+                     vγ                              Second-order photon velocity                     (6.33)
+                      Sℓm                              Temperature source term                        (5.18)
+                        τ                                     Optical depth                           (5.15)
+                   ρ̄γ (ρ̄b )               Background photon (baryons) energy density                (6.45)
+
+
+
+
+ [1] For a review, see D. H. Lyth and A. Riotto, Phys. Rept. 314, 1 (1999).
+ [2] D. N. Spergel et al., arXiv:astro-ph/0603449.
+ [3] See http://planck.esa.int/.
+ [4] N. Bartolo, E. Komatsu, S. Matarrese and A. Riotto, Phys. Rept. 402, 103 (2004) [arXiv:astro-ph/0406398].
+ [5] V. Acquaviva, N. Bartolo, S. Matarrese and A. Riotto, Nucl. Phys. B 667, 119 (2003); J. Maldacena, JHEP 0305, 013
+     (2003).
+[20] N. Bartolo, S. Matarrese and A. Riotto, Phys. Rev. D 65, 103505 (2002); F. Bernardeau and J. P. Uzan, Phys. Rev. D
+     66, 103506 (2002); F. Vernizzi and D. Wands, arXiv:astro-ph/0603799.
+ [7] D. H. Lyth, C. Ungarelli and D. Wands, Phys. Rev. D 67 (2003) 023503.
+ [8] T. Hamazaki and H. Kodama, Prog. Theor. Phys. 96 (1996) 1123.
+ [9] G. Dvali, A. Gruzinov and M. Zaldarriaga, Phys. Rev. D 69, 023505 (2004); L. Kofman, arXiv:astro-ph/0303614.
+[10] G. Dvali, A. Gruzinov and M. Zaldarriaga, Phys. Rev. D 69 (2004) 083505.
+[11] C. W. Bauer, M. L. Graesser and M. P. Salem, Phys. Rev. D 72 (2005) 023512.
+[12] L. Boubekeur and P. Creminelli, arXiv:hep-ph/0602052.
+[13] D. H. Lyth, JCAP 0511 (2005) 006; M. P. Salem, Phys. Rev. D 72 (2005) 123516.
+[14] M. Bastero-Gil, V. Di Clemente and S. F. King, Phys. Rev. D 70, 023501 (2004); E. W. Kolb, A. Riotto and A. Vallinotto,
+     Phys. Rev. D 71, 043513 (2005); C. T. Byrnes and D. Wands, arXiv:astro-ph/0512195.
+[15] T. Matsuda, Phys. Rev. D 72 (2005) 123508.
+[16] W. Hu, Phys. Rev. D 64, 083005 (2001); T. Okamoto and W. Hu, Phys. Rev. D 66, 063008 (2002).
+[17] G. De Troia et al., Mon. Not. Roy. Astron. Soc. 343, 284 (2003).
+[18] J. Lesgourgues, M. Liguori, S. Matarrese and A. Riotto, Phys. Rev. D 71, 103514 (2005).
+[19] N. Bartolo, S. Matarrese and A. Riotto, arXiv:astro-ph/0512481.
+[20] T. Pyne and S. M. Carroll, Phys. Rev. D 53, 2920 (1996); S. Mollerach and S. Matarrese, Phys. Rev. D 56, 4494 (1997);
+     S. Matarrese, S. Mollerach and M. Bruni, Phys. Rev. D 58, 043504 (1998); N. Bartolo, S. Matarrese and A. Riotto, Phys.
+     Rev. Lett. 93, 231301 (2004); K. Tomita, Phys. Rev. D 71, 083504 (2005); N. Bartolo, S. Matarrese and A. Riotto, JCAP
+     0508, 010 (2005).
+[21] W. Hu and S. Dodelson, “Cosmic Microwave Background Anisotropies, Ann. Rev. Astron. Astrophys. 40, 171 (2002).
+[22] U. Seljak and M. Zaldarriaga, “Direct Signature of Evolving Gravitational Potential from Cosmic Microwave Background,”
+     Phys. Rev. D 60, 043504 (1999).
+[23] D. M. Goldberg and D. N. Spergel, “Microwave Background Bispectrum. 2. A Probe Of The Low Redshift Universe,”
+                                                                                                                    26
+
+     Phys. Rev. D 59, 103002 (1999).
+[24] D. M. Goldberg and D. N. Spergel, Phys. Rev. D 59, 103002 (1999).
+[25] E. Komatsu and D. N. Spergel, Phys. Rev. D 63, 063002 (2001)
+[26] P. Creminelli and M. Zaldarriaga, Phys. Rev. D 70, 083532 (2004).
+[27] N. Bartolo, S. Matarrese and A. Riotto, “CMB Anisotropies at Second-Order: II”, to appear.
+[28] S. Dodelson, Modern cosmology, Amsterdam, Netherlands: Academic Pr. (2003) 440 pp.
+[29] S. Matarrese, S. Mollerach and M. Bruni, Phys. Rev. D 58, 043504 (1998).
+[30] W. Hu, D. Scott and J. Silk, Phys. Rev. D 49, 648 (1994).
+[31] S. Dodelson and J. M. Jubas, Astrophys. J. 439, 503 (1995).
+[32] W. T. Hu, PhD thesis Wandering in the background: A Cosmic microwave background explorer, arXiv:astro-ph/9508126.
+[33] R. Maartens, T. Gebbie and G.R. Ellis, Phys. Rev. D 59, 083506 (1999).
+[34] W. Hu, U. Seljak, M. J. White and M. Zaldarriaga, Phys. Rev. D 57, 3290 (1998)
+[35] U. Seljak and M. Zaldarriaga, Astrophys. J. 469, 437 (1996)
+[36] W. Hu and M. J. White, Phys. Rev. D 56, 596 (1997)
+[37] W. Hu, Astrophys. J. 529, 12 (2000)
+

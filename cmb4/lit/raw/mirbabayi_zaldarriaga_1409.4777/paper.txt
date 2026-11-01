@@ -1,0 +1,1443 @@
+                                                  CMB Anisotropies from a Gradient Mode
+
+                                                                   Mehrdad Mirbabayi and Matias Zaldarriaga
+
+                                                    School of Natural Sciences, Institute for Advanced Study, Princeton, NJ 08540
+arXiv:1409.4777v2 [astro-ph.CO] 20 Apr 2015
+
+
+
+
+                                              Abstract
+
+                                              A linear gradient mode must have no observable dynamical effect on short distance physics. We
+                                              confirm this by showing that if there was such a gradient mode extending across the whole observ-
+                                              able Universe, it would not cause any hemispherical asymmetry in the power of CMB anisotropies,
+                                              as long as Maldacena’s consistency condition is satisfied. To study the effect of the long wavelength
+                                              mode on short wavelength modes, we generalize the existing second order Sachs-Wolfe formula in
+                                              the squeezed limit to include a gradient in the long mode and to account for the change in the
+                                              location of the last scattering surface induced by this mode. Next, we consider effects that are of
+                                              second order in the long mode. A gradient mode Φ = q · x generated in Single-field inflation is
+                                              shown to induce an observable quadrupole moment. For instance, in a matter-dominated model
+                                              it is equal to Q = 5(q · x)2 /18. This quadrupole can be canceled by superposition of a quadratic
+                                              perturbation. The result is shown to be a nonlinear extension of Weinberg’s adiabatic modes: a
+                                              long-wavelength physical mode which looks locally like a coordinate transformation.
+
+
+
+                                              1     Introduction and main results
+                                              Hints of a north-south asymmetry in the CMB power spectrum [1, 2, 3, 4] have led to several
+                                              theoretical efforts for finding primordial explanations. One class of the models, originally
+                                              proposed by Erickcek, Kamionkowski, and Carroll [5], postulates a long-wavelength pertur-
+                                              bation that is a pure gradient in the observable part of the universe. If, in addition, there
+                                              is a 3-point correlation function of the local type, the power-spectrum of short-wavelength
+                                              modes is enhanced on one side of the sky and suppressed on the opposite side, leading to a
+                                              dipolar power asymmetry.
+                                                  Erickcek et. al. first considered single field inflationary models and concluded that the
+                                              induced power asymmetry would be unobservably small. The argument goes as follows. In
+                                              momentum space, the momenta of the modes in a 3-point correlation function form a closed
+                                              triangle. The local correlation corresponds to the squeezed limit where one of the modes has
+                                              a much smaller momentum (longer wavelength) than the other two. In this limit one can
+                                              approximate
+                                                                6                            D            E0      ∂
+                                                                                          0
+                                                                  fN L PL PS = hζL ζS ζS i ≃ ζL hζS ζS iζL ≃ PL      PS,ζL ,          (1.1)
+                                                                5                                                ∂ζL
+
+                                                                                               1
+where ζ is the conserved curvature perturbation, subscripts L and S indicate long- and short-
+                       0                                                            0
+wavelength. PL ≡ hζL2 i is the power-spectrum of the long modes, and PS,ζL ≡ hζS2 iζL is that
+of the short modes in the background of ζL , and prime denotes the correlation function
+without the momentum conserving delta function. Suppose there is a long gradient mode
+which varies by ∆ζL across the sky. According to (1.1) this modulates the power of the short
+modes and leads to the hemispherical power asymmetry
+                              ∆PS    1      ∂         6
+                         A≡       =    ∆ζL     PS,ζL = fN L ∆ζL .                          (1.2)
+                               PS   PS     ∂ζL        5
+There are various theoretical prejudices and observational constraints on ∆ζL and fN L . The
+wavelength of the long mode has to be very large to suppress its contribution to the CMB
+quadrupole and octopole. For perturbation theory to be valid the amplitude of the long
+mode was required in [5] to be less than unity. These two requirements put an upper bound
+on ∆ζL , and the local non-Gaussianity fN L = 5(1 − ns )/6 ∼ 0.01 of single field models [6],
+would be too small to produce observable power asymmetry. The authors then proposed a
+two-field (Curvaton) model in which fN L , and hence A, can be larger.
+    This scenario has been revisited and generalized by many authors since then (see e.g.
+[7]), but one part of the reasoning remained unchanged: the induced asymmetry in infla-
+tionary models that satisfy Maldacena’s consistency condition 6fN L /5 = 1 − ns is generally
+accepted to be small but non-zero. This seems to be in contrast with an argument about the
+physical part of the 3-point function [8, 9], which suggests that the induced asymmetry by
+a pure gradient must identically vanish in this case. The local non-Gaussianity dictated by
+the consistency condition is a consequence of the fact that a long-wavelength mode is locally
+equivalent to a coordinate redefinition, and so ref.s [8, 9] argue no local observer should be
+able to measure it. In section 2, we will review this argument in the language of Weinberg’s
+adiabatic modes [10]. It will be shown that a linear gradient mode is equivalent to a coor-
+dinate transformation across the entire observable horizon, and thus, it has no dynamical
+effect on short-wavelength observables. In particular, its presence is inconsequential for the
+observed short-scale power, unless there is a correlation between the initial condition of short
+and long modes, corresponding to a violation of the consistency condition.
+    To make the general argument of section 2 more explicit, and to improve our analytic
+understanding of one of the most important observables in cosmology, we will next perform
+a brute-force calculation of CMB anisotropies at second order. In section 3, we review
+the derivation of the second order Sachs-Wolfe formula, and in section 4 specialize to the
+squeezed limit when one of the two modes is super-horizon and much longer than the other.
+The analysis generalizes the squeezed limit formula of [11] by keeping the gradient of the
+long wavelength mode, and confirms the expectation that a linear gradient mode does not
+effect CMB multipoles.
+    Finally, armed with the second order formalism we investigate another question of interest
+in section 5: What is the second order effect of a long gradient mode? The symmetry
+argument of section 2 is no longer applicable since it treats the long mode linearly. We
+will find that there are observable effects including a finite contribution to the quadrupole
+moment. However, we will see that if the linear gradient initial condition is augmented by
+an appropriate quadratic piece, all observable effects vanish. This is next shown to be a
+
+                                               2
+                                              η
+
+                                              O
+
+                             LSS
+                                                         xe           x
+
+
+
+Figure 1: At recombination a super-horizon perturbation is equivalent to a time-shift and a propor-
+tional coordinate rescaling. Afterwards it affects the propagation of CMB photons to the observer.
+If the mode enters the horizon in this period it leaves an observable imprint.
+
+
+second order extension of the Weinberg’s adiabatic mode, which results in new concistency
+conditions on cosmological correlation functions.
+   The explicit analyses of sections 4 and 5 are somewhat technical, so we first sketch the
+underlying ideas and summarize the main results.
+
+
+1.1    CMB anisotropies in the squeezed limit
+While analytic calculation of the second order effects generally involves complicated dy-
+namics, considerable simplification occurs when one mode is super-horizon at the time of
+recombination and have much longer wavelength than the other. In this case, the effect of
+the long mode up until recombination is equivalent to a coordinate transformation (and pos-
+sibly a variation of the initial condition), and the problem reduces to solving for the photon
+trajectory from the Last Scattering Surface (LSS) to the point of observation (see figure 1).
+This is the Sachs-Wolfe effect.
+    In order to find the squeezed limit of CMB bispectrum, the leading 2nd order contribution
+to CMB anisotropies Θ(n̂) from superposing a long and a short mode was analytically
+calculated in [11]. The result is incredibly simple
+                                                                      
+                                                         ∂
+                 Θ(n̂) = ΘS,obs + ΘL,obs + ΘL,obs 1 +         − 5xe · ∇ Θ̃S,obs         (1.3)
+                                                      ∂ ln ηe
+
+
+
+                                                  3
+with
+                                     ΘS,obs =[Θ̃ + Φ̃ − n̂ · ṽ](ηe , xe ).
+                                                                                         (1.4)
+                                            1
+                                    ΘL,obs = ΦL .
+                                            3
+The quantities on the r.h.s. are evaluated at an early constant-time hypersurface ηe (close to
+the recombination) and xe is the emission point on that hypersurface. Θ, Φ, v are respectively
+temperature anisotropy, Newtonian potential, and plasma velocity, and tilde corresponds to
+the value of linearly evolved short-wavelength quantities.
+    Though much longer than the horizon at recombination, the long mode in (1.3) can
+be much shorter than the present horizon. However, in the extreme case when the long
+mode is constant over the entire observable universe, it was shown by the authors that the
+formula predicts no observable effect of the long mode except for a homogeneous shift of
+the average temperature. However, the gradient of the long mode is ignored in this formula.
+Therefore, it is not possible to make the second consistency check, namely, unobservability
+of a linear gradient mode. We will generalize (1.3) to include gradient ∇ΦL , and verify this
+expectation. However, one first needs to make the correct choice for the emission time ηe ,
+as will be discussed next.
+
+
+1.1.1      Recombination surface
+
+The Sachs-Wolfe formula can be used to express the observed temperature anisotropy in
+terms of quantities evaluated on – and along the way to – any earlier space-like hypersurface.
+It can, for instance, be a constant temperature T = Trec (in an average sense), or a constant
+global time η surface. The latter choice is commonly used in the derivation of Sachs-Wolfe
+formula, while the former choice seems to be preferred since temperature acts as a physical
+clock in cosmology. The difference between the two choices becomes relevant only at non-
+linear order, and one may worry that (1.3) expresses Θ(n̂) in terms of short-wavelength
+quantities at a surface whose temperature varies over the wavelength of the long mode.
+    A related point is that in comparing the analytic formula (1.3) with the numerical results
+in the squeezed limit [11, 12], the time-derivative term on the r.h.s. was neglected, under
+the justification that it is suppressed by the ratio of the horizon sizes at recombination and
+today: ηe /ηo ∼ 0.001. Contrarily, we expect
+
+                                          ∂
+                                               ΘS,obs ∼ cs kS ηe ΘS,obs                  (1.5)
+                                       ∂ ln ηe
+to be large for the short modes that are well inside the horizon at recombination. As we
+will review in more detail, these time-derivatives result from the coordinate transformation
+ηe → η̃e performed to remove the long mode. They will not be there in the first place if we
+express Θ(n̂) in terms of quantities at a constant temperature, or equivalently η̃e = const.,
+instead of quantities at a constant ηe .1
+  1
+      We thank Paolo Creminelli for discussions on this point.
+
+
+                                                       4
+    Taking the gradient of the long mode into account, and choosing a constant-temperature
+hypersurface, we give the corrected generalization of (1.3) in section 4 [equation (4.11)],
+expressing CMB multiples to second order in terms of the linearly evolved fields. This
+is applicable when the long wavelength is much longer than the recombination horizon,
+but possibly shorter than the present horizon. Although because of rotational invariance
+the squeezed limit bispectrum (obtained by correlating the second order expression with
+two first order ones) cannot depend linearly on the gradient of the long mode, the result
+would in principle provide a new check of the second order numerical solutions besides the
+one performed in [11, 12]. The formula passes the consistency check that when the long
+wavelength is much longer than present horizon (i.e. it is a pure gradient) there is no
+observable effect, thereby confirming the argument of section 2.
+
+
+1.2     Second order effect of a gradient
+While a gradient mode is equivalent to a coordinate transformation and hence unobservable
+at linear order, this is not necessarily the case at second order as for instance it produces a lo-
+cally observable spatial curvature of order (∇ζ)2 . At this order, a gradient mode contributes
+to CMB monopole and quadrupole.2 This arises firstly because of nonlinear terms in the
+Sachs-Wolfe formula, and secondly because unlike a uniform mode a gradient mode evolves
+in time at second order. This time-evolution has been calculated in a matter dominated
+universe in [13, 14, 15]. For instance, given a generic initial condition ζ0 , ref. [15] found for
+ζ(t)
+                                               1
+                               ζ(t) = ζ0 − 2 2 ∂ −2 ∂i ∂j (∂i ζ0 ∂j ζ0 ).                    (1.6)
+                                            5a H
+This solution is non-local. Thus for long-wavelength perturbations, the second order contri-
+bution to CMB observables would naively depend on how exactly they behave far outside
+our horizon. Obviously this cannot be the case: although various metric components are
+ambiguous, they should combine to give local and unambiguous expressions for CMB tem-
+perature. We will show that this is indeed the case. In particular for the initial condition
+Φ0 = −3ζ0 /5 = q · x + φ2 , where φ2 is a possible second order piece of O(q 2 x2 ), the observed
+temperature is shown in section 5 to take the following form
+                                        h     5 2 2      5        2      1 i
+                         T (n̂) = TCMB 1 − q ηo + (q · x) + φ2 .                             (1.7)
+                                              36        18               3
+Here ηo is the observation time and x ≃ n̂ηo is a point on the LSS. As expected, in the absence
+of φ2 there is a finite contribution of the gradient mode to the monopole and quadrupole
+moments, which puts an observational constraint on the variation of Φ across the sky ∆Φ ∼
+qηo .
+    As for the non-Gaussian correction φ2 , it is natural to take it to be negligible if the
+gradient mode has been generated during a phase of minimal slow-roll inflation. The field ζ
+is almost free in this model, with interactions suppressed by slow-roll parameters [6], so we
+   2
+     Although in practice it may be hard to break the degeneracy between CMB monopole and local effects,
+in principle they are distinguishable.
+
+
+                                                   5
+do not expect an order one non-Gaussianity to be produced by interactions. (In single-field
+models with derivative interactions too this sort of non-Gaussianity does not seem to arise.)
+        However, suppose the linear gradient had been superposed by
+                                            5 2 2 5
+                                     φ2 =      q x − (q · x)2 .                                  (1.8)
+                                            12      6
+This would cancel the quadratic terms in (1.7). We will show in section 5.2 that this is
+a nonlinear generalization of Weinberg’s adiabatic mode. That is, a physical mode which
+is locally equivalent to a coordinate transformation and hence unobservable. Projecting
+cosmological correlations on this second order adiabatic mode leads to new (double soft)
+consistency conditions which will be studied elsewhere [23, 24].
+
+
+2         Unobservable non-Gaussianity
+In this section, we present general symmetry arguments suggesting that a super-horizon long
+wavelength mode does not affect the short distance physics up to order (λS /λL )2 , where λS,L
+are the short and long wavelengths.
+    The calculation of the 3-point non-gaussianity of the single-field slow-roll inflation was
+first done by Maldacena [6] in the comoving gauge. Using the Arnowitt-Deser-Misner
+parametrization the line element is written as
+
+                          ds2 = −N 2 dt2 + hij (dxi + N i dt)(dxj + N j dt),                     (2.1)
+
+and the spatial metric can be decomposed as
+
+                                  hij = a2 e2ζ (eγ )ij ,        γii = 0.                         (2.2)
+
+The gauge is completely fixed by requiring ∂i γij = 0 and the inflaton field be unperturbed.
+Based on the form of (2.2), Maldacena argued for a consistency check. A long-wavelength
+mode ζL is locally equivalent to a rescaling of coordinates x̃ = (1 + ζL )x. Therefore, the
+squeezed limit of the 3-point function (1.1) can be calculated by replacing the 2-point function
+of short modes in the presence of the long mode, hζS2 iζL , by hζS2 i in the absence of ζL but
+evaluated at rescaled coordinates. Transforming to momentum space we get (see [16])
+                                                d3 k
+                                           Z
+            hζ(x)ζ(0)iζL = hζ(x̃)ζ(0)i =             P(k)eik·(1+ζL )x
+                                               (2π)3
+
+                                                          d3 k
+                                                 Z
+                                                                    ik·x ∂            3
+                                                                                            
+                            ≃ hζ(x)ζ(0)i − ζL                  P(k)e             ln(k   P(k))
+                                                         (2π)3          ∂ ln k
+
+                            = hζ(x)ζ(0)i − (ns − 1)ζL hζ(x)ζ(0)i ,
+
+giving fN L = 5(1 − ns )/6.3
+    3
+   Conventionally, fN L is defined in terms of the Newtonian potential in a matter dominated universe
+Φ = g − fN L g 2 where g is a Gaussian variable, and ζ = −5Φ/3.
+
+
+                                                     6
+    To relate this consistency condition to the late time observables and see possible sources
+of violation, let us review the argument in the language of Weinberg’s adiabatic modes [10].
+We proceed following Weinberg to find long-wavelength adiabatic solutions. First, we fix the
+conformal Newtonian gauge where the linearized metric looks like
+
+             ds2 = a2 (η)[−(1 + 2Φ)dη 2 + [(1 − 2Ψ)δij + γij ]dxi dxj ],                γii = 0.   (2.3)
+
+This completely fixes the reparametrization freedom at non-zero momentum. However there
+are still homogeneous transformations which preserve the gauge condition:
+
+                       η → η + (η),     xi → (δji + ωji )xj ,     ωji = const..                   (2.4)
+
+They generate a family of homogeneous solutions of the equations of motion
+                                         1                                2
+                  Φ = 0 + H,      Ψ = − ωii − H,      γij = ωij + ωji − δji ωkk                 (2.5)
+                                         3                                3
+where indices are lowered by δij , H = a0 /a and prime denotes d/dη. A subfamily of these
+solutions can be shown to be extendible to non-zero momentum and therefore are physical.
+Those are the adiabatic modes. For this, one needs to ensure that the equations of motion are
+not accidentally satisfied because of an overall spatial derivative acting on the homogeneous
+fields (2.5). For scalar modes and in the absence of anisotropic stress, this leads to the
+condition
+                                            Φ = Ψ.                                       (2.6)
+The solution is                                       Z η
+                                              C1                               C2
+                      ωii = 3C1 ,    (η) = − 2             a2 (η 0 )dη 0 +    2
+                                                                                    ,              (2.7)
+                                             a (η)                            a (η)
+with {C1 , C2 } constants. In cosmology we are mostly interested in the non-decaying mode,
+for which Φ, Ψ are given by
+                                            Z             
+                                             H     2
+                               Φ = Ψ = C1        a dη − 1 ,                           (2.8)
+                                             a2
+which corresponds to the constant ζ = C1 in the comoving gauge.
+    This argument, first of all, proves the existence of an adiabatic mode that remains con-
+served at super-horizon scales. Moreover, one can turn around the argument and see that
+once a cosmological perturbation is frozen into an adiabatic mode, its effect on short scale
+physics is just a coordinate transformation. Different points with different values of ζL expe-
+rience the same history unless they start from different initial conditions. However, if at the
+time when the long mode freezes into an adiabatic mode the short modes are well inside the
+horizon and in vacuum (as in the case of attractor single-field inflationary models) the initial
+condition would also be the same. Thus, the only difference between points with different
+values of ζL is a relative shift in their history which is not locally observable [18]. Conse-
+quently, the squeezed limit non-gaussianity 6fN L /5 = 1 − ns that follows from this relative
+rescaling does not lead to any measurable correlation between the short-distance physics
+and the long-wavelength mode. On the contrary, in multifield models with large local non-
+Gaussianity the adiabatic modes form at a later time when all k-modes are super-horizon
+
+                                                 7
+and already excited. Hence, observable short-long correlations can be (and generically will
+be) generated.
+   What about correlation functions of CMB anisotropies? Since here we are observing
+photons coming from the surface of last scattering – a distance D away – one would expect the
+long modes whose wavelength λL are of order or less than D correlate with short-wavelength
+modes with λS  λL . This is because for λL < D the long mode is not equivalent to a
+coordinate transformation in the entire patch of size D, and it has a physical effect on the
+propagation of photons over this distance. On the other hand, a uniform mode with λL  D
+must lead to no observable effect since it is equivalent to a coordinate transformation in the
+whole region of size D.
+    In this paper we are interested in a gradient mode about which the original Weinberg’s
+argument does not have any immediate implication. The generalization to this case was given
+in [16, 17]. The zero-momentum coordinate transformation that can locally approximate a
+physical gradient mode ζ = q · x is given by
+                                                 1
+        η → η + (η, x),       x → (1 + q · x)x − x2 q − f (η)q,             = −f 0 q · x,       (2.9)
+                                                 2
+where the physicality condition (2.6) implies
+                                                    Z
+                                            0 1
+                                          f = 2         a2 dη,                                   (2.10)
+                                             a
+
+and the Newtonian potentials are now given by Φ = Ψ = (Hf 0 − 1)q · x.4 Thus, one expects
+that unless there is an initial correlation between the long mode and short modes (leading to
+a violation of the Maldacena’s consistency condition), a gradient mode should not result in
+any observable effect since it can be eliminated from the entire horizon by a single coordinate
+transformation (2.9). In particular, the observed hemispherical power asymmetry (1.2) must
+be corrected to depend only on the deviation fN L − 5(1 − ns )/6.
+    Below, we will explicitly verify these expectation by deriving a second order expression
+for CMB multipoles, valid in the limit when at least one of the modes is super-horizon
+at recombination time. The formula can be useful in practice as it allows to derive the
+observable effect of the long mode on the short modes when the long mode enters the
+horizon after the recombination.
+
+
+3       Sachs-Wolfe effect at second order
+We are ultimately interested in the effect of a long wavelength primordial fluctuation on the
+shorter wavelength CMB anisotropies. It helps to divide the problem into two phases: (a)
+Evolution of the primordial short scale perturbations in the background of the long mode
+until recombination, which we idealize as a hypersurface of constant average temperature
+    4
+     The set of gauge preserving zero-momentum coordinate transformations is in fact much larger and an
+infinite number of adiabatic modes can be obtained in a similar way. However, except for the uniform and
+the gradient mode the rest involve primordial tensor modes [19].
+
+
+                                                   8
+Trec at which the CMB photons are released, and freely propagate afterward. And (b) the
+effect of the long mode on the observed temperature and direction of the CMB photons.
+    The first phase will be dealt with in the next section. The second phase is captured by
+the Sachs-Wolfe formula. It relates To (n̂), the black body temperature of CMB photons
+observed in the direction n̂, to the fluctuations of temperature, plasma velocity, and metric
+fluctuations at (and along the line of sight to) an earlier time-slice ηe –which though we refer to
+it as the emission time doesn’t have to be so. Since we are interested in the long-short effects
+the formula must be derived to second order. This is done in appendix A closely following
+[11] but keeping track of the observer’s peculiar velocity v o and gravitational potentials Φo
+and Ψo . For simplicity the whole discussion is framed in a matter-dominated universe. The
+photon trajectories are solved for in appendix A in the Poisson gauge [20]
+
+                   ds2 = a2 (η)[−e2Φ dη 2 + 2ωi dxi dη + (e−2Ψ δij + γij )dxi dxj ].            (3.1)
+
+The spatial curvature and primordial tensor modes are neglected, hence ωi and γij both start
+at second order in perturbations, and they are transverse (∂i ωi = 0, ∂i γij = 0). The result
+for CMB temperature in direction n̂ is
+       T (n̂)
+              − 1 =Θe + Φe + n̂ · (v o − v e ) + I − δ n̂ · v e + n̂ · (v o − v e )(Θe + Φe )
+         T̄                                                                                     (3.2)
+                             1                                1
+                   + Φe Θe + Φ2e + (n̂ · (v o − v e ))2 − (v o − v e )2 .
+                             2                                2
+Let us define various quantities in this equation. The quantities with an index e, are evaluated
+at (ηe , xe ). In general ηe does not have to be the same in all directions. As becomes
+clear in the following, for the emission hypersurface to have a uniform average temperature
+Trec , its geometry would be modified by long wavelength perturbations. Hence, ηe will
+generically varies as a function of the local average of Φe over patches of size larger than the
+recombination horizon. Moreover, the (perturbed) position of the emission point is given to
+first order by
+                                                         Z ηo         Z ηo
+      xe = xo + (n̂ − v o + n̂n̂ · v o )(ηo − ηe ) + 2n̂      dηΦ − 2      dη(η − ηe )∇⊥ Φ. (3.3)
+                                                         ηe             ηe
+
+The quantities with index o belong to the observer. The observer’s position xo is retained
+since it will be affected by the long gradient mode. Note that the time integrals are along
+the unperturbed photon trajectory (η, n̂(ηo − η)). The three-velocity v is defined in terms
+of the four-velocity by v i ≡ ae−Ψ ui . The Integrated Sachs-Wolfe (ISW) term,
+                                     Z ηo                           
+                                              0    0    0 i  1 0 i j
+                       I(ηe , ηo ) =     dη Φ + Ψ + ωi n − γij n n ,                   (3.4)
+                                      ηe                     2
+is a second order effect in matter-dominance since at linear order Φ = Ψ = const., and we are
+neglecting primordial tensor modes. At second order this is still irrelevant for the long-short
+effect [21], but will be important in the calculation of long-long effect. The lensing δ n̂ is
+given by                   Z  ηo
+                  δ n̂ = −         dη∇⊥ (Φ + Ψ),       with ∇⊥ = (∇ − n̂n̂ · ∇).                (3.5)
+                             ηe
+
+
+                                                   9
+Temperature contrast is defined as
+                                                   T (ηe , xe )
+                                  Θ(ηe , xe ) =                 − 1,                         (3.6)
+                                                  hT (ηe , x)ix
+where the average is over the whole time-slice ηe . Note that although ηe generically fluctuates
+in the presence of long wavelength perturbations, this average is independent of them since
+any physical perturbation must vanish at infinity. Finally, T̄ is defined by
+                                           ae −Φo
+                                    T̄ ≡      e   hT (ηe , x)ix .                            (3.7)
+                                           ao
+
+    Equation (3.2) is the main result of this section. To study long-short effects one keeps
+the cross terms with one short- and one long-wavelength modes in the quadratic terms,
+including the effect of the long mode on the emission coordinate xe . In addition, the long
+mode modifies various averages and the geometry of the recombination surface which have
+to be taken into account. This will be discussed next.
+
+
+3.1    Observed average temperature and the recombination time
+Super long-wavelength modes, like the one in figure 2, enter the relation between globally
+defined averages like hT (ηe , x)ix and the locally measurable ones like TCMB = hT (n̂)i, which
+appear in the definition of temperature anisotropy
+                                                   To (n̂)
+                                      Θ(n̂) ≡               − 1.                             (3.8)
+                                                  hTo (n̂)i
+To express the l.h.s. of (3.2) in terms of Θ(n̂) one should relate hT (n̂)i to T̄ . At linear level
+hT (n̂)i is given by
+                                       ae
+                            hTo (n̂)i = e−Φo hT (ηe , xe )ixe (1 + Φ̄e ),                     (3.9)
+                                       ao
+where Φ̄e ≡ hΦ(ηe , xe )ixe . The average is over the emission points at the intersection of
+observer’s past lightcone and the ηe hypersurface. (This can differ from hΦ(ηe , x)ix in
+the presence of super-long fluctuations.) The last factor in (3.9) accounts for a uniform
+redshift. As is shown in (4.7) below, the average temperature over the observable patch
+of sky hT (ηe , xe )ixe in the presence of a gravitational potential that is uniform over the
+patch (or an average potential Φ̄e ) can be expressed in terms of the global average as
+hT (ηe , x)ixe = hT (ηe , x)ix (1 − 2Φ̄e /3). Substituting in (3.9) and using (3.7) gives
+                                                        1
+                                     hTo (n̂)i = T̄ (1 + Φ̄e ).                             (3.10)
+                                                        3
+So the l.h.s. of (3.2) is
+                              T (n̂)                1       1
+                                     − 1 = Θ(n̂)(1 + Φ̄e ) + Φ̄e .                          (3.11)
+                                T̄                  3       3
+   However, to use (3.2) one should also take into account the slightly more subtle depen-
+dence of ηo and ηe on long-wavelength perturbations. The physically meaningful quantity
+
+                                                  10
+                                                η
+
+                                                O
+
+                                  LSS
+
+                                                                                 x
+
+
+Figure 2: A long-wavelength mode which does not average to zero in the observable patch of
+universe modifies the relation between hTo (n̂)i and T̄ , but also the global observation time ηo ,
+according (3.12).
+
+
+to calculate is the expression of temperature anisotropy Θ(n̂) at a fixed physical time t∗ ,
+measured by observer’s clock, in terms of quantities at a surface of fixed average temperature
+Trec . In a matter dominated universe where the scale factor is given by a = η 2 , the expression
+(3.1) for the metric implies that in the presence of a uniform potential Φ̄e a constant proper
+time t∗ corresponds to
+                                                    1
+                                        ηo = η∗ (1 − Φ̄e )                                 (3.12)
+                                                    3
+where η∗ = (3t∗ )1/3 . Similarly, in the presence of a gravitational potential ΦL whose wave-
+length exceeds the horizon at recombination time (but can be much shorter than the current
+horizon) the initial time slice ηe should be perturbed (see figure 1). In a patch where ΦL is
+approximately constant, we should take
+                                                     1
+                                       ηe = ηrec (1 − ΦL )                                  (3.13)
+                                                     3
+if we are going to express the results in terms of quantities on a constant temperature slice.
+(ηrec is the constant time corresponding to constant temperature Trec in a homogeneous
+cosmology.) These corrections would also modify the position of the emission point through
+(3.3).
+
+
+4     The long-short effects
+Having connected the CMB observables to perturbations on the recombination surface, we
+still need to understand how short scale fluctuations on this surface depend on the long
+wavelength mode. The dependence, which arises from the prior evolution of the short modes
+
+
+                                                11
+in the background of the long mode, introduces new short-long effects upon substitution in
+the linear terms of (3.2).
+    This problem greatly simplifies when the long mode is super-horizon at the recombination
+time since, as explained in section 2, the effect of a long adiabatic mode on the evolution of
+shorter modes is equivalent to the application of a coordinate-transformation [10]. We use
+this to find an analytic second order expression for Θ(n̂) in terms of linearly evolved short-
+wavelength quantities on the unperturbed recombination surface, and the long wavelength
+mode on and along the trajectory to that surface. We assume that the short modes are in
+vacuum when the long mode freezes out, and hence the Maldacena’s consistency condition
+is satisfied. Any deviation should be added on top of our results.
+   To find the appropriate transformation substitute a = η 2 in (2.8) and (2.9). This implies
+that a long mode ΦL and its first derivative can be locally eliminated in the vicinity of a
+point D on the recombination surface by the following coordinate transformation
+                                   1
+                          η̃ = (1 + ΦL (x))η,                                             (4.1)
+                                   3
+                                    5         5       1
+                          ỹ = (1 − ΦL (x))y + y 2 q + η 2 q,                             (4.2)
+                                    3         6       6
+where y = x − D, and
+
+                ΦL (x) = ΦL (D) + q · y + O(y 2 /λ2L ),         q = ∇ΦL (D).              (4.3)
+
+Note that in writing (4.1) and (4.2) we are neglecting the O(y 2 /λ2L ) terms; the final re-
+sult is, therefore, valid up to corrections of order (λS /λL )2 . Under this transformation the
+gravitational potential shifts non-linearly:
+
+                                   Φ(η, x) = Φ̃(η̃, x̃) + ΦL ,                            (4.4)
+
+while temperature T (and other scalar quantities) transform as
+
+                                      T (η, x) = T̃ (η̃, x̃).                             (4.5)
+
+The quantities with a tilde consists entirely of the short modes, and for our purposes can be
+assumed to be linearly evolved. To write temperature anisotropy Θ in the new coordinates
+we also need to find the new average temperature (see (3.6)). This can be obtained by
+noticing that the average temperature hT (ηe , x)ix on the entire time-slice ηe is independent
+of physical perturbations which die off at infinity. Hence, for fixed η1 and η2 we have
+                                      D           E D           E a(η )
+                                                                     2
+                        hT (η1 , x)i = T̃ (η1 , x) = T̃ (η2 , x)         ,                (4.6)
+                                                                  a(η1 )
+as an exact relation. Note that while the first average must be over a large region of size
+r  1/q (so that the long mode averages to zero), the second average on T̃ can be over just a
+few patches of size Hrec since the tilde universe is empty from long-wavelength perturbations.
+In matter domination, a(η2 )/a(η1 ) = (η2 /η1 )2 and we get
+                                              D         E
+                                 hT (η, x)i = T̃ (η̃, x) e2ΦL /3 .                       (4.7)
+
+                                                12
+Note that we have exponentiated (4.1), which is needed for the analysis of long-long effects
+in the next section. The justification in that case is that although the long gradient mode
+varies significantly across present horizon, it is almost constant over each horizon-size patch
+at recombination, and the exponentiation is valid for a constant Φ. This gives
+
+                               Θ(η, x) = (Θ̃(η̃, x̃) + 1)e−2ΦL /3 − 1.                      (4.8)
+
+Finally, the plasma velocity transforms as follows (apart from the usual change of the argu-
+ments (η, x) → (η̃, x̃))
+
+                        ∂xi µ           5         5                          1
+                 ui =        µ
+                               ũ = (1 + ΦL )ũi + (y i q · u − q i q · y) − q i ηe .       (4.9)
+                        ∂ x̃            3         3                         3a
+Thus in a matter dominated universe
+                                          5                       1
+                         v = ae−Ψ u = ṽ + (ṽ · q y − ṽ · y q) − ηe q.                   (4.10)
+                                          3                       3
+Substituting equations (4.4,4.8,4.10) in (3.2) and (3.11), and setting Φ̄e = 0 for the moment,
+we get
+              Θ(n̂) = ΘS,obs + ΘL,obs + ΘL,obs ΘS,obs + ∆xe · ∇ΘS,obs − ∆n̂ · ṽ         (4.11)
+where
+
+                                ΘS,obs = Θ̃ + Φ̃ − n̂ · ṽ                                 (4.12)
+                                       1       1
+                              ΘL,obs = ΦL + ηe n̂ · q + n̂ · v o ,                         (4.13)
+                                       3       3
+are respectively the observed short- and long-wavelength Θ(n̂) at linear order. The aberra-
+tion is given by
+                                 1           5                 1      5
+         ∆n̂ = δ n̂ + (n̂ · v o + ηe n̂ · q − y · q)n̂ − (v o + ηe q − n̂ · y q),          (4.14)
+                                 3           3                 3      3
+with δ n̂ given in (3.5). Moreover, since the short-wavelength quantities are evaluated at x̃e
+as given by (3.3) and (4.2), to get the full second order expression one should also expand
+around the unperturbed recombination position which introduces an additional second order
+term with
+                                                   Z ηo         Z ηo
+             1
+     ∆xe = ΦL ηe n̂ + ∆η(−v o + n̂n̂ · v o ) + 2n̂      dηΦ − 2      dη(η − ηe )∇⊥ Φ
+             3                                      ηe           ηe
+                                                                                       (4.15)
+                5         5 2    1 2
+              − ΦL x + y q + qηe
+                3         6      6
+where ∆η is the zeroth order ηo − ηe , and the first term on the r.h.s. is responsible for the
+shift
+                                 n̂(ηo − ηe ) → n̂(ηo − η̃e )                           (4.16)
+in the argument of short quantities: ΘS,obs (η̃e , xo + n̂(ηo − η̃e )). That is, we are expressing
+the observed Θ(n̂) in terms of quantities at the surface of constant temperature Trec and
+not a surface of constant ηe . In the presence of the long mode ΦL the recombination time
+
+                                                  13
+ηe itself fluctuates and as showed in (3.13) the constant temperature slice corresponds to
+η̃e = ηrec = const. Hence, there is no time-derivative term in (4.11) in contrast to the result
+of [11]; otherwise, the two expressions agree when ∇ΦL is neglected.
+    The coordinate transformation (4.1) takes care of the effect of the long mode on the short
+modes at recombination. The long wavelength can still be much shorter than the present
+horizon, in which case, the contribution to observer’s position xo and velocity v o , as well
+as the integrated effects in ∆n̂ and ∆xe along the photon trajectory would depend on the
+dynamical evolution. Equation (4.11) is the main result of this section. It expresses CMB
+multipoles in terms of the linearly evolved fields up to corrections of order (λS /λL )2 .5
+   In the extreme case when the long wavelength is much longer than the present horizon,
+ΦL is just a constant plus a pure gradient and the transformation (4.1) removes it from
+the entire observable universe. Hence, we can perform a consistency check of the above
+formalism by verifying that such a mode makes no contribution to Θ(n̂) measured at a fixed
+physical time t∗ .
+
+
+4.1     Pure gradient consistency check
+In practice, it is easier to center the coordinate transformations (4.1) and (4.2), used to
+derive the long-short effects, close to the observer’s position x = 0 rather than a point on
+recombination surface (x = D). They become
+                                       1
+                              η̃ = (1 + ΦL (x))η,                                                    (4.17)
+                                       3
+                                       5          5      1
+                              x̃ = (1 − ΦL (x))x + x2 q + η 2 q,                                     (4.18)
+                                       3          6      6
+where ΦL (η, x) is time-independent to first order, and is given by
+
+                                            ΦL = Φ̄e + q · x.                                        (4.19)
+
+This changes y → x = n̂∆η + O(ΦL ) everywhere in (4.14) and (4.15). Equation (4.10) now
+changes to
+                                   5                       1
+                           v = ṽ + (ṽ · q x − ṽ · x q) − ηe q.                 (4.20)
+                                   3                       3
+Now we can use this formula with ηe → ηo and x → 0 to derive the effect of the gradient
+mode on the observer’s velocity and position (figure 3):
+                                                        1
+                                            v o = ṽ o − ηo q.                                       (4.21)
+                                                        3
+and xo changes according to (4.18). We assume x̃o = 0 and ṽ o = 0, so
+                                                    1
+                                              xo = − ηo2 q.                                          (4.22)
+                                                    6
+
+   5
+    The contributions to xo and v o , though important for the consistency check, are practically degenerate
+with the overall normalization and the observer’s peculiar velocity.
+
+
+                                                    14
+                                               η
+
+                                                      O
+
+                                 LSS
+
+                                                                              x
+
+
+  Figure 3: A pure gradient mode accelerates the observer and tilts the recombination surface.
+
+    Furthermore, the constant potential Φ̄e across the entire horizon implies that the l.h.s.
+of (4.11) must be replaced with (3.11), and the conformal time of observation ηo be appro-
+priately rescaled as in (3.12). This modifies ∆xe since now the unperturbed position on the
+recombination surface is n̂(η̃o − η̃e ). Including this and the change (4.22) in (4.15)
+                                             1         1
+                              ∆xe → ∆xe − φ̄e ηo n̂ − ηo2 q                                 (4.23)
+                                             3         6
+and substituting (4.19,4.21) we get ∆xe = 0. The lensing δ n̂ in (4.14) evaluates to
+                                  δ n̂ = −2∆η(q − q · n̂ n̂),                               (4.24)
+resulting in ∆n̂ = 0. Finally, equation (4.13) simplifies to ΘL,obs = Φ̄e /3 and leads to
+                                        Θ(n̂) = ΘS,obs ,                                    (4.25)
+as desired.
+    The cancellation of the effect of a constant mode has been shown in [11], and the cancel-
+lation of the contribution of a pure gradient to the dipole moment in [22]. But the absence
+of any modulation of the short modes by the linear gradient is new – it would have resulted
+in a dipolar power asymmetry.
+    If the Maldacena’s consistency condition is violated, it corresponds to a correlation be-
+tween the initial conditions of the short and the long modes, and hence a physical local
+non-Gaussianity f˜N L = fN L − 5(1 − ns )/6. Therefore, after removing the dynamical effect
+of the long mode by a coordinate transformation one obtains
+                Φ̃ = gS (1 + f˜N L gL ),  with    f˜N L = fN L − 5(1 − ns )/6,         (4.26)
+which results in
+                                Θ(n̂) = ΘgS ,obs (1 + f˜N L q · x),                         (4.27)
+This should replace equation (1.2) for the hemispherical power asymmetry in the presence
+of a linear gradient mode.
+
+                                                15
+5     The long-long effects
+So far we saw that a linear gradient mode has no observable effect, except for a possible
+modification of the initial condition for the short modes. Having derived the second order
+Sachs-Wolfe formula, it is natural to ask whether this continues to be the case to second
+order in the long mode. Now one needs to keep terms quadratic in the long mode and
+must take into account the second order time-evolution of a linear gradient initial condition.
+Clearly, this no longer reduces to performing a coordinate transformation on the linearly
+evolved solution, and we will use the existing second order solution of [13, 14, 15]. In the
+following, we will first find the second order effect of a gradient initial condition in section
+5.1. There is a finite contribution to the monopole and quadrupole moments. We will see
+that these contributions would be cancelled if the linear gradient was superposed with a
+parabolic primordial perturbation, thereby leaving no observable effect. We will give an
+interpretation of this special superposition in terms of a non-linear extension of Weinberg’s
+adiabatic modes in section 5.2.
+
+
+5.1    Monopole and quadrupole
+A linear gradient mode that vanishes at our location x = 0, should be thought of as the
+small x limit of a super-horizon physical mode, e.g.
+                         Φ = φk sin k · x,      q = φk k,      kD  1,                      (5.1)
+where D is the size of the observable universe. For any such mode if the amplitude φk satisfies
+kD  φk  1, the physical effects arising from the linear curvature of the mode which are
+of order D2 ∇2 Φ ∼ φk k 3 D3 are negligible compared to non-linear effects D2 (∇Φ)2 ∼ φ2k k 2 D2 .
+Therefore, it is meaningful to talk about a gradient mode at second order. At this order
+there are monopole and quadrupole contributions. For simplicity we also neglect ηe /ηo . This
+implies that the modes we are interested in are so far outside the recombination horizon
+that we can neglect v in the Sachs-Wolfe formula. Moreover, although we are interested in
+the variation of the gradient mode over the present horizon, in the same approximation we
+can treat it effectively as a piecewise uniform mode on several super-horizon patches of the
+recombination surface. This allows us to exponentiate the coordinate transformation (4.1)
+in each patch:
+                                         ηe = ηrec e−Φe /3 .                               (5.2)
+Here, we chose a constant η̃ = ηrec . Since there is no short-wavelength perturbation, with
+this choice the temperature on the emission hypersurface would be uniform T (ηe , xe ) = Trec .
+Therefore, using this and plugging ae = ηe2 and (A.6) in (A.14), and expanding to second
+order, we obtain
+                                                                                        
+           arec −Φo                  1                    1 2                 2 1      2
+ T (n̂) =      e Trec 1 + n̂ · v o + Φe (1 + n̂ · v o ) + Φe + I + (n̂ · v o ) − (v o )    (5.3)
+            ao                       3                   18                     2
+
+where Φe = Φ(ηe , xe ) is the second order solution resulting from a linear gradient initial
+condition and as before the emission point xe is given by (3.3). (This formula agrees with
+
+                                               16
+(3.2) after substituting (4.8) for Θe and setting Θ̃ = 0, which corresponds to the absence of
+short modes.)
+   To calculate T (n̂) we need the knowledge of the second order solution for metric pertur-
+bations. In a matter dominated universe this has been calculated in [13, 14, 15] (we use the
+results of the latter). The result is of the form
+
+                                      Φ =φ + A + Bη 2
+                                                                                            (5.4)
+                                            2
+                                      Ψ =φ − A + Bη 2 ,
+                                            3
+where φ is the initial condition, proportional to the comoving-gauge scalar curvature (φ =
+−3ζ/5). In general, it may contain a constant second order piece: φ = φ1 + φ2 . We are
+eventually interested in φ1 = q · x, but will have more to say about φ2 . A and B are given
+by the non-local expressions:
+
+                        A = ∂ −2 (∂j φ)2 − 3∂ −4 ∂i ∂j (∂i φ∂j φ)
+                                                                
+                                                                                      (5.5)
+
+                                1           5
+                                   (∂j φ)2 + ∂ −2 (∂ 2 φ)2 − (∂i ∂j φ)2 .
+                                                                      
+                       B =                                                                  (5.6)
+                                12          42
+The expressions for ωi and γij are given in appendix B. They are also non-local, and are
+respectively O(η) and O(η 2 ) in the long-wavelength limit since the primordial tensor com-
+ponent is neglected.
+    The non-locality of the solution implies that these quantities depend on how exactly
+the gradient mode has been extended to a physical mode beyond our horizon. Observable
+quantities such as CMB multipoles cannot depend on this, so the non-localities in these
+expressions must cancel in (5.3). This is shown in appendix C. Neglecting ηe /ηo , the non-
+local terms contribute to linear SW, ISW term, and also to observer’s potential Φo and
+velocity v o . The former two combine to give
+                                     Z
+               1         1         1
+                 Φe + I = φ(xe ) −     dηη[2(n̂ · ∇φ)2 − (∂j φ)2 ] + Θ0 + Θ1 + · · ·   (5.7)
+               3         3         3
+
+where dots correspond to local, higher derivative terms that vanish on φ1 = q · x. (Recall
+that φ is the initial condition and time-independent.) Θ0 and Θ1 are non-local expressions
+which would naively contribute to the monopole and dipole moments. However, as already
+seen in the analysis of the long-short effect the naive expressions for monopole and dipole are
+degenerate with the observer’s time ηo and velocity v o . In appendix C.2 we show that the
+above ambiguous results for Θ0 and Θ1 are locally equivalent to a coordinate transformation
+and they cancel with a similar contribution of the non-local pieces in Φ to observer’s time
+and velocity.
+    Since all non-localities cancel we can unambiguously calculate the second order contribu-
+tion of a gradient mode to T (n̂). Substituting φ(xe ) = q · xe + φ2 in (5.7), with xe calculated
+
+
+
+
+                                               17
+to first order from (3.3), and discarding Θ0,1 yields
+           arec −Φo    h    1         5           1
+ T (n̂) =      e Trec 1 − q 2 ηo2 + (q · x)2 + φ2
+            ao              6        18           3
+                                                                                                   (5.8)
+         1                      1                     1 1              1 1                   i
+      + ( q · x + n̂ · v o ) + ( q · x + n̂ · v o )2 − ( qηo + v o )2 + ( q 2 ηo2 + q · xo )2 ,
+         3                      3                     2 3              3 6
+where x = ηo n̂. The contribution of the long mode to the second line vanishes since
+                                       1                   1
+                                v o = − qηo ,        xo = − qηo2 .                                 (5.9)
+                                       3                   6
+(We assumed the unperturbed observer is at rest at x̃o = 0.) However, there is an extra
+contribution to monopole from the pre-factor e−Φo /ao . First, notice that according to (5.4)
+there is a time-dependent piece q 2 η 2 /12 in Φ coming from the local term in (5.6). We
+therefore have
+                                              1              1
+                       Φo = Φ̃o + q · xo + q 2 ηo2 = Φ̃o − q 2 ηo2 .                   (5.10)
+                                              12            12
+To keep fixed the observer’s proper time t, the time-like geodesic equation in matter-
+dominated universe should be used to derive the modified ηo :
+                                       dt          p
+                                          = ηo2 eΦo 1 − vo2 .                                     (5.11)
+                                      dηo
+
+Using (5.9) and (5.10), and ignoring the short wavelength Φ̃, this can be integrated to give
+                                                     
+                                      1 3       1 2 2
+                                  t = ηo 1 − q ηo .                                   (5.12)
+                                      3         12
+
+For a constant t = t∗ , the conformal time of observation is rescaled by ηo = η∗ (1 + q 2 ηo2 /36).
+Combining all pieces we finally obtain
+                                     h     5         5            1 i
+                        T (n̂) = TCMB 1 − q 2 ηo2 + (q · x)2 + φ2 .                         (5.13)
+                                          36        18            3
+A pure gradient initial condition with φ2 = 0, therefore, leads to a finite contribution to
+the CMB monopole and quadrupole. In the presence of primordial local non-Gaussianity,
+f˜N L 6= 0, one naturally expects a gradient mode to be accompanied by a parabolic piece which
+induces a quadrupole moment. The above result shows how the subsequent non-linear evolu-
+tion and the transformation into CMB observable generates an additional contribution. This
+can be used to observationally constrain the amplitude of a pure gradient initial condition.
+    What can we say about the non-Gaussian piece φ2 ? In the context of single-field slow-
+roll inflation it is natural to take the primordial ζ0 to be an exact gradient, because its
+self-interactions are slow-roll suppressed and hence the Fourier modes are good approximate
+solutions even at non-linear level [6]. This can then be translated to fluctuations in the
+Poisson gauge (3.1). For a uniform super-horizon perturbation (which is a valid assumption
+at the initial time η = 0) we get
+                                                 3
+                                           φ = − ζ0                                   (5.14)
+                                                 5
+                                                18
+to all orders. Therefore, taking ζ0 to be a sinusoidal wave generated during inflation implies
+φ2 ≃ 0. Hence the pure gradient mode, although unobservable at first order, induces non-
+zero monopole and quadrupole moments at second order. This constrains the amplitude of
+such a mode even in the absence of primordial non-Gaussianity f˜N L .
+   However, if we superpose the linear gradient with φ2 = 5q 2 ηo2 /12 − 5(q · x)2 /6 the second
+order contribution of the long mode to the CMB temperature vanishes as well. We will next
+show that this combination corresponds to an adiabatic mode at second order: a physical
+mode that can be locally removed by a coordinate transformation.
+
+
+5.2      Gradient adiabatic mode at second order
+It is natural to expect that the adiabatic modes of Weinberg exist beyond linear level, corre-
+sponding to slowly varying finite physical modes that can locally be approximated by a large
+(non-vanishing at infinity) coordinate transformation. As such, they must be unobservable
+to all orders. This is obviously the case for a uniform adiabatic mode: In the comoving gauge
+(2.2), a finite constant ζ corresponds to a constant rescaling xi → xi eζ .6 In this subsection
+we construct the gradient adiabatic mode at second order, by demanding that the second
+order solution of previous subsection to be equivalent to a coordinate transformation. Al-
+though this non-linear extension is non-unique, due to the non-locality of the solution (5.4),
+the second order initial condition φ2 is uniquely determined to make the adiabatic mode
+unobservable.
+   Following Weinberg [10] we apply to an unperturbed FRW background the most general
+second order extension of the diffeomorphism (4.17,4.18) with Φ̄e = 0
+                  1
+          η → (1 − q · x)η + a1 (q · x)2 η + a2 q 2 x2 η + a3 q 2 η 3 ,
+                  3
+                  5         5     1                                                              (5.15)
+          x → (1 + q · x)x − qx2 − qη 2 + b1 (q · x)2 x + b2 q 2 η 2 x + b3 q 2 x2 x
+                  3         6     6
+
+                 + b4 x2 (q · x)q + b5 η 2 (q · x)q.
+We calculate the resulting metric perturbations and impose two requirements: (i) the Poisson
+gauge condition is preserved, and (ii) they matches the second order solution.
+      In matter-domination, we get the following expressions for various metric components:
+                          5                                     1
+      e2Φ = 1 + 2q · x + ( + 6a1 )(q · x)2 + 6a2 q 2 x2 + (7a3 − )q 2 η 2 ,                      (5.16)
+                          3                                     9
+
+
+ e−2Ψ =1 − 2q · x + (−1 + 4a1 + 2b1 )(q · x)2 + (4a2 + 2b3 )q 2 x2 + (4a3 + 2b2 )q 2 η 2
+                                                                                                 (5.17)
+            1      50                   1                      1           50
+           + q 2 [( + 2b4 + 4b3 )x2 + (− + 2b5 )η 2 ]         + (q · x)2 (− + 4b1 + 4b4 )
+            3      9                    9                      3           9
+  6
+    The result also exponentiates in the Poisson gauge with Φ = Ψ = −5ζ/3 up to an ambiguity correspond-
+ing to a time-redefinition.
+
+
+                                                       19
+             11                              5
+   ωi = (−      − 2a1 + 2b5 )(q · x)q i η + ( − 2a2 + 2b2 )q 2 ηxi ,                               (5.18)
+             9                               9
+
+                 1            25             1                25                  1
+ γij = (q i q j − q 2 δ ij )[( + 2b4 )x2 + (− + 2b5 )η 2 ] + ( + 4b3 )q 2 (xi xj − x2 δ ij )q 2
+                 3             9             9                9                   3
+                                                                                                   (5.19)
+            1                    1                    50
+         + [ (q i xj + xi q j ) − q · xδ ij ](q · x)(− + 4b1 + 4b4 ).
+            2                    3                     9
+
+The coefficients ai and bi are not all independent. Requiring the new metric to satisfy the
+gauge condition ∂i ω i = 0 = ∂i γij puts four constraints on them. The matching with the
+physical solution seems impossible at first sight because of the non-locality of the latter.
+However, as already seen, those non-localities cancel in the observable CMB multipoles.
+So we fix only a subset of parameters based on the structure of the physical solution; the
+residual freedom corresponds to the redundancy of our description. In particular, in order
+for γij (η = 0) = 0, one must set
+                                  25                25           25
+                               b1 =  ,    b3 = −         b4 = − .                        (5.20)
+                                   9                36           18
+This is sufficient to determine the second order piece φ2 . Comparing (5.16) and (5.17) with
+the expression (5.4) for Φ and Ψ (with φ1 = q · x), and using the above values for b1,3,4 gives
+                                          
+                                        5              2
+                           A = 3a2 −         q 2 x2 + ( + 3a1 )(q · x)2
+                                        12             3
+                                                                                         (5.21)
+                                5 2 2 5
+                           φ2 = q x − (q · x)2 .
+                               12        6
+The ambiguity in A corresponds to the fact that depending on how the gradient mode
+is extended to a physical mode at large distances the O(x2 ) piece of the potentials Φ, Ψ
+vary. However, those ambiguities cancel as shown in appendix C. On the other hand, the
+second order field φ2 is uniquely determined to be what is needed to get zero monopole and
+quadrupole moments.7
+    We should finally mention that there are linearized adiabatic modes that start at linear
+order from O(x2 ) or higher [19]. However, all of them involve primordial tensor modes which
+were forbidden by setting γij = 0 at initial time and imposing (5.20). Projecting cosmological
+correlation functions on the adiabatic modes leads to consistency conditions similar to the
+one reviewed in section 2 (see, e.g., [16, 17, 19]). There are double-soft consistency conditions
+which arise from our the second order extension of adiabatic modes. They are dicussed in
+[23, 24].
+   7
+    In fact (5.15) is not the most general diffeomorphism. One should also include new O(x) and O(x2 )
+corrections, and hence new uniform and gradient components in metric perturbations that are respectively
+of order φ2k and φ2k kx. They obviously depend on how the gradient mode is extended at infinity since they
+depend separately on φk and k, and not just through q = φk k. These ambiguous corrections naively lead to
+monopole and dipole contributions to Θ(n̂), but as discussed in appendix C.2, they cancel in the physical
+observables.
+
+
+                                                   20
+6    Conclusions
+In this paper we argued that a linear gradient mode does not induce any dynamical effect
+because it is locally equivalent to a coordinate transformation [10, 16]. In particular, this
+implies that when Maldacena’s consistency conditions are satisfied, a long gradient mode
+extending across our horizon cannot lead to any hemispherical asymmetry in the CMB
+power spectrum (as suggested by, e.g., [5]). Next, we derived a second order formula for the
+CMB multipoles in the squeezed limit in terms of the linearly evolved fields. The formula,
+which generalizes that of [11], is valid as long as λL is longer than the recombination horizon
+and up to corrections of order (λS /λL )2 , where λS,L are the short and long wavelengths.
+The derivation rests crucially upon our symmetry arguments which reduces the effect of
+the long mode on the short modes until recombination time to a coordinate transformation.
+This analytic result can provide another check of the second order numerical Boltzmann
+codes besides the one performed in [11, 12]. Moreover, it supports or general argument for
+the absence of any observable effect, such as power asymmetry, caused by a linear gradient
+mode whose wavelength is much longer than the present horizon size. Finally, we studied
+the second order effect of a gradient mode and showed that it induces observable monopole
+and quadrupole moments. We showed how it must be superposed by a quadratic primordial
+perturbation to become locally equivalent to a coordinate transformation up to second order.
+This provides an explicit example of a second order adiabatic mode, and leads to double soft
+consistency conditions [23, 24].
+
+
+Acknowledgments
+We thank Ali Akbar Abolhasani, Paolo Creminelli, and Mohammad Hossein Namjoo for
+stimulating discussions and comments. M.M. is supported by NSF Grants PHY-1314311 and
+PHY-0855425. M.Z. is supported in part by the NSF grants AST-0907969, PHY-1213563
+and AST-1409709.
+
+
+A     Second order Sachs-Wolfe formula
+To derive the Sachs-Wolfe formula in our approximation we use the fact that for black-body
+radiation the observed temperature T (n̂) is rescaled with respect to the initial temperature
+T (ηe , xe ) by the amount of redshift photons experience:
+
+                                               Eo
+                                    T (n̂) =      T (ηe , xe ).                          (A.1)
+                                               Ee
+The indices o and e indicate the observation and the emission events, respectively. The
+energy of the photon E is given in terms of its null four-momentum P µ = dxµ /dλ, and
+observer’s (emitter’s) four-velocity uµ , by
+
+                                         E = −Pµ uµ .                                    (A.2)
+
+                                                21
+In our convention uµ uµ = −1. In the Poisson gauge (3.1), the redshift becomes
+                                                                             −1
+              ae P0 (ηo ) Φe −Φo √                       √
+                                                     
+       Eo                              2   Φ+Ψ Pi i            2    Φ+Ψ Pi i
+           =              e        1+v +e          v        1+v +e         v     ,   (A.3)
+       Ee     ao P0 (ηe )                       P0    o                 P0    e
+                                  √
+where v i ≡ ae−Ψ ui , and u0 = 1 + v 2 e−Φ /a. Moreover, Φe ≡ Φ(ηe , xe ) and similarly for
+other fields. For a given direction n̂ of the incident photon, P0 and Pi are determined by
+the geodesic equation
+                                     dPµ    1
+                                         = ∂µ gαβ P α P β .                          (A.4)
+                                      dλ    2
+To second order, the zeroth component of this equation yields
+                              1 dP0                 ˆ i − 1 γij0 ñ
+                                                                 ˆ i ñ
+                                                                     ˆj,
+                                    = Φ0 + Ψ0 + ωi0 ñ                                            (A.5)
+                              P0 dη                       2
+      ˆ is related to the observation angle n̂ and observers peculiar velocity v o via
+where ñ
+                                       ˆ = n̂ − v o + n̂n̂ · v o .
+                                       ñ                                                         (A.6)
+
+We are only interested in the contribution of long-gradient mode to v o and regard it as a
+long-wavelength perturbation, hence at zeroth order ñ ˆ = n̂. In deriving (A.5) we have used
+                                  2             2
+the first order null condition P i = e2(Φ+Ψ) P 0 , and
+                                                P i (ηo ) −(Φo +Ψo )
+                                      ñi = −             e          .                            (A.7)
+                                                P 0 (ηo )
+To zeroth order, P i /P 0 = −ñi for all η. Integrating (A.5) leads to the integrated Sachs-Wolfe
+effect:
+                                                   Z ηo                            
+        P0 (ηo )                                           0    0    0 i    1 0 i j
+                 = exp[I(ηe , ηo )], I(ηe , ηo ) =     dη Φ + Ψ + ωi ñ − γij ñ ñ .       (A.8)
+        P0 (ηe )                                    ηe                      2
+                                                ˆ o −η)). In the following we take P0 (ηo ) = 1,
+The integral is along the photon trajectory (η, ñ(η
+which to zeroth order remains conserved along the photon trajectory.
+   We will only need the first order solution for Pi , which from (A.4) satisfies
+                                        1 dPi
+                                              = ∂i (Φ + Ψ).                                       (A.9)
+                                        P0 dη
+Integrating this using the zeroth order value P0 = 1 gives
+                                                   Z ηo
+                             Pi (ηe ) = Pi (ηo ) −      dη∂i (Φ + Ψ).                            (A.10)
+                                                          ηe
+
+The ratio Pi /P0 appearing in the redshift formula (A.3) is therefore given by
+                               Pi (ηo )
+                                        = ñi (1 − Φo − Ψo ),                                    (A.11)
+                               P0 (ηo )
+                                                                          Z ηo
+             Pi (ηe )
+                      = ñi (1 − Φe − Ψe ) + δni ,             δ n̂ = −          dη∇⊥ (Φ + Ψ),   (A.12)
+             P0 (ηe )                                                      ηe
+
+
+                                                     22
+where ∇⊥ = (∇ − n̂n̂ · ∇), and we used the fact that, for any function f ,
+                     Z ηo
+                          dη(∂η − n̂n̂ · ∇)f (η, n̂(ηo − η)) = fo − fe .                             (A.13)
+                           ηe
+
+Substitution in (A.3) gives
+
+    T (n̂)       ae                            p                   p                          −1
+               =    exp[Φe − Φo + I(ηe , ηo )]        2   ˆ
+                                                 1 + vo + ñ · v o          2    ˆ
+                                                                       1 + ve + (ñ + δ n̂) · v e ,
+  T (ηe , xe )   ao
+                                                                                               (A.14)
+where quantities with index e are evaluated at (ηe , xe ). In general ηe does not have to be
+the same in all directions. As discussed in the text, taking the emission points to lie on a
+hypersurface of constant average temperature Trec corresponds to different choices of ηe at
+different directions depending on the local average of Φe .
+   In matter-domination Φ = Ψ = const. to first order, so the ISW effect (A.8) starts at
+second order in perturbations. (Furthermore, as shown in [21] it is negligible in the squeezed
+limit, but it is essential for our study of long-long effects in section 5.) Keeping up to second
+order
+      T (n̂)
+             − 1 =Θe + Φe + n̂ · (v o − v e ) + I − δ n̂ · v e + n̂ · (v o − v e )(Θe + Φe )
+        T̄                                                                                           (A.15)
+                            1                                1
+                  + Φe Θe + Φ2e + (n̂ · (v o − v e ))2 − (v o − v e )2 .
+                            2                                2
+We have defined
+                                                      T (ηe , xe )
+                                   Θe (ηe , xe ) =                 − 1,                              (A.16)
+                                                     hT (ηe , x)ix
+where the average is over the whole time-slice ηe , and
+                                              ae −Φo
+                                       T̄ =      e   hT (ηe , x)ix .                                 (A.17)
+                                              ao
+Finally, the coordinate of the emission point can be derived to first order by integrating
+(A.12), with ηe replaced by an arbitrary time, along the line of sight, and using
+                             Z ηo Z ηo              Z ηo
+                                           0   0
+                                 dη     dη f (η ) =      dηf (η).                   (A.18)
+                                  ηe      η                      ηe
+
+This results in
+                                                          Z ηo             Z ηo
+    xe = xo + (n̂ − v o + n̂n̂ · v o )(ηo − ηe ) + 2n̂           dηΦ − 2          dη(η − ηe )∇⊥ Φ,   (A.19)
+                                                           ηe               ηe
+
+where xo is the observer’s position, which we retained since it will be affected by the long
+gradient mode. Note that the time integrals are along the unperturbed photon trajectory
+(η, n̂(ηo − η)).
+
+
+
+
+                                                     23
+B      Second order metric in matter dominated universe
+The second order expressions for metric fluctuations in matter dominated universe read [15]
+
+                Φ = φ + ∂ −2 (∂j φ)2 − 3∂ −4 ∂i ∂j (∂i φ∂j φ)
+                                                             
+                                                                                     (B.1)
+                               1             5
+                           + η 2 (∂j φ)2 + η 2 ∂ −2 (∂ 2 φ)2 − (∂i ∂j φ)2 ,
+                                                                        
+                              12            42
+
+                                                        
+                         2 −2     2      −4
+                 Ψ = φ − ∂ (∂i φ) − 2∂ ∂i ∂j (∂i φ∂j φ)                                         (B.2)
+                         3
+                            1             5
+                          + η 2 (∂j φ)2 + η 2 ∂ −2 (∂ 2 φ)2 − (∂i ∂j φ)2 ,
+                                                                       
+                           12             42
+                        4
+                  ωi = − η∂ −2 ∂ 2 φ∂i φ − ∂ −2 ∂i ∂j (∂ 2 φ∂j φ) ,
+                                                                
+                                                                                                (B.3)
+                        3
+                                        
+                             1 j1 (pη)
+                 γij = −20     −           ∂ −2 PijTTkl (∂k φ∂l φ) .                            (B.4)
+                             3      pη
+Note that our definition of Φ and Ψ in (3.1) slightly differs from that of [15], and we have
+used η = 2/aH valid in a matter-dominated universe. We also used the identity
+                                              1
+                                ∂i φ∂i ∂ 2 φ = ∂ 2 (∂φ)2 − (∂i ∂j φ)2 .                         (B.5)
+                                              2
+The initial condition φ is proportional to the comoving-gauge
+                                                    √               scalar curvature (φ = −3ζ/5).
+                                                        2
+In the expression for the tensor component p = ∂ , the spherical Bessel function j1 (x) is
+given by j1 (x) = sin(x)/x2 − cos(x)/x, while PijTTkl is a transverse traceless projector defined
+as
+                                      1
+                             PijTTkl ≡ (Pik Pjl + Pjk Pil − Pij Pkl ) ,                     (B.6)
+                                      2
+where Pij is a symmetric transverse projector given by
+
+                                                       ∂i ∂j
+                                         Pij ≡ δij −         .                                  (B.7)
+                                                        ∂2
+Pij kl can be expanded to give
+
+           PijTTkl (∂k φ∂l φ) = −∂ −2 ∂ 2 Ωδij + ∂i ∂j Ω + 2(∂ 2 φ∂i ∂j φ − ∂i ∂k φ∂j ∂k φ) ,
+                                                                                          
+                                                                                                (B.8)
+
+with
+                                     1
+                                Ω = − ∂ −2 (∂ 2 φ)2 − (∂i ∂j φ)2 .
+                                                               
+                                                                                                (B.9)
+                                     2
+
+
+
+
+                                                  24
+C      Locality of physical observables
+
+C.1     quadrupole and higher multipoles
+Neglecting ηe /ηo , and focusing on the contribution to quadrupole and higher multipoles,
+the time-dependent pieces matter only in the ISW term and the time-independent non-local
+piece in the linear SW: Φ/3. To show that the non-localities cancel, it is sufficient to expand
+γij to order η 4 . Working in momentum space, and after a few partial integrations, different
+contributions to the ISW term can be brought into the form
+
+                                      10 (p1 · p2 )2 − p21 p22 1
+        Z                   Z                                            
+            3      3
+IΦ+Ψ = d p1 d p2 φp1 φp2 dηη                                     − p1 · p2 eip·n̂(ηo −η)
+                                      21           p2              3
+
+                                                 p2 p · n̂
+        Z                   Z
+                                    4
+            3      3
+   Iω = d p1 d p2 φp1 φp2        dη η(p · n̂) 1 22 eip·n̂(ηo −η)
+                                    3                p
+
+                                                        p21 p · p2 4 p21 p2 · n̂
+                                                                                   
+                                       4 ip·D
+                                    + e           −1                − iηo             ,
+                                       3                     p4       3      p2
+
+                                        10 p21 p22 − (p1 · p2 )2 4 p21 (p2 · n̂)2 4 p1 · p2 p1 · n̂p2 · n̂ ip·n̂(ηo −η)
+        Z                   Z                                                                              
+            3      3
+   Iγ = d p1 d p2 φp1 φp2         dηη                              −               +                           e
+                                        21            p2             3    p2           3        p2
+                                                                                   2 2
+                                                                                     p1 p2 − (p1 · p2 )2
+                                                                                                        
+                         1     ip·D
+                                                             1 2 2
+                       −      e     − 1 − ip · n̂ηo + p ηo (3 + ip · n̂ηo )                                ,
+                         3                                   14                              p4
+where p = p1 + p2 . Summing them up the non-localities in the integrals cancel against
+one another, and when included in the Sachs-Wolfe formula, the boundary terms cancel the
+time-independent non-local pieces in Φ up to a monopole and a dipole:
+                                Z
+               1        1     1
+                 Φ+I = φ−          dηη[2(n̂ · ∇φ)2 − (∂j φ)2 ] + Θ0 + Θ1 + · · ·  (C.1)
+               3        3     3
+where dots correspond to local, higher derivative terms from the expansion of j1 (pη) in γij .
+The non-local expressions for monopole and dipole are
+                                                                      
+         1 1        2    1                    1 21  2 2             2
+                                                                       
+  Θ0 =          (∂φ) − 3 2 ∂i ∂j (∂i φ∂j φ) + ηo 2 (∂ φ) − (∂i ∂j φ)
+         3 ∂2            ∂                   14 ∂                         x=0
+                                                                                   (C.2)
+         1          1 2 2            1  2 2               4   1
+           ηo 1 + ηo ∂ n̂ · ∇ 4 (∂ φ) − (∂i ∂j φ)2 − ηo 2 (∂ 2 φn̂ · ∇φ)
+                                                       
+  Θ1 =                                                                             .
+         3         14               ∂                      3 ∂                 x=0
+
+
+
+C.2     Monopole and dipole
+As already seen in the analysis of the long-short effect the naive expressions for monopole
+and dipole are degenerate with the observer’s time ηo and velocity v o . Here we show that
+the above ambiguous results cancel in the physically well-defined quantities. The part of the
+
+                                                  25
+solution (B.1)-(B.4) which is responsible for these non-local expressions is locally equivalent
+to a gauge transformation. Therefore, as in section 4 the change of T (n̂) due to the variation
+of observer’s Φo , ηo , and v o cancel against the naive contribution to monopole and dipole.
+   Let us parameterize the non-local part of the solution which is relevant for monopole and
+dipole as follows
+                             Φ = a1 + b1 · x + η 2 (a2 + b2 · x)                       (C.3)
+where
+                                 a1,2 = f1,2 (0),        b1,2 = ∇f1,2 (0),               (C.4)
+and
+                                       −2
+                                       ∂ (∂j φ)2 − 3∂ −4 ∂i ∂j (∂i φ∂j φ)
+                                                                          
+                            f1 =                                                         (C.5)
+
+                                        5 2 −2  2 2
+                                                (∂ φ) − (∂i ∂j φ)2 .
+                                                                  
+                            f2 =          η ∂                                            (C.6)
+                                       42
+We also have for the shift vector
+                       4
+                 ωi = − η∂ −2 ∂ 2 φ∂i φ − ∂ −2 ∂i ∂j (∂ 2 φ∂j φ) x=0 .
+                                                               
+                                                                                         (C.7)
+                       3
+These metric perturbations can be generated by the following coordinate transformation
+                                 1                1
+                          η → η + η(a1 + b1 · x) + η 3 (a2 + b2 · x),
+                                 3                5
+                                                                                         (C.8)
+                                1        1
+                         x → x + η 2 b3 + η 4 b4
+                                2        4
+if b3,4 are chosen such that
+
+                                           1                1
+                                 ω = η(b3 − b1 ) + η 3 (b4 − b2 ),                       (C.9)
+                                           3                5
+agrees with (C.7). Using the identity
+
+                         ∂i ∂j (∂i φ∂j φ) − ∂ 2 (∂j φ)2 = (∂ 2 φ)2 − (∂i ∂j φ)2 ,       (C.10)
+
+we find
+                                 1 ∂i 2 2                     4 1 2
+                         bi3 =      4
+                                      [(∂ φ) − (∂i ∂j φ)2 ] −      (∂ φ∂i φ),           (C.11)
+                                 3∂                           3 ∂2
+and
+                                    1 ∂i 2 2
+                                   bi4 =   [(∂ φ) − (∂i ∂j φ)2 ].                       (C.12)
+                                    42 ∂ 2
+This transformation generates the following expression for Ψ
+                                 2               2
+                            Ψ = − (a1 + b1 · x) − η 2 (a2 + b2 · x).                    (C.13)
+                                 3               5
+
+
+
+                                                    26
+The contribution of this gauge mode to the monopole and dipole comes from the linear plus
+integrated Sachs-Wolfe Φ/3 + I. (We work in the approximation ηrec = 0.) The result is
+                                        1    3
+                                    Θ0 = a1 + a2 ηo2
+                                        3    5                                         (C.14)
+                                    Θ1 = ηo b3 · n̂ + ηo3 b4 · n̂,
+
+which coincide with the non-local expressions (C.2). The non-local contribution of the
+remaining part of Ψ, i.e. the difference between (B.2) and (C.13), and γ in (B.4) cancel
+against each other.
+   To see the cancellation of Θ0 in the physical observables, note that the observer’s proper
+time is                     Z ηo
+                                                 1            3
+                       t∗ =      dηη 2 (1 + Φ) = ηo3 (1 + a1 + a2 ηo2 ).               (C.15)
+                              0                  3            5
+So to measure CMB temperature at the same proper time we should shift
+                                               1    1
+                                   ηo = η∗ (1 − a1 − a2 ηo2 ).                         (C.16)
+                                               3    5
+The observed average temperature is
+                                                   ae
+                                hTo (n̂)i = e−Φo      hT (ηe , xe )ixe .               (C.17)
+                                                   ao
+In the presence of a gravitational potential
+                                                     1
+                 ae hT (ηe , xe )ixe = arec Trec (1 + Φe + I) = arec Trec (1 + Θ0 ).   (C.18)
+                                                     3
+On the other hand, using (C.3) and (C.16)
+                                                     1    3
+                                eΦo ao = eΦ̃o a∗ (1 + a1 + a2 ηo2 )                    (C.19)
+                                                     3    5
+which cancels Θ0 in (C.18). Finally, the transformation (C.8) shifts the observer’s velocity
+to
+                                  v o = ṽ o − ηo b3 + ηo3 b4 ,                      (C.20)
+which cancels Θ1 .
+
+
+References
+ [1] J. Hoftuft, H. K. Eriksen, A. J. Banday, K. M. Gorski, F. K. Hansen and P. B. Lilje,
+     “Increasing evidence for hemispherical power asymmetry in the five-year WMAP data,”
+     Astrophys. J. 699, 985 (2009) [arXiv:0903.1229 [astro-ph.CO]].
+
+ [2] P. A. R. Ade et al. [Planck Collaboration], “Planck 2013 results. XXIII. Isotropy and
+     statistics of the CMB,” arXiv:1303.5083 [astro-ph.CO].
+
+                                                 27
+ [3] Y. Akrami, Y. Fantaye, A. Shafieloo, H. K. Eriksen, F. K. Hansen, A. J. Banday
+     and K. M. Grski, “Power asymmetry in WMAP and Planck temperature sky maps as
+     measured by a local variance estimator,” Astrophys. J. 784, L42 (2014) [arXiv:1402.0870
+     [astro-ph.CO]].
+
+ [4] M. Quartin and A. Notari, “On the significance of power asymmetries in Planck CMB
+     data at all scales,” JCAP 1501, no. 01, 008 (2015) [arXiv:1408.5792 [astro-ph.CO]].
+
+ [5] A. L. Erickcek, M. Kamionkowski and S. M. Carroll, “A Hemispherical Power Asym-
+     metry from Inflation,” Phys. Rev. D 78, 123520 (2008) [arXiv:0806.0377 [astro-ph]].
+
+ [6] J. M. Maldacena, “Non-Gaussian features of primordial fluctuations in single field in-
+     flationary models,” JHEP 0305 (2003) 013 [arXiv:astro-ph/0210603].
+
+ [7] D. H. Lyth, “The CMB modulation from inflation,” JCAP 1308, 007 (2013)
+     [arXiv:1304.1270 [astro-ph.CO]].
+
+ [8] T. Tanaka and Y. Urakawa, “Dominance of gauge artifact in the consistency relation for
+     the primordial bispectrum,” JCAP 1105, 014 (2011) [arXiv:1103.1251 [astro-ph.CO]].
+
+ [9] E. Pajer, F. Schmidt and M. Zaldarriaga, “The Observed Squeezed Limit of Cosmolog-
+     ical Three-Point Functions,” arXiv:1305.0824 [astro-ph.CO].
+
+[10] S. Weinberg, “Adiabatic modes in cosmology,” Phys. Rev. D 67, 123504 (2003) [astro-
+     ph/0302326].
+
+[11] P. Creminelli, C. Pitrou and F. Vernizzi, “The CMB bispectrum in the squeezed limit,”
+     JCAP 1111, 025 (2011) [arXiv:1109.1822 [astro-ph.CO]].
+
+[12] Z. Huang and F. Vernizzi, “The full CMB temperature bispectrum from single-field
+     inflation,” Phys. Rev. D 89, 021302 (2014) [arXiv:1311.6105 [astro-ph.CO]].
+
+[13] S. Matarrese, S. Mollerach and M. Bruni, “Second order perturbations of the Einstein-de
+     Sitter universe,” Phys. Rev. D 58, 043504 (1998) [astro-ph/9707278].
+
+[14] N. Bartolo, S. Matarrese and A. Riotto, “The full second-order radiation transfer func-
+     tion for large-scale cmb anisotropies,” JCAP 0605, 010 (2006) [astro-ph/0512481].
+
+[15] L. Boubekeur, P. Creminelli, J. Norena and F. Vernizzi, “Action approach to cosmologi-
+     cal perturbations: the 2nd order metric in matter dominance,” JCAP 0808, 028 (2008)
+     [arXiv:0806.1016 [astro-ph]].
+
+[16] P. Creminelli, J. Norena and M. Simonovic, “Conformal consistency relations for single-
+     field inflation,” JCAP 1207, 052 (2012) [arXiv:1203.4595 [hep-th]].
+
+[17] K. Hinterbichler, L. Hui and J. Khoury, “Conformal Symmetries of Adiabatic Modes in
+     Cosmology,” JCAP 1208, 017 (2012) [arXiv:1203.6351 [hep-th]].
+
+[18] R. Flauger, D. Green and R. A. Porto, “On squeezed limits in single-field inflation. Part
+     I,” JCAP 1308, 032 (2013) [arXiv:1303.1430 [hep-th]].
+
+                                             28
+[19] K. Hinterbichler, L. Hui and J. Khoury, “An Infinite Set of Ward Identities for Adiabatic
+     Modes in Cosmology,” arXiv:1304.5527 [hep-th].
+
+[20] E. Bertschinger, “Cosmological dynamics: Course 1,” astro-ph/9503125.
+
+[21] L. Boubekeur, P. Creminelli, G. D’Amico, J. Norena and F. Vernizzi, “Sachs-Wolfe at
+     second order: the CMB bispectrum on large angular scales,” JCAP 0908, 029 (2009)
+     [arXiv:0906.0980 [astro-ph.CO]].
+
+[22] A. L. Erickcek, S. M. Carroll and M. Kamionkowski, “SuperHorizon Perturbations and
+     the Cosmic Microwave Background,” Phys. Rev. D 78, 083012 (2008) [arXiv:0808.1570
+     [astro-ph]].
+
+[23] M. Mirbabayi and M. Zaldarriaga, “Double Soft Limits of Cosmological Correlations,”
+     JCAP 1503, no. 03, 025 (2015) [arXiv:1409.6317 [hep-th]].
+
+[24] A. Joyce, J. Khoury and M. Simonovi, “Multiple Soft Limits of Cosmological Correlation
+     Functions,” arXiv:1409.6318 [hep-th].
+
+
+
+
+                                             29
+
