@@ -66,33 +66,37 @@ def si_series(z, order):
 
 # ----------------------------------------------------------------------------------------------------------
 def decompose(expr, t):
-    """expr = sum c * t^n * exp(i w t)  ->  dict {(n, w): c}.  w may be 0."""
-    e = sp.expand(sp.expand_trig(expr).rewrite(sp.exp))
-    e = sp.expand(sp.powsimp(e, combine='exp'))
+    """expr = sum c * t^n * exp(i w t)  ->  dict {(n, w): c}.  w may be 0.
+    Each term of expand(expr) is split into a t-free coefficient and the t-dependent part (t^n times trig
+    functions) BEFORE the trig -> exp rewriting, so that denominators in the coefficients are never touched."""
     out = {}
-    for term in sp.Add.make_args(e):
-        c, n, w = sp.S.One, 0, sp.S.Zero
-        for f in sp.Mul.make_args(term):
-            if f == t:
-                n += 1
-            elif f.is_Pow and f.base == t:
-                assert f.exp.is_Integer, f
-                n += int(f.exp)
-            elif isinstance(f, sp.exp):
-                a = sp.expand(f.args[0])
-                if a.has(t):
-                    coeff = sp.cancel(a / (sp.I * t))
-                    assert not coeff.has(t), f
-                    w += coeff
+    expr = sp.expand_power_base(sp.powdenest(expr, force=True), force=True)
+    for term0 in sp.Add.make_args(sp.expand(expr)):
+        c0, tpart = term0.as_independent(t, as_Add=False)
+        e = sp.expand(sp.powsimp(sp.expand(sp.expand_trig(tpart).rewrite(sp.exp)), combine='exp'))
+        for term in sp.Add.make_args(e):
+            c, n, w = c0, 0, sp.S.Zero
+            for f in sp.Mul.make_args(term):
+                if f == t:
+                    n += 1
+                elif f.is_Pow and f.base == t:
+                    assert f.exp.is_Integer, f
+                    n += int(f.exp)
+                elif isinstance(f, sp.exp):
+                    a = sp.expand(f.args[0])
+                    if a.has(t):
+                        coeff = sp.cancel(a / (sp.I * t))
+                        assert not coeff.has(t), f
+                        w += coeff
+                    else:
+                        c *= f
+                elif f.has(t):
+                    raise ValueError("unexpected factor %s" % f)
                 else:
                     c *= f
-            elif f.has(t):
-                raise ValueError("unexpected factor %s" % f)
-            else:
-                c *= f
-        w = sp.nsimplify(sp.expand(w)) if w.is_Number else sp.expand(w)
-        key = (n, w)
-        out[key] = out.get(key, 0) + c
+            w = sp.expand(w)
+            key = (n, w)
+            out[key] = out.get(key, 0) + c
     return {kk: sp.cancel(vv) for kk, vv in out.items() if sp.cancel(vv) != 0}
 
 def _elem_int(n, w, T):

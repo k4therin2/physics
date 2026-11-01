@@ -70,3 +70,4 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   direction (C2). C3/C5 used source at -n chi => their a_lm differ by (-1)^l: harmless for C_l but ASSEMBLY must use C2's convention
   and re-derive Rayleigh rule signs: e^{+ik.n chi} = 4pi sum i^l j_l Y_lm(n) Y*_lm(k).
 - [t11] NEXT: A1 = plane-wave end-to-end check vs N1 (Th2, Th3 maps); A2 = Fourier kernels K2, K3c + C_l assembly + monochromatic.
+- [t12] Launched A1 (plane-wave vs N1), A2 (K2 + C22 + mono), A3 (K3c + C13 + mono). In flight also: V2, V3, C4, C5, W1. Blocked: W2 (results sections), cold-read referee, simplifier.

@@ -2,8 +2,8 @@ Traceback (most recent call last):
   File "/home/user/physics/cmb4/code/C4_timeintegrals/build_collinear.py", line 19, in <module>
     A, tA = integrate_0_to_T(sp.expand((u1 / W).subs(eta, etap) * src), etap, eta)
             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/user/physics/cmb4/code/C4_timeintegrals/trig_integrate.py", line 132, in integrate_0_to_T
+  File "/home/user/physics/cmb4/code/C4_timeintegrals/trig_integrate.py", line 136, in integrate_0_to_T
     terms = decompose(expr, t)
-  File "/home/user/physics/cmb4/code/C4_timeintegrals/trig_integrate.py", line 90, in decompose
+  File "/home/user/physics/cmb4/code/C4_timeintegrals/trig_integrate.py", line 94, in decompose
     raise ValueError("unexpected factor %s" % f)
-ValueError: unexpected factor 1/(etap**8*k**5*q*exp(2*sqrt(3)*I*etap*q/3) - 3*etap**8*k**4*q**2*exp(2*sqrt(3)*I*etap*q/3) + 3*etap**8*k**3*q**3*exp(2*sqrt(3)*I*etap*q/3) - etap**8*k**2*q**4*exp(2*sqrt(3)*I*etap*q/3))
+ValueError: unexpected factor 1/(8*etap**8*k**5*q*exp(2*sqrt(3)*I*etap*q/3) - 24*etap**8*k**4*q**2*exp(2*sqrt(3)*I*etap*q/3) + 24*etap**8*k**3*q**3*exp(2*sqrt(3)*I*etap*q/3) - 8*etap**8*k**2*q**4*exp(2*sqrt(3)*I*etap*q/3))

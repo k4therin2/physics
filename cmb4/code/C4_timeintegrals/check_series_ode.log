@@ -1,0 +1,7 @@
+h2: eta powers in closed form -5..-1; series coefficients (33s):
+   eta^0: 0   | Frobenius: 0  | diff: 0
+   eta^1: 0   | Frobenius: 0  | diff: 0
+   eta^2: 8/9   | Frobenius: 8/9  | diff: 0
+   eta^3: 0   | Frobenius: 0  | diff: 0
+   eta^4: -2*(3*k**2 + p**2 + q**2)/135   | Frobenius: -2*(3*k**2 + p**2 + q**2)/135  | diff: 0
+h2 regular (no negative powers, no log) and matches ODE Frobenius series: True
