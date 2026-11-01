@@ -52,3 +52,9 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
 - [t7] Launched V3 (referee of C1 2nd/3rd order, independent ADM re-derivation), C4 (closed-form Green's integrals, Kohri-Terada
   control), C5 (first-order Delta_l, C_l^(11) closed form, monochromatic, sky monopole <m1>).
   In flight: C2, C3, V2, N1, V3, C4, C5. Blocked on C2: assembly A1 (map kernels K1,K2,K3c), dilation check of tadpoles.
+- [t8] C3 DONE (report_C3.md; code C3_harmonic). Type A rule (i n.k)^s -> (-d/dx)^s j_l; helicity rules; type B (product) C_l with
+  both Wick pairings + w_grad for grad.grad; lensing control = Hu (62)-(63) EXACT; SPEC §8 prefactors 2 and 3 confirmed;
+  type C (convolution kernel) C^(22) = 1/(4pi^4(2l+1)) int k1^2 k2^2 P P dmu sum_m |K~_lm|^2 in K-hat = z frame; (13) q-reduction.
+  Monochromatic: C11 = 4 pi sigma^2 |Delta_l(k0)|^2; type C -> single mu integral; delicate mu->-1 (K->0) for 1/K^2 kernels.
+  NOTE: C3 used ray x = -n chi (source at -n chi), SPEC §6 implies +... sign: a_lm -> (-1)^l; harmless if consistent. ASSEMBLY MUST
+  USE ONE CONVENTION: ray x(eta) = x_o - n (eta_o - eta) (SPEC) i.e. source at -n chi. OK consistent with C3.
