@@ -25,3 +25,4 @@
   l=1: 163 terms, singular pieces cancelled (2 checked), finite-part check 6.5e-15, max rel err closed vs quad 2.8e-19  [1.8s]
   l=2: 228 terms, singular pieces cancelled (3 checked), finite-part check 1.9e-14, max rel err closed vs quad 4.9e-19  [2.7s]
   l=3: 307 terms, singular pieces cancelled (4 checked), finite-part check 5.9e-14, max rel err closed vs quad 4.9e-19  [3.9s]
+  l=4: 400 terms, singular pieces cancelled (5 checked), finite-part check 2.0e-13, max rel err closed vs quad 4.9e-19  [7.3s]

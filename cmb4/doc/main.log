@@ -537,17 +537,13 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 31.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) (./main.toc [1
 
-LaTeX Warning: Reference `app:ledger' on page 1 undefined on input line 31.
-
-(./main.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- (./sec_setup.tex [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+ (./sec_setup.tex [2]
 Overfull \hbox (42.90706pt too wide) detected at line 39
 [][][]\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 x\OT1/cmr/m/
 n/10.95 ) = []  [] \OML/cmm/m/it/10.95 e[]f[];  \OMS/cmsy/m/n/10.95 h\OML/cmm/m
@@ -563,166 +559,17 @@ m/it/10.95 k\OT1/cmr/m/n/10.95 ) = [] [] \OML/cmm/m/it/10.95 k[]\OT1/cmr/m/n/10
 /n/10.95 )\OML/cmm/m/it/10.95 :
  []
 
-
-LaTeX Warning: Citation `BMR1' on page 2 undefined on input line 76.
-
-
-LaTeX Warning: Citation `BMR2' on page 2 undefined on input line 76.
-
-
-LaTeX Warning: Citation `MZ' on page 2 undefined on input line 76.
-
-[2]
-
-LaTeX Warning: Citation `Tomita' on page 3 undefined on input line 109.
-
-
-LaTeX Warning: Citation `DAmico' on page 3 undefined on input line 111.
-
-
-LaTeX Warning: Citation `Gao' on page 3 undefined on input line 111.
-
-
-LaTeX Warning: Citation `SONG' on page 3 undefined on input line 112.
-
-
-LaTeX Warning: Citation `FKP' on page 3 undefined on input line 112.
-
-
-LaTeX Warning: Citation `FidlerBmode' on page 3 undefined on input line 112.
-
-
-LaTeX Warning: Citation `Boubekeur' on page 3 undefined on input line 113.
-
-
-LaTeX Warning: Citation `HuangVernizzi' on page 3 undefined on input line 113.
-
-
-LaTeX Warning: Citation `BMR1' on page 3 undefined on input line 113.
-
-
-LaTeX Warning: Citation `BMR2' on page 3 undefined on input line 113.
-
-
-LaTeX Warning: Citation `PUB' on page 3 undefined on input line 113.
-
-
-LaTeX Warning: Citation `MZ' on page 3 undefined on input line 114.
-
-
-LaTeX Warning: Citation `CPV' on page 3 undefined on input line 114.
-
-
-LaTeX Warning: Citation `Hu2000' on page 3 undefined on input line 115.
-
-
-LaTeX Warning: Citation `LewisChallinor' on page 3 undefined on input line 115.
-
-
-
-LaTeX Warning: Citation `Lu' on page 3 undefined on input line 116.
-
-
-LaTeX Warning: Citation `KT' on page 3 undefined on input line 117.
-
-
-LaTeX Warning: Citation `Baumann' on page 3 undefined on input line 117.
-
-
-LaTeX Warning: Citation `Espinosa' on page 3 undefined on input line 117.
-
-
-LaTeX Warning: Citation `MalikWands' on page 3 undefined on input line 117.
-
-) (./sec_observable.tex
-
-LaTeX Warning: Citation `Ellis71' on page 3 undefined on input line 28.
-
-[3]
-
-LaTeX Warning: Reference `app:ledger' on page 4 undefined on input line 62.
-
-[4]
-
-LaTeX Warning: Reference `app:ledger' on page 5 undefined on input line 119.
-
-[5]
-
-LaTeX Warning: Reference `sec:map2' on page 6 undefined on input line 166.
-
-
-LaTeX Warning: Reference `sec:map3' on page 6 undefined on input line 166.
-
-
-LaTeX Warning: Reference `app:ledger' on page 6 undefined on input line 172.
-
-
-LaTeX Warning: Citation `SW67' on page 6 undefined on input line 196.
-
-
-LaTeX Warning: Reference `app:ledger' on page 6 undefined on input line 202.
-
-) (./sec_primordial.tex [6]
-
-LaTeX Warning: Citation `SalopekBond' on page 7 undefined on input line 25.
-
-
-LaTeX Warning: Citation `Maldacena' on page 7 undefined on input line 25.
-
-
-LaTeX Warning: Citation `Maldacena' on page 7 undefined on input line 37.
-
-
-LaTeX Warning: Citation `PUB' on page 7 undefined on input line 38.
-
-
-LaTeX Warning: Reference `app:ledger' on page 7 undefined on input line 54.
-
-
-LaTeX Warning: Reference `app:ledger' on page 7 undefined on input line 64.
-
-[7]
+[3]) (./sec_observable.tex [4] [5] [6]) (./sec_primordial.tex [7] [8]
 Overfull \hbox (35.0121pt too wide) detected at line 89
 [][][][]
  []
-
-
-LaTeX Warning: Reference `app:kernels' on page 8 undefined on input line 96.
-
-
-LaTeX Warning: Citation `PUB' on page 8 undefined on input line 98.
-
-
-LaTeX Warning: Citation `BMR2' on page 8 undefined on input line 99.
-
-
-LaTeX Warning: Reference `app:ledger' on page 8 undefined on input line 101.
 
 
 Overfull \hbox (73.06082pt too wide) detected at line 111
 [][][][]
  []
 
-
-LaTeX Warning: Reference `app:kernels' on page 8 undefined on input line 113.
-
-[8]
-
-LaTeX Warning: Reference `app:ledger' on page 9 undefined on input line 125.
-
-
-LaTeX Warning: Citation `Weinberg03' on page 9 undefined on input line 130.
-
-
-LaTeX Warning: Citation `MZ' on page 9 undefined on input line 130.
-
-
-LaTeX Warning: Reference `app:kernels' on page 9 undefined on input line 145.
-
-
-LaTeX Warning: Reference `sec:checks' on page 9 undefined on input line 151.
-
-
+[9]
 Overfull \hbox (70.29823pt too wide) in paragraph at lines 142--153
 []\OT1/cmr/m/n/10.95 This mat-ters be-cause the third-order map con-tains \OT1/
 cmr/m/it/10.95 mean-field \OT1/cmr/m/n/10.95 (tad-pole) terms $\OMS/cmsy/m/n/10
@@ -733,17 +580,7 @@ ML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 q\OT1/cmr/m/n/10.95
 mm/m/it/10.95 ^^Q\OT1/cmr/m/n/10.95 )$,
  []
 
-
-LaTeX Warning: Reference `app:ledger' on page 9 undefined on input line 158.
-
 ) (./sec_einstein.tex
-
-LaTeX Warning: Reference `app:ledger' on page 9 undefined on input line 6.
-
-
-LaTeX Warning: Reference `app:kernels' on page 9 undefined on input line 11.
-
-
 Overfull \hbox (69.77747pt too wide) in paragraph at lines 4--12
 \OT1/cmr/m/n/10.95 parametri-sa-tion of Sec. [][]1[][], ob-tained with a ded-i-
 cated truncated-polynomial en-gine (code \OT1/cmtt/m/n/10.95 cmb4/code/C1[]eins
@@ -751,10 +588,7 @@ tein/\OT1/cmr/m/n/10.95 ,
  []
 
 
-LaTeX Warning: Reference `app:kernels' on page 9 undefined on input line 23.
-
-
-Overfull \hbox (81.14896pt too wide) in paragraph at lines 15--31
+Overfull \hbox (77.78792pt too wide) in paragraph at lines 15--31
  [][] 
  []
 
@@ -763,11 +597,7 @@ Overfull \hbox (39.74722pt too wide) detected at line 45
 []
  []
 
-[9]
-
-LaTeX Warning: Reference `app:ledger' on page 10 undefined on input line 47.
-
-
+[10]
 Overfull \hbox (9.56331pt too wide) detected at line 78
 [][][]\OML/cmm/m/it/10.95 S[] \OMS/cmsy/m/n/10.95 ^^Q \OML/cmm/m/it/10.95 S[] \
 OMS/cmsy/m/n/10.95 ^^@ []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 S[] \OT1/cmr/m
@@ -779,35 +609,12 @@ y/m/n/10.95 ^^Q \OML/cmm/m/it/10.95 S[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/1
 0.95 S[];  S[] \OMS/cmsy/m/n/10.95 ^^Q \OML/cmm/m/it/10.95 S[];
  []
 
-[10]
-
-LaTeX Warning: Reference `app:kernels' on page 11 undefined on input line 120.
-
-
-LaTeX Warning: Reference `app:kernels' on page 11 undefined on input line 131.
-
-
-LaTeX Warning: Reference `app:kernels' on page 11 undefined on input line 131.
-
-
+[11]
 Overfull \hbox (119.61955pt too wide) detected at line 131
 []
  []
 
-[11]
-
-LaTeX Warning: Citation `KT' on page 12 undefined on input line 132.
-
-
-LaTeX Warning: Citation `Baumann' on page 12 undefined on input line 133.
-
-
-LaTeX Warning: Reference `app:ledger' on page 12 undefined on input line 133.
-
-
-LaTeX Warning: Reference `sec:monodef' on page 12 undefined on input line 137.
-
-
+[12]
 Overfull \hbox (140.89769pt too wide) detected at line 149
 []
  []
@@ -817,24 +624,10 @@ Overfull \hbox (28.94427pt too wide) detected at line 158
 []
  []
 
-
-LaTeX Warning: Reference `sec:assembly' on page 12 undefined on input line 164.
-
-
-
-LaTeX Warning: Reference `sec:checks' on page 12 undefined on input line 170.
-
-[12]
-
-LaTeX Warning: Reference `app:kernels' on page 13 undefined on input line 197.
-
-
+[13]
 Overfull \hbox (50.76117pt too wide) detected at line 209
 []
  []
-
-
-LaTeX Warning: Reference `sec:checks' on page 13 undefined on input line 224.
 
 ) (./sec_harmonic.tex
 Overfull \hbox (53.4329pt too wide) detected at line 12
@@ -848,13 +641,10 @@ mm/m/it/10.95 m[] \OT1/cmr/m/n/10.95 + []\OML/cmm/m/it/10.95 m[];  m[] \OT1/cmr
 /cmr/m/n/10.95 + \OML/cmm/m/it/10.95 L[]:
  []
 
-[13]
+[14]
 Overfull \hbox (113.22833pt too wide) detected at line 21
 [][][][]
  []
-
-
-LaTeX Warning: Reference `app:ledger' on page 14 undefined on input line 49.
 
 
 Overfull \hbox (69.7579pt too wide) in paragraph at lines 56--66
@@ -863,7 +653,7 @@ Overfull \hbox (69.7579pt too wide) in paragraph at lines 56--66
  (and the code \OT1/cmtt/m/n/10.95 cmb4/code/C3[]harmonic/\OT1/cmr/m/n/10.95 )
  []
 
-[14]
+[15]
 Overfull \hbox (13.07405pt too wide) detected at line 69
 [][][]\OMS/cmsy/m/n/10.95 G[] ^^Q []  \OT1/cmr/m/n/10.95 d
  \OML/cmm/m/it/10.95 Y[]Y[]Y[] \OT1/cmr/m/n/10.95 = (\OMS/cmsy/m/n/10.95 ^^@\OT
@@ -904,14 +694,7 @@ mr/m/n/10.95 )\OML/cmm/m/it/10.95 ;  []\OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95
 /10.95 k P \OT1/cmr/m/n/10.95 ^^A[]^^A[] = []\OML/cmm/m/it/10.95 ;
  []
 
-
-LaTeX Warning: Reference `sec:assembly' on page 15 undefined on input line 106.
-
-
-
-LaTeX Warning: Citation `Hu2000' on page 15 undefined on input line 112.
-
-[15]
+[16]
 Overfull \hbox (52.42859pt too wide) detected at line 153
 [][][]\OML/cmm/m/it/10.95 K[]\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 k[]\OML/cm
 m/m/it/10.95 ; \OT1/cmr/bx/n/10.95 k[]\OT1/cmr/m/n/10.95 ) = []  d\OML/cmm/m/it
@@ -925,7 +708,7 @@ ML/cmm/m/it/10.95 ;  \OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 `m\OMS/cmsy/m/n/1
  \OML/cmm/m/it/10.95 Y[]\OMS/cmsy/m/n/10.95 Q \OML/cmm/m/it/10.95 Y[];
  []
 
-[16]
+[17]
 Overfull \hbox (3.9768pt too wide) in paragraph at lines 192--195
 []\OT1/cmr/m/n/10.95 genuine third-order ker-nels: $^^B[](\OT1/cmr/bx/n/10.95 k
 \OT1/cmr/m/n/10.95 ; []) = [[] []\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/
@@ -936,50 +719,12 @@ OT1/cmr/m/n/10.95 ([] \OMS/cmsy/m/n/10.95 ^^A []\OT1/cmr/m/n/10.95 )]\OML/cmm/m
 95 =
  []
 
-! Double superscript.
-<recently read> \mathsup 
-                         
-l.209 \end{align}
-                 
-I treat `x^1^2' essentially like `x^1{}^2'.
-
-! Double superscript.
-<recently read> \mathsup 
-                         
-l.209 \end{align}
-                 
-I treat `x^1^2' essentially like `x^1{}^2'.
-
 
 Overfull \hbox (154.14662pt too wide) detected at line 209
 []
  []
 
-
-LaTeX Warning: Reference `sec:map2' on page 17 undefined on input line 212.
-
-
-LaTeX Warning: Reference `sec:map3' on page 17 undefined on input line 212.
-
-
-LaTeX Warning: Reference `sec:assembly' on page 17 undefined on input line 212.
-
-
-[17]
-
-LaTeX Warning: Citation `Hu2000' on page 18 undefined on input line 223.
-
-
-LaTeX Warning: Citation `Hu2000' on page 18 undefined on input line 223.
-
-
-LaTeX Warning: Citation `LewisChallinor' on page 18 undefined on input line 223
-.
-
-
-LaTeX Warning: Reference `app:ledger' on page 18 undefined on input line 225.
-
-
+[18]
 Overfull \hbox (86.43578pt too wide) detected at line 235
 [][][]\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 k\OT1/cmr/m/
 n/10.95 ) = [] \OML/cmm/m/it/10.95 ^^N\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 k
@@ -997,29 +742,11 @@ m/m/it/10.95 k[][]\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 i[]\OML/cmm/m/it/10.9
  []
 
 
-LaTeX Warning: Reference `eq:mono' on page 18 undefined on input line 236.
-
-
 Overfull \hbox (266.2684pt too wide) detected at line 250
 []
  []
 
-
-LaTeX Warning: Reference `sec:mono' on page 18 undefined on input line 253.
-
-) [18] (./sec_map2.tex) (./sec_map3.tex
-
-LaTeX Warning: Reference `sec:thirteen' on page 19 undefined on input line 6.
-
-) (./sec_assembly.tex
-
-LaTeX Warning: Reference `sec:unresolved' on page 19 undefined on input line 6.
-
-
-) (./sec_checks.tex
-
-LaTeX Warning: Reference `app:ledger' on page 19 undefined on input line 7.
-
+) [19] (./sec_map2.tex) (./sec_map3.tex) (./sec_assembly.tex) (./sec_checks.tex
 
 Overfull \hbox (8.11002pt too wide) in paragraph at lines 7--7
 \OT1/cmr/m/n/10.95 pla-nar solver (agent N1, ref-er-ence $\OML/cmm/m/it/10.95 a
@@ -1027,14 +754,7 @@ Overfull \hbox (8.11002pt too wide) in paragraph at lines 7--7
 e second/third-
  []
 
-) (./sec_mono.tex
-
-LaTeX Warning: Reference `sec:monodef' on page 19 undefined on input line 6.
-
-
-LaTeX Warning: Reference `sec:monodef' on page 19 undefined on input line 6.
-
-) (./sec_unresolved.tex [19]) (./app_kernels.tex
+) (./sec_mono.tex) (./sec_unresolved.tex [20]) (./app_kernels.tex
 Overfull \hbox (120.54427pt too wide) in paragraph at lines 3--10
 \OT1/cmr/m/n/10.95 All ex-pres-sions be-low are ex-ported di-rectly from the en
 -gine out-put of agent C1 (\OT1/cmtt/m/n/10.95 cmb4/code/C1[]einstein/second[]o
@@ -1046,7 +766,7 @@ Overfull \hbox (136.44623pt too wide) in paragraph at lines 31--31
 \OT1/cmr/m/n/10.95 + []|$ 
  []
 
-[20] [21]
+[21] [22]
 Overfull \hbox (50.0403pt too wide) in paragraph at lines 92--92
 []$[]|$ 
  []
@@ -1056,7 +776,7 @@ Overfull \hbox (222.15248pt too wide) in paragraph at lines 116--116
 []$\OMS/cmsy/m/n/10.95 ^^@[]|$ 
  []
 
-[22]
+[23]
 Overfull \hbox (325.94978pt too wide) in paragraph at lines 136--136
 []$[]|$ 
  []
@@ -1089,43 +809,30 @@ rd[]order.tex\OT1/cmr/m/n/10.95 ; the position-space sources $\OML/cmm/m/it/10.
 1/cmtt/m/n/10.95 position[]sources.tex\OT1/cmr/m/n/10.95 ;
  []
 
-[23]
+[24]
 Overfull \hbox (13.11154pt too wide) in paragraph at lines 3--6
 \OT1/cmr/m/n/10.95 (sympy); num-bers are max-i-mal rel-a-tive or ab-so-lute de-
 vi-a-tions. Code lo-ca-tions: V1 \OT1/cmtt/m/n/10.95 code/V1[]referee/\OT1/cmr/
 m/n/10.95 ,
  []
 
-[24] [25]
-
-LaTeX Warning: Reference `sec:checks' on page 26 undefined on input line 64.
-
-) (./refs.tex [26] [27]) [28] (./main.aux)
+[25] [26]) (./refs.tex [27] [28]) [29] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 20F54E8D59811C678BFCDBE2ADA7EEB3;5387
-(rerunfilecheck)             After:  1F085976D6B768A716D511F101F19F16;8664.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 1F085976D6B768A716D511F101F19F16;8664.
  ) 
 Here is how much of TeX's memory you used:
- 12020 strings out of 476182
- 178524 string characters out of 5795595
+ 12037 strings out of 476182
+ 178751 string characters out of 5795595
  1960975 words of memory out of 5000000
- 33597 multiletter control sequences out of 15000+600000
+ 33613 multiletter control sequences out of 15000+600000
  571094 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,15n,85p,879b,584s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1154,10 +861,10 @@ y7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (28 pages, 506572 bytes).
+Output written on main.pdf (29 pages, 514076 bytes).
 PDF statistics:
- 721 PDF objects out of 1000 (max. 8388607)
- 629 compressed objects within 7 object streams
- 226 named destinations out of 1000 (max. 500000)
- 185 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 895 PDF objects out of 1000 (max. 8388607)
+ 800 compressed objects within 8 object streams
+ 227 named destinations out of 1000 (max. 500000)
+ 313 words of extra memory for PDF output out of 10000 (max. 10000000)
 
