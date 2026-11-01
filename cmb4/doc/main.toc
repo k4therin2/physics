@@ -1,0 +1,80 @@
+\contentsline {section}{\numberline {1}Setup and conventions}{1}{section.1}%
+\contentsline {paragraph}{Model.}{1}{section*.2}%
+\contentsline {paragraph}{Background and units.}{2}{section*.3}%
+\contentsline {paragraph}{Fourier conventions and statistics.}{2}{section*.4}%
+\contentsline {paragraph}{Perturbative expansion.}{2}{section*.5}%
+\contentsline {paragraph}{Poisson gauge.}{2}{section*.6}%
+\contentsline {paragraph}{Directions, rays and times.}{3}{section*.7}%
+\contentsline {paragraph}{Relation to existing work.}{3}{section*.8}%
+\contentsline {section}{\numberline {2}The exact observable}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Conformal frame}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Two lemmas}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}The theorem}{4}{subsection.2.3}%
+\contentsline {paragraph}{Consequences.}{5}{section*.9}%
+\contentsline {subsection}{\numberline {2.4}Observer, clock, emission event and direction map}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Linear order: recovery of the Sachs--Wolfe formula}{6}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Primordial variable and initial data}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The non-linear primordial variable}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Regularity and initial data at finite $\eta _i$}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The conditions at second and third order}{8}{subsection.3.3}%
+\contentsline {paragraph}{Second order.}{8}{section*.10}%
+\contentsline {paragraph}{Third order.}{8}{section*.11}%
+\contentsline {subsection}{\numberline {3.4}The exact dilation family and the zero-mode (tadpole) ambiguity}{9}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Perturbative solution of the Einstein--fluid equations}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}First order}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Second order: operator structure}{10}{subsection.4.2}%
+\contentsline {paragraph}{Vector sector (relativistic Kelvin theorem).}{11}{section*.12}%
+\contentsline {paragraph}{Kernels.}{11}{section*.13}%
+\contentsline {paragraph}{Green's functions and the regular solution.}{12}{section*.14}%
+\contentsline {paragraph}{Checks at second order.}{12}{section*.15}%
+\contentsline {subsection}{\numberline {4.3}Third order: contracted kernels}{13}{subsection.4.3}%
+\contentsline {paragraph}{Summary of what is settled.}{13}{section*.16}%
+\contentsline {section}{\numberline {5}Normalisation, loop structure and harmonic machinery}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Normalisation bookkeeping (exact algebra)}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Loop structure}{14}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Direction convention for the harmonic rules}{15}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Type A: linear line-of-sight maps}{15}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Type B: products of maps at the same point}{15}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Type C: convolution kernels}{16}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}The $(13)$ term}{17}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Control case: lensed $C_\ell $}{18}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Monochromatic reduction: definitions}{18}{subsection.5.9}%
+\contentsline {section}{\numberline {6}The second-order map $\Theta ^{(2)}$}{19}{section.6}%
+\contentsline {section}{\numberline {7}The third-order map $\Theta ^{(3)}$ in contracted form}{19}{section.7}%
+\contentsline {section}{\numberline {8}Assembly of $C_\ell $}{19}{section.8}%
+\contentsline {section}{\numberline {9}Checks of the assembled observable}{19}{section.9}%
+\contentsline {section}{\numberline {10}Monochromatic primordial spectrum}{19}{section.10}%
+\contentsline {section}{\numberline {11}Unresolved steps}{20}{section.11}%
+\contentsline {section}{\numberline {A}Explicit kernels (machine generated)}{20}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Second-order kernels}{20}{subsection.A.1}%
+\contentsline {paragraph}{$K_Q$ (traceless scalar, $Q_2=\Phi _2-\Psi _2$)}{20}{section*.17}%
+\contentsline {paragraph}{$K_{S_{00}}$ (source of the 00 constraint)}{20}{section*.18}%
+\contentsline {paragraph}{$K_{S_{0z}}$ (longitudinal $0i$ source, $S_0^L$)}{20}{section*.19}%
+\contentsline {paragraph}{$K_{S_\Phi }$ (source of $\mathcal L_\Phi \Phi _2=S_\Phi $)}{21}{section*.20}%
+\contentsline {paragraph}{$K_\omega $ (vector metric, $\omega _{2,i}=\int P_{ij}q_jK_\omega \zeta \zeta $)}{21}{section*.21}%
+\contentsline {paragraph}{$K_{v^T}$ (transverse velocity, $v^T_{2,i}=\int P_{ij}q_jK_{v^T}\zeta \zeta $)}{21}{section*.22}%
+\contentsline {paragraph}{$K_h$ (tensor source, $h_{2,ij}=\Lambda _{ij,kl}q_kq_l\int _0^\eta G_hK_h$)}{21}{section*.23}%
+\contentsline {paragraph}{$K^0_{\Phi _2}$ (initial amplitude of $\Phi _2$, Eq.~\eqref {eq:KPhi20})}{21}{section*.24}%
+\contentsline {paragraph}{$K_Q(\eta \rightarrow 0)$}{21}{section*.25}%
+\contentsline {paragraph}{kernel of the local quadratic part $-\genfrac {}{}{}\displaystyle 14\delta _1^2-2\Phi _1^2$ of $\zeta ^{(2)}$, Eq.~\eqref {eq:zeta2} ($\rightarrow -\genfrac {}{}{}\displaystyle 43$ as $\eta \rightarrow 0$)}{21}{section*.26}%
+\contentsline {paragraph}{Algebraic second-order scalars}{21}{section*.27}%
+\contentsline {subsection}{\numberline {A.2}Homogeneous solutions and Green's functions}{22}{subsection.A.2}%
+\contentsline {paragraph}{$u_1$}{22}{section*.28}%
+\contentsline {paragraph}{$u_2$}{22}{section*.29}%
+\contentsline {paragraph}{$\hat g=3u_1$}{22}{section*.30}%
+\contentsline {paragraph}{$G_\Phi (k;\eta ,\eta ')$}{22}{section*.31}%
+\contentsline {paragraph}{$G_h(k;\eta ,\eta ')$}{22}{section*.32}%
+\contentsline {paragraph}{$G_\omega (\eta ,\eta ')$ (for the ODE form of the vector equation)}{22}{section*.33}%
+\contentsline {subsection}{\numberline {A.3}Third-order initial amplitude and intermediate limits}{22}{subsection.A.3}%
+\contentsline {paragraph}{$C_3(k;q,\mu )$, Eq.~\eqref {eq:C3}}{22}{section*.34}%
+\contentsline {paragraph}{$C_3$ in invariant form $(k,q,p)$}{22}{section*.35}%
+\contentsline {paragraph}{$Q_{3c}(\eta \rightarrow 0)$}{23}{section*.36}%
+\contentsline {paragraph}{$\lim _{\eta \rightarrow 0}\eta ^2K_{3c,S_{00}}$}{23}{section*.37}%
+\contentsline {subsection}{\numberline {A.4}Tadpole (mean-field) functions}{23}{subsection.A.4}%
+\contentsline {paragraph}{$\mathrm {tad}_{Q_2}$ [$-\genfrac {}{}{}\displaystyle {16}9+\genfrac {}{}{}\displaystyle {88}{405}q^2\eta ^2+\ldots $]}{23}{section*.38}%
+\contentsline {paragraph}{$\mathrm {tad}_{S_{00}}$ [$\genfrac {}{}{}\displaystyle {32}{3\eta ^2}-\genfrac {}{}{}\displaystyle {272}{45}q^2+\ldots $]}{23}{section*.39}%
+\contentsline {paragraph}{$\mathrm {tad}_{S_\Phi }$ [$-\genfrac {}{}{}\displaystyle {56}{81}q^2+\ldots $]}{23}{section*.40}%
+\contentsline {paragraph}{$\mathrm {tad}_{\Phi _2}$ [$-\genfrac {}{}{}\displaystyle 89-\genfrac {}{}{}\displaystyle {28}{405}q^2\eta ^2+\ldots $]}{23}{section*.41}%
+\contentsline {paragraph}{$\mathrm {tad}_{\delta _2}$ [$\genfrac {}{}{}\displaystyle {16}9-\genfrac {}{}{}\displaystyle {472}{405}q^2\eta ^2+\ldots $]}{23}{section*.42}%
+\contentsline {subsection}{\numberline {A.5}Not reproduced here}{24}{subsection.A.5}%
+\contentsline {section}{\numberline {B}Verification ledger}{24}{appendix.B}%

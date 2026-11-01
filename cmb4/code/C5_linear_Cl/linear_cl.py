@@ -340,7 +340,7 @@ def I_l_quad_mp(l, kk, es, eo, dps=30):
 def _mp_j2_over_x(xx):
     if xx == 0:
         return mp.mpf(0)
-    return ((3 / xx**3 - 1 / xx) * mp.sin(xx) - 3 * mp.cos(xx) / xx**2) / xx
+    return _mp_jl(2, xx) / xx
 
 
 @functools.lru_cache(maxsize=None)
@@ -353,12 +353,20 @@ def I_l_closed_mp(l, kk, es, eo, dps=30):
         return _I_l_closed_mp_fn(l)(mp.mpf(kk) * mp.mpf(es), mp.mpf(kk) * mp.mpf(eo))
 
 
-def I_l_quad_np(l, kk, es, eo, nodes=None):
-    """Vectorised (over l array) Gauss-Legendre evaluation of I_l(k); robust default numerical route."""
+def composite_gl(a, b, kk, per_panel=48):
+    """Composite Gauss-Legendre nodes/weights on [a, b] with ~panel width 4/k (>= 48 nodes per period of e^{iks})."""
+    npan = int(2 + kk * (b - a) / 4)
+    t, w = leggauss(per_panel)
+    edges = np.linspace(a, b, npan + 1)
+    e = (0.5 * (edges[1:] - edges[:-1])[:, None] * t + 0.5 * (edges[1:] + edges[:-1])[:, None]).ravel()
+    w = (0.5 * (edges[1:] - edges[:-1])[:, None] * w).ravel()
+    return e, w
+
+
+def I_l_quad_np(l, kk, es, eo):
+    """Vectorised (over l array) composite Gauss-Legendre evaluation of I_l(k); robust default numerical route."""
     l = np.atleast_1d(l)
-    n = nodes or int(40 + 6 * kk * (eo - es))
-    t, w = leggauss(n)
-    e = 0.5 * (eo - es) * t + 0.5 * (eo + es); w = 0.5 * (eo - es) * w
+    e, w = composite_gl(es, eo, kk)
     xx = kk * e / np.sqrt(3)
     src = kk * (4 / np.sqrt(3)) * spherical_jn(2, xx) / xx
     return np.array([np.sum(w * src * spherical_jn(ll, kk * (eo - e))) for ll in l])
@@ -436,7 +444,7 @@ def var_m1_mono(sig2, kk0, es, eo):
 # ----------------------------------------------------------------------------------------------------------------
 # 5. real-space check of C_l^(11) (monochromatic), including observer terms and ISW
 # ----------------------------------------------------------------------------------------------------------------
-def kernel_K(kk, khat, nvec, es, eo, neta=160):
+def kernel_K(kk, khat, nvec, es, eo):
     """First-order kernel K(k, n) (Theta1 = int d^3k/(2pi)^3 zeta_k K): emission + observer + ISW, x_e = +n chi_*."""
     mu = np.atleast_2d(khat) @ nvec                                   # vectorised over rows of khat
     xs_ = kk * es / np.sqrt(3); xo = kk * eo / np.sqrt(3); c = kk * (eo - es)
@@ -444,7 +452,7 @@ def kernel_K(kk, khat, nvec, es, eo, neta=160):
     kTV = lambda xx: np.sqrt(3) * (np.sin(xx) - 2 * spherical_jn(1, xx))
     Ke = (A(xs_) - 1j * kTV(xs_) * mu) * np.exp(1j * c * mu)          # [dT + Psi - n.v]_e,  n.v = i k mu T_V zeta
     Ko = A(xo) - 1j * kTV(xo) * mu                                     # [dT + Psi - n.v]_o
-    t, w = leggauss(neta); e = 0.5 * (eo - es) * t + 0.5 * (eo + es); w = 0.5 * (eo - es) * w
+    e, w = composite_gl(es, eo, kk)
     xx = kk * e / np.sqrt(3); src = kk * (4 / np.sqrt(3)) * spherical_jn(2, xx) / xx
     Ki = np.sum(w[:, None] * src[:, None] * np.exp(1j * kk * np.outer(eo - e, mu)), 0)
     return Ke - Ko + Ki
@@ -477,6 +485,16 @@ def sw_limit_sym(l):
     """k eta_* -> 0 at fixed k eta_o:  Delta_l -> -(1/3) j_l(k eta_o) + I_l(k; eta_* = 0)  (l >= 2)."""
     z = sp.Symbol('z', positive=True)
     return -sp.Rational(1, 3) * sp.expand_func(sp.jn(l, z)).subs(z, S) + I_l_closed_eta0(l)
+
+
+def small_k_series(l, order):
+    """Series of Delta_l(k) in k (symbolic eta_*, eta_o), ISW integrated term by term."""
+    em = G_l_sym(l, eta_s); obs = A_SW.subs(x, X(k, eta_o)) if l == 0 else (-kT_V.subs(x, X(k, eta_o)) / 3 if l == 1 else 0)
+    integrand = 2 * sp.diff(T_Phi.subs(x, X(k, eta)), eta) * sp.expand_func(sp.jn(l, k * (eta_o - eta)))
+    ser = sp.series(integrand, k, 0, order).removeO()
+    I = sp.integrate(sp.expand(ser), (eta, eta_s, eta_o))
+    tot = sp.series(em - obs, k, 0, order).removeO() + I
+    return sp.factor(sp.expand(tot))
 
 
 def plateau_check(log=print):
@@ -517,9 +535,9 @@ def run_tests(lmax_closed=6):
         t1 = time.time(); e = I_l_closed(l); nterms = len(sp.Add.make_args(e))
         # finite part sanity: F_u at tiny u (high precision) must equal the finite part
         Fs, Fu = isw_antiderivatives(l); Fu0, sing = finite_part(Fu, u)
-        with mp.workdps(60):
+        with mp.workdps(200):
             fU = sp.lambdify((u, S), Fu, 'mpmath'); f0 = sp.lambdify((S,), Fu0, 'mpmath')
-            dfp = abs(fU(mp.mpf('1e-20'), mp.mpf('3.1')) - f0(mp.mpf('3.1')))
+            dfp = abs(fU(mp.mpf('1e-14'), mp.mpf('3.1')) - f0(mp.mpf('3.1')))
         for (kk, es, eo) in cases:
             a = I_l_closed_mp(l, kk, es, eo); b = I_l_quad_mp(l, kk, es, eo)
             c = I_l_quad_np(l, kk, es, eo)[0]
@@ -539,18 +557,25 @@ def run_tests(lmax_closed=6):
     log("[5] limits")
     # k->0 of Delta_l (dilation): M(k) = Delta_0 -> 0 as O(k^2); Delta_1 -> O(k^3)
     for kk in (1e-2, 1e-3):
-        log("  k=%.0e: M(k)=Delta_0 = %.3e (expect O(k^2)),  Delta_1 = %.3e (expect O(k^3)),  Delta_2 = %.3e" %
+        log("  k=%.0e: M(k)=Delta_0 = %.3e,  Delta_1 = %.3e,  Delta_2 = %.3e" %
             (kk, M_num(kk, 0.5, 2.0), Delta_l_num(1, kk, 0.5, 2.0)[0], Delta_l_num(2, kk, 0.5, 2.0)[0]))
     r0 = M_num(1e-2, 0.5, 2.0) / M_num(1e-3, 0.5, 2.0); r1 = Delta_l_num(1, 1e-2, 0.5, 2.0)[0] / Delta_l_num(1, 1e-3, 0.5, 2.0)[0]
-    log("  scaling ratios k=1e-2/1e-3:  M: %.3f (100 = k^2),  Delta_1: %.2f (1000 = k^3; the O(k) dipole of a gradient mode cancels)" % (r0, r1))
-    ok5 = abs(r0 - 100) < 1 and abs(r1 - 1000) < 20
+    log("  scaling ratios k=1e-2/1e-3:  M: %.1f (10^4 = k^4),  Delta_1: %.2f (10^3 = k^3)" % (r0, r1))
+    ok5 = abs(r0 - 1e4) < 2e3 and abs(r1 - 1000) < 20
+    ser0 = small_k_series(0, 6); ser1 = small_k_series(1, 5)
+    log("  symbolic small-k:  M(k) = Delta_0 = %s" % ser0)
+    log("                     Delta_1 = %s" % ser1)
+    log("  (k^0, k^2 of M and k^1 of Delta_1 cancel between emission, observer and ISW: constant, gradient and")
+    log("   quadratic (= shear-free separate-universe curvature) zeta modes are invisible; M = O(k^4), Delta_1 = O(k^3).)")
+    e0, e1 = sp.expand(ser0), sp.expand(ser1)
+    ok5 &= (e0.coeff(k, 0) == 0 and e0.coeff(k, 2) == 0 and e0.coeff(k, 4) != 0 and e1.coeff(k, 1) == 0 and e1.coeff(k, 3) != 0)
     ok5 &= plateau_check(log)
     # k -> infinity: Delta_l ~ -cos x_* j_l - sqrt3 sin x_* j_l'  (ISW O(1/k))
     for kk in (200.0, 2000.0):
         es, eo = 0.5, 2.0; xs_ = kk * es / np.sqrt(3); c = kk * (eo - es)
         full = Delta_l_num(2, kk, es, eo)[0]
         asym = -np.cos(xs_) * spherical_jn(2, c) - np.sqrt(3) * np.sin(xs_) * spherical_jn(2, c, derivative=True)
-        log("  k=%.0f: Delta_2 = %.6e, asymptotic = %.6e, diff*k^2 = %.3f" % (kk, full, asym, (full - asym) * kk**2))
+        log("  k=%.0f: Delta_2 = %.6e, asymptotic = %.6e, (diff)*k*eta_* = %.3f  (bounded: correction O(1/(k eta_*)))" % (kk, full, asym, (full - asym) * kk * es))
     log("  -> %s" % ok5)
     log("[6] example numbers (sigma^2 = 1, eta_* = 0.5, eta_o = 2, k0 = 4): C_l^(11) = 4 pi Delta_l(k0)^2")
     ls = np.arange(0, 9); D = Delta_l_num(ls, 4.0, 0.5, 2.0)
