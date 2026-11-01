@@ -1,0 +1,260 @@
+\section{Normalisation, loop structure and harmonic machinery}
+\label{sec:harmonic}
+
+\subsection{Normalisation bookkeeping (exact algebra)}
+\label{sec:normalisation}
+Define $\Lambda\equiv-S$ and $M\equiv e^{\Lambda}$, expanded as in \eqref{eq:expansion}:
+\begin{equation}
+\Lambda=\eps L_1+\tfrac{\eps^2}2L_2+\tfrac{\eps^3}6L_3,\qquad
+M=1+\eps m_1+\tfrac{\eps^2}2m_2+\tfrac{\eps^3}6m_3,\qquad
+m_1=L_1,\quad m_2=L_2+L_1^2,\quad m_3=L_3+3L_1L_2+L_1^3 .
+\label{eq:mdef}
+\end{equation}
+By Corollary~\ref{cor:theta}, $1+\Theta=M/\bar M$ with $\bar M\equiv\sky M$.  Writing $\sky{m}$ for the sky
+monopole of a map ($\sky m=m_{00}/\sqrt{4\pi}$, a random variable correlated with the map) and expanding
+$1/\bar M$, one finds for $\ell\ge1$
+\begin{equation}
+\boxed{\;\Theta^{(1)}_{\ell m}=m_{1,\ell m},\qquad
+\Theta^{(2)}_{\ell m}=m_{2,\ell m}-2\sky{m_1}m_{1,\ell m},\qquad
+\Theta^{(3)}_{\ell m}=m_{3,\ell m}-3\sky{m_1}m_{2,\ell m}-3\sky{m_2}m_{1,\ell m}+6\sky{m_1}^2m_{1,\ell m}\;}
+\label{eq:theta_orders}
+\end{equation}
+(the monopole $\ell=0$ of $\Theta$ vanishes identically).  The measured dipole is removed afterwards, i.e.\
+\eqref{eq:cl_target} is used for $\ell\ge2$ only; by Sec.~\ref{sec:observable}(iii) this is frame independent.
+All observer terms (the monopole $-[\delta_T+\Psi]_o$ and the dipole $\nhat\cdot v_o$ of $L_1$, the clock shift
+$\delta\eta_o$, the observer position) are retained inside $L_1,L_2,L_3$ and are removed only through
+\eqref{eq:theta_orders}; products such as $\sky{m_1}m_1$ and $L_1^2$ keep their imprint at $\ell\ge2$.
+
+\subsection{Loop structure}
+\label{sec:loops}
+Write each order as a direction-space kernel acting on the Gaussian field,
+\begin{equation}
+\Theta^{(r)}(\nhat)=\int\prod_{i=1}^r\frac{\dd^3k_i}{(2\pi)^3}\,\zeta_{\vk_1}\cdots\zeta_{\vk_r}\,K_r(\vk_1,\ldots,\vk_r;\nhat),
+\qquad K_{r,\ell m}(\vk_1,\ldots)\equiv\int\!\dd\Omega_{\nhat}Y^*_{\ell m}(\nhat)K_r ,
+\label{eq:Kr}
+\end{equation}
+with $K_r$ symmetric in its momenta (symmetrise if necessary).  Wick's theorem for $\ell\ge1$ then gives
+\begin{align}
+C^{(11)}_\ell&=\frac1{2\ell+1}\sum_m\int\!\frac{\dd^3k}{(2\pi)^3}P(k)\,\big|K_{1,\ell m}(\vk)\big|^2,\nonumber\\
+C^{(22)}_\ell&=\frac{2}{2\ell+1}\sum_m\int\!\frac{\dd^3k_1\,\dd^3k_2}{(2\pi)^6}P(k_1)P(k_2)\,\big|K_{2,\ell m}(\vk_1,\vk_2)\big|^2,\nonumber\\
+C^{(13)}_\ell&=\frac{3}{2\ell+1}\sum_m\int\!\frac{\dd^3k}{(2\pi)^3}P(k)\,K_{1,\ell m}(\vk)\Big[\int\!\frac{\dd^3q}{(2\pi)^3}P(q)\,K_{3,\ell m}(\vk,\vq,-\vq)\Big]^* .
+\label{eq:loops}
+\end{align}
+The factor 2 in $C^{(22)}$ counts the two connected pairings of a symmetric $K_2$; the third pairing
+$\langle\zeta_{\vk_1}\zeta_{\vk_2}\rangle$ inside $\Theta^{(2)}$ has $\vk_1+\vk_2=0$ and feeds only $\ell=0$.
+The factor 3 in $C^{(13)}$ counts the three choices of which $\zeta$ inside $\Theta^{(3)}$ pairs with
+$\Theta^{(1)}$; the remaining pair is contracted at $\vq_j=-\vq_k$, so the ``tadpole'' configuration
+$K_3(\vk,\vq,-\vq)$ \emph{is} the entire $(13)$ term and must be kept (this is where the mean-field terms of
+Sec.~\ref{sec:third} enter).  Both prefactors have been re-derived independently and confirmed on the lensing
+control case below (App.~\ref{app:ledger}, C3-6).  Equation~\eqref{eq:loops} uses $\langle a^{(1)}a^{(3)*}\rangle$;
+only $\Re C^{(13)}_\ell$ enters \eqref{eq:cl_target}.  With the contracted fields of \eqref{eq:contracted}, $3\int P(q)K_3(\vk,\vq,-\vq)$ is the
+$q$-contracted map $\Theta^{(3)}_c(\vk;\nhat)$ built from $X_{3c}$ and the contraction rules
+\eqref{eq:contraction_rules}.
+
+\subsection{Direction convention for the harmonic rules}
+\label{sec:dirconv}
+A field on the background ray \eqref{eq:bgray} (observer at $\bar\vx_o=0$) reads
+$f(\eta,\nhat\chi)=\int\frac{\dd^3k}{(2\pi)^3}f_{\vk}\,e^{+i\vk\cdot\nhat\chi}=\int\frac{\dd^3k}{(2\pi)^3}f_{\vk}\,e^{-i\vk\cdot\ehat\chi}$ with
+$\ehat=-\nhat$ the propagation direction.  The rules below (and the code \code{cmb4/code/C3\_harmonic/})
+are written for maps expressed through $\ehat$, i.e.\ with the exponent $e^{-i\vk\cdot\ehat\chi}$.  Since
+$Y_{\ell m}(-\nhat)=(-1)^\ell Y_{\ell m}(\nhat)$, the multipoles of the same map regarded as a function of $\nhat$
+differ by $(-1)^\ell$ at \emph{every} order, so all $C^{(rs)}_\ell$ are unchanged; one convention must simply be
+used consistently for $\Theta^{(1)},\Theta^{(2)},\Theta^{(3)}$ together.  In this subsection and the next,
+$\nhat$ in the kernels of \eqref{eq:Kr} is to be read as $\ehat$.  Rayleigh:
+$e^{-i\vk\cdot\ehat\chi}=4\pi\sum_{\ell m}(-i)^\ell\jl(k\chi)Y_{\ell m}(\ehat)Y^*_{\ell m}(\khat)$.
+Gaunt integrals are
+\begin{equation}
+\mathcal G^{\ell\,\ell_1\ell_2}_{m\,m_1m_2}\equiv\int\!\dd\Omega\,Y^*_{\ell m}Y_{\ell_1m_1}Y_{\ell_2m_2}
+=(-1)^m\sqrt{\frac{(2\ell+1)(2\ell_1+1)(2\ell_2+1)}{4\pi}}\threej{\ell}{\ell_1}{\ell_2}{0}{0}{0}\threej{\ell}{\ell_1}{\ell_2}{-m}{m_1}{m_2}.
+\end{equation}
+
+\subsection{Type A: linear line-of-sight maps}
+\label{sec:typeA}
+A map of the form
+\begin{equation}
+\Theta_A(\ehat)=\int\!\frac{\dd^3k}{(2\pi)^3}\zeta_{\vk}\int_{\eta_*}^{\bar\eta_o}\!\dd\eta\sum_{s\ge0}g_s(k,\eta)\,(i\,\ehat\cdot\khat)^s\,e^{-i\vk\cdot\ehat\chi(\eta)}
+\label{eq:typeA}
+\end{equation}
+(endpoint terms are $\delta(\eta-\eta_1)$ pieces of $g_s$; the monomials are written as $(i\ehat\cdot\khat)^s$
+because $i\khat=\nabla/k$, so a real map has real $g_s$) has
+\begin{equation}
+\text{(A-$s$)}\qquad a_{\ell m}=4\pi(-i)^\ell\int\!\frac{\dd^3k}{(2\pi)^3}\zeta_{\vk}Y^*_{\ell m}(\khat)\,\Delta_\ell(k),\qquad
+\Delta_\ell(k)=\int\!\dd\eta\sum_sg_s(k,\eta)\,(-1)^s\jl^{(s)}\big(k\chi(\eta)\big),
+\label{eq:ruleA}
+\end{equation}
+i.e.\ $(i\ehat\cdot\khat)^se^{-i\vk\cdot\ehat\chi}\to(-\dd/\dd x)^s\jl(x)$, $x=k\chi$.
+Helicity pieces (vectors $\omega_i,v^T_i$ contracted with $\ehat$, tensors $h_{ij}\ehat^i\ehat^j$): in the frame
+$\khat=\hat{\mathbf z}$ with $e^{(\pm1)}=(\hat{\mathbf x}\pm i\hat{\mathbf y})/\sqrt2$, $e^{(\pm2)}_{ij}=e^{(\pm1)}_ie^{(\pm1)}_j$,
+$Q_{\pm1}=\ehat\cdot e^{(\pm1)}$, $Q_{\pm2}=e^{(\pm2)}_{ij}\ehat^i\ehat^j$,
+\begin{equation}
+\text{(A-$\lambda$)}\qquad Q_\lambda e^{-i\vk\cdot\ehat\chi}=\sum_\ell(-i)^\ell\sqrt{4\pi(2\ell+1)}\,\hat\Delta^{(\lambda)}_\ell(x)\,Y_{\ell\lambda}(\ehat),\quad
+\hat\Delta^{(\pm1)}_\ell=\mp i\sqrt{\tfrac{\ell(\ell+1)}2}\frac{\jl(x)}x,\quad
+\hat\Delta^{(\pm2)}_\ell=-\tfrac12\sqrt{\tfrac{(\ell+2)!}{(\ell-2)!}}\frac{\jl(x)}{x^2},
+\label{eq:ruleAlambda}
+\end{equation}
+and in a general frame $a^{(\lambda)}_{\ell m}=4\pi(-i)^\ell\int\frac{\dd^3k}{(2\pi)^3}\zeta^{(\lambda)}_{\vk}(-1)^\lambda[{}_{-\lambda}Y_{\ell m}(\khat)]^*\Delta^{(\lambda)}_\ell(k)$,
+$\Delta^{(\lambda)}_\ell=\int\dd\eta\,g^{(\lambda)}\hat\Delta^{(\lambda)}_\ell(k\chi)$.  Scalar, vector and tensor pieces
+of the same $\vk$ do not cross-correlate.  For two type-A maps
+\begin{equation}
+C^{AA'}_\ell=\frac2\pi\int k^2\dd k\,P(k)\,\Delta^A_\ell(k)\Delta^{A'}_\ell(k)^*,\qquad
+\sky A=\int\!\frac{\dd^3k}{(2\pi)^3}\zeta_{\vk}\Delta^A_0(k),\qquad
+\big\langle\sky A\sky{A'}\big\rangle=\frac1{2\pi^2}\int k^2\dd k\,P\,\Delta^A_0\Delta^{A'}_0=\frac{C^{AA'}_0}{4\pi},
+\label{eq:C11}
+\end{equation}
+and $\langle\sky A\,a^{A'}_{\ell m}\rangle=0$ for $\ell\ge1$ by isotropy.  The first-order map $m_1=L_1$ of
+\eqref{eq:L1} is of type A (with $s\le1$ and endpoint terms), so $C^{(11)}_\ell$ is \eqref{eq:C11} with
+$A=A'=m_1$ (closed form: Sec.~\ref{sec:assembly}).
+
+\subsection{Type B: products of maps at the same point}
+\label{sec:typeB}
+For $B=AA'$ and $B'=CD$ with $A,A',C,D$ type-A maps, $b_{\ell m}=\sum\mathcal G^{\ell\ell_1\ell_2}_{mm_1m_2}w(\ell,\ell_1,\ell_2)a_{\ell_1m_1}a'_{\ell_2m_2}$,
+where $w=1$ for a plain product and $w_\nabla=\tfrac12[\ell_1(\ell_1+1)+\ell_2(\ell_2+1)-\ell(\ell+1)]$ for
+$\nabla_{\nhat}A\cdot\nabla_{\nhat}A'$ \cite{Hu2000}.  Wick's theorem with
+$\langle a^X_{\ell m}a^Y_{\ell'm'}\rangle=(-1)^mC^{XY}_\ell\delta_{\ell\ell'}\delta_{m,-m'}$ gives, for $\ell\ge1$,
+\begin{equation}
+\text{(B1)}\qquad C^{BB'}_\ell=\sum_{\ell_1\ell_2}\frac{(2\ell_1+1)(2\ell_2+1)}{4\pi}\threej{\ell}{\ell_1}{\ell_2}{0}{0}{0}^2
+w\,w'\Big[C^{AC}_{\ell_1}C^{A'D}_{\ell_2}+C^{AD}_{\ell_1}C^{A'C}_{\ell_2}\Big],
+\label{eq:B1}
+\end{equation}
+with $\ell+\ell_1+\ell_2$ even; \emph{both} Wick pairings appear and reduce to a single term with a factor 2
+only when $A=A'$ (the third pairing $\langle AA'\rangle\langle CD\rangle$ feeds $\ell=0$ only).
+Monopole$\times$map terms, with $\sky X\cdot1$ treated as an $\ell=0$ map, give for $\ell\ge1$
+\begin{align}
+\text{(i)}&\quad \tfrac1{2\ell+1}\textstyle\sum_m\big\langle|\sky X\,y_{\ell m}|^2\big\rangle=\langle\sky X^2\rangle\,C^{YY}_\ell,\nonumber\\
+\text{(ii)}&\quad \tfrac1{2\ell+1}\textstyle\sum_m\big\langle(AA')_{\ell m}(\sky X\,y_{\ell m})^*\big\rangle=\langle\sky A\sky X\rangle C^{A'Y}_\ell+\langle\sky{A'}\sky X\rangle C^{AY}_\ell,\nonumber\\
+\text{(iii)}&\quad \tfrac1{2\ell+1}\textstyle\sum_m\big\langle(\sky X y_{\ell m})(\sky Z w_{\ell m})^*\big\rangle=\langle\sky X\sky Z\rangle C^{YW}_\ell .
+\label{eq:monopole_terms}
+\end{align}
+Hence, for the type-B part of $m_2$ and with \eqref{eq:theta_orders},
+\begin{equation}
+\tfrac14C^{(22)}_\ell=\tfrac14\Big[C^{m_2m_2}_\ell-4\,\Re\,\text{(ii)}\big|_{AA'\to m_2,\ X=Y=m_1}+4\langle\sky{m_1}^2\rangle C^{(11)}_\ell\Big].
+\label{eq:C22_B}
+\end{equation}
+\emph{Type D} (nested, unequal-time products such as $\int\dd\eta_1\int_{\eta_1}\dd\eta_2W\,(\delta_{ij}-\hat e_i\hat e_j)\partial_iX(\eta_1)\partial_jY(\eta_2)$,
+the lensing-type terms) reduce to (B1) applied to ``shell maps'' $\tilde X(\ehat)=X(\eta_1,-\ehat\chi_1)$ with
+unequal-time spectra $C^{xy}_\ell(\eta,\eta')=\frac2\pi\int k^2\dd k\,P\,x(k,\eta)y(k,\eta')^*\jl(k\chi)\jl(k\chi')$, using the exact identity
+$(\delta-\hat e\hat e)_{ij}\partial_iX\partial_jY=(\chi_1\chi_2)^{-1}\nabla_{\ehat}\tilde X\cdot\nabla_{\ehat}\tilde Y$ (weight $w_\nabla$) and
+$\ehat\cdot\partial X=-\partial_\chi\tilde X$ for radial contractions ($\jl\to-k\jl'$, weight 1).
+
+\subsection{Type C: convolution kernels}
+\label{sec:typeC}
+A genuinely second-order map
+\begin{equation}
+\Theta_C(\ehat)=\int\!\frac{\dd^3k_1\dd^3k_2}{(2\pi)^6}\zeta_{\vk_1}\zeta_{\vk_2}\int\!\dd\eta\,K(k_1,k_2,K,\eta)\,\mathcal Q(\ehat;\khat_1,\khat_2,\Khat)\,e^{-i\vK\cdot\ehat\chi},
+\qquad \vK=\vk_1+\vk_2,
+\label{eq:typeC}
+\end{equation}
+with $\mathcal Q=\sum q_{abc}(k_1,k_2,\mu)(\ehat\cdot\khat_1)^a(\ehat\cdot\khat_2)^b(\ehat\cdot\Khat)^c$ a polynomial of degree $d$
+(transverse and TT projectors contracted with $\ehat$ are of this form), has
+\begin{equation}
+K_{2,\ell m}(\vk_1,\vk_2)=\int\!\dd\eta\,K\sum_{L=|\ell-d|}^{\ell+d}\sum_M4\pi(-i)^L\,j_L(K\chi)\,Y^*_{LM}(\Khat)\,\langle\ell m|\mathcal Q|LM\rangle,
+\qquad \langle\ell m|\mathcal Q|LM\rangle=\int\!\dd\Omega\,Y^*_{\ell m}\mathcal Q\,Y_{LM},
+\label{eq:K2lm}
+\end{equation}
+a finite $3j$ sum generated by repeated use of $(\ehat\cdot\hat v)Y_{\ell m}=\frac{4\pi}3\sum_\mu Y^*_{1\mu}(\hat v)\sum_{\ell'=\ell\pm1,m'}\mathcal G^{\ell'\ell1}_{m'm\mu}Y_{\ell'm'}$.
+In the frame $\Khat=\hat{\mathbf z}$, $\vk_{1,2}$ in the $x$--$z$ plane ($\cos\alpha_1=(k_1+k_2\mu)/K$, $\cos\alpha_2=(k_2+k_1\mu)/K$,
+$\mu=\khat_1\cdot\khat_2$), $K_{2,\ell m}\to\tilde K_{\ell m}(k_1,k_2,\mu)=\int\dd\eta\,K\sum_L(-i)^L\sqrt{4\pi(2L+1)}j_L(K\chi)\langle\ell m|\mathcal Q|L0\rangle$
+with $|m|\le d$, and isotropy reduces the angular integrals of \eqref{eq:loops} to
+\begin{align}
+\text{(C1)}&\quad C^{(22)}_\ell=\frac1{4\pi^4(2\ell+1)}\int k_1^2\dd k_1\,k_2^2\dd k_2\,P(k_1)P(k_2)\int_{-1}^1\!\dd\mu\sum_m\big|\tilde K_{\ell m}(k_1,k_2,\mu)\big|^2,\nonumber\\
+\text{(C2)}&\quad \frac1{2\ell+1}\sum_m\langle C_{\ell m}B^*_{\ell m}\rangle=\frac1{4\pi^4(2\ell+1)}\int k_1^2\dd k_1k_2^2\dd k_2\,PP\int\!\dd\mu\sum_m\tilde K^C_{\ell m}\tilde K^{B*}_{\ell m},
+\label{eq:C1C2}
+\end{align}
+where for a type-B map $\tilde K^B_{\ell m}=\tfrac12\sum\mathcal G^{\ell\ell_1\ell_2}_{mm_1m_2}[\tilde A_{\ell_1m_1}(k_1)\tilde A'_{\ell_2m_2}(k_2)+(A\leftrightarrow A')]$,
+$\tilde A_{\ell_1m_1}(k)=4\pi(-i)^{\ell_1}Y^*_{\ell_1m_1}(\khat)\Delta^A_{\ell_1}(k)$ at the frame angles.  A non-symmetric
+kernel must be symmetrised as $\tfrac12(K+K^{\rm T})$ \emph{before} the $m$-sum.  Two-time kernels use the
+double Rayleigh expansion instead of \eqref{eq:K2lm}; (C1) is unchanged.
+
+\subsection{The \texorpdfstring{$(13)$}{(13)} term}
+\label{sec:thirteen}
+From \eqref{eq:theta_orders},
+\begin{equation}
+\text{(E0)}\qquad C^{(13)}_\ell=T_{3,\ell}-3T_{\sky1 2,\ell}-3T_{\sky2 1,\ell}+6\langle\sky{m_1}^2\rangle C^{(11)}_\ell,\qquad
+T_{3,\ell}\equiv\tfrac1{2\ell+1}\textstyle\sum_m\langle m_{1,\ell m}m^*_{3,\ell m}\rangle,
+\label{eq:E0}
+\end{equation}
+and $T_{\sky12}$, $T_{\sky21}$ the corresponding cross terms with $\sky{m_1}m_2$, $\sky{m_2}m_1$.
+Every $q$-contracted map is a function of $\ehat\cdot\khat$ only, hence a Legendre series handled by
+\begin{equation}
+\text{(A-$L$)}\qquad h(k,\eta)P_L(\ehat\cdot\khat)e^{-i\vk\cdot\ehat\chi}\ \Rightarrow\
+\Delta_\ell=\int\!\dd\eta\,h\sum_{\Lambda=|\ell-L|}^{\ell+L}(2\Lambda+1)\threej{\ell}{L}{\Lambda}{0}{0}{0}^2(-i)^{\Lambda-\ell}j_\Lambda(k\chi),
+\label{eq:AL}
+\end{equation}
+and the $\vq$-angular reduction
+\begin{equation}
+\text{(E1)}\qquad \int\!\frac{\dd\Omega_q}{4\pi}g(\qhat\cdot\khat)(\ehat\cdot\qhat)^be^{-i\vq\cdot\ehat\Delta\chi}
+=\sum_{L'}(-i)^{L'}(2L'+1)j_{L'}(q\Delta\chi)\sum_{L''}\beta_{L'bL''}\,g_{L''}\,P_{L''}(\ehat\cdot\khat),
+\label{eq:E1}
+\end{equation}
+with $g_{L''}=\tfrac12\int\dd\mu\,P_{L''}(\mu)g(\mu)$ and $x^bP_{L'}=\sum_{L''}\beta_{L'bL''}P_{L''}$; for $\Delta\chi=0$ only
+$L'=0$ survives.  The three structures in $m_3$ are then:
+\begin{itemize}
+\item[(iii)] genuine third-order kernels: $\Theta^{(3)}_c(\vk;\ehat)=[\int\frac{q^2\dd q}{2\pi^2}P(q)\sum_Lh_L(k,q,\eta)P_L(\ehat\cdot\khat)]e^{-i\vk\cdot\ehat\chi}$ and
+$T^{\rm(iii)}_{3,\ell}=\frac2\pi\int k^2\dd k\,P\,\Delta^{m_1}_\ell(k)\Delta^{(3c)}_\ell(k)^*$ with $\Delta^{(3c)}_\ell$ from (A-$L$)
+(the factor 3 of \eqref{eq:loops} is already inside the contracted kernel);
+\item[(i)] products of three type-A maps $ABC$: $T^{\rm(i)}_{3,\ell}=C^{m_1A}_\ell\xi^{BC}(0)+C^{m_1B}_\ell\xi^{AC}(0)+C^{m_1C}_\ell\xi^{AB}(0)$,
+$\xi^{XY}(0)=\sum_{\ell'}\frac{2\ell'+1}{4\pi}C^{XY}_{\ell'}$ (with $\xi^{\nabla B\cdot\nabla C}(0)=\sum\frac{\ell'(\ell'+1)(2\ell'+1)}{4\pi}C^{BC}_{\ell'}$ and
+$\nabla B\nabla C\!:\!\nabla\nabla A\to-\ell(\ell+1)R_{BC}C^{m_1A}_\ell$);
+\item[(ii)] type-A $\times$ type-C products $A\cdot C$: $T^{\rm(ii)}_{3,\ell}=C^{m_1A}_\ell\langle\!\langle C\rangle\!\rangle+2\cdot\frac2\pi\int k^2\dd k\,P\,\Delta^{m_1}_\ell\Delta^{AC*}_\ell$,
+$\langle\!\langle C\rangle\!\rangle=\int\frac{\dd^3k}{(2\pi)^3}P(k)K^C(\vk,-\vk;\ehat)$ and $\Delta^{AC}_\ell$ the transfer function of
+$\int\frac{\dd^3q}{(2\pi)^3}P(q)K^A(\vq;\ehat)K^C(\vk,-\vq;\ehat)$ obtained from (E1) with $\Delta\chi=\chi_A-\chi_C$ and (A-$L$).
+\end{itemize}
+The normalisation pieces, with $M_2(\vq_1,\vq_2)\equiv K_{2,00}(\vq_1,\vq_2)/\sqrt{4\pi}$ the sky-average kernel of $m_2$, are
+\begin{align}
+\text{(E2)}&\quad T_{\sky21,\ell}=\langle\!\langle m_2\rangle\!\rangle C^{(11)}_\ell+\frac1{\pi^3}\int k^2\dd k\,k'^2\dd k'\,PP\,\Delta_\ell(k)\Delta_\ell(k')^*\int\!\dd\mu\,P_\ell(\mu)M_2(k\khat,-k'\khat')^*,
+\quad \langle\!\langle m_2\rangle\!\rangle=\frac1{2\pi^2}\int k^2\dd k\,P\,M_2(\vk,-\vk),\nonumber\\
+\text{(E3)}&\quad T_{\sky12,\ell}=\frac2{2\pi^2}\int q^2\dd q\,P(q)\Delta_0(q)\,\frac2\pi\int k^2\dd k\,P(k)\Delta_\ell(k)\bar\Delta^{m_2}_\ell(k;q)^*,\qquad
+\bar\Delta_\ell(k;q)=\frac{\tfrac12\int\dd\mu\,K_{2,\ell0}(k\hat{\mathbf z},\vq)}{(-i)^\ell\sqrt{4\pi(2\ell+1)}},
+\label{eq:E2E3}
+\end{align}
+and the same objects give the cross term of \eqref{eq:C22_B}.  Formulas (E2), (E3) and $T^{\rm(ii)}$ are derived by Wick
+counting consistent with the verified ones; (E3) collapses to \eqref{eq:monopole_terms}(ii) for a type-B $m_2$ (analytic check).
+\todo{the explicit $h_L$, $K^C$, $M_2$ of our map are supplied in Secs.~\ref{sec:map2}--\ref{sec:map3} and assembled in Sec.~\ref{sec:assembly}.}
+
+\subsection{Control case: lensed \texorpdfstring{$C_\ell$}{Cl}}
+\label{sec:lensing_control}
+For the remapping $\tilde\Theta=\Theta+\nabla\phi\cdot\nabla\Theta+\tfrac12\nabla^i\phi\nabla^j\phi\nabla_i\nabla_j\Theta$ with
+$\Theta=\eps\Theta_1$, $\phi=\eps\phi_1$ one has $\Theta^{(2)}=2\nabla\phi\cdot\nabla\Theta$, $\Theta^{(3)}=3\nabla\phi\nabla\phi\!:\!\nabla\nabla\Theta$,
+and the bookkeeping \eqref{eq:cl_target} with (B1) and the (i)-type pairing reproduces exactly
+\begin{equation}
+\tfrac14C^{(22)}_\ell=\sum_{\ell_1\ell_2}\frac{F^2_{\ell\ell_1\ell_2}}{2\ell+1}\Big[C^{\phi\phi}_{\ell_1}C^{\Theta\Theta}_{\ell_2}+C^{\phi\Theta}_{\ell_1}C^{\Theta\phi}_{\ell_2}\Big],\qquad
+\tfrac13\Re C^{(13)}_\ell=-\ell(\ell+1)R\,C^{\Theta\Theta}_\ell,\qquad R=\tfrac12\langle|\nabla\phi|^2\rangle,
+\end{equation}
+with $F$ the coupling of Hu \cite{Hu2000}: these are Hu's (62)--(63) \cite{Hu2000,LewisChallinor} (the $C^{\phi\Theta}$ term is the
+extension to correlated $\phi,\Theta$, relevant here because the deflection potential correlates with SW/ISW).  This was verified
+algebraically ($2\times10^{-16}$) and by Monte Carlo on the sphere (App.~\ref{app:ledger}, C3-5), validating the prefactors of
+\eqref{eq:loops}, the two-pairing structure of (B1) and the monopole$\times$map rules.
+
+\subsection{Monochromatic reduction: definitions}
+\label{sec:monodef}
+The monochromatic primordial spectrum is defined with the variance $\langle\zeta_1^2\rangle=\sigma^2$ held fixed as $k_0$ varies:
+\begin{equation}
+P(k)=\frac{2\pi^2\sigma^2}{k_0^2}\,\delta(k-k_0)\quad\Longleftrightarrow\quad\langle\zeta_1^2(\vx)\rangle=\sigma^2,\qquad
+\int k^2\dd k\,P\,F(k)\to2\pi^2\sigma^2F(k_0),\quad\int\!\frac{\dd^3k}{(2\pi)^3}P\,F(\vk)\to\sigma^2\langle F(k_0\khat)\rangle_{\khat}.
+\label{eq:mono}
+\end{equation}
+The expansion parameter is then $\eps^2\sigma^2$.  Under \eqref{eq:mono} the general formulas collapse to (all transfer functions at $k_0$):
+\begin{align}
+&C^{AA'}_\ell=4\pi\sigma^2\Delta^A_\ell\Delta^{A'*}_\ell,\qquad \langle\sky A\sky{A'}\rangle=\sigma^2\Delta^A_0\Delta^{A'}_0,\qquad
+\xi^{XY}(0)=\sigma^2\sum_{\ell'}(2\ell'+1)\Delta^X_{\ell'}\Delta^{Y*}_{\ell'};\nonumber\\
+&\text{(B1)}:\ C^{BB'}_\ell=(4\pi\sigma^2)^2\sum_{\ell_1\ell_2}\frac{(2\ell_1+1)(2\ell_2+1)}{4\pi}\threej{\ell}{\ell_1}{\ell_2}{0}{0}{0}^2ww'
+\big[\Delta^A_{\ell_1}\Delta^C_{\ell_1}\Delta^{A'}_{\ell_2}\Delta^D_{\ell_2}+\Delta^A_{\ell_1}\Delta^D_{\ell_1}\Delta^{A'}_{\ell_2}\Delta^C_{\ell_2}\big]
+\ \ (\text{effectively finite: } \ell_{1,2}\lesssim k_0\chi_{\max}+10(k_0\chi_{\max})^{1/3}+10);\nonumber\\
+&\text{(C1)}:\ C^{(22)}_\ell=\frac{\sigma^4}{2\ell+1}\int_{-1}^1\!\dd\mu\sum_{|m|\le d}\big|\tilde K_{\ell m}(k_0,k_0,\mu)\big|^2,\quad K=k_0\sqrt{2(1+\mu)},\ \cos\alpha_1=\cos\alpha_2=\sqrt{(1+\mu)/2};\nonumber\\
+&\text{(13)(iii)}:\ T_{3,\ell}=12\pi\sigma^2\Delta_\ell\Delta^{(3c)*}_\ell\ \text{with the }\tfrac13\text{ of \eqref{eq:cl_target} still to be applied, }
+\Delta^{(3c)}_\ell=\sigma^2\sum_Lh_L(k_0,k_0)\sum_\Lambda(2\Lambda+1)\threej{\ell}{L}{\Lambda}{0}{0}{0}^2(-i)^{\Lambda-\ell}j_\Lambda(k_0\chi),\nonumber\\
+&\qquad h_L=\tfrac12\int\dd\mu\,P_L(\mu)\big[K_3(k_0,k_0,\mu)\times\mathcal Q_3\text{-coefficients}\big],\quad |\vk\pm\vq|=k_0\sqrt{2(1\pm\mu)};\nonumber\\
+&\langle\sky{m_1}^2\rangle=\sigma^2\Delta_0^2,\quad \langle\!\langle m_2\rangle\!\rangle=\sigma^2M_2(k_0\khat,-k_0\khat),\quad
+\text{(E2) cross}=4\pi\sigma^4|\Delta_\ell|^2\!\int\!\dd\mu\,P_\ell(\mu)M_2(k_0\khat,-k_0\khat')^*,\quad \text{(E3)}=8\pi\sigma^4\Delta_0\Delta_\ell\bar\Delta_\ell(k_0;k_0)^* .
+\label{eq:mono_rules}
+\end{align}
+(The factor $12\pi\sigma^2=3\times4\pi\sigma^2$ in (13)(iii) assumes a symmetrised $K_3$ with the explicit pairing factor 3; with the
+contracted kernels of Sec.~\ref{sec:third} the 3 is already included and the prefactor is $4\pi\sigma^2$.)
+\emph{Delicate points} to be addressed in Sec.~\ref{sec:mono}: (1)~$\mu\to-1$ in (C1), where $K\to0$, $\dd\mu=K\dd K/k_0^2$ and
+$j_L(K\chi)\to\delta_{L0}$: a kernel $\sim K^{-p}$ converges only for $p<1$, so every $1/K^2$ (Poisson inversion) must come with a vanishing
+numerator (the transverse/TT projections of $\vk_1\otimes\vk_2$ do vanish at $\vk_2=-\vk_1$; the scalar $K_Q$-type $1/K^2$ terms require
+an explicit check of the $K\to0$ limit); (2)~$\mu\to\pm1$ in the $(13)$ loop, where $|\vk\mp\vq|\to0$ inside $K_3(\vk,\vq,-\vq)$ and $C_3$;
+(3)~the $K=0$ tadpoles $\langle\!\langle m_2\rangle\!\rangle$, $\langle\!\langle C\rangle\!\rangle$ require kernels exactly at $\vK=0$ and enter only through
+\eqref{eq:theta_orders}, where the sky-mean normalisation cancels the direction-independent mean of $e^\Lambda$: individual tadpoles may be
+IR-singular while the combination is finite, so they are kept symbolic until combined (cf.\ Sec.~\ref{sec:tadpole});
+(4)~$\langle\zeta_{\vk_1}\zeta_{\vk_2}\rangle$ inside $\Theta^{(2)}$ feeds only $\ell=0$, consistent with the monopole normalisation.
