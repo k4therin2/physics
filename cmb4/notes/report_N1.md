@@ -113,7 +113,7 @@ maps/a_l0 (l<=30): `output/coeff_<tag>.npz/.json`; raw runs: `output/scan_<tag>.
 |---|---|---|---|---|
 | to8_xo0  (ratio 4, x_o=0)    | 0.7111 / 1.076 | 1.309 / 2.708 | 14.21 / 37.23 | 3.6e-9 / 3.2e-8 / 2.1e-4 (best subsets B,C,D: 1.2e-5) |
 | to4_xo0  (ratio 2, x_o=0)    | 0.06503 / 0.09907 | 0.3955 / 1.258 | 1.644 / 6.816 | 6.8e-12 / 9.7e-10 / 4.0e-7 |
-| to8_xo0.5pi (ratio 4, x_o=pi/2) | 0.8428 / 2.106 | 2.145 / 4.871 | 24.13 / 38.20 | 5.3e-7 / 9.2e-6 / 3.1e-2 (B,C,D: ~1e-3) |
+| to8_xo0.5pi (ratio 4, x_o=pi/2) | 0.8428 / 2.106 | 2.145 / 4.871 | 24.13 / 38.20 | 5.3e-7 / 9.2e-6 / 3.1e-2 (B,C,D: ~8e-3) |
 | to4_xo0.5pi (ratio 2, x_o=pi/2) | 0.09388 / 0.2649 | 0.6417 / 1.658 | 4.078 / 6.319 | 6.7e-10 / 5.4e-9 / 3.9e-5 |
 
 Primary configuration to8_xo0, a_l0 (real Y_l0, polar axis +x; odd l vanish by parity, numerically <2e-11 for Th1):
