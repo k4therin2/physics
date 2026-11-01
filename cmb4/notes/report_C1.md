@@ -108,3 +108,43 @@ COMPARISON: EXACT agreement with Pitrou-Uzan-Bernardeau (3.12b,c) with R^(2) = -
   oscillating velocity (their 7.29) rather than the eta->0 velocity v = -(eta/2) grad Phi(0).  We keep ours (= PUB).
 
 ## Milestone 5 — THIRD ORDER (status: in progress)
+Status: COMPLETE for the contracted ("13") form; position-space full sources COMPLETE; the un-contracted Fourier
+kernel K3(k1,k2,k3) was NOT produced (not needed for C^(13)).  Scripts: `third_order.py`, `third_order_ic.py`,
+`squeezed_check3.py`; outputs `third_order.pkl/.tex` (contracted sources), `third_order_ic.pkl/.tex` (tadpoles, C3),
+`position_sources.pkl/.tex` (full S^{(3)}_{mu nu} in position space: 71-127 terms per component).
+
+### Contracted construction (per P(q); NOT symmetrised under q -> -q, so only p = |k-q| appears; symmetrise by averaging with q->-q if desired)
+  X3c(k,eta) = int d^3q/(2pi)^3 P(q) K3c_X(k,q,mu;eta),   <X3_k zeta_k'> = (2pi)^3 delta(k+k') P(k) X3c.
+  cubic monomial  A1 B1 C1  ->  A(q)B(-q)C(k) + A(q)C(-q)B(k) + B(q)C(-q)A(k)
+  bilinear A1 B2            ->  2 A(q) B2[(q1,q2)=(-q,k); total k-q]  +  A(k) <B2>(eta)
+  Second-order fields entering: Q2, delta2, V2, v2^T, omega2 explicit (second_order.pkl), Phi2 = KPhi2(a,b,c,eta) and
+  h2 = Kh(a,b,c,eta) kept as abstract symbols ((a,b,c) = (|q1|,|q2|,|q1+q2|)) with
+    KPhi2(a,b,c,eta) = int_0^eta G_Phi(c;eta,eta') K_SPhi(a,b,c;eta') deta' + K_Phi2_0(a,b,c) ghat(c eta),
+    Kh(a,b,c,eta)    = int_0^eta G_h(c;eta,eta') K_h(a,b,c;eta') deta'.
+  TADPOLES (mean-field shifts <X2>): vector/tensor/velocity tadpoles vanish by isotropy; scalar tadpoles are the
+  angle-averaged k->0 limits (this is a CONVENTION for the zero mode; Phi2,Psi2 at k=0 are gauge, see check (c)):
+    tadQ2(q,eta) [closed form in third_order_ic.tex], tadQ2(0) = -16/9;  tadS00 (local), eta^2 tadS00 -> 32/3;
+    tadPhi2(eta) = -8/9 + int_0^eta (eta'/3)(1-eta'^3/eta^3) tadSPhi deta'  (closed form; = -8/9 - 28 q^2 eta^2/405 + ...);
+    taddelta2(eta) closed form, -> 16/9.   These agree with the k=0 gauge family (delta2 = -2 Psi2 + 32c^2/9).
+### Equations for X3c (same linear operators): Q3c = K3c['Q'];  delta3c = (eta^2/3) K3c['S00'] - (2/3)eta^2 k^2 Phi3c - 2 eta Phi3c' - 2 Psi3c;
+  V3c = -(eta^2/4)[2(Phi3c' + Psi3c/eta) + K3c['S0z']/(ik)];  Phi3c'' + 4Phi3c'/eta + k^2 Phi3c/3 = K3c['SPhi']  (830 terms),
+  Phi3c = int_0^eta G_Phi K3c['SPhi'] + C3(k;q,mu) ghat(k eta).   Contracted vector/tensor sources (S0x, Sxz, Sxx-yy) are
+  given too but integrate to zero over angles by isotropy (S0y, Syz, Sxy vanish identically: checked).
+  K3c['SPhi'] is finite at eta -> 0 (checked with small-eta expansions), so the particular integral vanishes at eta=0.
+### Third-order amplitude from zeta_nl^(3)(eta->0) = 0
+  zeta^(3) = delta3/4 - (3/4) delta1 delta2 + delta1^3/2 - Phi3 - 6 Phi1 Phi2 - 8 Phi1^3  (engine), contracted (100 terms);
+  with Q3c(0) = -16 q (44k^4 mu - 142 k^3 mu^2 q - 18 k^3 q + 108 k^2 mu^3 q^2 + 104 k^2 mu q^2 + 9 k mu^4 q^3 - 126 k mu^2 q^3 - 3 k q^3 + 24 mu q^4)/(9 k p^4),
+  lim eta^2 K3c_S00 = -256 k q (2k^2 mu - k mu^2 q - 3kq + 2 mu q^2)/(3 p^4):
+  C3(k;q,mu) = Phi3c(k,eta->0) = -16 (2k^5 + 12k^4 mu q - 42k^3 mu^2 q^2 - 10k^3 q^2 + 36k^2 mu^3 q^3 + 32k^2 mu q^3 + 3k mu^4 q^4 - 42k mu^2 q^4 + k q^4 + 8 mu q^5) / (9 k p^4),
+  p^2 = k^2 - 2kq mu + q^2 (invariant form and angle average with logs in third_order_ic.tex; integrable 1/p^2-type behaviour at q->k).
+  CHECK: squeezed limit C3(q->0) = -32/9 = 6 x [c^2 zeta_s](A^2B^2)(-2/3) from the exact dilation family (A^2B^2 = e^{4c/3}): PASS.
+
+## Summary of status
+COMPLETE+VERIFIED: engine; E_{mu nu} to eps^3 (background, Bianchi identity, exact gauge family); first order (ODE,
+T_Phi, T_delta, T_V, zeta normalisation, conservation implied, irrotational); second order (all SVT equations, kernels,
+Green's functions, KT tensor source, PUB ICs, vorticity-free structure [enthalpy-weighted], gauge check); third order
+contracted sources and C3 (squeezed check).  PARTIAL: tadpole zero-mode convention (angle-averaged) is a choice to be
+validated by the full observable's dilation invariance (SPEC 9d).  NOT DONE: un-contracted K3(k1,k2,k3); closed-form
+evaluation of the Green's-function integrals (left as declared integrals, cf. SPEC §0).
+How to use: `from kernels_api import *; K = load()`; K['second'][...] (K_Q, K_SPhi, K_om, K_vT, K_h, K_Phi2_0, G_Phi, G_h, ...),
+K['third']['SPhi','Q','S00','S0z',...], K['third_ic']['C3','tads']; `closed_form()` inserts T_Phi.
