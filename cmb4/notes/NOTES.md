@@ -150,3 +150,4 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   linearised; our theorem = its single-radiation-fluid reduction, exponential-shear form not found explicitly; CL98 linear covariant;
   EGS/SME isotropy theorems (our corollary is a converse). One-loop C_l incl. 13 term: none found (Tomita incomplete; D'Amico et al
   third-order SW only; SONG scope excludes 1x3). Manuscript: remark + refs added; SUMMARY.md updated.
+- [11-03] One-pager published on Vandygraph (private): https://vandygraph.com/v/cmb-fourth-order-multi-agent-run-summary ; source cmb4/doc/onepager.html (gen_onepager.py).
