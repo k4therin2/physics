@@ -1,0 +1,7 @@
+q=2  Delta^kappa~_l (l=0..6): [-1.0496  -7.64503  2.04143 -5.48938 -6.92096 -4.25318 -2.40722] (311s)
+      L3: [ray] time delay 2nd (radial Dx2) | fields:1             l=2: -1.5066e+01
+      L3: [obs] observer clock 2nd | fields:1                      l=2: +1.0977e+01
+      L3: [ray] radial k2 | fields:1                               l=2: -8.1022e+00
+      L3: [ray] local | fields:2+1                                 l=2: +3.1269e+00
+      L3: [ray] transverse direction k1 (aberration+deflection) | fields:2 l=2: +2.5878e+00
+      L3: [ray] lensing 2nd (transverse Dx2) | fields:1            l=2: +2.5245e+00

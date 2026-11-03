@@ -1,0 +1,5 @@
+(A-s) max err 5.973001323460051e-14
+(A-lambda) max err 8.21569726651065e-15
+(A-L) max err 6.489254172509197e-14
+sum (2l+1) j_l^2 - 1 = 4.440892098500626e-16
+max of |j_l|/bound1 and bound1/bound2 over grid (must be <= 1): 1.0

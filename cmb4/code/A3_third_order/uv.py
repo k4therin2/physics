@@ -6,7 +6,7 @@ from thirteen import *
 Nmu, Nphi, Nt = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3])
 qs = [float(a) for a in sys.argv[4:]]
 k0 = 1.0; lmax = 6
-nu, wnu, nv = nu_grid(16)
+nu, wnu, nv = nu_grid(12)
 xm, wm = Lg.leggauss(Nmu)
 sky = (Nt, 2 * Nt)
 t0 = time.time()
