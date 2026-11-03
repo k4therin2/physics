@@ -139,3 +139,30 @@ arbitrary tau (tau = 0.1 eta and tau = 0.1 eta^3: |d kappa| = 6e-14, 3e-13), C1'
 have zero coefficient; it is the physical homogeneous backreaction and is kept.  (V5's constant-shear proof covers the quadrupole.)
 Machine-generated channel listing: `code/A3_third_order/A3_channels.tex` (every L1, L2/2, L3/6 group with its expression, the
 functionals, observer quantities and the polarisation contraction rule for channels i/ii/iii).
+
+## Milestone 6 results — monochromatic numbers (DONE; runs C = 16 mu x 16 phi x 32 nu, D = 12 x 20 x 32; `combine.py C D`)
+EVALUATION at k0 = 1, eta_* = 2, eta_o = 8, sigma = 1 (C11 in sigma^2, C22, C13 in sigma^4). C11 = 4 pi Delta_l^2 agrees with A2 to 3e-14.
+C22 from A2 (cl22_eo8_b.pkl). Run C vs D: |rel diff| of 1/3 Re C13 <= 8e-5 (l <= 10), 3e-4 (l=12), 2e-3 (l=14); l >= 16 unreliable
+(C13 there < 1e-9 and irrelevant next to C22).  Im C13 ~ 1e-14.
+| l | C11 | 1/4 C22 | 1/3 Re C13 | 1/4 C22 + 1/3 Re C13 | ratio to C11 |
+|---|---|---|---|---|---|
+| 2 | 9.546006e-01 | 1.425754e+01 | -5.39801e+00 | +8.85953e+00 | +9.28 |
+| 3 | 6.250780e-01 | 2.878135e+00 | -2.35152e+01 | -2.06370e+01 | -33.0 |
+| 4 | 1.750713e-01 | 1.865919e+00 | -9.06394e+00 | -7.19802e+00 | -41.1 |
+| 5 | 1.933453e-02 | 1.130143e+00 | -1.37218e+00 | -2.42041e-01 | -12.5 |
+| 6 | 1.770350e-04 | 5.220624e-01 | -1.58643e-02 | +5.06198e-01 | 2.9e3 |
+| 7 | 3.174581e-04 | 3.740495e-01 | -3.37230e-02 | +3.40326e-01 | 1.1e3 |
+| 8 | 2.304635e-04 | 2.619739e-01 | -2.79364e-02 | +2.34038e-01 | 1.0e3 |
+| 9 | 6.045086e-05 | 1.241845e-01 | -8.22586e-03 | +1.15959e-01 | 1.9e3 |
+| 10 | 9.679529e-06 | 4.008477e-02 | -1.46307e-03 | +3.86217e-02 | 4.0e3 |
+| 11 | 1.105691e-06 | 9.473006e-03 | -1.8408e-04 | +9.28892e-03 | 8.4e3 |
+| 12 | 9.699083e-08 | 2.002615e-03 | -1.7666e-05 | +1.98495e-03 | 2.0e4 |
+| 13 | 6.823170e-09 | 5.514569e-04 | -1.351e-06 | +5.50106e-04 | 8.1e4 |
+| 14 | 3.962944e-10 | 1.949444e-04 | -8.49e-08 | +1.94860e-04 | 4.9e5 |
+| 15-20 | | (A2 table) | < 5e-9 | = 1/4 C22 to 1e-4 | |
+Delta^kappa_l (l=0..10): -96.795, +53.949, -4.6756, -25.171, -18.333, -8.3515, -1.0090, +1.6018, +1.5573, +0.89536, +0.39797.
+Largest channel contributions to Delta^kappa_2 (run C): channel iii (v3) -22.47, k1-aberration/deflection x 2nd-order fields +12.54,
+radial k2 -11.40, observer clock 2nd +11.14, time delay x 2nd +7.00, lensing x 2nd -6.76, transverse k2 +5.52, ... normalisation
+-3<m2>m1 +3.96, 3L1L2 -4.00, 6<m1>^2 m1 small; strong cancellations (sum -4.68).  Interpretation caveat (as A2): the monochromatic
+first-order spectrum is band-limited (k0 chi_* = 6) while the loop reaches |k+-q| <= 2k0, so for l >= 6 C11 is tiny and the
+eps^4 terms dominate by orders of magnitude; at l = 2-5 Re C13/3 partially cancels 1/4 C22 (l=2: 38%; l=3,4 C13 dominates).
