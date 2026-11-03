@@ -39,15 +39,4 @@ print('pole(K_SPhi) - A_Q\'/eta =', sp.simplify(res['K_SPhi'].get(-2, 0) - dAQ /
 # K_Phi2_0 pole vs A_Q(0)/3 (closed form T(0) = -2/3, T'(0) = 0)
 print('K_Phi2_0 pole =', res['K_Phi2_0'].get(-2, 0), '  A_Q(0)/3 =', sp.simplify(A_Q.subs(Tp, 0).subs(T(eta), sp.Rational(-2, 3)) / 3))
 pickle.dump({'A_Q': sp.srepr(A_Q), 'poles': {nm: {n: sp.srepr(c) for n, c in d.items() if n < 0} for nm, d in res.items()}}, open('s1_poles.pkl', 'wb'))
-# closed-form tau: (eta^2 tau)' = -eta^2 A_Q, tau regular
-x = sp.Symbol('x', positive=True)
-Tc = -2 * (sp.sin(x) - x * sp.cos(x)) / x**3          # x = s eta/sqrt3
-eta_x = sp.sqrt(3) * x / s
-AQc = s**2 * (2 * Tc**2 + (sp.diff(x * Tc, x))**2)       # (T + eta T') = d(eta T)/d eta = d(x T)/dx
-integrand = sp.simplify(eta_x**2 * AQc * sp.sqrt(3) / s)   # d eta = sqrt3/s dx
-I = sp.integrate(sp.expand(sp.expand_trig(integrand)), (x, 0, x))
-I = sp.simplify(I)
-tau = sp.simplify(-I / eta_x**2)
-print('tau(x) closed form (x = s eta/sqrt3):', tau)
-print('series tau:', sp.series(tau, x, 0, 6))
-pickle.dump({'tau_x': sp.srepr(tau)}, open('s1_tau.pkl', 'wb'))
+# closed-form tau: see s1_tau.py

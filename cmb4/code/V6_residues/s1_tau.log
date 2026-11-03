@@ -1,0 +1,5 @@
+integrand y^2[2T^2+(yT)'^2] = 4*sin(y)**2 + 8*sin(2*y)/y - 40*sin(y)**2/y**2 + 24/y**2 - 24*sin(2*y)/y**3 + 24*sin(y)**2/y**4
+J(x) = int_0^x = 2*(x**3*(2*x - sin(2*x))/2 - 4*x**2*cos(x)**2 + 4*x*sin(2*x) + 2*cos(2*x) - 2)/x**3
+check dJ/dx - f(x): 0
+tau(x) = -sqrt(3)*s*(x**3*(2*x - sin(2*x)) - 8*x**2*cos(x)**2 + 8*x*sin(2*x) + 4*cos(2*x) - 4)/x**5
+tau series: -4*sqrt(3)*s*x/9 + 4*sqrt(3)*s*x**3/45 - 16*sqrt(3)*s*x**5/1575 + O(x**6)

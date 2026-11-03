@@ -1,0 +1,6 @@
+Q     pole(K3c) - expected(c=2) = 0 ;  solve for c: [{c: 2}]
+SPhi  pole(K3c) - expected(c=2) = 0 ;  solve for c: [{c: 2}]
+S00   pole(K3c) - expected(c=2) = 0 ;  solve for c: [{c: 2}]
+S0z   pole(K3c) - expected(c=2) = 0 ;  solve for c: [{c: 2}]
+lim_{eta->0} [3 tau T' + 6 tau T/eta] = 16*k**2/9  ; x2 = 32*k**2/9  ; C3 pole coefficient (32/9)k^2 = 32*k**2/9
+closed-form tau ODE residual: 0

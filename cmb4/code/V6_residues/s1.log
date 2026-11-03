@@ -1,0 +1,11 @@
+K_Q  negative powers of P: {-2: s**2*(eta**2*Derivative(T(eta), eta)**2 + 2*eta*T(eta)*Derivative(T(eta), eta) + 3*T(eta)**2)}
+K_S00  negative powers of P: {}
+K_S0z  negative powers of P: {}
+K_SPhi  negative powers of P: {-2: -2*s**2*(eta*s**2*T(eta)*Derivative(T(eta), eta) + s**2*T(eta)**2 + 6*Derivative(T(eta), eta)**2)/3}
+K_om  negative powers of P: {-6: 0}
+K_vT  negative powers of P: {-6: 0}
+K_h  negative powers of P: {}
+K_Phi2_0  negative powers of P: {-2: 4*s**2/9}
+A_Q = s**2*(eta**2*Derivative(T(eta), eta)**2 + 2*eta*T(eta)*Derivative(T(eta), eta) + 3*T(eta)**2)    check = s^2[2T^2 + (T + eta T')^2]: 0
+pole(K_SPhi) - A_Q'/eta = 0
+K_Phi2_0 pole = 4*s**2/9   A_Q(0)/3 = 4*s**2/9
