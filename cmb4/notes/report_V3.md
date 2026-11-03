@@ -59,9 +59,31 @@ all ten E^(1) vanish on the closed-form solution.
 - Zero mode: angle-averaged k -> 0 limits Phi2 -> -8/9, Q2 -> -16/9 reproduced; they are the dilation-family member
   A = e^{-c/3}, B = e^c (Psi2 = 8/9, Phi2 = -8/9, delta2 = 16/9), satisfy the k=0 00 constraint and zeta^(2) = 0.
 
-### Claim (5) third order — see §5 (in progress)
+### Claim (5) third order — CONFIRMED (with a convention caveat on the zero mode, and a harmless erratum)
+zeta^(3) expansion exact; contraction rules confirmed by brute-force Wick; contracted sources K3c match my E^(3) exactly;
+C3 re-derived fully independently (my E^(3), my small-eta series, my tadpoles, my zeta expansion) matches C1's C3 at 3 random
+points to 30 digits; squeezed limit -32/9 re-derived from the separate-universe/dilation argument. Caveat: C3 depends on the
+(gauge) zero-mode convention for the second-order tadpoles; C1's angle-averaged choice is consistent, but downstream assembly
+must use the same tadpoles together with the observer clock/normalisation (SPEC 9d). Details §5.
 
 ## 5. Third order
+- `check_C3_indep.py` (new, the main independent test): discrete three-mode realisation in MY E^(3), every first/second-order
+  field replaced by its exact small-eta Taylor series (Phi2 = C(0) + eta^2[S_Phi(0)/10 - c^2 C(0)/30], h2 = (8/9)eta^2 Lambda qq,
+  omega/V/delta from my constraints), tadpoles computed HERE as angle-averaged k -> 0 limits (tadQ2 = -16/9 + 88q^2eta^2/405,
+  tadPhi2 = -8/9 - 28q^2eta^2/405, taddelta2 = 16/9 - 472q^2eta^2/405), zeta_nl expanded HERE; zeta^(3)(eta->0) = 0 solved for
+  the image-summed amplitude.  Result: C3sym(mine) = C3(k,q,mu) + C3(k,q,-mu) of C1 **exactly (|diff| = 0 at 30 digits) at
+  3 random points**; unchanged with C1's (wrong) 3/10 coefficient (log C3i_a310).
+- Zero-mode convention test (logs C3i_shiftPhi/Psi): shifting the tadpole <Phi2> by +1 shifts C3sym by exactly +8 (4 per
+  image); shifting <Psi2> by +1 (with delta2 -> delta2 - 2, as the k=0 00 constraint requires) changes nothing.  The zero-mode
+  equations leave (Phi2, Psi2) free (Poisson-gauge residual dilations); zeta^(2)_{k=0} = 0 forces Phi2 = -Psi2/2 - 4/9 (C1's
+  -8/9, 8/9 satisfies it).  Along this allowed one-parameter family C3 changes by -2 dPsi2 per image, so **C3 is a
+  gauge-convention-dependent intermediate**, not unique.  C1's choice (continuity in k, = dilation member A = e^{-c/3},
+  B = e^c) is internally consistent; the final C_l is only correct if A3/assembly uses the same tadpoles together with the
+  matching observer clock and normalisation (SPEC 9d).  Not an error, but must be carried forward explicitly.
+- Squeezed limit, independent argument: a constant long mode c in the dilation family A = e^{-c/3}, B = e^c gives, at eta -> 0,
+  Phi_total = Phi_bg(c) + A^2B^2 Phi_s = Phi_bg + e^{4c/3}(-2/3)zeta_s with zeta_total = c + zeta_s(x/B) (linear => Gaussian);
+  the c^2 zeta_s coefficient is (8/9)(-2/3), times 3! = -32/9 per P(q). C1's C3 at q = 0 is -16*2k^5/(9k^5) = -32/9,
+  mu-independent. Since C1's rational C3 agrees with my independent value at random points, the limit is confirmed.
 - `check_zeta3.py`: zeta^(3) = delta3/4 - (3/4)delta1 delta2 + delta1^3/2 - Phi3 - 6Phi1Phi2 - 8Phi1^3: exact.
 - `check_wick.py`: brute-force lattice Wick contraction confirms C1's cubic (3-term) and bilinear
   (2A(q)B2(-q,k) + A(k)<B2>) contraction rules.

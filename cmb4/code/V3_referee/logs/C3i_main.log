@@ -1,1 +1,6 @@
 tadpoles (per P(q), q-symbol qq): tadQ2 = 88*qq**2*t**2/405 - 16/9 ; tadPhi2 = -28*qq**2*t**2/405 - 8/9 ; taddelta2 = -472*qq**2*t**2/405 + 16/9
+point {'k': 64/25, 'q': 289/100, 'mu': 29/50, 'eta': 259/100}  C3sym mine = 7.2432152575654825150  C1 image sum = 7.2432152575654825150  |diff| = 0.00e+00
+point {'k': 41/25, 'q': 201/100, 'mu': -29/100, 'eta': 347/100}  C3sym mine = 6.2057717998636149225  C1 image sum = 6.2057717998636149225  |diff| = 0.00e+00
+point {'k': 139/50, 'q': 103/50, 'mu': -47/100, 'eta': 171/50}  C3sym mine = 4.3848406444571369805  C1 image sum = 4.3848406444571369805  |diff| = 0.00e+00
+zero-mode shifts (Phi2,Psi2) = 0 0 ; alpha = 1/10  WORST |C3sym mine - C1|: 0
+EXIT 0
