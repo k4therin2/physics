@@ -1,6 +1,320 @@
-\section{Assembly of \texorpdfstring{$C_\ell$}{Cl}}
+\section{Assembly of the power spectrum}
 \label{sec:assembly}
-\todo{Assembly agent: $C_\ell^{(11)}$ (closed form, agent C5), $\tfrac14C_\ell^{(22)}$ and
-$\tfrac13\Re C_\ell^{(13)}$ as fully specified integrals using the rules of
-Sec.~\ref{sec:harmonic}; explicit statement of which pieces are evaluated in closed form and which
-remain as declared integrals (Sec.~\ref{sec:unresolved}).}
+This section turns the map of Secs.~\ref{sec:observable}, \ref{sec:map2}, \ref{sec:map3} into explicit kernels
+$K_1$, $K_2$ (and, when available, $K_{3c}$) and assembles $C^{(11)}_\ell$, $C^{(22)}_\ell$, $C^{(13)}_\ell$ with the rules of
+Sec.~\ref{sec:harmonic}.  Code: \code{cmb4/code/A2\_second\_order/} (agent A2); every statement below is either derived in
+the text or quoted with the check that established it (App.~\ref{app:ledger}).
+
+\paragraph{Conventions of this section.}  Observer label at the origin, ray $\bar\vx(\eta)=\nhat\chi$, $\chi=\eta_o-\eta$
+(Sec.~\ref{sec:setup}; $\nhat$ = observation direction), so a field on the ray carries $e^{+i\vk\cdot\nhat\chi}$.  Rayleigh:
+$e^{i\vk\cdot\nhat\chi}=4\pi\sum_{\ell m}i^\ell j_\ell(k\chi)Y_{\ell m}(\nhat)Y^*_{\ell m}(\khat)$, and
+$(i\nhat\cdot\khat)^s e^{i\vk\cdot\nhat\chi}\to4\pi i^\ell j^{(s)}_\ell(k\chi)Y^*_{\ell m}(\khat)$.  The rules of
+Secs.~\ref{sec:typeA}--\ref{sec:typeC} are written with $\ehat=-\nhat$ and $(-i)^\ell$; the two differ by
+$a_{\ell m}\to(-1)^\ell a_{\ell m}$ at every order and give identical $C^{(rs)}_\ell$ (Sec.~\ref{sec:dirconv}).  We write
+$\mu_a\equiv\nhat\cdot\khat_a$, $E_a\equiv e^{ik_a\mu_a\chi}$, and $\dot T\equiv\partial_\eta T$.
+
+% ======================================================================
+\subsection{First-order kernel, sky monopole and observer objects}
+\label{sec:asm-first}
+From \eqref{eq:L1} with $\Phi_1=\Psi_1=\zeta\TP$, $\delta_{T1}=\zeta T_{\delta_T}$, $\vv_1=i\vk\,T_V\zeta$ \eqref{eq:transfer},
+\begin{equation}
+K_1(\vk;\nhat)=\big[T_{\delta_T}+\TP-ik\mu T_V\big]_{\eta_*}E(\eta_*)-\big[T_{\delta_T}+\TP-ik\mu T_V\big]_{\eta_o}
++\int_{\eta_*}^{\eta_o}\!\dd\eta\,2\dot T_\Phi\,E(\eta),\qquad \mu=\nhat\cdot\khat,
+\label{eq:asm-K1}
+\end{equation}
+including the observer monopole and dipole.  Its multipoles are
+\begin{equation}
+K_{1,\ell m}(\vk)=4\pi\,i^\ell\,\Delta_\ell(k)\,Y^*_{\ell m}(\khat),
+\label{eq:asm-K1lm}
+\end{equation}
+with the real transfer function $\Delta_\ell(k)$ of Proposition~\ref{prop:Delta} (closed form of the ISW part:
+Theorem~\ref{thm:isw}); the observer terms are $-\delta_{\ell0}(T_{\delta_T}+\TP)(k,\eta_o)+\tfrac13\delta_{\ell1}kT_V(k,\eta_o)$.
+($K_1$ rebuilt from $\Delta_\ell$, $\ell\le40$, equals the numerical line-of-sight kernel to $7\times10^{-15}$; the sign of the
+observer dipole is fixed by the comparison with the planar solver N1, $a_{10}[\Theta_1]=2.0812147132$ in both.)
+The sky monopole entering \eqref{eq:theta_orders} is the $\ell=0$ projection,
+\begin{equation}
+\sky{m_1}=\int\!\frac{\dd^3k}{(2\pi)^3}\,\zeta_\vk\,\Delta_0(k),\qquad
+\big\langle\sky{m_1}^2\big\rangle=\frac1{2\pi^2}\int k^2\dd k\,P(k)\,\Delta_0(k)^2=\frac{C^{(11)}_0}{4\pi},\qquad
+\Delta_0=O(k^4)\ (k\to0).
+\label{eq:asm-monopole}
+\end{equation}
+
+\paragraph{Observer clock.}  The observer measures at fixed proper time $\Delta\tau=\int_{\eta_{\rm init}}^{\eta_o}a\,\dd\eta/\hat u^0$
+from the initial-data surface (Sec.~\ref{sec:observer}, \eqref{eq:clock}).  At first order $1/\hat u^0=1+\Psi_1$ on the worldline,
+so $\Delta\tau=\int\eta(1+\eps\Psi_1)\dd\eta$; holding it fixed gives $\bar\eta_o\,\delta\eta_{o1}+\int_0^{\bar\eta_o}\eta\Psi_1(\eta,\mathbf0)\dd\eta=0$
+up to an initial-surface term $O(\eta_i^2)\to0$.  Per mode ($\delta\eta_{o1}=\int\frac{\dd^3k}{(2\pi)^3}\zeta_\vk\,\delta\eta_o(k)$), using
+$\int x\TP(x)\dd x=2\sin x/x$,
+\begin{equation}
+\delta\eta_o(k)=-\frac1{\eta_o}\int_0^{\eta_o}\!\eta\,\TP(k,\eta)\,\dd\eta=\frac{6}{k^2\eta_o}\Big(1-\frac{\sin x_o}{x_o}\Big)
+\ \xrightarrow{k\to0}\ \frac{\eta_o}3,\qquad x_o\equiv\frac{k\eta_o}{\sqrt3}.
+\label{eq:asm-clock}
+\end{equation}
+The clock shift is the time integral of the \emph{lapse} $\Psi_1$, not of $\delta_{T1}$ (the two differ for $k\eta_o\sim1$).
+The limit $\eta_o/3$ is the constant-mode value $\eta_o=\bar\eta_o/\lambda$, $\lambda=1-c/3+O(c^2)$, of the exact dilation family
+(Sec.~\ref{sec:tadpole}, \eqref{eq:dilation}).
+
+\paragraph{Observer displacement.}  The tagged worldline (Sec.~\ref{sec:observer}; label = position as $\eta\to0$) moves by
+$\delta\vx_{o1}=\int_0^{\eta_o}\vv_1(\eta,\mathbf0)\dd\eta=\int\frac{\dd^3k}{(2\pi)^3}\zeta_\vk\,i\vk\,X_o(k)$ with
+\begin{equation}
+X_o(k)=\int_0^{\eta_o}T_V(k,\eta)\,\dd\eta=\frac3{k^2}\Big(\frac{2\sin x_o}{x_o}-\cos x_o-1\Big)\ \xrightarrow{k\to0}\ \frac{\eta_o^2}6 .
+\label{eq:asm-disp}
+\end{equation}
+\paragraph{Emission-surface shift.}  From $1+\delta_T(\eta_e,\vx(\eta_e))=\eta_e/\eta_*$ \eqref{eq:emission},
+\begin{equation}
+\delta\eta_{e1}=\eta_*\,\delta_{T1}(\eta_*,\bar\vx_*)\quad\Rightarrow\quad \delta\eta_e(\vk)=\eta_*\,T_{\delta_T}(k,\eta_*)\,E(\eta_*).
+\label{eq:asm-emission}
+\end{equation}
+At first order $\delta\eta_{o1}$ and $\delta\vx_{o1}$ do not enter $\Theta^{(1)}$ ($S$ has no background part); they first appear in
+$K_2$.
+
+% ======================================================================
+\subsection{The second-order kernel \texorpdfstring{$K_2$}{K2}}
+\label{sec:asm-K2}
+\paragraph{Factor bookkeeping.}  With $\Lambda=-S=\eps L_1+\tfrac{\eps^2}2L_2+\dots$ \eqref{eq:mdef}, the term list of
+Sec.~\ref{sec:map2} (C2's \code{L[2]}) is $L_2/2$; call its kernel $K_{L_2/2}(\vk_1,\vk_2;\nhat)$ (not symmetric).  Then
+$m_2=L_2+L_1^2$, and by \eqref{eq:theta_orders} $\Theta^{(2)}_{\ell m}=m_{2,\ell m}-2\sky{m_1}m_{1,\ell m}$ for $\ell\ge1$.  With
+$\Theta=\eps\Theta^{(1)}+\tfrac{\eps^2}2\Theta^{(2)}$ and $\Theta^{(2)}=\int\!\!\int\zeta\zeta K_2$ \eqref{eq:Kr}, the symmetric kernel is
+\begin{equation}
+\boxed{\;K_2(\vk_1,\vk_2;\nhat)=2\,{\rm Sym}\big[K_{L_2/2}\big]+K_1(\vk_1)K_1(\vk_2)-\Delta_0(k_1)K_1(\vk_2)-\Delta_0(k_2)K_1(\vk_1)\;}
+\qquad(\ell\ge1),
+\label{eq:asm-K2}
+\end{equation}
+${\rm Sym}[f]=\tfrac12[f(\vk_1,\vk_2)+f(\vk_2,\vk_1)]$; the factor 2 converts $L_2/2$ into $L_2$, the product $K_1K_1$ is the $L_1^2$ of $m_2$,
+and $-2\sky{m_1}m_1$ symmetrised gives the last two terms (with \eqref{eq:asm-monopole}).  The $\ell=0$ part of \eqref{eq:asm-K2} is
+not the monopole of $\Theta^{(2)}$ (which vanishes) and is never used.  We use the \emph{direct} (redshift) form of $L_2$ (C2), which equals
+the shear form modulo the conservation equations; the two give the same $K_2$ to $6\times10^{-15}$ at generic momenta
+(Sec.~\ref{sec:asm-cl22}).
+
+\paragraph{Fourier rules and named objects.}  A first-order field $X_1$ on the ray contributes, in slot $a\in\{1,2\}$,
+$\zeta_{\vk_a}T_X(k_a,\eta)E_a$, with $\partial_j\to ik_{a,j}$, $\nhat\cdot\vv_1\to ik_a\mu_aT_V$.  Geometry:
+$\mu\equiv\khat_1\cdot\khat_2$, $\vK\equiv\vk_1+\vk_2$, $K_n\equiv\nhat\cdot\vK=k_1\mu_1+k_2\mu_2$,
+$P_\perp\equiv\vk_{1\perp}\cdot\vk_{2\perp}=k_1k_2(\mu-\mu_1\mu_2)$ ($\vk_\perp=\vk-\nhat(\nhat\cdot\vk)$), $E_K\equiv E_1E_2=e^{iK_n\chi}$.
+Two first-order combinations recur: the direct-form line-of-sight integrand and boundary function,
+\begin{equation}
+J_a\equiv2ik_a\mu_a\TP(k_a,\eta)E_a\ \ (=2\partial_n\Psi_1=-\Gamma^0_{kk}|_1),\qquad
+U_a\equiv\big[\TP+ik_a\mu_aT_V-T_{\delta_T}\big](k_a,\eta)\,E_a\ \ (=\Psi_1+\nhat\cdot\vv_1-\delta_{T1}),
+\label{eq:asm-JU}
+\end{equation}
+so that $L_1=\int_{\eta_*}^{\eta_o}J\,\dd\eta+[U]^{o}_{e}$, equal to \eqref{eq:L1} after one integration by parts.  The perturbed photon
+direction and position along the ray, $\vk_1(\eta)=\vk_{1}^{\rm init}-\int_\eta^{\eta_o}\mathbf G_1\dd\eta'$ and
+$\Delta\vx_1(\eta)=\delta\vx_{o1}+\nhat\,\delta\eta_{o1}-\int_\eta^{\eta_o}\vk_1\dd\eta'$ (Sec.~\ref{sec:map2}; note the sign of the
+$\mathbf G_1$ integral, which corrects the stored \code{definitions} of C2), are, per mode $a$,
+\begin{align}
+\vk_{1\perp}&=i\vk_{a\perp}\,\mathcal F_a(\eta), &
+\mathcal F_a(\eta)&\equiv T_V(k_a,\eta_o)+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k_a,\eta')E_a(\eta'),\nonumber\\
+\Delta\vx_{1\perp}&=i\vk_{a\perp}\,\mathcal D_{\perp,a}(\eta), &
+\mathcal D_{\perp,a}(\eta)&\equiv X_o(k_a)-\int_\eta^{\eta_o}\!\dd\eta'\,\mathcal F_a(\eta'),\nonumber\\
+\nhat\cdot\Delta\vx_1&=\mathcal D_{r,a}(\eta), &
+\mathcal D_{r,a}(\eta)&\equiv ik_a\mu_aX_o(k_a)+\delta\eta_o(k_a)+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k_a,\eta')E_a(\eta'),
+\label{eq:asm-functionals}
+\end{align}
+($\mathcal F$: aberration at the observer plus accumulated deflection; $\mathcal D_\perp$: lensing displacement; $\mathcal D_r$: radial
+displacement = Shapiro delay + clock + observer displacement), while $\nhat\cdot\vk_1=-(\Phi_1+\Psi_1)$ is the null condition.
+A second-order field contributes its pair kernel times $E_K$ (Sec.~\ref{sec:einstein}, \eqref{eq:kernel_def} with $\vq\to\vk_1$,
+$\vp\to\vk_2$, $\vk\to\vK$):
+\begin{align}
+&\Phi_2\equiv\mathcal K_{\Phi_2}(K,k_1,k_2;\eta),\quad \Psi_2\equiv\mathcal K_{\Phi_2}-K_Q,\quad
+\delta_{T2}\equiv\tfrac14K_{\delta_2}-\tfrac3{16}T_\delta(k_1)T_\delta(k_2),\quad V_2\ (\vv^L_2=\nabla V_2)\ \text{from \eqref{eq:operators}},\nonumber\\
+&\nhat\cdot\vv^T_2=\tfrac12\big[\nhat\!\cdot\!P(\Khat)\vk_1\,K^{(12)}_{v^T}+\nhat\!\cdot\!P(\Khat)\vk_2\,K^{(21)}_{v^T}\big],\quad
+\nhat\cdot\boldsymbol\omega_2=\tfrac12\big[\nhat\!\cdot\!P\vk_1\,K^{(12)}_{\omega}+\nhat\!\cdot\!P\vk_2\,K^{(21)}_{\omega}\big],\quad
+\nhat\!\cdot\!P(\Khat)\vk_a=k_a\mu_a-\frac{K_n\,\vK\cdot\vk_a}{K^2},\nonumber\\
+&h_{2,nn}=\Big[(\nhat\!\cdot\!P\vk_1)^2-\tfrac12\Big(1-\frac{K_n^2}{K^2}\Big)\Big(k_1^2-\frac{(\vK\cdot\vk_1)^2}{K^2}\Big)\Big]\mathcal H,\qquad
+\mathcal H\equiv\mathcal K_h(K,k_1,k_2;\eta),
+\label{eq:asm-second}
+\end{align}
+with $K^{(ab)}_X\equiv K_X(\vk_a,\vk_b)$, $\mathcal K_{\Phi_2}$, $\mathcal K_h$ the declared integrals \eqref{eq:declared2},
+$K_Q,K_\omega,K_{v^T}$ from \eqref{eq:second_kernels}, $K_{\delta_2}$ the $00$-constraint kernel (App.~\ref{app:kernels}), and
+$\delta_{T2}$ from $1+\delta_T=(1+\delta)^{1/4}$.
+
+% ======================================================================
+\subsection{Channels of \texorpdfstring{$K_2$}{K2}}
+\label{sec:asm-channels}
+$K_2=\sum_cK^c$ is organised by the harmonic type of Sec.~\ref{sec:harmonic} (B: products of maps at one point; C: single-time
+convolution kernels with phase $E_K$; D: nested two-time or endpoint$\times$functional products).  ``Ray'' channels are
+$\int_{\eta_*}^{\eta_o}\dd\eta$ of the expression; ``obs'' channels are evaluated at $\eta_o$, $\chi=0$ (so $E_a=1$); ``emi'' channels at
+$\eta_*$, $\chi_*$.  $\sum_{(ab)}$ denotes the sum over $(a,b)=(1,2),(2,1)$.  Each compact form below was checked symbolically against
+the machine-generated kernel of App.~\ref{app:k2channels} (residual $0$), and each machine kernel against the numerical engine
+($\le1.8\times10^{-15}$).
+
+\paragraph{Type B (products and normalisation).}
+\begin{align}
+K^{\rm B,prod}&=K_1(\vk_1)K_1(\vk_2)-\Delta_0(k_1)K_1(\vk_2)-\Delta_0(k_2)K_1(\vk_1),\nonumber\\
+K^{\rm B,obs}_{1\times1}&=\Big[P_\perp T_{V1}T_{V2}-2T_{\Phi1}T_{\Phi2}+T_{\delta_T1}T_{\delta_T2}-2i\big(T_{\Phi1}T_{V2}k_2\mu_2+T_{\Phi2}T_{V1}k_1\mu_1\big)\Big]_{\eta_o},
+\qquad K^{\rm B,emi}_{1\times1}=-\Big[E_1E_2\{\cdots\}\Big]_{\eta_*},
+\label{eq:asm-chB}
+\end{align}
+where $\{\cdots\}$ is the same bracket and $T_{Xa}\equiv T_X(k_a,\cdot)$: the second-order part of the boundary function
+$\ln(-\hat u\cdot k)-\ln(1+\delta_T)$ at the two endpoints.
+
+\paragraph{Type C (single-time second-order fields and ray-local products).}
+\begin{align}
+K^{\rm C,ray}_{\Phi_2\Psi_2}&=E_K\big[\dot\Phi_2-\dot\Psi_2+2iK_n\Psi_2\big], &
+K^{\rm C,obs/emi}_{\Psi_2}&=\pm E_K\Psi_2,\nonumber\\
+K^{\rm C,obs/emi}_{\delta_{T2}}&=\mp E_K\,\delta_{T2}, &
+K^{\rm C,obs/emi}_{V_2}&=\pm E_K\,iK_nV_2,\nonumber\\
+K^{\rm C,obs/emi}_{v^T_2+\omega_2}&=\pm E_K\,\nhat\cdot(\vv^T_2+\boldsymbol\omega_2)\quad(\text{helicity }\pm1), &
+K^{\rm C,ray}_{\omega_2}&=E_K\,iK_n\,\nhat\cdot\boldsymbol\omega_2,\nonumber\\
+K^{\rm C,ray}_{h_2}&=-\tfrac12E_K\,\dot h_{2,nn}\quad(\text{helicity }\pm2), &
+K^{\rm C,ray}_{1\times1}&=4E_1E_2\big(T_{\Phi1}\dot T_{\Phi2}+T_{\Phi2}\dot T_{\Phi1}\big),
+\label{eq:asm-chC}
+\end{align}
+upper sign at the observer, lower at emission.  The ray terms are $-\Gamma^0_{kk}$ evaluated on the second-order fields
+($\tfrac12(\Phi_2'-\Psi_2')+\partial_n\Psi_2+\tfrac12\partial_n\omega_{2,n}-\tfrac14h'_{2,nn}$ in $L_2/2$; the $\partial_n\Psi_2$ term is
+the second-order SW+ISW after integration by parts) and the local product $2\Phi_1\Phi_1'+2\Psi_1\Psi_1'+2(\Phi_1-\Psi_1)\partial_n\Psi_1$.
+Grouping for the numerics (Table~\ref{tab:mono-groups}): $\Phi_2\Psi_2$ = ray $\Phi_2\Psi_2$ + endpoint $\Psi_2$; vector = endpoint
+$v^T_2+\omega_2$ + ray $\omega_2$.
+
+\paragraph{Type D (lensing, time delay, aberration+deflection, emission-surface shift, clock, observer displacement).}
+\begin{align}
+K^{\rm D}_{\rm lens}&=\int\!\dd\eta\sum_{(ab)}-P_\perp\mathcal D_{\perp,a}J_b+\Big[\sum_{(ab)}P_\perp\mathcal D_{\perp,a}U_b\Big]_{\eta_*}
+&&(\Delta\vx_{1\perp}\cdot\nabla_\perp J,\ -\Delta\vx_{1\perp}\cdot\nabla_\perp U|_e),\nonumber\\
+K^{\rm D}_{\rm delay}&=\int\!\dd\eta\sum_{(ab)}ik_b\mu_b\,\mathcal D_{r,a}J_b-\Big[\sum_{(ab)}ik_b\mu_b\,\mathcal D_{r,a}U_b\Big]_{\eta_*}
+&&(\Delta x_{1r}\,\partial_nJ,\ -\Delta x_{1r}\,\partial_nU|_e),\nonumber\\
+K^{\rm D}_{\rm defl}&=\int\!\dd\eta\sum_{(ab)}2P_\perp\mathcal F_a\TP(k_b)E_b-\Big[\sum_{(ab)}P_\perp\mathcal F_aT_V(k_b)E_b\Big]_{\eta_*}
+&&(-2\vk_{1\perp}\cdot\nabla_\perp\Psi_1,\ \vk_{1\perp}\cdot\vv_{1\perp}|_e),\nonumber\\
+K^{\rm D}_{\rm emi}&=-\Big[\sum_{(ab)}\delta\eta_e(\vk_a)\,\big(J_b+\mathbb D U_b\big)\Big]_{\eta_*},\qquad \mathbb D\equiv\partial_\eta-ik_b\mu_b
+&&(\text{lower-endpoint shift}),\nonumber\\
+K^{\rm D}_{\rm clock}&=\Big[\sum_{(ab)}\delta\eta_o(k_a)\,\big(J_b+\dot U_b\big)\Big]_{\eta_o}
+&&(\text{upper-endpoint shift at fixed }\vx),\nonumber\\
+K^{\rm D}_{\rm disp}&=-\Big[\sum_{(ab)}X_o(k_a)\,(\vk_a\cdot\vk_b)\,U_b\Big]_{\eta_o}
+&&(\delta\vx_{o1}\cdot\nabla U|_o),
+\label{eq:asm-chD}
+\end{align}
+with $\mathbb D=\partial_\eta-\nhat\cdot\nabla$ the derivative along the background ray acting on $U_b$ (and $J_b,U_b$ evaluated at the
+time of the term).  Explicitly, the ray lensing kernel is $-2iP_\perp\sum_{(ab)}\mathcal D_{\perp,a}\TP(k_b)k_b\mu_bE_b$ and the ray time
+delay $-2\sum_{(ab)}\mathcal D_{r,a}\TP(k_b)k_b^2\mu_b^2E_b$.  The radial shift $\nhat\,\delta\eta_{o1}$ and the observer displacement also
+enter through $\mathcal D_{r}$, $\mathcal D_\perp$ \eqref{eq:asm-functionals}; the channels ``clock'' and ``disp'' contain only the
+explicit endpoint pieces.
+
+\begin{remark}[observer channels]\label{rem:asm-obs}
+At the observer $\chi=0$, so an obs channel is a polynomial in $\nhat$ of the degree of its $\mu_a$, $K_n$, $P_\perp$ content:
+$K^{\rm C,obs}$, $K^{\rm D}_{\rm clock}$, $K^{\rm D}_{\rm disp}$ have degree $\le1$ and contribute to $\ell\le1$ only;
+$K^{\rm B,obs}_{1\times1}$ has degree $2$ and contributes to $\ell\le2$.  For $\ell\ge2$ the observer motion and clock act only through
+$\mathcal F,\mathcal D_\perp,\mathcal D_r$ and the type-B products.  (Consistent with the vanishing clock and displacement diagonals in
+Table~\ref{tab:mono-groups}.)
+\end{remark}
+The complete machine-generated set (fifteen channels, plus B) is App.~\ref{app:k2channels}.
+
+% ======================================================================
+\subsection{Squeezed limits: dilation and special conformal transformation}
+\label{sec:asm-squeezed}
+Let $\mathcal D\equiv\vk_2\cdot\partial_{\vk_2}$ (at fixed $\khat_2$, $\nhat$) and, for a vector $\vp$,
+$\mathcal S_{\vp}\equiv(\vk_2\cdot\partial_{\vk_2})(\vp\cdot\partial_{\vk_2})-\tfrac12(\vp\cdot\vk_2)\nabla^2_{\vk_2}$.
+\begin{theorem}[squeezed limit of the second-order map]\label{thm:asm-squeezed}
+For $\eta_i\to0$ and every $\nhat$ (all multipoles, observer terms and normalisation included),
+\begin{equation}
+K_2(\vk_1,\vk_2;\nhat)=-\mathcal D K_1(\vk_2;\nhat)-\mathcal S_{\vk_1}K_1(\vk_2;\nhat)+O(k_1^2),
+\qquad\text{in particular}\quad \lim_{\vk_1\to0}K_2(\vk_1,\vk_2;\nhat)=-\vk_2\cdot\partial_{\vk_2}K_1(\vk_2;\nhat).
+\label{eq:asm-squeezed}
+\end{equation}
+(For finite $\eta_i$ add $+\tfrac{\eta_i^2}6(\vk_1\cdot\vk_2)K_1(\vk_2;\nhat)$, a translation of the observer label.)  Since in RD
+$K_1$ depends on $k$ only through $k\eta_o$, $k\eta_*$ and $\mu$, $\mathcal DK_1=(\eta_o\partial_{\eta_o}+\eta_*\partial_{\eta_*})K_1$.
+\end{theorem}
+\noindent\emph{Status.}  Derived (agent V2) from the adiabatic-mode transformation of the full observable, independently of
+$K_2$: the long mode $\zeta_L=c+\vq\cdot\vx$ is the Poisson-gauge image of FRW under
+$\tilde\eta=\eta-\tfrac\eta3\zeta_L$, $\tilde\vx=(1+\zeta_L)\vx-\tfrac{x^2}2\vq-\tfrac{\eta^2}6\vq$; every ingredient of $T_{\rm obs}=T_oe^{-S}$
+(shear, null geodesic, $T_{\rm phys}=T_*$ surface, tagged worldline, proper-time clock, sky normalisation) is covariant, and at
+$\eta\to0$ the map is conformal with $\tilde\zeta_S(\tilde\vx)=\zeta_S(\vx(\tilde\vx))$ exactly.  Verified on the full $K_2$
+\eqref{eq:asm-K2} (agent A2): $\|K_2(s\hat\ve,\vk_2)+\mathcal DK_1\|$ (rms over $\ell\ge2$) $=3.18\times10^{-1,-2,-3}$ for
+$s=10^{-2,-3,-4}$ ($|\vk_2|=1.07$; the dilation itself has rms $11.25$), exactly linear in $s$; the $k_1$-odd part
+$[K_2(s\hat\ve)-K_2(-s\hat\ve)]/2s$ equals $-\mathcal S_{\hat\ve}K_1$ to $1.5$--$6\times10^{-5}$ ($|\vk_2|=1.07$) and $1.6$--$2.2\times10^{-4}$
+($|\vk_2|=2.44$) per multipole, the accuracy of the finite-difference Hessian.  Individual channels are $O(10)$ at $s\to0$
+(e.g.\ ray $V_2$-containing terms $11.0$, time delay $13.9$) and cancel to the dilation.
+
+\paragraph{Why a constant $\zeta$ is a dilation and not zero.}  A constant $\zeta_{\rm nl}=c$ is pure gauge: the early-time
+spatial metric $a^2e^{2\zeta}\dd\vx^2$ is FRW in the coordinates $\tilde\vx=e^c\vx$, and the observer (at the origin), its proper-time
+clock and the emission temperature $T_*$ are invariant.  But $\zeta_{\rm nl}=c+\zeta_S$ is then the configuration
+$\tilde\zeta_S(\tilde\vx)=\zeta_S(e^{-c}\tilde\vx)$ in FRW coordinates, i.e.\ the \emph{same} observable evaluated on the short field
+\emph{relabelled} to $e^{c}$ times longer comoving wavelengths: $\Theta[c+\zeta_S]=\Theta[\zeta_S(e^{-c}\,\cdot)]$, whose $O(c)$ term is
+$-c\,\vk\cdot\partial_\vk K_1$.  Physically, the long mode stretches every short wavelength relative to the only other scales in
+the problem, the emission and observation times fixed by $T_{\rm phys}=T_*$ and by the proper-time clock; since the RD map depends
+on $k\eta_*$, $k\eta_o$ only, this is the same as $-c(\eta_o\partial_{\eta_o}+\eta_*\partial_{\eta_*})$.  For a \emph{fixed} Gaussian
+realisation of $\zeta_S$ the relabelled field is a different realisation, so $K_2(0,\vk_2)$ cannot vanish; ``unobservable'' means only
+that the long mode is equivalent to a relabelling (Maldacena's consistency relation for the map), whose effect on the statistics
+vanishes iff $k^3P$ is scale invariant.  The separate CPV-type pieces (amplitude, emission-time shift $\eta_e=\eta_*(1+c/3)$, clock
+$\eta_o(1+c/3)$, coordinate length of the ray, field cross terms, monopole normalisation) do not survive individually.  At $O(k_1)$ the
+observer velocity, drift, emission-surface tilt, gradient lensing/time delay and the squeezed vector mode cancel likewise, leaving the
+SCT relabelling $\mathcal S_{\vk_1}$; physical effects start at $O(k_1^2)$.
+
+\paragraph{Consequence for the IR of the loop (second-order half).}  Let $q_*$ separate soft from hard momenta and
+$\sigma_L^2\equiv\int_{k<q_*}\frac{\dd^3k}{(2\pi)^3}P(k)$.  In \eqref{eq:loops} the regions $k_1<q_*$ and $k_2<q_*$ contribute equally;
+with \eqref{eq:asm-squeezed} ($O(k_1)$ terms vanish by parity after the angular integral) and \eqref{eq:asm-K1lm},
+\begin{equation}
+\tfrac14C^{(22)}_\ell\big|_{\rm soft}=\sigma_L^2\,\frac1{2\ell+1}\sum_m\int\!\frac{\dd^3k}{(2\pi)^3}P(k)\,\big|\mathcal DK_{1,\ell m}(\vk)\big|^2
+=\sigma_L^2\,\frac2\pi\int k^2\dd k\,P(k)\,\big[k\partial_k\Delta_\ell(k)\big]^2+O(q_*^2\sigma_L^2),
+\label{eq:asm-IR22}
+\end{equation}
+the second-order dilation response.  It is positive, so for $P\propto k^{-3}$ ($\sigma_L^2\propto\int\dd q/q$) $C^{(22)}_\ell$ alone is
+logarithmically IR divergent and nothing inside $C^{(22)}$ can cancel it.  The cancellation requires the $(13)$ soft region with
+$K_3(\vq,-\vq,\vk)\to\mathcal D^2K_1(\vk)$ (predicted by V2, \S4 of its report; \emph{verification on our $K_{3c}$ pending, agent A3}),
+after which the sum is $\sigma_L^2\cdot\tfrac12\cdot\tfrac2\pi\int k^2\dd k\,\Delta_\ell^2(3+\mathcal D)^2P$: a total derivative in $\ln k$ that
+vanishes for scale-invariant $k^3P$, and leaves an IR sensitivity $\propto\sigma_L^2$ times the running of $k^3P$ otherwise
+(Sec.~\ref{sec:asm-IR}).  For the monochromatic spectrum of Sec.~\ref{sec:mono} there is no soft region; the corner $K=|\vk_1+\vk_2|\to0$
+treated there is a different limit.
+
+% ======================================================================
+\subsection{\texorpdfstring{$C^{(22)}_\ell$}{C22}}
+\label{sec:asm-cl22}
+With $K_2$ symmetric, the two connected pairings give (\eqref{eq:loops}, (C1) of \eqref{eq:C1C2}, frame $\Khat=\hat{\mathbf z}$,
+$\vk_{1,2}$ in the $x$--$z$ plane)
+\begin{equation}
+C^{(22)}_\ell=\frac{2}{2\ell+1}\sum_m\!\int\!\frac{\dd^3k_1\dd^3k_2}{(2\pi)^6}P(k_1)P(k_2)\big|K_{2,\ell m}\big|^2
+=\frac1{4\pi^4(2\ell+1)}\int\!k_1^2\dd k_1\,k_2^2\dd k_2\,P(k_1)P(k_2)\int_{-1}^1\!\dd\mu\sum_m\big|\tilde K_{\ell m}(k_1,k_2,\mu)\big|^2 ,
+\label{eq:asm-C22}
+\end{equation}
+and it enters $C_\ell$ as $\tfrac14C^{(22)}_\ell$ \eqref{eq:cl_target}.  With $\tilde K_{\ell m}=\sum_c\tilde K^c_{\ell m}$,
+$C^{(22)}_\ell=\sum_{c,c'}G_{cc'}(\ell)$, $G_{cc'}$ being \eqref{eq:asm-C22} with $|\tilde K|^2\to\tilde K^c_{\ell m}\tilde K^{c'*}_{\ell m}$ (cross
+terms included).  The radial functions of each type are:
+\begin{itemize}
+\item[B$\times$B:] $\Delta_\ell(k)$ only.  $C^{\rm BB}_\ell=C^{m_1^2}_\ell-4\langle\sky{m_1}^2\rangle C^{(11)}_\ell$ with
+$C^{m_1^2}_\ell=2\sum_{\ell_1\ell_2}\frac{(2\ell_1+1)(2\ell_2+1)}{4\pi}\threej{\ell}{\ell_1}{\ell_2}{0}{0}{0}^2C^{(11)}_{\ell_1}C^{(11)}_{\ell_2}$ (\eqref{eq:B1},
+$\ell_{1,2}\ge0$ including the observer monopole and dipole), and $-4=-8$ (cross with $m_1^2$, \eqref{eq:monopole_terms}(ii)) $+4$ (i).
+The endpoint $1\times1$ channels are products of shell maps with radial functions $T_X(k,\eta_e)\,j^{(s)}_\ell(k\chi_e)$, $s\le1$
+(gradient weight $w_\nabla$ for $P_\perp$), $\eta_e\in\{\eta_*,\eta_o\}$.
+\item[C:] $\tilde K^C_{\ell m}=\int\dd\eta\,K^c(k_1,k_2,K;\eta)\sum_{|L-\ell|\le d}i^L\sqrt{4\pi(2L+1)}\,j_L(K\chi)\,\langle\ell m|\mathcal Q|L0\rangle$ \eqref{eq:K2lm},
+$|m|\le d$, with $K^c$ the pair kernels of \eqref{eq:asm-second} ($\Phi_2,\dot\Phi_2,\Psi_2,\dot\Psi_2,\delta_{T2},V_2,K_{v^T},K_\omega,\mathcal H,\dot{\mathcal H}$,
+or $T_\Phi\dot T_\Phi$ for the ray-local product) and $\mathcal Q$ the polynomial in $\mu_1,\mu_2,K_n/K$ of \eqref{eq:asm-chC} (degree $d\le2$;
+helicity pieces equivalently by (A-$\lambda$) \eqref{eq:ruleAlambda}).
+\item[D:] the functionals \eqref{eq:asm-functionals} are expanded in Legendre series of $\mu_a$,
+$\mathcal F_a=\sum_\ell(2\ell+1)i^\ell\mathcal F_\ell(k_a;\eta)P_\ell(\mu_a)$ etc., with radial functions
+\begin{align}
+\mathcal F_\ell(k;\eta)&=T_V(k,\eta_o)\delta_{\ell0}+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k,\eta')j_\ell(k\chi'),\qquad
+\mathcal D_{\perp\ell}(k;\eta)=X_o(k)\delta_{\ell0}-\int_\eta^{\eta_o}\!\dd\eta'\,\mathcal F_\ell(k;\eta'),\nonumber\\
+\mathcal D_{r\ell}(k;\eta)&=\delta\eta_o(k)\delta_{\ell0}+\tfrac13kX_o(k)\delta_{\ell1}+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k,\eta')j_\ell(k\chi'),
+\label{eq:asm-Dl}
+\end{align}
+paired with the shell functions $\TP(k_b,\eta)j^{(s)}_\ell(k_b\chi)$ (from $J_b$) or $[\TP-T_{\delta_T}](k_b,\eta_*)j_\ell(k_b\chi_*)$,
+$kT_V(k_b,\eta_*)j'_\ell(k_b\chi_*)$ (from $U_b$); the projection is the bipolar (double Rayleigh) sum of Sec.~\ref{sec:typeC} with the
+$P_\perp$ contractions carrying the weight $w_\nabla$ (type-D identity of Sec.~\ref{sec:typeB}), and \eqref{eq:asm-C22} is unchanged.
+\end{itemize}
+\emph{Implementation.}  The full $K_2$ is projected on $Y_{\ell m}$ by Gauss--Legendre sky quadrature in the $\Khat=\hat{\mathbf z}$ frame at
+each $\mu$ node; this realises the C and D reductions exactly and reproduces the B channels' finite $3j$ sum (diagonal $G_{\rm BB}$ to
+$4\times10^{-12}$ for $\ell\le12$, $5\times10^{-9}$ for $\ell\le20$ at $\eta_o=8$).  No closed form of the C/D $\mu$-integrands beyond
+\eqref{eq:K2lm}, \eqref{eq:asm-Dl} has been produced.
+
+\paragraph{Verified properties of $K_2$} (App.~\ref{app:ledger}; \code{check\_*.log}):
+(i)~shear form vs direct form of $L_2$ at generic non-collinear $\vk_1=(0.7,-0.2,0.4)$, $\vk_2=(-0.3,0.9,0.5)$: relative difference
+$6\times10^{-15}$ pointwise in $\nhat$ (the shear form contains only $v_2,h_2$ among second-order fields, the direct form
+$\Phi_2,\Psi_2,\delta_{T2},V_2,v^T_2,\omega_2,h_2$: a test of all of C1's $K\neq0$ kernels, including vector and tensor sectors);
+(ii)~plane wave $\zeta=\cos(k(x+x_o))$ vs the non-perturbative planar solver N1, four configurations ($\eta_*=2$, $\eta_o=4,8$,
+$x_o=0,\pi/2$), $a_{\ell0}[\Theta_1]$, $a_{\ell0}[\Theta_2]$, $\ell\le12$: max deviation $1.2\times10^{-8}$, $1.0\times10^{-9}$, $6.5\times10^{-9}$,
+$7.0\times10^{-10}$, all within N1's quoted errors (e.g.\ $a_{20}[\Theta_2]=-4.2224942187$ vs N1 $-4.2224942193$);
+(iii)~symmetry $K_2(\vk_1,\vk_2)=K_2(\vk_2,\vk_1)$ to $9\times10^{-15}$; (iv)~reality $K_2(-\vk_1,-\vk_2;\nhat)=K_2(\vk_1,\vk_2;\nhat)^*$ exactly;
+(v)~squeezed limits, Theorem~\ref{thm:asm-squeezed}.
+
+% ======================================================================
+\subsection{Contracted third-order kernel \texorpdfstring{$K_{3c}$}{K3c}}
+\label{sec:asm-K3c}
+\todo{(agent A3) $\Theta^{(3)}_c(\vk;\nhat)=3\int\frac{\dd^3q}{(2\pi)^3}P(q)K_3(\vk,\vq,-\vq;\nhat)$ from $m_3=L_3+3L_1L_2+L_1^3$ and the normalisation
+terms of \eqref{eq:theta_orders}, with the contraction rules \eqref{eq:contraction_rules}, tadpoles \eqref{eq:tad}, $X_{3c}$ \eqref{eq:third_eqs};
+organised by the structures (i)--(iii) of Sec.~\ref{sec:thirteen}, with the sign of the ray functionals as in \eqref{eq:asm-functionals}.}
+
+\subsection{\texorpdfstring{$C_\ell^{(13)}$}{C13}}
+\label{sec:asm-C13}
+\todo{(agent A3) $C^{(13)}_\ell$ via (E0)--(E3) \eqref{eq:E0}--\eqref{eq:E2E3} and (A-$L$) \eqref{eq:AL}, every radial function named; checks.}
+
+\subsection{IR structure of the loop}
+\label{sec:asm-IR}
+\todo{(agent A3) verification of $K_3(\vq,-\vq,\vk)\to\mathcal D^2K_1(\vk)+O(q^2)$ on the contracted kernel, and of the cancellation of the
+soft region between $\tfrac14C^{(22)}$ \eqref{eq:asm-IR22} and $\tfrac13\Re C^{(13)}$: total derivative $\propto(3+\mathcal D)^2P$ (V2).  The
+second-order half is Sec.~\ref{sec:asm-squeezed}.}

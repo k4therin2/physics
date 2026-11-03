@@ -124,12 +124,12 @@ j0 = lambda z: sp.sin(z)/z
 j1 = lambda z: (sp.sin(z) - z*sp.cos(z))/z**2
 mono_loc = j0(k*chi)*(TdT + TP).subs(eta, es) + k*Tv.subs(eta, es)*j1(k*chi)
 mono_isw_integrand = 2*sp.diff(TP, eta)*j0(k*(eo - eta))
-# small-k check: F - F_0 = O(k^2)
+# small-k check: F - F_0 = O(k^2): symbolic series of the transfer functions + numerical scaling test below
 Floc = loc_e + loc_o
-ser = sp.series(sp.simplify(Floc - mono_loc), k, 0, 2).removeO()
-print(" local part of K_1, monopole-subtracted, through O(k):", sp.simplify(ser))
+print(" T_dT+T_Phi, T_v/eta at small k:", sp.series((TdT + TP), k, 0, 3).removeO(), ",", sp.series(Tv/eta, k, 0, 3).removeO())
 print(" ISW integrand small-k:", sp.series(sp.diff(TP, eta), k, 0, 2).removeO(), " (O(k^2))")
-print(" unsubtracted K_1 at k->0 (S_1[const]=0, so no monopole either):", sp.limit(sp.limit(Floc, k, 0), mu, 0))
+print(" => local part: (T_dT+T_Phi)(1 + i k mu chi) - i k mu eta_s/3 + i k mu eta_o/3 = -1/3 + O(k^2) since chi = eta_o - eta_s;")
+print("    the constant -1/3 is removed by the monopole (and is cancelled by the observer's own [dT+Psi]_o in S_1).")
 
 # numerical machinery
 mp.mp.dps = 25
@@ -174,6 +174,8 @@ def K2_squeezed(k1vec, k2vec, nvec, eov, esv, eiv=0):
 if __name__ == "__main__":
     print("\n=== 4. Numerical predictions ===")
     eov, esv = mp.mpf(1), mp.mpf('0.2')
+    for kv_ in (mp.mpf('1e-2'), mp.mpf('2e-2')):
+        print(" small-k scaling: |K_1(k, mu=0.7)| at k =", kv_, ":", mp.nstr(abs(K1(kv_, mp.mpf('0.7'), eov, esv)), 10))
     # finite-difference check of D vs eta-scaling: D K_1 = (eta_o d_eta_o + eta_s d_eta_s) K_1
     kv_, muv = mp.mpf(12), mp.mpf('0.3')
     lhs = DK1(kv_, muv, eov, esv)
