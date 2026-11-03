@@ -17,7 +17,9 @@ Special functions:  Si(z);  Cin(z) = EulerGamma + ln|z| - Ci(|z|) = int_0^z (1 -
 
 API:  every function F in (Phi2, dPhi2, Psi2, delta2, deltaT2, V2, omega2, vT2, h2_I, h2_plus) is called as
       F(k, q, mu, eta):  sympy expression if any argument is a sympy object, else a fast float/complex (numpy-vectorised)
-      evaluation (closed form, with an ODE-series branch at small eta for Phi2 and h2 to avoid cancellation).
+      evaluation: ODE Taylor series for (k+q+p)eta/sqrt3 <= 4; closed form where it is well conditioned (all frequencies x eta >= 6,
+      q/k and p/k in [1/5, 5]); otherwise composite Gauss-Legendre quadrature of the Green's-function integral (collinear edges,
+      h2 resonance q+p ~ sqrt3 k, hierarchical triangles).  Accuracy vs 50-digit reference: see verify_module.log.
       F_expr(k, q, p, eta) sympy expressions in the invariants are also exported as module attributes (e.g. Phi2_expr).
 """
 import os, sys, pickle, numpy as np, sympy as sp
