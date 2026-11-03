@@ -295,3 +295,16 @@ __all__ = ['Phi2', 'dPhi2', 'Q2', 'Psi2', 'delta2', 'deltaT2', 'V2', 'omega2', '
            'Phi2_expr', 'P_expr', 'dPhi2_expr', 'Psi2_expr', 'delta2_expr', 'deltaT2_expr', 'V2_expr', 'omega2_expr', 'vT2_expr',
            'h2_I_expr', 'Phi2_collinear', 'h2_I_resonant', 'K_Phi2_0', 'ghat', 'K_Q', 'K_S00', 'K_S0z', 'K_om', 'K_vT', 'K_h', 'K_SPhi',
            'T_Phi', 'T_delta', 'T_V', 'Cin', 'k', 'q', 'p', 'mu', 'eta', 'p_of', 'Z_SWITCH']
+
+# ------------------------------------------------------------------ limits (lazy loaders)
+def small_eta_series():
+    """dict field -> {power n: coefficient(k,q,p)} for Phi2, Psi2, Q2, delta2, deltaT2 (to eta^4), V2 (eta^5), P, I_h (eta^6);
+    from series_small.py (Frobenius + constraints, checked against the closed forms at 120 digits)."""
+    d = pickle.load(open(os.path.join(HERE, 'series_small_eta.pkl'), 'rb'))
+    return {nm: {n: sp.parse_expr(c) for n, c in cs.items()} for nm, cs in d.items()}
+def large_eta_asymptotics():
+    """dict: 'Phi2_asym' (particular integral P through eta^-3), 'Phi2_lead' (P at eta^-2), 'h2_asym' (I_h through eta^-2),
+    'h2_lead' (I_h at eta^-1 = (4/k^2) KT(25)).  Add K_Phi2_0*ghat for the full Phi2 (ghat is elementary)."""
+    d = pickle.load(open(os.path.join(HERE, 'asymptotics.pkl'), 'rb'))
+    return {kk: sp.parse_expr(v, local_dict=_L) for kk, v in d.items()}
+__all__ += ['small_eta_series', 'large_eta_asymptotics']

@@ -90,3 +90,11 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   (1) C2 DOC sign: k1(eta) = k1_init - int_eta^{eta_o} G1 (minus, not plus); L-term lists correct. A2/A3 informed. (2) crashed-run bug
   in A1's own code fixed. (3) SPEC §6 wording: observer label = position as eta->0: x_o(eta) = x_label + int_0^eta v. N1's eta_o shift
   is in N1's gauge, not Poisson. Report: report_A1.md; code A1_planewave (pw_symbolic, pw_numeric, pw_map).
+- [11-03] A2 DONE (report_A2.md; symbolic_kernels.pkl/.tex: all K_2 channels, B/C/D types). Plane-wave vs N1 PASS (Th2 a_l0 to 1e-8);
+  shear vs direct form at generic non-collinear momenta 6e-15 (tests vector/tensor kernels at K!=0). CORRECTION TO SPEC 9d: constant
+  mode limit K_2(k1->0,k2) = -k.d_k K_1 (DILATION of first-order kernel), not zero; O(k1) = V2's SCT -S_{k1}K_1. IR of the loop:
+  dilation-response structure (1/2)(k d_k)^2 of the C11 integrand -> vanishes for scale-invariant P after k-integration; IR-sensitive
+  for tilted P. Clock shift delta eta_o1 = -(1/eta_o) int_0^{eta_o} eta Psi1 (lapse, not delta_T). Observer displacement X_o =
+  (3/k^2)(2 sin x_o/x_o - cos x_o - 1). mu->-1 (K->0): Phi2,Psi2,V2 ~ K^-2, omega2+v2T ~ K; K_{2,lm} finite for l>=2 (dipole log).
+  Monochromatic numbers (k0=1, eta_*=2, eta_o=8; sigma units): l=2: C11=0.95460, 1/4 C22=14.2575; l=4: 0.17507, 1.86592; l=10:
+  9.68e-6, 4.0085e-2. A3 informed of the corrected IR criterion.

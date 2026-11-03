@@ -56,7 +56,7 @@ for (kk, qq, mm, ee) in pts:
         a = mp.quad(lambda t: intP(K, Q, Pm, T, t), mp.linspace(0, T, 30))
         ad = mp.quad(lambda t: intPd(K, Q, Pm, T, t), mp.linspace(0, T, 30))
         b = mp.quad(lambda t: intH(K, Q, Pm, T, t), mp.linspace(0, T, 30))
-        c0 = fK0(K, Q, Pm)
+        c0 = fK0(K, Q, Pm, T)
         e1 = abs(a + c0 * fgh(K, Q, Pm, T) - ref['Phi2'](K, Q, Pm, T)) / abs(ref['Phi2'](K, Q, Pm, T))
         e2 = abs(ad + c0 * fdgh(K, Q, Pm, T) - ref['dPhi2'](K, Q, Pm, T)) / abs(ref['dPhi2'](K, Q, Pm, T))
         e3 = abs(b - ref['h2_I'](K, Q, Pm, T)) / abs(ref['h2_I'](K, Q, Pm, T))
@@ -65,7 +65,7 @@ for (kk, qq, mm, ee) in pts:
 # exactly collinear: module vs quadrature
 for (qq, mm, ee) in ((0.4, 1.0, 6.0), (2.5, 1.0, 9.0), (0.7, -1.0, 1.2), (0.4, -1.0, 6.0)):
     K, Q, M, T = mp.mpf(1), mp.mpf(qq), mp.mpf(mm), mp.mpf(ee); Pm = abs(K - Q * M) if abs(M) == 1 else None
-    a = mp.quad(lambda t: intP(K, Q, Pm, T, t), mp.linspace(0, T, 30)) + fK0(K, Q, Pm) * fgh(K, Q, Pm, T)
+    a = mp.quad(lambda t: intP(K, Q, Pm, T, t), mp.linspace(0, T, 30)) + fK0(K, Q, Pm, T) * fgh(K, Q, Pm, T)
     v = float(SO.Phi2(1.0, qq, mm, ee)); err = abs(v - a) / abs(a)
     worst['Phi2 exactly collinear vs quadrature'] = max(worst.get('Phi2 exactly collinear vs quadrature', 0), float(err))
     print("  exactly collinear q=%g mu=%g: module %r quad %s rel %s" % (qq, mm, v, mp.nstr(a, 17), mp.nstr(err, 3)))

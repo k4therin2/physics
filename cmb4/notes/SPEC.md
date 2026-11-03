@@ -96,5 +96,5 @@ C^(13)_l = (3/(2l+1)) sum_m int d^3k/(2pi)^3 P(k) K*_{1,lm}(k) [ int d^3q/(2pi)^
 (b) Exact formula vs direct second-order integration of the geodesic energy (independent derivation).
 (c) Constraint consistency at each order (Bianchi), vorticity-free, uhat normalisation.
 (d) Constant zeta_1 = c is pure gauge: the FULL map (with observer clock, normalisation) must be unchanged
-    => K_2(k1->0,k2) and K_3 squeezed limits are fixed; K_2(k1=0,.)=0 structure. (dilation check)
+    => K_2(k1->0,k2) = -k.d_k K_1 (dilation of the first-order kernel; A2/V2 2026-11-03), O(k1) term = SCT; the loop IR limit is the second-order dilation response (total derivative in ln k for scale-invariant P).
 (e) Literature: Kohri-Terada RD induced-tensor kernel; Bartolo et al second-order Poisson-gauge RD ICs.

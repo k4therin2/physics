@@ -471,6 +471,6 @@ class Ctx:
             where = term['where']
             el = self.evaluate(term['expr'], where, maxorder=maxorder)
             if where == 'ray': el = amap(el, self.ray.integ)
-            parts[term['name']] = el
+            parts[term['name']] = aadd(parts.get(term['name'], {}), el)
             tot = aadd(tot, el)
         return tot, parts
