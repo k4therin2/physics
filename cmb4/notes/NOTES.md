@@ -131,3 +131,12 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   time delay + v3 = -3 int d/deta[tt I1] (total derivative) cancels clock+emission; local 2+1 = -radial k2. Sum zero for every n.
   Numerically: residues to 9e-11, sum <= 8e-10 (2.3e-9 relative). No (1-mu)^{-1/2} term; finite limits F_l match A3 to 1e-4.
   -> B1 RESOLVED ANALYTICALLY. Manuscript must be updated: "numerical only" -> proven (W4 final pass).
+- [11-03] V5 DONE (report saved by lead): residual k=0 freedom = time reparametrisation eta -> eta + F(eta) ONLY (dilation/shear/
+  rotation/translation fixed by zeta^(2)=0, h(0)=0, label). Lead's constant-shear hypothesis REFUTED: the 1/k^2(3mu^2-1) term is a
+  quadratic/dipolar time-reparametrisation mode (satisfies Psi = -(G'+G/eta), delta = 4Phi, V = eta Phi); angle average at fixed k
+  removes all negative powers of k => tadpole limit exists = C1's values. Map invariant to 2nd order (rigid rotation + total
+  derivative). B2 RESOLVED. M1: declare h_n(0)=0; regular <=> omega = v^T = 0 for k!=0.
+- [11-03] R2 DONE (report saved by lead): READY AFTER EDITS, no blocking. M1 FW frame: no O(eps) rotation for scalar modes => C22 and
+  Re C13 separately invariant for this observer (restate); M2 stale/inconsistent status statements; M3 residue table extraction
+  artefact (now superseded by V6 analytic proof); M4 overfull boxes; M5 triad caveat for printed L3 (n=z split); M6 monochromatic
+  result thin (box formula; k0 eta_o -> 0 check). Next: W4 final editor pass (R2 + V5 + V6 + V4 hook).
