@@ -166,3 +166,32 @@ radial k2 -11.40, observer clock 2nd +11.14, time delay x 2nd +7.00, lensing x 2
 -3<m2>m1 +3.96, 3L1L2 -4.00, 6<m1>^2 m1 small; strong cancellations (sum -4.68).  Interpretation caveat (as A2): the monochromatic
 first-order spectrum is band-limited (k0 chi_* = 6) while the loop reaches |k+-q| <= 2k0, so for l >= 6 C11 is tiny and the
 eps^4 terms dominate by orders of magnitude; at l = 2-5 Re C13/3 partially cancels 1/4 C22 (l=2: 38%; l=3,4 C13 dominates).
+
+## Milestone 7 — UV (large q at fixed k)  (PARTIAL: numerical up to q = 4k; `uv.py`, uv2/uv3/uv4.log)
+kappa~(q) = (1/2)<coef_abc(k,q,-q)>_qhat per P(q), k = 1, Delta^kappa~_l for l = 2, 3, 4:
+  q -> 0: -16.36, -10.24, +0.34 (= 3 D^2 Delta_l) | q = 1: -4.68, -25.17, -18.33 | q = 2: +2.04, -5.49, -6.92 |
+  q = 3: +5.96, -7.06, -15.64 | q = 4: +11.00, -0.50, -0.08     (resolution Nphi = 32/48/64 for q = 2/3/4; q=2 with Nphi=12 was
+  wrong by x4 -- the qhat integral needs Nphi >~ 2 q chi_* + 8).
+The integrand stays O(10), oscillating in q, with no growth up to q = 4k, although individual channels grow (e.g. lensing,
+time-delay, clock and normalisation channels are O(10) each and cancel).  Power counting: subhorizon short modes have decaying
+potentials (T_Phi ~ (q eta)^-2) but O(1) delta_T and v; the same-point variance of the local terms is removed by the monopole
+normalisation (3 L1 <L1^2> - 3 <m2>m1 cancel at leading order); the remaining coupling is O(q^0).  Assuming kappa~(q) = O(q^0) for
+q -> infinity (supported numerically to q = 4k, not proven): int d^3q P(q) kappa~ converges in the UV iff n_s < 1 for P ~ k^{n_s-4};
+for n_s = 1 it is log-divergent like <zeta^2> itself (perfect fluid: no diffusion damping) and needs a physical cutoff.
+NOT DONE: an analytic large-q expansion of K_3c.
+
+## Status summary
+| item | status |
+|---|---|
+| Theta3 / K3 / K_3c factors (Th3 assembly, coef_abc = 6 K3, K_3c = kappa/3, C13 formula) | DONE |
+| K_3c by channel (i) cubic first-order, (ii) first x second (tadpole & cross), (iii) third-order fields (C1 K3c, Green's integrals) | DONE (numerical engine over C2's lists; channel listing A3_channels.tex) |
+| shear = direct at third order with C1's contracted fields | DONE, 2e-11 |
+| (a) zero-mode gauge invariance of tadpoles (tau = eta, eta^3), C1 covariance | DONE, 1e-13 |
+| (b) IR: kappa~ -> 3 D^2 K1 + O(q^2) (V2/A2 dilation), convergence statement | DONE |
+| (c) UV: numerical to q = 4k, power-counting statement | PARTIAL |
+| (d) reality: Im C13 ~ 1e-14 | DONE |
+| collinear mu -> +-1: channel residues of 1/(1-mu) cancel; integrand finite, linear in (1-mu) | DONE (numerical residues, gauge interpretation) |
+| monochromatic C13, l = 2..20 (reliable l <= 14), 1/4 C22 + 1/3 Re C13 with A2's C22 | DONE (eta_o = 8 only; eta_o = 4 not run) |
+| plane-wave check vs A1 | NOT DONE directly (A1 validated the same L3 lists vs N1; our shear = direct check validates the engine) |
+| analytic (closed-form) Delta^(3c)_l | NOT DONE (declared integrals evaluated numerically) |
+| rigid-triad invariance check by rotating global axes | NOT DONE (argued: rigid rotation leaves sum_m |a_lm|^2 invariant) |
