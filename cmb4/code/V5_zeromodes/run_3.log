@@ -45,3 +45,22 @@
   Delta L1 [ray] = 0
   Delta L1 [obs] = 0
   Delta L1 [emi] = 0
+  [quadratic (tidal) mode: eta_old = eta + f(eta) x.C.x, x_old = x + g(eta) C x] fit of  R_ray = rot(omega) + D W : [{omega1: C23*eta_o_bar**3*g3 + C23*eta_o_bar**2*g2 + C23*eta_o_bar*g1 + C23*g0, omega2: -C13*eta_o_bar**3*g3 - C13*eta_o_bar**2*g2 - C13*eta_o_bar*g1 - C13*g0, omega3: C12*eta_o_bar**3*g3 + C12*eta_o_bar**2*g2 + C12*eta_o_bar*g1 + C12*g0, w0: 1}]
+  rotation vector omega = [C23*eta_o_bar**3*g3 + C23*eta_o_bar**2*g2 + C23*eta_o_bar*g1 + C23*g0, -C13*eta_o_bar**3*g3 - C13*eta_o_bar**2*g2 - C13*eta_o_bar*g1 - C13*g0, C12*eta_o_bar**3*g3 + C12*eta_o_bar**2*g2 + C12*eta_o_bar*g1 + C12*g0] ; W = (308 terms)
+  boundary  obs + W(obs) = 0 ;  emi - W(emi) = 0
+  VERDICT [quadratic (tidal) mode: eta_old = eta + f(eta) x.C.x, x_old = x + g(eta) C x]: Delta Theta2 = pure rotation of Theta1 (+ monopole): True
+  (1181s)
+
+================ generator: dipolar (gradient) mode: eta_old = eta + f(eta) b.x, x_old = x + g(eta) b ================
+  eta_old = eps*s*(eta**2*f2 + eta*f1)*(b1*x + b2*y + b3*z) + eta ;  x_old = [b1*eps*s*(eta**3*g3 + eta**2*g2 + eta*g1) + x, b2*eps*s*(eta**3*g3 + eta**2*g2 + eta*g1) + y, b3*eps*s*(eta**3*g3 + eta**2*g2 + eta*g1) + z]
+  induced first-order zero-mode fields (coefficient of s):
+     Psi1   = (3*eta*f2 + 2*f1)*(b1*x + b2*y + b3*z)
+     Phi1   = -(eta*f2 + f1)*(b1*x + b2*y + b3*z)
+     dT1    = -(eta*f2 + f1)*(b1*x + b2*y + b3*z)
+     v_1_1  = -b1*(3*eta**2*g3 + 2*eta*g2 + g1)
+     om_1_1 = -b1*(eta**2*f2 - 3*eta**2*g3 + eta*f1 - 2*eta*g2 - g1)
+     v_2_1  = -b2*(3*eta**2*g3 + 2*eta*g2 + g1)
+     om_2_1 = -b2*(eta**2*f2 - 3*eta**2*g3 + eta*f1 - 2*eta*g2 - g1)
+     v_3_1  = -b3*(3*eta**2*g3 + 2*eta*g2 + g1)
+     om_3_1 = -b3*(eta**2*f2 - 3*eta**2*g3 + eta*f1 - 2*eta*g2 - g1)
+  Poisson conditions on zero mode: div omega = 0 ; div h = [0, 0, 0]
