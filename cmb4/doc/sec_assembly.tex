@@ -139,12 +139,12 @@ the machine-generated kernel of App.~\ref{app:k2channels} (residual $0$), and ea
 \paragraph{Type B (products and normalisation).}
 \begin{align}
 K^{\rm B,prod}&=K_1(\vk_1)K_1(\vk_2)-\Delta_0(k_1)K_1(\vk_2)-\Delta_0(k_2)K_1(\vk_1),\nonumber\\
-K^{\rm B,obs}_{1\times1}&=\Big[P_\perp T_{V1}T_{V2}-2T_{\Phi1}T_{\Phi2}+T_{\delta_T1}T_{\delta_T2}-2i\big(T_{\Phi1}T_{V2}k_2\mu_2+T_{\Phi2}T_{V1}k_1\mu_1\big)\Big]_{\eta_o},
-\qquad K^{\rm B,emi}_{1\times1}=-\Big[E_1E_2\{\cdots\}\Big]_{\eta_*},
+K^{\rm B,obs}_{1\times1}&=\Big[P_\perp T_{V1}T_{V2}-2T_{\Phi1}T_{\Phi2}+T_{\delta_T1}T_{\delta_T2}-2i\big(T_{\Phi1}T_{V2}k_2\mu_2+T_{\Phi2}T_{V1}k_1\mu_1\big)\Big]_{\eta_o},\nonumber\\
+K^{\rm B,emi}_{1\times1}&=\Big[E_1E_2\Big(P_\perp T_{V1}T_{V2}+2T_{\Phi1}T_{\Phi2}-T_{\delta_T1}T_{\delta_T2}+2i\big(T_{\Phi1}T_{V2}k_2\mu_2+T_{\Phi2}T_{V1}k_1\mu_1\big)\Big)\Big]_{\eta_*},
 \label{eq:asm-chB}
 \end{align}
-where $\{\cdots\}$ is the same bracket and $T_{Xa}\equiv T_X(k_a,\cdot)$: the second-order part of the boundary function
-$\ln(-\hat u\cdot k)-\ln(1+\delta_T)$ at the two endpoints.
+with $T_{Xa}\equiv T_X(k_a,\cdot)$: the quadratic part of the boundary function $\ln(-\hat u\cdot k)-\ln(1+\delta_T)$ at the two
+endpoints.  The two brackets are not opposite: the $P_\perp T_{V1}T_{V2}$ ($v_{1\perp}^2$) term has the same sign at both ends.
 
 \paragraph{Type C (single-time second-order fields and ray-local products).}
 \begin{align}
@@ -180,8 +180,8 @@ K^{\rm D}_{\rm disp}&=-\Big[\sum_{(ab)}X_o(k_a)\,(\vk_a\cdot\vk_b)\,U_b\Big]_{\e
 &&(\delta\vx_{o1}\cdot\nabla U|_o),
 \label{eq:asm-chD}
 \end{align}
-with $\mathbb D=\partial_\eta-\nhat\cdot\nabla$ the derivative along the background ray acting on $U_b$ (and $J_b,U_b$ evaluated at the
-time of the term).  Explicitly, the ray lensing kernel is $-2iP_\perp\sum_{(ab)}\mathcal D_{\perp,a}\TP(k_b)k_b\mu_bE_b$ and the ray time
+with $\mathbb D=\partial_\eta-\nhat\cdot\nabla$ the derivative along the background ray; here, and in $\dot U_b$, $\partial_\eta$ is the
+field derivative at fixed $\vx$, i.e.\ it acts on the transfer functions only, not on $E_b$ ($J_b,U_b$ evaluated at the time of the term).  Explicitly, the ray lensing kernel is $-2iP_\perp\sum_{(ab)}\mathcal D_{\perp,a}\TP(k_b)k_b\mu_bE_b$ and the ray time
 delay $-2\sum_{(ab)}\mathcal D_{r,a}\TP(k_b)k_b^2\mu_b^2E_b$.  The radial shift $\nhat\,\delta\eta_{o1}$ and the observer displacement also
 enter through $\mathcal D_{r}$, $\mathcal D_\perp$ \eqref{eq:asm-functionals}; the channels ``clock'' and ``disp'' contain only the
 explicit endpoint pieces.
