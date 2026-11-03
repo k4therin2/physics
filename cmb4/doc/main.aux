@@ -2,25 +2,6 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Setup and conventions}{3}{section.1}\protected@file@percent }
-\newlabel{sec:setup}{{1}{3}{Setup and conventions}{section.1}{}}
-\@writefile{toc}{\contentsline {paragraph}{Model.}{3}{section*.2}\protected@file@percent }
-\newlabel{eq:fluid}{{1}{3}{Model}{equation.1.1}{}}
-\@writefile{toc}{\contentsline {paragraph}{Background and units.}{3}{section*.3}\protected@file@percent }
-\newlabel{eq:friedmann}{{2}{3}{Background and units}{equation.1.2}{}}
-\citation{BMR1}
-\citation{BMR2}
-\citation{MZ}
-\newlabel{eq:hatvars}{{3}{4}{Background and units}{equation.1.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Fourier conventions and statistics.}{4}{section*.4}\protected@file@percent }
-\newlabel{eq:fourier}{{4}{4}{Fourier conventions and statistics}{equation.1.4}{}}
-\@writefile{toc}{\contentsline {paragraph}{Perturbative expansion.}{4}{section*.5}\protected@file@percent }
-\newlabel{eq:expansion}{{5}{4}{Perturbative expansion}{equation.1.5}{}}
-\@writefile{toc}{\contentsline {paragraph}{Poisson gauge.}{4}{section*.6}\protected@file@percent }
-\newlabel{eq:poisson}{{6}{4}{Poisson gauge}{equation.1.6}{}}
-\newlabel{eq:fluidvars}{{7}{4}{Poisson gauge}{equation.1.7}{}}
-\@writefile{toc}{\contentsline {paragraph}{Directions, rays and times.}{4}{section*.7}\protected@file@percent }
-\newlabel{eq:bgray}{{8}{4}{Directions, rays and times}{equation.1.8}{}}
 \citation{Tomita}
 \citation{DAmico}
 \citation{Gao}
@@ -41,443 +22,519 @@
 \citation{Baumann}
 \citation{Espinosa}
 \citation{MalikWands}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{4}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{4}{Introduction}{section.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{The problem.}{4}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Why the calculation is tractable: the exact observable.}{4}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Relation to existing work.}{4}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Organisation.}{4}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Setup and conventions}{5}{section.2}\protected@file@percent }
+\newlabel{sec:setup}{{2}{5}{Setup and conventions}{section.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Model.}{5}{section*.6}\protected@file@percent }
+\newlabel{eq:fluid}{{1}{5}{Model}{equation.2.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Assumptions defining the observable.}{5}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Background and units.}{5}{section*.8}\protected@file@percent }
+\newlabel{eq:friedmann}{{2}{5}{Background and units}{equation.2.2}{}}
+\newlabel{eq:hatvars}{{3}{5}{Background and units}{equation.2.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Fourier conventions, statistics and the connected average.}{5}{section*.9}\protected@file@percent }
+\newlabel{eq:fourier}{{4}{5}{Fourier conventions, statistics and the connected average}{equation.2.4}{}}
+\newlabel{eq:conn}{{5}{5}{Fourier conventions, statistics and the connected average}{equation.2.5}{}}
+\citation{BMR1}
+\citation{BMR2}
+\citation{MZ}
+\@writefile{toc}{\contentsline {paragraph}{Perturbative expansion.}{6}{section*.10}\protected@file@percent }
+\newlabel{eq:expansion}{{6}{6}{Perturbative expansion}{equation.2.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Poisson gauge.}{6}{section*.11}\protected@file@percent }
+\newlabel{eq:poisson}{{7}{6}{Poisson gauge}{equation.2.7}{}}
+\newlabel{eq:fluidvars}{{8}{6}{Poisson gauge}{equation.2.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{Directions and rays (one convention throughout).}{6}{section*.12}\protected@file@percent }
+\newlabel{eq:bgray}{{9}{6}{Directions and rays (one convention throughout)}{equation.2.9}{}}
+\newlabel{eq:rayleigh}{{10}{6}{Directions and rays (one convention throughout)}{equation.2.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{Times.}{7}{section*.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Angular quantities and target.}{7}{section*.14}\protected@file@percent }
+\newlabel{eq:cl_def}{{11}{7}{Angular quantities and target}{equation.2.11}{}}
+\newlabel{eq:cl_target}{{12}{7}{Angular quantities and target}{equation.2.12}{}}
+\@writefile{toc}{\contentsline {paragraph}{Notation.}{7}{section*.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Roadmap: target, structure, status}{7}{section.3}\protected@file@percent }
+\newlabel{sec:roadmap}{{3}{7}{Roadmap: target, structure, status}{section.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Three structural results.}{7}{section*.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Pipeline.}{8}{section*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Where each requirement is met.}{8}{section*.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Status.}{8}{section*.19}\protected@file@percent }
 \citation{Ellis71}
-\newlabel{eq:cl_def}{{9}{5}{Directions, rays and times}{equation.1.9}{}}
-\newlabel{eq:cl_target}{{10}{5}{Directions, rays and times}{equation.1.10}{}}
-\@writefile{toc}{\contentsline {paragraph}{Relation to existing work.}{5}{section*.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}The exact observable}{5}{section.2}\protected@file@percent }
-\newlabel{sec:observable}{{2}{5}{The exact observable}{section.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Conformal frame}{5}{subsection.2.1}\protected@file@percent }
-\newlabel{sec:conformal}{{2.1}{5}{Conformal frame}{subsection.2.1}{}}
-\newlabel{eq:Ehat}{{11}{5}{Conformal frame}{equation.2.11}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Two lemmas}{5}{subsection.2.2}\protected@file@percent }
-\newlabel{eq:kinematic}{{12}{5}{Two lemmas}{equation.2.12}{}}
-\newlabel{lem:kin}{{2.1}{5}{kinematic redshift identity}{theorem.2.1}{}}
-\newlabel{eq:lemma1}{{13}{5}{kinematic redshift identity}{equation.2.13}{}}
-\newlabel{lem:fluid}{{2.2}{6}{radiation-fluid identities}{theorem.2.2}{}}
-\newlabel{eq:lemma2}{{14}{6}{radiation-fluid identities}{equation.2.14}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}The theorem}{6}{subsection.2.3}\protected@file@percent }
-\newlabel{thm:exact}{{2.3}{6}{}{theorem.2.3}{}}
-\newlabel{eq:exact}{{15}{6}{}{equation.2.15}{}}
-\newlabel{cor:theta}{{2.5}{6}{}{theorem.2.5}{}}
-\newlabel{eq:theta_exact}{{16}{6}{}{equation.2.16}{}}
-\@writefile{toc}{\contentsline {paragraph}{Consequences.}{6}{section*.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Observer, clock, emission event and direction map}{7}{subsection.2.4}\protected@file@percent }
-\newlabel{sec:observer}{{2.4}{7}{Observer, clock, emission event and direction map}{subsection.2.4}{}}
-\newlabel{eq:clock}{{17}{7}{Observer, clock, emission event and direction map}{equation.2.17}{}}
-\newlabel{eq:emission}{{18}{7}{Observer, clock, emission event and direction map}{equation.2.18}{}}
-\newlabel{eq:dirmap}{{19}{7}{Observer, clock, emission event and direction map}{equation.2.19}{}}
+\@writefile{toc}{\contentsline {paragraph}{Delicate points.}{9}{section*.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}The exact observable}{9}{section.4}\protected@file@percent }
+\newlabel{sec:observable}{{4}{9}{The exact observable}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Conformal frame}{9}{subsection.4.1}\protected@file@percent }
+\newlabel{sec:conformal}{{4.1}{9}{Conformal frame}{subsection.4.1}{}}
+\newlabel{eq:Ehat}{{13}{9}{Conformal frame}{equation.4.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Two lemmas}{9}{subsection.4.2}\protected@file@percent }
+\newlabel{eq:kinematic}{{14}{9}{Two lemmas}{equation.4.14}{}}
+\newlabel{lem:kin}{{4.1}{10}{kinematic redshift identity}{theorem.4.1}{}}
+\newlabel{eq:lemma1}{{15}{10}{kinematic redshift identity}{equation.4.15}{}}
+\newlabel{lem:fluid}{{4.2}{10}{radiation-fluid identities}{theorem.4.2}{}}
+\newlabel{eq:lemma2}{{16}{10}{radiation-fluid identities}{equation.4.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}The theorem}{10}{subsection.4.3}\protected@file@percent }
+\newlabel{thm:exact}{{4.3}{10}{}{theorem.4.3}{}}
+\newlabel{eq:exact}{{17}{10}{}{equation.4.17}{}}
+\newlabel{cor:theta}{{4.5}{10}{}{theorem.4.5}{}}
+\newlabel{eq:theta_exact}{{18}{10}{}{equation.4.18}{}}
+\@writefile{toc}{\contentsline {paragraph}{Consequences.}{11}{section*.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Observer, clock, emission event and direction map}{11}{subsection.4.4}\protected@file@percent }
+\newlabel{sec:observer}{{4.4}{11}{Observer, clock, emission event and direction map}{subsection.4.4}{}}
+\newlabel{eq:worldline}{{19}{11}{Observer, clock, emission event and direction map}{equation.4.19}{}}
+\newlabel{eq:clock}{{20}{11}{Observer, clock, emission event and direction map}{equation.4.20}{}}
+\newlabel{eq:emission}{{21}{11}{Observer, clock, emission event and direction map}{equation.4.21}{}}
+\newlabel{eq:dirmap}{{22}{11}{Observer, clock, emission event and direction map}{equation.4.22}{}}
+\newlabel{eq:S_eta}{{23}{12}{Observer, clock, emission event and direction map}{equation.4.23}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Fermi--Walker frame versus canonical triad}{12}{subsection.4.5}\protected@file@percent }
+\newlabel{sec:FW}{{4.5}{12}{Fermi--Walker frame versus canonical triad}{subsection.4.5}{}}
+\newlabel{eq:FW}{{24}{12}{Fermi--Walker frame versus canonical triad}{equation.4.24}{}}
+\newlabel{eq:rotinv}{{26}{12}{Fermi--Walker frame versus canonical triad}{equation.4.26}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Linear order: recovery of the Sachs--Wolfe formula}{12}{subsection.4.6}\protected@file@percent }
+\newlabel{sec:linearS}{{4.6}{12}{Linear order: recovery of the Sachs--Wolfe formula}{subsection.4.6}{}}
+\newlabel{eq:lin_kin}{{27}{12}{Linear order: recovery of the Sachs--Wolfe formula}{equation.4.27}{}}
 \citation{SW67}
+\newlabel{eq:lin_fluid}{{28}{13}{Linear order: recovery of the Sachs--Wolfe formula}{equation.4.28}{}}
+\newlabel{eq:sigma_ee_lin}{{29}{13}{Linear order: recovery of the Sachs--Wolfe formula}{equation.4.29}{}}
+\newlabel{eq:L1}{{30}{13}{Linear order: recovery of the Sachs--Wolfe formula}{equation.4.30}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}Normalisation: exact algebra on the logarithm}{13}{subsection.4.7}\protected@file@percent }
+\newlabel{sec:normalisation}{{4.7}{13}{Normalisation: exact algebra on the logarithm}{subsection.4.7}{}}
+\newlabel{eq:mdef}{{31}{13}{Normalisation: exact algebra on the logarithm}{equation.4.31}{}}
+\newlabel{eq:theta_orders}{{32}{13}{Normalisation: exact algebra on the logarithm}{equation.4.32}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Primordial variable and initial data}{13}{section.5}\protected@file@percent }
+\newlabel{sec:primordial}{{5}{13}{Primordial variable and initial data}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}The non-linear primordial variable}{13}{subsection.5.1}\protected@file@percent }
+\newlabel{sec:zeta_def}{{5.1}{13}{The non-linear primordial variable}{subsection.5.1}{}}
+\newlabel{def:zeta}{{5.1}{13}{}{theorem.5.1}{}}
+\newlabel{eq:zeta_nl}{{33}{13}{}{equation.5.33}{}}
 \citation{SalopekBond}
 \citation{Maldacena}
-\newlabel{eq:S_eta}{{20}{8}{Observer, clock, emission event and direction map}{equation.2.20}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Linear order: recovery of the Sachs--Wolfe formula}{8}{subsection.2.5}\protected@file@percent }
-\newlabel{sec:linearS}{{2.5}{8}{Linear order: recovery of the Sachs--Wolfe formula}{subsection.2.5}{}}
-\newlabel{eq:lin_kin}{{21}{8}{Linear order: recovery of the Sachs--Wolfe formula}{equation.2.21}{}}
-\newlabel{eq:lin_fluid}{{22}{8}{Linear order: recovery of the Sachs--Wolfe formula}{equation.2.22}{}}
-\newlabel{eq:sigma_ee_lin}{{23}{8}{Linear order: recovery of the Sachs--Wolfe formula}{equation.2.23}{}}
-\newlabel{eq:L1}{{24}{8}{Linear order: recovery of the Sachs--Wolfe formula}{equation.2.24}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Primordial variable and initial data}{8}{section.3}\protected@file@percent }
-\newlabel{sec:primordial}{{3}{8}{Primordial variable and initial data}{section.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}The non-linear primordial variable}{8}{subsection.3.1}\protected@file@percent }
-\newlabel{sec:zeta_def}{{3.1}{8}{The non-linear primordial variable}{subsection.3.1}{}}
-\newlabel{def:zeta}{{3.1}{8}{}{theorem.3.1}{}}
-\newlabel{eq:zeta_nl}{{25}{8}{}{equation.3.25}{}}
 \citation{Maldacena}
 \citation{PUB}
-\newlabel{def:gauss}{{3.2}{9}{Gaussian initial conditions; absence of higher-order primordial modes}{theorem.3.2}{}}
-\newlabel{eq:gauss}{{27}{9}{Gaussian initial conditions; absence of higher-order primordial modes}{equation.3.27}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Regularity and initial data at finite $\eta _i$}{9}{subsection.3.2}\protected@file@percent }
-\newlabel{sec:regular}{{3.2}{9}{Regularity and initial data at finite \texorpdfstring {$\eta _i$}{eta\_i}}{subsection.3.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}The conditions at second and third order}{9}{subsection.3.3}\protected@file@percent }
-\newlabel{sec:zeta_cond}{{3.3}{9}{The conditions at second and third order}{subsection.3.3}{}}
-\newlabel{eq:zeta1}{{28}{9}{The conditions at second and third order}{equation.3.28}{}}
-\newlabel{eq:zeta2}{{29}{9}{The conditions at second and third order}{equation.3.29}{}}
-\newlabel{eq:zeta3}{{30}{9}{The conditions at second and third order}{equation.3.30}{}}
+\newlabel{def:gauss}{{5.2}{14}{initial data: Gaussian $\zeta _{\rm nl}$, no primordial vectors or tensors}{theorem.5.2}{}}
+\newlabel{eq:gauss}{{35}{14}{initial data: Gaussian $\zeta _{\rm nl}$, no primordial vectors or tensors}{equation.5.35}{}}
+\newlabel{eq:notensor}{{36}{14}{initial data: Gaussian $\zeta _{\rm nl}$, no primordial vectors or tensors}{equation.5.36}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Regularity and initial data at finite $\eta _i$}{14}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:regular}{{5.2}{14}{Regularity and initial data at finite \texorpdfstring {$\eta _i$}{eta\_i}}{subsection.5.2}{}}
 \citation{PUB}
 \citation{BMR2}
+\newlabel{eq:greens_split}{{37}{15}{Regularity and initial data at finite \texorpdfstring {$\eta _i$}{eta\_i}}{equation.5.37}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}The conditions at second and third order}{15}{subsection.5.3}\protected@file@percent }
+\newlabel{sec:zeta_cond}{{5.3}{15}{The conditions at second and third order}{subsection.5.3}{}}
+\newlabel{eq:zeta1}{{38}{15}{The conditions at second and third order}{equation.5.38}{}}
+\newlabel{eq:zeta2}{{39}{15}{The conditions at second and third order}{equation.5.39}{}}
+\newlabel{eq:zeta3}{{40}{15}{The conditions at second and third order}{equation.5.40}{}}
+\@writefile{toc}{\contentsline {paragraph}{Second order.}{15}{section*.22}\protected@file@percent }
+\newlabel{eq:KQ0}{{41}{15}{Second order}{equation.5.41}{}}
+\newlabel{eq:KPhi20}{{42}{15}{Second order}{equation.5.42}{}}
+\newlabel{eq:Phi20_pos}{{43}{15}{Second order}{equation.5.43}{}}
+\newlabel{eq:Psi20_pos}{{44}{15}{Second order}{equation.5.44}{}}
 \citation{Weinberg03}
 \citation{MZ}
-\@writefile{toc}{\contentsline {paragraph}{Second order.}{10}{section*.10}\protected@file@percent }
-\newlabel{eq:KQ0}{{31}{10}{Second order}{equation.3.31}{}}
-\newlabel{eq:KPhi20}{{32}{10}{Second order}{equation.3.32}{}}
-\newlabel{eq:Phi20_pos}{{33}{10}{Second order}{equation.3.33}{}}
-\newlabel{eq:Psi20_pos}{{34}{10}{Second order}{equation.3.34}{}}
-\@writefile{toc}{\contentsline {paragraph}{Third order.}{10}{section*.11}\protected@file@percent }
-\newlabel{eq:C3}{{35}{10}{Third order}{equation.3.35}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}The exact dilation family and the zero-mode (tadpole) ambiguity}{10}{subsection.3.4}\protected@file@percent }
-\newlabel{sec:tadpole}{{3.4}{10}{The exact dilation family and the zero-mode (tadpole) ambiguity}{subsection.3.4}{}}
-\newlabel{eq:dilation}{{36}{10}{The exact dilation family and the zero-mode (tadpole) ambiguity}{equation.3.36}{}}
-\newlabel{eq:tad0}{{37}{11}{The exact dilation family and the zero-mode (tadpole) ambiguity}{equation.3.37}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Perturbative solution of the Einstein--fluid equations}{11}{section.4}\protected@file@percent }
-\newlabel{sec:einstein}{{4}{11}{Perturbative solution of the Einstein--fluid equations}{section.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Named objects of the perturbative solution.}}{12}{table.1}\protected@file@percent }
-\newlabel{tab:objects}{{1}{12}{Named objects of the perturbative solution}{table.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}First order}{12}{subsection.4.1}\protected@file@percent }
-\newlabel{sec:first}{{4.1}{12}{First order}{subsection.4.1}{}}
-\newlabel{eq:first_eqs}{{39}{12}{First order}{equation.4.39}{}}
-\newlabel{eq:x}{{40}{12}{First order}{equation.4.40}{}}
-\newlabel{eq:transfer}{{41}{12}{First order}{equation.4.41}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Second order: operator structure}{12}{subsection.4.2}\protected@file@percent }
-\newlabel{sec:second}{{4.2}{12}{Second order: operator structure}{subsection.4.2}{}}
-\newlabel{eq:split}{{42}{12}{Second order: operator structure}{equation.4.42}{}}
-\newlabel{eq:sources}{{43}{13}{Second order: operator structure}{equation.4.43}{}}
-\newlabel{eq:operators}{{44}{13}{Second order: operator structure}{equation.4.44}{}}
-\@writefile{toc}{\contentsline {paragraph}{Vector sector (relativistic Kelvin theorem).}{13}{section*.12}\protected@file@percent }
-\newlabel{eq:kelvin}{{45}{13}{Vector sector (relativistic Kelvin theorem)}{equation.4.45}{}}
-\@writefile{toc}{\contentsline {paragraph}{Kernels.}{13}{section*.13}\protected@file@percent }
-\newlabel{eq:kernel_def}{{46}{13}{Kernels}{equation.4.46}{}}
+\@writefile{toc}{\contentsline {paragraph}{Third order.}{16}{section*.23}\protected@file@percent }
+\newlabel{eq:C3}{{45}{16}{Third order}{equation.5.45}{}}
+\newlabel{eq:C3pole}{{46}{16}{Third order}{equation.5.46}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}The exact dilation family and the zero-mode (tadpole) ambiguity}{16}{subsection.5.4}\protected@file@percent }
+\newlabel{sec:tadpole}{{5.4}{16}{The exact dilation family and the zero-mode (tadpole) ambiguity}{subsection.5.4}{}}
+\newlabel{eq:dilation}{{47}{16}{The exact dilation family and the zero-mode (tadpole) ambiguity}{equation.5.47}{}}
+\newlabel{eq:KPhi20_smallk}{{48}{17}{The exact dilation family and the zero-mode (tadpole) ambiguity}{equation.5.48}{}}
+\newlabel{eq:tad0}{{49}{17}{The exact dilation family and the zero-mode (tadpole) ambiguity}{equation.5.49}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Perturbative solution of the Einstein--fluid equations}{17}{section.6}\protected@file@percent }
+\newlabel{sec:einstein}{{6}{17}{Perturbative solution of the Einstein--fluid equations}{section.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Named objects of the perturbative solution.}}{18}{table.1}\protected@file@percent }
+\newlabel{tab:objects}{{1}{18}{Named objects of the perturbative solution}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}First order}{18}{subsection.6.1}\protected@file@percent }
+\newlabel{sec:first}{{6.1}{18}{First order}{subsection.6.1}{}}
+\newlabel{eq:first_eqs}{{51}{18}{First order}{equation.6.51}{}}
+\newlabel{eq:x}{{52}{18}{First order}{equation.6.52}{}}
+\newlabel{eq:transfer}{{53}{18}{First order}{equation.6.53}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Second order: operator structure}{19}{subsection.6.2}\protected@file@percent }
+\newlabel{sec:second}{{6.2}{19}{Second order: operator structure}{subsection.6.2}{}}
+\newlabel{eq:split}{{54}{19}{Second order: operator structure}{equation.6.54}{}}
+\newlabel{eq:sources}{{55}{19}{Second order: operator structure}{equation.6.55}{}}
+\newlabel{eq:operators}{{56}{19}{Second order: operator structure}{equation.6.56}{}}
+\@writefile{toc}{\contentsline {paragraph}{Vector sector (relativistic Kelvin theorem).}{19}{section*.24}\protected@file@percent }
+\newlabel{eq:kelvin}{{57}{19}{Vector sector (relativistic Kelvin theorem)}{equation.6.57}{}}
 \citation{KT}
 \citation{Baumann}
-\newlabel{eq:second_kernels}{{47}{14}{Kernels}{equation.4.47}{}}
-\@writefile{toc}{\contentsline {paragraph}{Green's functions and the regular solution.}{14}{section*.14}\protected@file@percent }
-\newlabel{eq:greens}{{48}{14}{Green's functions and the regular solution}{equation.4.48}{}}
-\newlabel{eq:declared2}{{49}{14}{Green's functions and the regular solution}{equation.4.49}{}}
-\@writefile{toc}{\contentsline {paragraph}{Checks at second order.}{14}{section*.15}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Third order: contracted kernels}{15}{subsection.4.3}\protected@file@percent }
-\newlabel{sec:third}{{4.3}{15}{Third order: contracted kernels}{subsection.4.3}{}}
-\newlabel{eq:contracted}{{50}{15}{Third order: contracted kernels}{equation.4.50}{}}
-\newlabel{eq:contraction_rules}{{51}{15}{Third order: contracted kernels}{equation.4.51}{}}
-\newlabel{eq:tad}{{52}{15}{Third order: contracted kernels}{equation.4.52}{}}
-\newlabel{eq:third_eqs}{{53}{15}{Third order: contracted kernels}{equation.4.53}{}}
-\@writefile{toc}{\contentsline {paragraph}{Summary of what is settled.}{15}{section*.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Normalisation, loop structure and harmonic machinery}{16}{section.5}\protected@file@percent }
-\newlabel{sec:harmonic}{{5}{16}{Normalisation, loop structure and harmonic machinery}{section.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Normalisation bookkeeping (exact algebra)}{16}{subsection.5.1}\protected@file@percent }
-\newlabel{sec:normalisation}{{5.1}{16}{Normalisation bookkeeping (exact algebra)}{subsection.5.1}{}}
-\newlabel{eq:mdef}{{54}{16}{Normalisation bookkeeping (exact algebra)}{equation.5.54}{}}
-\newlabel{eq:theta_orders}{{55}{16}{Normalisation bookkeeping (exact algebra)}{equation.5.55}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Loop structure}{16}{subsection.5.2}\protected@file@percent }
-\newlabel{sec:loops}{{5.2}{16}{Loop structure}{subsection.5.2}{}}
-\newlabel{eq:Kr}{{56}{16}{Loop structure}{equation.5.56}{}}
-\newlabel{eq:loops}{{57}{16}{Loop structure}{equation.5.57}{}}
-\citation{Hu2000}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Direction convention for the harmonic rules}{17}{subsection.5.3}\protected@file@percent }
-\newlabel{sec:dirconv}{{5.3}{17}{Direction convention for the harmonic rules}{subsection.5.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Type A: linear line-of-sight maps}{17}{subsection.5.4}\protected@file@percent }
-\newlabel{sec:typeA}{{5.4}{17}{Type A: linear line-of-sight maps}{subsection.5.4}{}}
-\newlabel{eq:typeA}{{59}{17}{Type A: linear line-of-sight maps}{equation.5.59}{}}
-\newlabel{eq:ruleA}{{60}{17}{Type A: linear line-of-sight maps}{equation.5.60}{}}
-\newlabel{eq:ruleAlambda}{{61}{17}{Type A: linear line-of-sight maps}{equation.5.61}{}}
-\newlabel{eq:C11}{{62}{17}{Type A: linear line-of-sight maps}{equation.5.62}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Type B: products of maps at the same point}{17}{subsection.5.5}\protected@file@percent }
-\newlabel{sec:typeB}{{5.5}{17}{Type B: products of maps at the same point}{subsection.5.5}{}}
-\newlabel{eq:B1}{{63}{18}{Type B: products of maps at the same point}{equation.5.63}{}}
-\newlabel{eq:monopole_terms}{{64}{18}{Type B: products of maps at the same point}{equation.5.64}{}}
-\newlabel{eq:C22_B}{{65}{18}{Type B: products of maps at the same point}{equation.5.65}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Type C: convolution kernels}{18}{subsection.5.6}\protected@file@percent }
-\newlabel{sec:typeC}{{5.6}{18}{Type C: convolution kernels}{subsection.5.6}{}}
-\newlabel{eq:typeC}{{66}{18}{Type C: convolution kernels}{equation.5.66}{}}
-\newlabel{eq:K2lm}{{67}{18}{Type C: convolution kernels}{equation.5.67}{}}
-\newlabel{eq:C1C2}{{68}{18}{Type C: convolution kernels}{equation.5.68}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}The $(13)$ term}{19}{subsection.5.7}\protected@file@percent }
-\newlabel{sec:thirteen}{{5.7}{19}{The \texorpdfstring {$(13)$}{(13)} term}{subsection.5.7}{}}
-\newlabel{eq:E0}{{69}{19}{The \texorpdfstring {$(13)$}{(13)} term}{equation.5.69}{}}
-\newlabel{eq:AL}{{70}{19}{The \texorpdfstring {$(13)$}{(13)} term}{equation.5.70}{}}
-\newlabel{eq:E1}{{71}{19}{The \texorpdfstring {$(13)$}{(13)} term}{equation.5.71}{}}
-\newlabel{eq:E2E3}{{72}{19}{The \texorpdfstring {$(13)$}{(13)} term}{equation.5.72}{}}
-\citation{Hu2000}
+\citation{KT}
+\@writefile{toc}{\contentsline {paragraph}{Kernels.}{20}{section*.25}\protected@file@percent }
+\newlabel{eq:kernel_def}{{58}{20}{Kernels}{equation.6.58}{}}
+\newlabel{eq:second_kernels}{{59}{20}{Kernels}{equation.6.59}{}}
+\@writefile{toc}{\contentsline {paragraph}{Green's functions and the regular solution.}{20}{section*.26}\protected@file@percent }
+\newlabel{eq:greens}{{60}{20}{Green's functions and the regular solution}{equation.6.60}{}}
+\newlabel{eq:declared2}{{61}{20}{Green's functions and the regular solution}{equation.6.61}{}}
+\@writefile{toc}{\contentsline {paragraph}{Checks at second order.}{21}{section*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Third order: contracted kernels}{21}{subsection.6.3}\protected@file@percent }
+\newlabel{sec:third}{{6.3}{21}{Third order: contracted kernels}{subsection.6.3}{}}
+\newlabel{eq:contracted}{{62}{21}{Third order: contracted kernels}{equation.6.62}{}}
+\newlabel{eq:contraction_rules}{{63}{21}{Third order: contracted kernels}{equation.6.63}{}}
+\newlabel{eq:tad}{{64}{21}{Third order: contracted kernels}{equation.6.64}{}}
+\newlabel{eq:third_eqs}{{65}{21}{Third order: contracted kernels}{equation.6.65}{}}
+\@writefile{toc}{\contentsline {paragraph}{Summary.}{21}{section*.28}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}First order: the pipeline worked through, $\Delta _\ell (k)$ and $C_\ell ^{(11)}$}{22}{section.7}\protected@file@percent }
+\newlabel{sec:linear}{{7}{22}{First order: the pipeline worked through, \texorpdfstring {$\Delta _\ell (k)$}{Delta_l(k)} and \texorpdfstring {$C_\ell ^{(11)}$}{C11}}{section.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{The pipeline at first order.}{22}{section*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Conventions.}{22}{section*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Rayleigh rules.}{22}{section*.31}\protected@file@percent }
+\newlabel{prop:Delta}{{7.1}{22}{First-order transfer function}{theorem.7.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Closed form of the ISW integral.}{23}{section*.32}\protected@file@percent }
+\newlabel{thm:isw}{{7.2}{23}{ISW integral, all $\ell $}{theorem.7.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Monochromatic spectrum.}{23}{section*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Limit $k_0\eta _*\rightarrow 0$ (Sachs--Wolfe).}{24}{section*.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Limit $k_0\rightarrow \infty $.}{24}{section*.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Small $k$ (gauge modes).}{24}{section*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Sky monopole.}{25}{section*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}The second-order map $\Theta ^{(2)}$}{25}{section.8}\protected@file@percent }
+\newlabel{sec:map2}{{8}{25}{The second-order map \texorpdfstring {$\Theta ^{(2)}$}{Theta2}}{section.8}{}}
+\newlabel{eq:Idef}{{79}{25}{The second-order map \texorpdfstring {$\Theta ^{(2)}$}{Theta2}}{equation.8.79}{}}
+\newlabel{eq:I1}{{80}{25}{The second-order map \texorpdfstring {$\Theta ^{(2)}$}{Theta2}}{equation.8.80}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Ray, triad and direction map}{25}{subsection.8.1}\protected@file@percent }
+\newlabel{sec:ray}{{8.1}{25}{Ray, triad and direction map}{subsection.8.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Geodesic equation.}{25}{section*.38}\protected@file@percent }
+\newlabel{eq:geodesic}{{81}{25}{Geodesic equation}{equation.8.81}{}}
+\newlabel{eq:G1}{{82}{26}{Geodesic equation}{equation.8.82}{}}
+\@writefile{toc}{\contentsline {paragraph}{Canonical triad.}{26}{section*.39}\protected@file@percent }
+\newlabel{eq:triad}{{83}{26}{Canonical triad}{equation.8.83}{}}
+\@writefile{toc}{\contentsline {paragraph}{Direction map.}{26}{section*.40}\protected@file@percent }
+\newlabel{eq:kinit1}{{84}{26}{Direction map}{equation.8.84}{}}
+\newlabel{eq:kinit2}{{85}{26}{Direction map}{equation.8.85}{}}
+\@writefile{toc}{\contentsline {paragraph}{Ray functionals.}{26}{section*.41}\protected@file@percent }
+\newlabel{eq:k1def}{{86}{26}{Ray functionals}{equation.8.86}{}}
+\newlabel{eq:Dx1def}{{87}{26}{Ray functionals}{equation.8.87}{}}
+\newlabel{eq:k2def}{{88}{26}{Ray functionals}{equation.8.88}{}}
+\newlabel{eq:Dx2def}{{89}{26}{Ray functionals}{equation.8.89}{}}
+\newlabel{rem:signslip}{{8.1}{27}{sign of the tangent integrals}{theorem.8.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Observer event: clock and displacement at finite $\eta _i$}{27}{subsection.8.2}\protected@file@percent }
+\newlabel{sec:obsevent}{{8.2}{27}{Observer event: clock and displacement at finite \texorpdfstring {$\eta _i$}{eta\_i}}{subsection.8.2}{}}
+\newlabel{eq:dxo}{{90}{27}{Observer event: clock and displacement at finite \texorpdfstring {$\eta _i$}{eta\_i}}{equation.8.90}{}}
+\newlabel{eq:deta_o1}{{91}{27}{Observer event: clock and displacement at finite \texorpdfstring {$\eta _i$}{eta\_i}}{equation.8.91}{}}
+\newlabel{eq:deta_o2}{{92}{27}{Observer event: clock and displacement at finite \texorpdfstring {$\eta _i$}{eta\_i}}{equation.8.92}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Emission event}{28}{subsection.8.3}\protected@file@percent }
+\newlabel{sec:emi}{{8.3}{28}{Emission event}{subsection.8.3}{}}
+\newlabel{eq:deta_e}{{93}{28}{Emission event}{equation.8.93}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Expansion about the background ray}{28}{subsection.8.4}\protected@file@percent }
+\newlabel{sec:expansion}{{8.4}{28}{Expansion about the background ray}{subsection.8.4}{}}
+\newlabel{eq:endpoint}{{94}{28}{Expansion about the background ray}{equation.8.94}{}}
+\@writefile{toc}{\contentsline {paragraph}{First order.}{28}{section*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.5}$L_2$: named pieces}{28}{subsection.8.5}\protected@file@percent }
+\newlabel{sec:L2}{{8.5}{28}{\texorpdfstring {$L_2$}{L2}: named pieces}{subsection.8.5}{}}
+\newlabel{eq:L2gen}{{95}{28}{\texorpdfstring {$L_2$}{L2}: named pieces}{equation.8.95}{}}
+\newlabel{eq:L2shear}{{96}{28}{\texorpdfstring {$L_2$}{L2}: named pieces}{equation.8.96}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Pieces of $\genfrac  {}{}{}\displaystyle  12L_2$ (shear form) and their numbers of terms. $^\dagger $For symbolic $\hat  {\mathbf  n}$, (d) and (e) are not separated and the 45 terms count both. The observer displacement $\delta \mathbf  x_{o1}$ enters through $\Delta \mathbf  x_1$ in (d), (e) (and through $k_2$ only at third order). Full expressions: App.~\ref {app:L2z}.}}{29}{table.2}\protected@file@percent }
+\newlabel{tab:L2pieces}{{2}{29}{Pieces of $\tfrac 12L_2$ (shear form) and their numbers of terms. $^\dagger $For symbolic $\nhat $, (d) and (e) are not separated and the 45 terms count both. The observer displacement $\delta \vx _{o1}$ enters through $\Delta \vx _1$ in (d), (e) (and through $k_2$ only at third order). Full expressions: App.~\ref {app:L2z}}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.6}Direct (Sachs--Wolfe) form and equivalence}{29}{subsection.8.6}\protected@file@percent }
+\newlabel{sec:L2direct}{{8.6}{29}{Direct (Sachs--Wolfe) form and equivalence}{subsection.8.6}{}}
+\newlabel{eq:direct}{{97}{29}{Direct (Sachs--Wolfe) form and equivalence}{equation.8.97}{}}
+\citation{Boubekeur}
+\newlabel{eq:L2direct}{{98}{30}{Direct (Sachs--Wolfe) form and equivalence}{equation.8.98}{}}
+\@writefile{toc}{\contentsline {paragraph}{Equivalence.}{30}{section*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.7}From $L_2$ to $\Theta ^{(2)}$}{30}{subsection.8.7}\protected@file@percent }
+\newlabel{sec:theta2}{{8.7}{30}{From \texorpdfstring {$L_2$}{L2} to \texorpdfstring {$\Theta ^{(2)}$}{Theta2}}{subsection.8.7}{}}
+\newlabel{eq:theta2}{{99}{30}{From \texorpdfstring {$L_2$}{L2} to \texorpdfstring {$\Theta ^{(2)}$}{Theta2}}{equation.8.99}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}The third-order map $\Theta ^{(3)}$}{31}{section.9}\protected@file@percent }
+\newlabel{sec:map3}{{9}{31}{The third-order map \texorpdfstring {$\Theta ^{(3)}$}{Theta3}}{section.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}$L_3$: named groups}{31}{subsection.9.1}\protected@file@percent }
+\newlabel{sec:L3}{{9.1}{31}{\texorpdfstring {$L_3$}{L3}: named groups}{subsection.9.1}{}}
+\newlabel{eq:L3loc3}{{100}{31}{\texorpdfstring {$L_3$}{L3}: named groups}{equation.9.100}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}From $L_3$ to $\Theta ^{(3)}$}{31}{subsection.9.2}\protected@file@percent }
+\newlabel{sec:theta3}{{9.2}{31}{From \texorpdfstring {$L_3$}{L3} to \texorpdfstring {$\Theta ^{(3)}$}{Theta3}}{subsection.9.2}{}}
+\newlabel{eq:theta3}{{101}{31}{From \texorpdfstring {$L_3$}{L3} to \texorpdfstring {$\Theta ^{(3)}$}{Theta3}}{equation.9.101}{}}
+\@writefile{toc}{\contentsline {paragraph}{What survives the self-contraction.}{31}{section*.44}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces The groups of $\genfrac  {}{}{}\displaystyle  16L_3$ (shear form, $\hat  {\mathbf  n}=\hat  {\mathbf  z}$); all terms are listed in App.~\ref {app:L3full}. ``(1+1)'' etc.\ gives the orders of the explicit fields; functionals and shifts are counted separately. The direct form has 480 terms (69 groups) for $\hat  {\mathbf  n}=\hat  {\mathbf  z}$.}}{32}{table.3}\protected@file@percent }
+\newlabel{tab:L3groups}{{3}{32}{The groups of $\tfrac 16L_3$ (shear form, $\nhat =\hat {\mathbf z}$); all terms are listed in App.~\ref {app:L3full}. ``(1+1)'' etc.\ gives the orders of the explicit fields; functionals and shifts are counted separately. The direct form has 480 terms (69 groups) for $\nhat =\hat {\mathbf z}$}{table.3}{}}
+\newlabel{eq:tadgroup}{{102}{32}{What survives the self-contraction}{Item.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{A worked contraction: the emission-shift tadpole.}{33}{section*.45}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Loop structure and harmonic machinery}{33}{section.10}\protected@file@percent }
+\newlabel{sec:harmonic}{{10}{33}{Loop structure and harmonic machinery}{section.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Loop structure}{33}{subsection.10.1}\protected@file@percent }
+\newlabel{sec:loops}{{10.1}{33}{Loop structure}{subsection.10.1}{}}
+\newlabel{eq:Kr}{{104}{33}{Loop structure}{equation.10.104}{}}
+\newlabel{eq:loops}{{105}{34}{Loop structure}{equation.10.105}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Direction convention}{34}{subsection.10.2}\protected@file@percent }
+\newlabel{sec:dirconv}{{10.2}{34}{Direction convention}{subsection.10.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Type A: linear line-of-sight maps}{34}{subsection.10.3}\protected@file@percent }
+\newlabel{sec:typeA}{{10.3}{34}{Type A: linear line-of-sight maps}{subsection.10.3}{}}
+\newlabel{eq:typeA}{{107}{34}{Type A: linear line-of-sight maps}{equation.10.107}{}}
+\newlabel{eq:ruleA}{{108}{34}{Type A: linear line-of-sight maps}{equation.10.108}{}}
+\newlabel{eq:ruleAlambda}{{109}{35}{Type A: linear line-of-sight maps}{equation.10.109}{}}
+\newlabel{eq:C11}{{110}{35}{Type A: linear line-of-sight maps}{equation.10.110}{}}
+\@writefile{toc}{\contentsline {paragraph}{Same-point correlators in closed form.}{35}{section*.46}\protected@file@percent }
+\newlabel{eq:xi0}{{111}{35}{Same-point correlators in closed form}{equation.10.111}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.4}Type B: products of maps at the same point}{35}{subsection.10.4}\protected@file@percent }
+\newlabel{sec:typeB}{{10.4}{35}{Type B: products of maps at the same point}{subsection.10.4}{}}
+\newlabel{eq:wgrad}{{112}{35}{Type B: products of maps at the same point}{equation.10.112}{}}
+\newlabel{eq:B1}{{113}{35}{Type B: products of maps at the same point}{equation.10.113}{}}
+\newlabel{eq:monopole_terms}{{114}{36}{Type B: products of maps at the same point}{equation.10.114}{}}
+\newlabel{eq:C22_B}{{115}{36}{Type B: products of maps at the same point}{equation.10.115}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.5}Type C: convolution kernels}{36}{subsection.10.5}\protected@file@percent }
+\newlabel{sec:typeC}{{10.5}{36}{Type C: convolution kernels}{subsection.10.5}{}}
+\newlabel{eq:typeC}{{116}{36}{Type C: convolution kernels}{equation.10.116}{}}
+\newlabel{eq:K2lm}{{117}{36}{Type C: convolution kernels}{equation.10.117}{}}
+\newlabel{eq:C1C2}{{118}{36}{Type C: convolution kernels}{equation.10.118}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.6}The $(13)$ term}{37}{subsection.10.6}\protected@file@percent }
+\newlabel{sec:thirteen}{{10.6}{37}{The \texorpdfstring {$(13)$}{(13)} term}{subsection.10.6}{}}
+\newlabel{eq:E0}{{119}{37}{The \texorpdfstring {$(13)$}{(13)} term}{equation.10.119}{}}
+\@writefile{toc}{\contentsline {paragraph}{The contracted map and $\Delta ^{(3c)}_\ell $ (defined once).}{37}{section*.47}\protected@file@percent }
+\newlabel{eq:Theta3c}{{120}{37}{The contracted map and $\Delta ^{(3c)}_\ell $ (defined once)}{equation.10.120}{}}
+\newlabel{eq:hL}{{121}{37}{The contracted map and $\Delta ^{(3c)}_\ell $ (defined once)}{equation.10.121}{}}
+\newlabel{eq:AL}{{122}{37}{The contracted map and $\Delta ^{(3c)}_\ell $ (defined once)}{equation.10.122}{}}
+\newlabel{eq:Delta3c}{{123}{37}{The contracted map and $\Delta ^{(3c)}_\ell $ (defined once)}{equation.10.123}{}}
+\newlabel{eq:E1}{{124}{37}{The contracted map and $\Delta ^{(3c)}_\ell $ (defined once)}{equation.10.124}{}}
 \citation{Hu2000}
 \citation{LewisChallinor}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}Control case: lensed $C_\ell $}{20}{subsection.5.8}\protected@file@percent }
-\newlabel{sec:lensing_control}{{5.8}{20}{Control case: lensed \texorpdfstring {$C_\ell $}{Cl}}{subsection.5.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9}Monochromatic reduction: definitions}{20}{subsection.5.9}\protected@file@percent }
-\newlabel{sec:monodef}{{5.9}{20}{Monochromatic reduction: definitions}{subsection.5.9}{}}
-\newlabel{eq:mono}{{74}{20}{Monochromatic reduction: definitions}{equation.5.74}{}}
-\newlabel{eq:mono_rules}{{75}{20}{Monochromatic reduction: definitions}{equation.5.75}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}First order: transfer function $\Delta _\ell (k)$ and $C_\ell ^{(11)}$}{21}{section.6}\protected@file@percent }
-\newlabel{sec:linear}{{6}{21}{First order: transfer function $\Delta _\ell (k)$ and $C_\ell ^{(11)}$}{section.6}{}}
-\@writefile{toc}{\contentsline {paragraph}{Conventions.}{21}{section*.17}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Rayleigh rules.}{21}{section*.18}\protected@file@percent }
-\newlabel{prop:Delta}{{6.1}{21}{First-order transfer function}{theorem.6.1}{}}
-\@writefile{toc}{\contentsline {paragraph}{Closed form of the ISW integral.}{21}{section*.19}\protected@file@percent }
-\newlabel{thm:isw}{{6.2}{21}{ISW integral, all $\ell $}{theorem.6.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{Monochromatic spectrum.}{22}{section*.20}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Limit $k_0\eta _*\rightarrow 0$ (Sachs--Wolfe).}{23}{section*.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Limit $k_0\rightarrow \infty $.}{23}{section*.22}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Small $k$ (gauge modes).}{23}{section*.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Sky monopole.}{24}{section*.24}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}The second-order map $\Theta ^{(2)}$}{24}{section.7}\protected@file@percent }
-\newlabel{sec:map2}{{7}{24}{The second-order map \texorpdfstring {$\Theta ^{(2)}$}{Theta2}}{section.7}{}}
-\newlabel{eq:Idef}{{89}{24}{The second-order map \texorpdfstring {$\Theta ^{(2)}$}{Theta2}}{equation.7.89}{}}
-\newlabel{eq:I1}{{90}{24}{The second-order map \texorpdfstring {$\Theta ^{(2)}$}{Theta2}}{equation.7.90}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Ray, triad and direction map}{24}{subsection.7.1}\protected@file@percent }
-\newlabel{sec:ray}{{7.1}{24}{Ray, triad and direction map}{subsection.7.1}{}}
-\@writefile{toc}{\contentsline {paragraph}{Geodesic equation.}{24}{section*.25}\protected@file@percent }
-\newlabel{eq:geodesic}{{91}{24}{Geodesic equation}{equation.7.91}{}}
-\newlabel{eq:G1}{{92}{25}{Geodesic equation}{equation.7.92}{}}
-\@writefile{toc}{\contentsline {paragraph}{Canonical triad.}{25}{section*.26}\protected@file@percent }
-\newlabel{eq:triad}{{93}{25}{Canonical triad}{equation.7.93}{}}
-\@writefile{toc}{\contentsline {paragraph}{Direction map.}{25}{section*.27}\protected@file@percent }
-\newlabel{eq:kinit1}{{94}{25}{Direction map}{equation.7.94}{}}
-\newlabel{eq:kinit2}{{95}{25}{Direction map}{equation.7.95}{}}
-\@writefile{toc}{\contentsline {paragraph}{Ray functionals.}{25}{section*.28}\protected@file@percent }
-\newlabel{eq:k1def}{{96}{25}{Ray functionals}{equation.7.96}{}}
-\newlabel{eq:Dx1def}{{97}{25}{Ray functionals}{equation.7.97}{}}
-\newlabel{eq:k2def}{{98}{25}{Ray functionals}{equation.7.98}{}}
-\newlabel{eq:Dx2def}{{99}{25}{Ray functionals}{equation.7.99}{}}
-\newlabel{rem:signslip}{{7.1}{26}{sign of the tangent integrals}{theorem.7.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Observer event: clock and displacement}{26}{subsection.7.2}\protected@file@percent }
-\newlabel{sec:obsevent}{{7.2}{26}{Observer event: clock and displacement}{subsection.7.2}{}}
-\newlabel{eq:dxo}{{100}{26}{Observer event: clock and displacement}{equation.7.100}{}}
-\newlabel{eq:deta_o1}{{101}{26}{Observer event: clock and displacement}{equation.7.101}{}}
-\newlabel{eq:deta_o2}{{102}{26}{Observer event: clock and displacement}{equation.7.102}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Emission event}{26}{subsection.7.3}\protected@file@percent }
-\newlabel{sec:emi}{{7.3}{26}{Emission event}{subsection.7.3}{}}
-\newlabel{eq:deta_e}{{103}{26}{Emission event}{equation.7.103}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Expansion about the background ray}{27}{subsection.7.4}\protected@file@percent }
-\newlabel{sec:expansion}{{7.4}{27}{Expansion about the background ray}{subsection.7.4}{}}
-\newlabel{eq:endpoint}{{104}{27}{Expansion about the background ray}{equation.7.104}{}}
-\@writefile{toc}{\contentsline {paragraph}{First order.}{27}{section*.29}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}$L_2$: named pieces}{27}{subsection.7.5}\protected@file@percent }
-\newlabel{sec:L2}{{7.5}{27}{\texorpdfstring {$L_2$}{L2}: named pieces}{subsection.7.5}{}}
-\newlabel{eq:L2gen}{{105}{27}{\texorpdfstring {$L_2$}{L2}: named pieces}{equation.7.105}{}}
-\newlabel{eq:L2shear}{{106}{27}{\texorpdfstring {$L_2$}{L2}: named pieces}{equation.7.106}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Pieces of $\genfrac  {}{}{}\displaystyle  12L_2$ (shear form, C2's groups); term counts as stored in \texttt  {L\_terms.pkl} ($^\dagger $(d) and (e) form one group for general $\hat  {\mathbf  n}$). The observer displacement $\delta \mathbf  x_{o1}$ enters through $\Delta \mathbf  x_1$ in (d), (e) (and through $k_2$ only at third order). Full expressions: App.~\ref {app:L2z}.}}{28}{table.2}\protected@file@percent }
-\newlabel{tab:L2pieces}{{2}{28}{Pieces of $\tfrac 12L_2$ (shear form, C2's groups); term counts as stored in \code {L\_terms.pkl} ($^\dagger $(d) and (e) form one group for general $\nhat $). The observer displacement $\delta \vx _{o1}$ enters through $\Delta \vx _1$ in (d), (e) (and through $k_2$ only at third order). Full expressions: App.~\ref {app:L2z}}{table.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.6}Direct (Sachs--Wolfe) form and equivalence}{28}{subsection.7.6}\protected@file@percent }
-\newlabel{sec:L2direct}{{7.6}{28}{Direct (Sachs--Wolfe) form and equivalence}{subsection.7.6}{}}
-\newlabel{eq:direct}{{107}{28}{Direct (Sachs--Wolfe) form and equivalence}{equation.7.107}{}}
-\newlabel{eq:L2direct}{{108}{28}{Direct (Sachs--Wolfe) form and equivalence}{equation.7.108}{}}
-\citation{Boubekeur}
-\@writefile{toc}{\contentsline {paragraph}{Equivalence.}{29}{section*.30}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.7}From $L_2$ to $\Theta ^{(2)}$}{29}{subsection.7.7}\protected@file@percent }
-\newlabel{sec:theta2}{{7.7}{29}{From \texorpdfstring {$L_2$}{L2} to \texorpdfstring {$\Theta ^{(2)}$}{Theta2}}{subsection.7.7}{}}
-\newlabel{eq:theta2}{{109}{29}{From \texorpdfstring {$L_2$}{L2} to \texorpdfstring {$\Theta ^{(2)}$}{Theta2}}{equation.7.109}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}The third-order map $\Theta ^{(3)}$}{29}{section.8}\protected@file@percent }
-\newlabel{sec:map3}{{8}{29}{The third-order map \texorpdfstring {$\Theta ^{(3)}$}{Theta3}}{section.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}$L_3$: named groups}{29}{subsection.8.1}\protected@file@percent }
-\newlabel{sec:L3}{{8.1}{29}{\texorpdfstring {$L_3$}{L3}: named groups}{subsection.8.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces The groups of $\genfrac  {}{}{}\displaystyle  16L_3$ (shear form, $\hat  {\mathbf  n}=\hat  {\mathbf  z}$), from \texttt  {L\_terms.pkl[\textquotesingle L\_split\textquotesingle ][3]}. ``(1+1)'' etc.\ gives the orders of the explicit fields; functionals and shifts are counted separately. The direct form has 480 terms (69 groups) for $\hat  {\mathbf  n}=\hat  {\mathbf  z}$.}}{30}{table.3}\protected@file@percent }
-\newlabel{tab:L3groups}{{3}{30}{The groups of $\tfrac 16L_3$ (shear form, $\nhat =\hat {\mathbf z}$), from \code {L\_terms.pkl[\textquotesingle L\_split\textquotesingle ][3]}. ``(1+1)'' etc.\ gives the orders of the explicit fields; functionals and shifts are counted separately. The direct form has 480 terms (69 groups) for $\nhat =\hat {\mathbf z}$}{table.3}{}}
-\newlabel{eq:L3loc3}{{110}{30}{\texorpdfstring {$L_3$}{L3}: named groups}{equation.8.110}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}From $L_3$ to $\Theta ^{(3)}$}{31}{subsection.8.2}\protected@file@percent }
-\newlabel{sec:theta3}{{8.2}{31}{From \texorpdfstring {$L_3$}{L3} to \texorpdfstring {$\Theta ^{(3)}$}{Theta3}}{subsection.8.2}{}}
-\newlabel{eq:theta3}{{111}{31}{From \texorpdfstring {$L_3$}{L3} to \texorpdfstring {$\Theta ^{(3)}$}{Theta3}}{equation.8.111}{}}
-\@writefile{toc}{\contentsline {paragraph}{What survives the self-contraction.}{31}{section*.31}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9}Assembly of the power spectrum}{31}{section.9}\protected@file@percent }
-\newlabel{sec:assembly}{{9}{31}{Assembly of the power spectrum}{section.9}{}}
-\@writefile{toc}{\contentsline {paragraph}{Conventions of this section.}{32}{section*.32}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}First-order kernel, sky monopole and observer objects}{32}{subsection.9.1}\protected@file@percent }
-\newlabel{sec:asm-first}{{9.1}{32}{First-order kernel, sky monopole and observer objects}{subsection.9.1}{}}
-\newlabel{eq:asm-K1}{{112}{32}{First-order kernel, sky monopole and observer objects}{equation.9.112}{}}
-\newlabel{eq:asm-K1lm}{{113}{32}{First-order kernel, sky monopole and observer objects}{equation.9.113}{}}
-\newlabel{eq:asm-monopole}{{114}{32}{First-order kernel, sky monopole and observer objects}{equation.9.114}{}}
-\@writefile{toc}{\contentsline {paragraph}{Observer clock.}{32}{section*.33}\protected@file@percent }
-\newlabel{eq:asm-clock}{{115}{32}{Observer clock}{equation.9.115}{}}
-\@writefile{toc}{\contentsline {paragraph}{Observer displacement.}{32}{section*.34}\protected@file@percent }
-\newlabel{eq:asm-disp}{{116}{32}{Observer displacement}{equation.9.116}{}}
-\@writefile{toc}{\contentsline {paragraph}{Emission-surface shift.}{32}{section*.35}\protected@file@percent }
-\newlabel{eq:asm-emission}{{117}{32}{Emission-surface shift}{equation.9.117}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}The second-order kernel $K_2$}{33}{subsection.9.2}\protected@file@percent }
-\newlabel{sec:asm-K2}{{9.2}{33}{The second-order kernel \texorpdfstring {$K_2$}{K2}}{subsection.9.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{Factor bookkeeping.}{33}{section*.36}\protected@file@percent }
-\newlabel{eq:asm-K2}{{118}{33}{Factor bookkeeping}{equation.9.118}{}}
-\@writefile{toc}{\contentsline {paragraph}{Fourier rules and named objects.}{33}{section*.37}\protected@file@percent }
-\newlabel{eq:asm-JU}{{119}{33}{Fourier rules and named objects}{equation.9.119}{}}
-\newlabel{eq:asm-functionals}{{120}{33}{Fourier rules and named objects}{equation.9.120}{}}
-\newlabel{eq:asm-second}{{121}{34}{Fourier rules and named objects}{equation.9.121}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Channels of $K_2$}{34}{subsection.9.3}\protected@file@percent }
-\newlabel{sec:asm-channels}{{9.3}{34}{Channels of \texorpdfstring {$K_2$}{K2}}{subsection.9.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Type B (products and normalisation).}{34}{section*.38}\protected@file@percent }
-\newlabel{eq:asm-chB}{{122}{34}{Type B (products and normalisation)}{equation.9.122}{}}
-\@writefile{toc}{\contentsline {paragraph}{Type C (single-time second-order fields and ray-local products).}{34}{section*.39}\protected@file@percent }
-\newlabel{eq:asm-chC}{{123}{34}{Type C (single-time second-order fields and ray-local products)}{equation.9.123}{}}
-\@writefile{toc}{\contentsline {paragraph}{Type D (lensing, time delay, aberration+deflection, emission-surface shift, clock, observer displacement).}{35}{section*.40}\protected@file@percent }
-\newlabel{eq:asm-chD}{{124}{35}{Type D (lensing, time delay, aberration+deflection, emission-surface shift, clock, observer displacement)}{equation.9.124}{}}
-\newlabel{rem:asm-obs}{{9.1}{35}{observer channels of the direct form}{theorem.9.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Squeezed limits: dilation and special conformal transformation}{35}{subsection.9.4}\protected@file@percent }
-\newlabel{sec:asm-squeezed}{{9.4}{35}{Squeezed limits: dilation and special conformal transformation}{subsection.9.4}{}}
-\newlabel{thm:asm-squeezed}{{9.2}{35}{squeezed limit of the second-order map}{theorem.9.2}{}}
-\newlabel{eq:asm-squeezed}{{125}{35}{squeezed limit of the second-order map}{equation.9.125}{}}
-\@writefile{toc}{\contentsline {paragraph}{Why a constant $\zeta $ is a dilation and not zero.}{36}{section*.41}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Consequence for the IR of the loop (second-order half).}{36}{section*.42}\protected@file@percent }
-\newlabel{eq:asm-IR22}{{126}{36}{Consequence for the IR of the loop (second-order half)}{equation.9.126}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.5}$C^{(22)}_\ell $}{37}{subsection.9.5}\protected@file@percent }
-\newlabel{sec:asm-cl22}{{9.5}{37}{\texorpdfstring {$C^{(22)}_\ell $}{C22}}{subsection.9.5}{}}
-\newlabel{eq:asm-C22}{{127}{37}{\texorpdfstring {$C^{(22)}_\ell $}{C22}}{equation.9.127}{}}
-\newlabel{eq:asm-CBB}{{128}{37}{\texorpdfstring {$C^{(22)}_\ell $}{C22}}{equation.9.128}{}}
-\newlabel{eq:asm-Dl}{{129}{37}{\texorpdfstring {$C^{(22)}_\ell $}{C22}}{equation.9.129}{}}
-\@writefile{toc}{\contentsline {paragraph}{Verified properties of $K_2$}{38}{section*.43}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.6}Contracted third-order kernel $K_{3c}$}{38}{subsection.9.6}\protected@file@percent }
-\newlabel{sec:asm-K3c}{{9.6}{38}{Contracted third-order kernel \texorpdfstring {$K_{3c}$}{K3c}}{subsection.9.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.7}$C_\ell ^{(13)}$}{38}{subsection.9.7}\protected@file@percent }
-\newlabel{sec:asm-C13}{{9.7}{38}{\texorpdfstring {$C_\ell ^{(13)}$}{C13}}{subsection.9.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.8}IR structure of the loop}{38}{subsection.9.8}\protected@file@percent }
-\newlabel{sec:asm-IR}{{9.8}{38}{IR structure of the loop}{subsection.9.8}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {10}Checks}{38}{section.10}\protected@file@percent }
-\newlabel{sec:checks}{{10}{38}{Checks}{section.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}The exact formula}{38}{subsection.10.1}\protected@file@percent }
-\newlabel{sec:check_exact}{{10.1}{38}{The exact formula}{subsection.10.1}{}}
+\newlabel{eq:E2E3}{{125}{38}{The contracted map and $\Delta ^{(3c)}_\ell $ (defined once)}{equation.10.125}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.7}Control case: lensed $C_\ell $}{38}{subsection.10.7}\protected@file@percent }
+\newlabel{sec:lensing_control}{{10.7}{38}{Control case: lensed \texorpdfstring {$C_\ell $}{Cl}}{subsection.10.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.8}Monochromatic reduction: definitions}{38}{subsection.10.8}\protected@file@percent }
+\newlabel{sec:monodef}{{10.8}{38}{Monochromatic reduction: definitions}{subsection.10.8}{}}
+\newlabel{eq:mono}{{127}{38}{Monochromatic reduction: definitions}{equation.10.127}{}}
+\newlabel{eq:mono_rules}{{128}{39}{Monochromatic reduction: definitions}{equation.10.128}{}}
+\@writefile{toc}{\contentsline {paragraph}{Convergence of the $\ell _1,\ell _2$ sums (analytic bound).}{39}{section*.48}\protected@file@percent }
+\newlabel{eq:jbound}{{129}{39}{Convergence of the $\ell _1,\ell _2$ sums (analytic bound)}{equation.10.129}{}}
+\newlabel{eq:tailbound}{{130}{39}{Convergence of the $\ell _1,\ell _2$ sums (analytic bound)}{equation.10.130}{}}
+\@writefile{toc}{\contentsline {paragraph}{Delicate points}{39}{section*.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11}Assembly of the power spectrum}{40}{section.11}\protected@file@percent }
+\newlabel{sec:assembly}{{11}{40}{Assembly of the power spectrum}{section.11}{}}
+\@writefile{toc}{\contentsline {paragraph}{Conventions of this section.}{40}{section*.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.1}First-order kernel, sky monopole and observer objects}{40}{subsection.11.1}\protected@file@percent }
+\newlabel{sec:asm-first}{{11.1}{40}{First-order kernel, sky monopole and observer objects}{subsection.11.1}{}}
+\newlabel{eq:asm-K1}{{131}{40}{First-order kernel, sky monopole and observer objects}{equation.11.131}{}}
+\newlabel{eq:asm-K1lm}{{132}{40}{First-order kernel, sky monopole and observer objects}{equation.11.132}{}}
+\newlabel{eq:asm-monopole}{{133}{40}{First-order kernel, sky monopole and observer objects}{equation.11.133}{}}
+\@writefile{toc}{\contentsline {paragraph}{Observer clock.}{40}{section*.51}\protected@file@percent }
+\newlabel{eq:asm-clock}{{134}{40}{Observer clock}{equation.11.134}{}}
+\@writefile{toc}{\contentsline {paragraph}{Observer displacement.}{41}{section*.52}\protected@file@percent }
+\newlabel{eq:asm-disp}{{135}{41}{Observer displacement}{equation.11.135}{}}
+\@writefile{toc}{\contentsline {paragraph}{Emission-surface shift.}{41}{section*.53}\protected@file@percent }
+\newlabel{eq:asm-emission}{{136}{41}{Emission-surface shift}{equation.11.136}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}The second-order kernel $K_2$}{41}{subsection.11.2}\protected@file@percent }
+\newlabel{sec:asm-K2}{{11.2}{41}{The second-order kernel \texorpdfstring {$K_2$}{K2}}{subsection.11.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Factor bookkeeping.}{41}{section*.54}\protected@file@percent }
+\newlabel{eq:asm-K2}{{137}{41}{Factor bookkeeping}{equation.11.137}{}}
+\@writefile{toc}{\contentsline {paragraph}{Fourier rules and named objects.}{41}{section*.55}\protected@file@percent }
+\newlabel{eq:asm-JU}{{138}{41}{Fourier rules and named objects}{equation.11.138}{}}
+\newlabel{eq:asm-functionals}{{139}{41}{Fourier rules and named objects}{equation.11.139}{}}
+\newlabel{eq:asm-second}{{140}{42}{Fourier rules and named objects}{equation.11.140}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.3}Channels of $K_2$}{42}{subsection.11.3}\protected@file@percent }
+\newlabel{sec:asm-channels}{{11.3}{42}{Channels of \texorpdfstring {$K_2$}{K2}}{subsection.11.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Type B (products and normalisation).}{42}{section*.56}\protected@file@percent }
+\newlabel{eq:asm-chB}{{141}{42}{Type B (products and normalisation)}{equation.11.141}{}}
+\@writefile{toc}{\contentsline {paragraph}{Type C (single-time second-order fields and ray-local products).}{42}{section*.57}\protected@file@percent }
+\newlabel{eq:asm-chC}{{142}{42}{Type C (single-time second-order fields and ray-local products)}{equation.11.142}{}}
+\@writefile{toc}{\contentsline {paragraph}{Type D (lensing, time delay, aberration+deflection, emission-surface shift, clock, observer displacement).}{43}{section*.58}\protected@file@percent }
+\newlabel{eq:asm-chD}{{143}{43}{Type D (lensing, time delay, aberration+deflection, emission-surface shift, clock, observer displacement)}{equation.11.143}{}}
+\newlabel{rem:asm-obs}{{11.1}{43}{observer channels of the direct form}{theorem.11.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.4}Squeezed limits: dilation and special conformal transformation}{43}{subsection.11.4}\protected@file@percent }
+\newlabel{sec:asm-squeezed}{{11.4}{43}{Squeezed limits: dilation and special conformal transformation}{subsection.11.4}{}}
+\newlabel{thm:asm-squeezed}{{11.2}{43}{squeezed limit of the second-order map}{theorem.11.2}{}}
+\newlabel{eq:asm-squeezed}{{144}{43}{squeezed limit of the second-order map}{equation.11.144}{}}
+\@writefile{toc}{\contentsline {paragraph}{Why a constant $\zeta $ is a dilation and not zero.}{44}{section*.59}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Consequence for the IR of the loop (second-order half).}{44}{section*.60}\protected@file@percent }
+\newlabel{eq:asm-IR22}{{145}{44}{Consequence for the IR of the loop (second-order half)}{equation.11.145}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.5}$C^{(22)}_\ell $}{45}{subsection.11.5}\protected@file@percent }
+\newlabel{sec:asm-cl22}{{11.5}{45}{\texorpdfstring {$C^{(22)}_\ell $}{C22}}{subsection.11.5}{}}
+\newlabel{eq:asm-C22}{{146}{45}{\texorpdfstring {$C^{(22)}_\ell $}{C22}}{equation.11.146}{}}
+\newlabel{eq:asm-CBB}{{147}{45}{\texorpdfstring {$C^{(22)}_\ell $}{C22}}{equation.11.147}{}}
+\newlabel{eq:asm-Dl}{{148}{45}{\texorpdfstring {$C^{(22)}_\ell $}{C22}}{equation.11.148}{}}
+\@writefile{toc}{\contentsline {paragraph}{Verified properties of $K_2$}{46}{section*.61}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.6}Contracted third-order kernel $K_{3c}$}{46}{subsection.11.6}\protected@file@percent }
+\newlabel{sec:asm-K3c}{{11.6}{46}{Contracted third-order kernel \texorpdfstring {$K_{3c}$}{K3c}}{subsection.11.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.7}$C_\ell ^{(13)}$}{46}{subsection.11.7}\protected@file@percent }
+\newlabel{sec:asm-C13}{{11.7}{46}{\texorpdfstring {$C_\ell ^{(13)}$}{C13}}{subsection.11.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.8}IR structure of the loop}{46}{subsection.11.8}\protected@file@percent }
+\newlabel{sec:asm-IR}{{11.8}{46}{IR structure of the loop}{subsection.11.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12}Monochromatic spectrum}{46}{section.12}\protected@file@percent }
+\newlabel{sec:mono}{{12}{46}{Monochromatic spectrum}{section.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1}Definition and first order}{46}{subsection.12.1}\protected@file@percent }
+\newlabel{sec:mono-def}{{12.1}{46}{Definition and first order}{subsection.12.1}{}}
+\newlabel{eq:mono-P}{{149}{46}{Definition and first order}{equation.12.149}{}}
+\newlabel{eq:mono-C11}{{150}{46}{Definition and first order}{equation.12.150}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.2}Collapse of $C^{(22)}_\ell $ to a single integral}{46}{subsection.12.2}\protected@file@percent }
+\newlabel{sec:mono-C22}{{12.2}{46}{Collapse of \texorpdfstring {$C^{(22)}_\ell $}{C22} to a single integral}{subsection.12.2}{}}
+\newlabel{eq:mono-C22}{{151}{47}{Collapse of \texorpdfstring {$C^{(22)}_\ell $}{C22} to a single integral}{equation.12.151}{}}
+\newlabel{eq:mono-BB}{{152}{47}{Collapse of \texorpdfstring {$C^{(22)}_\ell $}{C22} to a single integral}{equation.12.152}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.3}The corner $K\rightarrow 0$}{47}{subsection.12.3}\protected@file@percent }
+\newlabel{sec:mono-K0}{{12.3}{47}{The corner \texorpdfstring {$K\to 0$}{K->0}}{subsection.12.3}{}}
+\newlabel{prop:mono-K0}{{12.1}{47}{behaviour at $K\to 0$}{theorem.12.1}{}}
+\newlabel{eq:mono-K0}{{153}{47}{behaviour at $K\to 0$}{equation.12.153}{}}
+\newlabel{eq:mono-count}{{154}{47}{behaviour at $K\to 0$}{equation.12.154}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Monochromatic spectrum, $k_0=1$, $\eta _*=2$: evaluation of the exact expressions by quadrature. The $O(\epsilon ^4)$ contribution to $C_\ell $ is $\epsilon ^4\sigma ^4[\genfrac  {}{}{}\displaystyle  14C^{(22)}_\ell /\sigma ^4+\genfrac  {}{}{}\displaystyle  13\operatorname  {Re}C^{(13)}_\ell /\sigma ^4]$; the $(13)$ column is pending (Sec.~\ref {sec:mono-13}). $^\dagger $: below the double-precision cancellation floor, not reliable (see text).}}{48}{table.4}\protected@file@percent }
+\newlabel{tab:mono}{{4}{48}{Monochromatic spectrum, $k_0=1$, $\eta _*=2$: evaluation of the exact expressions by quadrature. The $O(\eps ^4)$ contribution to $C_\ell $ is $\eps ^4\sigma ^4[\tfrac 14C^{(22)}_\ell /\sigma ^4+\tfrac 13\Re C^{(13)}_\ell /\sigma ^4]$; the $(13)$ column is pending (Sec.~\ref {sec:mono-13}). $^\dagger $: below the double-precision cancellation floor, not reliable (see text)}{table.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.4}Evaluation at two parameter points}{48}{subsection.12.4}\protected@file@percent }
+\newlabel{sec:mono-num}{{12.4}{48}{Evaluation at two parameter points}{subsection.12.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Numerical reliability.}{48}{section*.62}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Structure.}{48}{section*.63}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Diagonal channel-group contributions $G_{gg}(\ell )/C^{(22)}_\ell $ for $k_0=1$, $\eta _*=2$, $\eta _o=8$ (rounded to $10^{-3}$). Groups: B prod = $K^{\rm  B,prod}$; B $1{\times }1$ = endpoint products; type C columns as in \eqref  {eq:asm-chC}; defl, emi shift, lens, delay = $K^{\rm  D}_{\rm  defl}$, $K^{\rm  D}_{\rm  emi}$, $K^{\rm  D}_{\rm  lens}$, $K^{\rm  D}_{\rm  delay}$ (ray + emission parts). Not shown: vector ($<5\times 10^{-4}$), clock and displacement ($0$). ``cross'' $=1-\sum _gG_{gg}/C^{(22)}_\ell $.}}{49}{table.5}\protected@file@percent }
+\newlabel{tab:mono-groups}{{5}{49}{Diagonal channel-group contributions $G_{gg}(\ell )/C^{(22)}_\ell $ for $k_0=1$, $\eta _*=2$, $\eta _o=8$ (rounded to $10^{-3}$). Groups: B prod = $K^{\rm B,prod}$; B $1{\times }1$ = endpoint products; type C columns as in \eqref {eq:asm-chC}; defl, emi shift, lens, delay = $K^{\rm D}_{\rm defl}$, $K^{\rm D}_{\rm emi}$, $K^{\rm D}_{\rm lens}$, $K^{\rm D}_{\rm delay}$ (ray + emission parts). Not shown: vector ($<5\times 10^{-4}$), clock and displacement ($0$). ``cross'' $=1-\sum _gG_{gg}/C^{(22)}_\ell $}{table.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.5}The $(13)$ term}{49}{subsection.12.5}\protected@file@percent }
+\newlabel{sec:mono-13}{{12.5}{49}{The \texorpdfstring {$(13)$}{(13)} term}{subsection.12.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.6}The combination $\genfrac  {}{}{}\displaystyle  14C^{(22)}_\ell +\genfrac  {}{}{}\displaystyle  13\operatorname  {Re}C^{(13)}_\ell $}{49}{subsection.12.6}\protected@file@percent }
+\newlabel{sec:mono-comb}{{12.6}{49}{The combination \texorpdfstring {$\tfrac 14C^{(22)}_\ell +\tfrac 13\Re C^{(13)}_\ell $}{1/4 C22 + 1/3 Re C13}}{subsection.12.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {13}Checks}{49}{section.13}\protected@file@percent }
+\newlabel{sec:checks}{{13}{49}{Checks}{section.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.1}The exact formula}{49}{subsection.13.1}\protected@file@percent }
+\newlabel{sec:check_exact}{{13.1}{49}{The exact formula}{subsection.13.1}{}}
 \citation{KT}
 \citation{PUB}
 \citation{Lu}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Einstein equations}{39}{subsection.10.2}\protected@file@percent }
-\newlabel{sec:check_einstein}{{10.2}{39}{Einstein equations}{subsection.10.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Dilation invariance}{39}{subsection.10.3}\protected@file@percent }
-\newlabel{sec:check_dilation}{{10.3}{39}{Dilation invariance}{subsection.10.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.4}The decisive end-to-end test: plane wave versus the non-perturbative solver}{40}{subsection.10.4}\protected@file@percent }
-\newlabel{sec:check_endtoend}{{10.4}{40}{The decisive end-to-end test: plane wave versus the non-perturbative solver}{subsection.10.4}{}}
-\@writefile{toc}{\contentsline {paragraph}{Set-up.}{40}{section*.44}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Result.}{40}{section*.45}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Plane-wave comparison of the analytic chain (agent A1) with the non-perturbative planar solver (agent N1): $a_{\ell 0}$ of $\Theta ^{(r)}$, $r=1,2,3$ ($\ell =1$ is the dipole, kept here because the comparison is made before dipole removal). Full lists ($\ell \leq 12$): \texttt  {code/A1\_planewave/compare\_*.log}.}}{41}{table.4}\protected@file@percent }
-\newlabel{tab:a1n1}{{4}{41}{Plane-wave comparison of the analytic chain (agent A1) with the non-perturbative planar solver (agent N1): $a_{\ell 0}$ of $\Theta ^{(r)}$, $r=1,2,3$ ($\ell =1$ is the dipole, kept here because the comparison is made before dipole removal). Full lists ($\ell \le 12$): \code {code/A1\_planewave/compare\_*.log}}{table.4}{}}
-\@writefile{toc}{\contentsline {paragraph}{What it tests.}{41}{section*.46}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Maximum over the sky of $|\Theta ^{(r)}_{\rm  A1}-\Theta ^{(r)}_{\rm  N1}|$, with N1's extraction uncertainty in parentheses.}}{42}{table.5}\protected@file@percent }
-\newlabel{tab:a1n1maps}{{5}{42}{Maximum over the sky of $|\Theta ^{(r)}_{\rm A1}-\Theta ^{(r)}_{\rm N1}|$, with N1's extraction uncertainty in parentheses}{table.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.5}First-order controls}{42}{subsection.10.5}\protected@file@percent }
-\newlabel{sec:check_first}{{10.5}{42}{First-order controls}{subsection.10.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.6}Harmonic machinery controls}{42}{subsection.10.6}\protected@file@percent }
-\newlabel{sec:check_harmonic}{{10.6}{42}{Harmonic machinery controls}{subsection.10.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.7}What the checks do not cover}{42}{subsection.10.7}\protected@file@percent }
-\newlabel{sec:check_gaps}{{10.7}{42}{What the checks do not cover}{subsection.10.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {11}Monochromatic spectrum}{43}{section.11}\protected@file@percent }
-\newlabel{sec:mono}{{11}{43}{Monochromatic spectrum}{section.11}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {11.1}Definition and first order}{43}{subsection.11.1}\protected@file@percent }
-\newlabel{sec:mono-def}{{11.1}{43}{Definition and first order}{subsection.11.1}{}}
-\newlabel{eq:mono-P}{{130}{43}{Definition and first order}{equation.11.130}{}}
-\newlabel{eq:mono-C11}{{131}{43}{Definition and first order}{equation.11.131}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}Collapse of $C^{(22)}_\ell $ to a single integral}{43}{subsection.11.2}\protected@file@percent }
-\newlabel{sec:mono-C22}{{11.2}{43}{Collapse of \texorpdfstring {$C^{(22)}_\ell $}{C22} to a single integral}{subsection.11.2}{}}
-\newlabel{eq:mono-C22}{{132}{43}{Collapse of \texorpdfstring {$C^{(22)}_\ell $}{C22} to a single integral}{equation.11.132}{}}
-\newlabel{eq:mono-BB}{{133}{43}{Collapse of \texorpdfstring {$C^{(22)}_\ell $}{C22} to a single integral}{equation.11.133}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {11.3}The corner $K\rightarrow 0$}{43}{subsection.11.3}\protected@file@percent }
-\newlabel{sec:mono-K0}{{11.3}{43}{The corner \texorpdfstring {$K\to 0$}{K->0}}{subsection.11.3}{}}
-\newlabel{prop:mono-K0}{{11.1}{43}{behaviour at $K\to 0$}{theorem.11.1}{}}
-\newlabel{eq:mono-K0}{{134}{43}{behaviour at $K\to 0$}{equation.11.134}{}}
-\newlabel{eq:mono-count}{{135}{44}{behaviour at $K\to 0$}{equation.11.135}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {11.4}Evaluation at two parameter points}{44}{subsection.11.4}\protected@file@percent }
-\newlabel{sec:mono-num}{{11.4}{44}{Evaluation at two parameter points}{subsection.11.4}{}}
-\@writefile{toc}{\contentsline {paragraph}{Numerical reliability.}{44}{section*.47}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Structure.}{44}{section*.48}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Monochromatic spectrum, $k_0=1$, $\eta _*=2$: evaluation of the exact expressions by quadrature. The $O(\epsilon ^4)$ contribution to $C_\ell $ is $\epsilon ^4\sigma ^4[\genfrac  {}{}{}\displaystyle  14C^{(22)}_\ell /\sigma ^4+\genfrac  {}{}{}\displaystyle  13\operatorname  {Re}C^{(13)}_\ell /\sigma ^4]$; the $(13)$ column is pending (Sec.~\ref {sec:mono-13}). $^\dagger $: below the double-precision cancellation floor, not reliable (see text).}}{45}{table.6}\protected@file@percent }
-\newlabel{tab:mono}{{6}{45}{Monochromatic spectrum, $k_0=1$, $\eta _*=2$: evaluation of the exact expressions by quadrature. The $O(\eps ^4)$ contribution to $C_\ell $ is $\eps ^4\sigma ^4[\tfrac 14C^{(22)}_\ell /\sigma ^4+\tfrac 13\Re C^{(13)}_\ell /\sigma ^4]$; the $(13)$ column is pending (Sec.~\ref {sec:mono-13}). $^\dagger $: below the double-precision cancellation floor, not reliable (see text)}{table.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {11.5}The $(13)$ term}{45}{subsection.11.5}\protected@file@percent }
-\newlabel{sec:mono-13}{{11.5}{45}{The \texorpdfstring {$(13)$}{(13)} term}{subsection.11.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {11.6}The combination $\genfrac  {}{}{}\displaystyle  14C^{(22)}_\ell +\genfrac  {}{}{}\displaystyle  13\operatorname  {Re}C^{(13)}_\ell $}{45}{subsection.11.6}\protected@file@percent }
-\newlabel{sec:mono-comb}{{11.6}{45}{The combination \texorpdfstring {$\tfrac 14C^{(22)}_\ell +\tfrac 13\Re C^{(13)}_\ell $}{1/4 C22 + 1/3 Re C13}}{subsection.11.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {12}Unresolved steps}{45}{section.12}\protected@file@percent }
-\newlabel{sec:unresolved}{{12}{45}{Unresolved steps}{section.12}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Diagonal channel-group contributions $G_{gg}(\ell )/C^{(22)}_\ell $ for $k_0=1$, $\eta _*=2$, $\eta _o=8$ (rounded to $10^{-3}$). Groups: B prod = $K^{\rm  B,prod}$; B $1{\times }1$ = endpoint products; type C columns as in \eqref  {eq:asm-chC}; defl, emi shift, lens, delay = $K^{\rm  D}_{\rm  defl}$, $K^{\rm  D}_{\rm  emi}$, $K^{\rm  D}_{\rm  lens}$, $K^{\rm  D}_{\rm  delay}$ (ray + emission parts). Not shown: vector ($<5\times 10^{-4}$), clock and displacement ($0$). ``cross'' $=1-\sum _gG_{gg}/C^{(22)}_\ell $.}}{46}{table.7}\protected@file@percent }
-\newlabel{tab:mono-groups}{{7}{46}{Diagonal channel-group contributions $G_{gg}(\ell )/C^{(22)}_\ell $ for $k_0=1$, $\eta _*=2$, $\eta _o=8$ (rounded to $10^{-3}$). Groups: B prod = $K^{\rm B,prod}$; B $1{\times }1$ = endpoint products; type C columns as in \eqref {eq:asm-chC}; defl, emi shift, lens, delay = $K^{\rm D}_{\rm defl}$, $K^{\rm D}_{\rm emi}$, $K^{\rm D}_{\rm lens}$, $K^{\rm D}_{\rm delay}$ (ray + emission parts). Not shown: vector ($<5\times 10^{-4}$), clock and displacement ($0$). ``cross'' $=1-\sum _gG_{gg}/C^{(22)}_\ell $}{table.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Explicit kernels (machine generated)}{46}{appendix.A}\protected@file@percent }
-\newlabel{app:kernels}{{A}{46}{Explicit kernels (machine generated)}{appendix.A}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Second-order kernels}{46}{subsection.A.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$K_Q$ (traceless scalar, $Q_2=\Phi _2-\Psi _2$)}{46}{section*.49}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$K_{S_{00}}$ (source of the 00 constraint)}{46}{section*.50}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$K_{S_{0z}}$ (longitudinal $0i$ source, $S_0^L$)}{47}{section*.51}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$K_{S_\Phi }$ (source of $\mathcal  L_\Phi \Phi _2=S_\Phi $)}{47}{section*.52}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$K_\omega $ (vector metric, $\omega _{2,i}=\int P_{ij}q_jK_\omega \zeta \zeta $)}{47}{section*.53}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$K_{v^T}$ (transverse velocity, $v^T_{2,i}=\int P_{ij}q_jK_{v^T}\zeta \zeta $)}{47}{section*.54}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$K_h$ (tensor source, $h_{2,ij}=\Lambda _{ij,kl}q_kq_l\int _0^\eta G_hK_h$)}{47}{section*.55}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$K^0_{\Phi _2}$ (initial amplitude of $\Phi _2$, Eq.~\eqref  {eq:KPhi20})}{47}{section*.56}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$K_Q(\eta \rightarrow 0)$}{47}{section*.57}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{kernel of the local quadratic part $-\genfrac  {}{}{}\displaystyle  14\delta _1^2-2\Phi _1^2$ of $\zeta ^{(2)}$, Eq.~\eqref  {eq:zeta2} ($\rightarrow -\genfrac  {}{}{}\displaystyle  43$ as $\eta \rightarrow 0$)}{47}{section*.58}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Algebraic second-order scalars}{48}{section*.59}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Homogeneous solutions and Green's functions}{48}{subsection.A.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$u_1$}{48}{section*.60}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$u_2$}{48}{section*.61}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$\hat  g=3u_1$}{48}{section*.62}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$G_\Phi (k;\eta ,\eta ')$}{48}{section*.63}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$G_h(k;\eta ,\eta ')$}{48}{section*.64}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$G_\omega (\eta ,\eta ')$ (for the ODE form of the vector equation)}{48}{section*.65}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Third-order initial amplitude and intermediate limits}{48}{subsection.A.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$C_3(k;q,\mu )$, Eq.~\eqref  {eq:C3}}{48}{section*.66}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$C_3$ in invariant form $(k,q,p)$}{49}{section*.67}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$Q_{3c}(\eta \rightarrow 0)$}{49}{section*.68}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$\lim _{\eta \rightarrow 0}\eta ^2K_{3c,S_{00}}$}{49}{section*.69}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Tadpole (mean-field) functions}{49}{subsection.A.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$\mathrm  {tad}_{Q_2}$ [$-\genfrac  {}{}{}\displaystyle  {16}9+\genfrac  {}{}{}\displaystyle  {88}{405}q^2\eta ^2+\ldots  $]}{49}{section*.70}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$\mathrm  {tad}_{S_{00}}$ [$\genfrac  {}{}{}\displaystyle  {32}{3\eta ^2}-\genfrac  {}{}{}\displaystyle  {272}{45}q^2+\ldots  $]}{49}{section*.71}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$\mathrm  {tad}_{S_\Phi }$ [$-\genfrac  {}{}{}\displaystyle  {56}{81}q^2+\ldots  $]}{49}{section*.72}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$\mathrm  {tad}_{\Phi _2}$ [$-\genfrac  {}{}{}\displaystyle  89-\genfrac  {}{}{}\displaystyle  {28}{405}q^2\eta ^2+\ldots  $]}{49}{section*.73}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{$\mathrm  {tad}_{\delta _2}$ [$\genfrac  {}{}{}\displaystyle  {16}9-\genfrac  {}{}{}\displaystyle  {472}{405}q^2\eta ^2+\ldots  $]}{49}{section*.74}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.5}Not reproduced here}{50}{subsection.A.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B}Line-of-sight term lists of $L_2$ and $L_3$}{50}{appendix.B}\protected@file@percent }
-\newlabel{app:lterms}{{B}{50}{Line-of-sight term lists of \texorpdfstring {$L_2$}{L2} and \texorpdfstring {$L_3$}{L3}}{appendix.B}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}$\genfrac  {}{}{}\displaystyle  12L_2$, shear form, $\hat  {\mathbf  n}=\hat  {\mathbf  z}$: all 34 terms}{50}{subsection.B.1}\protected@file@percent }
-\newlabel{app:L2z}{{B.1}{50}{$\tfrac 12L_2$, shear form, $\nhat =\hat {\mathbf z}$: all 34 terms}{subsection.B.1}{}}
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] local | fields:2}}{50}{section*.75}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] transverse direction k1 (aberration+deflection) | fields:1}}{50}{section*.76}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] local | fields:1+1}}{51}{section*.77}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] time delay (radial Dx1) | fields:1}}{51}{section*.78}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] lensing (transverse Dx1) | fields:1}}{51}{section*.79}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[obs] observer clock | fields:1}}{51}{section*.80}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] emission-surface shift | fields:1}}{51}{section*.81}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Groups of $\genfrac  {}{}{}\displaystyle  12L_2$ for general $\hat  {\mathbf  n}$ (\texttt  {L\_terms.pkl[\textquotesingle L\textquotesingle ][2]}).}}{51}{table.8}\protected@file@percent }
-\newlabel{tab:L2gen}{{8}{51}{Groups of $\tfrac 12L_2$ for general $\nhat $ (\code {L\_terms.pkl[\textquotesingle L\textquotesingle ][2]})}{table.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.2}$\genfrac  {}{}{}\displaystyle  12L_2$, direct (redshift) form, $\hat  {\mathbf  n}=\hat  {\mathbf  z}$}{52}{subsection.B.2}\protected@file@percent }
-\newlabel{app:L2direct}{{B.2}{52}{$\tfrac 12L_2$, direct (redshift) form, $\nhat =\hat {\mathbf z}$}{subsection.B.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] local | fields:2}}{52}{section*.82}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] lensing (transverse Dx1) | fields:1}}{52}{section*.83}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] time delay (radial Dx1) | fields:1}}{52}{section*.84}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] transverse direction k1 (aberration+deflection) | fields:1}}{52}{section*.85}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] local | fields:1+1}}{52}{section*.86}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[obs] observer clock | fields:1}}{52}{section*.87}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] emission-surface shift | fields:1}}{52}{section*.88}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[obs] local | fields:1+1}}{52}{section*.89}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[obs] local | fields:2}}{52}{section*.90}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[obs] observer clock | fields:1}}{52}{section*.91}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[obs] observer displacement | fields:1}}{53}{section*.92}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] local | fields:1+1}}{53}{section*.93}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] local | fields:2}}{53}{section*.94}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] emission-surface shift | fields:1}}{53}{section*.95}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] lensing (transverse Dx1) | fields:1}}{53}{section*.96}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] time delay (radial Dx1) | fields:1}}{53}{section*.97}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] transverse direction k1 (aberration+deflection) | fields:1}}{53}{section*.98}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.3}$\genfrac  {}{}{}\displaystyle  16L_3$: group lists}{53}{subsection.B.3}\protected@file@percent }
-\newlabel{app:L3groups}{{B.3}{53}{$\tfrac 16L_3$: group lists}{subsection.B.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Explicit short groups.}{53}{section*.99}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] local | fields:3}}{53}{section*.100}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Groups of $\genfrac  {}{}{}\displaystyle  16L_3$, shear form, $\hat  {\mathbf  n}=\hat  {\mathbf  z}$ (\texttt  {L\_split[3]}); bracketed tags as stored.}}{54}{table.9}\protected@file@percent }
-\newlabel{tab:L3z}{{9}{54}{Groups of $\tfrac 16L_3$, shear form, $\nhat =\hat {\mathbf z}$ (\code {L\_split[3]}); bracketed tags as stored}{table.9}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Groups of $\genfrac  {}{}{}\displaystyle  16L_3$, shear form, general $\hat  {\mathbf  n}$ (\texttt  {L[3]}).}}{55}{table.10}\protected@file@percent }
-\newlabel{tab:L3gen}{{10}{55}{Groups of $\tfrac 16L_3$, shear form, general $\nhat $ (\code {L[3]})}{table.10}{}}
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] transverse direction k1 (aberration+deflection) | fields:2}}{56}{section*.101}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] transverse k2 | fields:1}}{56}{section*.102}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] transverse direction k1 (aberration+deflection)\^{}2 | fields:1}}{56}{section*.103}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] lensing (transverse Dx1)\^{}2 | fields:1}}{56}{section*.104}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] time delay (radial Dx1)\^{}2 | fields:1}}{56}{section*.105}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] radial k2 | fields:1}}{56}{section*.106}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] time delay 2nd (radial Dx2) | fields:1}}{57}{section*.107}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] time delay (radial Dx1) | fields:2}}{57}{section*.108}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] lensing 2nd (transverse Dx2) | fields:1}}{57}{section*.109}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] lensing (transverse Dx1) | fields:2}}{57}{section*.110}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] transverse direction k1 (aberration+deflection); time delay (radial Dx1) | fields:1}}{57}{section*.111}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] transverse direction k1 (aberration+deflection); lensing (transverse Dx1) | fields:1}}{57}{section*.112}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[ray] lensing (transverse Dx1); time delay (radial Dx1) | fields:1}}{58}{section*.113}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[obs] observer clock\^{}2 | fields:1}}{58}{section*.114}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[obs] observer clock | fields:2}}{58}{section*.115}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[obs] observer clock 2nd | fields:1}}{58}{section*.116}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[obs] observer clock; observer displacement | fields:1}}{58}{section*.117}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[obs] observer clock | fields:1+1}}{58}{section*.118}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[obs] observer clock\^{}2 | fields:1}}{59}{section*.119}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] emission-surface shift | fields:2}}{59}{section*.120}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] emission-surface shift 2nd | fields:1}}{59}{section*.121}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] emission-surface shift | fields:1+1}}{59}{section*.122}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] emission-surface shift; transverse direction k1 (aberration+deflection) | fields:1}}{59}{section*.123}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] emission-surface shift; lensing (transverse Dx1) | fields:1}}{59}{section*.124}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] emission-surface shift; time delay (radial Dx1) | fields:1}}{60}{section*.125}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\texttt  {[emi] emission-surface shift\^{}2 | fields:1}}{60}{section*.126}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {C}Machine-generated channel kernels of $K_2$}{60}{appendix.C}\protected@file@percent }
-\newlabel{app:k2channels}{{C}{60}{Machine-generated channel kernels of \texorpdfstring {$K_2$}{K2}}{appendix.C}{}}
-\@writefile{toc}{\contentsline {paragraph}{[ray] second-order fields (C: $\Phi _2,\Psi _2$ ISW, $\omega _2$, $h_2$).}{60}{section*.127}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{[ray] lensing, transverse $\Delta \mathbf  x_1$ (D).}{60}{section*.128}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{[ray] time delay, radial $\Delta \mathbf  x_1$ (D).}{61}{section*.129}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{[ray] aberration + deflection, transverse $\mathbf  k_1$ (D).}{61}{section*.130}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{[ray] local $1\times 1$ (C).}{61}{section*.131}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{[obs] observer clock (D).}{61}{section*.132}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{[emi] emission-surface shift (D).}{61}{section*.133}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{[obs] local $1\times 1$ (B, endpoint).}{61}{section*.134}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{[obs] second-order fields (C: $\Psi _2,\delta _{T2},V_2,v^T_2+\omega _2$).}{61}{section*.135}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{[obs] observer displacement (D).}{61}{section*.136}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{[emi] local $1\times 1$ (B, endpoint).}{61}{section*.137}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{[emi] second-order fields (C: $\Psi _2,\delta _{T2},V_2,v^T_2+\omega _2$).}{62}{section*.138}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{[emi] lensing at emission (D).}{62}{section*.139}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{[emi] time delay at emission (D).}{62}{section*.140}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{[emi] aberration + deflection at emission (D).}{62}{section*.141}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {D}Verification ledger}{62}{appendix.D}\protected@file@percent }
-\newlabel{app:ledger}{{D}{62}{Verification ledger}{appendix.D}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.2}Einstein equations}{50}{subsection.13.2}\protected@file@percent }
+\newlabel{sec:check_einstein}{{13.2}{50}{Einstein equations}{subsection.13.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.3}Gauge invariance at $k=0$: the dilation family}{51}{subsection.13.3}\protected@file@percent }
+\newlabel{sec:check_dilation}{{13.3}{51}{Gauge invariance at \texorpdfstring {$k=0$}{k=0}: the dilation family}{subsection.13.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.4}Gauge invariance at finite $k$: plane wave versus the non-perturbative solver}{51}{subsection.13.4}\protected@file@percent }
+\newlabel{sec:check_endtoend}{{13.4}{51}{Gauge invariance at finite \texorpdfstring {$k$}{k}: plane wave versus the non-perturbative solver}{subsection.13.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Set-up.}{51}{section*.64}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Plane-wave comparison of the analytic chain (Poisson gauge) with the non-perturbative planar solver (comoving-orthogonal gauge): $a_{\ell 0}$ of $\Theta ^{(r)}$, $r=1,2,3$ ($\ell =1$ is the dipole, kept here because the comparison is made before dipole removal). Full lists ($\ell \leq 12$): App.~\ref {app:repro}.}}{52}{table.6}\protected@file@percent }
+\newlabel{tab:a1n1}{{6}{52}{Plane-wave comparison of the analytic chain (Poisson gauge) with the non-perturbative planar solver (comoving-orthogonal gauge): $a_{\ell 0}$ of $\Theta ^{(r)}$, $r=1,2,3$ ($\ell =1$ is the dipole, kept here because the comparison is made before dipole removal). Full lists ($\ell \le 12$): App.~\ref {app:repro}}{table.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Why this is a gauge-invariance test.}{52}{section*.65}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Maximum over the sky of $|\Theta ^{(r)}_{\rm  analytic}-\Theta ^{(r)}_{\rm  non\text  {-}pert}|$, with the extraction uncertainty of the non-perturbative maps in parentheses.}}{53}{table.7}\protected@file@percent }
+\newlabel{tab:a1n1maps}{{7}{53}{Maximum over the sky of $|\Theta ^{(r)}_{\rm analytic}-\Theta ^{(r)}_{\rm non\text {-}pert}|$, with the extraction uncertainty of the non-perturbative maps in parentheses}{table.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{Result.}{53}{section*.66}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{What it tests.}{53}{section*.67}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.5}First-order controls}{53}{subsection.13.5}\protected@file@percent }
+\newlabel{sec:check_first}{{13.5}{53}{First-order controls}{subsection.13.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.6}Harmonic machinery controls}{54}{subsection.13.6}\protected@file@percent }
+\newlabel{sec:check_harmonic}{{13.6}{54}{Harmonic machinery controls}{subsection.13.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.7}What the checks do not cover}{54}{subsection.13.7}\protected@file@percent }
+\newlabel{sec:check_gaps}{{13.7}{54}{What the checks do not cover}{subsection.13.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {14}Unresolved steps}{54}{section.14}\protected@file@percent }
+\newlabel{sec:unresolved}{{14}{54}{Unresolved steps}{section.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Explicit kernels (machine generated)}{54}{appendix.A}\protected@file@percent }
+\newlabel{app:kernels}{{A}{54}{Explicit kernels (machine generated)}{appendix.A}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Second-order kernels}{55}{subsection.A.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$K_Q$ (traceless scalar, $Q_2=\Phi _2-\Psi _2$)}{55}{section*.68}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$K_{S_{00}}$ (source of the 00 constraint)}{55}{section*.69}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$K_{S_{0z}}$ (longitudinal $0i$ source, $S_0^L$)}{55}{section*.70}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$K_{S_\Phi }$ (source of $\mathcal  L_\Phi \Phi _2=S_\Phi $)}{55}{section*.71}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$K_\omega $ (vector metric, $\omega _{2,i}=\int P_{ij}q_jK_\omega \zeta \zeta $)}{55}{section*.72}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$K_{v^T}$ (transverse velocity, $v^T_{2,i}=\int P_{ij}q_jK_{v^T}\zeta \zeta $)}{56}{section*.73}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$K_h$ (tensor source, $h_{2,ij}=\Pi _{ij,kl}q_kq_l\int _0^\eta G_hK_h$)}{56}{section*.74}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$K^0_{\Phi _2}$ (initial amplitude of $\Phi _2$, Eq.~\eqref  {eq:KPhi20})}{56}{section*.75}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$K_Q(\eta \rightarrow 0)$}{56}{section*.76}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{kernel of the local quadratic part $-\genfrac  {}{}{}\displaystyle  14\delta _1^2-2\Phi _1^2$ of $\zeta ^{(2)}$, Eq.~\eqref  {eq:zeta2} ($\rightarrow -\genfrac  {}{}{}\displaystyle  43$ as $\eta \rightarrow 0$)}{56}{section*.77}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Algebraic second-order scalars}{56}{section*.78}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Homogeneous solutions and Green's functions}{56}{subsection.A.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$u_1$}{56}{section*.79}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$u_2$}{56}{section*.80}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$U=3u_1$}{57}{section*.81}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$G_\Phi (k;\eta ,\eta ')$}{57}{section*.82}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$G_h(k;\eta ,\eta ')$}{57}{section*.83}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$G_\omega (\eta ,\eta ')$ (for the ODE form of the vector equation)}{57}{section*.84}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Third-order initial amplitude and intermediate limits}{57}{subsection.A.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$C_3(k;q,\mu )$, Eq.~\eqref  {eq:C3}}{57}{section*.85}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$C_3$ in invariant form $(k,q,p)$}{57}{section*.86}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$Q_{3c}(\eta \rightarrow 0)$}{57}{section*.87}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$\lim _{\eta \rightarrow 0}\eta ^2K_{3c,S_{00}}$}{57}{section*.88}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Tadpole (mean-field) functions}{57}{subsection.A.4}\protected@file@percent }
+\citation{KT}
+\@writefile{toc}{\contentsline {paragraph}{$\mathrm  {tad}_{Q_2}$ [$-\genfrac  {}{}{}\displaystyle  {16}9+\genfrac  {}{}{}\displaystyle  {88}{405}q^2\eta ^2+\ldots  $]}{58}{section*.89}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$\mathrm  {tad}_{S_{00}}$ [$\genfrac  {}{}{}\displaystyle  {32}{3\eta ^2}-\genfrac  {}{}{}\displaystyle  {272}{45}q^2+\ldots  $]}{58}{section*.90}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$\mathrm  {tad}_{S_\Phi }$ [$-\genfrac  {}{}{}\displaystyle  {56}{81}q^2+\ldots  $]}{58}{section*.91}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$\mathrm  {tad}_{\Phi _2}$ [$-\genfrac  {}{}{}\displaystyle  89-\genfrac  {}{}{}\displaystyle  {28}{405}q^2\eta ^2+\ldots  $]}{58}{section*.92}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$\mathrm  {tad}_{\delta _2}$ [$\genfrac  {}{}{}\displaystyle  {16}9-\genfrac  {}{}{}\displaystyle  {472}{405}q^2\eta ^2+\ldots  $]}{58}{section*.93}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.5}Not reproduced here}{58}{subsection.A.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}Closed-form second-order time integrals}{58}{appendix.B}\protected@file@percent }
+\newlabel{app:closedforms}{{B}{58}{Closed-form second-order time integrals}{appendix.B}{}}
+\@writefile{toc}{\contentsline {paragraph}{Method.}{59}{section*.94}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Small $\eta $}{60}{section*.98}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Large $\eta $.}{61}{section*.99}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Verification.}{61}{section*.100}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}Complete line-of-sight term lists of $L_1$, $L_2$ and $L_3$}{61}{appendix.C}\protected@file@percent }
+\newlabel{app:lterms}{{C}{61}{Complete line-of-sight term lists of \texorpdfstring {$L_1$, $L_2$}{L1, L2} and \texorpdfstring {$L_3$}{L3}}{appendix.C}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}$L_1$, $\hat  {\mathbf  n}=\hat  {\mathbf  z}$}{61}{subsection.C.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(1) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; local; explicit fields of order 1}{61}{section*.101}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.2}$\genfrac  {}{}{}\displaystyle  12L_2$, shear form, $\hat  {\mathbf  n}=\hat  {\mathbf  z}$: all terms}{62}{subsection.C.2}\protected@file@percent }
+\newlabel{app:L2z}{{C.2}{62}{$\tfrac 12L_2$, shear form, $\nhat =\hat {\mathbf z}$: all terms}{subsection.C.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{(1) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; local; explicit fields of order 2}{62}{section*.102}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(2) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; direction $\mathbf  k_{1\perp }$; explicit fields of order 1}{62}{section*.103}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(3) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; local; explicit fields of order 1{+}1}{62}{section*.104}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(4) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; time delay $\Delta x^z_1$; explicit fields of order 1}{62}{section*.105}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(5) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; lensing $\Delta \mathbf  x_{1\perp }$; explicit fields of order 1}{62}{section*.106}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(6) observer, at $(\bar  \eta _o,\bar  \mathbf  x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 1}{62}{section*.107}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(7) emission, at $(\eta _*,\bar  \mathbf  x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 1}{62}{section*.108}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Groups of $\genfrac  {}{}{}\displaystyle  12L_2$ for symbolic $\hat  {\mathbf  n}$ (term counts).}}{63}{table.8}\protected@file@percent }
+\newlabel{tab:L2gen}{{8}{63}{Groups of $\tfrac 12L_2$ for symbolic $\nhat $ (term counts)}{table.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.3}$\genfrac  {}{}{}\displaystyle  12L_2$, direct (redshift) form, $\hat  {\mathbf  n}=\hat  {\mathbf  z}$}{63}{subsection.C.3}\protected@file@percent }
+\newlabel{app:L2direct}{{C.3}{63}{$\tfrac 12L_2$, direct (redshift) form, $\nhat =\hat {\mathbf z}$}{subsection.C.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{(1) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; local; explicit fields of order 2}{63}{section*.109}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(2) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; lensing $\Delta \mathbf  x_{1\perp }$; explicit fields of order 1}{63}{section*.110}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(3) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; time delay $\Delta x^z_1$; explicit fields of order 1}{63}{section*.111}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(4) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; direction $\mathbf  k_{1\perp }$; explicit fields of order 1}{63}{section*.112}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(5) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; local; explicit fields of order 1{+}1}{63}{section*.113}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(6) observer, at $(\bar  \eta _o,\bar  \mathbf  x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 1}{63}{section*.114}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(7) emission, at $(\eta _*,\bar  \mathbf  x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 1}{63}{section*.115}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(8) observer, at $(\bar  \eta _o,\bar  \mathbf  x_o)$; local; explicit fields of order 1{+}1}{63}{section*.116}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(9) observer, at $(\bar  \eta _o,\bar  \mathbf  x_o)$; local; explicit fields of order 2}{64}{section*.117}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(10) observer, at $(\bar  \eta _o,\bar  \mathbf  x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 1}{64}{section*.118}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(11) observer, at $(\bar  \eta _o,\bar  \mathbf  x_o)$; observer displacement $\delta \mathbf  x_{o1}$; explicit fields of order 1}{64}{section*.119}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(12) emission, at $(\eta _*,\bar  \mathbf  x_*)$; local; explicit fields of order 1{+}1}{64}{section*.120}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(13) emission, at $(\eta _*,\bar  \mathbf  x_*)$; local; explicit fields of order 2}{64}{section*.121}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(14) emission, at $(\eta _*,\bar  \mathbf  x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 1}{64}{section*.122}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(15) emission, at $(\eta _*,\bar  \mathbf  x_*)$; lensing $\Delta \mathbf  x_{1\perp }$; explicit fields of order 1}{64}{section*.123}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(16) emission, at $(\eta _*,\bar  \mathbf  x_*)$; time delay $\Delta x^z_1$; explicit fields of order 1}{64}{section*.124}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(17) emission, at $(\eta _*,\bar  \mathbf  x_*)$; direction $\mathbf  k_{1\perp }$; explicit fields of order 1}{64}{section*.125}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces The 32 groups of $\genfrac  {}{}{}\displaystyle  16L_3$ (shear form, $\hat  {\mathbf  n}=\hat  {\mathbf  z}$), numbered as in the list below.}}{65}{table.9}\protected@file@percent }
+\newlabel{tab:L3z}{{9}{65}{The 32 groups of $\tfrac 16L_3$ (shear form, $\nhat =\hat {\mathbf z}$), numbered as in the list below}{table.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Groups of $\genfrac  {}{}{}\displaystyle  16L_3$ for symbolic $\hat  {\mathbf  n}$ (term counts).}}{66}{table.10}\protected@file@percent }
+\newlabel{tab:L3gen}{{10}{66}{Groups of $\tfrac 16L_3$ for symbolic $\nhat $ (term counts)}{table.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.4}$\genfrac  {}{}{}\displaystyle  16L_3$, shear form, $\hat  {\mathbf  n}=\hat  {\mathbf  z}$: all 359 terms}{67}{subsection.C.4}\protected@file@percent }
+\newlabel{app:L3groups}{{C.4}{67}{$\tfrac 16L_3$, shear form, $\nhat =\hat {\mathbf z}$: all 359 terms}{subsection.C.4}{}}
+\newlabel{app:L3full}{{C.4}{67}{$\tfrac 16L_3$, shear form, $\nhat =\hat {\mathbf z}$: all 359 terms}{subsection.C.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{(1) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; local; explicit fields of order 3}{67}{section*.126}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(2) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; local; explicit fields of order 2{+}1}{67}{section*.127}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(3) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; direction $\mathbf  k_{1\perp }$; explicit fields of order 2}{68}{section*.128}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(4) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; direction $\mathbf  k_{2\perp }$; explicit fields of order 1}{68}{section*.129}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(5) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; time delay $\Delta x^z_1$; explicit fields of order 1{+}1}{68}{section*.130}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(6) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; local; explicit fields of order 1{+}1{+}1}{69}{section*.131}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(7) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; direction $\mathbf  k_{1\perp }$ (squared); explicit fields of order 1}{70}{section*.132}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(8) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; lensing $\Delta \mathbf  x_{1\perp }$ (squared); explicit fields of order 1}{70}{section*.133}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(9) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; time delay $\Delta x^z_1$ (squared); explicit fields of order 1}{70}{section*.134}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(10) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; direction $k^z_2$; explicit fields of order 1}{70}{section*.135}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(11) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; time delay $\Delta x^z_2$; explicit fields of order 1}{70}{section*.136}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(12) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; time delay $\Delta x^z_1$; explicit fields of order 2}{71}{section*.137}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(13) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; lensing $\Delta \mathbf  x_{2\perp }$; explicit fields of order 1}{71}{section*.138}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(14) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; lensing $\Delta \mathbf  x_{1\perp }$; explicit fields of order 2}{71}{section*.139}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(15) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; direction $\mathbf  k_{1\perp }$; explicit fields of order 1{+}1}{71}{section*.140}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(16) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; direction $\mathbf  k_{1\perp }$ $\times $ time delay $\Delta x^z_1$; explicit fields of order 1}{71}{section*.141}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(17) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; direction $\mathbf  k_{1\perp }$ $\times $ lensing $\Delta \mathbf  x_{1\perp }$; explicit fields of order 1}{72}{section*.142}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(18) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; lensing $\Delta \mathbf  x_{1\perp }$; explicit fields of order 1{+}1}{72}{section*.143}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(19) ray, $\int _{\eta _*}^{\bar  \eta _o}\!\mathrm  d\eta $; lensing $\Delta \mathbf  x_{1\perp }$ $\times $ time delay $\Delta x^z_1$; explicit fields of order 1}{73}{section*.144}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(20) observer, at $(\bar  \eta _o,\bar  \mathbf  x_o)$; clock $\delta \eta _{o1}$ (squared); explicit fields of order 1}{73}{section*.145}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(21) observer, at $(\bar  \eta _o,\bar  \mathbf  x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 2}{73}{section*.146}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(22) observer, at $(\bar  \eta _o,\bar  \mathbf  x_o)$; clock $\delta \eta _{o2}$; explicit fields of order 1}{73}{section*.147}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(23) observer, at $(\bar  \eta _o,\bar  \mathbf  x_o)$; clock $\delta \eta _{o1}$ $\times $ observer displacement $\delta \mathbf  x_{o1}$; explicit fields of order 1}{73}{section*.148}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(24) observer, at $(\bar  \eta _o,\bar  \mathbf  x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 1{+}1}{74}{section*.149}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(25) observer, at $(\bar  \eta _o,\bar  \mathbf  x_o)$; clock $\delta \eta _{o1}$ (squared); explicit fields of order 1}{74}{section*.150}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(26) emission, at $(\eta _*,\bar  \mathbf  x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 2}{74}{section*.151}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(27) emission, at $(\eta _*,\bar  \mathbf  x_*)$; emission shift $\delta \eta _{e2}$; explicit fields of order 1}{74}{section*.152}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(28) emission, at $(\eta _*,\bar  \mathbf  x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 1{+}1}{74}{section*.153}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(29) emission, at $(\eta _*,\bar  \mathbf  x_*)$; emission shift $\delta \eta _{e1}$ $\times $ direction $\mathbf  k_{1\perp }$; explicit fields of order 1}{74}{section*.154}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(30) emission, at $(\eta _*,\bar  \mathbf  x_*)$; emission shift $\delta \eta _{e1}$ $\times $ lensing $\Delta \mathbf  x_{1\perp }$; explicit fields of order 1}{75}{section*.155}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(31) emission, at $(\eta _*,\bar  \mathbf  x_*)$; emission shift $\delta \eta _{e1}$ $\times $ time delay $\Delta x^z_1$; explicit fields of order 1}{75}{section*.156}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(32) emission, at $(\eta _*,\bar  \mathbf  x_*)$; emission shift $\delta \eta _{e1}$ (squared); explicit fields of order 1}{75}{section*.157}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {D}Machine-generated channel kernels of $K_2$}{75}{appendix.D}\protected@file@percent }
+\newlabel{app:k2channels}{{D}{75}{Machine-generated channel kernels of \texorpdfstring {$K_2$}{K2}}{appendix.D}{}}
+\@writefile{toc}{\contentsline {paragraph}{[ray] second-order fields (C: $\Phi _2,\Psi _2$ ISW, $\omega _2$, $h_2$).}{76}{section*.158}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{[ray] lensing, transverse $\Delta \mathbf  x_1$ (D).}{76}{section*.159}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{[ray] time delay, radial $\Delta \mathbf  x_1$ (D).}{76}{section*.160}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{[ray] aberration + deflection, transverse $\mathbf  k_1$ (D).}{76}{section*.161}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{[ray] local $1\times 1$ (C).}{76}{section*.162}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{[obs] observer clock (D).}{76}{section*.163}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{[emi] emission-surface shift (D).}{76}{section*.164}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{[obs] local $1\times 1$ (B, endpoint).}{76}{section*.165}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{[obs] second-order fields (C: $\Psi _2,\delta _{T2},V_2,v^T_2+\omega _2$).}{76}{section*.166}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{[obs] observer displacement (D).}{77}{section*.167}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{[emi] local $1\times 1$ (B, endpoint).}{77}{section*.168}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{[emi] second-order fields (C: $\Psi _2,\delta _{T2},V_2,v^T_2+\omega _2$).}{77}{section*.169}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{[emi] lensing at emission (D).}{77}{section*.170}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{[emi] time delay at emission (D).}{77}{section*.171}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{[emi] aberration + deflection at emission (D).}{77}{section*.172}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {E}Reproducibility}{77}{appendix.E}\protected@file@percent }
+\newlabel{app:repro}{{E}{77}{Reproducibility}{appendix.E}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {F}Verification ledger}{78}{appendix.F}\protected@file@percent }
+\newlabel{app:ledger}{{F}{78}{Verification ledger}{appendix.F}{}}
 \bibcite{SW67}{1}
 \bibcite{Ellis71}{2}
 \bibcite{SalopekBond}{3}
@@ -503,4 +560,4 @@
 \bibcite{Tomita}{23}
 \bibcite{DAmico}{24}
 \bibcite{Gao}{25}
-\gdef \@abspage@last{69}
+\gdef \@abspage@last{85}
