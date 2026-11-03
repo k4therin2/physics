@@ -92,3 +92,15 @@ Note: in the shear form L2 contains NO tadpole field (the shear of a homogeneous
 -3<m2>m1 involve the (q,-q) pair only through products of first-order objects (variance terms, channel i); the tadpole fields
 act only at third order (routes listed above).  So check (a) holds in the precise sense: the gauge-dependent tadpole content
 cancels identically among those routes; the remaining (gauge-invariant) tadpole dependence is physical backreaction and is kept.
+
+## Milestone 6 — monochromatic C^(13) (in progress; `mono.py`, `combine.py`)
+Definitions (explicit factors): Th3 = int zeta^3 K3 (K3 symmetric); polarisation coefficient coef_abc(k,q,-q;n) = 6 K3(k,q,-q;n);
+K_3c(k;n) := int d^3q/(2pi)^3 P(q) K3(k,q,-q;n) = kappa/3, kappa = <dTh3/dzeta_k> = (1/2) int d^3q/(2pi)^3 P coef_abc;
+kappa(nu) = sum_l (2l+1) i^l Delta^kappa_l P_l(nu) => Delta^(3c)_l = Delta^kappa_l / 3 and
+   C13_l = 3 (2/pi) int k^2 dk P Delta_l Delta^(3c)*_l = (2/pi) int k^2 dk P Delta_l Delta^kappa*_l   (normalisation terms included in Th3).
+Monochromatic: kappa(k0) = (1/2) int_{-1}^{1} dmu (1/2)<coef_abc>_phi  (|q| = k0), C13_l = 4 pi sigma^4 Delta_l Delta^kappa*_l
+(= 12 pi sigma^2 Delta_l Delta^(3c)*_l of the brief).  <m2> enters via sky averages M2(k,q), M2(k,-q) (24x48 sky quadrature per mu)
+and M2_tad = <m2>_(q,-q) = -7.46928 sigma^2-units; <m1> via Delta_0.  Im C13 ~ 1e-14 (reality OK).
+Resolution lesson: the phi-integral needs Nphi >= 16 (phases e^{i q_perp.n_perp chi}, q chi_* = 6): at mu = 0.5,
+Delta^kappa_2 = -0.970 (Nphi=8), -2.82625 (16), -2.82632 (32).  First runs A (16 mu x 12 phi) / B (10 mu x 8 phi) are
+under-resolved in phi (30% spread at l=2) and are superseded by runs C (16 x 16, Nn=32) and D (12 x 20).
