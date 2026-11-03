@@ -74,8 +74,48 @@ Example l = 0:  C_0 = (2/sqrt3) Y(S), D_0 = (2/sqrt3) J(S),
     A_0 = -2 sqrt3 (S^3 sin S + 4S^2 cos S - 9S sin S - 9 cos S)/S^4,  B_0 = 2 sqrt3 (S^3 cos S - 4S^2 sin S - 9S cos S + 9 sin S)/S^4;
   E_0 has 56 terms; E_l (l = 1..6): 99, 156, 221, 294, 375, 464 terms (all in isw_closed_forms.tex).
 
-## Remaining (from brief) — see later milestones
-- explicit printed closed forms l = 2..6 + general-l structure statement (output file); 
-- explicit monochromatic formulas and the two limits written out analytically incl. derivation of the RD SW amplitude;
-- sky monopole: explicit M(k), <<m1>^2>, proof <<m1> a_lm> = 0 (l >= 1);
-- LaTeX section.
+## Milestone 2 — monochromatic C_l^(11), limits, sky monopole, LaTeX (status: COMPLETE)
+New code in `linear_cl.py` (section 6b; tests [7], [8]), `plateau_isw.py` (log `plateau_isw.log`); LaTeX section
+`linear_cl.tex` (+ `isw_coeffs.tex`, `isw_closed_forms.tex`); it compiles standalone against doc/macros.tex (only the external
+ref sec:observable is unresolved outside main.tex).  NOT inserted into doc/ (other agents' files) — the lead should \input it.
+
+### Monochromatic (P = 2 pi^2 sigma^2 delta(k-k0)/k0^2, <zeta^2> = sigma^2)
+C_l^(11) = 4 pi sigma^2 [ A(x0*) j_l(k0 chi_*) - k0T_V(x0*) j_l'(k0 chi_*) - delta_l0 A(x0o) + delta_l1 k0T_V(x0o)/3 + I_l(k0) ]^2,
+A(x) = -cos x + 2 j_0(x) - 4 j_1(x)/x, kT_V = sqrt3 (sin x - 2 j_1(x)), I_l from Milestone 1 (C11_mono_sym(l) gives it in sympy).
+
+### k0 eta_* -> 0 (Sachs-Wolfe)
+RD SW amplitude derived: superhorizon Phi' = 0 and the 00 constraint give delta_1 = -2 Psi_1, delta_T1 = -Psi_1/2;
+zeta = delta_T1 - Phi_1 => Phi_1 = -2zeta/3, (delta_T + Psi)_e = Psi/2 = -zeta/3 (matter era: -zeta/5); emission Doppler ~ x -> 0.
+At fixed S = k eta_o: Delta_l -> -(1/3) j_l(S) + I_l^0(S) (l >= 2), checked to 1e-10 at k eta_* = 3e-5.
+Scale-invariant P = 2pi^2 A_s/k^3 => exact eta_o-independent plateau l(l+1)C_l/(2pi A_s) = 2l(l+1) int dS/S Delta_l(S)^2.
+SW alone: 1/9 (RD analogue of 1/25).  BUT in RD Phi decays after horizon entry and every observed mode (S >~ l) has entered,
+so ISW (int 2 T_Phi' = +4/3) is not negligible: SW+ISW = 0.3772, 0.4474, 0.5003, 0.5757, 0.6649, 0.7629, 0.8290, 0.8770 for
+l = 2, 3, 4, 6, 10, 20, 40, 100.  Large-l limit (flat sky): int_0^1 dmu |Ktilde(mu)|^2 = 0.913769 (ISW alone 0.865111), with the
+CLOSED FORM Ktilde(mu) = 1 - 2b^2 - b(1-b^2) ln|(1+b)/(1-b)| + i pi b (1-b^2) theta(1-b), b = sqrt3 mu (Fourier transform of the
+line-of-sight source -delta(s)/3 + 2 dT_Phi/ds, via j_1(x)/x = (1/4) int_{-1}^1 (1-t^2) e^{ixt} dt; checked numerically to 3e-4,
+limited by truncation).  Convergence to the asymptote is slow (~1/l).
+
+### k0 -> infinity
+Delta_l -> -cos x0* j_l(k0 chi_*) - sqrt3 sin x0* j_l'(k0 chi_*) + delta_l0 cos x0o + delta_l1 sin(x0o)/sqrt3, corrections
+O(1/(k eta_*)) (checked k = 300, 3000 for l = 0, 1, 2, 7; for l >= 2 the correction is in fact O(1/k^2)).  For fixed l >= 2:
+C_l -> 4pi sigma^2 [cos x0* sin(k0chi_* - l pi/2) + sqrt3 sin x0* cos(k0chi_* - l pi/2)]^2/(k0 chi_*)^2 -> 0;
+observer terms keep C_0 -> 4pi sigma^2 cos^2 x0o, C_1 -> (4pi/3) sigma^2 sin^2 x0o.
+
+### Sky monopole
+<m1> = a_00/sqrt(4pi) = int d^3k/(2pi)^3 zeta_k M(k),
+  M(k) = Delta_0(k) = A(x_*) j_0(k chi_*) + kT_V(x_*) j_1(k chi_*) - A(x_o) + I_0(k)     (observer monopole included; M_explicit()),
+  M(k) = -k^4 chi_*^3 (eta_o + 3 eta_*)/810 + O(k^6)  (IR safe).
+<<m1>^2> = (1/2pi^2) int k^2 P M^2 dk = C_0^(11)/(4pi); monochromatic sigma^2 M(k0)^2 (example eta_*=0.5, eta_o=2, k0=4: M = 0.440060,
+<<m1>^2> = 0.193652).
+<<m1> a*_lm> = 4pi (-i)^l int k^2dk/(2pi)^3 P M Delta_l int dOmega_k Y_lm(khat) = 0 for l >= 1 (int Y_lm = sqrt(4pi) delta_l0),
+for any isotropic P.  Numerically: kernel sky-average = M(k0) for every khat (5e-15); |<<m1>a*_lm>| < 1e-14 (l = 1..3);
+<<m1>^2> = C_0/4pi (4e-16).  Caveat: first-order (Gaussian) statement only; at second order <m1> multiplies m1_lm in Th2_lm.
+
+## Status summary
+COMPLETE + VERIFIED: Delta_l(k) incl. observer terms (Rayleigh rules, observer Doppler l=1 only, observer monopole l=0 only);
+C_l^(11) prefactor (analytic + real-space check); ISW closed form for all l (residue theorem for the Ci/Si/Cin coefficients,
+elementary remainder by algorithm), explicit l = 0..6; monochromatic C_l^(11); limits k0 eta_* -> 0 (RD SW amplitude -1/3, plateau
+1/9 for SW alone, SW+ISW table and closed-form large-l asymptote 0.913769) and k0 -> infinity; small-k cancellations; sky monopole
+M(k), <<m1>^2>, <<m1>a_lm> = 0; LaTeX section.  Full suite `python3 linear_cl.py`: ALL PASS (141 s, run.log = test_log.txt).
+NOT DONE / caveats: E_l is given explicitly only for l <= 6 (algorithm general); the large-l plateau asymptote is a numerical
+integral of a closed-form |Ktilde|^2 (no closed-form number); the LaTeX section is not \input into doc/main.tex (lead's file).

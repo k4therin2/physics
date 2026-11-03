@@ -34,6 +34,8 @@ import sympy as sp
 import mpmath as mp
 from scipy.special import spherical_jn, sph_harm_y, sici, eval_legendre
 from scipy.integrate import quad
+import warnings
+warnings.filterwarnings('ignore', category=__import__('scipy').integrate.IntegrationWarning)
 from numpy.polynomial.legendre import leggauss
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -510,6 +512,114 @@ def plateau_check(log=print):
 
 
 # ----------------------------------------------------------------------------------------------------------------
+# 6b. monochromatic closed forms, the two limits, sky monopole (milestone 2 of the relaunched run)
+# ----------------------------------------------------------------------------------------------------------------
+def C11_mono_sym(l):
+    """C_l^(11) = 4 pi sigma^2 Delta_l(k0)^2, fully explicit (elementary + Ci/Si), sympy."""
+    return 4 * sp.pi * sigma2 * Delta_l_sym(l, isw='closed').subs(k, k0)**2
+
+
+def M_explicit():
+    """M(k) = A(x_*) j_0(k chi_*) + kT_V(x_*) j_1(k chi_*) - A(x_o) + I_0(k)   (j_0' = -j_1)."""
+    z = sp.Symbol('z', positive=True)
+    xs_, xo = X(k, eta_s), X(k, eta_o); w = k * (eta_o - eta_s)
+    return (A_SW.subs(x, xs_) * sp.sin(w) / w + kT_V.subs(x, xs_) * (sp.sin(w) / w**2 - sp.cos(w) / w)
+            - A_SW.subs(x, xo) + I_l_closed(0).subs({sst: k * eta_s, S: k * eta_o}))
+
+
+def Delta_l_large_k(l, kk, es, eo):
+    """k -> infinity: Delta_l -> -cos x_* j_l(k chi_*) - sqrt3 sin x_* j_l'(k chi_*) + delta_l0 cos x_o + delta_l1 sin(x_o)/sqrt3."""
+    xs_ = kk * es / np.sqrt(3); xo = kk * eo / np.sqrt(3); c = kk * (eo - es)
+    out = -np.cos(xs_) * spherical_jn(l, c) - np.sqrt(3) * np.sin(xs_) * spherical_jn(l, c, derivative=True)
+    if l == 0:
+        out += np.cos(xo)
+    if l == 1:
+        out += np.sin(xo) / np.sqrt(3)
+    return out
+
+
+def Delta_l_small_eta_s(l, kk, eo):
+    """k eta_* -> 0 at fixed S = k eta_o (l >= 2):  Delta_l -> -(1/3) j_l(S) + I_l^0(S)."""
+    return -spherical_jn(l, kk * eo) / 3 + I_l_quad_np(l, kk, 0.0, eo)[0]
+
+
+def Ktilde(mu):
+    """Fourier transform of the eta_* -> 0 line-of-sight source  K(s) = -(1/3) delta(s) + 2 dT_Phi/ds :
+       Ktilde(mu) = int K e^{i mu s} ds = 1 - 2 b^2 - b (1 - b^2) ln|(1+b)/(1-b)| + i pi b (1 - b^2) theta(1 - b),  b = sqrt3 mu
+       (uses j_1(x)/x = (1/4) int_{-1}^{1} (1-t^2) e^{ixt} dt).  Large-l RD plateau: l(l+1)C_l/(2 pi A_s) -> int_0^1 |Ktilde|^2 dmu."""
+    b = np.sqrt(3) * np.asarray(mu, float)
+    L = np.log(np.abs((1 + b) / (1 - b)))
+    return 1 - 2 * b**2 - b * (1 - b**2) * L + 1j * np.pi * b * (1 - b**2) * (b < 1)
+
+
+def monopole_cross_check(kk0=4.0, es=0.5, eo=2.0, log=print):
+    """(i) sky average of the first-order kernel = M(k) for every khat (observer terms included);
+       (ii) <<m1> a*_lm> = sigma^2 M(k0) (1/4pi) int dOmega_k a*_lm-kernel = 0 for l >= 1 (monochromatic, numerical);
+       (iii) <<m1>^2> = C_0^(11)/(4 pi) = sigma^2 M(k0)^2."""
+    TH, PH, W = _sphere_grid(48, 96)
+    nvec = np.stack([np.sin(TH) * np.cos(PH), np.sin(TH) * np.sin(PH), np.cos(TH)], -1).reshape(-1, 3)
+    Wn = W.reshape(-1)
+    TK, PK, WK = _sphere_grid(24, 48)
+    khat = np.stack([np.sin(TK) * np.cos(PK), np.sin(TK) * np.sin(PK), np.cos(TK)], -1).reshape(-1, 3)
+    WK = WK.reshape(-1)
+    Kmat = np.array([kernel_K(kk0, khat, nv, es, eo) for nv in nvec])        # (n_dirs, n_khat)
+    mono = (Wn[:, None] * Kmat).sum(0) / (4 * np.pi)                        # sky monopole per khat
+    M0 = M_num(kk0, es, eo)
+    err1 = np.max(np.abs(mono - M0))
+    worst = 0
+    thn, phn = np.arccos(np.clip(nvec[:, 2], -1, 1)), np.arctan2(nvec[:, 1], nvec[:, 0])
+    for l in (1, 2, 3):
+        for m in range(-l, l + 1):
+            Yc = np.conj(sph_harm_y(l, m, thn, phn))
+            alm = (Wn[:, None] * Yc[:, None] * Kmat).sum(0)                  # a_lm kernel per khat
+            cross = np.sum(WK * mono * np.conj(alm)) / (4 * np.pi)           # sigma^2 = 1, monochromatic khat average
+            worst = max(worst, abs(cross))
+    a00 = (Wn[:, None] * np.conj(sph_harm_y(0, 0, thn, phn))[:, None] * Kmat).sum(0)
+    C0 = np.sum(WK * np.abs(a00)**2) / (4 * np.pi)
+    err3 = abs(C0 / (4 * np.pi) - M0**2)
+    log("  sky average of kernel vs M(k0) = %.10f: max diff over khat %.1e" % (M0, err1))
+    log("  max |<<m1> a*_lm>| for l = 1..3 (sigma^2 = 1): %.1e   (vs <<m1>^2> = %.6f)" % (worst, M0**2))
+    log("  <<m1>^2> = C_0/(4pi): diff %.1e" % err3)
+    return err1 < 1e-8 and worst < 1e-8 and err3 < 1e-8
+
+
+def limits_milestone2(log=print):
+    ok = True
+    # superhorizon (RD SW amplitude):  dT1 + Psi1 -> zeta (T_dT + T_Phi) -> -zeta/3
+    log("  RD SW amplitude: lim_{x->0} (T_dT + T_Phi) = %s ;  lim kT_V = %s (emission Doppler vanishes)"
+        % (sp.limit(A_SW, x, 0), sp.limit(kT_V, x, 0)))
+    ok &= sp.limit(A_SW, x, 0) == -sp.Rational(1, 3)
+    # k eta_* -> 0 at fixed k eta_o
+    for l in (2, 5):
+        for es in (1e-3, 1e-5):
+            full = Delta_l_num(l, 3.0, es, 2.0)[0]; lim = Delta_l_small_eta_s(l, 3.0, 2.0)
+            log("  l=%d k eta_*=%.0e: Delta_l = %.10f vs -(1/3)j_l(S) + I_l^0(S) = %.10f" % (l, 3.0 * es, full, lim))
+            ok &= abs(full - lim) < 1e-4 if es == 1e-3 else abs(full - lim) < 1e-8
+    # k -> infinity, incl. observer terms (l = 0, 1)
+    for l in (0, 1, 2, 7):
+        r = []
+        for kk in (300.0, 3000.0):
+            r.append((Delta_l_num(l, kk, 0.5, 2.0)[0] - Delta_l_large_k(l, kk, 0.5, 2.0)) * kk * 0.5)
+        log("  l=%d: (Delta_l - large-k form) * k eta_* at k = 300, 3000: %.3f, %.3f (bounded => O(1/(k eta_*)))" % (l, r[0], r[1]))
+        ok &= max(abs(r[0]), abs(r[1])) < 5
+    # Ktilde vs direct Fourier transform (numerical)
+    from scipy.integrate import quad as _q
+    Fn = lambda t: (4 / np.sqrt(3)) * spherical_jn(2, t / np.sqrt(3)) / (t / np.sqrt(3)) if t > 1e-6 else 0.0   # 2 dT_Phi/ds
+    werr = 0
+    for mu in (0.2, 0.5, 0.8, 1.0):
+        re_ = _q(Fn, 0, 400, weight='cos', wvar=mu, limit=2000)[0] - 1 / 3
+        im_ = _q(Fn, 0, 400, weight='sin', wvar=mu, limit=2000)[0]
+        werr = max(werr, abs(re_ + 1j * im_ - Ktilde(mu)))
+    log("  Ktilde closed form vs numerical Fourier transform (truncated at s=400): max diff %.1e" % werr)
+    ok &= werr < 5e-3
+    from scipy.integrate import quad as q2
+    asym = q2(lambda m: abs(Ktilde(m))**2, 0, 1, points=[1 / np.sqrt(3)], limit=500)[0]
+    asym_isw = q2(lambda m: abs(Ktilde(m) + 1 / 3)**2, 0, 1, points=[1 / np.sqrt(3)], limit=500)[0]
+    log("  large-l RD plateau  l(l+1)C_l/(2 pi A_s) -> int_0^1 |Ktilde|^2 dmu = %.6f (ISW alone %.6f; SW alone 1/9)" % (asym, asym_isw))
+    return ok
+
+
+# ----------------------------------------------------------------------------------------------------------------
 # 7. test driver
 # ----------------------------------------------------------------------------------------------------------------
 def run_tests(lmax_closed=6):
@@ -582,7 +692,11 @@ def run_tests(lmax_closed=6):
     for l, d in zip(ls, D):
         log("   l=%d  Delta_l = % .8f   C_l = %.8f" % (l, d, 4 * np.pi * d**2))
     log("  <m1> variance (mono): sigma^2 M(k0)^2 = %.8f" % var_m1_mono(1.0, 4.0, 0.5, 2.0))
-    allok = ok1 and ok2 and ok3 and ok4 and ok5
+    log("[7] monochromatic limits (k eta_* -> 0, k -> infinity), RD SW amplitude, large-l plateau transform")
+    ok7 = limits_milestone2(log); log("  -> %s" % ok7)
+    log("[8] sky monopole: kernel average = M(k), <<m1> a_lm> = 0 (l >= 1), <<m1>^2> = C_0/(4pi)")
+    ok8 = monopole_cross_check(log=log); log("  -> %s" % ok8)
+    allok = ok1 and ok2 and ok3 and ok4 and ok5 and ok7 and ok8
     log("== ALL PASS: %s   (%.0fs) ==" % (allok, time.time() - t0))
     with open(os.path.join(HERE, 'test_log.txt'), 'w') as fh:
         fh.write("\n".join(lines) + "\n")
