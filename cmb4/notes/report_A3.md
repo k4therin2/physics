@@ -63,7 +63,10 @@ q-integrand kappa~(q) := 3 K3sym(k,q,-q) averaged = (1/2)<coef_abc>_qhat therefo
 Delta^kappa~_l(k; q -> 0) = 3 (k d/dk)^2 Delta_l(k)   (O(q) gradient/SCT terms are odd in qhat and average out).
 Numbers (k = 1, eta_* = 2, eta_o = 8; prediction 3(k d/dk)^2 Delta_l, l=1..4 = 25.748, -16.360, -10.235, 0.335):
   q = 0.10: 25.523, -15.785, -10.342, -0.218 ;   q = 0.05: 25.685, -16.210, -10.255, 0.197
-  deviations shrink by 4.0 (l=2: 0.575 -> 0.151; l=4: 0.553 -> 0.138): kappa~(q) = 3(k d_k)^2 K1 + O(q^2).  PASS.
+  q = 0.025: 25.732, -16.322, -10.240, 0.301
+  deviations shrink by 4.0 per halving (l=2: 0.575 -> 0.151 -> 0.038; l=4: 0.553 -> 0.138 -> 0.034):
+  kappa~(q) = 3(k d_k)^2 K1 + O(q^2).  PASS.  This is exactly V2's prediction K_3(q,-q,k) = D^2 K_1(k) + O(q^2) (D = k.d_k,
+  per unit c^2; kappa~ = 3 K3sym(k,q,-q) qhat-averaged), checked here for the FULL assembled kernel incl. normalisation.
 Consequence: IR piece of 1/3 Re C13 = sigma^2_IR (2/pi) int k^2 dk P Delta_l (k d_k)^2 Delta_l, which with A2's (22) piece
 sigma^2_IR (2/pi) int k^2 P (k d_k Delta_l)^2 forms (2/pi) int dlnk (k^3 P) (1/2)(d_lnk)^2 Delta_l^2 = (1/2)(2/pi) int dlnk Delta_l^2 d^2_lnk(k^3P)
 (integration by parts), sigma^2_IR = int_IR d^3q/(2pi)^3 P(q).  For P ~ k^{n_s-4}: sigma^2_IR ~ int dq q^{n_s-2} diverges at q -> 0
