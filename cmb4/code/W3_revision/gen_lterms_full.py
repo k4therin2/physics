@@ -93,6 +93,13 @@ PIECE = [  # raw description fragment -> readable
     ('emission-surface shift 2nd', r'emission shift $\delta\eta_{e2}$'),
     ('emission-surface shift', r'emission shift $\delta\eta_{e1}$'),
     ('local', 'local'),
+    ('direction perturbation k1 (aberration + deflection propagated)', r'direction $\vk_1$'),
+    ('path displacement Dx1 (lensing [transverse] + time delay [radial])', r'displacement $\Delta\vx_1$'),
+    ('second-order direction k2', r'direction $\vk_2$'),
+    ('second-order path displacement', r'displacement $\Delta\vx_2$'),
+    ('observer clock shift (2nd)', r'clock $\delta\eta_{o2}$'),
+    ('observer clock shift', r'clock $\delta\eta_{o1}$'),
+    ('emission-surface shift (2nd)', r'emission shift $\delta\eta_{e2}$'),
 ]
 WHERE = {'ray': r'ray, $\int_{\eta_*}^{\bar\eta_o}\!\dd\eta$', 'obs': r'observer, at $(\bar\eta_o,\bar\vx_o)$',
          'emi': r'emission, at $(\eta_*,\bar\vx_*)$'}
