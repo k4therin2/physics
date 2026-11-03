@@ -152,3 +152,4 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   third-order SW only; SONG scope excludes 1x3). Manuscript: remark + refs added; SUMMARY.md updated.
 - [11-03] One-pager published on Vandygraph (private): https://vandygraph.com/v/cmb-fourth-order-multi-agent-run-summary ; source cmb4/doc/onepager.html (gen_onepager.py).
 - [11-03] Vandygraph page recreated PUBLIC (same URL): https://vandygraph.com/v/cmb-fourth-order-multi-agent-run-summary (id 98b8fc74-7944-4d8a-89fd-ec56944d3f3c); links now point to main. Designer v2 in progress; history slimming awaiting user permission (force push blocked).
+- [11-03] v2 one-pager (designer redo) published PUBLIC at the same URL; links point to main. History slimming still awaiting user permission for force-push.
