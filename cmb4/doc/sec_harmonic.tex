@@ -179,20 +179,20 @@ C^{(13)}_\ell=\frac1{2\ell+1}\sum_m\int\!\frac{\dd^3k}{(2\pi)^3}P(k)\,K_{1,\ell 
 i.e.\ the pairing factor 3 of \eqref{eq:loops} is included in $\Theta^{(3)}_c$ once and for all.  After the $\qhat$ integration it depends on
 $\nhat$ only through $\nu\equiv\nhat\cdot\khat$; its part with all fields at one point of the ray (structure (iii) below) is written as
 \begin{equation}
-\Theta^{(3)}_c(\vk;\nhat)\supset\int\!\dd\eta\sum_Lh_L(k,\eta)\,P_L(\nhat\cdot\khat)\,e^{i\vk\cdot\nhat\chi},\qquad
-h_L(k,\eta)=\int\!\frac{q^2\dd q}{2\pi^2}P(q)\,h_L(k,q,\eta),
+\Theta^{(3)}_c(\vk;\nhat)\supset\int\!\dd\eta\sum_L\mathsf h_L(k,\eta)\,P_L(\nhat\cdot\khat)\,e^{i\vk\cdot\nhat\chi},\qquad
+\mathsf h_L(k,\eta)=\int\!\frac{q^2\dd q}{2\pi^2}P(q)\,\mathsf h_L(k,q,\eta),
 \label{eq:hL}
 \end{equation}
-with $h_L(k,q,\eta)$ the Legendre coefficients in $\nu$ of the $\qhat$-averaged kernel, $h_L=\frac{2L+1}2\int_{-1}^1\dd\nu\,P_L(\nu)\,F(\nu)$ if
+with $\mathsf h_L(k,q,\eta)$ the Legendre coefficients in $\nu$ of the $\qhat$-averaged kernel, $\mathsf h_L=\frac{2L+1}2\int_{-1}^1\dd\nu\,P_L(\nu)\,F(\nu)$ if
 the $\qhat$-average of the integrand is $F(\nu)e^{ik\nu\chi}$.  Every such Legendre series is handled by
 \begin{equation}
-\text{(A-$L$)}\qquad h(k,\eta)P_L(\nhat\cdot\khat)e^{i\vk\cdot\nhat\chi}\ \Rightarrow\
-\Delta_\ell=\int\!\dd\eta\,h\sum_{J=|\ell-L|}^{\ell+L}(2J+1)\threej{\ell}{L}{J}{0}{0}{0}^2i^{J-\ell}j_J(k\chi),
+\text{(A-$L$)}\qquad \mathsf h(k,\eta)P_L(\nhat\cdot\khat)e^{i\vk\cdot\nhat\chi}\ \Rightarrow\
+\Delta_\ell=\int\!\dd\eta\,\mathsf h\sum_{J=|\ell-L|}^{\ell+L}(2J+1)\threej{\ell}{L}{J}{0}{0}{0}^2i^{J-\ell}j_J(k\chi),
 \label{eq:AL}
 \end{equation}
 and the transfer function of the contracted map is
 \begin{equation}
-\Delta^{(3c)}_\ell(k)\equiv\int\!\dd\eta\sum_Lh_L(k,\eta)\sum_{J}(2J+1)\threej{\ell}{L}{J}{0}{0}{0}^2i^{J-\ell}j_J(k\chi),
+\Delta^{(3c)}_\ell(k)\equiv\int\!\dd\eta\sum_L\mathsf h_L(k,\eta)\sum_{J}(2J+1)\threej{\ell}{L}{J}{0}{0}{0}^2i^{J-\ell}j_J(k\chi),
 \qquad \Theta^{(3)}_{c,\ell m}=4\pi\,i^\ell Y^*_{\ell m}(\khat)\,\Delta^{(3c)}_\ell(k).
 \label{eq:Delta3c}
 \end{equation}
@@ -225,7 +225,7 @@ and the same objects give the cross term of \eqref{eq:C22_B}.  The monochromatic
 (Sec.~\ref{sec:asm-K3c}) and does not need these formulas, but (E2) and (E3) were tested against the corresponding normalisation channels of $\kappa$:
 for $\ell=1,\dots,6$ they reproduce the channels $-3\sky{m_2}m_1$ ($+3.96321$ in $\Delta^\kappa_2$) and $-3\sky{m_1}m_2$ ($-0.59274$) to $10^{-6}$ and $2\times10^{-5}$
 respectively, the accuracy of the $\mu$ quadrature (H-14).  $T^{\rm(ii)}$ is derived by Wick counting in the same way and has not been tested
-numerically; (E3) also collapses to \eqref{eq:monopole_terms}(ii) for a type-B $m_2$ (H-10).  For our map the decomposition into $h_L$, $K^C$ is not
+numerically; (E3) also collapses to \eqref{eq:monopole_terms}(ii) for a type-B $m_2$ (H-10).  For our map the decomposition into $\mathsf h_L$, $K^C$ is not
 displayed: $\kappa=\Theta^{(3)}_c$ is assembled directly from the term lists by polarisation (Sec.~\ref{sec:asm-K3c}), with its class decomposition
 \eqref{eq:asm-C13split}.
 
@@ -262,7 +262,7 @@ Under \eqref{eq:mono} the general formulas collapse to (all transfer functions a
 \big[\Delta^A_{\ell_1}\Delta^C_{\ell_1}\Delta^{A'}_{\ell_2}\Delta^D_{\ell_2}+\Delta^A_{\ell_1}\Delta^D_{\ell_1}\Delta^{A'}_{\ell_2}\Delta^C_{\ell_2}\big];\nonumber\\
 &\text{(C1)}:\ C^{(22)}_\ell=\frac{\sigma^4}{2\ell+1}\int_{-1}^1\!\dd\mu\sum_{|m|\le d}\big|\tilde K_{\ell m}(k_0,k_0,\mu)\big|^2,\quad K=k_0\sqrt{2(1+\mu)},\ \cos\alpha_1=\cos\alpha_2=\sqrt{(1+\mu)/2};\nonumber\\
 &\text{(13)(iii)}:\ T^{\rm(iii)}_{3,\ell}=4\pi\sigma^2\,\Delta_\ell(k_0)\,\Delta^{(3c)}_\ell(k_0)^*,\qquad
-\Delta^{(3c)}_\ell(k_0)=\sigma^2\int\!\dd\eta\sum_Lh_L(k_0,k_0,\eta)\sum_J(2J+1)\threej{\ell}{L}{J}{0}{0}{0}^2i^{J-\ell}j_J(k_0\chi),\nonumber\\
+\Delta^{(3c)}_\ell(k_0)=\sigma^2\int\!\dd\eta\sum_L\mathsf h_L(k_0,k_0,\eta)\sum_J(2J+1)\threej{\ell}{L}{J}{0}{0}{0}^2i^{J-\ell}j_J(k_0\chi),\nonumber\\
 &\langle\sky{m_1}^2\rangle=\sigma^2\Delta_0^2,\quad \langle\!\langle m_2\rangle\!\rangle=\sigma^2\bar K_2(k_0\khat,-k_0\khat),\quad
 \text{(E2) cross}=4\pi\sigma^4|\Delta_\ell|^2\!\int\!\dd\mu\,P_\ell(\mu)\bar K_2(k_0\khat,-k_0\khat')^*,\quad \text{(E3)}=8\pi\sigma^4\Delta_0\Delta_\ell\bar\Delta_\ell(k_0;k_0)^* ,
 \label{eq:mono_rules}

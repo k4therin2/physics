@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.1)  3 NOV 2026 19:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.1)  3 NOV 2026 19:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -914,7 +914,7 @@ ML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 q\OT1/cmr/m/n/10.95
 mm/m/it/10.95 ^^Q\OT1/cmr/m/n/10.95 )$,
  []
 
-) (./sec_einstein.tex
+) (./sec_einstein.tex [18]
 Overfull \hbox (60.85037pt too wide) in paragraph at lines 15--32
  [][] 
  []
@@ -924,7 +924,7 @@ Overfull \hbox (156.62979pt too wide) detected at line 46
 []
  []
 
-[18] [19]
+[19]
 Overfull \hbox (9.56331pt too wide) detected at line 79
 [][][]\OML/cmm/m/it/10.95 S[] \OMS/cmsy/m/n/10.95 ^^Q \OML/cmm/m/it/10.95 S[] \
 OMS/cmsy/m/n/10.95 ^^@ []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 S[] \OT1/cmr/m
@@ -936,12 +936,12 @@ y/m/n/10.95 ^^Q \OML/cmm/m/it/10.95 S[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/1
 0.95 S[];  S[] \OMS/cmsy/m/n/10.95 ^^Q \OML/cmm/m/it/10.95 S[];
  []
 
-
+[20]
 Overfull \hbox (119.61955pt too wide) detected at line 134
 []
  []
 
-[20]
+
 Overfull \hbox (143.95227pt too wide) detected at line 152
 []
  []
@@ -1011,7 +1011,7 @@ m/n/10.95 (\OML/cmm/m/it/10.95 s=[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 =\OT
 1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s=[]\OT1/cmr/m/n/10.95 ) =
  []
 
-
+[23]
 Overfull \hbox (30.21227pt too wide) detected at line 59
  []$[]  \OML/cmm/m/it/10.95 I[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 E[]\OT
 1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s[]; s[]\OT1/cmr/m/n/10.95 ) + \OML/cmm/m/
@@ -1025,7 +1025,7 @@ s[] \OMS/cmsy/m/n/10.95 ^^@ [] \OML/cmm/m/it/10.95 a[]s[] \OT1/cmr/m/n/10.95 +
 t/10.95 a[]s[][]$ 
  []
 
-[23]
+
 Overfull \hbox (61.99455pt too wide) detected at line 65
 []
  []
@@ -1293,7 +1293,7 @@ cmr/m/n/10 = [] ([]  \OMS/cmsy/m/n/10 ^^U \OT1/cmr/m/n/10 0 [])\OML/cmm/m/it/10
  []
 
 
-Overfull \hbox (28.7263pt too wide) detected at line 33
+Overfull \hbox (27.95685pt too wide) detected at line 33
 []
  []
 
@@ -1645,7 +1645,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  23278 strings out of 476182
  419505 string characters out of 5795595
- 1977975 words of memory out of 5000000
+ 1978975 words of memory out of 5000000
  44137 multiletter control sequences out of 15000+600000
  578926 words of font info for 113 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1685,10 +1685,10 @@ s/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 am10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb>
-Output written on main.pdf (108 pages, 1058002 bytes).
+Output written on main.pdf (108 pages, 1059630 bytes).
 PDF statistics:
- 2665 PDF objects out of 2984 (max. 8388607)
- 2449 compressed objects within 25 object streams
+ 2668 PDF objects out of 2984 (max. 8388607)
+ 2452 compressed objects within 25 object streams
  694 named destinations out of 1000 (max. 500000)
  693 words of extra memory for PDF output out of 10000 (max. 10000000)
 

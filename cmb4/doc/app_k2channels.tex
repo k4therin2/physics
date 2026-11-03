@@ -7,9 +7,9 @@ Sec.~\ref{sec:asm-K2} substituted typographically (no algebra was changed; the s
 also verifies symbolically that every expression below equals the compact form quoted in
 Sec.~\ref{sec:asm-channels}: residual $0$ for all fifteen channels).  Each expression is already the contribution to $K_2$,
 i.e.\ it includes the factor 2 of $K_2=2\,{\rm Sym}[K_{L_2/2}]+\dots$ and the symmetrisation $1\leftrightarrow2$.
-Notation (Sec.~\ref{sec:asm-K2}): $\mu=\khat_1\cdot\khat_2$, $\mu_a=\nhat\cdot\khat_a$, $\vK=\vk_1+\vk_2$, $K_n=\nhat\cdot\vK=k_1\mu_1+k_2\mu_2$,
-$P_\perp=k_1k_2(\mu-\mu_1\mu_2)$, $E_a=e^{ik_a\mu_a\chi}$, $E_K=E_1E_2$; first-order transfer functions $T_{X,a}\equiv T_X(k_a,\eta)$ and
-their $\eta$-derivatives $\dot T_{X,a}$; ray functionals $\mathcal F_a$, $\mathcal D_{\perp,a}$, $\mathcal D_{r,a}$ \eqref{eq:asm-functionals};
+Notation (Sec.~\ref{sec:asm-K2}): $\mu=\khat_1\cdot\khat_2$, $\nu_a=\nhat\cdot\khat_a$, $\vK=\vk_1+\vk_2$, $K_n=\nhat\cdot\vK=k_1\nu_1+k_2\nu_2$,
+$P_\perp=k_1k_2(\mu-\nu_1\nu_2)$, $\mathcal E_a=e^{ik_a\nu_a\chi}$, $\mathcal E_K=E_1\mathcal E_2$; first-order transfer functions $T_{X,a}\equiv T_X(k_a,\eta)$ and
+their $\eta$-derivatives $\dot T_{X,a}$; ray functionals $\mathcal F_a$, $\mathcal X_{\perp,a}$, $\mathcal X_{r,a}$ \eqref{eq:asm-functionals};
 observer and emission objects $X_{o,a}$, $\delta\eta_{o,a}$, $\delta\eta_{e,a}$ \eqref{eq:asm-clock}--\eqref{eq:asm-emission};
 second-order pair kernels $\Phi_2,\dot\Phi_2,\Psi_2,\dot\Psi_2,\delta_{T2},V_2$ and $K^{(ab)}_{\omega}\equiv K_\omega(\vk_a,\vk_b)$,
 $K^{(ab)}_{v^T}$, $\mathcal H$, $\dot{\mathcal H}$ \eqref{eq:asm-second}.  The numerical value of every channel agrees with the
@@ -18,61 +18,61 @@ The type-B products are $K_1(\vk_1)K_1(\vk_2)-\Delta_0(k_1)K_1(\vk_2)-\Delta_0(k
 
 \paragraph{[ray] second-order fields (C: $\Phi_2,\Psi_2$ ISW, $\omega_2$, $h_2$).} $\int_{\eta_*}^{\eta_o}\!\dd\eta$ of
 \begin{dmath*}
-E_K \dot\Phi_2 - E_K \dot\Psi_2 + \frac{E_K \dot{\mathcal H} k_1^{2}}{4} + 2 i E_K \Psi_2 K_n - \frac{E_K \dot{\mathcal H} k_1^{2} \mu_1^{2}}{2} - \frac{E_K \dot{\mathcal H} k_1^{4}}{4 K^{2}} - \frac{E_K \dot{\mathcal H} K_n^{2} k_1^{4}}{4 K^{4}} - \frac{E_K \dot{\mathcal H} K_n^{2} k_1^{2}}{4 K^{2}} + \frac{E_K \dot{\mathcal H} K_n \mu_1 k_1^{3}}{K^{2}} + \frac{i E_K K_\omega^{(12)} K_n k_1 \mu_1}{2} + \frac{i E_K K_\omega^{(21)} K_n k_2 \mu_2}{2} - \frac{i E_K K_\omega^{(12)} K_n^{2} k_1^{2}}{2 K^{2}} - \frac{i E_K K_\omega^{(21)} K_n^{2} k_2^{2}}{2 K^{2}} - \frac{E_K \dot{\mathcal H} k_2 \mu k_1^{3}}{2 K^{2}} - \frac{E_K \dot{\mathcal H} k_1^{2} k_2^{2} \mu^{2}}{4 K^{2}} - \frac{E_K \dot{\mathcal H} k_2 \mu K_n^{2} k_1^{3}}{2 K^{4}} - \frac{E_K \dot{\mathcal H} K_n^{2} k_1^{2} k_2^{2} \mu^{2}}{4 K^{4}} + \frac{E_K \dot{\mathcal H} K_n k_2 \mu \mu_1 k_1^{2}}{K^{2}} - \frac{i E_K K_\omega^{(12)} k_1 k_2 \mu K_n^{2}}{2 K^{2}} - \frac{i E_K K_\omega^{(21)} k_1 k_2 \mu K_n^{2}}{2 K^{2}}
+\mathcal E_K \dot\Phi_2 - \mathcal E_K \dot\Psi_2 + \frac{\mathcal E_K \dot{\mathcal H} k_1^{2}}{4} + 2 i \mathcal E_K \Psi_2 K_n - \frac{\mathcal E_K \dot{\mathcal H} k_1^{2} \nu_1^{2}}{2} - \frac{\mathcal E_K \dot{\mathcal H} k_1^{4}}{4 K^{2}} - \frac{\mathcal E_K \dot{\mathcal H} K_n^{2} k_1^{4}}{4 K^{4}} - \frac{\mathcal E_K \dot{\mathcal H} K_n^{2} k_1^{2}}{4 K^{2}} + \frac{\mathcal E_K \dot{\mathcal H} K_n \nu_1 k_1^{3}}{K^{2}} + \frac{i \mathcal E_K K_\omega^{(12)} K_n k_1 \nu_1}{2} + \frac{i \mathcal E_K K_\omega^{(21)} K_n k_2 \nu_2}{2} - \frac{i \mathcal E_K K_\omega^{(12)} K_n^{2} k_1^{2}}{2 K^{2}} - \frac{i \mathcal E_K K_\omega^{(21)} K_n^{2} k_2^{2}}{2 K^{2}} - \frac{\mathcal E_K \dot{\mathcal H} k_2 \mu k_1^{3}}{2 K^{2}} - \frac{\mathcal E_K \dot{\mathcal H} k_1^{2} k_2^{2} \mu^{2}}{4 K^{2}} - \frac{\mathcal E_K \dot{\mathcal H} k_2 \mu K_n^{2} k_1^{3}}{2 K^{4}} - \frac{\mathcal E_K \dot{\mathcal H} K_n^{2} k_1^{2} k_2^{2} \mu^{2}}{4 K^{4}} + \frac{\mathcal E_K \dot{\mathcal H} K_n k_2 \mu \nu_1 k_1^{2}}{K^{2}} - \frac{i \mathcal E_K K_\omega^{(12)} k_1 k_2 \mu K_n^{2}}{2 K^{2}} - \frac{i \mathcal E_K K_\omega^{(21)} k_1 k_2 \mu K_n^{2}}{2 K^{2}}
 \end{dmath*}
 \paragraph{[ray] lensing, transverse $\Delta\vx_1$ (D).} $\int_{\eta_*}^{\eta_o}\!\dd\eta$ of
 \begin{dmath*}
-- 2 i \mathcal D_{\perp,1} E_2 P_\perp T_{\Phi,2} k_2 \mu_2 - 2 i \mathcal D_{\perp,2} E_1 P_\perp T_{\Phi,1} k_1 \mu_1
+- 2 i \mathcal X_{\perp,1} \mathcal E_2 P_\perp T_{\Phi,2} k_2 \nu_2 - 2 i \mathcal X_{\perp,2} \mathcal E_1 P_\perp T_{\Phi,1} k_1 \nu_1
 \end{dmath*}
 \paragraph{[ray] time delay, radial $\Delta\vx_1$ (D).} $\int_{\eta_*}^{\eta_o}\!\dd\eta$ of
 \begin{dmath*}
-- 2 \mathcal D_{r,1} E_2 T_{\Phi,2} k_2^{2} \mu_2^{2} - 2 \mathcal D_{r,2} E_1 T_{\Phi,1} k_1^{2} \mu_1^{2}
+- 2 \mathcal X_{r,1} \mathcal E_2 T_{\Phi,2} k_2^{2} \nu_2^{2} - 2 \mathcal X_{r,2} \mathcal E_1 T_{\Phi,1} k_1^{2} \nu_1^{2}
 \end{dmath*}
 \paragraph{[ray] aberration + deflection, transverse $\vk_1$ (D).} $\int_{\eta_*}^{\eta_o}\!\dd\eta$ of
 \begin{dmath*}
-2 E_1 \mathcal F_{2} P_\perp T_{\Phi,1} + 2 E_2 \mathcal F_{1} P_\perp T_{\Phi,2}
+2 \mathcal E_1 \mathcal F_{2} P_\perp T_{\Phi,1} + 2 \mathcal E_2 \mathcal F_{1} P_\perp T_{\Phi,2}
 \end{dmath*}
 \paragraph{[ray] local $1\times1$ (C).} $\int_{\eta_*}^{\eta_o}\!\dd\eta$ of
 \begin{dmath*}
-4 E_1 E_2 T_{\Phi,1} \dot T_{\Phi,2} + 4 E_1 E_2 T_{\Phi,2} \dot T_{\Phi,1}
+4 \mathcal E_1 \mathcal E_2 T_{\Phi,1} \dot T_{\Phi,2} + 4 \mathcal E_1 \mathcal E_2 T_{\Phi,2} \dot T_{\Phi,1}
 \end{dmath*}
-\paragraph{[obs] observer clock (D).} at $\eta=\eta_o$, $\chi=0$ ($E_a=1$):
+\paragraph{[obs] observer clock (D).} at $\eta=\eta_o$, $\chi=0$ ($\mathcal E_a=1$):
 \begin{dmath*}
-E_1 \dot T_{\Phi,1} \delta\eta_{o,2} + E_2 \dot T_{\Phi,2} \delta\eta_{o,1} - E_1 \dot T_{\delta_T,1} \delta\eta_{o,2} - E_2 \dot T_{\delta_T,2} \delta\eta_{o,1} + i E_1 \dot T_{V,1} \delta\eta_{o,2} k_1 \mu_1 + i E_2 \dot T_{V,2} \delta\eta_{o,1} k_2 \mu_2 + 2 i E_1 T_{\Phi,1} \delta\eta_{o,2} k_1 \mu_1 + 2 i E_2 T_{\Phi,2} \delta\eta_{o,1} k_2 \mu_2
+\mathcal E_1 \dot T_{\Phi,1} \delta\eta_{o,2} + \mathcal E_2 \dot T_{\Phi,2} \delta\eta_{o,1} - \mathcal E_1 \dot T_{\delta_T,1} \delta\eta_{o,2} - \mathcal E_2 \dot T_{\delta_T,2} \delta\eta_{o,1} + i \mathcal E_1 \dot T_{V,1} \delta\eta_{o,2} k_1 \nu_1 + i \mathcal E_2 \dot T_{V,2} \delta\eta_{o,1} k_2 \nu_2 + 2 i \mathcal E_1 T_{\Phi,1} \delta\eta_{o,2} k_1 \nu_1 + 2 i \mathcal E_2 T_{\Phi,2} \delta\eta_{o,1} k_2 \nu_2
 \end{dmath*}
 \paragraph{[emi] emission-surface shift (D).} at $\eta=\eta_*$, $\chi=\chi_*$:
 \begin{dmath*}
-E_1 \dot T_{\delta_T,1} \delta\eta_{e,2} + E_2 \dot T_{\delta_T,2} \delta\eta_{e,1} - E_1 \dot T_{\Phi,1} \delta\eta_{e,2} - E_2 \dot T_{\Phi,2} \delta\eta_{e,1} - E_1 T_{V,1} \delta\eta_{e,2} k_1^{2} \mu_1^{2} - E_2 T_{V,2} \delta\eta_{e,1} k_2^{2} \mu_2^{2} - i E_1 T_{\Phi,1} \delta\eta_{e,2} k_1 \mu_1 - i E_1 \dot T_{V,1} \delta\eta_{e,2} k_1 \mu_1 - i E_1 T_{\delta_T,1} \delta\eta_{e,2} k_1 \mu_1 - i E_2 T_{\Phi,2} \delta\eta_{e,1} k_2 \mu_2 - i E_2 \dot T_{V,2} \delta\eta_{e,1} k_2 \mu_2 - i E_2 T_{\delta_T,2} \delta\eta_{e,1} k_2 \mu_2
+\mathcal E_1 \dot T_{\delta_T,1} \delta\eta_{e,2} + \mathcal E_2 \dot T_{\delta_T,2} \delta\eta_{e,1} - \mathcal E_1 \dot T_{\Phi,1} \delta\eta_{e,2} - \mathcal E_2 \dot T_{\Phi,2} \delta\eta_{e,1} - \mathcal E_1 T_{V,1} \delta\eta_{e,2} k_1^{2} \nu_1^{2} - \mathcal E_2 T_{V,2} \delta\eta_{e,1} k_2^{2} \nu_2^{2} - i \mathcal E_1 T_{\Phi,1} \delta\eta_{e,2} k_1 \nu_1 - i \mathcal E_1 \dot T_{V,1} \delta\eta_{e,2} k_1 \nu_1 - i \mathcal E_1 T_{\delta_T,1} \delta\eta_{e,2} k_1 \nu_1 - i \mathcal E_2 T_{\Phi,2} \delta\eta_{e,1} k_2 \nu_2 - i \mathcal E_2 \dot T_{V,2} \delta\eta_{e,1} k_2 \nu_2 - i \mathcal E_2 T_{\delta_T,2} \delta\eta_{e,1} k_2 \nu_2
 \end{dmath*}
-\paragraph{[obs] local $1\times1$ (B, endpoint).} at $\eta=\eta_o$, $\chi=0$ ($E_a=1$):
+\paragraph{[obs] local $1\times1$ (B, endpoint).} at $\eta=\eta_o$, $\chi=0$ ($\mathcal E_a=1$):
 \begin{dmath*}
-E_1 E_2 T_{\delta_T,1} T_{\delta_T,2} - 2 E_1 E_2 T_{\Phi,1} T_{\Phi,2} + E_1 E_2 P_\perp T_{V,1} T_{V,2} - 2 i E_1 E_2 T_{\Phi,1} T_{V,2} k_2 \mu_2 - 2 i E_1 E_2 T_{\Phi,2} T_{V,1} k_1 \mu_1
+\mathcal E_1 \mathcal E_2 T_{\delta_T,1} T_{\delta_T,2} - 2 \mathcal E_1 \mathcal E_2 T_{\Phi,1} T_{\Phi,2} + \mathcal E_1 \mathcal E_2 P_\perp T_{V,1} T_{V,2} - 2 i \mathcal E_1 \mathcal E_2 T_{\Phi,1} T_{V,2} k_2 \nu_2 - 2 i \mathcal E_1 \mathcal E_2 T_{\Phi,2} T_{V,1} k_1 \nu_1
 \end{dmath*}
-\paragraph{[obs] second-order fields (C: $\Psi_2,\delta_{T2},V_2,v^T_2+\omega_2$).} at $\eta=\eta_o$, $\chi=0$ ($E_a=1$):
+\paragraph{[obs] second-order fields (C: $\Psi_2,\delta_{T2},V_2,v^T_2+\omega_2$).} at $\eta=\eta_o$, $\chi=0$ ($\mathcal E_a=1$):
 \begin{dmath*}
-E_K \Psi_2 - E_K \delta_{T2} + i E_K V_2 K_n + \frac{E_K K_\omega^{(12)} k_1 \mu_1}{2} + \frac{E_K K_\omega^{(21)} k_2 \mu_2}{2} + \frac{E_K K_{v^T}^{(12)} k_1 \mu_1}{2} + \frac{E_K K_{v^T}^{(21)} k_2 \mu_2}{2} - \frac{E_K K_\omega^{(12)} K_n k_1^{2}}{2 K^{2}} - \frac{E_K K_\omega^{(21)} K_n k_2^{2}}{2 K^{2}} - \frac{E_K K_{v^T}^{(12)} K_n k_1^{2}}{2 K^{2}} - \frac{E_K K_{v^T}^{(21)} K_n k_2^{2}}{2 K^{2}} - \frac{E_K K_\omega^{(12)} K_n k_1 k_2 \mu}{2 K^{2}} - \frac{E_K K_\omega^{(21)} K_n k_1 k_2 \mu}{2 K^{2}} - \frac{E_K K_{v^T}^{(12)} K_n k_1 k_2 \mu}{2 K^{2}} - \frac{E_K K_{v^T}^{(21)} K_n k_1 k_2 \mu}{2 K^{2}}
+\mathcal E_K \Psi_2 - \mathcal E_K \delta_{T2} + i \mathcal E_K V_2 K_n + \frac{\mathcal E_K K_\omega^{(12)} k_1 \nu_1}{2} + \frac{\mathcal E_K K_\omega^{(21)} k_2 \nu_2}{2} + \frac{\mathcal E_K K_{v^T}^{(12)} k_1 \nu_1}{2} + \frac{\mathcal E_K K_{v^T}^{(21)} k_2 \nu_2}{2} - \frac{\mathcal E_K K_\omega^{(12)} K_n k_1^{2}}{2 K^{2}} - \frac{\mathcal E_K K_\omega^{(21)} K_n k_2^{2}}{2 K^{2}} - \frac{\mathcal E_K K_{v^T}^{(12)} K_n k_1^{2}}{2 K^{2}} - \frac{\mathcal E_K K_{v^T}^{(21)} K_n k_2^{2}}{2 K^{2}} - \frac{\mathcal E_K K_\omega^{(12)} K_n k_1 k_2 \mu}{2 K^{2}} - \frac{\mathcal E_K K_\omega^{(21)} K_n k_1 k_2 \mu}{2 K^{2}} - \frac{\mathcal E_K K_{v^T}^{(12)} K_n k_1 k_2 \mu}{2 K^{2}} - \frac{\mathcal E_K K_{v^T}^{(21)} K_n k_1 k_2 \mu}{2 K^{2}}
 \end{dmath*}
-\paragraph{[obs] observer displacement (D).} at $\eta=\eta_o$, $\chi=0$ ($E_a=1$):
+\paragraph{[obs] observer displacement (D).} at $\eta=\eta_o$, $\chi=0$ ($\mathcal E_a=1$):
 \begin{dmath*}
-E_1 P_\perp T_{\delta_T,1} X_{o,2} + E_2 P_\perp T_{\delta_T,2} X_{o,1} - E_1 P_\perp T_{\Phi,1} X_{o,2} - E_2 P_\perp T_{\Phi,2} X_{o,1} + E_1 T_{\delta_T,1} X_{o,2} k_1 k_2 \mu_1 \mu_2 + E_2 T_{\delta_T,2} X_{o,1} k_1 k_2 \mu_1 \mu_2 - i E_1 P_\perp T_{V,1} X_{o,2} k_1 \mu_1 - i E_2 P_\perp T_{V,2} X_{o,1} k_2 \mu_2 - E_1 T_{\Phi,1} X_{o,2} k_1 k_2 \mu_1 \mu_2 - E_2 T_{\Phi,2} X_{o,1} k_1 k_2 \mu_1 \mu_2 - i E_1 T_{V,1} X_{o,2} k_2 \mu_2 k_1^{2} \mu_1^{2} - i E_2 T_{V,2} X_{o,1} k_1 \mu_1 k_2^{2} \mu_2^{2}
+\mathcal E_1 P_\perp T_{\delta_T,1} X_{o,2} + \mathcal E_2 P_\perp T_{\delta_T,2} X_{o,1} - \mathcal E_1 P_\perp T_{\Phi,1} X_{o,2} - \mathcal E_2 P_\perp T_{\Phi,2} X_{o,1} + \mathcal E_1 T_{\delta_T,1} X_{o,2} k_1 k_2 \nu_1 \nu_2 + \mathcal E_2 T_{\delta_T,2} X_{o,1} k_1 k_2 \nu_1 \nu_2 - i \mathcal E_1 P_\perp T_{V,1} X_{o,2} k_1 \nu_1 - i \mathcal E_2 P_\perp T_{V,2} X_{o,1} k_2 \nu_2 - \mathcal E_1 T_{\Phi,1} X_{o,2} k_1 k_2 \nu_1 \nu_2 - \mathcal E_2 T_{\Phi,2} X_{o,1} k_1 k_2 \nu_1 \nu_2 - i \mathcal E_1 T_{V,1} X_{o,2} k_2 \nu_2 k_1^{2} \nu_1^{2} - i \mathcal E_2 T_{V,2} X_{o,1} k_1 \nu_1 k_2^{2} \nu_2^{2}
 \end{dmath*}
 \paragraph{[emi] local $1\times1$ (B, endpoint).} at $\eta=\eta_*$, $\chi=\chi_*$:
 \begin{dmath*}
-- E_1 E_2 T_{\delta_T,1} T_{\delta_T,2} + 2 E_1 E_2 T_{\Phi,1} T_{\Phi,2} + E_1 E_2 P_\perp T_{V,1} T_{V,2} + 2 i E_1 E_2 T_{\Phi,1} T_{V,2} k_2 \mu_2 + 2 i E_1 E_2 T_{\Phi,2} T_{V,1} k_1 \mu_1
+- \mathcal E_1 \mathcal E_2 T_{\delta_T,1} T_{\delta_T,2} + 2 \mathcal E_1 \mathcal E_2 T_{\Phi,1} T_{\Phi,2} + \mathcal E_1 \mathcal E_2 P_\perp T_{V,1} T_{V,2} + 2 i \mathcal E_1 \mathcal E_2 T_{\Phi,1} T_{V,2} k_2 \nu_2 + 2 i \mathcal E_1 \mathcal E_2 T_{\Phi,2} T_{V,1} k_1 \nu_1
 \end{dmath*}
 \paragraph{[emi] second-order fields (C: $\Psi_2,\delta_{T2},V_2,v^T_2+\omega_2$).} at $\eta=\eta_*$, $\chi=\chi_*$:
 \begin{dmath*}
-E_K \delta_{T2} - E_K \Psi_2 - i E_K V_2 K_n - \frac{E_K K_\omega^{(12)} k_1 \mu_1}{2} - \frac{E_K K_\omega^{(21)} k_2 \mu_2}{2} - \frac{E_K K_{v^T}^{(12)} k_1 \mu_1}{2} - \frac{E_K K_{v^T}^{(21)} k_2 \mu_2}{2} + \frac{E_K K_\omega^{(12)} K_n k_1^{2}}{2 K^{2}} + \frac{E_K K_\omega^{(21)} K_n k_2^{2}}{2 K^{2}} + \frac{E_K K_{v^T}^{(12)} K_n k_1^{2}}{2 K^{2}} + \frac{E_K K_{v^T}^{(21)} K_n k_2^{2}}{2 K^{2}} + \frac{E_K K_\omega^{(12)} K_n k_1 k_2 \mu}{2 K^{2}} + \frac{E_K K_\omega^{(21)} K_n k_1 k_2 \mu}{2 K^{2}} + \frac{E_K K_{v^T}^{(12)} K_n k_1 k_2 \mu}{2 K^{2}} + \frac{E_K K_{v^T}^{(21)} K_n k_1 k_2 \mu}{2 K^{2}}
+\mathcal E_K \delta_{T2} - \mathcal E_K \Psi_2 - i \mathcal E_K V_2 K_n - \frac{\mathcal E_K K_\omega^{(12)} k_1 \nu_1}{2} - \frac{\mathcal E_K K_\omega^{(21)} k_2 \nu_2}{2} - \frac{\mathcal E_K K_{v^T}^{(12)} k_1 \nu_1}{2} - \frac{\mathcal E_K K_{v^T}^{(21)} k_2 \nu_2}{2} + \frac{\mathcal E_K K_\omega^{(12)} K_n k_1^{2}}{2 K^{2}} + \frac{\mathcal E_K K_\omega^{(21)} K_n k_2^{2}}{2 K^{2}} + \frac{\mathcal E_K K_{v^T}^{(12)} K_n k_1^{2}}{2 K^{2}} + \frac{\mathcal E_K K_{v^T}^{(21)} K_n k_2^{2}}{2 K^{2}} + \frac{\mathcal E_K K_\omega^{(12)} K_n k_1 k_2 \mu}{2 K^{2}} + \frac{\mathcal E_K K_\omega^{(21)} K_n k_1 k_2 \mu}{2 K^{2}} + \frac{\mathcal E_K K_{v^T}^{(12)} K_n k_1 k_2 \mu}{2 K^{2}} + \frac{\mathcal E_K K_{v^T}^{(21)} K_n k_1 k_2 \mu}{2 K^{2}}
 \end{dmath*}
 \paragraph{[emi] lensing at emission (D).} at $\eta=\eta_*$, $\chi=\chi_*$:
 \begin{dmath*}
-\mathcal D_{\perp,1} E_2 P_\perp T_{\Phi,2} + \mathcal D_{\perp,2} E_1 P_\perp T_{\Phi,1} - \mathcal D_{\perp,1} E_2 P_\perp T_{\delta_T,2} - \mathcal D_{\perp,2} E_1 P_\perp T_{\delta_T,1} + i \mathcal D_{\perp,1} E_2 P_\perp T_{V,2} k_2 \mu_2 + i \mathcal D_{\perp,2} E_1 P_\perp T_{V,1} k_1 \mu_1
+\mathcal X_{\perp,1} \mathcal E_2 P_\perp T_{\Phi,2} + \mathcal X_{\perp,2} \mathcal E_1 P_\perp T_{\Phi,1} - \mathcal X_{\perp,1} \mathcal E_2 P_\perp T_{\delta_T,2} - \mathcal X_{\perp,2} \mathcal E_1 P_\perp T_{\delta_T,1} + i \mathcal X_{\perp,1} \mathcal E_2 P_\perp T_{V,2} k_2 \nu_2 + i \mathcal X_{\perp,2} \mathcal E_1 P_\perp T_{V,1} k_1 \nu_1
 \end{dmath*}
 \paragraph{[emi] time delay at emission (D).} at $\eta=\eta_*$, $\chi=\chi_*$:
 \begin{dmath*}
-\mathcal D_{r,1} E_2 T_{V,2} k_2^{2} \mu_2^{2} + \mathcal D_{r,2} E_1 T_{V,1} k_1^{2} \mu_1^{2} + i \mathcal D_{r,1} E_2 T_{\delta_T,2} k_2 \mu_2 + i \mathcal D_{r,2} E_1 T_{\delta_T,1} k_1 \mu_1 - i \mathcal D_{r,1} E_2 T_{\Phi,2} k_2 \mu_2 - i \mathcal D_{r,2} E_1 T_{\Phi,1} k_1 \mu_1
+\mathcal X_{r,1} \mathcal E_2 T_{V,2} k_2^{2} \nu_2^{2} + \mathcal X_{r,2} \mathcal E_1 T_{V,1} k_1^{2} \nu_1^{2} + i \mathcal X_{r,1} \mathcal E_2 T_{\delta_T,2} k_2 \nu_2 + i \mathcal X_{r,2} \mathcal E_1 T_{\delta_T,1} k_1 \nu_1 - i \mathcal X_{r,1} \mathcal E_2 T_{\Phi,2} k_2 \nu_2 - i \mathcal X_{r,2} \mathcal E_1 T_{\Phi,1} k_1 \nu_1
 \end{dmath*}
 \paragraph{[emi] aberration + deflection at emission (D).} at $\eta=\eta_*$, $\chi=\chi_*$:
 \begin{dmath*}
-- E_1 \mathcal F_{2} P_\perp T_{V,1} - E_2 \mathcal F_{1} P_\perp T_{V,2}
+- \mathcal E_1 \mathcal F_{2} P_\perp T_{V,1} - \mathcal E_2 \mathcal F_{1} P_\perp T_{V,2}
 \end{dmath*}

@@ -10,15 +10,15 @@ Sec.~\ref{sec:harmonic}.  Every statement below is either derived in the text or
 $e^{i\vk\cdot\nhat\chi}=4\pi\sum_{\ell m}i^\ell j_\ell(k\chi)Y_{\ell m}(\nhat)Y^*_{\ell m}(\khat)$, and
 $(i\nhat\cdot\khat)^s e^{i\vk\cdot\nhat\chi}\to4\pi i^\ell j^{(s)}_\ell(k\chi)Y^*_{\ell m}(\khat)$, the convention of
 Sec.~\ref{sec:harmonic}.  We write
-$\mu_a\equiv\nhat\cdot\khat_a$, $E_a\equiv e^{ik_a\mu_a\chi}$, and $\dot T\equiv\partial_\eta T$.
+$\nu_a\equiv\nhat\cdot\khat_a$, $\mathcal E_a\equiv e^{ik_a\nu_a\chi}$, and $\dot T\equiv\partial_\eta T$.
 
 % ======================================================================
 \subsection{First-order kernel, sky monopole and observer objects}
 \label{sec:asm-first}
 From \eqref{eq:L1} with $\Phi_1=\Psi_1=\zeta\TP$, $\delta_{T1}=\zeta T_{\delta_T}$, $\vv_1=i\vk\,T_V\zeta$ \eqref{eq:transfer},
 \begin{equation}
-K_1(\vk;\nhat)=\big[T_{\delta_T}+\TP-ik\mu T_V\big]_{\eta_*}E(\eta_*)-\big[T_{\delta_T}+\TP-ik\mu T_V\big]_{\eta_o}
-+\int_{\eta_*}^{\eta_o}\!\dd\eta\,2\dot T_\Phi\,E(\eta),\qquad \mu=\nhat\cdot\khat,
+K_1(\vk;\nhat)=\big[T_{\delta_T}+\TP-ik\nu T_V\big]_{\eta_*}\mathcal E(\eta_*)-\big[T_{\delta_T}+\TP-ik\nu T_V\big]_{\eta_o}
++\int_{\eta_*}^{\eta_o}\!\dd\eta\,2\dot T_\Phi\,\mathcal E(\eta),\qquad \nu=\nhat\cdot\khat,
 \label{eq:asm-K1}
 \end{equation}
 including the observer monopole and dipole.  Its multipoles are
@@ -60,7 +60,7 @@ X_o(k)=\int_0^{\eta_o}T_V(k,\eta)\,\dd\eta=\frac3{k^2}\Big(\frac{2\sin x_o}{x_o}
 \end{equation}
 \paragraph{Emission-surface shift.}  From $1+\delta_T(\eta_e,\vx(\eta_e))=\eta_e/\eta_*$ \eqref{eq:emission},
 \begin{equation}
-\delta\eta_{e1}=\eta_*\,\delta_{T1}(\eta_*,\bar\vx_*)\quad\Rightarrow\quad \delta\eta_e(\vk)=\eta_*\,T_{\delta_T}(k,\eta_*)\,E(\eta_*).
+\delta\eta_{e1}=\eta_*\,\delta_{T1}(\eta_*,\bar\vx_*)\quad\Rightarrow\quad \delta\eta_e(\vk)=\eta_*\,T_{\delta_T}(k,\eta_*)\,\mathcal E(\eta_*).
 \label{eq:asm-emission}
 \end{equation}
 At first order $\delta\eta_{o1}$ and $\delta\vx_{o1}$ do not enter $\Theta^{(1)}$ ($S$ has no background part); they first appear in
@@ -85,13 +85,13 @@ the shear form modulo the conservation equations; the two give the same $K_2$ to
 (Sec.~\ref{sec:asm-cl22}).
 
 \paragraph{Fourier rules and named objects.}  A first-order field $X_1$ on the ray contributes, in slot $a\in\{1,2\}$,
-$\zeta_{\vk_a}T_X(k_a,\eta)E_a$, with $\partial_j\to ik_{a,j}$, $\nhat\cdot\vv_1\to ik_a\mu_aT_V$.  Geometry:
-$\mu\equiv\khat_1\cdot\khat_2$, $\vK\equiv\vk_1+\vk_2$, $K_n\equiv\nhat\cdot\vK=k_1\mu_1+k_2\mu_2$,
-$P_\perp\equiv\vk_{1\perp}\cdot\vk_{2\perp}=k_1k_2(\mu-\mu_1\mu_2)$ ($\vk_\perp=\vk-\nhat(\nhat\cdot\vk)$), $E_K\equiv E_1E_2=e^{iK_n\chi}$.
+$\zeta_{\vk_a}T_X(k_a,\eta)\mathcal E_a$, with $\partial_j\to ik_{a,j}$, $\nhat\cdot\vv_1\to ik_a\nu_aT_V$.  Geometry:
+$\mu\equiv\khat_1\cdot\khat_2$, $\vK\equiv\vk_1+\vk_2$, $K_n\equiv\nhat\cdot\vK=k_1\nu_1+k_2\nu_2$,
+$P_\perp\equiv\vk_{1\perp}\cdot\vk_{2\perp}=k_1k_2(\mu-\nu_1\nu_2)$ ($\vk_\perp=\vk-\nhat(\nhat\cdot\vk)$), $\mathcal E_K\equiv E_1\mathcal E_2=e^{iK_n\chi}$.
 Two first-order combinations recur: the direct-form line-of-sight integrand and boundary function,
 \begin{align}
-J_a&\equiv2ik_a\mu_a\TP(k_a,\eta)E_a\ \ (=2\partial_n\Psi_1=-\Gamma^0_{kk}|_1),\nonumber\\
-U_a&\equiv\big[\TP+ik_a\mu_aT_V-T_{\delta_T}\big](k_a,\eta)\,E_a\ \ (=\Psi_1+\nhat\cdot\vv_1-\delta_{T1}),
+J_a&\equiv2ik_a\nu_a\TP(k_a,\eta)\mathcal E_a\ \ (=2\partial_n\Psi_1=-\Gamma^0_{kk}|_1),\nonumber\\
+\mathcal U_a&\equiv\big[\TP+ik_a\nu_aT_V-T_{\delta_T}\big](k_a,\eta)\,\mathcal E_a\ \ (=\Psi_1+\nhat\cdot\vv_1-\delta_{T1}),
 \label{eq:asm-JU}
 \end{align}
 the kernels of $\mathcal G_1$ and $B_1$ of \eqref{eq:L2direct}, so that $L_1=\int_{\eta_*}^{\eta_o}J\,\dd\eta+[U]^{o}_{e}$, equal to \eqref{eq:L1}
@@ -100,21 +100,21 @@ direction and position along the ray, $\vk_1(\eta)=\vk_{1}^{\rm init}-\int_\eta^
 $\Delta\vx_1(\eta)=\delta\vx_{o1}+\nhat\,\delta\eta_{o1}-\int_\eta^{\eta_o}\vk_1\dd\eta'$ (\eqref{eq:k1def}, \eqref{eq:Dx1def}; for the sign of the $\mathbf G_1$ integral see Remark~\ref{rem:signslip}), are, per mode $a$,
 \begin{align}
 \vk_{1\perp}&=i\vk_{a\perp}\,\mathcal F_a(\eta), &
-\mathcal F_a(\eta)&\equiv T_V(k_a,\eta_o)+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k_a,\eta')E_a(\eta'),\nonumber\\
-\Delta\vx_{1\perp}&=i\vk_{a\perp}\,\mathcal D_{\perp,a}(\eta), &
-\mathcal D_{\perp,a}(\eta)&\equiv X_o(k_a)-\int_\eta^{\eta_o}\!\dd\eta'\,\mathcal F_a(\eta'),\nonumber\\
-\nhat\cdot\Delta\vx_1&=\mathcal D_{r,a}(\eta), &
-\mathcal D_{r,a}(\eta)&\equiv ik_a\mu_aX_o(k_a)+\delta\eta_o(k_a)+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k_a,\eta')E_a(\eta'),
+\mathcal F_a(\eta)&\equiv T_V(k_a,\eta_o)+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k_a,\eta')\mathcal E_a(\eta'),\nonumber\\
+\Delta\vx_{1\perp}&=i\vk_{a\perp}\,\mathcal X_{\perp,a}(\eta), &
+\mathcal X_{\perp,a}(\eta)&\equiv X_o(k_a)-\int_\eta^{\eta_o}\!\dd\eta'\,\mathcal F_a(\eta'),\nonumber\\
+\nhat\cdot\Delta\vx_1&=\mathcal X_{r,a}(\eta), &
+\mathcal X_{r,a}(\eta)&\equiv ik_a\nu_aX_o(k_a)+\delta\eta_o(k_a)+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k_a,\eta')\mathcal E_a(\eta'),
 \label{eq:asm-functionals}
 \end{align}
-($\mathcal F$: aberration at the observer plus accumulated deflection; $\mathcal D_\perp$: lensing displacement; $\mathcal D_r$: radial
+($\mathcal F$: aberration at the observer plus accumulated deflection; $\mathcal D_\perp$: lensing displacement; $\mathcal X_r$: radial
 displacement = Shapiro delay + clock + observer displacement), while $\nhat\cdot\vk_1=-(\Phi_1+\Psi_1)$ is the null condition.
-A second-order field contributes its pair kernel times $E_K$ (Sec.~\ref{sec:einstein}, \eqref{eq:kernel_def} with $\vq\to\vk_1$,
+A second-order field contributes its pair kernel times $\mathcal E_K$ (Sec.~\ref{sec:einstein}, \eqref{eq:kernel_def} with $\vq\to\vk_1$,
 $\vp\to\vk_2$, $\vk\to\vK$):
 \begin{align}
 &\Phi_2\equiv\mathcal K_{\Phi_2}(K,k_1,k_2;\eta),\quad \Psi_2\equiv\mathcal K_{\Phi_2}-K_Q,\nonumber\\
 &\delta_{T2}\equiv\tfrac14K_{\delta_2}-\tfrac3{16}T_\delta(k_1)T_\delta(k_2),\quad V_2\ (\vv^L_2=\nabla V_2)\ \text{from \eqref{eq:operators}},\nonumber\\
-&\nhat\!\cdot\!P(\Khat)\vk_a=k_a\mu_a-\frac{K_n\,\vK\cdot\vk_a}{K^2},\nonumber\\
+&\nhat\!\cdot\!P(\Khat)\vk_a=k_a\nu_a-\frac{K_n\,\vK\cdot\vk_a}{K^2},\nonumber\\
 &\nhat\cdot\vv^T_2=\tfrac12\big[\nhat\!\cdot\!P(\Khat)\vk_1\,K^{(12)}_{v^T}+\nhat\!\cdot\!P(\Khat)\vk_2\,K^{(21)}_{v^T}\big],\quad
 \nhat\cdot\boldsymbol\omega_2=\tfrac12\big[\nhat\!\cdot\!P\vk_1\,K^{(12)}_{\omega}+\nhat\!\cdot\!P\vk_2\,K^{(21)}_{\omega}\big],\nonumber\\
 &h_{2,nn}=\Big[(\nhat\!\cdot\!P\vk_1)^2-\tfrac12\Big(1-\frac{K_n^2}{K^2}\Big)\Big(k_1^2-\frac{(\vK\cdot\vk_1)^2}{K^2}\Big)\Big]\mathcal H,\qquad
@@ -129,8 +129,8 @@ $\delta_{T2}$ from $1+\delta_T=(1+\delta)^{1/4}$.
 \subsection{Channels of \texorpdfstring{$K_2$}{K2}}
 \label{sec:asm-channels}
 $K_2=\sum_cK^c$ is organised by the harmonic type of Sec.~\ref{sec:harmonic} (B: products of maps at one point; C: single-time
-convolution kernels with phase $E_K$; D: nested two-time or endpoint$\times$functional products).  ``Ray'' channels are
-$\int_{\eta_*}^{\eta_o}\dd\eta$ of the expression; ``obs'' channels are evaluated at $\eta_o$, $\chi=0$ (so $E_a=1$); ``emi'' channels at
+convolution kernels with phase $\mathcal E_K$; D: nested two-time or endpoint$\times$functional products).  ``Ray'' channels are
+$\int_{\eta_*}^{\eta_o}\dd\eta$ of the expression; ``obs'' channels are evaluated at $\eta_o$, $\chi=0$ (so $\mathcal E_a=1$); ``emi'' channels at
 $\eta_*$, $\chi_*$.  $\sum_{(ab)}$ denotes the sum over $(a,b)=(1,2),(2,1)$.  Each compact form below was checked symbolically against
 the machine-generated kernel of App.~\ref{app:k2channels} (residual $0$), and each machine kernel against the numerical engine
 ($\le1.8\times10^{-15}$).
@@ -138,8 +138,8 @@ the machine-generated kernel of App.~\ref{app:k2channels} (residual $0$), and ea
 \paragraph{Type B (products and normalisation).}
 \begin{align}
 K^{\rm B,prod}&=K_1(\vk_1)K_1(\vk_2)-\Delta_0(k_1)K_1(\vk_2)-\Delta_0(k_2)K_1(\vk_1),\nonumber\\
-K^{\rm B,obs}_{1\times1}&=\Big[P_\perp T_{V1}T_{V2}-2T_{\Phi1}T_{\Phi2}+T_{\delta_T1}T_{\delta_T2}-2i\big(T_{\Phi1}T_{V2}k_2\mu_2+T_{\Phi2}T_{V1}k_1\mu_1\big)\Big]_{\eta_o},\nonumber\\
-K^{\rm B,emi}_{1\times1}&=\Big[E_1E_2\Big(P_\perp T_{V1}T_{V2}+2T_{\Phi1}T_{\Phi2}-T_{\delta_T1}T_{\delta_T2}+2i\big(T_{\Phi1}T_{V2}k_2\mu_2+T_{\Phi2}T_{V1}k_1\mu_1\big)\Big)\Big]_{\eta_*},
+K^{\rm B,obs}_{1\times1}&=\Big[P_\perp T_{V1}T_{V2}-2T_{\Phi1}T_{\Phi2}+T_{\delta_T1}T_{\delta_T2}-2i\big(T_{\Phi1}T_{V2}k_2\nu_2+T_{\Phi2}T_{V1}k_1\nu_1\big)\Big]_{\eta_o},\nonumber\\
+K^{\rm B,emi}_{1\times1}&=\Big[E_1\mathcal E_2\Big(P_\perp T_{V1}T_{V2}+2T_{\Phi1}T_{\Phi2}-T_{\delta_T1}T_{\delta_T2}+2i\big(T_{\Phi1}T_{V2}k_2\nu_2+T_{\Phi2}T_{V1}k_1\nu_1\big)\Big)\Big]_{\eta_*},
 \label{eq:asm-chB}
 \end{align}
 with $T_{Xa}\equiv T_X(k_a,\cdot)$: the quadratic part of the boundary function $\ln(-\hat u\cdot k)-\ln(1+\delta_T)$ at the two
@@ -147,14 +147,14 @@ endpoints.  The two brackets are not opposite: the $P_\perp T_{V1}T_{V2}$ ($v_{1
 
 \paragraph{Type C (single-time second-order fields and ray-local products).}
 \begin{align}
-K^{\rm C,ray}_{\Phi_2\Psi_2}&=E_K\big[\dot\Phi_2-\dot\Psi_2+2iK_n\Psi_2\big], &
-K^{\rm C,obs/emi}_{\Psi_2}&=\pm E_K\Psi_2,\nonumber\\
-K^{\rm C,obs/emi}_{\delta_{T2}}&=\mp E_K\,\delta_{T2}, &
-K^{\rm C,obs/emi}_{V_2}&=\pm E_K\,iK_nV_2,\nonumber\\
-K^{\rm C,obs/emi}_{v^T_2+\omega_2}&=\pm E_K\,\nhat\cdot(\vv^T_2+\boldsymbol\omega_2)\quad(\text{helicity }\pm1), &
-K^{\rm C,ray}_{\omega_2}&=E_K\,iK_n\,\nhat\cdot\boldsymbol\omega_2,\nonumber\\
-K^{\rm C,ray}_{h_2}&=-\tfrac12E_K\,\dot h_{2,nn}\quad(\text{helicity }\pm2), &
-K^{\rm C,ray}_{1\times1}&=4E_1E_2\big(T_{\Phi1}\dot T_{\Phi2}+T_{\Phi2}\dot T_{\Phi1}\big),
+K^{\rm C,ray}_{\Phi_2\Psi_2}&=\mathcal E_K\big[\dot\Phi_2-\dot\Psi_2+2iK_n\Psi_2\big], &
+K^{\rm C,obs/emi}_{\Psi_2}&=\pm \mathcal E_K\Psi_2,\nonumber\\
+K^{\rm C,obs/emi}_{\delta_{T2}}&=\mp \mathcal E_K\,\delta_{T2}, &
+K^{\rm C,obs/emi}_{V_2}&=\pm \mathcal E_K\,iK_nV_2,\nonumber\\
+K^{\rm C,obs/emi}_{v^T_2+\omega_2}&=\pm \mathcal E_K\,\nhat\cdot(\vv^T_2+\boldsymbol\omega_2)\quad(\text{helicity }\pm1), &
+K^{\rm C,ray}_{\omega_2}&=\mathcal E_K\,iK_n\,\nhat\cdot\boldsymbol\omega_2,\nonumber\\
+K^{\rm C,ray}_{h_2}&=-\tfrac12\mathcal E_K\,\dot h_{2,nn}\quad(\text{helicity }\pm2), &
+K^{\rm C,ray}_{1\times1}&=4E_1\mathcal E_2\big(T_{\Phi1}\dot T_{\Phi2}+T_{\Phi2}\dot T_{\Phi1}\big),
 \label{eq:asm-chC}
 \end{align}
 upper sign at the observer, lower at emission.  The ray terms are $-\Gamma^0_{kk}$ evaluated on the second-order fields
@@ -165,31 +165,31 @@ $v^T_2+\omega_2$ + ray $\omega_2$.
 
 \paragraph{Type D (lensing, time delay, aberration+deflection, emission-surface shift, clock, observer displacement).}
 \begin{align}
-K^{\rm D}_{\rm lens}&=\int\!\dd\eta\sum_{(ab)}-P_\perp\mathcal D_{\perp,a}J_b+\Big[\sum_{(ab)}P_\perp\mathcal D_{\perp,a}U_b\Big]_{\eta_*}
+K^{\rm D}_{\rm lens}&=\int\!\dd\eta\sum_{(ab)}-P_\perp\mathcal X_{\perp,a}J_b+\Big[\sum_{(ab)}P_\perp\mathcal X_{\perp,a}\mathcal U_b\Big]_{\eta_*}
 &&(\Delta\vx_{1\perp}\cdot\nabla_\perp J,\ -\Delta\vx_{1\perp}\cdot\nabla_\perp U|_e),\nonumber\\
-K^{\rm D}_{\rm delay}&=\int\!\dd\eta\sum_{(ab)}ik_b\mu_b\,\mathcal D_{r,a}J_b-\Big[\sum_{(ab)}ik_b\mu_b\,\mathcal D_{r,a}U_b\Big]_{\eta_*}
+K^{\rm D}_{\rm delay}&=\int\!\dd\eta\sum_{(ab)}ik_b\nu_b\,\mathcal X_{r,a}J_b-\Big[\sum_{(ab)}ik_b\nu_b\,\mathcal X_{r,a}\mathcal U_b\Big]_{\eta_*}
 &&(\Delta x_{1r}\,\partial_nJ,\ -\Delta x_{1r}\,\partial_nU|_e),\nonumber\\
-K^{\rm D}_{\rm defl}&=\int\!\dd\eta\sum_{(ab)}2P_\perp\mathcal F_a\TP(k_b)E_b-\Big[\sum_{(ab)}P_\perp\mathcal F_aT_V(k_b)E_b\Big]_{\eta_*}
+K^{\rm D}_{\rm defl}&=\int\!\dd\eta\sum_{(ab)}2P_\perp\mathcal F_a\TP(k_b)\mathcal E_b-\Big[\sum_{(ab)}P_\perp\mathcal F_aT_V(k_b)\mathcal E_b\Big]_{\eta_*}
 &&(-2\vk_{1\perp}\cdot\nabla_\perp\Psi_1,\ \vk_{1\perp}\cdot\vv_{1\perp}|_e),\nonumber\\
-K^{\rm D}_{\rm emi}&=-\Big[\sum_{(ab)}\delta\eta_e(\vk_a)\,\big(J_b+\mathbb D U_b\big)\Big]_{\eta_*},\qquad \mathbb D\equiv\partial_\eta-ik_b\mu_b
+K^{\rm D}_{\rm emi}&=-\Big[\sum_{(ab)}\delta\eta_e(\vk_a)\,\big(J_b+\mathbb D \mathcal U_b\big)\Big]_{\eta_*},\qquad \mathbb D\equiv\partial_\eta-ik_b\nu_b
 &&(\text{lower-endpoint shift}),\nonumber\\
-K^{\rm D}_{\rm clock}&=\Big[\sum_{(ab)}\delta\eta_o(k_a)\,\big(J_b+\dot U_b\big)\Big]_{\eta_o}
+K^{\rm D}_{\rm clock}&=\Big[\sum_{(ab)}\delta\eta_o(k_a)\,\big(J_b+\dot{\mathcal U}_b\big)\Big]_{\eta_o}
 &&(\text{upper-endpoint shift at fixed }\vx),\nonumber\\
-K^{\rm D}_{\rm disp}&=-\Big[\sum_{(ab)}X_o(k_a)\,(\vk_a\cdot\vk_b)\,U_b\Big]_{\eta_o}
+K^{\rm D}_{\rm disp}&=-\Big[\sum_{(ab)}X_o(k_a)\,(\vk_a\cdot\vk_b)\,\mathcal U_b\Big]_{\eta_o}
 &&(\delta\vx_{o1}\cdot\nabla U|_o),
 \label{eq:asm-chD}
 \end{align}
-with $\mathbb D=\partial_\eta-\nhat\cdot\nabla$ the derivative along the background ray; here, and in $\dot U_b$, $\partial_\eta$ is the
-field derivative at fixed $\vx$, i.e.\ it acts on the transfer functions only, not on $E_b$ ($J_b,U_b$ evaluated at the time of the term).  Explicitly, the ray lensing kernel is $-2iP_\perp\sum_{(ab)}\mathcal D_{\perp,a}\TP(k_b)k_b\mu_bE_b$ and the ray time
-delay $-2\sum_{(ab)}\mathcal D_{r,a}\TP(k_b)k_b^2\mu_b^2E_b$.  The radial shift $\nhat\,\delta\eta_{o1}$ and the observer displacement also
-enter through $\mathcal D_{r}$, $\mathcal D_\perp$ \eqref{eq:asm-functionals}; the channels ``clock'' and ``disp'' contain only the
+with $\mathbb D=\partial_\eta-\nhat\cdot\nabla$ the derivative along the background ray; here, and in $\dot{\mathcal U}_b$, $\partial_\eta$ is the
+field derivative at fixed $\vx$, i.e.\ it acts on the transfer functions only, not on $\mathcal E_b$ ($J_b,\mathcal U_b$ evaluated at the time of the term).  Explicitly, the ray lensing kernel is $-2iP_\perp\sum_{(ab)}\mathcal X_{\perp,a}\TP(k_b)k_b\nu_bE_b$ and the ray time
+delay $-2\sum_{(ab)}\mathcal X_{r,a}\TP(k_b)k_b^2\nu_b^2\mathcal E_b$.  The radial shift $\nhat\,\delta\eta_{o1}$ and the observer displacement also
+enter through $\mathcal X_{r}$, $\mathcal D_\perp$ \eqref{eq:asm-functionals}; the channels ``clock'' and ``disp'' contain only the
 explicit endpoint pieces.
 
 \begin{remark}[observer channels of the direct form]\label{rem:asm-obs}
-At the observer $\chi=0$, so an obs channel is a polynomial in $\nhat$ of the degree of its $\mu_a$, $K_n$, $P_\perp$ content:
+At the observer $\chi=0$, so an obs channel is a polynomial in $\nhat$ of the degree of its $\nu_a$, $K_n$, $P_\perp$ content:
 $K^{\rm C,obs}$, $K^{\rm D}_{\rm clock}$, $K^{\rm D}_{\rm disp}$ have degree $\le1$ and contribute to $\ell\le1$ only;
 $K^{\rm B,obs}_{1\times1}$ has degree $2$ and contributes to $\ell\le2$.  For $\ell\ge2$ the observer motion and clock act only through
-$\mathcal F,\mathcal D_\perp,\mathcal D_r$ and the type-B products.  (Consistent with the vanishing clock and displacement diagonals in
+$\mathcal F,\mathcal D_\perp,\mathcal X_r$ and the type-B products.  (Consistent with the vanishing clock and displacement diagonals in
 Table~\ref{tab:mono-groups}.)  The split into channels depends on the form of $L_2$ (in the shear form the explicit clock piece has degree 2,
 Sec.~\ref{sec:theta2}); only the sum $K_2$ is form independent.
 \end{remark}
@@ -278,18 +278,18 @@ The endpoint $1\times1$ channels are products of shell maps with radial function
 (gradient weight $w_\nabla$ for $P_\perp$), $\eta_e\in\{\eta_*,\eta_o\}$.
 \item[C:] $\tilde K^C_{\ell m}=\int\dd\eta\,K^c(k_1,k_2,K;\eta)\sum_{|L-\ell|\le d}i^L\sqrt{4\pi(2L+1)}\,j_L(K\chi)\,\langle\ell m|\mathcal Q|L0\rangle$ \eqref{eq:K2lm},
 $|m|\le d$, with $K^c$ the pair kernels of \eqref{eq:asm-second} ($\Phi_2,\dot\Phi_2,\Psi_2,\dot\Psi_2,\delta_{T2},V_2,K_{v^T},K_\omega,\mathcal H,\dot{\mathcal H}$,
-or $T_\Phi\dot T_\Phi$ for the ray-local product) and $\mathcal Q$ the polynomial in $\mu_1,\mu_2,K_n/K$ of \eqref{eq:asm-chC} (degree $d\le2$;
+or $T_\Phi\dot T_\Phi$ for the ray-local product) and $\mathcal Q$ the polynomial in $\nu_1,\nu_2,K_n/K$ of \eqref{eq:asm-chC} (degree $d\le2$;
 helicity pieces equivalently by (A-$\lambda$) \eqref{eq:ruleAlambda}).
-\item[D:] the functionals \eqref{eq:asm-functionals} are expanded in Legendre series of $\mu_a$,
-$\mathcal F_a=\sum_\ell(2\ell+1)i^\ell\mathcal F_\ell(k_a;\eta)P_\ell(\mu_a)$ etc., with radial functions
+\item[D:] the functionals \eqref{eq:asm-functionals} are expanded in Legendre series of $\nu_a$,
+$\mathcal F_a=\sum_\ell(2\ell+1)i^\ell\mathcal F_\ell(k_a;\eta)P_\ell(\nu_a)$ etc., with radial functions
 \begin{align}
 \mathcal F_\ell(k;\eta)&=T_V(k,\eta_o)\delta_{\ell0}+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k,\eta')j_\ell(k\chi'),\nonumber\\
-\mathcal D_{\perp\ell}(k;\eta)&=X_o(k)\delta_{\ell0}-\int_\eta^{\eta_o}\!\dd\eta'\,\mathcal F_\ell(k;\eta'),\nonumber\\
-\mathcal D_{r\ell}(k;\eta)&=\delta\eta_o(k)\delta_{\ell0}+\tfrac13kX_o(k)\delta_{\ell1}+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k,\eta')j_\ell(k\chi'),
+\mathcal X_{\perp\ell}(k;\eta)&=X_o(k)\delta_{\ell0}-\int_\eta^{\eta_o}\!\dd\eta'\,\mathcal F_\ell(k;\eta'),\nonumber\\
+\mathcal X_{r\ell}(k;\eta)&=\delta\eta_o(k)\delta_{\ell0}+\tfrac13kX_o(k)\delta_{\ell1}+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k,\eta')j_\ell(k\chi'),
 \label{eq:asm-Dl}
 \end{align}
 paired with the shell functions $\TP(k_b,\eta)j^{(s)}_\ell(k_b\chi)$ (from $J_b$) or $[\TP-T_{\delta_T}](k_b,\eta_*)j_\ell(k_b\chi_*)$,
-$kT_V(k_b,\eta_*)j'_\ell(k_b\chi_*)$ (from $U_b$); the projection is the bipolar (double Rayleigh) sum of Sec.~\ref{sec:typeC} with the
+$kT_V(k_b,\eta_*)j'_\ell(k_b\chi_*)$ (from $\mathcal U_b$); the projection is the bipolar (double Rayleigh) sum of Sec.~\ref{sec:typeC} with the
 $P_\perp$ contractions carrying the weight $w_\nabla$ (type-D identity of Sec.~\ref{sec:typeB}), and \eqref{eq:asm-C22} is unchanged.
 \end{itemize}
 \emph{Implementation.}  The full $K_2$ is projected on $Y_{\ell m}$ by Gauss--Legendre sky quadrature in the $\Khat=\hat{\mathbf z}$ frame at

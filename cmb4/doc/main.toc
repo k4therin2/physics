@@ -14,19 +14,19 @@
 \contentsline {paragraph}{Times.}{7}{section*.13}%
 \contentsline {paragraph}{Angular quantities and target.}{7}{section*.14}%
 \contentsline {paragraph}{Notation.}{7}{section*.15}%
-\contentsline {section}{\numberline {3}Roadmap: target, structure, status}{7}{section.3}%
+\contentsline {section}{\numberline {3}Roadmap: target, structure, status}{8}{section.3}%
 \contentsline {paragraph}{Main results.}{8}{section*.16}%
 \contentsline {paragraph}{Three structural results.}{8}{section*.17}%
 \contentsline {paragraph}{Pipeline.}{8}{section*.18}%
-\contentsline {paragraph}{Where each requirement is met.}{8}{section*.19}%
+\contentsline {paragraph}{Where each requirement is met.}{9}{section*.19}%
 \contentsline {paragraph}{Status.}{9}{section*.20}%
 \contentsline {paragraph}{Delicate points}{9}{section*.21}%
-\contentsline {section}{\numberline {4}The exact observable}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Conformal frame}{9}{subsection.4.1}%
+\contentsline {section}{\numberline {4}The exact observable}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Conformal frame}{10}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Two lemmas}{10}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}The theorem}{10}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}The theorem}{11}{subsection.4.3}%
 \contentsline {paragraph}{Consequences.}{11}{section*.22}%
-\contentsline {subsection}{\numberline {4.4}Observer, clock, emission event and direction map}{11}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.4}Observer, clock, emission event and direction map}{12}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Fermi--Walker frame versus canonical triad}{12}{subsection.4.5}%
 \contentsline {subsection}{\numberline {4.6}Linear order: recovery of the Sachs--Wolfe formula}{14}{subsection.4.6}%
 \contentsline {subsection}{\numberline {4.7}Normalisation: exact algebra on the logarithm}{14}{subsection.4.7}%
@@ -36,18 +36,18 @@
 \contentsline {subsection}{\numberline {5.3}The conditions at second and third order}{16}{subsection.5.3}%
 \contentsline {paragraph}{Second order.}{16}{section*.23}%
 \contentsline {paragraph}{Third order.}{17}{section*.24}%
-\contentsline {subsection}{\numberline {5.4}The exact dilation family and the zero-mode (tadpole) ambiguity}{17}{subsection.5.4}%
-\contentsline {section}{\numberline {6}Perturbative solution of the Einstein--fluid equations}{18}{section.6}%
+\contentsline {subsection}{\numberline {5.4}The exact dilation family and the zero-mode (tadpole) ambiguity}{18}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Perturbative solution of the Einstein--fluid equations}{19}{section.6}%
 \contentsline {subsection}{\numberline {6.1}First order}{19}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Second order: operator structure}{19}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.2}Second order: operator structure}{20}{subsection.6.2}%
 \contentsline {paragraph}{Vector sector (relativistic Kelvin theorem).}{20}{section*.25}%
-\contentsline {paragraph}{Kernels.}{20}{section*.26}%
+\contentsline {paragraph}{Kernels.}{21}{section*.26}%
 \contentsline {paragraph}{Green's functions and the regular solution.}{21}{section*.27}%
-\contentsline {paragraph}{Checks at second order.}{21}{section*.28}%
+\contentsline {paragraph}{Checks at second order.}{22}{section*.28}%
 \contentsline {subsection}{\numberline {6.3}Third order: contracted kernels}{22}{subsection.6.3}%
 \contentsline {paragraph}{Summary.}{22}{section*.29}%
-\contentsline {section}{\numberline {7}First order: the pipeline worked through, $\Delta _\ell (k)$ and $C_\ell ^{(11)}$}{22}{section.7}%
-\contentsline {paragraph}{The pipeline at first order.}{22}{section*.30}%
+\contentsline {section}{\numberline {7}First order: the pipeline worked through, $\Delta _\ell (k)$ and $C_\ell ^{(11)}$}{23}{section.7}%
+\contentsline {paragraph}{The pipeline at first order.}{23}{section*.30}%
 \contentsline {paragraph}{Conventions.}{23}{section*.31}%
 \contentsline {paragraph}{Rayleigh rules.}{23}{section*.32}%
 \contentsline {paragraph}{Closed form of the ISW integral.}{24}{section*.33}%
