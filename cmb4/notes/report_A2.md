@@ -23,3 +23,22 @@ modes only monopole/dipole).  a_l0 (l = 1..12) of Th1 and Th2 vs N1 (`check_plan
 max |diff| = 1.2e-8 (to8_xo0), 1.0e-9 (to4_xo0), 6.5e-9 (to8_xo0.5pi), 7.0e-10 (to4_xo0.5pi) — all within N1's quoted
 uncertainties (3.2e-8, 9.7e-10, 9.2e-6, 5.4e-9).  E.g. to8_xo0: a_20[Th2] = -4.2224942187 (N1 -4.2224942193),
 a_40 = +1.3785439772 (N1 +1.3785439781).  Shear and direct forms of L2 agree with each other to 1e-13.
+
+## Milestone 2 — generic-momentum checks (iii), symmetry, form equivalence, constant mode (i)
+`check_generic.py` / `.log`, `check_squeezed.py` / `.log`; eta_* = 2, eta_o = 8, sky grid 40x80 GL, l <= 30.
+* (A) shear form vs direct form of L2 for generic non-collinear k1 = (0.7,-0.2,0.4), k2 = (-0.3,0.9,0.5): max rel. diff 6e-15
+  pointwise in n.  The two forms differ by total derivatives and the 2nd-order conservation equations, and the shear form
+  contains only v2 and h2 among the second-order fields while the direct form contains Phi2, Psi2, dT2, V2, v2T, om2, h2:
+  this is a strong check of C1's K != 0 kernels (incl. the vector and tensor sectors, which the plane wave cannot probe).
+* (B) symmetry K_2(k1,k2) = K_2(k2,k1): 9e-15.  (C) REALITY K_2(-k1,-k2;n) = K_2(k1,k2;n)^*: exact (0.0).
+* (i) CONSTANT MODE — correction to the brief.  K_2(k1 -> 0, k2; n) does NOT vanish (neither channel-wise nor in total) and
+  should not: zeta_nl = c + zeta_s is the coordinate rescaling x~ = e^{c} x of the configuration zeta~_s(x~) = zeta_s(e^{-c}x~)
+  (early-time spatial metric e^{2 zeta} dx^2; observer at x = 0, its proper time and T_* are invariant), so
+      lim_{k1->0} K_2(k1,k2;n) = - k2 . grad_{k2} K_1(k2;n)      (Maldacena-type consistency relation for the map),
+  i.e. the constant mode is unobservable only up to relabelling the short wavenumbers (which leaves C_l invariant for a
+  scale-free spectrum but not mode by mode).  Verified for the FULL map, all multipoles (incl. l = 0, 1):
+  |K_2(s e, k2) - (-k dK_1/dk)| (rms over l>=2) = 3.18e-1, 3.18e-2, 3.18e-3 for s = 1e-2, 1e-3, 1e-4 (|k2| = 1.07; the
+  dilation itself has rms 11.25), likewise for |k2| = 2.44 — the residual is exactly linear in s (the gradient term).
+  Individual channels are O(10) at s -> 0 (e.g. [ray] 2nd:V2 alone: 11.0; [emi] time delay: 13.9) and cancel to the dilation.
+* (ii) gradient O(k1): V2's report does not exist; the O(k1) residual is recorded (linear in s, coefficient 31.8 (l>=2 rms)
+  at |k2| = 1.07), no independent prediction compared — NOT DONE.

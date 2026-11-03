@@ -1,0 +1,14 @@
+(A) max|K2_direct - K2_shear| / max|K2| = 6.0995734062160796e-15
+(B) symmetry  max|K2(k1,k2)-K2(k2,k1)| = 8.881784197001252e-15
+(C) reality   max|K2(-k1,-k2)-conj K2(k1,k2)| = 0.0
+(D) squeezed k1 = s e, |k2| = 1.072 ; l>=2 rms of the full K_2 and of selected channels; l=0,1 separately
+  shear  s=1e-01  full: l>=2 1.131e+01  l=1 3.312e+00  l=0 9.913e+00   | largest channel ([ray] 2nd:V2): l>=2 1.107e+01
+  shear  s=3e-02  full: l>=2 1.125e+01  l=1 3.157e+00  l=0 9.856e+00   | largest channel ([ray] 2nd:V2): l>=2 1.100e+01
+  shear  s=1e-02  full: l>=2 1.125e+01  l=1 3.158e+00  l=0 9.842e+00   | largest channel ([ray] 2nd:V2): l>=2 1.099e+01
+  shear  s=3e-03  full: l>=2 1.125e+01  l=1 3.163e+00  l=0 9.837e+00   | largest channel ([ray] 2nd:V2): l>=2 1.099e+01
+  shear  s=1e-03  full: l>=2 1.125e+01  l=1 3.165e+00  l=0 9.836e+00   | largest channel ([ray] 2nd:V2): l>=2 1.099e+01
+  direct s=1e-01  full: l>=2 1.131e+01  l=1 3.312e+00  l=0 9.913e+00   | largest channel ([emi] time delay (radial Dx1) | fields:1): l>=2 1.364e+01
+  direct s=3e-02  full: l>=2 1.125e+01  l=1 3.157e+00  l=0 9.856e+00   | largest channel ([emi] time delay (radial Dx1) | fields:1): l>=2 1.384e+01
+  direct s=1e-02  full: l>=2 1.125e+01  l=1 3.158e+00  l=0 9.842e+00   | largest channel ([emi] time delay (radial Dx1) | fields:1): l>=2 1.386e+01
+  direct s=3e-03  full: l>=2 1.125e+01  l=1 3.163e+00  l=0 9.837e+00   | largest channel ([emi] time delay (radial Dx1) | fields:1): l>=2 1.386e+01
+  direct s=1e-03  full: l>=2 1.125e+01  l=1 3.165e+00  l=0 9.836e+00   | largest channel ([emi] time delay (radial Dx1) | fields:1): l>=2 1.386e+01
