@@ -1,0 +1,17 @@
+(c1) late time x_* = 1 fixed: Delta*x_o
+   x_o=10      l=2: -0.5221  l=3: -0.2708
+   x_o=100     l=2:  0.0070  l=3:  0.3566
+   x_o=1000    l=2: -0.2033  l=3:  0.2810
+   x_o=10000   l=2: -0.1674  l=3:  0.3030
+   x_o=100000  l=2:  0.2363  l=3:  0.2531
+(c2) k0 -> inf at eta_*=2, eta_o=8: (Delta - SW/Doppler lead)*x_o^2, Delta*k0*chi_*
+   k0=5     l=2  Delta=-3.253976e-02  lead=-3.620704e-02  (D-lead)*x_o^2= 1.9559  Delta*k0*chi_*=-0.9762
+   k0=5     l=3  Delta=-4.499593e-03  lead= 1.584760e-02  (D-lead)*x_o^2=-10.8518  Delta*k0*chi_*=-0.1350
+   k0=20    l=2  Delta=-1.251633e-02  lead=-1.249097e-02  (D-lead)*x_o^2=-0.2165  Delta*k0*chi_*=-1.5020
+   k0=20    l=3  Delta=-6.111070e-03  lead=-5.128989e-03  (D-lead)*x_o^2=-8.3804  Delta*k0*chi_*=-0.7333
+   k0=80    l=2  Delta= 2.404032e-03  lead= 2.354957e-03  (D-lead)*x_o^2= 6.7004  Delta*k0*chi_*= 1.1539
+   k0=80    l=3  Delta=-2.555626e-03  lead=-2.574301e-03  (D-lead)*x_o^2= 2.5498  Delta*k0*chi_*=-1.2267
+   k0=320   l=2  Delta= 6.529406e-04  lead= 6.556481e-04  (D-lead)*x_o^2=-5.9147  Delta*k0*chi_*= 1.2536
+   k0=320   l=3  Delta= 5.635683e-04  lead= 5.615834e-04  (D-lead)*x_o^2= 4.3360  Delta*k0*chi_*= 1.0821
+   k0=1280  l=2  Delta=-7.036182e-05  lead=-7.023998e-05  (D-lead)*x_o^2=-4.2586  Delta*k0*chi_*=-0.5404
+   k0=1280  l=3  Delta= 2.134385e-04  lead= 2.134488e-04  (D-lead)*x_o^2=-0.3615  Delta*k0*chi_*= 1.6392
