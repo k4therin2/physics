@@ -80,15 +80,18 @@ def tv(k, eta, d=0):
 # ---------------- second-order kernels (C1) ----------------
 _K = load()['second']
 _DTPhi = sp.Function('DT_Phi')
+_D2TPhi = sp.Function('D2T_Phi')
 def _prep(expr):
     expr = expr.doit()
     for kk in (QS, PS, KS):
+        expr = expr.subs(sp.Derivative(TF['Phi'](kk, ETA), (ETA, 2)), _D2TPhi(kk, ETA))
         expr = expr.subs(sp.Derivative(TF['Phi'](kk, ETA), ETA), _DTPhi(kk, ETA))
     assert not expr.has(sp.Derivative), expr
     return expr
-_mods = [{'T_Phi': lambda kk, e: tphi(kk, e, 0), 'DT_Phi': lambda kk, e: tphi(kk, e, 1)}, 'numpy']
+_mods = [{'T_Phi': lambda kk, e: tphi(kk, e, 0), 'DT_Phi': lambda kk, e: tphi(kk, e, 1), 'D2T_Phi': lambda kk, e: tphi(kk, e, 2)}, 'numpy']
 _names = ['K_Q', 'K_S00', 'K_S0z', 'K_SPhi', 'K_om', 'K_vT', 'K_h', 'K_Phi2_0']
 KER = {nm: sp.lambdify((KS, QS, PS, ETA), _prep(_K[nm]), modules=_mods) for nm in _names}
+KER['K_Q_d'] = sp.lambdify((KS, QS, PS, ETA), _prep(sp.diff(_K['K_Q'].doit(), ETA)), modules=_mods)   # d/deta K_Q (exact)
 KER_sym = {nm: _K[nm] for nm in _names}
 # Green's functions and homogeneous mode
 _etap = sp.Symbol('etap', positive=True)

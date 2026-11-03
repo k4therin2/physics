@@ -178,7 +178,7 @@ class Slot:
         if key in self.cache: return self.cache[key]
         g = self.g
         if c < 2:
-            res = 1j * self.kv[:, c][:, None] * (tv(self.kmag, g.eta_o) - 2 * g.cum(tphi(self.kmag, g.t)[None, :] * self.E_ray))
+            res = 1j * self.kv[:, c][:, None] * (tv(self.kmag, g.eta_o) + 2 * g.cum(tphi(self.kmag, g.t)[None, :] * self.E_ray))
         else:
             res = -2 * tphi(self.kmag, g.t)[None, :] * self.E_ray
         self.cache[key] = res
@@ -223,7 +223,7 @@ class Pair:
             self.H = np.sum(g.gw * G_h0(t[:, None], g.gs) * Kh, axis=1)
             self.dH = np.sum(g.gw * dG_h0(t[:, None], g.gs) * Kh, axis=1)
             z = np.zeros(g.M)
-            self.Phi2 = self.dPhi2 = self.Q2 = self.Psi2 = self.delta2 = self.dT2 = self.V2 = z
+            self.Phi2 = self.dPhi2 = self.Q2 = self.Psi2 = self.dPsi2 = self.delta2 = self.dT2 = self.V2 = z
             self.KvT = self.Kom = z
             return
         SPhi = KER['K_SPhi'](K, q, p, g.gs)                       # (M,Ng)
@@ -231,6 +231,7 @@ class Pair:
         self.dPhi2 = np.sum(g.gw * dG_Phi(K, t[:, None], g.gs) * SPhi, axis=1) + KER['K_Phi2_0'](K, q, p, t) * ghat(K, t, 1)
         self.Q2 = KER['K_Q'](K, q, p, t)
         self.Psi2 = self.Phi2 - self.Q2
+        self.dPsi2 = self.dPhi2 - KER['K_Q_d'](K, q, p, t)
         self.delta2 = (t**2 / 3) * KER['K_S00'](K, q, p, t) - (2 / 3) * t**2 * K**2 * self.Phi2 - 2 * t * self.dPhi2 - 2 * self.Psi2
         self.dT2 = self.delta2 / 4 - (3 / 16) * tdelta(q, t) * tdelta(p, t)
         v2z = (t / 4) * (-t * KER['K_S0z'](K, q, p, t) - 2j * t * K * self.dPhi2 - 2j * K * self.Psi2)
@@ -261,7 +262,7 @@ class Pair:
         M = self.g.M
         bc = lambda a: np.broadcast_to(a[None, :], (self.N, M))
         if name == 'Phi': return bc(self.Phi2 if me == 0 else self.dPhi2)
-        if name == 'Psi': return bc(self.Psi2 if me == 0 else self.dPhi2 - np.gradient(self.Q2, self.g.t))  # (Q2' not needed in L2)
+        if name == 'Psi': return bc(self.Psi2 if me == 0 else self.dPsi2)
         if name == 'dT': assert me == 0; return bc(self.dT2)
         if name == 'v':
             assert me == 0

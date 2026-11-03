@@ -1,0 +1,25 @@
+# Report A2 — second-order map kernel K_2 and C_l^(22)
+Agent A2 (relaunch 2026-11-03). Code: `cmb4/code/A2_second_order/`. Conventions: SPEC.md + C2 (ray xbar = x_o + n chi,
+chi = eta_o - eta, n = observation direction, fields on the ray carry e^{+i k.n chi}).
+
+## Milestone 1 — engine repaired, plane-wave check (iv) vs N1: PASS
+Reused from the crashed run: `transfer.py` (first-order transfer functions, C1 second-order kernels as numpy callables),
+`kernel2.py` (numerical assembly of K_1, K_2 from C2's L_terms.pkl term lists, n-frame representation, Chebyshev time grid,
+Gauss-Legendre Green's integrals).  Two defects found and fixed:
+1. **Sign of the ray deflection (affects C2's `definitions`).**  The photon direction perturbation must be
+   k1(eta) = k1_init - int_eta^{eta_o} G1 deta'   (since dk/deta = G and the ray is integrated backwards from the observer),
+   i.e. k1_perp(eta) = i k_perp [T_V(eta_o) + 2 int_eta^{eta_o} T_Phi e^{i k.n chi'} deta'].  C2's `ray.py` line 93
+   (`definitions['k1']`, and likewise `definitions['k2half']`, line 96-99) writes **+** int G1.  The L-term lists themselves
+   are unaffected (they keep k1, Dx1 abstract), but any consumer of `definitions` (A3!) must flip the sign.  With the C2 sign
+   the second-order maps disagree with N1 at O(1) and the shear and direct forms disagree with each other; with the
+   corrected sign both agree with N1 (below).  The radial part n.k1 = -(Phi+Psi) is the null condition and is unaffected.
+2. Psi2' was taken by finite differences of Q2 on the grid; replaced by the exact eta-derivative of C1's K_Q (needs T_Phi'').
+Observer dipole in Delta_l: L1 contains +(n.v)_o, v_o = i k T_V(eta_o) zeta_k  =>  Delta_1 gets +k T_V(eta_o)/3 (j_1'(0) = 1/3);
+confirmed by the N1 x_o = pi/2 dipole a_10[Th1] (2.0812147132, both).
+
+CHECK (iv): zeta = cos(k(x + x_o)), k = 1 along x, eta_* = 2, eta_o = 4, 8, x_o = 0, pi/2 (N1's four configurations);
+Th2(n) = sum_{s1,s2} c_s1 c_s2 K_2(s1 k, s2 k; n) incl. the K = 0 pairs (tensor zero mode h_ij = traceless part, scalar zero
+modes only monopole/dipole).  a_l0 (l = 1..12) of Th1 and Th2 vs N1 (`check_planewave.py`, `check_planewave.log`):
+max |diff| = 1.2e-8 (to8_xo0), 1.0e-9 (to4_xo0), 6.5e-9 (to8_xo0.5pi), 7.0e-10 (to4_xo0.5pi) — all within N1's quoted
+uncertainties (3.2e-8, 9.7e-10, 9.2e-6, 5.4e-9).  E.g. to8_xo0: a_20[Th2] = -4.2224942187 (N1 -4.2224942193),
+a_40 = +1.3785439772 (N1 +1.3785439781).  Shear and direct forms of L2 agree with each other to 1e-13.
