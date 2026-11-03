@@ -146,3 +146,7 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   boxed final result; V4 MC and C4 closed forms folded in; SUMMARY.md synced. Superhorizon check: O(eps^4) coefficient ~ (k0 eta_o)^{2l}
   like C11 (ratio -> const). (E2),(E3) tested (1e-6, 2e-5); tadpole <<m2>> printed value corrected (-3.73464 sigma^2).
   FINAL STATE: deliverables = cmb4/doc/main.pdf, cmb4/doc/SUMMARY.md, cmb4/notes/*.md, cmb4/code/*. All agents finished.
+- [11-03] Novelty check: closest prior = Dunsby 1997 (gr-qc/9707022) exact log line-of-sight formula for general matter (eqs 39-42),
+  linearised; our theorem = its single-radiation-fluid reduction, exponential-shear form not found explicitly; CL98 linear covariant;
+  EGS/SME isotropy theorems (our corollary is a converse). One-loop C_l incl. 13 term: none found (Tomita incomplete; D'Amico et al
+  third-order SW only; SONG scope excludes 1x3). Manuscript: remark + refs added; SUMMARY.md updated.

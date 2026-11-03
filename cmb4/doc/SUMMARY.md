@@ -22,6 +22,12 @@ precession are O(eps^2)), so the rotation is rigid, R = 1 + eps^2 J_2/2, and C^(
 in both frames (only a generic O(eps) rotation would mix them). All orders are computed in the global canonical triad; a
 per-direction triad is not a rigid rotation and must not be used at third order.
 
+Relation to earlier work: the two ingredients are Ellis' 1971 energy-propagation equation and the Tolman/Euler identities for
+radiation; Dunsby (CQG 14, 3391, 1997) combined them for general matter into an exact logarithmic line-of-sight formula and then
+linearised. For a single radiation fluid his source reduces to the shear alone, which is the theorem above; the explicit
+exponential-shear form (and its corollary: shear-free radiation flow => isotropic sky for every comoving observer) was not found
+stated elsewhere. The fourth-order spectrum itself (the 13 term in particular) has not been computed before as far as we found.
+
 ## 2. Bookkeeping ("the sweet spot")
 * Normalisation is pure algebra: Lambda = -S = eps L1 + eps^2 L2/2 + eps^3 L3/6, m1 = L1, m2 = L2 + L1^2,
   m3 = L3 + 3 L1 L2 + L1^3; for l >= 1, Theta2 = m2 - 2<m1> m1, Theta3 = m3 - 3<m1> m2 - 3<m2> m1 + 6<m1>^2 m1
