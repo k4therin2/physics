@@ -28,7 +28,35 @@ def series_tex(nm, nmax):
         if c != 0: out.append(r"\left[%s\right]\eta^{%d}" % (lx(sp.factor(c)), n))
     return r" \\ &\quad + ".join(out) + r" + O(\eta^{%d})" % (nmax + 2)
 comp = {}
-for nm in ('phi2', 'h2'):
+phi2c = None
+try:
+    _d = pickle.load(open('phi2_compact.pkl', 'rb'))
+    phi2c = {nm: ({kk: sp.parse_expr(v, local_dict=L) for kk, v in dd['sf'].items()}, {j: sp.parse_expr(v) for j, v in dd['C'].items()},
+                  {j: sp.parse_expr(v) for j, v in dd['S'].items()}, sp.parse_expr(dd['c0'])) for nm, dd in _d.items()}
+except FileNotFoundError:
+    pass
+def laurent_tex(c):
+    c = sp.expand(c)
+    if c == 0: return "0"
+    groups = {}
+    for t in sp.Add.make_args(c):
+        n = sp.Poly(sp.expand(t * eta**30), eta).degree() - 30
+        groups[n] = groups.get(n, 0) + t / eta**n
+    return r" \\ &\qquad ".join(r"+\left[%s\right]\eta^{%d}" % (lx(sp.factor(sp.expand(v))), n) for n, v in sorted(groups.items()))
+def phi2_full():
+    if phi2c is None: return "(not generated)"
+    s = r"$P=u_2(x_k)\mathcal A-u_1(x_k)\mathcal B$, frequencies $w_1=(k+q+p)/\sqrt3,\ w_2=(k+q-p)/\sqrt3,\ w_3=(k-q+p)/\sqrt3,\ w_4=(q+p-k)/\sqrt3$. "
+    s += r"Each of $\mathcal A,\mathcal B$ $=$ special-function part $+\sum_j[C_j(\eta)\cos w_j\eta+S_j(\eta)\sin w_j\eta]+c_0$.\par"
+    for nm, sym in (('A', r'\mathcal A'), ('B', r'\mathcal B')):
+        sf, C, Sn, c0 = phi2c[nm]
+        s += r"\subsection*{$%s$}Special functions: \begin{align*}" % sym
+        s += r" \\ ".join(r"&[%s(w_{%d}\eta)]:\ %s" % (kk.split(',')[0].strip("('\" "), int(kk.split(',')[1].strip(")' ")) + 1, lx(v)) for kk, v in sf.items())
+        s += r"\end{align*} constant $c_0=%s$; \begin{align*}" % lx(c0)
+        for j in range(4):
+            s += r"C_{%d}&=%s\\ S_{%d}&=%s\\ " % (j + 1, laurent_tex(C[j]), j + 1, laurent_tex(Sn[j]))
+        s += r"\end{align*}"
+    return s
+for nm in ('h2',):
     try:
         d = pickle.load(open(nm + '_compact.pkl', 'rb'))
         comp[nm] = ({kk: sp.parse_expr(v, local_dict=L) for kk, v in d['sf'].items()},
@@ -172,6 +200,6 @@ if 'phi2' in comp:
     pass
 tex = doc % (kernel_tex(S['K_SPhi']), Bsk, kernel_tex(S['K_Q']), kernel_tex(S['K_om']),
              series_tex('Phi2', 4), series_tex('I_h', 4), series_tex('Psi2', 4), series_tex('delta2', 4), series_tex('V2', 5),
-             full_tex('phi2', xmap_phi, ''), full_tex('h2', xmap_h, r', and $\sin k\eta,\cos k\eta$'))
+             phi2_full(), full_tex('h2', xmap_h, r', and $\sin k\eta,\cos k\eta$'))
 open('C4_closed_forms.tex', 'w').write(tex)
 print("written C4_closed_forms.tex, %d chars" % len(tex))

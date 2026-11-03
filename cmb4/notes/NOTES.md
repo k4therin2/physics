@@ -104,3 +104,10 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   Maldacena's consistency relation unless n_s = 1" (comment to include). A3 informed.
 - [11-03] W2a DONE (sec_map2, sec_map3, sec_checks, app_lterms, ledger). Lead fixed sec_observable: label at eta->0; ledger ref V1-6.
 - [11-03] W2b DONE: sec_assembly (9.1-9.5, 15 K_2 channels verified vs A2 machine kernels), sec_mono 2nd-order half, app_k2channels. Placeholders 9.6-9.8 + mono (13)/combination for A3. Generator scripts copied to doc/.
+- [11-03] R1 cold-read DONE (report_R1.md): Secs 1-5, linear, maps re-derived OK. BLOCKING: B1 C_3 has simple pole at mu=1 (q=k, p->0):
+  monochromatic (13) mu-integral log-divergent unless 1/p^2 poles cancel in full K_3c (forwarded to A3). B2 tadpole convention swaps
+  limit/angle-average: k->0 limit of K_Phi2(0) ~ q^2(3mu^2-1)/k^2 (constant anisotropic shear residual gauge) -> V5 launched to prove
+  zero-mode invariance analytically. MAJOR: M1 declare h_n(0)=0 (regular j_0 mode not excluded by regularity); M2 keep eta_i terms in
+  clock/label; state fluid-rest-frame emission; M3 stale status statements; M4 unify direction convention (n vs e); M5 remove project-log
+  language (agent names, SPEC refs, pkl); M6 display Theta^(3) fully (appendix) and K_2 Fourier form; M7 present N1 comparison as gauge
+  test; M8 analytic l-cutoff; M9 FW tetrad proof; M10 define <>_c. Proposed reorder + 2-page roadmap in report.
