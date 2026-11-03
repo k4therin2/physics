@@ -140,3 +140,4 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   Re C13 separately invariant for this observer (restate); M2 stale/inconsistent status statements; M3 residue table extraction
   artefact (now superseded by V6 analytic proof); M4 overfull boxes; M5 triad caveat for printed L3 (n=z split); M6 monochromatic
   result thin (box formula; k0 eta_o -> 0 check). Next: W4 final editor pass (R2 + V5 + V6 + V4 hook).
+- [11-03] V4 DONE: MC (180k realisations) agrees with A2's C22 within 1.1 sigma at 0.3-0.7% for l=1..11 (l=12 +2 sigma); rules out wrong Wick factor (50%) and missing -2<m1>m1 (6 sigma at l=3). report_V4.md. Added *.pkl ignore for V4.

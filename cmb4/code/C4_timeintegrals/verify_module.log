@@ -9,3 +9,9 @@ lambdified (247s)
   arbiter k=2.63 q/k=0.0693 mu=-0.0659 k eta=0.4649: Phi2 7.72e-35 dPhi2 1.72e-32 I_h 1.56e-44
   arbiter k=0.433 q/k=10.2 mu=-0.14 k eta=0.01454: Phi2 3.09e-18 dPhi2 1.78e-14 I_h 2.96e-43
   arbiter k=2.09 q/k=0.112 mu=0.803 k eta=0.2829: Phi2 9.58e-34 dPhi2 3.03e-31 I_h 1.67e-42
+   large err omega2 at k=1 q=0.4 mu=0.9999999999 eta=6: 2.50002e-11 (num -3.318907784657233e-06j ref -3.31890778457426e-06j)
+   large err vT2 at k=1 q=0.4 mu=0.9999999999 eta=6: 2.49999e-11 (num -8.551197946483892e-06j ref -8.551197946270113e-06j)
+   large err omega2 at k=1 q=2.5 mu=0.9999999999 eta=9: 2.49997e-11 (num -1.0707628202544252e-05j ref -1.0707628202276564e-05j)
+   large err vT2 at k=1 q=2.5 mu=0.9999999999 eta=9: 2.49999e-11 (num -2.6773409333079126e-05j ref -2.6773409332409794e-05j)
+   large err omega2 at k=1 q=0.7 mu=0.9999999999 eta=1.2: 2.50013e-11 (num 4.107719890591757e-06j ref 4.107719890489059e-06j)
+   large err vT2 at k=1 q=0.7 mu=0.9999999999 eta=1.2: 2.4994e-11 (num -3.5631402809090885e-06j ref -3.5631402808200315e-06j)
