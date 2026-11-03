@@ -103,3 +103,4 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   IR: [C22/4 + Re C13/3]_IR = sigma_L^2 (1/2) int |K_lm|^2 (3+D)^2 P -> total derivative, vanishes for P ∝ k^-3. "Gaussian zeta breaks
   Maldacena's consistency relation unless n_s = 1" (comment to include). A3 informed.
 - [11-03] W2a DONE (sec_map2, sec_map3, sec_checks, app_lterms, ledger). Lead fixed sec_observable: label at eta->0; ledger ref V1-6.
+- [11-03] W2b DONE: sec_assembly (9.1-9.5, 15 K_2 channels verified vs A2 machine kernels), sec_mono 2nd-order half, app_k2channels. Placeholders 9.6-9.8 + mono (13)/combination for A3. Generator scripts copied to doc/.
