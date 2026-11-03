@@ -142,3 +142,7 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   result thin (box formula; k0 eta_o -> 0 check). Next: W4 final editor pass (R2 + V5 + V6 + V4 hook).
 - [11-03] V4 DONE: MC (180k realisations) agrees with A2's C22 within 1.1 sigma at 0.3-0.7% for l=1..11 (l=12 +2 sigma); rules out wrong Wick factor (50%) and missing -2<m1>m1 (6 sigma at l=3). report_V4.md. Added *.pkl ignore for V4.
 - [11-03] C4 DONE (report_C4.md; second_order_closed.py; C4_closed_forms.tex 16pp): ALL second-order fields in closed form (Si, Cin, elementary; D = (k^2+p^2+q^2)R/(8k^2p^3q^3); w_i = (k+q+p, k+q-p, k-q+p, q+p-k)/sqrt3); full Einstein-eq residual 5.5e-50; quadrature agreement 1e-31..1e-44; small-eta series; eta->inf asymptotics correct (no sign error). W3 already created app_closedforms from C4.
+- [11-03] W4 DONE: final manuscript 109 pp, 0 errors, 0 undefined refs; B1 (V6) and B2 (V5) proofs in; frame statement corrected;
+  boxed final result; V4 MC and C4 closed forms folded in; SUMMARY.md synced. Superhorizon check: O(eps^4) coefficient ~ (k0 eta_o)^{2l}
+  like C11 (ratio -> const). (E2),(E3) tested (1e-6, 2e-5); tadpole <<m2>> printed value corrected (-3.73464 sigma^2).
+  FINAL STATE: deliverables = cmb4/doc/main.pdf, cmb4/doc/SUMMARY.md, cmb4/notes/*.md, cmb4/code/*. All agents finished.
