@@ -6,13 +6,15 @@ from thirteen import *
 nu, wnu, nv = nu_grid(8)
 phis = 2 * np.pi * (np.arange(16) + 0.5) / 16
 t0 = time.time()
+import sys
+FT = len(sys.argv) > 1
 for mu in (0.31, -0.62):
     Xp = X3c(G, 1.0, 1.0, np.array([mu, -mu]))
     th = {nm: Xp[nm][0] + Xp[nm][1] for nm in ('Phi', 'dPhi', 'Psi', 'dPsi', 'V', 'dV')}
     th['dT3lin'] = (Xp['delta'][0] + Xp['delta'][1]) / 4
     res = {}
     for form in ('L_split', 'L_direct_split'):
-        ch, ctx = coef_abc(1.0, 1.0, mu, phis, nv, form=form, third=th)
+        ch, ctx = coef_abc(1.0, 1.0, mu, phis, nv, form=form, third=th, frame_triad=FT)
         tot = sum(ch.values()).mean(axis=0)
         res[form] = (tot, ch)
         print(form, 'mu=%g' % mu, 'phi-avg coef_abc(nu):', np.round(tot[:4], 6), '(%.0fs)' % (time.time() - t0))

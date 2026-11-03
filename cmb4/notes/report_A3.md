@@ -21,3 +21,23 @@ Agent A3 (relaunch 2026-11-03). Code: `cmb4/code/A3_third_order/`. Conventions: 
   and k2/2 = ... + int_eta^eta_o [G2/2 + Dx1.dG1]. The correct (and the one los.py itself uses via D k = G) is
   k(eta) = k(eta_o) - int_eta^eta_o G.  `test_sign.py`: with C2's sign, L2(shear) - L2(direct) = O(8) instead of 1e-13.
   (C2's L_terms lists themselves are fine.)
+
+## Milestone 2 — third order: contracted fields + full L3 assembly (DONE, validated)
+* `third.py`: channel (iii) fields from C1's K3c: Phi3c = int G_Phi(k) K3c_SPhi + C3 ghat, Psi3c = Phi3c - Q3c,
+  delta3c, V3c = -(eta^2/4)[2(Phi3c' + Psi3c/eta) + S0z_c/(ik)] (C1 normalisation per P(q)); KPhi2/Kh supplied by the
+  pair profiles (scalar second-order kernels checked symmetric to 1e-16), H''' from the h ODE.  Third-order delta_T:
+  delta_T3 = delta3/4 - (9/16) delta1 delta2 + (21/64) delta1^3.
+* Per configuration (k, q, -q) the abc coefficient of a third-order field is K3c(q) + K3c(-q) = X3c(mu) + X3c(-mu).
+* `thirteen.py`: Th3 = m3 - 3<m1>m2 - 3<m2>m1 + 6<m1>^2 m1 with m3 = 6 list3 + 3 L1 (2 list2) + L1^3 in the algebra.
+* **CHECK (decisive): C2's shear-form L3 and direct-form L3, evaluated with C1's contracted third-order fields and the engine's
+  second-order functionals / clock / displacement / emission shift, agree to 2e-11 (relative 3e-14) for the phi-averaged
+  coef_abc(k,q,-q;n) at mu = 0.31, -0.62 (`test_third.py frame`).**  This tests C1's third-order contracted solution
+  (third-order conservation), C2's L3 lists and all of the engine's third-order objects at once.  Also `test_null2.py`:
+  engine k2_z = second-order null condition to 1e-13.
+* Triad subtlety found on the way: C2's direct-form *observer* terms at third order contain k2_init with the Gram-Schmidt
+  triad of the n = z-hat frame (the 'split' substitution), whereas the canonical (SPEC) triad is Gram-Schmidt of the GLOBAL
+  coordinate basis.  With the global triad in the ray functional and the split direct-form obs terms, direct - shear =
+  11.32 (P_3 - P_1)(n.k) exactly (an observer-local mismatch, `dbg` in report history).  The shear-form L3 has no k2 at the
+  observer, so PRODUCTION = shear form + global (canonical) triad.  The per-direction GS triad is not a rigid rotation and
+  changes kappa at the 0.3% level; the canonical triad is rigid, which leaves Re C^(13) invariant (|a_lm|^2 sum invariant).
+* Bookkeeping bug fixed: duplicate term names in C2 lists (engine channel dict now accumulates).

@@ -39,7 +39,7 @@ def M2_sky(k1v, k2v, form='L_split', sky=(24, 48), tadshift=None):
     m2 = aadd(ascale(L2, 2.0), amul(L1, L1))[3]
     return m2 @ wv
 
-def coef_abc(k0, qm, mu, phis, nv, form='L_split', third=None, M2=None, D0=None, tadshift=None, split=True):
+def coef_abc(k0, qm, mu, phis, nv, form='L_split', third=None, M2=None, D0=None, tadshift=None, split=True, frame_triad=False):
     """mask-7 coefficient of Th3 for k = k0 zhat, q = qm (sqrt(1-mu^2) cos phi, sqrt(1-mu^2) sin phi, mu), -q.
     third: dict of abc-coefficient profiles (X3c(mu)+X3c(-mu)) or None; M2 = (M2(k,q), M2(k,-q), M2(q,-q)); D0 = (Delta0(k0), Delta0(qm)).
     Returns dict channel -> (B, Nn) array."""
@@ -48,6 +48,7 @@ def coef_abc(k0, qm, mu, phis, nv, form='L_split', third=None, M2=None, D0=None,
     qv = qm * np.stack([s * np.cos(phis), s * np.sin(phis), np.full_like(phis, mu)], 1)
     kv = np.array([[0.0, 0.0, k0]])
     ctx = Ctx([kv, qv, -qv], nv, g=G, ray=RAY, third=third, tadshift=tadshift)
+    ctx.frame_triad = frame_triad
     L1, _ = ctx.termlist(LT[form][1], maxorder=1)
     L2h, _ = ctx.termlist(LT[form][2], maxorder=2)
     L2 = ascale(L2h, 2.0)

@@ -453,6 +453,9 @@ class Ctx:
         return res
     def k2init_frame(self, comp):
         key = ('k2init',)
+        if key not in self.cache and getattr(self, 'frame_triad', False):
+            # C2 'split' convention: Gram-Schmidt triad of the per-direction frame (n = z-hat substituted)
+            self.cache[key] = [apart(self.evaluate(RC['k_init'][a].c[2].subs(NZ), 'obs'), 2) for a in range(3)]
         if key not in self.cache:
             glob = [apart(self.evaluate(RC['k_init'][i].c[2], 'obs', basis='global'), 2) for i in range(3)]
             fr = []
