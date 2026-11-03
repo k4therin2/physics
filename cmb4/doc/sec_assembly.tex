@@ -2,15 +2,14 @@
 \label{sec:assembly}
 This section turns the map of Secs.~\ref{sec:observable}, \ref{sec:map2}, \ref{sec:map3} into explicit kernels
 $K_1$, $K_2$ (and, when available, $K_{3c}$) and assembles $C^{(11)}_\ell$, $C^{(22)}_\ell$, $C^{(13)}_\ell$ with the rules of
-Sec.~\ref{sec:harmonic}.  Code: \code{cmb4/code/A2\_second\_order/} (agent A2); every statement below is either derived in
-the text or quoted with the check that established it (App.~\ref{app:ledger}).
+Sec.~\ref{sec:harmonic}.  Every statement below is either derived in the text or quoted with the check that established it
+(App.~\ref{app:ledger}; code in App.~\ref{app:repro}).
 
 \paragraph{Conventions of this section.}  Observer label at the origin, ray $\bar\vx(\eta)=\nhat\chi$, $\chi=\eta_o-\eta$
 (Sec.~\ref{sec:setup}; $\nhat$ = observation direction), so a field on the ray carries $e^{+i\vk\cdot\nhat\chi}$.  Rayleigh:
 $e^{i\vk\cdot\nhat\chi}=4\pi\sum_{\ell m}i^\ell j_\ell(k\chi)Y_{\ell m}(\nhat)Y^*_{\ell m}(\khat)$, and
-$(i\nhat\cdot\khat)^s e^{i\vk\cdot\nhat\chi}\to4\pi i^\ell j^{(s)}_\ell(k\chi)Y^*_{\ell m}(\khat)$.  The rules of
-Secs.~\ref{sec:typeA}--\ref{sec:typeC} are written with $\ehat=-\nhat$ and $(-i)^\ell$; the two differ by
-$a_{\ell m}\to(-1)^\ell a_{\ell m}$ at every order and give identical $C^{(rs)}_\ell$ (Sec.~\ref{sec:dirconv}).  We write
+$(i\nhat\cdot\khat)^s e^{i\vk\cdot\nhat\chi}\to4\pi i^\ell j^{(s)}_\ell(k\chi)Y^*_{\ell m}(\khat)$, the convention of
+Sec.~\ref{sec:harmonic}.  We write
 $\mu_a\equiv\nhat\cdot\khat_a$, $E_a\equiv e^{ik_a\mu_a\chi}$, and $\dot T\equiv\partial_\eta T$.
 
 % ======================================================================
@@ -30,7 +29,7 @@ K_{1,\ell m}(\vk)=4\pi\,i^\ell\,\Delta_\ell(k)\,Y^*_{\ell m}(\khat),
 with the real transfer function $\Delta_\ell(k)$ of Proposition~\ref{prop:Delta} (closed form of the ISW part:
 Theorem~\ref{thm:isw}); the observer terms are $-\delta_{\ell0}(T_{\delta_T}+\TP)(k,\eta_o)+\tfrac13\delta_{\ell1}kT_V(k,\eta_o)$.
 ($K_1$ rebuilt from $\Delta_\ell$, $\ell\le40$, equals the numerical line-of-sight kernel to $7\times10^{-15}$; the sign of the
-observer dipole is fixed by the comparison with the planar solver N1, $a_{10}[\Theta_1]=2.0812147132$ in both.)
+observer dipole is fixed by the comparison with the non-perturbative planar solver of Sec.~\ref{sec:check_endtoend}, $a_{10}[\Theta_1]=2.0812147132$ in both.)
 The sky monopole entering \eqref{eq:theta_orders} is the $\ell=0$ projection,
 \begin{equation}
 \sky{m_1}=\int\!\frac{\dd^3k}{(2\pi)^3}\,\zeta_\vk\,\Delta_0(k),\qquad
@@ -71,7 +70,7 @@ $K_2$.
 \subsection{The second-order kernel \texorpdfstring{$K_2$}{K2}}
 \label{sec:asm-K2}
 \paragraph{Factor bookkeeping.}  With $\Lambda=-S=\eps L_1+\tfrac{\eps^2}2L_2+\dots$ \eqref{eq:mdef}, the term list of
-Sec.~\ref{sec:map2} (C2's \code{L[2]}) is $L_2/2$; call its kernel $K_{L_2/2}(\vk_1,\vk_2;\nhat)$ (not symmetric).  Then
+Sec.~\ref{sec:map2} is $L_2/2$; call its kernel $K_{L_2/2}(\vk_1,\vk_2;\nhat)$ (not symmetric).  Then
 $m_2=L_2+L_1^2$, and by \eqref{eq:theta_orders} $\Theta^{(2)}_{\ell m}=m_{2,\ell m}-2\sky{m_1}m_{1,\ell m}$ for $\ell\ge1$.  With
 $\Theta=\eps\Theta^{(1)}+\tfrac{\eps^2}2\Theta^{(2)}$ and $\Theta^{(2)}=\int\!\!\int\zeta\zeta K_2$ \eqref{eq:Kr}, the symmetric kernel is
 \begin{equation}
@@ -211,12 +210,12 @@ K_2(\vk_1,\vk_2;\nhat)&=-\mathcal D K_1(\vk_2;\nhat)-\mathcal S_{\vk_1}K_1(\vk_2
 (For finite $\eta_i$ add $+\tfrac{\eta_i^2}6(\vk_1\cdot\vk_2)K_1(\vk_2;\nhat)$, a translation of the observer label.)  Since in RD
 $K_1$ depends on $k$ only through $k\eta_o$, $k\eta_*$ and $\mu$, $\mathcal DK_1=(\eta_o\partial_{\eta_o}+\eta_*\partial_{\eta_*})K_1$.
 \end{theorem}
-\noindent\emph{Status.}  Derived (agent V2) from the adiabatic-mode transformation of the full observable, independently of
+\noindent\emph{Status.}  Derived from the adiabatic-mode transformation of the full observable, independently of
 $K_2$: the long mode $\zeta_L=c+\vq\cdot\vx$ is the Poisson-gauge image of FRW under
 $\tilde\eta=\eta-\tfrac\eta3\zeta_L$, $\tilde\vx=(1+\zeta_L)\vx-\tfrac{x^2}2\vq-\tfrac{\eta^2}6\vq$; every ingredient of $T_{\rm obs}=T_oe^{-S}$
 (shear, null geodesic, $T_{\rm phys}=T_*$ surface, tagged worldline, proper-time clock, sky normalisation) is covariant, and at
 $\eta\to0$ the map is conformal with $\tilde\zeta_S(\tilde\vx)=\zeta_S(\vx(\tilde\vx))$ exactly.  Verified on the full $K_2$
-\eqref{eq:asm-K2} (agent A2): $\|K_2(s\hat\ve,\vk_2)+\mathcal DK_1\|$ (rms over $\ell\ge2$) $=3.18\times10^{-1,-2,-3}$ for
+\eqref{eq:asm-K2} (SQ-2): $\|K_2(s\hat\ve,\vk_2)+\mathcal DK_1\|$ (rms over $\ell\ge2$) $=3.18\times10^{-1,-2,-3}$ for
 $s=10^{-2,-3,-4}$ ($|\vk_2|=1.07$; the dilation itself has rms $11.25$), exactly linear in $s$; the $k_1$-odd part
 $[K_2(s\hat\ve)-K_2(-s\hat\ve)]/2s$ equals $-\mathcal S_{\hat\ve}K_1$ to $1.5$--$6\times10^{-5}$ ($|\vk_2|=1.07$) and $1.6$--$2.2\times10^{-4}$
 ($|\vk_2|=2.44$) per multipole, the accuracy of the finite-difference Hessian.  Individual channels are $O(10)$ at $s\to0$
@@ -247,11 +246,11 @@ with \eqref{eq:asm-squeezed} ($O(k_1)$ terms vanish by parity after the angular 
 \end{equation}
 the second-order dilation response.  It is positive, so for $P\propto k^{-3}$ ($\sigma_L^2\propto\int\dd q/q$) $C^{(22)}_\ell$ alone is
 logarithmically IR divergent and nothing inside $C^{(22)}$ can cancel it.  The cancellation requires the $(13)$ soft region with
-$K_3(\vq,-\vq,\vk)\to\mathcal D^2K_1(\vk)$ (predicted by V2, \S4 of its report; agent A3 reports a numerical confirmation on the full contracted kernel, with an
-$O(q^2)$ approach, whose write-up is \emph{pending}, Sec.~\ref{sec:asm-IR}),
+$K_3(\vq,-\vq,\vk)\to\mathcal D^2K_1(\vk)$, derived from the same adiabatic-mode transformation and verified on the full contracted kernel
+(Theorem~\ref{thm:asm-squeezed3}),
 after which the sum is $\sigma_L^2\cdot\tfrac12\cdot\tfrac2\pi\int k^2\dd k\,\Delta_\ell^2(3+\mathcal D)^2P$: a total derivative in $\ln k$ that
 vanishes for scale-invariant $k^3P$, and leaves an IR sensitivity $\propto\sigma_L^2$ times the running of $k^3P$ otherwise
-(Sec.~\ref{sec:asm-IR}).  For the monochromatic spectrum of Sec.~\ref{sec:mono} there is no soft region; the corner $K=|\vk_1+\vk_2|\to0$
+(Sec.~\ref{sec:asm-IR}, \eqref{eq:asm-IRtot}).  For the monochromatic spectrum of Sec.~\ref{sec:mono} there is no soft region; the corner $K=|\vk_1+\vk_2|\to0$
 treated there is a different limit.
 
 % ======================================================================
@@ -298,29 +297,252 @@ each $\mu$ node; this realises the C and D reductions exactly and reproduces the
 $4\times10^{-12}$ for $\ell\le12$, $5\times10^{-9}$ for $\ell\le20$ at $\eta_o=8$).  No closed form of the C/D $\mu$-integrands beyond
 \eqref{eq:K2lm}, \eqref{eq:asm-Dl} has been produced.
 
-\paragraph{Verified properties of $K_2$} (App.~\ref{app:ledger}; \code{check\_*.log}):
+\paragraph{Verified properties of $K_2$} (App.~\ref{app:ledger}):
 (i)~shear form vs direct form of $L_2$ at generic non-collinear $\vk_1=(0.7,-0.2,0.4)$, $\vk_2=(-0.3,0.9,0.5)$: relative difference
 $6\times10^{-15}$ pointwise in $\nhat$ (the shear form contains only $v_2,h_2$ among second-order fields, the direct form
-$\Phi_2,\Psi_2,\delta_{T2},V_2,v^T_2,\omega_2,h_2$: a test of all of C1's $K\neq0$ kernels, including vector and tensor sectors);
-(ii)~plane wave $\zeta=\cos(k(x+x_o))$ vs the non-perturbative planar solver N1, four configurations ($\eta_*=2$, $\eta_o=4,8$,
+$\Phi_2,\Psi_2,\delta_{T2},V_2,v^T_2,\omega_2,h_2$: a test of all second-order $K\neq0$ kernels, including vector and tensor sectors);
+(ii)~plane wave $\zeta=\cos(k(x+x_o))$ vs the non-perturbative planar solver, four configurations ($\eta_*=2$, $\eta_o=4,8$,
 $x_o=0,\pi/2$), $a_{\ell0}[\Theta_1]$, $a_{\ell0}[\Theta_2]$, $\ell\le12$: max deviation $1.2\times10^{-8}$, $1.0\times10^{-9}$, $6.5\times10^{-9}$,
-$7.0\times10^{-10}$, all within N1's quoted errors (e.g.\ $a_{20}[\Theta_2]=-4.2224942187$ vs N1 $-4.2224942193$);
+$7.0\times10^{-10}$, all within the solver's quoted errors (e.g.\ $a_{20}[\Theta_2]=-4.2224942187$ vs $-4.2224942193$);
 (iii)~symmetry $K_2(\vk_1,\vk_2)=K_2(\vk_2,\vk_1)$ to $9\times10^{-15}$; (iv)~reality $K_2(-\vk_1,-\vk_2;\nhat)=K_2(\vk_1,\vk_2;\nhat)^*$ exactly;
 (v)~squeezed limits, Theorem~\ref{thm:asm-squeezed}.
 
-% ======================================================================
-\subsection{Contracted third-order kernel \texorpdfstring{$K_{3c}$}{K3c}}
-\label{sec:asm-K3c}
-\todo{(agent A3) $\Theta^{(3)}_c(\vk;\nhat)=3\int\frac{\dd^3q}{(2\pi)^3}P(q)K_3(\vk,\vq,-\vq;\nhat)$ from $m_3=L_3+3L_1L_2+L_1^3$ and the normalisation
-terms of \eqref{eq:theta_orders}, with the contraction rules \eqref{eq:contraction_rules}, tadpoles \eqref{eq:tad}, $X_{3c}$ \eqref{eq:third_eqs};
-organised by the structures (i)--(iii) of Sec.~\ref{sec:thirteen}, with the sign of the ray functionals as in \eqref{eq:asm-functionals}.}
 
+% ======================================================================
+\subsection{Contracted third-order kernel}
+\label{sec:asm-K3c}
+\paragraph{Definition and factors.}  With $\Theta^{(3)}(\nhat)=\int\!\!\int\!\!\int\zeta\zeta\zeta\,K_3$ \eqref{eq:Kr} ($K_3$ symmetric), the only
+part of $K_3$ that enters $C^{(13)}_\ell$ is its contraction with one power spectrum.  We define the \emph{contracted third-order kernel}
+as the mean response of $\Theta^{(3)}$ to one Fourier mode,
+\begin{equation}
+\kappa(\vk;\nhat)\equiv\Big\langle\frac{\delta\Theta^{(3)}(\nhat)}{\delta\zeta_\vk}\Big\rangle
+=3\int\!\frac{\dd^3q}{(2\pi)^3}P(q)\,K_3(\vk,\vq,-\vq;\nhat)\equiv3K_{3c}(\vk;\nhat),
+\label{eq:kappa-def}
+\end{equation}
+($\delta\zeta_{\vk'}/\delta\zeta_\vk=(2\pi)^3\delta^3(\vk-\vk')$); the factor 3 counts the three ways of choosing the leg that carries $\vk$, so
+$\kappa$ is the contracted map $\Theta^{(3)}_c$ of \eqref{eq:Theta3c}, $K_{3c}=\kappa/3$ is the single-pairing contraction, and the transfer
+function $\Delta^{(3c)}_\ell$ of \eqref{eq:Delta3c} (which includes the factor 3) is the Legendre coefficient of $\kappa$:
+\begin{equation}
+\kappa(\vk;\nhat)=\sum_\ell(2\ell+1)\,i^\ell\,\Delta^{\kappa}_\ell(k)\,P_\ell(\nhat\cdot\khat),\qquad \Delta^\kappa_\ell\equiv\Delta^{(3c)}_\ell,\qquad
+C^{(13)}_\ell=\frac2\pi\int\!k^2\dd k\,P(k)\,\Delta_\ell(k)\,\Delta^{\kappa}_\ell(k)^* .
+\label{eq:asm-C13}
+\end{equation}
+In practice $\kappa$ is computed by polarisation: for $\zeta=a\,e^{i\vk\cdot\vx}+b\,e^{i\vq\cdot\vx}+c\,e^{-i\vq\cdot\vx}$ with $a^2=b^2=c^2=0$ the
+coefficient of $abc$ in $\Theta^{(3)}$ is ${\rm coef}_{abc}(\vk,\vq,-\vq;\nhat)=3!\,K_3(\vk,\vq,-\vq;\nhat)$, hence
+\begin{equation}
+\kappa(\vk;\nhat)=\frac12\int\!\frac{\dd^3q}{(2\pi)^3}P(q)\,{\rm coef}_{abc}(\vk,\vq,-\vq;\nhat).
+\label{eq:asm-kappa-coef}
+\end{equation}
+$\Theta^{(3)}$ is \eqref{eq:theta3}, $m_3=L_3+3L_1L_2+L_1^3$, with $L_3$ in the shear form (App.~\ref{app:L3full}; the groups are listed with the
+contraction rule in App.~\ref{app:k3channels}).  After the $\qhat$ integration $\kappa$ depends on $\nhat$ only through $\nu=\nhat\cdot\khat$.
+
+\paragraph{Second-order observer objects.}  The third-order map needs the clock and the worldline at second order.  In the limit
+$\eta_i\to0$ of \eqref{eq:dxo}, \eqref{eq:deta_o2} (label at the initial event; all fields on the worldline $\vx=\mathbf 0$),
+\begin{align}
+\tfrac12\delta\eta_{o2}&=-\frac1{\eta_o}\Big[\tfrac12\delta\eta_{o1}^2+\eta_o\,\delta\eta_{o1}\Psi_1\big|_o+\int_0^{\eta_o}\!\eta\,\Big(\tfrac12\Psi_2-\tfrac12\Psi_1^2-\tfrac12|\vv_1|^2
++\mathbf X_1\cdot\nabla\Psi_1\Big)\dd\eta\Big],\nonumber\\
+\tfrac12\delta\vx_{o2}&=\int_0^{\eta_o}\!\Big[\tfrac12\vv_2+(\mathbf X_1\cdot\nabla)\vv_1\Big]\dd\eta+\delta\eta_{o1}\,\vv_1\big|_o,\qquad \mathbf X_1(\eta)\equiv\int_0^\eta\vv_1\,\dd\eta',
+\label{eq:asm-clock3}
+\end{align}
+with $\delta\eta_{o1}$, $\delta\vx_{o1}=\mathbf X_1(\eta_o)$ of \eqref{eq:asm-clock}, \eqref{eq:asm-disp}.  (Check: for the dilation family, $\lambda=1+\eps a_1+\tfrac{\eps^2}2a_2$,
+$a_1=-c/3$, the first line gives $\tfrac12\delta\eta_{o2}=\eta_o(c^2/9-a_2/2)$, the second-order coefficient of $\bar\eta_o/\lambda$.)  The fields in
+\eqref{eq:asm-clock3} include the tadpoles: in the configuration $(\vk,\vq,-\vq)$ the worldline integral of $\Psi_2$ contains the pair
+$(\vq,-\vq)$ multiplying $K_1(\vk)$, and the pairs $(\vk,\pm\vq)$ multiplying first-order objects of $\mp\vq$.  The second-order ray
+functionals $\vk_2$, $\Delta\vx_2$ are \eqref{eq:k2def}, \eqref{eq:Dx2def} with the sign of Remark~\ref{rem:signslip}, and the emission shift
+$\delta\eta_{e2}$ is \eqref{eq:deta_e}.
+
+\paragraph{Channel classes.}  Let $\langle Y Z\rangle\equiv\int\frac{\dd^3q}{(2\pi)^3}P(q)\,Y[\vq]\,Z[-\vq]$ denote the contraction of two
+first-order objects (fields or ray functionals, possibly at different points of the ray), $X[\vk]$ the kernel of a first-order object
+($\zeta_\vk\,T_X(k,\eta)E$ with the Fourier rules of Sec.~\ref{sec:asm-K2}), $X^{\rm s}_2(\vq_1,\vq_2)\equiv K_X(\vq_1,\vq_2)+K_X(\vq_2,\vq_1)$ the
+pair kernel of a second-order object and $\langle X_2\rangle=\int\frac{\dd^3q}{(2\pi)^3}P(q)K_X(\vq,-\vq)$ its tadpole \eqref{eq:tad}.  Applying
+\eqref{eq:asm-kappa-coef} monomial by monomial gives three classes.
+\begin{itemize}
+\item[(i)] \emph{Cubic first-order products} $ABC$ (one self-contraction): the leg $\vk$ sits on one factor and the other two are contracted,
+\begin{equation}
+\kappa^{\rm(i)}[ABC]=A[\vk]\,\langle BC\rangle+B[\vk]\,\langle AC\rangle+C[\vk]\,\langle AB\rangle ,
+\label{eq:asm-classi}
+\end{equation}
+a variance (equal-point for local products, an unequal-point correlation along the ray for products with ray functionals) times a first-order
+map.  Example: the cube $L_1^3$ of $m_3$ gives $3K_1(\vk;\nhat)\langle L_1L_1\rangle(\nhat)$, and $\langle L_1L_1\rangle=\langle\sky{m_1}^2\rangle+\sum_{\ell\ge1}\frac{2\ell+1}{4\pi}C^{(11)}_\ell$
+is direction independent, $=\xi^{(11)}(0)$ \eqref{eq:xi0}.
+\item[(ii)] \emph{First $\times$ second order} $A_1B_2$ (including first-order fields times second-order ray functionals, clock, displacement
+and emission shift):
+\begin{equation}
+\kappa^{\rm(ii)}[A_1B_2]=\underbrace{A[\vk]\,\langle B_2\rangle}_{\rm tadpole\ pair}
++\underbrace{\int\!\frac{\dd^3q}{(2\pi)^3}P(q)\,A[\vq]\,B^{\rm s}_2(\vk,-\vq)}_{\rm cross\text{-}contracted}.
+\label{eq:asm-classii}
+\end{equation}
+The tadpole term multiplies the free leg only, so only the $\qhat$-averaged tadpole enters $\kappa$ (Sec.~\ref{sec:asm-C13}).  The cross term contains
+the second-order kernels at the momenta $(\vk,-\vq)$, $|\vk-\vq|=p$, with all their Poisson inversions $p^{-2}$, $p^{-4}$.
+\item[(iii)] \emph{Third-order fields}, $X_3\to K_{3c,X}(\vq)+K_{3c,X}(-\vq)$, i.e.\ the contracted solution $X_{3c}$ of \eqref{eq:contracted},
+\eqref{eq:third_eqs}: $\Phi_{3c}=\int\frac{\dd^3q}{(2\pi)^3}P(q)\big[\int_0^\eta G_\Phi K_{3c,S_\Phi}\dd\eta'+C_3\,U(k\eta/\sqrt3)\big]$, $\Psi_{3c}=\Phi_{3c}-Q_{3c}$,
+$V_{3c}=-\tfrac{\eta^2}4[2(\Phi'_{3c}+\Psi_{3c}/\eta)+K_{3c,S_{0z}}/(ik)]$.  In the shear form only the velocity enters (the contracted vector and
+tensor parts vanish by isotropy), $\vv_{3c}=i\vk V_{3c}$, through the same projection as at first order:
+\begin{equation}
+\kappa^{\rm(iii)}(\vk;\nhat)=\int_{\eta_*}^{\eta_o}\!\dd\eta\,\tfrac23k^2\,P_2(\nhat\cdot\khat)\,V_{3c}(k,\eta)\,e^{i\vk\cdot\nhat\chi},\qquad
+\Delta^{\rm(iii)}_\ell=\int\!\dd\eta\,\tfrac23k^2V_{3c}\sum_{J}(2J+1)\threej{\ell}{2}{J}{0}{0}{0}^2i^{J-\ell}j_J(k\chi),
+\label{eq:asm-classiii}
+\end{equation}
+by (A-$L$) \eqref{eq:AL} with $L=2$.  (In the direct form, $\Phi_{3c},\Psi_{3c},\delta_{T3c},V_{3c}$ appear instead; the two forms agree, below.)
+\end{itemize}
+The normalisation terms of \eqref{eq:theta3} contribute, for $\ell\ge1$ (with $K^{m_2}\equiv2\,{\rm Sym}[K_{L_2/2}]+K_1K_1$ the kernel of $m_2$ and
+$\bar K_2$ its sky average, Sec.~\ref{sec:thirteen}),
+\begin{equation}
+\kappa_{\rm norm}=-6\!\int_{\vq}\!P\,\Delta_0(q)\,K^{m_2}(\vk,-\vq;\nhat)-3\langle\!\langle m_2\rangle\!\rangle K_1(\vk;\nhat)
+-6\!\int_{\vq}\!P\,\bar K_2(\vk,-\vq)\,K_1(\vq;\nhat)+6\langle\sky{m_1}^2\rangle K_1(\vk;\nhat),
+\label{eq:asm-kappanorm}
+\end{equation}
+$\int_\vq\equiv\int\frac{\dd^3q}{(2\pi)^3}$; inserted in \eqref{eq:asm-C13} they give the four terms of (E0) \eqref{eq:E0} with (E2), (E3)
+\eqref{eq:E2E3}.  The complete list of groups ($L_1$: 3 terms; $\tfrac12L_2$: 34; $\tfrac16L_3$: 359 in 32 groups) with their classes is
+App.~\ref{app:k3channels}; the engine evaluates every group in a per-direction frame $(\ehat_1,\ehat_2,\nhat)$, builds the ray functionals by
+spectral cumulative integration on a Chebyshev grid and the third-order fields from Green's-function quadrature.
+
+\paragraph{The spatial triad.}  The direction map \eqref{eq:dirmap} contains, from second order on, the spatial triad of the observer
+\eqref{eq:triad} through $k_{2,\rm init}$ \eqref{eq:kinit2}.
+\begin{lemma}[triad independence]\label{lem:asm-triad}
+(a) $\Theta^{(1)}$ and $\Theta^{(2)}$ do not depend on the choice of orthonormal triad at the observer among those that agree at first order.
+(b) Let two such triads differ by a rotation $\mathsf R=1+\tfrac{\eps^2}2\Omega+O(\eps^3)$, $\Omega_{ij}=\epsilon_{ijk}\omega_k$, with $\boldsymbol\omega$
+independent of $\nhat$ (a \emph{rigid} rotation; $\boldsymbol\omega$ may depend on the fields at the observer).  Then
+$\Theta^{(3)}\to\Theta^{(3)}+3(\Omega\nhat)\cdot\nabla_{\nhat}\Theta^{(1)}=\Theta^{(3)}+3i\,(\boldsymbol\omega\cdot\mathbf L)\Theta^{(1)}$, $\mathbf L=-i\nhat\times\nabla_{\nhat}$
+(up to the sign convention of $\Omega$), and $\Re C^{(13)}_\ell$ is unchanged.
+\end{lemma}
+\emph{Proof.}  The triad enters only through the map from the observed direction to the initial photon direction, $\nhat\to\mathsf R\nhat$.
+Since every triad of the Gram--Schmidt type agrees at first order \eqref{eq:triad}, the change is $O(\eps^2)$ in the direction, which changes
+$\Theta=\eps\Theta^{(1)}+\dots$ first at $O(\eps^3)$: $\Theta(\mathsf R\nhat)-\Theta(\nhat)=\tfrac{\eps^3}2(\Omega\nhat)\cdot\nabla_{\nhat}\Theta^{(1)}+O(\eps^4)$,
+i.e.\ $\delta\Theta^{(3)}=3(\Omega\nhat)\cdot\nabla_{\nhat}\Theta^{(1)}$, and $(\Omega\nhat)\cdot\nabla_{\nhat}=\boldsymbol\omega\cdot(\nhat\times\nabla_{\nhat})$.
+For each realisation $\sum_ma^{(1)*}_{\ell m}[(\boldsymbol\omega\cdot\mathbf L)a^{(1)}]_{\ell m}$ is real ($\mathbf L$ is Hermitian and acts within each $\ell$,
+$\boldsymbol\omega$ real), so the change of $\sum_ma^{(1)*}_{\ell m}a^{(3)}_{\ell m}$ is purely imaginary and $\Re C^{(13)}_\ell$ is invariant.  $\square$
+
+\noindent The triad fixed by Gram--Schmidt orthonormalisation of the \emph{global} coordinate basis (the canonical triad of
+Sec.~\ref{sec:ray}) is one triad for the whole sky, and any other global choice differs from it by a rigid rotation.  A triad constructed per
+direction (Gram--Schmidt in the frame adapted to each $\nhat$, e.g.\ the $\nhat=\hat{\mathbf z}$ split of the term lists) differs from it by an
+$\nhat$-dependent rotation, which is not a rotation of the sky map: it changes $\kappa$ (at the $0.3\%$ level in the monochromatic case) and
+must not be used at third order.  We use the canonical global triad, evaluated in global components for each $\nhat$ and then rotated into the
+per-direction frame.  (In the shear form the observer contains no $k_2$ term, so the canonical triad enters only through the ray functional
+$\vk_2$; the direct-form observer terms written in the $\nhat=\hat{\mathbf z}$ split implicitly use the per-direction triad and must be
+re-expressed before they are compared.)
+
+% ======================================================================
 \subsection{\texorpdfstring{$C_\ell^{(13)}$}{C13}}
 \label{sec:asm-C13}
-\todo{(agent A3) $C^{(13)}_\ell$ via (E0)--(E3) \eqref{eq:E0}--\eqref{eq:E2E3} and (A-$L$) \eqref{eq:AL}, every radial function named; checks.}
+Combining \eqref{eq:asm-C13} with the classes,
+\begin{equation}
+C^{(13)}_\ell=\frac2\pi\int\!k^2\dd k\,P(k)\,\Delta_\ell(k)\Big[\Delta^{\rm(i)}_\ell+\Delta^{\rm(ii)}_\ell+\Delta^{\rm(iii)}_\ell+\Delta^{\rm norm}_\ell\Big]^*(k),
+\label{eq:asm-C13split}
+\end{equation}
+where each $\Delta^{(\cdot)}_\ell$ is the Legendre coefficient of the corresponding part of $\kappa$; equivalently, in the language of
+Sec.~\ref{sec:thirteen},
+$C^{(13)}_\ell=T_{3,\ell}-3T_{\sky12,\ell}-3T_{\sky21,\ell}+6\langle\sky{m_1}^2\rangle C^{(11)}_\ell$ (E0), with $T_3$ the $m_3$ part
+($T^{\rm(i)}$, $T^{\rm(ii)}$, $T^{\rm(iii)}$) and the normalisation pieces from \eqref{eq:asm-kappanorm}.  The radial functions are named
+objects: $\Delta^{\rm(iii)}_\ell$ in \eqref{eq:asm-classiii} (one declared time integral inside $V_{3c}$); $\Delta^{\rm(i)}_\ell$ from the
+variances $\xi^{XY}(0)$ \eqref{eq:xi0} and the unequal-point correlations of the ray functionals (reduction (E1) with $\Delta\chi\ne0$);
+$\Delta^{\rm(ii)}_\ell$ from the tadpoles $\langle X_2\rangle(\eta)$ (closed forms, App.~\ref{app:kernels}) and from the second-order pair kernels
+at $(\vk,-\vq)$, reduced by (E1) and (A-$L$).  None of the $\vq$ integrals has been done in closed form; for the monochromatic spectrum they
+collapse to one angular integral (Sec.~\ref{sec:mono-13}).
 
-\subsection{IR structure of the loop}
+\paragraph{Validation of $\kappa$} (App.~\ref{app:ledger}, R-9--R-11, EF-22, H-13).
+\begin{enumerate}\itemsep1pt
+\item \emph{Shear form $=$ direct form at third order.}  The two term lists of $\tfrac16L_3$, evaluated with the contracted third-order fields
+\eqref{eq:third_eqs}, the second-order functionals, clock, displacement and emission shift, give the same $\qhat$-azimuth-averaged
+${\rm coef}_{abc}(\vk,\vq,-\vq;\nhat)$ to $2\times10^{-11}$ absolute ($3\times10^{-14}$ relative) at $\mu=\khat\cdot\qhat=0.31$ and $-0.62$.  Since the
+direct form contains $\Phi_{3c},\Psi_{3c},\delta_{T3c},V_{3c}$ and the shear form only $V_{3c}$, this tests the contracted third-order solution
+(third-order conservation), both term lists and all third-order ray objects at once.  At lower order: $K_1$ from the $L_1$ lists equals the
+type-A expansion with $\Delta_\ell$ to $2\times10^{-15}$; $\tfrac12L_2$ shear $=$ direct for three generic momenta, all pairs including the $K=0$
+pair, to $10^{-13}$; the second-order null condition holds for the computed $\vk_2$ to $10^{-13}$.
+\item \emph{Residual-gauge invariance.}  At $K=0$ Poisson gauge leaves a time reparametrisation $\eta\to\eta+\tfrac{\eps^2}2\tau(\eta)$ free; it
+shifts the isotropic tadpoles, $\delta\langle\Psi_2\rangle=\tau'+\tau/\eta$, $\delta\langle\Phi_2\rangle=-\tau/\eta$, $\delta\langle\delta_2\rangle=-4\tau/\eta$
+($\zeta_{\rm nl}$ unchanged), and the third-order fields by $\delta\Phi_3=3\tau T_\Phi'+6(\tau/\eta)T_\Phi$, $\delta\Psi_3=3\tau T_\Phi'+6(\tau'+\tau/\eta)T_\Phi$,
+$\delta V_3=3\tau T_V'+3\tau'T_V$.  (a) The contracted sources with shifted tadpoles, solved with the same Green's function and the shifted
+amplitude $\delta C_3=\delta\Phi_3(0)$, reproduce these shifts to $10^{-13}$: the tadpole bookkeeping of the third-order solution is gauge
+covariant.  (b) The fully assembled $\kappa$ (all tadpole routes: local $2{+}1$ products, radial $\vk_2$ and $\Delta\vx_2$, clock $\delta\eta_{o2}$,
+emission shift $\delta\eta_{e2}$, class (iii), $3L_1L_2$ and $-3\sky{m_2}m_1$) is unchanged to $6\times10^{-14}$ for $\tau=0.1\eta$ and $3\times10^{-13}$
+for $\tau=0.1\eta^3$ (scale of $\kappa$: $4\times10^2$), while individual channels change by $O(1$--$4)$ (time delay with $\Delta\vx_2$: $3.6$; clock:
+$2.3$; class (iii): $1.35$; local $2{+}1$ and radial $\vk_2$: $1.18$ each; emission shift: $0.15$).
+\item \emph{Reality.}  $\Im C^{(13)}_\ell\sim10^{-14}$ in the monochromatic evaluation (relative to $\Re C^{(13)}_\ell$, $\ell\le12$).
+\end{enumerate}
+
+\paragraph{The tadpole (mean-field) convention.}  Item 2 settles the zero-mode question raised by \eqref{eq:KPhi20_smallk} in the gauge sense.
+(1) In \eqref{eq:asm-classii} the tadpole multiplies first-order objects of the free leg $\vk$ only, so only the $\qhat$-average of the $K=0$
+pair kernel can enter $\kappa$: the anisotropic (quadrupolar, $q^2(3\mu^2-1)/k^2$) part of \eqref{eq:KPhi20_smallk}, a constant anisotropic shear,
+drops out identically, without any convention.  (2) The isotropic tadpole has three functions $(\langle\Phi_2\rangle,\langle\Psi_2\rangle,\langle\delta_2\rangle)(\eta)$
+subject to two $K=0$ constraints; the remaining freedom is exactly $\tau(\eta)$ (plus the constant dilation fixed by $\zeta^{(2)}(0)=0$), under
+which $\kappa$ is invariant.  (3) The sourced part of the tadpole is not a gauge mode: its source is the $\qhat$-averaged $K=0$ stress of the
+short modes, and it is the physical back-reaction of the short modes on the homogeneous expansion; it is kept and is not expected to cancel.
+In the shear form, $L_2$ contains no tadpole field (the shear of a homogeneous perturbation vanishes), so $3L_1L_2$ and $-3\sky{m_2}m_1$ see the
+pair $(\vq,-\vq)$ only through products of first-order objects (class (i)); the tadpole fields act only through the third-order routes listed
+in item 2.
+\pending{an analytic proof of zero-mode invariance for general momenta (all anisotropic $K\to0$ pieces, not only the $\qhat$-averaged ones);
+the numerical statements above cover the residual time reparametrisation and the plane-wave configurations of Sec.~\ref{sec:check_dilation}.}
+
+% ======================================================================
+\subsection{Infrared and ultraviolet structure of the loop}
 \label{sec:asm-IR}
-\todo{(agent A3) verification of $K_3(\vq,-\vq,\vk)\to\mathcal D^2K_1(\vk)+O(q^2)$ on the contracted kernel, and of the cancellation of the
-soft region between $\tfrac14C^{(22)}$ \eqref{eq:asm-IR22} and $\tfrac13\Re C^{(13)}$: total derivative $\propto(3+\mathcal D)^2P$ (V2).  The
-second-order half is Sec.~\ref{sec:asm-squeezed}.}
+Write $\kappa(\vk;\nhat)=\int\frac{q^2\dd q}{2\pi^2}P(q)\,\tilde\kappa(\vk,q;\nhat)$, $\tilde\kappa\equiv3\langle K_3(\vk,\vq,-\vq;\nhat)\rangle_{\qhat}$, and
+$\Delta^{\tilde\kappa}_\ell(k,q)$ for its Legendre coefficients.
+\begin{theorem}[squeezed limit at third order]\label{thm:asm-squeezed3}
+For $\eta_i\to0$, with $\mathcal D=\vk\cdot\partial_\vk$,
+\begin{equation}
+K_3(\vq,-\vq,\vk;\nhat)=\mathcal D^2K_1(\vk;\nhat)+O(q^2),\qquad\text{hence}\qquad \Delta^{\tilde\kappa}_\ell(k,q)=3\,\mathcal D^2\Delta_\ell(k)+O(q^2).
+\label{eq:asm-squeezed3}
+\end{equation}
+\end{theorem}
+\noindent\emph{Derivation.}  As for Theorem~\ref{thm:asm-squeezed}, two long modes $\vk_a,\vk_b$ compose to the adiabatic transformation with
+$c=\zeta_L$ to second order; the composite of the dilation $e^{-c\mathcal D}$ and the special conformal transformation gives, to all orders in
+$c$, $K_{m+1}(0,\dots,0,\vk)=(-\mathcal D)^mK_1(\vk)$, and with two long legs
+$K_3(\vk_a,\vk_b,\vk)=\mathcal D^2K_1+(\mathcal S_{\vk_a}+\mathcal S_{\vk_b})\mathcal DK_1+O(k_a^2,k_b^2,k_ak_b)$ (plus an $\eta_i^2$ label term).  For
+$\vk_b=-\vk_a=-\vq$ the $O(q)$ terms cancel.  Physically: a constant $\zeta=c$ is the same universe in the coordinates $\vx\to e^c\vx$, so
+$\Theta[c+\zeta_S]=\Theta[\zeta_S(e^{-c}\,\cdot)]$, whose $O(c^2)$ term is $\tfrac12c^2\mathcal D^2$ of the first-order map.
+\emph{Numerical verification on the full assembled $\kappa$} (including normalisation; $k=1$, $\eta_*=2$, $\eta_o=8$; SQ-3):
+\begin{center}\footnotesize
+\begin{tabular}{r|rrrr}
+\hline
+& $\ell=1$ & $\ell=2$ & $\ell=3$ & $\ell=4$\\ \hline
+$q=0.100$ & $25.523$ & $-15.785$ & $-10.342$ & $-0.218$\\
+$q=0.050$ & $25.685$ & $-16.210$ & $-10.255$ & $0.197$\\
+$q=0.025$ & $25.732$ & $-16.322$ & $-10.240$ & $0.301$\\ \hline
+$3\mathcal D^2\Delta_\ell$ & $25.748$ & $-16.360$ & $-10.235$ & $0.335$\\ \hline
+\end{tabular}
+\end{center}
+The deviations decrease by a factor $4.0$ per halving of $q$ ($\ell=2$: $0.575$, $0.151$, $0.038$; $\ell=4$: $0.553$, $0.138$, $0.034$), i.e.\ as $q^2$.
+
+\paragraph{Combined infrared behaviour.}  Let $q_*$ separate soft from hard momenta, $\sigma_L^2=\int_{q<q_*}\frac{\dd^3q}{(2\pi)^3}P(q)$.  By
+\eqref{eq:asm-squeezed3} the soft region of $\tfrac13\Re C^{(13)}_\ell$ is $\sigma_L^2\frac2\pi\int k^2\dd k\,P\,\Delta_\ell\,\mathcal D^2\Delta_\ell$; adding the
+soft region \eqref{eq:asm-IR22} of $\tfrac14C^{(22)}_\ell$ and using $(\mathcal D\Delta)^2+\Delta\mathcal D^2\Delta=\tfrac12\mathcal D^2(\Delta^2)$ and two
+integrations by parts in $\ln k$,
+\begin{equation}
+\Big[\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell\Big]_{\rm soft}
+=\sigma_L^2\,\frac2\pi\int\!\dd\ln k\;\tfrac12\,\Delta_\ell(k)^2\,\frac{\dd^2}{\dd(\ln k)^2}\big(k^3P(k)\big)+O(q_*^2\sigma_L^2),
+\label{eq:asm-IRtot}
+\end{equation}
+provided the boundary terms $\Delta_\ell^2\,k^3P$, $\Delta_\ell\Delta_\ell'k^4P$ vanish at $k\to0$ and $k\to\infty$ (true for $\ell\ge2$ and the power laws
+below: $\Delta_\ell=O(k^\ell)$ at small $k$ and $O(k^{-1})$ at large $k$).  Each half separately is $\propto\sigma_L^2$ with a coefficient of
+definite sign; the sum is a total second derivative of $k^3P$.  For a power law $P\propto k^{n_s-4}$, $\dd^2_{\ln k}(k^3P)=(n_s-1)^2k^3P$ and
+\begin{equation}
+\Big[\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell\Big]_{\rm soft}=\tfrac12(n_s-1)^2\,\sigma_L^2\,C^{(11)}_\ell+O(q_*^2\sigma_L^2),\qquad
+\sigma_L^2\propto\int_0^{q_*}\!\dd q\,q^{n_s-2}.
+\label{eq:asm-IRns}
+\end{equation}
+Hence: for $n_s=1$ the coefficient of the (logarithmically divergent) $\sigma_L^2$ vanishes identically and the loop is IR finite; for
+$n_s>1$, $\sigma_L^2$ converges and the loop is IR finite; for $n_s<1$, $\sigma_L^2$ diverges as $q_{\min}^{n_s-1}$ and the one-loop spectrum has
+a genuine IR sensitivity $\tfrac12(n_s-1)^2\sigma_L^2C^{(11)}_\ell$ (the response to a long-wavelength dilation of a spectrum that is not scale
+invariant).  The $O(q^2)$ remainder converges at $q\to0$ for $n_s>-1$.  The monochromatic spectrum has no soft region.  The formula
+\eqref{eq:asm-IRtot} is derived; it has not been tested numerically for a tilted spectrum.
+
+\paragraph{Ultraviolet behaviour (numerical only).}  At fixed $k=1$ ($\eta_*=2$, $\eta_o=8$) the $\qhat$-averaged integrand
+$\Delta^{\tilde\kappa}_\ell(k,q)$ is
+\begin{center}\footnotesize
+\begin{tabular}{r|rrrrr}
+\hline
+$\ell$ & $q\to0$ & $q=1$ & $q=2$ & $q=3$ & $q=4$\\ \hline
+2 & $-16.36$ & $-4.68$ & $2.04$ & $5.96$ & $11.00$\\
+3 & $-10.24$ & $-25.17$ & $-5.49$ & $-7.06$ & $-0.50$\\
+4 & $0.34$ & $-18.33$ & $-6.92$ & $-15.64$ & $-0.08$\\ \hline
+\end{tabular}
+\end{center}
+($q\to0$: the squeezed value $3\mathcal D^2\Delta_\ell$; the $\qhat$ quadrature needs $\gtrsim2q\chi_*+8$ azimuthal nodes).  It stays $O(10)$ and
+oscillatory in $q$ up to $q=4k$, although individual channels (lensing, time delay, clock, normalisation) are each $O(10)$ and cancel.
+Power counting supports $O(q^0)$: inside the horizon the potentials decay, $T_\Phi\sim(q\eta)^{-2}$, but $\delta_T$ and $v$ stay $O(1)$ (no
+damping in a perfect fluid); the same-point variance of the local terms is removed by the monopole normalisation at leading order.  \emph{If}
+$\tilde\kappa=O(q^0)$ as $q\to\infty$, the $q$ integral $\int\dd q\,q^2P(q)\tilde\kappa$ converges in the UV for $n_s<1$ and is logarithmically
+divergent for $n_s=1$, like $\langle\zeta^2\rangle$ itself; a physical UV cut-off (diffusion damping, absent in the perfect fluid) is then needed.
+No analytic large-$q$ expansion of $K_{3c}$ has been made; the UV statement is unresolved (Sec.~\ref{sec:unresolved}).
