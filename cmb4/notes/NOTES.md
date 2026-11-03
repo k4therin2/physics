@@ -123,3 +123,4 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   TRIAD: A3 uses shear form + canonical GLOBAL (rigid) triad; Theta2 is triad-independent (first-order direction map has no rotation
   for scalar perturbations; O(eps^2) direction corrections enter S only at O(eps^3)); a rigid O(eps^2) rotation drops out of Re C13
   identically (a*(-i L a) imaginary) -> combination consistent. Not done: eta_o=4 for C13; closed-form Delta^kappa_l; UV proof.
+- [11-03] W3 DONE (revision per R1: reorder, roadmap, intro, eta_i restored, app_closedforms from C4, full L3 appendix, FW lemma; 85 pp). Launched W2c (third-order sections, unresolved, roadmap fill) and V6 (analytic collinear residue cancellation). In flight: W2c, V4, V5, V6, (C4 finishing). Blocked: R2 final cold read, final user summary.

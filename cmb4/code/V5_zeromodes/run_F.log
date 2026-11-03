@@ -1,3 +1,19 @@
 
 ================ generator: quadratic (tidal) mode: eta_old = eta + f(eta) x.C.x, x_old = x + g(eta) C x ================
   eta_old = eps*s*(eta**2*f2 + eta*f1)*(x*(C11*x + C12*y + C13*z) + y*(C12*x + C22*y + C23*z) + z*(C13*x + C23*y + z*(-C11 - C22))) + eta ;  x_old = [C11*eps*s*x*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + C12*eps*s*y*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + C13*eps*s*z*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + x, C12*eps*s*x*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + C22*eps*s*y*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + C23*eps*s*z*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + y, C13*eps*s*x*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + C23*eps*s*y*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + eps*s*z*(-C11 - C22)*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + z]
+  induced first-order zero-mode fields (coefficient of s):
+     Psi1   = (3*eta*f2 + 2*f1)*(C11*x**2 - C11*z**2 + 2*C12*x*y + 2*C13*x*z + C22*y**2 - C22*z**2 + 2*C23*y*z)
+     Phi1   = -(eta*f2 + f1)*(C11*x**2 - C11*z**2 + 2*C12*x*y + 2*C13*x*z + C22*y**2 - C22*z**2 + 2*C23*y*z)
+     dT1    = -(eta*f2 + f1)*(C11*x**2 - C11*z**2 + 2*C12*x*y + 2*C13*x*z + C22*y**2 - C22*z**2 + 2*C23*y*z)
+     v_1_1  = -(C11*x + C12*y + C13*z)*(3*eta**2*g3 + 2*eta*g2 + g1)
+     om_1_1 = -(C11*x + C12*y + C13*z)*(2*eta**2*f2 - 3*eta**2*g3 + 2*eta*f1 - 2*eta*g2 - g1)
+     h_11_1 = 2*C11*(eta**3*g3 + eta**2*g2 + eta*g1 + g0)
+     h_12_1 = 2*C12*(eta**3*g3 + eta**2*g2 + eta*g1 + g0)
+     h_13_1 = 2*C13*(eta**3*g3 + eta**2*g2 + eta*g1 + g0)
+     v_2_1  = -(C12*x + C22*y + C23*z)*(3*eta**2*g3 + 2*eta*g2 + g1)
+     om_2_1 = -(C12*x + C22*y + C23*z)*(2*eta**2*f2 - 3*eta**2*g3 + 2*eta*f1 - 2*eta*g2 - g1)
+     h_22_1 = 2*C22*(eta**3*g3 + eta**2*g2 + eta*g1 + g0)
+     h_23_1 = 2*C23*(eta**3*g3 + eta**2*g2 + eta*g1 + g0)
+     v_3_1  = -(3*eta**2*g3 + 2*eta*g2 + g1)*(-C11*z + C13*x - C22*z + C23*y)
+     om_3_1 = -(-C11*z + C13*x - C22*z + C23*y)*(2*eta**2*f2 - 3*eta**2*g3 + 2*eta*f1 - 2*eta*g2 - g1)
+  Poisson conditions on zero mode: div omega = 0 ; div h = [0, 0, 0]

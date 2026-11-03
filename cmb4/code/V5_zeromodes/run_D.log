@@ -28,3 +28,16 @@
      Phi1   = -a1 - a2*eta - a3*eta**2
      dT1    = -a1 - a2*eta - a3*eta**2
   Poisson conditions on zero mode: div omega = 0 ; div h = [0, 0, 0]
+  observer event (new coords): {'deta_o1': -a1*eta_o_bar*s - a2*eta_o_bar**2*s - a3*eta_o_bar**3*s + deta_o1, 'deta_o2': -2*a1*deta_o1*s - 4*a2*deta_o1*eta_o_bar*s - 6*a3*deta_o1*eta_o_bar**2*s + deta_o2}
+  zero-mode parts of ray functionals: K = [-n1*(a1 + 2*a2*eta + 3*a3*eta**2), -n2*(a1 + 2*a2*eta + 3*a3*eta**2), -n3*(a1 + 2*a2*eta + 3*a3*eta**2)] 
+      D = [-eta*n1*(a1 + a2*eta + a3*eta**2), -eta*n2*(a1 + a2*eta + a3*eta**2), -eta*n3*(a1 + a2*eta + a3*eta**2)]
+  Delta L1 [ray] = 0
+  Delta L1 [obs] = 0
+  Delta L1 [emi] = 0
+  [general time reparametrization eta_old = eta + F(eta), F = a1 eta + a2 eta^2 + a3 eta^3] fit of  R_ray = rot(omega) + D W : [{omega1: 0, omega2: 0, omega3: 0, w0: 1}]
+  rotation vector omega = [0, 0, 0] ; W = (66 terms)
+  boundary  obs + W(obs) = 0 ;  emi - W(emi) = 0
+  VERDICT [general time reparametrization eta_old = eta + F(eta), F = a1 eta + a2 eta^2 + a3 eta^3]: Delta Theta2 = pure rotation of Theta1 (+ monopole): True
+  (150s)
+
+SUMMARY: {'time-dependent translation c(eta) = c1 eta + c2 eta^2 (c(0)=0: label kept)': True, 'general time reparametrization eta_old = eta + F(eta), F = a1 eta + a2 eta^2 + a3 eta^3': True}

@@ -70,7 +70,7 @@ def rot_n(e, where, om):
     lev = {'ray': eta_o - eta, 'emi': eta_o - eta_s, 'obs': 0}[where]
     return sp.expand(sum(dn[i]*(sp.diff(e, n[i]) + lev*sp.diff(e, COORD[i])) for i in range(3)))
 
-def run(name, E, Xs, W_ansatz=None, verbose=True, naive=False):
+def run(name, E, Xs, W_ansatz=None, verbose=True, naive=False, Kextra=None):
     print('\n================ generator:', name, '================'); print('  eta_old =', E, ';  x_old =', Xs)
     new = gauge.transform(E, Xs)
     sub = gauge.substitution(new, s)
@@ -99,6 +99,8 @@ def run(name, E, Xs, W_ansatz=None, verbose=True, naive=False):
         kin = full_eval(ray.k1_init[i].xreplace(zm).doit(), 'obs')
         G1z = full_eval(ray.G1[i].xreplace(zm).doit(), 'ray')
         K.append(sp.expand(kin - sp.integrate(G1z.subs(eta, etap), (etap, eta, eta_o))))   # k1(eta) = k1_init - int_eta^eta_o G1 (A1/A3 sign fix of C2 doc)
+    if Kextra is not None:   # sensitivity test only: add a kinematically consistent spurious ray displacement
+        K = [sp.expand(K[i] + Kextra[i]) for i in range(3)]
     for i in range(3):
         Dd.append(sp.expand(oev[dxo1[i]].coeff(s, 1) + n[i]*oev[deta_o1].coeff(s, 1) - sp.integrate(K[i].subs(eta, etap), (etap, eta, eta_o))))
     if verbose: print('  zero-mode parts of ray functionals: K =', [sp.factor(unit_rules(k_)) for k_ in K], '\n      D =', [sp.factor(unit_rules(d_)) for d_ in Dd])

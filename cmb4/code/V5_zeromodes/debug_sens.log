@@ -1,0 +1,36 @@
+
+================ generator: translation + spurious K = lam (eta_o - eta) ================
+  eta_old = eta ;  x_old = [eps*s*(c1_1*eta + c2_1*eta**2) + x, eps*s*(c1_2*eta + c2_2*eta**2) + y, eps*s*(c1_3*eta + c2_3*eta**2) + z]
+  induced first-order zero-mode fields (coefficient of s):
+     v_1_1  = -c1_1 - 2*c2_1*eta
+     om_1_1 = c1_1 + 2*c2_1*eta
+     v_2_1  = -c1_2 - 2*c2_2*eta
+     om_2_1 = c1_2 + 2*c2_2*eta
+     v_3_1  = -c1_3 - 2*c2_3*eta
+     om_3_1 = c1_3 + 2*c2_3*eta
+  Poisson conditions on zero mode: div omega = 0 ; div h = [0, 0, 0]
+  Delta L1 [ray] = 0
+  Delta L1 [obs] = 0
+  Delta L1 [emi] = 0
+  [spurious-linear] fit of  R_ray = rot(omega) + D W : [{omega1: 0, omega2: 0, omega3: 0}]
+  rotation vector omega = [0, 0, 0] ; W = 0
+  boundary  obs + W(obs) = 0 ;  emi - W(emi) = 0
+  VERDICT [spurious-linear]: Delta Theta2 = pure rotation of Theta1 (+ monopole): True
+
+================ generator: translation + spurious K = lam (const) ================
+  eta_old = eta ;  x_old = [eps*s*(c1_1*eta + c2_1*eta**2) + x, eps*s*(c1_2*eta + c2_2*eta**2) + y, eps*s*(c1_3*eta + c2_3*eta**2) + z]
+  induced first-order zero-mode fields (coefficient of s):
+     v_1_1  = -c1_1 - 2*c2_1*eta
+     om_1_1 = c1_1 + 2*c2_1*eta
+     v_2_1  = -c1_2 - 2*c2_2*eta
+     om_2_1 = c1_2 + 2*c2_2*eta
+     v_3_1  = -c1_3 - 2*c2_3*eta
+     om_3_1 = c1_3 + 2*c2_3*eta
+  Poisson conditions on zero mode: div omega = 0 ; div h = [0, 0, 0]
+  Delta L1 [ray] = 0
+  Delta L1 [obs] = 0
+  Delta L1 [emi] = 0
+  [spurious-const] fit of  R_ray = rot(omega) + D W : [{omega1: 0, omega2: 0, omega3: 0}]
+  rotation vector omega = [0, 0, 0] ; W = 0
+  boundary  obs + W(obs) = 0 ;  emi - W(emi) = 0
+  VERDICT [spurious-const]: Delta Theta2 = pure rotation of Theta1 (+ monopole): True
