@@ -55,3 +55,18 @@ which the full observable does not see (consistency relation for a long second-o
 integrable anyway.  Hence the monochromatic C^(13) is finite and the mu-integral needs no regularisation; plain Gauss-Legendre.
 sqrt3 resonances (|k-+q| = 2k0/sqrt3, mu = +-1/3): at finite eta all Green's integrals are entire in the frequencies
 (cf. C4: Cin, Si entire), so the integrand is analytic there; nothing to do at finite eta_o.
+
+## Milestone 4 — IR (two long modes, q -> 0)  (DONE numerically; `ir.py`, ir.log)
+Brief's criterion "O(q^2 P(q))" is superseded (lead/A2): a constant zeta = c is the same universe in coordinates x -> e^c x,
+so Th[c + zeta_s] = Th[zeta_s](e^c x) and, with Th3 = int zeta^3 K3, K3(0,0,k;n) = (k.d_k)^2 K1(k;n); the qhat-averaged
+q-integrand kappa~(q) := 3 K3sym(k,q,-q) averaged = (1/2)<coef_abc>_qhat therefore tends to 3 (k d_k)^2 K1, i.e.
+Delta^kappa~_l(k; q -> 0) = 3 (k d/dk)^2 Delta_l(k)   (O(q) gradient/SCT terms are odd in qhat and average out).
+Numbers (k = 1, eta_* = 2, eta_o = 8; prediction 3(k d/dk)^2 Delta_l, l=1..4 = 25.748, -16.360, -10.235, 0.335):
+  q = 0.10: 25.523, -15.785, -10.342, -0.218 ;   q = 0.05: 25.685, -16.210, -10.255, 0.197
+  deviations shrink by 4.0 (l=2: 0.575 -> 0.151; l=4: 0.553 -> 0.138): kappa~(q) = 3(k d_k)^2 K1 + O(q^2).  PASS.
+Consequence: IR piece of 1/3 Re C13 = sigma^2_IR (2/pi) int k^2 dk P Delta_l (k d_k)^2 Delta_l, which with A2's (22) piece
+sigma^2_IR (2/pi) int k^2 P (k d_k Delta_l)^2 forms (2/pi) int dlnk (k^3 P) (1/2)(d_lnk)^2 Delta_l^2 = (1/2)(2/pi) int dlnk Delta_l^2 d^2_lnk(k^3P)
+(integration by parts), sigma^2_IR = int_IR d^3q/(2pi)^3 P(q).  For P ~ k^{n_s-4}: sigma^2_IR ~ int dq q^{n_s-2} diverges at q -> 0
+for n_s <= 1, but its coefficient is ~ (n_s-1)^2 x (finite): exactly zero for n_s = 1; for n_s != 1 the total is IR-finite only
+for n_s > 1 (n_s < 1: log/power IR sensitivity proportional to (n_s-1)^2, the usual dilation-induced IR sensitivity of a
+non-scale-invariant spectrum).  O(q^2) remainder: int dq q^{n_s} -> converges for n_s > -1.  Monochromatic spectrum: no IR issue.
