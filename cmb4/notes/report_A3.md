@@ -84,7 +84,8 @@ RESULTS: (1) C1's K3c sources with shifted tadpoles, solved with the same Green'
 amplitude dC3 = dPhi3(0)), reproduce dPhi3c, dPsi3c, dV3c to 1e-13: C1's tadpole bookkeeping is exactly gauge covariant.
 (2) Full assembled kappa (all tadpole routes incl. normalisation) for tau = 0.1 eta: unchanged to 6e-14 (scale 4e2) while
 individual channels change by O(1-4) (time delay 2nd 3.6, clock 2nd 2.3, channel iii 1.35, local 2+1 1.18, radial k2 1.18,
-emission 2nd 0.15).  tau ~ eta^3 (time-dependent gauge): see gauge_cub.log.  The tadpole part of 3L1L2 cancels identically
-against -3<m2>m1 (algebraically: both are <m2>_tad x m1(k) with opposite sign once <L2>_tad = <m2>_tad - <L1^2> ...), so
-"tadpole coefficients vanish after normalisation" holds in the precise sense: the gauge-dependent tadpole content cancels
-identically; the remaining tadpole dependence is gauge-invariant backreaction and is kept.
+emission 2nd 0.15).  tau ~ eta^3 (time-dependent gauge): see gauge_cub.log.
+Note: in the shear form L2 contains NO tadpole field (the shear of a homogeneous perturbation vanishes), so 3 L1 L2 and
+-3<m2>m1 involve the (q,-q) pair only through products of first-order objects (variance terms, channel i); the tadpole fields
+act only at third order (routes listed above).  So check (a) holds in the precise sense: the gauge-dependent tadpole content
+cancels identically among those routes; the remaining (gauge-invariant) tadpole dependence is physical backreaction and is kept.
