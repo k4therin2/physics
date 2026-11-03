@@ -1,8 +1,9 @@
 \section{Verification ledger}
 \label{app:ledger}
+\begingroup\sloppy
 Every check performed on the settled material, with its outcome.  ``Exact'' means symbolic identity (sympy);
 numbers are maximal relative or absolute deviations.  Code locations: V1 \code{code/V1\_referee/}, C1 \code{code/C1\_einstein/},
-C2 \code{code/C2\_observable/}, C3 \code{code/C3\_harmonic/} (\code{run\_all\_tests.py}, log \code{test\_log.txt}), N1 \code{code/N1\_planar/}.
+C2 \code{code/C2\_observable/}, C3 \code{code/C3\_harmonic/} (\code{run\_all\_tests.py}, log \code{test\_log.txt}), N1 \code{code/N1\_planar/}, A1 \code{code/A1\_planewave/}, V3 \code{code/V3\_referee/}, C4 \code{code/C4\_timeintegrals/}, C5 \code{code/C5\_linear\_Cl/}.\par\endgroup
 
 \subsection*{Exact observable (referee V1; Sec.~\ref{sec:observable})}
 \begin{itemize}\itemsep1pt
@@ -16,7 +17,7 @@ C2 \code{code/C2\_observable/}, C3 \code{code/C3\_harmonic/} (\code{run\_all\_te
 \item[V1-6] Tetrad rotation $R=\exp(\eps A)$ at $\ell=2$ (exact spin-2 generators): $\sum_m|a_{\ell m}|^2$ invariant through $O(\eps^4)$ and $a^{(1)}$ invariant; $a^{(2)}\to a^{(2)}+2Aa^{(1)}$; $C^{(22)}$ and $\Re C^{(13)}$ separately \emph{not} invariant ($\sum|a_2|^2$: $321/25$ vs $329107/1225-8798\sqrt6/1225$) while $\tfrac14C^{(22)}+\tfrac13\Re C^{(13)}$ is ($107/60$ both).  Dipole power invariant.
 \end{itemize}
 
-\subsection*{Exact observable, independent route (agent C2, milestone 1; Sec.~\ref{sec:linearS})}
+\subsection*{Exact observable and line-of-sight functionals (agent C2; Secs.~\ref{sec:linearS}, \ref{sec:map2}--\ref{sec:map3})}
 \begin{itemize}\itemsep1pt
 \item[C2-1] Kinematic identity $p^ap^b\nabla_au_b=\sigma_{pp}+\theta(p\cdot p+E^2)/3+Ea\cdot p$ for a generic (non-null) $p$, no equations of motion: zero at orders 1, 2, 3.
 \item[C2-2] Radiation identities \eqref{eq:lemma2} from $\hat\nabla_\mu\hat T^{\mu\nu}=0$ alone (solved order by order for $\partial_\eta\delta_{T,n}$, $\partial_\eta v_n$): zero at orders 1, 2, 3.
@@ -24,6 +25,11 @@ C2 \code{code/C2\_observable/}, C3 \code{code/C3\_harmonic/} (\code{run\_all\_te
 \item[C2-4] $-I_1=-D[\delta_{T,1}+\Psi_1-\nhat\cdot v_1]+\Phi_1'+\Psi_1'$ with $I_1=\sigma_{1,kk}$: exact (SPEC check (a)).
 \item[C2-5] Canonical triad (Gram--Schmidt w.r.t.\ $\hat g$, orthogonal to $\hat u$): $\hat g(e_a,e_b)=\delta_{ab}$, $\hat g(e_a,\hat u)=0$ through order 3.
 \item[C2-6] Direction map \eqref{eq:dirmap}: $k^\mu(\eta_o)$ null through order 3 (with $|\nhat|=1$); first-order geodesic right-hand side $G_1^i=-\partial_i(\Phi+\Psi)+2n^i\,\nhat\cdot\nabla(\Phi+\Psi)-n^i(\Phi'+\Psi')$ consistent with the null condition $\nhat\cdot k_1=-(\Phi+\Psi)$.
+\item[C2-7] Line-of-sight machinery (Sec.~\ref{sec:expansion}): (T1) for the boundary function $B=\ln(-\hat u\cdot k)-\ln\hat T$, the endpoint-shifted $[B]^o_e$ equals the ray integral of its total derivative plus the endpoint corrections, identically, orders 1--3; (T2) $\Lambda^{\rm dir}-\Lambda^{\rm shear}$ of the assembled, background-ray-expanded lists vanishes piece by piece (ray/obs/emi) at orders 1, 2, 3 modulo the conservation equations and their derivatives (112/802 ray terms before reduction at orders 2/3); (T3) exact lower-index identity $-\hat\Gamma^0_{kk}=-\tfrac12\partial_\eta\hat g_{kk}/(1+2\Psi-\omega\cdot k)-D\ln(1+2\Psi-\omega\cdot k)$, orders 0--3: zero.  (A first version of T1--T3 failed through errors in the tests, not in the deliverable.)
+\item[C2-8] $m_n$ and $\Theta_n$ \eqref{eq:theta2}, \eqref{eq:theta3} from the exponential and ratio series, including the $\ell=0$ parts: exact.
+\item[C2-9] Dilation (Sec.~\ref{sec:check_dilation}): for the exact family with $\lambda=1+\eps a_1+\tfrac{\eps^2}2a_2$, $\mu=e^{\eps c}$ ($a_1=-c/3$, $a_2$ free), $\hat\sigma\equiv0$ through order 3, $\hat u^0=\lambda^{-2}$ reproduced; assembled $L_1,L_2,L_3$ zero in shear and direct forms with $\delta\eta_{e1}=c\eta_*/3$, $\delta\eta_{e2}=(-a_2+\tfrac29c^2)\eta_*$; clock $\eta_o=\bar\eta_o/\lambda$ through second order, $T_o=\bar T(\bar\eta_o)+O(\eps^3)$.  Caught a factor-2 slip in the stored $\delta\eta_{e2}$ (fixed).
+\item[C2-10] Literature: with Boubekeur et al.'s prescriptions ($\vv=0$, observer at the origin, emission at fixed coordinate time) the direct form agrees with their second-order Sachs--Wolfe result exactly at order 1 and in the obs/emi parts at order 2; the ray remainder $\int[\Delta\vx_1\cdot\nabla(\Phi_1'+\Psi_1')+2\Phi_1\Phi_1'-2\Psi_1\Psi_1']$ vanishes under their assumption $\Phi_1'=\Psi_1'=0$.
+\item[C2-11] Documentation slip (found by A1): the printed ray functionals $k_1$, $k_2$ have $+\int G$; correct is $-\int G$ (Remark~\ref{rem:signslip}).  The term lists are unaffected.
 \end{itemize}
 
 \subsection*{Einstein--fluid equations (agent C1; Secs.~\ref{sec:primordial}--\ref{sec:einstein})}
@@ -44,6 +50,40 @@ C2 \code{code/C2\_observable/}, C3 \code{code/C3\_harmonic/} (\code{run\_all\_te
 \item[C1-14] Squeezed limit $C_3(q\to0)=-32/9$ equals the prediction of the exact dilation family: pass.
 \end{itemize}
 
+\subsection*{Independent referee of the Einstein--fluid solution (referee V3; Sec.~\ref{sec:check_einstein})}
+Code \code{code/V3\_referee/}, logs in \code{logs/}; arbiter sympy exact or 30-digit numerics at random rational points.
+\begin{itemize}\itemsep1pt
+\item[V3-1] Separately coded engine for $E_{\mu\nu}=G-8\pi GT$ (plain sympy): term-by-term identical to C1's \code{E.pkl} for all ten components at orders 1, 2, 3 and for $u_\mu$.  Same method, independently coded.
+\item[V3-2] Linear solution, $\Psi_1=\Phi_1$, $V_1$, $\delta_1$, $\TP$, $\TP(0)=-\tfrac23$: all ten $E^{(1)}$ vanish.  Operator structure \eqref{eq:operators} at orders 2 and 3 from V3's own $E$ (TT and transversality imposed): exact.
+\item[V3-3] Second-order kernels $K_{S_{00}},K_{S_{0z}},K_Q,K_{S_\Phi},K_h$ from discrete plane waves vs C1's closed forms: $10^{-164}$; $K_h=4f_{\rm RD}$ of Kohri--Terada (20): relative difference $5\times10^{-29}$ at 6 points; Green's functions and regularity of $S^{(2)}_\Phi$ at $\eta\to0$.
+\item[V3-4] Pitrou--Uzan--Bernardeau (A.1)--(A.8) from the raw text: all scalar sources agree (15 digits) except the trace source (A.6), whose printed form is garbled; superhorizon $\Phi_2$ and $Q_2(0)$ vs PUB (3.12b,c): exact; $\zeta^{(2)}$, $\zeta^{(3)}$ expansions exact.
+\item[V3-5] Vector sector: V3's $0x$ constraint $+$ relativistic Kelvin give C1's $K_\omega$, $K_{v^T}$ ($10^{-164}$); the algebraic $\omega_2$ satisfies the $ij$-vector evolution equation and is its unique regular solution; Lu et al.\ (20) with $w=\tfrac13$: kernel identical (symbolic ratio 1).
+\item[V3-6] Third order: contraction rules confirmed by brute-force lattice Wick; contracted sources $K_{3c}$ identical to V3's $E^{(3)}$ on a three-mode realisation; $C_3$ re-derived fully independently (own $E^{(3)}$, small-$\eta$ series, tadpoles, $\zeta$ expansion) equals C1's (image-summed) to 30 digits at 3 points; squeezed limit $-\tfrac{32}9$ from the separate-universe argument.  Zero-mode convention: shifting $\langle\Phi_2\rangle$ by $+1$ shifts the image-summed $C_3$ by $+8$; shifting $\langle\Psi_2\rangle$ (with $\delta_2\to\delta_2-2$) changes nothing; $C_3$ is a convention-dependent intermediate.  Erratum (harmless): $\tfrac3{10}$ for $\tfrac1{10}$ in a small-$\eta$ helper of C1's \code{third\_order\_ic.py}.
+\item[V3-7] Dilation family \eqref{eq:dilation} solves V3's $E$ to $O(\eps^3)$ for arbitrary $A(\eps),B(\eps)$ and $G-8\pi GT=0$ non-perturbatively; $\zeta_{\rm nl}=\ln B$.
+\end{itemize}
+
+\subsection*{Closed-form second-order time integrals (agent C4)}
+Code \code{code/C4\_timeintegrals/}.
+\begin{itemize}\itemsep1pt
+\item[C4-1] $\mathcal K_h$ in closed form (Si and the entire function Cin; all $\epsilon$-singular pieces cancel symbolically): equal to $4/k^2$ times Kohri--Terada (22) [with $|\cdot|$ in the logarithm] at 12 points ($10^{-15}$; 25 digits with rational input), to 60-digit quadrature (25 digits), and the late-time limit equal to KT (25); exact resonant ($q+p=\sqrt3k$) form vs quadrature: 40 digits.
+\item[C4-2] Closed-form $\Phi_2$ vs 60-digit quadrature at 8 random points and the $\sqrt3$ point: $3.5\times10^{-40}$; collinear limiting forms: $2.5\times10^{-40}$; small-$\eta$ series vs Frobenius recursion and late-time asymptotics vs 80-digit evaluation: consistent.
+\item[C4-3] All second-order fields built from the closed forms inserted in C1's full second-order Einstein (10 components) and conservation (4) equations, three points: relative residual $5.5\times10^{-50}$.
+\end{itemize}
+
+\subsection*{First-order transfer function and \texorpdfstring{$C^{(11)}_\ell$}{C11} (agent C5; Sec.~\ref{sec:linear})}
+Code \code{code/C5\_linear\_Cl/} (\code{linear\_cl.py}, all tests pass).
+\begin{itemize}\itemsep1pt
+\item[C5-1] Transfer functions vs C1 and the first-order ODE, constraints, continuity: residual 0; Rayleigh rules in C2's convention by sphere quadrature ($\ell\le6$): $2.9\times10^{-14}$; observer monopole only in $\ell=0$, observer Doppler only in $\ell=1$.
+\item[C5-2] $C^{(11)}_\ell$ prefactor, observer and ISW terms by a real-space computation of $\xi(\nhat_1\cdot\nhat_2)$ at 5 angles: $6\times10^{-15}$.
+\item[C5-3] ISW closed form vs mpmath quadrature (5 parameter sets): $2\times10^{-18}$; residue formulas for the Ci/Si/Cin coefficients vs brute force: $<10^{-169}$; $\ln w$ coefficient zero symbolically; limits $k\eta_*\to0$ ($-\tfrac13j_\ell$, plateau $A_s/9$), $k\to\infty$ ($k=200,2000$), $k\to0$ ($\Delta_0=O(k^4)$, $\Delta_1=O(k^3)$).
+\item[C5-4] Sky monopole: kernel sky average $=M(k_0)$ ($5\times10^{-15}$), $|\langle\sky{m_1}a^*_{\ell m}\rangle|<10^{-14}$ ($\ell=1..3$), $\langle\sky{m_1}^2\rangle=C_0/4\pi$ ($4\times10^{-16}$).
+\end{itemize}
+
+\subsection*{Squeezed-limit predictions (agent V2)}
+\begin{itemize}\itemsep1pt
+\item[V2-1] Weinberg adiabatic mode in radiation-era Poisson gauge and the induced transformation of short-mode fields derived and checked with sympy (all checks pass); squeezed-limit predictions for $K_2$ produced (\code{code/V2\_squeezed/}); comparison with the assembled $K_2$ pending.
+\end{itemize}
+
 \subsection*{Harmonic machinery (agent C3; Sec.~\ref{sec:harmonic})}
 \begin{itemize}\itemsep1pt
 \item[C3-1] Rule (A-$s$), $s=0..3$; rule (A-$\lambda$), $\lambda=\pm1,\pm2$, in the $k$-frame and in a random frame (via $D$-matrices and spin-weighted harmonics): $10^{-14}$.
@@ -61,8 +101,23 @@ C2 \code{code/C2\_observable/}, C3 \code{code/C3\_harmonic/} (\code{run\_all\_te
 \subsection*{Non-perturbative arbiter (agent N1; planar symmetry)}
 \begin{itemize}\itemsep1pt
 \item[N1-1] Exact planar GR $+$ radiation solver (comoving-orthogonal gauge, lapse fixed algebraically by \eqref{eq:lemma2}: $\alpha=e^{-\zeta}(AB^2)^{1/3}$, $\Tphys=1/\alpha$), constraint violations $\sim10^{-13}$: Theorem~\ref{thm:exact} verified non-perturbatively, $T_{\rm obs}/T_o=e^{-S}$ to $7\times10^{-15}$ at $\eps=0.1$ ($\Theta_{\rm rms}=0.08$).
-\item[N1-2] Linear limit of the planar solver vs the Poisson-gauge transfer functions \eqref{eq:transfer} through a derived gauge transformation: pass.  Reference $a_{\ell0}[\Theta^{(1,2,3)}]$ for a single plane wave are stored for the assembly check (Sec.~\ref{sec:checks}).
+\item[N1-2] Linear limit of the planar solver vs the Poisson-gauge transfer functions \eqref{eq:transfer} through a derived gauge transformation: residuals $\propto\eps$ (genuine second-order corrections), $1.8\times10^{-8}$ in $\Phi$ at $\eps=10^{-4}$.
+\item[N1-3] Production: $\bar\eta_o/\eta_*=4,2$, $x_o=0,\pi/2$, 16 amplitudes $|\eps|\le0.1$ each; FRW limit $2\times10^{-16}$; constraints $\sim10^{-13}$; emission event $|\alpha_e-t_*|<3\times10^{-15}$; null condition $10^{-14}$; symmetries ($\zeta\to-\zeta$ $=$ half-period shift, parity) $5\times10^{-12}$; numerical floor of a single map $\sim10^{-11}$ (changes of resolution, tolerance, constraint damping, $t_i$, initial-data order); $\Theta^{(1,2,3)}$ extracted by even/odd fits with uncertainty $=$ spread between fit subsets (Table~\ref{tab:a1n1maps}).
+\end{itemize}
+
+\subsection*{End-to-end plane-wave test of the analytic chain (agent A1; Sec.~\ref{sec:check_endtoend})}
+Code \code{code/A1\_planewave/}.
+\begin{itemize}\itemsep1pt
+\item[A1-1] Plane-wave fields from C1's \code{E.pkl} reduced to $\zeta=\eps\cos x$ (closure asserted): ODE residuals $\le6\times10^{-23}$, small-$\eta$ series agreement $\le2\times10^{-23}$, C1's conservation equations at orders 2, 3: $10^{-27}$, $5\times10^{-21}$; amplitudes from $\zeta^{(2)}_{\rm nl}(0)=\zeta^{(3)}_{\rm nl}(0)=0$ ($C_{2,2}=-\tfrac13$ equals C1's $K^0_{\Phi_2}$ at $q=p=k_0$).
+\item[A1-2] Analytic chain (C1 fields, C2 lists, ray functionals, emission, clock, displacement, normalisation) vs N1, four configurations, orders 1--3: agreement within N1's uncertainty (Tables~\ref{tab:a1n1}, \ref{tab:a1n1maps}); $T_o$, $\sky{\Tobs}$ through $O(\eps^2)$ agree; own convergence: Chebyshev $N=48/64/96$ identical.
+\item[A1-3] Zero-mode convention changed ($\Psi_{2,0}=\Phi_{2,0}+c_g\eta$, $c_g=0\to1$): fields and $\delta\eta_{o2}$ change at $O(1)$, all $a_{\ell0}$, sky monopoles and $T_o$ unchanged to $\le2\times10^{-14}$.
+\item[A1-4] Shear vs direct form (assembled lists): $4\times10^{-10}$ ($L_2$), $9\times10^{-7}$ ($L_3$); with C2's printed $+\int G$ in $k_1,k_2$ the null condition fails by $2.3$ and the forms differ by $2.1$ ($L_2$), $38$ ($L_3$); with $-\int G$ null condition $10^{-15}$.
+\item[A1-5] Observer label: label at $\eta\to0$ reproduces N1; label at $\eta_{\rm init}$ (worldline integral from $\eta_{\rm init}$) shifts $\delta x_{o1}$ by $1.7\times10^{-5}$ and moves $\Theta^{(2)}$ $a_{20}$ by $7.3\times10^{-5}$, $\Theta^{(3)}$ $a_{10}$ by $7.3\times10^{-4}$ (beyond N1's uncertainty); irrelevant as $t_i\to0$ and for $C_\ell$.
+\item[A1-6] Fit-free test: $R(\eps)=\Theta_{\rm N1}(\eps)-[\eps\Theta^{(1)}+\tfrac{\eps^2}2\Theta^{(2)}+\tfrac{\eps^3}6\Theta^{(3)}]_{\rm A1}$ scales as $\eps^4$ for all 16 amplitudes ($\max|R|/\eps^4=11.6..14.5$).
+\item[A1-7] Bug in the crashed A1 run's own code (zero-mode weight 2 in $\delta\to\delta_T$ at $k=0$), detected by C2's conservation rules evaluated on the jets ($0.27\to3\times10^{-11}$) and by $T_o$ at $O(\eps^2)$; fixed.
 \end{itemize}
 
 \subsection*{Not yet checked / pending}
-Independent referee of the second- and third-order kernels (V3); dilation (constant-$\zeta$) and gradient-mode invariance of the assembled map (SPEC 9(d)); closed forms of $\mathcal K_{\Phi_2}$, $\mathcal K_h$ (C4); first-order $C^{(11)}_\ell$ closed form (C5); comparison of the assembled kernels with N1.
+Squeezed-limit (V2) and gradient-mode (Mirbabayi--Zaldarriaga) checks of the assembled $K_2$, $K_3$; non-axisymmetric and non-collinear
+kernel configurations, vector modes and realistic $\bar\eta_o/\eta_*$ end to end (Sec.~\ref{sec:check_gaps}); numerical tests of (E2), (E3),
+$T^{\rm(ii)}$; the loop integrals and the monochromatic evaluation (checks to be recorded with Secs.~\ref{sec:assembly}--\ref{sec:mono}).
