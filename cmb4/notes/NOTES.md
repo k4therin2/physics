@@ -102,3 +102,4 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   - (1/2)(p.k) nabla_k^2; agrees with A2's numerics. Third order: K_3(q,-q,k) = D^2 K_1 + O(q^2); K_{m+1}(0..0,k) = (-D)^m K_1.
   IR: [C22/4 + Re C13/3]_IR = sigma_L^2 (1/2) int |K_lm|^2 (3+D)^2 P -> total derivative, vanishes for P ∝ k^-3. "Gaussian zeta breaks
   Maldacena's consistency relation unless n_s = 1" (comment to include). A3 informed.
+- [11-03] W2a DONE (sec_map2, sec_map3, sec_checks, app_lterms, ledger). Lead fixed sec_observable: label at eta->0; ledger ref V1-6.
