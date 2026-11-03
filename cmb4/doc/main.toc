@@ -39,42 +39,51 @@
 \contentsline {subsection}{\numberline {5.7}The $(13)$ term}{18}{subsection.5.7}%
 \contentsline {subsection}{\numberline {5.8}Control case: lensed $C_\ell $}{19}{subsection.5.8}%
 \contentsline {subsection}{\numberline {5.9}Monochromatic reduction: definitions}{19}{subsection.5.9}%
-\contentsline {section}{\numberline {6}The second-order map $\Theta ^{(2)}$}{20}{section.6}%
-\contentsline {section}{\numberline {7}The third-order map $\Theta ^{(3)}$ in contracted form}{20}{section.7}%
-\contentsline {section}{\numberline {8}Assembly of $C_\ell $}{20}{section.8}%
-\contentsline {section}{\numberline {9}Checks of the assembled observable}{20}{section.9}%
-\contentsline {section}{\numberline {10}Monochromatic primordial spectrum}{20}{section.10}%
-\contentsline {section}{\numberline {11}Unresolved steps}{21}{section.11}%
-\contentsline {section}{\numberline {A}Explicit kernels (machine generated)}{21}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Second-order kernels}{21}{subsection.A.1}%
-\contentsline {paragraph}{$K_Q$ (traceless scalar, $Q_2=\Phi _2-\Psi _2$)}{21}{section*.17}%
-\contentsline {paragraph}{$K_{S_{00}}$ (source of the 00 constraint)}{21}{section*.18}%
-\contentsline {paragraph}{$K_{S_{0z}}$ (longitudinal $0i$ source, $S_0^L$)}{21}{section*.19}%
-\contentsline {paragraph}{$K_{S_\Phi }$ (source of $\mathcal L_\Phi \Phi _2=S_\Phi $)}{22}{section*.20}%
-\contentsline {paragraph}{$K_\omega $ (vector metric, $\omega _{2,i}=\int P_{ij}q_jK_\omega \zeta \zeta $)}{22}{section*.21}%
-\contentsline {paragraph}{$K_{v^T}$ (transverse velocity, $v^T_{2,i}=\int P_{ij}q_jK_{v^T}\zeta \zeta $)}{22}{section*.22}%
-\contentsline {paragraph}{$K_h$ (tensor source, $h_{2,ij}=\Lambda _{ij,kl}q_kq_l\int _0^\eta G_hK_h$)}{22}{section*.23}%
-\contentsline {paragraph}{$K^0_{\Phi _2}$ (initial amplitude of $\Phi _2$, Eq.~\eqref {eq:KPhi20})}{22}{section*.24}%
-\contentsline {paragraph}{$K_Q(\eta \rightarrow 0)$}{22}{section*.25}%
-\contentsline {paragraph}{kernel of the local quadratic part $-\genfrac {}{}{}\displaystyle 14\delta _1^2-2\Phi _1^2$ of $\zeta ^{(2)}$, Eq.~\eqref {eq:zeta2} ($\rightarrow -\genfrac {}{}{}\displaystyle 43$ as $\eta \rightarrow 0$)}{22}{section*.26}%
-\contentsline {paragraph}{Algebraic second-order scalars}{22}{section*.27}%
-\contentsline {subsection}{\numberline {A.2}Homogeneous solutions and Green's functions}{23}{subsection.A.2}%
-\contentsline {paragraph}{$u_1$}{23}{section*.28}%
-\contentsline {paragraph}{$u_2$}{23}{section*.29}%
-\contentsline {paragraph}{$\hat g=3u_1$}{23}{section*.30}%
-\contentsline {paragraph}{$G_\Phi (k;\eta ,\eta ')$}{23}{section*.31}%
-\contentsline {paragraph}{$G_h(k;\eta ,\eta ')$}{23}{section*.32}%
-\contentsline {paragraph}{$G_\omega (\eta ,\eta ')$ (for the ODE form of the vector equation)}{23}{section*.33}%
-\contentsline {subsection}{\numberline {A.3}Third-order initial amplitude and intermediate limits}{23}{subsection.A.3}%
-\contentsline {paragraph}{$C_3(k;q,\mu )$, Eq.~\eqref {eq:C3}}{23}{section*.34}%
-\contentsline {paragraph}{$C_3$ in invariant form $(k,q,p)$}{23}{section*.35}%
-\contentsline {paragraph}{$Q_{3c}(\eta \rightarrow 0)$}{24}{section*.36}%
-\contentsline {paragraph}{$\lim _{\eta \rightarrow 0}\eta ^2K_{3c,S_{00}}$}{24}{section*.37}%
-\contentsline {subsection}{\numberline {A.4}Tadpole (mean-field) functions}{24}{subsection.A.4}%
-\contentsline {paragraph}{$\mathrm {tad}_{Q_2}$ [$-\genfrac {}{}{}\displaystyle {16}9+\genfrac {}{}{}\displaystyle {88}{405}q^2\eta ^2+\ldots $]}{24}{section*.38}%
-\contentsline {paragraph}{$\mathrm {tad}_{S_{00}}$ [$\genfrac {}{}{}\displaystyle {32}{3\eta ^2}-\genfrac {}{}{}\displaystyle {272}{45}q^2+\ldots $]}{24}{section*.39}%
-\contentsline {paragraph}{$\mathrm {tad}_{S_\Phi }$ [$-\genfrac {}{}{}\displaystyle {56}{81}q^2+\ldots $]}{24}{section*.40}%
-\contentsline {paragraph}{$\mathrm {tad}_{\Phi _2}$ [$-\genfrac {}{}{}\displaystyle 89-\genfrac {}{}{}\displaystyle {28}{405}q^2\eta ^2+\ldots $]}{24}{section*.41}%
-\contentsline {paragraph}{$\mathrm {tad}_{\delta _2}$ [$\genfrac {}{}{}\displaystyle {16}9-\genfrac {}{}{}\displaystyle {472}{405}q^2\eta ^2+\ldots $]}{24}{section*.42}%
-\contentsline {subsection}{\numberline {A.5}Not reproduced here}{25}{subsection.A.5}%
-\contentsline {section}{\numberline {B}Verification ledger}{25}{appendix.B}%
+\contentsline {section}{\numberline {6}First order: transfer function $\Delta _\ell (k)$ and $C_\ell ^{(11)}$}{20}{section.6}%
+\contentsline {paragraph}{Conventions.}{20}{section*.17}%
+\contentsline {paragraph}{Rayleigh rules.}{20}{section*.18}%
+\contentsline {paragraph}{Closed form of the ISW integral.}{20}{section*.19}%
+\contentsline {paragraph}{Monochromatic spectrum.}{21}{section*.20}%
+\contentsline {paragraph}{Limit $k_0\eta _*\rightarrow 0$ (Sachs--Wolfe).}{22}{section*.21}%
+\contentsline {paragraph}{Limit $k_0\rightarrow \infty $.}{22}{section*.22}%
+\contentsline {paragraph}{Small $k$ (gauge modes).}{22}{section*.23}%
+\contentsline {paragraph}{Sky monopole.}{23}{section*.24}%
+\contentsline {section}{\numberline {7}The second-order map $\Theta ^{(2)}$}{23}{section.7}%
+\contentsline {section}{\numberline {8}The third-order map $\Theta ^{(3)}$ in contracted form}{23}{section.8}%
+\contentsline {section}{\numberline {9}Assembly of $C_\ell $}{23}{section.9}%
+\contentsline {section}{\numberline {10}Checks of the assembled observable}{23}{section.10}%
+\contentsline {section}{\numberline {11}Monochromatic primordial spectrum}{24}{section.11}%
+\contentsline {section}{\numberline {12}Unresolved steps}{24}{section.12}%
+\contentsline {section}{\numberline {A}Explicit kernels (machine generated)}{24}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Second-order kernels}{24}{subsection.A.1}%
+\contentsline {paragraph}{$K_Q$ (traceless scalar, $Q_2=\Phi _2-\Psi _2$)}{24}{section*.25}%
+\contentsline {paragraph}{$K_{S_{00}}$ (source of the 00 constraint)}{24}{section*.26}%
+\contentsline {paragraph}{$K_{S_{0z}}$ (longitudinal $0i$ source, $S_0^L$)}{25}{section*.27}%
+\contentsline {paragraph}{$K_{S_\Phi }$ (source of $\mathcal L_\Phi \Phi _2=S_\Phi $)}{25}{section*.28}%
+\contentsline {paragraph}{$K_\omega $ (vector metric, $\omega _{2,i}=\int P_{ij}q_jK_\omega \zeta \zeta $)}{25}{section*.29}%
+\contentsline {paragraph}{$K_{v^T}$ (transverse velocity, $v^T_{2,i}=\int P_{ij}q_jK_{v^T}\zeta \zeta $)}{25}{section*.30}%
+\contentsline {paragraph}{$K_h$ (tensor source, $h_{2,ij}=\Lambda _{ij,kl}q_kq_l\int _0^\eta G_hK_h$)}{25}{section*.31}%
+\contentsline {paragraph}{$K^0_{\Phi _2}$ (initial amplitude of $\Phi _2$, Eq.~\eqref {eq:KPhi20})}{25}{section*.32}%
+\contentsline {paragraph}{$K_Q(\eta \rightarrow 0)$}{25}{section*.33}%
+\contentsline {paragraph}{kernel of the local quadratic part $-\genfrac {}{}{}\displaystyle 14\delta _1^2-2\Phi _1^2$ of $\zeta ^{(2)}$, Eq.~\eqref {eq:zeta2} ($\rightarrow -\genfrac {}{}{}\displaystyle 43$ as $\eta \rightarrow 0$)}{25}{section*.34}%
+\contentsline {paragraph}{Algebraic second-order scalars}{26}{section*.35}%
+\contentsline {subsection}{\numberline {A.2}Homogeneous solutions and Green's functions}{26}{subsection.A.2}%
+\contentsline {paragraph}{$u_1$}{26}{section*.36}%
+\contentsline {paragraph}{$u_2$}{26}{section*.37}%
+\contentsline {paragraph}{$\hat g=3u_1$}{26}{section*.38}%
+\contentsline {paragraph}{$G_\Phi (k;\eta ,\eta ')$}{26}{section*.39}%
+\contentsline {paragraph}{$G_h(k;\eta ,\eta ')$}{26}{section*.40}%
+\contentsline {paragraph}{$G_\omega (\eta ,\eta ')$ (for the ODE form of the vector equation)}{26}{section*.41}%
+\contentsline {subsection}{\numberline {A.3}Third-order initial amplitude and intermediate limits}{26}{subsection.A.3}%
+\contentsline {paragraph}{$C_3(k;q,\mu )$, Eq.~\eqref {eq:C3}}{26}{section*.42}%
+\contentsline {paragraph}{$C_3$ in invariant form $(k,q,p)$}{27}{section*.43}%
+\contentsline {paragraph}{$Q_{3c}(\eta \rightarrow 0)$}{27}{section*.44}%
+\contentsline {paragraph}{$\lim _{\eta \rightarrow 0}\eta ^2K_{3c,S_{00}}$}{27}{section*.45}%
+\contentsline {subsection}{\numberline {A.4}Tadpole (mean-field) functions}{27}{subsection.A.4}%
+\contentsline {paragraph}{$\mathrm {tad}_{Q_2}$ [$-\genfrac {}{}{}\displaystyle {16}9+\genfrac {}{}{}\displaystyle {88}{405}q^2\eta ^2+\ldots $]}{27}{section*.46}%
+\contentsline {paragraph}{$\mathrm {tad}_{S_{00}}$ [$\genfrac {}{}{}\displaystyle {32}{3\eta ^2}-\genfrac {}{}{}\displaystyle {272}{45}q^2+\ldots $]}{27}{section*.47}%
+\contentsline {paragraph}{$\mathrm {tad}_{S_\Phi }$ [$-\genfrac {}{}{}\displaystyle {56}{81}q^2+\ldots $]}{27}{section*.48}%
+\contentsline {paragraph}{$\mathrm {tad}_{\Phi _2}$ [$-\genfrac {}{}{}\displaystyle 89-\genfrac {}{}{}\displaystyle {28}{405}q^2\eta ^2+\ldots $]}{27}{section*.49}%
+\contentsline {paragraph}{$\mathrm {tad}_{\delta _2}$ [$\genfrac {}{}{}\displaystyle {16}9-\genfrac {}{}{}\displaystyle {472}{405}q^2\eta ^2+\ldots $]}{27}{section*.50}%
+\contentsline {subsection}{\numberline {A.5}Not reproduced here}{28}{subsection.A.5}%
+\contentsline {section}{\numberline {B}Verification ledger}{28}{appendix.B}%
