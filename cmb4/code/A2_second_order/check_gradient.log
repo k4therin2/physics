@@ -1,4 +1,4 @@
-|k2|=1.072  O(k1) coefficient (unit e):  l=1: num 4.94255e+00 pred 4.95461e+00 resid 1.19e-01 | l>=2 rms: num 3.18092e+01 pred 3.18193e+01 resid 3.49e-01
-     per l (2..8) resid/num: 1.1e-02 3.3e-02 1.7e-02 9.6e-03 6.9e-03 6.1e-03 8.7e-03
-|k2|=2.435  O(k1) coefficient (unit e):  l=1: num 2.50492e+01 pred 2.61087e+01 resid 1.12e+00 | l>=2 rms: num 1.06166e+02 pred 1.06043e+02 resid 5.98e+00
-     per l (2..8) resid/num: 2.2e-01 3.1e-02 1.7e-01 3.2e-02 9.4e-02 9.3e-02 5.1e-02
+|k2|=1.072  O(k1) coefficient (unit e):  l=1: num 4.95462e+00 pred 4.95461e+00 resid 1.97e-04 | l>=2 rms: num 3.18198e+01 pred 3.18193e+01 resid 6.69e-04
+     per l (2..8) resid/num: 1.5e-05 5.8e-05 3.1e-05 2.1e-05 1.6e-05 8.3e-06 1.7e-05
+|k2|=2.435  O(k1) coefficient (unit e):  l=1: num 2.61101e+01 pred 2.61087e+01 resid 1.41e-03 | l>=2 rms: num 1.06056e+02 pred 1.06043e+02 resid 1.34e-02
+     per l (2..8) resid/num: 2.2e-04 1.6e-04 1.8e-04 1.8e-04 1.6e-04 1.6e-04 1.7e-04

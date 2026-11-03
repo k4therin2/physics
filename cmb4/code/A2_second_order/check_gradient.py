@@ -1,7 +1,7 @@
 """check_gradient.py -- CHECK (ii): O(k1) squeezed term vs V2's prediction (report_V2 §3, eta_i -> 0):
    K_2(k1,k2;n) = -D K_1(k2;n) - S_{k1} K_1(k2;n) + O(k1^2),  D = k2.d_k2,  S_p = (k2.d)(p.d) - (1/2)(p.k2) Lap_k2.
 With D, S evaluated on the ENGINE's K_1 by finite differences (Hessian in 3D k-space).  Compared multipole-wise (l >= 1)
-via the l-power of the residual  R = [K_2(s e,k2) + D K_1]/s + S_e K_1, extrapolated in s (Richardson s, s/2)."""
+via the l-power of the residual  R = [K_2(s e,k2) + D K_1]/s + S_e K_1, isolated as the k1-odd part [K_2(s e) - K_2(-s e)]/(2s)."""
 import sys, os
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -24,12 +24,8 @@ for k2 in (np.array([-0.3, 0.9, 0.5]), np.array([1.2, -2.0, 0.7])):
     # S_p F = k_i p_j H_ij + (p.grad)  [from (k.d)(p.d)F = k_i d_i(p_j d_j F) = k_i p_j H_ij] ; careful: (k.d)(p.d) acts as k_i p_j H_ij only
     SK = sum(k2[i] * e[j] * Hs[(i, j)] for i in range(3) for j in range(3)) - 0.5 * (e @ k2) * sum(Hs[(i, i)] for i in range(3))
     pred = -SK
-    s1, s2 = 2e-3, 1e-3
-    O1 = []
-    for s in (s1, s2):
-        K, _ = MapKernels(g, s * e, k2, nv).K2()
-        O1.append((K + DK) / s)
-    O1x = 2 * O1[1] - O1[0]                      # Richardson: remove O(s) (i.e. O(k1^2)) contamination
+    s = 2e-3                                      # odd part in k1 isolates O(k1) (O(k1^0) cancels, error O(s^2))
+    O1x = (MapKernels(g, s * e, k2, nv).K2()[0] - MapKernels(g, -s * e, k2, nv).K2()[0]) / (2 * s)
     P_pred = sky.power(pred, L); P_res = sky.power(O1x - pred, L); P_num = sky.power(O1x, L)
     print('|k2|=%.3f  O(k1) coefficient (unit e):  l=1: num %.5e pred %.5e resid %.2e | l>=2 rms: num %.5e pred %.5e resid %.2e' % (
         np.linalg.norm(k2), np.sqrt(P_num[1]), np.sqrt(P_pred[1]), np.sqrt(P_res[1]), np.sqrt(P_num[2:].sum()), np.sqrt(P_pred[2:].sum()), np.sqrt(P_res[2:].sum())))

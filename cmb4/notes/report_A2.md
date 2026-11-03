@@ -40,8 +40,11 @@ a_40 = +1.3785439772 (N1 +1.3785439781).  Shear and direct forms of L2 agree wit
   |K_2(s e, k2) - (-k dK_1/dk)| (rms over l>=2) = 3.18e-1, 3.18e-2, 3.18e-3 for s = 1e-2, 1e-3, 1e-4 (|k2| = 1.07; the
   dilation itself has rms 11.25), likewise for |k2| = 2.44 — the residual is exactly linear in s (the gradient term).
   Individual channels are O(10) at s -> 0 (e.g. [ray] 2nd:V2 alone: 11.0; [emi] time delay: 13.9) and cancel to the dilation.
-* (ii) gradient O(k1): V2's report does not exist; the O(k1) residual is recorded (linear in s, coefficient 31.8 (l>=2 rms)
-  at |k2| = 1.07), no independent prediction compared — NOT DONE.
+* (ii) gradient O(k1) vs V2 (report_V2 §3, eta_i -> 0): prediction K_2 = -D K_1 - S_{k1} K_1 + O(k1^2), D = k.d_k,
+  S_p = (k.d)(p.d) - (1/2)(p.k) Lap_k (SCT relabelling).  `check_gradient.py`/`.log`: k1-odd part [K_2(se)-K_2(-se)]/(2s)
+  vs -S_e K_1 with S applied to the engine's K_1 by a finite-difference Hessian: l=1 and l>=2 agree to 1.5e-5 .. 6e-5
+  (|k2| = 1.07) and 1.6e-4 .. 2.2e-4 (|k2| = 2.44) per multipole, at the level of the FD-Hessian error: PASS.
+  So through O(k1) the squeezed limit of the full map is pure relabelling (dilation + SCT), as V2 predicts.
 
 ## Milestone 3 — explicit kernels (deliverables 1, 2)
 ### K_1, Delta_l, <m1>  (direct form of L1 = standard SW + Doppler + ISW incl. observer terms)
@@ -109,3 +112,51 @@ below (integrand near K -> 0).  In the monochromatic integral we integrate in K 
 ### Monochromatic P = 2 pi^2 sigma^2 delta(k-k0)/k0^2
   C^(22)_l = (sigma^4/(2l+1)) int_{-1}^{1} dmu sum_m |K~_lm(k0,k0,mu)|^2 ,   K = k0 sqrt(2(1+mu)),  frame k1,2 = k0(+-sin a, 0, cos a), cos a = K/2k0;
   B part: C^{BB}_l = (4 pi sigma^2)^2 2 sum (2l1+1)(2l2+1)/(4pi)(l l1 l2;000)^2 Delta_l1^2 Delta_l2^2 - 16 pi sigma^4 Delta_0^2 Delta_l^2  (all at k0).
+### Numerical evaluation (labelled EVALUATION: k0 = 1; point 1: eta_* = 2, eta_o = 8; point 2: eta_* = 2, eta_o = 4)
+`cl22.py` (runs `cl22_<tag>.pkl/.log`), tables `analyze.py` -> `analyze_eo8.log`, `analyze_eo4.log`.  Units sigma^2 (C11), sigma^4 (C22).
+```
+ l | eta_o=8: C11/s^2      C22/s^4          (1/4)C22/s^4    | eta_o=4: C11/s^2      (1/4)C22/s^4
+ 2 | 9.546006061e-01  5.703017520e+01  1.425754380e+01 | 8.613350843e-03  3.993324543e+00
+ 3 | 6.250779591e-01  1.151253897e+01  2.878134742e+00 | 8.052093896e-03  6.124256484e-01
+ 4 | 1.750712875e-01  7.463675108e+00  1.865918777e+00 | 1.116078495e-03  5.287309571e-02
+ 5 | 1.933453283e-02  4.520572234e+00  1.130143058e+00 | 7.175773518e-05  7.780704277e-03
+ 6 | 1.770349639e-04  2.088249491e+00  5.220623728e-01 | 2.780479034e-06  1.672196841e-03
+ 7 | 3.174580556e-04  1.496197895e+00  3.740494738e-01 | 7.318262641e-08  2.619102919e-04
+ 8 | 2.304634771e-04  1.047895782e+00  2.619739455e-01 | 1.403749744e-09  2.798933064e-05
+ 9 | 6.045085961e-05  4.967381754e-01  1.241845438e-01 | 2.057008620e-11  2.143254526e-06
+10 | 9.679528515e-06  1.603390998e-01  4.008477495e-02 | 2.382758584e-13  1.234364265e-07
+11 | 1.105691361e-06  3.789202401e-02  9.473006002e-03 | 2.239446102e-15  5.557386369e-09
+12 | 9.699082749e-08  8.010458273e-03  2.002614568e-03 | 1.743328105e-17  2.015547066e-10
+13 | 6.823169755e-09  2.205827422e-03  5.514568556e-04 | 1.143109189e-19  6.028691151e-12
+14 | 3.962943779e-10  7.797776236e-04  1.949444059e-04 | 6.402183756e-22  1.515307705e-13
+15 | 1.940877947e-11  2.540234250e-04  6.350585624e-05 | 3.099033167e-24  3.249712209e-15  *
+16 | 8.146618828e-13  6.723015045e-05  1.680753761e-05 | 1.309717407e-26  6.022021672e-17  *
+17 | 2.968887381e-14  1.441356324e-05  3.603390811e-06 | 4.875242191e-29  9.746048238e-19  *
+18 | 9.494896918e-16  2.557045655e-06  6.392614138e-07 | 1.610736317e-31  1.390051124e-20  *
+19 | 2.688913155e-17  3.834413557e-07  9.586033894e-08 | 4.755727176e-34  1.758712758e-22  *
+20 | 6.795223637e-19  4.946249047e-08  1.236562262e-08 | 1.262423388e-36  2.002188565e-24  *
+```
+Convergence: eta_o=8: (nK,nth) = (24,40), (40,48), (56,60) agree to <= 1.5e-11 relative for l <= 20 (<= 1e-13 for l <= 14).
+eta_o=4: (24,40) vs (40,48) agree to <= 4e-11 for l <= 12, 1e-9 for l = 13,14; entries marked * (l >= 15) are below the
+double-precision cancellation floor (~1e-16 of the largest channel, values < 1e-14) and are NOT reliable (rel. spread up to 2e-3).
+Type-B cross-check: the B-channel diagonal G_BB from the mu-integral equals the finite 3j sum to 4e-12 (l<=12), 5e-9 (l<=20) at
+eta_o = 8, and 3e-10 (l<=12) at eta_o = 4.
+K -> 0 (mu -> -1): the total integrand sum_m |K_lm|^2 tends to finite values (eta_o=8, K = 0.0018: l=2: 1.335, l=4: 63.1, odd l
+-> 0 as K^2 by the k1 <-> -k2 parity at K = 0); even l=0 is finite (213.5) in the total, i.e. the K^-2 channel pieces cancel in the
+monopole as well — consistent with the analytic power counting.
+Structure of the result: strong cancellations between channel groups (diagonal group contributions / C22 at l=2,4,8 for eta_o=8:
+lensing 0.99, 3.6, 3.1; aberration+deflection 0.51, 1.85, 3.2; time delay 0.20, 0.22, 0.32; Phi2/Psi2 0.16, 0.30, 0.12;
+B (L1^2-2<m1>m1) 0.025, 0.10, 0.016; cross terms -0.96, -5.1, -5.9): the transverse displacement (lensing) and direction
+(aberration+deflection) remappings largely cancel, as expected for a remapping of a map that is itself generated on the ray.
+Vector (om2+v2T) and observer clock/displacement diagonals are <1e-3 (the observer terms are l<=1 except through products).
+Remark: in this monochromatic toy the first-order spectrum is band-limited (k0 chi_* = 6) whereas (22) reaches K <= 2k0, so
+(1/4)C22/C11 grows rapidly with l (15 at l=2, ~1e3 at l=6-8 for eta_o=8).
+
+## STATUS
+DONE+VERIFIED: K_1/Delta_l/<m1> with observer terms; K_2 = all channels (engine + named-object sympy kernels, agreement 2e-15);
+checks (iv) plane wave vs N1 (4 configs, within N1 errors), form equivalence, symmetry, reality (iii), constant mode (i:
+consistency relation -k dK_1/dk, NOT zero — brief corrected), gradient (ii) vs V2 (PASS at FD accuracy); C^(22) assembly with
+factors 1/4 and Wick 2, type-B 3j check, K->0 integrability analytic + numeric; monochromatic l=2..20 at two points.
+FINDINGS for others: C2 ray.definitions k1/k2 sign (also found by A1/lead); clock shift = integral of Psi1 (lapse), closed form above.
+NOT DONE: closed-form (non-numerical) expressions of the C-channel mu-integrand (the l-projection is done by sky quadrature,
+equivalent to C3's finite 3j sums); per-channel LaTeX for the B/1x1 groups beyond symbolic_kernels.tex; A1 per-group cross-check.
