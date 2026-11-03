@@ -111,3 +111,4 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   clock/label; state fluid-rest-frame emission; M3 stale status statements; M4 unify direction convention (n vs e); M5 remove project-log
   language (agent names, SPEC refs, pkl); M6 display Theta^(3) fully (appendix) and K_2 Fourier form; M7 present N1 comparison as gauge
   test; M8 analytic l-cutoff; M9 FW tetrad proof; M10 define <>_c. Proposed reorder + 2-page roadmap in report.
+- [11-03] Launched V5 (zero-mode gauge invariance proof, M1 tensor-mode statement), W3 (revision per R1 M-items, reorder, roadmap, full L3 appendix, eta_i restored). In flight: A3, C4, V4, V5, W3. Blocked: W2c (third-order sections, unresolved), R2 final referee, final summary.
