@@ -41,3 +41,17 @@ Agent A3 (relaunch 2026-11-03). Code: `cmb4/code/A3_third_order/`. Conventions: 
   observer, so PRODUCTION = shear form + global (canonical) triad.  The per-direction GS triad is not a rigid rotation and
   changes kappa at the 0.3% level; the canonical triad is rigid, which leaves Re C^(13) invariant (|a_lm|^2 sum invariant).
 * Bookkeeping bug fixed: duplicate term names in C2 lists (engine channel dict now accumulates).
+
+## Milestone 3 — collinear points mu -> +-1 of the monochromatic loop (DONE, numerical; `diag_mu.py`, logs diag_mu_[pm].log)
+Monochromatic |q| = |k| = k0: at mu -> 1 the pair (k,-q) has |k-q| = k0 sqrt(2(1-mu)) -> 0 (and mu -> -1 likewise for (k,q)).
+Every second-order Poisson-inverted object of that pair ~ 1/|k-q|^2 (e.g. C1's C3 -> 16/(9(1-mu)), Phi3c(eta_o) ~ -0.117/(1-mu),
+V3c, delta3c similarly), so INDIVIDUAL channels of the mu-integrand diverge like 1/(1-mu) (log-divergent mu-integral):
+at 1-mu = 1e-4 the channels 'time delay 2nd (radial Dx2)' (-2804), 'observer clock 2nd' (+2410), 'local fields:3' (channel iii;
+-610 at l=3), 'emission shift 2nd' (+295), 'local 2+1' (+272) ... are O(10^3).  THE TOTAL IS FINITE: per-mu Delta^kappa_l
+(l=2: -6.639, -6.294, -6.259 at 1-mu = 1e-2, 1e-3, 1e-4) converges linearly in (1-mu) (i.e. analytically in p^2), identically
+at mu -> -1 (integrand even in mu).  Interpretation: the 1/p^2 parts of a long (p -> 0) second-order mode form, at leading
+order, a K=0 homogeneous solution, i.e. a pure-gauge mode of the residual K=0 Poisson-gauge freedom (time reparametrisation),
+which the full observable does not see (consistency relation for a long second-order mode); gradient pieces O(1/p) are
+integrable anyway.  Hence the monochromatic C^(13) is finite and the mu-integral needs no regularisation; plain Gauss-Legendre.
+sqrt3 resonances (|k-+q| = 2k0/sqrt3, mu = +-1/3): at finite eta all Green's integrals are entire in the frequencies
+(cf. C4: Cin, Si entire), so the integrand is analytic there; nothing to do at finite eta_o.

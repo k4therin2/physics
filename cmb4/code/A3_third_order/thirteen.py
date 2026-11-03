@@ -76,3 +76,31 @@ def nu_grid(Nn=48):
 def project(kappa_nu, nu, wnu, lmax):
     """kappa(nu) = sum (2l+1) i^l D_l P_l(nu)  ->  D_l."""
     return np.array([np.sum(wnu * eval_legendre(l, nu) * kappa_nu) / (2 * 1j**l) for l in range(lmax + 1)])
+
+def third_profiles(k0, qm, mu):
+    Xp = X3c(G, k0, qm, np.array([mu, -mu]))
+    th = {nm: Xp[nm][0] + Xp[nm][1] for nm in ('Phi', 'dPhi', 'Psi', 'dPsi', 'V', 'dV')}
+    th['dT3lin'] = (Xp['delta'][0] + Xp['delta'][1]) / 4
+    return th
+
+def M2_triplet(k0, qm, mu, sky=(24, 48)):
+    """(<m2>(k,q), <m2>(k,-q)) for q at angle mu (sky averages are rotation invariant)."""
+    s = np.sqrt(1 - mu**2)
+    kv = np.array([[0, 0, k0]]); qv = qm * np.array([[s, 0, mu]])
+    a = M2_sky(np.vstack([kv, kv]), np.vstack([qv, -qv]), sky=sky)
+    return a[0], a[1]
+
+def M2_tad(qm, sky=(24, 48)):
+    qv = qm * np.array([[0.3, 0.4, np.sqrt(0.75)]])
+    return M2_sky(qv, -qv, sky=sky)[0]
+
+def kappa_mu(k0, qm, mu, nv, Nphi=8, M2tad=None, sky=(24, 48), frame_triad=False, third=True, chan=False):
+    """(1/2) <coef_abc>_phi at fixed mu: (Nn,) array [per P(q); kappa = int d^3q/(2pi)^3 P(q) kappa_mu]."""
+    phis = 2 * np.pi * (np.arange(Nphi) + 0.5) / Nphi
+    th = third_profiles(k0, qm, mu) if third else None
+    m2a, m2b = M2_triplet(k0, qm, mu, sky)
+    if M2tad is None: M2tad = M2_tad(qm, sky)
+    D0 = (Delta_l(0, k0), Delta_l(0, qm))
+    ch, _ = coef_abc(k0, qm, mu, phis, nv, third=th, M2=(m2a, m2b, M2tad), D0=D0, frame_triad=frame_triad)
+    if chan: return {k_: 0.5 * v.mean(0) for k_, v in ch.items()}
+    return 0.5 * sum(ch.values()).mean(0)
