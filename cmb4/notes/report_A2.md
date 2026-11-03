@@ -89,3 +89,23 @@ n.v2T, d_z V2: d=1,p=1; h_nn, d_z om_z: p=0), so K_{2,lm} = O(1) for l >= 2 (fin
 pieces are O(K^-1), O(K^-2).  With dmu = K dK/k0^2 the mu-integrand of C^(22)_l is bounded at mu = -1 for every l >= 2:
 **integrable, no cancellation needed** (the dipole, l = 1, would be log-divergent channel by channel).  Numerical confirmation
 below (integrand near K -> 0).  In the monochromatic integral we integrate in K (analytic) instead of mu.
+
+## Milestone 4 — C_l^(22): structure and monochromatic evaluation (deliverable 4)
+### Assembly (factors explicit)
+  C_l ⊃ eps^4 (1/4) C^(22)_l,   C^(22)_l = (1/(2l+1)) sum_m <Th2_lm Th2*_lm>_c ,   Th2 = int int zeta zeta K_2 (K_2 symmetric)
+  => Wick: <zeta1 zeta2 zeta1'* zeta2'*> has 2 connected pairings, each giving |K_2|^2:
+  C^(22)_l = (2/(2l+1)) sum_m int d^3k1 d^3k2/(2pi)^6 P(k1)P(k2) |K_{2,lm}(k1,k2)|^2
+           = 1/(4 pi^4 (2l+1)) int k1^2dk1 k2^2dk2 P P int_{-1}^{1} dmu sum_m |K~_lm(k1,k2,mu)|^2      (isotropy, Khat = z frame),
+  K~_lm = sum_c K~^c_lm over channels; hence C^(22)_l = sum_{c,c'} G_cc'(l) (channel Gram matrix, cross terms included).
+  Per C3 type (with C2's sign convention i^L instead of C3's (-i)^L):
+   B x B (L1^2 - 2<m1>m1):  C^{BB}_l = C^{m1^2}_l - 4<<m1>^2> C^(11)_l,  C^{m1^2}_l = 2 sum_{l1l2} (2l1+1)(2l2+1)/(4pi) (l l1 l2;000)^2 C^(11)_l1 C^(11)_l2
+                     [the -4<<m1>^2>C^(11) = -8 (cross with m1^2) + 4 (|<m1>m1|^2)];
+   C: K~^C_lm = int d eta K(k1,k2,K,eta) sum_{|L-l|<=d} i^L sqrt(4pi(2L+1)) j_L(K chi) <lm|Q|L0>  (finite 3j sum, one mu-integral);
+   D: bipolar double Rayleigh sums (two times) or, equivalently, the same frame/mu reduction with the nested time integrals
+      kept inside K~_lm;  B x C, C x D cross terms: C3 (C2).
+  Implementation: the full K_2 (all channels, verified vs N1 and between forms) is projected on Y_lm by sky quadrature in the
+  Khat = z frame for each mu node, which realises the C and D reductions exactly and the B channels as a cross-check
+  against the finite 3j sum (`typeB_check.py`).
+### Monochromatic P = 2 pi^2 sigma^2 delta(k-k0)/k0^2
+  C^(22)_l = (sigma^4/(2l+1)) int_{-1}^{1} dmu sum_m |K~_lm(k0,k0,mu)|^2 ,   K = k0 sqrt(2(1+mu)),  frame k1,2 = k0(+-sin a, 0, cos a), cos a = K/2k0;
+  B part: C^{BB}_l = (4 pi sigma^2)^2 2 sum (2l1+1)(2l2+1)/(4pi)(l l1 l2;000)^2 Delta_l1^2 Delta_l2^2 - 16 pi sigma^4 Delta_0^2 Delta_l^2  (all at k0).

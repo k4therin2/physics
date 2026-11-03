@@ -100,10 +100,10 @@ def particular_series(src, m, K, kind='Phi'):
     for t in sp.Add.make_args(src):
         if t == 0: continue
         c, e = t.as_coeff_exponent(eta)
-        assert e >= 0, ('source singular at eta=0', t)
+        assert e >= -1, ('source too singular at eta=0', t)   # e=-1 arises for the gauge mode gf=c*eta; solution ~ eta, regular
         coeffs[int(e)] = coeffs.get(int(e), 0) + c
     p = {}
-    for j in range(0, K - 1):
+    for j in range(-1, K - 1):
         s = coeffs.get(j, 0)
         if kind == 'Phi':
             p[j] = (s - sp.Rational(m * m, 3) * p.get(j - 2, 0)) / ((j + 2) * (j + 5))
