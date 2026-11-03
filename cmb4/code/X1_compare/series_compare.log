@@ -1,0 +1,6 @@
+our Delta_2 small-k series: -k**2*(eta_o - eta_s)*(103*eta_o**5*k**4 + 103*eta_o**4*eta_s*k**4 - 572*eta_o**3*eta_s**2*k**4 - 3540*eta_o**3*k**2 + 1228*eta_o**2*eta_s**3*k**4 - 3540*eta_o**2*eta_s*k**2 - 1292*eta_o*eta_s**4*k**4 + 6360*eta_o*eta_s**2*k**2 + 37800*eta_o + 580*eta_s**5*k**4 - 6840*eta_s**3*k**2 + 37800*eta_s)/1701000
+C11 (ours) - C11 (Adam) through k^6: 0
+l=2 leading coefficient ours = -(eta_o - eta_s)*(eta_o + eta_s)/45 ; ours - Adam(80) = 0
+l=3 leading coefficient ours = -(eta_o - eta_s)**2*(eta_o + 2*eta_s)/315 ; ours - Adam(80) = 0
+l=4 leading coefficient ours = -(eta_o - eta_s)**3*(eta_o + 3*eta_s)/2835 ; ours - Adam(80) = 0
+l=5 leading coefficient ours = -(eta_o - eta_s)**4*(eta_o + 4*eta_s)/31185 ; ours - Adam(80) = 0
