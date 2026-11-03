@@ -19,3 +19,33 @@ lambdified (247s)
    large err vT2 at k=1 q=0.4 mu=-0.999999999 eta=6: 2.5e-10 (num -3.0671262277880503e-05j ref -3.0671262270212694e-05j)
    large err omega2 at k=1 q=2.5 mu=-0.999999999 eta=9: 2.5e-10 (num 1.7890280197482305e-05j ref 1.789028019300974e-05j)
    large err vT2 at k=1 q=2.5 mu=-0.999999999 eta=9: 2.5e-10 (num 4.4029872115937994e-05j ref 4.4029872104930536e-05j)
+   large err omega2 at k=1 q=0.7 mu=-0.999999999 eta=1.2: 2.49996e-10 (num -6.807449492112735e-05j ref -6.8074494904109e-05j)
+   large err vT2 at k=1 q=0.7 mu=-0.999999999 eta=1.2: 2.49997e-10 (num 5.885639156504676e-05j ref 5.885639155033283e-05j)
+   large err omega2 at k=1 q=0.866025 mu=0.57735026919 eta=9: 1 (num 0j ref 9.16675359089931e-17j)
+   large err vT2 at k=1 q=0.866025 mu=0.57735026919 eta=9: 0.999008 (num 3.0665868333667474e-19j ref 3.0911021875417847e-16j)
+  exactly collinear q=0.4 mu=1: module -1.2030272935580641 quad -1.2030272935580653 rel 9.6e-16
+  exactly collinear q=2.5 mu=1: module -0.15077916633515687 quad -0.15077916633515633 rel 3.58e-15
+  exactly collinear q=0.7 mu=-1: module -1.7824566686175014 quad -1.7824566686175024 rel 5.68e-16
+  exactly collinear q=0.4 mu=-1: module -0.7327995465879745 quad -0.732799546587975 rel 6.42e-16
+WORST relative errors of the double-precision evaluators:
+   Phi2                                     1.13e-13
+   dPhi2                                    2.09e-13
+   Psi2                                     1.73e-13
+   delta2                                   1.51e-13
+   deltaT2                                  1.83e-13
+   V2                                       1.42e-13
+   h2_I                                     3.55e-13
+   omega2                                   1.00e+00
+   vT2                                      9.99e-01
+   ARBITER vs 50-digit closed form          3.31e-14
+   Phi2 (collinear)                         1.46e-14
+   dPhi2 (collinear)                        3.93e-14
+   Psi2 (collinear)                         8.02e-14
+   delta2 (collinear)                       1.14e-14
+   deltaT2 (collinear)                      2.54e-14
+   V2 (collinear)                           6.57e-15
+   h2_I (collinear)                         4.28e-15
+   omega2 (collinear)                       2.50e-10
+   vT2 (collinear)                          2.50e-10
+   Phi2 exactly collinear vs quadrature     3.58e-15
+done 2363s

@@ -97,3 +97,33 @@ KEY STRUCTURAL RESULT: P = u2(x_k) A(eta) - u1(x_k) B(eta) and the whole special
    w1..4 = (k+q+p), (k+q-p), (k-q+p), (q+p-k) over sqrt3 (all >= 0 in the triangle), C_j, S_j Laurent polynomials eta^-6..eta^0
    (eta^0 terms carry the removable 1/w_j collinear poles).  No ln(eta) survives.  Rebuild from the compact form = stored P (30 digits).
    (Consistency: the eta->infinity coefficient C_L = -(3/k^2) D ... matches Milestone 4.)
+
+## Milestone 7 — MODULE second_order_closed.py: fast evaluators verified  [COMPLETE]
+API: Phi2, dPhi2, Q2, Psi2, delta2, deltaT2, V2, omega2, vT2, h2_I, h2_plus (args k, q, mu, eta; sympy in -> sympy out, numpy in ->
+vectorised float), plus *_expr sympy objects, Phi2_collinear, h2_I_resonant, small_eta_series(), large_eta_asymptotics().
+Numerical strategy (new this run): ODE Taylor series for (k+q+p)eta/sqrt3 <= 4; closed form where well conditioned (all frequencies
+x eta >= 6 and q/k, p/k in [1/5,5]); otherwise composite Gauss-Legendre quadrature of the Green's-function integral.  REASON: the
+double-precision closed form loses digits by cancellation of the 1/w_j collinear poles and of the 1/(p^3 q^3) terms: errors O(1)
+at mu = 1 - 1e-6 and ~1e-9 for q/k ~ 12 were found by verify_module.py before the fix.  [The closed form itself is exact; at
+50+ digits it is fine everywhere off the exact edges.]
+CHECK (`verify_module.py`, log `verify_module.log`): 40 random points (k in [0.2,3], q/k in [0.03,20], all mu, z in [0.05,300]) +
+15 near/exactly-collinear points + the q+p = sqrt3 k point, against the 50-digit mpmath closed form; worst relative errors
+   Phi2 1.1e-13, dPhi2 2.1e-13, Psi2 1.7e-13, delta2 1.5e-13, deltaT2 1.8e-13, V2 1.4e-13, h2_I 3.6e-13;
+   near-collinear (|mu| = 1 - 1e-6 .. 1e-10) all scalar fields <= 8e-14; exactly collinear Phi2 vs quadrature <= 3.6e-15.
+   omega2, vT2 (algebraic, closed in T_Phi): 2.5e-10 near mu = +-1 only through the input conditioning of sqrt(1-mu^2) in double;
+   the "1.0" at the sqrt3 point is 0 vs 1e-16 roundoff (omega2 = vT2 = 0 identically there since q = p).
+   The 50-digit reference is itself checked against the direct quadrature arbiter at 10 points: 1e-31..1e-44 for z >~ 0.3
+   (at z ~ 0.01-0.04 the 50-digit closed form keeps only 14-18 digits because of the eta^-7 cancellation; the series branch is used there).
+
+## SUMMARY (status 2026-11-03)
+CLOSED FORM (Si, Cin = entire, + elementary): Phi2 particular integral P (and Phi2' exactly), I_h for h2 (= (4/k^2) KT(22));
+  hence ALL second-order fields Phi2, Psi2, delta2, delta_T2, V2 (and v2 = grad V2 + v2^T), omega2, v2^T, h2 at any eta.
+  Special-function skeleton of Phi2 governed by the single coefficient D(k,q,p).  Exact collinear forms (Phi2) and exact resonant
+  form (h2 at q+p = sqrt3 k, contains ln eta).  eta->0 series (to eta^4..eta^6) and eta->infinity expansions (leading compact forms
+  + one subleading order in asymptotics.pkl).
+REMAINING AS INTEGRALS: none at second order.  (Third order — C1's KPhi2/Kh appear inside third-order sources; the third-order
+  Green's-function integral of K3c['SPhi'] was NOT attempted: outside this brief.)
+VERIFICATION: quadrature arbiter (40-60 digits) at random + edge points; full E^(2)_{mu nu} + conservation residual 5e-50;
+  KT(22),(25) controls; Frobenius series; fast evaluators 12+ digits everywhere tested.
+NOT DONE / CAVEATS: asymptotic expansions are non-uniform near collinear edges, q+p = sqrt3 k, and for q/k or p/k -> 0 (use the
+  exact forms there); the LaTeX appendix lists the full Laurent coefficients (16 pp) but no further simplification of C_j, S_j.
