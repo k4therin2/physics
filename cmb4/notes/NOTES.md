@@ -72,3 +72,7 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
 - [t11] NEXT: A1 = plane-wave end-to-end check vs N1 (Th2, Th3 maps); A2 = Fourier kernels K2, K3c + C_l assembly + monochromatic.
 - [t12] Launched A1 (plane-wave vs N1), A2 (K2 + C22 + mono), A3 (K3c + C13 + mono). In flight also: V2, V3, C4, C5, W1. Blocked: W2 (results sections), cold-read referee, simplifier.
 - [t13] W1 DONE: doc skeleton cmb4/doc/main.tex with sec_setup, sec_observable, sec_primordial, sec_einstein, sec_harmonic, app_kernels, app_ledger, refs; placeholders sec_map2/map3/assembly/checks/mono/unresolved. No pdflatex in container (try pip install? or tectonic). NOTE W1: C1 report omitted overall sign of invariant K_Q; appendix uses machine form.
+- [2026-11-03] All 7 in-flight agents (A1,A2,A3,V2,V3,C4,C5) died on usage-credit limit on 11-01. User asked to use Opus 5.5 for
+  subagents. Briefs saved persistently in cmb4/notes/briefs/. All seven RELAUNCHED on Opus 5.5 (resume from partial files).
+  Blocked after them: W2 (results sections sec_map2/map3/assembly/checks/mono/unresolved), cold-read referee, simplifier.
+  pdflatex now installed; doc compiles (29 pp).
