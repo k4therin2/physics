@@ -104,3 +104,38 @@ and M2_tad = <m2>_(q,-q) = -7.46928 sigma^2-units; <m1> via Delta_0.  Im C13 ~ 1
 Resolution lesson: the phi-integral needs Nphi >= 16 (phases e^{i q_perp.n_perp chi}, q chi_* = 6): at mu = 0.5,
 Delta^kappa_2 = -0.970 (Nphi=8), -2.82625 (16), -2.82632 (32).  First runs A (16 mu x 12 phi) / B (10 mu x 8 phi) are
 under-resolved in phi (30% spread at l=2) and are superseded by runs C (16 x 16, Nn=32) and D (12 x 20).
+
+## Referee R1 points B1/B2 (addressed)
+### B1 — mu -> +-1 behaviour of the full contracted kernel (monochromatic shell q = k)  [`residues.py`, residues.log]
+Agreed with the referee's input: C3|_{q=k} = 16/(9(1-mu)) + O(1) (our tf.C3: 1.7759/(1-mu) at 1-mu=1e-4), and every object of the
+long pair p = |k-q| -> 0 carries 1/p^2 = 1/(2k^2(1-mu)).  Channel residues R_c,l = lim_{mu->1} (1-mu) Delta^kappa_mu,c,l(mu)
+(Delta^kappa_mu = Legendre coefficient of the per-mu integrand (1/2)<coef_abc>_phi; k = q = 1, eta_* = 2, eta_o = 8; from 1-mu = 1e-6):
+| channel | l=0 | l=1 | l=2 | l=3 | l=4 | l=5 | l=6 |
+|---|---|---|---|---|---|---|---|
+| (iii) local fields:3 [v3 = grad V3c, incl. C3 ghat] | -0.34416 | +0.00803 | +0.01165 | -0.05832 | -0.07581 | -0.05898 | -0.03418 |
+| (ii) time delay 2nd (radial Dx2 . grad I1) | +0.35486 | -0.05097 | -0.28054 | +0.05950 | +0.08132 | +0.05308 | +0.02098 |
+| (ii) observer clock 2nd (deta_o2 I1|_o) | 0 | 0 | +0.23933 | 0 | 0 | 0 | 0 |
+| (ii) emission-surface shift 2nd (deta_e2 I1|_e) | -0.01075 | +0.04295 | +0.02954 | -0.00119 | -0.00551 | +0.00590 | +0.01319 |
+| (ii) local 2+1 | +0.00997 | -0.04053 | +0.02473 | +0.01970 | +0.00444 | -0.00261 | -0.00378 |
+| (ii) radial k2 | -0.01001 | +0.04054 | -0.02473 | -0.01970 | -0.00444 | +0.00261 | +0.00379 |
+| all other channels (lensing, aberration, transverse k2/Dx2, products, normalisation) | <= 4e-5 | | | | | | |
+| **SUM** | -5e-5 | +3e-5 | -6e-6 | -2e-5 | -3e-6 | -1e-5 | +4e-7 |
+The sum vanishes to the accuracy of the extraction (|R| ~ 1e-6 x finite part).  The six singular channels are EXACTLY the channels
+that respond to the K=0 time-reparametrisation gauge mode in the gauge test (Milestone 5): the 1/p^2 part of the long second-order
+mode is, at leading order, a homogeneous (K=0) solution, i.e. residual Poisson-gauge freedom, to which the observable is blind.
+Hence (analytic leading behaviour): Delta^kappa_mu,l(mu) = F_l + G_l (1-mu) + ..., NO 1/(1-mu) and NO (1-mu)^{-1/2} term
+(the O(1/p) gradient/SCT pieces are odd under the azimuthal average around k and drop); numerically F_l (l=0..6) =
+-52.7137, +28.7453, -6.2562, -18.9101, -3.2841, -13.2461, +0.3736, and the approach is linear in (1-mu) (differences 1e-4 -> 1e-5
+-> 1e-6 shrink x10).  mu -> -1 identical (integrand even in mu: the configuration (k,q,-q) is symmetric under q -> -q).
+=> the monochromatic C^(13) is FINITE; no narrow-shell regularisation is needed (a narrow shell gives the same limit).
+### B2 — tadpoles
+The k->0 limit of K_Phi2 indeed does not exist pointwise (quadrupole q^2(3mu^2-1)/k^2); C1's angle average removes the quadrupole
+(= the constant anisotropic shear zero mode, which averages to zero over qhat; in our assembly the tadpole multiplies first-order
+objects of the free leg k only, so only the qhat-averaged tadpole can ever enter kappa: the quadrupole drops identically, not by
+a convention).  The remaining isotropic tadpole has 3 functions (Phi, Psi, delta)(eta) - 2 K=0 constraints = 1 free function =
+the time reparametrisation tau(eta) (+ the dilation constant fixed by zeta^(2)=0).  We showed the full kappa is invariant under
+arbitrary tau (tau = 0.1 eta and tau = 0.1 eta^3: |d kappa| = 6e-14, 3e-13), C1's K3c covariant to 1e-13.  The particular
+(sourced) part of the tadpole is not a gauge mode (source = qhat-averaged K=0 stress of the short modes) and is NOT expected to
+have zero coefficient; it is the physical homogeneous backreaction and is kept.  (V5's constant-shear proof covers the quadrupole.)
+Machine-generated channel listing: `code/A3_third_order/A3_channels.tex` (every L1, L2/2, L3/6 group with its expression, the
+functionals, observer quantities and the polarisation contraction rule for channels i/ii/iii).
