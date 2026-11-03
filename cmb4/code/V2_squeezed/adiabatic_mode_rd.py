@@ -216,7 +216,9 @@ print("delta_T cross term (beyond argument shift) =", sp.factor(sp.expand(dTfull
 print("\n--- constant-mode second-order Poisson-gauge transfer functions (linear parametrisation) ---")
 kk = sp.Symbol('k', positive=True)
 tX = sp.Function('t')
-for name, dX, pref in (("Phi", 0, sp.Rational(4, 3)), ("Psi", 0, -sp.Rational(4, 3)), ("delta_T", 0, sp.Rational(1, 3)), ("v_pot", 1, -sp.Rational(4, 3))):
+# pref = multiplicative cross factor: Phi +4/3, Psi -4/3, delta_T +1/3, v^i -4/3 and v_pot = int v^i: extra chain-rule
+# factor (1-c) from d/dx~ = (1-c) d/dx  => pref(v_pot) = -4/3 - 1 = -7/3 (with d_X = 1 this gives (1-4c/3) T_v overall)
+for name, dX, pref in (("Phi", 0, sp.Rational(4, 3)), ("Psi", 0, -sp.Rational(4, 3)), ("delta_T", 0, sp.Rational(1, 3)), ("v_pot", 1, -sp.Rational(7, 3))):
     TX = eta**dX*tX(kk*eta)
     # relabelling: -c d/dln k ; argument shift eta -> eta(1 - c/3)
     rel = -c*kk*sp.diff(TX, kk) - c*(eta/3)*sp.diff(TX, eta)
@@ -226,21 +228,22 @@ for name, dX, pref in (("Phi", 0, sp.Rational(4, 3)), ("Psi", 0, -sp.Rational(4,
 F2Phi = sp.Rational(4, 3)*(TPhi - eta*sp.diff(TPhi, eta))
 F2Psi = -sp.Rational(4, 3)*(TPhi + eta*sp.diff(TPhi, eta))
 F2dT = sp.Rational(1, 3)*Tdelta/4 - sp.Rational(4, 3)*eta*sp.diff(Tdelta/4, eta)
-F2v = -sp.Rational(1, 3)*Tv - sp.Rational(4, 3)*eta*sp.diff(Tv, eta)
+F2v = -sp.Rational(4, 3)*Tv - sp.Rational(4, 3)*eta*sp.diff(Tv, eta)
 print("  F2_Phi(0,k)   = (4/3)(1 - eta d_eta) T_Phi ;  k->0 limit:", sp.limit(F2Phi, eta, 0))
 print("  F2_Psi(0,k)   = -(4/3)(1 + eta d_eta) T_Phi ;  k->0 limit:", sp.limit(F2Psi, eta, 0))
 print("  F2_deltaT(0,k)= (1/3) T_dT - (4/3) eta d_eta T_dT ;  k->0 limit:", sp.limit(F2dT, eta, 0))
-print("  F2_v(0,k)     = -(1/3) T_v - (4/3) eta d_eta T_v ;  (k->0 limit)/eta:", sp.limit(F2v/eta, eta, 0))
+print("  F2_v(0,k)     = -(4/3)(1 + eta d_eta) T_v  [velocity potential];  (k->0 limit)/eta:", sp.limit(F2v/eta, eta, 0))
 print("  check zeta_nl^(2)=0 at eta->0: F2_dT(0) - F2_Phi(0)/... : the nonlinear zeta = ln(1+dT)+(1/2)ln(1-2Phi);")
 # second-order primordial check: zeta2/2 = dT2/2 - dT1^2/2 - Phi2/2 - Phi1^2  (from ln expansions, cross terms only)
-dT1L, dT1S, Phi1L, Phi1S = sp.Rational(1, 3)*c, sp.Rational(1, 3), -sp.Rational(2, 3)*c, -sp.Rational(2, 3)
+# zeta_nl = ln(1+dT) + (1/2) ln(1-2Phi) = dT - dT^2/2 - Phi - Phi^2 + ...; cross terms (per unit c):
+dT1L, dT1S, Phi1L, Phi1S = sp.Rational(1, 3), sp.Rational(1, 3), -sp.Rational(2, 3), -sp.Rational(2, 3)
 zeta2cross = sp.limit(F2dT, eta, 0) - dT1L*dT1S - sp.limit(F2Phi, eta, 0) - 2*Phi1L*Phi1S
 print("  zeta_nl cross term at eta->0 (must vanish):", sp.simplify(zeta2cross))
 
 # O(q S): the longitudinal part of ghat_0i = (4 eta/3) q_i PhiS must be gauged away (alpha = time shift at 2nd order):
 print("\n--- O(q S): ghat_0i = (4 eta/3) q_i Phi_S = d_i lambda + omega_i^T,  lambda = (4 eta/3) nabla^-2 (q.grad Phi_S)")
-print("    Poisson gauge is restored by eta -> eta + alpha with alpha = lambda (beta = 0 keeps g_ij trace-only):")
-print("    Psi_P = Psi_diffeo - alpha' - H alpha ;  Phi_P = Phi_diffeo + H alpha ;  v_P = v_diffeo + grad(alpha)?? (see report)")
+print("    Poisson gauge is restored by x^mu -> x^mu + xi^mu, xi^0 = alpha = -lambda, xi^i = 0 (keeps g_ij trace-only):")
+print("    Psi_P = Psi_diffeo + lambda' + H lambda ;  Phi_P = Phi_diffeo - H lambda ;  v_P^i = v_diffeo^i + d_i lambda ;  dT_P = dT_diffeo - H lambda")
 print("    omega_i^T (physical squeezed vector mode) = (4 eta/3) T_Phi(k eta) zeta_k [ q_i - k_i (q.k)/k^2 ]")
 
 # ---------------------------------------------------------------- PART D
@@ -251,5 +254,33 @@ sol = sp.solve(sp.Eq(lam**4 + lam**2*sp.exp(2*c) - 2, 0), lam)
 lam_c = [s for s in sol if sp.N(s.subs(c, 0)) == 1][0] if any(sp.N(s.subs(c, 0)) == 1 for s in sol) else sp.sqrt((-sp.exp(2*c) + sp.sqrt(sp.exp(4*c) + 8))/2)
 lam_c = sp.sqrt((-sp.exp(2*c) + sp.sqrt(sp.exp(4*c) + 8))/2)
 print("lambda(c) =", lam_c, " series:", sp.series(lam_c, c, 0, 3))
-print("Phi = Psi = (1 - lambda^4)/2 =", sp.series((1 - lam_c**4)/2, c, 0, 3), "  (linear parametrisation; -2c/3 at O(c))")
+print("Psi = (lambda^4 - 1)/2 =", sp.series((lam_c**4 - 1)/2, c, 0, 3), "  Phi = (1 - lambda^2 e^{2c})/2 =", sp.series((1 - lam_c**2*sp.exp(2*c))/2, c, 0, 3), "  (linear parametrisation; -2c/3 at O(c))")
+
+# ---------------------------------------------------------------- PART E
+print("\n=== PART E: Fourier form of the relabelling zeta~ = zeta_S - xi_0.grad zeta_S ===")
+kx, ky, kz = sp.symbols('kx ky kz', real=True)
+kv = [kx, ky, kz]
+kabs = sp.sqrt(kx**2+ky**2+kz**2)
+Tf = sp.Function('T')
+pw = Tf(kabs)*sp.exp(sp.I*(kx*x1+ky*x2+kz*x3))
+Dop = sum(kv[i]*sp.diff(pw, kv[i]) for i in range(3))
+xgrad = sum(xs[i]*sp.diff(pw, xs[i]) for i in range(3))
+kS = sp.Symbol('k', positive=True)
+def red(e):
+    e = sp.expand(e/sp.exp(sp.I*(kx*x1+ky*x2+kz*x3)))
+    e = e.subs(kabs, kS).subs(kz, sp.sqrt(kS**2-kx**2-ky**2))
+    return sp.simplify(e)
+print("dilation: [-c D_k + c x.grad](T e^{ikx}) / e^{ikx} =", red(c*(-Dop + xgrad)), "   (expect -c k T'(k): pure -c d/dln k on the transfer function)")
+Sop = [sum(kv[j]*sp.diff(pw, kv[l], kv[j]) for j in range(3)) - sp.Rational(1, 2)*kv[l]*sum(sp.diff(pw, kv[j], 2) for j in range(3)) for l in range(3)]
+xiq = [(q1*x1+q2*x2+q3*x3)*xs[i] - sp.Rational(1, 2)*(x1**2+x2**2+x3**2)*qs[i] for i in range(3)]
+tot = sp.I*sum(qs[l]*Sop[l] for l in range(3)) + sum(xiq[i]*sp.diff(pw, xs[i]) for i in range(3))
+res = red(tot)
+qdotk = (q1*kx+q2*ky+q3*kz)
+qdotx = (q1*x1+q2*x2+q3*x3)
+expect = sp.I/2*qdotk/kS*(kS*sp.diff(Tf(kS), kS, 2) - 2*sp.diff(Tf(kS), kS)) - qdotx*kS*sp.diff(Tf(kS), kS)
+diffE = sp.simplify(res - expect.subs(kz, sp.sqrt(kS**2-kx**2-ky**2)))
+print("SCT: [i q.S_k + xi_q.grad](T e^{ikx})/e^{ikx} - expected =", diffE)
+assert diffE == 0
+print("   expected = (i/2)(q.k)/k [k T'' - 2 T'] - (q.x) k T'  =  (i/2)(q.khat)(1/k)(d^2/dlnk^2 - 3 d/dlnk)T - (q.x) dT/dlnk")
 print("\nALL CHECKS PASSED")
+

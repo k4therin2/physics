@@ -13,7 +13,7 @@ worst = 0
 for seed in range(3):
     rng = random.Random(100 + seed)
     pt = rand_point(seed); km = pt['k']
-    f = three_mode_fields(pt, z1, z2, z3, amp=sp.Rational(1, 2))
+    f = three_mode_fields(pt, z1, z2, z3, amp=1)   # X2 is the n!-normalised field: discrete amplitude 2K
     mine = {}
     for ab in [(0, 0), (0, 3), (0, 1), (1, 1), (2, 2), (3, 3), (1, 3)]:
         mine[ab] = 6 * coeff_at_origin(substitute(E[('E',) + ab + (3,)], f), (z1, z2, z3))

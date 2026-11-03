@@ -10,7 +10,7 @@ E = E_mine()
 z1, z2, z3 = sp.symbols('zeta1 zeta2 zeta3')
 pt = rand_point(0); rng = random.Random(7)
 # ---------------- (1) pair fields satisfy my second-order constraints (coefficient of zeta1 zeta3, pair (q,k))
-f = three_mode_fields(pt, z1, z2, z3, amp=sp.Rational(1, 2))
+f = three_mode_fields(pt, z1, z2, z3, amp=1)
 def c2(a, b, zz):
     return coeff_at_origin(substitute(E[('E', a, b, 2)], f), zz)
 for zz, lab in (((z1, z3), 'pair (q,k)'), ((z2, z3), 'pair (-q,k)')):
