@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.1)  3 NOV 2026 19:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.1)  3 NOV 2026 19:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -846,7 +846,17 @@ m/it/10.95 k\OT1/cmr/m/n/10.95 ) = [] [] \OML/cmm/m/it/10.95 k[]\OT1/cmr/m/n/10
  []
 
 [5] [6]) (./sec_roadmap.tex [7]
-Overfull \hbox (13.7235pt too wide) in paragraph at lines 22--24
+Overfull \hbox (132.67438pt too wide) in paragraph at lines 30--36
+[]\OT1/cmr/m/it/10.95 Final re-sult \OT1/cmr/m/n/10.95 (monochro-matic spec-tru
+m, boxed in []): $\OML/cmm/m/it/10.95 C[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10
+.95 ^^O[] \OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 ^^Y^^[[]\OT1/cmr/m/n/10.95 ^^
+A[] + \OML/cmm/m/it/10.95 ^^O[][][] [] \OT1/cmr/m/n/10.95 d\OML/cmm/m/it/10.95 
+^^V [][]\OMS/cmsy/m/n/10.95 j[]j[]\OT1/cmr/m/n/10.95 +[]\OML/cmm/m/it/10.95 ^^[
+[]\OT1/cmr/m/n/10.95 ^^A[] [] ^^A[][]$,
+ []
+
+
+Overfull \hbox (13.7235pt too wide) in paragraph at lines 42--44
 []\OT1/cmr/m/n/10.95 Log-normalisation al-ge-bra [], with $\OML/cmm/m/it/10.95 
 m[]$ \OT1/cmr/m/n/10.95 the co-ef-fi-cients of $\OML/cmm/m/it/10.95 e[]$\OT1/cm
 r/m/n/10.95 : $^^B[] = \OML/cmm/m/it/10.95 m[] \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr
@@ -854,32 +864,17 @@ r/m/n/10.95 : $^^B[] = \OML/cmm/m/it/10.95 m[] \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr
 \OML/cmm/m/it/10.95 m[] \OMS/cmsy/m/n/10.95 ^^@
  []
 
-
-Underfull \hbox (badness 2409) in paragraph at lines 79--80
-[]\OT1/cmr/m/n/9 --- (pole []
+[8]
+Underfull \hbox (badness 4582) in paragraph at lines 97--97
+[]\OT1/cmr/m/n/9 all 2nd-order fields,
  []
 
 
-Underfull \hbox (badness 6173) in paragraph at lines 87--87
-[]$\OML/cmm/m/it/9 ^^T \OT1/cmr/m/n/9 = ^^B[]$, $\OML/cmm/m/it/9 C[]$
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+[]$\OT1/cmr/m/n/9 ^^B[]$: in-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
-[]\OT1/cmr/m/n/9 analytic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
-\OT1/cmr/m/n/9 residues;
- []
-
-
-Underfull \hbox (badness 2970) in paragraph at lines 88--88
-[]\OT1/cmr/m/n/9 analytic proof
- []
-
-[8] [9]) (./sec_observable.tex [10] [11] [12] [13]
+) (./sec_observable.tex [9] [10] [11] [12] [13]
 Overfull \hbox (53.4329pt too wide) detected at line 281
 [][][]\OT1/cmr/m/n/10.95 ^^C = \OML/cmm/m/it/10.95 ^^OL[] \OT1/cmr/m/n/10.95 + 
 []\OML/cmm/m/it/10.95 L[] \OT1/cmr/m/n/10.95 + []\OML/cmm/m/it/10.95 L[];  M \O
@@ -919,7 +914,7 @@ ML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 q\OT1/cmr/m/n/10.95
 mm/m/it/10.95 ^^Q\OT1/cmr/m/n/10.95 )$,
  []
 
-) (./sec_einstein.tex [18]
+) (./sec_einstein.tex
 Overfull \hbox (60.85037pt too wide) in paragraph at lines 15--32
  [][] 
  []
@@ -929,7 +924,7 @@ Overfull \hbox (156.62979pt too wide) detected at line 46
 []
  []
 
-[19]
+[18] [19]
 Overfull \hbox (9.56331pt too wide) detected at line 79
 [][][]\OML/cmm/m/it/10.95 S[] \OMS/cmsy/m/n/10.95 ^^Q \OML/cmm/m/it/10.95 S[] \
 OMS/cmsy/m/n/10.95 ^^@ []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 S[] \OT1/cmr/m
@@ -941,12 +936,12 @@ y/m/n/10.95 ^^Q \OML/cmm/m/it/10.95 S[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/1
 0.95 S[];  S[] \OMS/cmsy/m/n/10.95 ^^Q \OML/cmm/m/it/10.95 S[];
  []
 
-[20]
+
 Overfull \hbox (119.61955pt too wide) detected at line 134
 []
  []
 
-
+[20]
 Overfull \hbox (143.95227pt too wide) detected at line 152
 []
  []
@@ -1016,7 +1011,7 @@ m/n/10.95 (\OML/cmm/m/it/10.95 s=[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 =\OT
 1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s=[]\OT1/cmr/m/n/10.95 ) =
  []
 
-[23]
+
 Overfull \hbox (30.21227pt too wide) detected at line 59
  []$[]  \OML/cmm/m/it/10.95 I[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 E[]\OT
 1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s[]; s[]\OT1/cmr/m/n/10.95 ) + \OML/cmm/m/
@@ -1030,7 +1025,7 @@ s[] \OMS/cmsy/m/n/10.95 ^^@ [] \OML/cmm/m/it/10.95 a[]s[] \OT1/cmr/m/n/10.95 +
 t/10.95 a[]s[][]$ 
  []
 
-
+[23]
 Overfull \hbox (61.99455pt too wide) detected at line 65
 []
  []
@@ -1131,7 +1126,7 @@ Overfull \hbox (151.50035pt too wide) detected at line 223
  []
 
 [38]
-Overfull \hbox (79.278pt too wide) detected at line 237
+Overfull \hbox (79.278pt too wide) detected at line 240
 [][][][]\OML/cmm/m/it/10.95 C[] \OT1/cmr/m/n/10.95 = [] [] [][] \OML/cmm/m/it/1
 0.95 w[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 `; `[]; `[]\OT1/cmr/m/n/10.95 )
 [][]\OML/cmm/m/it/10.95 C[]C[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 C[]C[][
@@ -1141,7 +1136,7 @@ Overfull \hbox (79.278pt too wide) detected at line 237
  []
 
 
-Overfull \hbox (86.43578pt too wide) detected at line 252
+Overfull \hbox (86.43578pt too wide) detected at line 255
 [][][]\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 k\OT1/cmr/m/
 n/10.95 ) = [] \OML/cmm/m/it/10.95 ^^N\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 k
  \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 k[]\OT1/cmr/m/n/10.95 )  []  \OMS/
@@ -1158,7 +1153,7 @@ m/m/it/10.95 k[][]\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 i[]\OML/cmm/m/it/10.9
  []
 
 
-Overfull \hbox (165.3508pt too wide) detected at line 266
+Overfull \hbox (165.3508pt too wide) detected at line 269
 []
  []
 
@@ -1231,7 +1226,7 @@ tion [][]7.1[][], closed form with The-o-rem [][]7.2[][]); $[](\OML/cmm/m/it/10
 .95 k[]; k[]; ^^V\OT1/cmr/m/n/10.95 )$
  []
 
-[59]) (./sec_checks.tex [60] [61] [62]
+[59] [60]) (./sec_checks.tex [61] [62]
 Overfull \hbox (36.5186pt too wide) in paragraph at lines 109--139
  [][] 
  []
@@ -1251,12 +1246,12 @@ Overfull \hbox (227.62749pt too wide) in paragraph at lines 115--115
 []$\OMS/cmsy/m/n/10.95 ^^@[]|$ 
  []
 
-
+[70]
 Overfull \hbox (331.42479pt too wide) in paragraph at lines 135--135
 []$[]|$ 
  []
 
-[70]
+
 Overfull \hbox (432.34741pt too wide) in paragraph at lines 140--140
 []$[]|$ 
  []
@@ -1501,7 +1496,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 83.
 
-[76]
+[76] [77]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 165.
@@ -1590,16 +1585,16 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 165.
 
-[77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87]) (./app_k2channels.tex
+[78] [79] [80] [81] [82] [83] [84] [85] [86] [87]) (./app_k2channels.tex
 [88] [89]) (./app_k3channels.tex [90] [91] [92] [93] [94] [95])
-(./app_ledger.tex [96]
-Underfull \hbox (badness 1655) in paragraph at lines 31--36
+(./app_ledger.tex [96] [97]
+Underfull \hbox (badness 1655) in paragraph at lines 35--40
 []\OT1/cmtt/m/n/10.95 A3[]third[]order/\OT1/cmr/m/n/10.95 : con-tracted third-o
 rder ker-nel by po-lar-i-sa-tion over the term lists
  []
 
 
-Underfull \hbox (badness 1668) in paragraph at lines 31--36
+Underfull \hbox (badness 1668) in paragraph at lines 35--40
 \OT1/cmr/m/n/10.95 (\OT1/cmtt/m/n/10.95 engine.py\OT1/cmr/m/n/10.95 , \OT1/cmtt
 /m/n/10.95 third.py\OT1/cmr/m/n/10.95 , \OT1/cmtt/m/n/10.95 thirteen.py\OT1/cmr
 /m/n/10.95 ); third-order form equiv-a-lence (\OT1/cmtt/m/n/10.95 test[]third.p
@@ -1607,27 +1602,35 @@ y\OT1/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 3989) in paragraph at lines 31--36
+Underfull \hbox (badness 3989) in paragraph at lines 35--40
 \OT1/cmtt/m/n/10.95 test[]null2.py\OT1/cmr/m/n/10.95 ); residual-gauge tests (\
 OT1/cmtt/m/n/10.95 gauge.py\OT1/cmr/m/n/10.95 ); collinear residues (\OT1/cmtt/
 m/n/10.95 residues.py\OT1/cmr/m/n/10.95 ,
  []
 
-[97] [98] [99] [100] [101]
-Overfull \hbox (6.85477pt too wide) in paragraph at lines 148--148
+
+Underfull \hbox (badness 1755) in paragraph at lines 44--47
+\OT1/cmr/m/n/10.95 gauge re-sponse, ex-plicit residues and Richard-son ex-trac-
+tion (\OT1/cmtt/m/n/10.95 n1[]gauge[]response.py\OT1/cmr/m/n/10.95 ,
+ []
+
+[98] [99] [100] [101] [102]
+Overfull \hbox (6.85477pt too wide) in paragraph at lines 160--160
 [][]\OT1/cmr/bx/n/12 Non-perturbative solver (pla-nar sym-me-try, comoving-orth
 ogonal gauge; Sec. [][]13.4[][]) 
  []
 
-[102] [103] [104]
-Overfull \hbox (21.96906pt too wide) in paragraph at lines 209--214
+[103] [104]
+Overfull \hbox (21.96906pt too wide) in paragraph at lines 228--233
 []\OT1/cmr/m/n/10.95 Superhorizon limit of the monochro-matic $\OML/cmm/m/it/10
 .95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^O[]\OT1/cmr/m/n/10.95 )$ co-ef-f
 i-cient (Sec. [][]12.7[][]; \OT1/cmtt/m/n/10.95 W4[]final/superhorizon.py\OT1/c
 mr/m/n/10.95 ,
  []
 
-) (./refs.tex [105] [106]) [107] (./main.aux)
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 235.
+[105]) (./refs.tex [106] [107]) [108] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1640,11 +1643,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 24965421C6CAC3883C5349FC5D2208A2;18836.
  ) 
 Here is how much of TeX's memory you used:
- 23273 strings out of 476182
- 419448 string characters out of 5795595
- 1974975 words of memory out of 5000000
- 44135 multiletter control sequences out of 15000+600000
- 578757 words of font info for 112 fonts, out of 8000000 for 9000
+ 23278 strings out of 476182
+ 419505 string characters out of 5795595
+ 1977975 words of memory out of 5000000
+ 44137 multiletter control sequences out of 15000+600000
+ 578926 words of font info for 113 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  102i,17n,107p,4031b,743s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> </
@@ -1653,40 +1656,39 @@ are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-
-Output written on main.pdf (107 pages, 1066546 bytes).
+ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+am10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
+m10.pfb>
+Output written on main.pdf (108 pages, 1058002 bytes).
 PDF statistics:
- 2649 PDF objects out of 2984 (max. 8388607)
- 2432 compressed objects within 25 object streams
- 692 named destinations out of 1000 (max. 500000)
+ 2665 PDF objects out of 2984 (max. 8388607)
+ 2449 compressed objects within 25 object streams
+ 694 named destinations out of 1000 (max. 500000)
  693 words of extra memory for PDF output out of 10000 (max. 10000000)
 

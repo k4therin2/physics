@@ -1,0 +1,12 @@
+l=1 Kbar=AB/2  E2-pred -7.444424   channel -7.444424
+l=1 Kbar=AB    E2-pred -14.888849   channel -7.444424
+l=2 Kbar=AB/2  E2-pred +3.963214   channel +3.963213
+l=2 Kbar=AB    E2-pred +7.926428   channel +3.963213
+l=3 Kbar=AB/2  E2-pred +1.789676   channel +1.789676
+l=3 Kbar=AB    E2-pred +3.579351   channel +1.789676
+l=4 Kbar=AB/2  E2-pred +1.208182   channel +1.208181
+l=4 Kbar=AB    E2-pred +2.416363   channel +1.208181
+l=5 Kbar=AB/2  E2-pred +0.453286   channel +0.453286
+l=5 Kbar=AB    E2-pred +0.906572   channel +0.453286
+l=6 Kbar=AB/2  E2-pred +0.043133   channel +0.043133
+l=6 Kbar=AB    E2-pred +0.086267   channel +0.043133

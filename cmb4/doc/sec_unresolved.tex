@@ -24,10 +24,9 @@ functionals $\mathcal F_\ell$, $\mathcal D_{\perp\ell}$, $\mathcal D_{r\ell}$ \e
 $\Delta^\kappa_\ell$ of the contracted kernel (a $\mu$-integral of time integrals); the type-C and type-D $\mu$-integrands of $C^{(22)}_\ell$, which
 are projected on $Y_{\ell m}$ by sky quadrature (no closed form beyond \eqref{eq:K2lm}, \eqref{eq:asm-Dl}).  The loop integrals over $k$, $q$, $\mu$
 are evaluated numerically for the monochromatic spectrum only.
-\item \emph{(E2), (E3), $T^{\rm(ii)}$ untested numerically.}  These harmonic formulas (Sec.~\ref{sec:thirteen}) are derived by Wick counting and
-pass an analytic collapse check (H-10).  The monochromatic $C^{(13)}_\ell$ does not use them: $\kappa$, including its normalisation part
-\eqref{eq:asm-kappanorm}, is computed directly by polarisation.  An evaluation of $C^{(13)}_\ell$ through (E0)--(E3) would be an independent
-route and has not been made.
+\item \emph{$T^{\rm(ii)}$ untested numerically.}  The harmonic formula $T^{\rm(ii)}$ (Sec.~\ref{sec:thirteen}) is derived by Wick counting and
+is not used by the monochromatic $C^{(13)}_\ell$, which is computed directly from $\kappa$ by polarisation; (E2) and (E3) were tested against the
+normalisation channels of $\kappa$ (H-14).  A complete evaluation of $C^{(13)}_\ell$ through (E0)--(E3) and $T^{\rm(i,ii,iii)}$ has not been made.
 \item \emph{Gauge invariance.}  Tested: the exact $k=0$ family (dilation, all orders, analytic; Sec.~\ref{sec:check_dilation}); the residual $K=0$
 time reparametrisation $\tau(\eta)$ for the full contracted kernel $\kappa$ (Sec.~\ref{sec:asm-C13}); the finite-$k$ comparison of the planar
 plane-wave maps with a non-perturbative solver in comoving-orthogonal gauge (Sec.~\ref{sec:check_endtoend}).  Not performed: a perturbative test
@@ -36,7 +35,8 @@ rotation of the observer triad is proved (Lemma~\ref{lem:asm-triad}) but was not
 \item \emph{Coverage of the end-to-end test.}  The single-plane-wave comparison with the non-perturbative solver probes only the axisymmetric
 ($m=0$ about $\vk$) parts of $K_2$, $K_3$ in collinear configurations, scalar modes only, and $\bar\eta_o/\eta_*=2$ and $4$
 (Sec.~\ref{sec:check_gaps}).  The contracted kernel $\kappa$ shares the term lists and field solutions tested there but was not itself compared
-with the plane-wave chain; the $(13)$ term was evaluated at $\eta_o/\eta_*=4$ only.
+with the plane-wave chain; the $(13)$ term was evaluated at $\eta_o/\eta_*=4$ only, and no scan in
+$k_0$ was made apart from the superhorizon check of Sec.~\ref{sec:mono-comb}.
 \item \emph{Zero modes and tadpoles (resolved; residual caveat).}  The residual $k=0$ freedom is classified and the map is shown to be
 invariant to second order under every zero mode; the $\qhat$-averaged tadpole is the unique $k\to0$ limit (Sec.~\ref{sec:asm-zeromodes}).  What is not
 separately established: the invariance of $\Theta^{(3)}$ under $F(\eta)$ is inferred from the multilinear identity and the uniqueness of the regular
