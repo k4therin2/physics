@@ -15,3 +15,16 @@ all 15 channels).
   (1/4)C22|soft = sigma_L^2 (2/pi) int k^2 dk P (k d_k Delta_l)^2 (derived here from V2's limit; consistent with V2's combined formula).
 - 8.5 C22 general formula, radial functions per type (incl. Legendre radial functions F_l, D_perp l, D_r l of the functionals), checks.
 - 8.6-8.8 \todo placeholders for A3 (K_3c, C13, IR structure).
+
+## Milestone 2 — sec_mono.tex (DONE, compiles; both files final for the second-order half)
+- 11.1 definition, C11 = 4 pi sigma^2 Delta_l(k0)^2; 11.2 collapse of C22 to one K-integral (frame, prefactor, channel-pair
+  integrand), closed B x B (3j sum); 11.3 Proposition K->0 (A2's k0_limits + power counting d+p<=2; I added Phi2'-Psi2' and
+  delta_T2 (contains -Psi2/2) to the p=2,d=0 list, by the algebraic relations), numerical confirmation; 11.4 Table (A2 logs,
+  l=2..20, both eta_o; l>=15 at eta_o=4 flagged unreliable), reliability notes, group table (eta_o=8) and structure remarks.
+- 11.5, 11.6 \todo placeholders for A3 ((13) term; combination).
+- Cross-refs to W2a's sec_map2 labels (eq:k1def, eq:Dx1def, eq:deta_o2, eq:L2direct, rem:signslip, sec:theta2) added; J_a, U_a
+  identified with W2a's G_1, B_1. Note: observer-channel degree counting (Remark rem:asm-obs) is for the DIRECT form; W2a's
+  "clock piece l<=2" refers to the shear form; both stated.
+- IR paragraph cites A3's Milestone 4 numerical confirmation of K3(q,-q,k) -> D^2 K1 as reported, write-up pending A3.
+Compile: pdflatex x2, 0 errors, 0 undefined refs; residual small overfull boxes (<7pt) in sec_mono.
+Not done: no independent check of the numbers (only transcription from A2's analyze_*.log, verified by script).

@@ -40,7 +40,7 @@ The sky monopole entering \eqref{eq:theta_orders} is the $\ell=0$ projection,
 with $\Delta_0=O(k^4)$ as $k\to0$ (Sec.~\ref{sec:linear}).
 
 \paragraph{Observer clock.}  The observer measures at fixed proper time $\Delta\tau=\int_{\eta_{\rm init}}^{\eta_o}a\,\dd\eta/\hat u^0$
-from the initial-data surface (Sec.~\ref{sec:observer}, \eqref{eq:clock}).  At first order $1/\hat u^0=1+\Psi_1$ on the worldline,
+from the initial-data surface (Sec.~\ref{sec:observer}, \eqref{eq:clock}; second order in \eqref{eq:deta_o2}).  At first order $1/\hat u^0=1+\Psi_1$ on the worldline,
 so $\Delta\tau=\int\eta(1+\eps\Psi_1)\dd\eta$; holding it fixed gives $\bar\eta_o\,\delta\eta_{o1}+\int_0^{\bar\eta_o}\eta\Psi_1(\eta,\mathbf0)\dd\eta=0$
 up to an initial-surface term $O(\eta_i^2)\to0$.  Per mode ($\delta\eta_{o1}=\int\frac{\dd^3k}{(2\pi)^3}\zeta_\vk\,\delta\eta_o(k)$), using
 $\int x\TP(x)\dd x=2\sin x/x$,
@@ -81,7 +81,7 @@ $\Theta=\eps\Theta^{(1)}+\tfrac{\eps^2}2\Theta^{(2)}$ and $\Theta^{(2)}=\int\!\!
 \end{equation}
 ${\rm Sym}[f]=\tfrac12[f(\vk_1,\vk_2)+f(\vk_2,\vk_1)]$; the factor 2 converts $L_2/2$ into $L_2$, the product $K_1K_1$ is the $L_1^2$ of $m_2$,
 and $-2\sky{m_1}m_1$ symmetrised gives the last two terms (with \eqref{eq:asm-monopole}).  The $\ell=0$ part of \eqref{eq:asm-K2} is
-not the monopole of $\Theta^{(2)}$ (which vanishes) and is never used.  We use the \emph{direct} (redshift) form of $L_2$ (C2), which equals
+not the monopole of $\Theta^{(2)}$ (which vanishes) and is never used.  We use the \emph{direct} (redshift) form \eqref{eq:L2direct} of $L_2$, which equals
 the shear form modulo the conservation equations; the two give the same $K_2$ to $6\times10^{-15}$ at generic momenta
 (Sec.~\ref{sec:asm-cl22}).
 
@@ -95,10 +95,10 @@ J_a&\equiv2ik_a\mu_a\TP(k_a,\eta)E_a\ \ (=2\partial_n\Psi_1=-\Gamma^0_{kk}|_1),\
 U_a&\equiv\big[\TP+ik_a\mu_aT_V-T_{\delta_T}\big](k_a,\eta)\,E_a\ \ (=\Psi_1+\nhat\cdot\vv_1-\delta_{T1}),
 \label{eq:asm-JU}
 \end{align}
-so that $L_1=\int_{\eta_*}^{\eta_o}J\,\dd\eta+[U]^{o}_{e}$, equal to \eqref{eq:L1} after one integration by parts.  The perturbed photon
+the kernels of $\mathcal G_1$ and $B_1$ of \eqref{eq:L2direct}, so that $L_1=\int_{\eta_*}^{\eta_o}J\,\dd\eta+[U]^{o}_{e}$, equal to \eqref{eq:L1}
+after one integration by parts.  The perturbed photon
 direction and position along the ray, $\vk_1(\eta)=\vk_{1}^{\rm init}-\int_\eta^{\eta_o}\mathbf G_1\dd\eta'$ and
-$\Delta\vx_1(\eta)=\delta\vx_{o1}+\nhat\,\delta\eta_{o1}-\int_\eta^{\eta_o}\vk_1\dd\eta'$ (Sec.~\ref{sec:map2}; note the sign of the
-$\mathbf G_1$ integral, which corrects the stored \code{definitions} of C2), are, per mode $a$,
+$\Delta\vx_1(\eta)=\delta\vx_{o1}+\nhat\,\delta\eta_{o1}-\int_\eta^{\eta_o}\vk_1\dd\eta'$ (\eqref{eq:k1def}, \eqref{eq:Dx1def}; for the sign of the $\mathbf G_1$ integral see Remark~\ref{rem:signslip}), are, per mode $a$,
 \begin{align}
 \vk_{1\perp}&=i\vk_{a\perp}\,\mathcal F_a(\eta), &
 \mathcal F_a(\eta)&\equiv T_V(k_a,\eta_o)+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k_a,\eta')E_a(\eta'),\nonumber\\
@@ -186,12 +186,13 @@ delay $-2\sum_{(ab)}\mathcal D_{r,a}\TP(k_b)k_b^2\mu_b^2E_b$.  The radial shift 
 enter through $\mathcal D_{r}$, $\mathcal D_\perp$ \eqref{eq:asm-functionals}; the channels ``clock'' and ``disp'' contain only the
 explicit endpoint pieces.
 
-\begin{remark}[observer channels]\label{rem:asm-obs}
+\begin{remark}[observer channels of the direct form]\label{rem:asm-obs}
 At the observer $\chi=0$, so an obs channel is a polynomial in $\nhat$ of the degree of its $\mu_a$, $K_n$, $P_\perp$ content:
 $K^{\rm C,obs}$, $K^{\rm D}_{\rm clock}$, $K^{\rm D}_{\rm disp}$ have degree $\le1$ and contribute to $\ell\le1$ only;
 $K^{\rm B,obs}_{1\times1}$ has degree $2$ and contributes to $\ell\le2$.  For $\ell\ge2$ the observer motion and clock act only through
 $\mathcal F,\mathcal D_\perp,\mathcal D_r$ and the type-B products.  (Consistent with the vanishing clock and displacement diagonals in
-Table~\ref{tab:mono-groups}.)
+Table~\ref{tab:mono-groups}.)  The split into channels depends on the form of $L_2$ (in the shear form the explicit clock piece has degree 2,
+Sec.~\ref{sec:theta2}); only the sum $K_2$ is form independent.
 \end{remark}
 The complete machine-generated set (fifteen channels, plus B) is App.~\ref{app:k2channels}.
 
@@ -246,7 +247,8 @@ with \eqref{eq:asm-squeezed} ($O(k_1)$ terms vanish by parity after the angular 
 \end{equation}
 the second-order dilation response.  It is positive, so for $P\propto k^{-3}$ ($\sigma_L^2\propto\int\dd q/q$) $C^{(22)}_\ell$ alone is
 logarithmically IR divergent and nothing inside $C^{(22)}$ can cancel it.  The cancellation requires the $(13)$ soft region with
-$K_3(\vq,-\vq,\vk)\to\mathcal D^2K_1(\vk)$ (predicted by V2, \S4 of its report; \emph{verification on our $K_{3c}$ pending, agent A3}),
+$K_3(\vq,-\vq,\vk)\to\mathcal D^2K_1(\vk)$ (predicted by V2, \S4 of its report; agent A3 reports a numerical confirmation on the full contracted kernel, with an
+$O(q^2)$ approach, whose write-up is \emph{pending}, Sec.~\ref{sec:asm-IR}),
 after which the sum is $\sigma_L^2\cdot\tfrac12\cdot\tfrac2\pi\int k^2\dd k\,\Delta_\ell^2(3+\mathcal D)^2P$: a total derivative in $\ln k$ that
 vanishes for scale-invariant $k^3P$, and leaves an IR sensitivity $\propto\sigma_L^2$ times the running of $k^3P$ otherwise
 (Sec.~\ref{sec:asm-IR}).  For the monochromatic spectrum of Sec.~\ref{sec:mono} there is no soft region; the corner $K=|\vk_1+\vk_2|\to0$
