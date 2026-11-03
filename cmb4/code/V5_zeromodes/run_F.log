@@ -1,0 +1,3 @@
+
+================ generator: quadratic (tidal) mode: eta_old = eta + f(eta) x.C.x, x_old = x + g(eta) C x ================
+  eta_old = eps*s*(eta**2*f2 + eta*f1)*(x*(C11*x + C12*y + C13*z) + y*(C12*x + C22*y + C23*z) + z*(C13*x + C23*y + z*(-C11 - C22))) + eta ;  x_old = [C11*eps*s*x*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + C12*eps*s*y*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + C13*eps*s*z*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + x, C12*eps*s*x*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + C22*eps*s*y*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + C23*eps*s*z*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + y, C13*eps*s*x*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + C23*eps*s*y*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + eps*s*z*(-C11 - C22)*(eta**3*g3 + eta**2*g2 + eta*g1 + g0) + z]

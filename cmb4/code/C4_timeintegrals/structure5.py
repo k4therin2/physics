@@ -16,33 +16,44 @@ def canon(w):
     raise ValueError(w)
 E = sp.symbols('E0:4'); Ec = sp.symbols('F0:4')       # e^{+i w_j eta}, e^{-i w_j eta}
 out = {}
+def prim(n, w, Z):
+    """finite part of int_eps^eta t^n e^{iwt} dt (same convention as trig_integrate.integrate_term), Z := e^{i w eta}; n <= 0"""
+    if n == 0: return (Z - 1) / (sp.I * w)
+    if n == -1: return -Cin(w * eta) + sp.I * Si(w * eta) + sp.log(eta)
+    return eta**(n + 1) * Z / (n + 1) - sp.I * w / (n + 1) * prim(n + 1, w, Z) - (sp.I * w)**(-n - 1) / (sp.factorial(-n - 1) * (n + 1))
 for nm in ('A', 'B'):
     terms = {eval(kk, {'sqrt': sp.sqrt, 'k': k, 'q': q, 'p': p}): sp.parse_expr(v) for kk, v in d['terms' + nm].items()}
-    sf = {}; el = 0
+    sf = {}; buckets = {}      # (trig key, eta power) -> list of coefficient terms
     for (n, w), c in terms.items():
-        fin, sing = integrate_term(n, w, eta)
-        fin = sp.expand(c * fin)
         j, sg = canon(w)
-        fin = fin.replace(lambda f: isinstance(f, sp.exp), lambda f: (E[j] if sg > 0 else Ec[j]) if sp.expand(f.args[0] - sp.I * w * eta) == 0 else f)
-        for term in sp.Add.make_args(fin):
+        Zs = E[j] if sg > 0 else Ec[j]
+        fin = prim(n, w, Zs)
+        for term in sp.Add.make_args(sp.expand(c * fin)):
             fs = list(term.atoms(Cin) | term.atoms(Si))
             if fs:
                 f = fs[0]; jj, s_ = canon(f.args[0] / eta); cc = term / f
                 if f.func == Si: cc *= s_
-                sf[(f.func.__name__, jj)] = sf.get((f.func.__name__, jj), 0) + cc
-            elif term.has(sp.log):
-                sf[('log', 0)] = sf.get(('log', 0), 0) + term
-            else:
-                el += term
-    sf = {kk: sp.factor(sp.expand(v)) for kk, v in sf.items()}
+                sf.setdefault((f.func.__name__, jj), []).append(cc)
+                continue
+            if term.has(sp.log):
+                sf.setdefault(('log', 0), []).append(term); continue
+            tk = [e for e in E + Ec if term.has(e)]
+            assert len(tk) <= 1, term
+            tk = tk[0] if tk else 1
+            rest = term / tk
+            pw = rest.as_coeff_exponent(eta)[1]
+            buckets.setdefault((tk, pw), []).append(rest / eta**pw)
+    print("  integrated (%.0fs)" % (time.time() - t0), flush=True)
+    sf = {kk: sp.factor(sp.Add(*v)) for kk, v in sf.items()}
     sf = {kk: v for kk, v in sf.items() if v != 0}
-    el = sp.expand(el)
+    bc = {kk: sp.Add(*v) for kk, v in buckets.items()}
     C = {}; Sn = {}
     for j in range(4):
-        cp = el.coeff(E[j]); cm = el.coeff(Ec[j])
-        C[j] = sp.collect(sp.expand(cp + cm), eta, sp.factor); Sn[j] = sp.collect(sp.expand(sp.I * (cp - cm)), eta, sp.factor)
+        pws = sorted({pw for (tk, pw) in bc if tk in (E[j], Ec[j])})
+        C[j] = sp.Add(*[sp.factor(bc.get((E[j], pw), 0) + bc.get((Ec[j], pw), 0)) * eta**pw for pw in pws])
+        Sn[j] = sp.Add(*[sp.factor(sp.I * (bc.get((E[j], pw), 0) - bc.get((Ec[j], pw), 0))) * eta**pw for pw in pws])
         assert not C[j].has(sp.I) and not Sn[j].has(sp.I), (nm, j)
-    c0 = sp.factor(sp.expand(el.subs({**{e: 0 for e in E}, **{e: 0 for e in Ec}})))
+    c0 = sp.factor(sp.Add(*[v * eta**pw for (tk, pw), v in bc.items() if tk == 1]))
     print(nm, "skeleton:", sf, " const:", c0, "(%.0fs)" % (time.time() - t0), flush=True)
     for j in range(4):
         print("   cos(w%d eta): %s\n   sin(w%d eta): %s" % (j + 1, str(C[j])[:300], j + 1, str(Sn[j])[:300]))

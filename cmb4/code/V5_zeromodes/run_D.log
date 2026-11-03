@@ -1,0 +1,30 @@
+
+================ generator: time-dependent translation c(eta) = c1 eta + c2 eta^2 (c(0)=0: label kept) ================
+  eta_old = eta ;  x_old = [eps*s*(c1_1*eta + c2_1*eta**2) + x, eps*s*(c1_2*eta + c2_2*eta**2) + y, eps*s*(c1_3*eta + c2_3*eta**2) + z]
+  induced first-order zero-mode fields (coefficient of s):
+     v_1_1  = -c1_1 - 2*c2_1*eta
+     om_1_1 = c1_1 + 2*c2_1*eta
+     v_2_1  = -c1_2 - 2*c2_2*eta
+     om_2_1 = c1_2 + 2*c2_2*eta
+     v_3_1  = -c1_3 - 2*c2_3*eta
+     om_3_1 = c1_3 + 2*c2_3*eta
+  Poisson conditions on zero mode: div omega = 0 ; div h = [0, 0, 0]
+  observer event (new coords): {'dxo1_1': -c1_1*eta_o_bar*s - c2_1*eta_o_bar**2*s + dxo1_1, 'dxo1_2': -c1_2*eta_o_bar*s - c2_2*eta_o_bar**2*s + dxo1_2, 'dxo1_3': -c1_3*eta_o_bar*s - c2_3*eta_o_bar**2*s + dxo1_3, 'dxo2_1': -2*c1_1*deta_o1*s - 4*c2_1*deta_o1*eta_o_bar*s + dxo2_1, 'dxo2_2': -2*c1_2*deta_o1*s - 4*c2_2*deta_o1*eta_o_bar*s + dxo2_2, 'dxo2_3': -2*c1_3*deta_o1*s - 4*c2_3*deta_o1*eta_o_bar*s + dxo2_3}
+  zero-mode parts of ray functionals: K = [-c1_1 - 2*c2_1*eta, -c1_2 - 2*c2_2*eta, -c1_3 - 2*c2_3*eta] 
+      D = [-eta*(c1_1 + c2_1*eta), -eta*(c1_2 + c2_2*eta), -eta*(c1_3 + c2_3*eta)]
+  Delta L1 [ray] = 0
+  Delta L1 [obs] = 0
+  Delta L1 [emi] = 0
+  [time-dependent translation c(eta) = c1 eta + c2 eta^2 (c(0)=0: label kept)] fit of  R_ray = rot(omega) + D W : [{omega1: 0, omega2: 0, omega3: 0}]
+  rotation vector omega = [0, 0, 0] ; W = 0
+  boundary  obs + W(obs) = 0 ;  emi - W(emi) = 0
+  VERDICT [time-dependent translation c(eta) = c1 eta + c2 eta^2 (c(0)=0: label kept)]: Delta Theta2 = pure rotation of Theta1 (+ monopole): True
+  (40s)
+
+================ generator: general time reparametrization eta_old = eta + F(eta), F = a1 eta + a2 eta^2 + a3 eta^3 ================
+  eta_old = eps*s*(a1*eta + a2*eta**2 + a3*eta**3) + eta ;  x_old = [x, y, z]
+  induced first-order zero-mode fields (coefficient of s):
+     Psi1   = 2*a1 + 3*a2*eta + 4*a3*eta**2
+     Phi1   = -a1 - a2*eta - a3*eta**2
+     dT1    = -a1 - a2*eta - a3*eta**2
+  Poisson conditions on zero mode: div omega = 0 ; div h = [0, 0, 0]

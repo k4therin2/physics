@@ -1,0 +1,14 @@
+tensor general solution: Eq(h(eta), (C1*besselj(1/2, eta*k) + C2*bessely(1/2, eta*k))/sqrt(eta))
+L[j0] = 0 ; L[cos/(k eta)] = 0
+j0(k eta) series: 1 - eta**2*k**2/6 + eta**4*k**4/120 - eta**6*k**6/5040 + O(eta**7)  -> analytic (even power series), j0(0) = 1: REGULAR, not excluded by regularity
+cos(k eta)/(k eta) series: 1/(eta*k) - eta*k/2 + O(eta**2)  -> singular
+Frobenius indicial roots at eta=0: r(r-1) + 2r = 0 -> [-1, 0] (r=0 regular, r=-1 singular)
+k = 0: h = A + B/eta; A = constant anisotropic shear = pure gauge (V5 run_all: shear generator => rotation of the sky).
+=> h_n(eta->0) = 0 must be DECLARED (no primordial tensors at any order); it also removes the k=0 constant-shear zero mode.
+
+vector ij equation homogeneous solution: Eq(omega(eta), C1/eta**2)  (singular unless C1 = 0)
+constraint with Kelvin (v^T + omega = C_v): omega = -8*C_v/(eta**2*k**2) ; satisfies omega' + 2 omega/eta = 0: True
+=> for k != 0 the only homogeneous vector mode is omega = -8 C_v/(k^2 eta^2), v^T = C_v - omega: singular, carried by primordial vorticity C_v;
+   regularity <=> C_v = 0 <=> omega = v^T = 0.  No regular homogeneous vector mode exists for k != 0 (C1/V3 statement confirmed).
+k = 0: the k^2 term drops: constraint gives only omega + v^T = 0 (C_v = 0), omega(eta) free = time-dependent translation c(eta):
+   omega = c', v = -c' (V5 gauge engine, run_all: translation generator) -> pure gauge; also linear-in-x vector modes = rotations w(eta) (pure gauge).

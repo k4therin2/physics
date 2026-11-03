@@ -1,0 +1,31 @@
+
+================ generator: time rescaling ================
+  eta_old = eta*(a*eps*s + 1) ;  x_old = [x, y, z]
+  induced first-order zero-mode fields (coefficient of s):
+     Psi1   = 2*a
+     Phi1   = -a
+     dT1    = -a
+  Poisson conditions on zero mode: div omega = 0 ; div h = [0, 0, 0]
+  observer event (new coords): {'deta_o1': -a*eta_o_bar*s + deta_o1, 'deta_o2': -2*a*deta_o1*s + deta_o2}
+  zero-mode parts of ray functionals: K = [-a*n1, -a*n2, -a*n3] 
+      D = [-a*eta*n1, -a*eta*n2, -a*eta*n3]
+  Delta L1 [ray] = 0
+  Delta L1 [obs] = 0
+  Delta L1 [emi] = 0
+  [time rescaling] fit of  R_ray = rot(omega) + D W : [{omega1: 0, omega2: 0, omega3: 0, w0: 1}]
+  rotation vector omega = [0, 0, 0] ; W = (22 terms)
+  boundary  obs + W(obs) = 0 ;  emi - W(emi) = 0
+  VERDICT [time rescaling]: Delta Theta2 = pure rotation of Theta1 (+ monopole): True
+  (46s)
+
+================ generator: dilation ================
+  eta_old = eta ;  x_old = [x*(b*eps*s + 1), y*(b*eps*s + 1), z*(b*eps*s + 1)]
+  induced first-order zero-mode fields (coefficient of s):
+     Phi1   = -b
+  Poisson conditions on zero mode: div omega = 0 ; div h = [0, 0, 0]
+  observer event (new coords): {'dxo2_1': -2*b*dxo1_1*s + dxo2_1, 'dxo2_2': -2*b*dxo1_2*s + dxo2_2, 'dxo2_3': -2*b*dxo1_3*s + dxo2_3}
+  zero-mode parts of ray functionals: K = [b*n1, b*n2, b*n3] 
+      D = [b*n1*(eta - eta_o_bar), b*n2*(eta - eta_o_bar), b*n3*(eta - eta_o_bar)]
+  Delta L1 [ray] = 0
+  Delta L1 [obs] = 0
+  Delta L1 [emi] = 0

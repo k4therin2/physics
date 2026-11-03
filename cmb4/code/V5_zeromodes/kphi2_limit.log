@@ -1,0 +1,29 @@
+=== (i) Laurent coefficients at fixed q (k -> 0) ===
+K_Q  k^-2 coefficient: -q**2*(3*mu**2 - 1)*(eta**2*Derivative(T_Phi(q, eta), eta)**2 + 2*eta*T_Phi(q, eta)*Derivative(T_Phi(q, eta), eta) + 3*T_Phi(q, eta)**2)
+   check K_Q^(-2) = -(3 mu^2 - 1) q^2 K_h(q,q)/4 : True
+K_Q  k^-1 coefficient: mu*q*(3*eta**2*mu**2*q*Derivative(T_Phi(q, eta), eta)*Derivative(T_Phi(q, eta), eta, q) - eta**2*q*Derivative(T_Phi(q, eta), eta)*Derivative(T_Phi(q, eta), eta, q) + 2*eta**2*Derivative(T_Phi(q, eta), eta)**2 + 3*eta*mu**2*q*T_Phi(q, eta)*Derivative(T_Phi(q, eta), eta, q) + 3*eta*mu**2*q*Derivative(T_Phi(q, eta), eta)*Derivative(T_Phi(q, eta), q) - eta*q*T_Phi(q, eta)*Derivative(T_Phi(q, eta), eta, q) - eta*q*Derivative(T_Phi(q, eta), eta)*Derivative(T_Phi(q, eta), q) + 4*eta*T_Phi(q, eta)*Derivative(T_Phi(q, eta), eta) + 9*mu**2*q*T_Phi(q, eta)*Derivative(T_Phi(q, eta), q) - 3*q*T_Phi(q, eta)*Derivative(T_Phi(q, eta), q) + 6*T_Phi(q, eta)**2)
+K_SPhi k^-2 coefficient equals d_eta(K_Q^(-2))/eta (mod first-order ODE): True
+K_SPhi k^-1 coefficient equals d_eta(K_Q^(-1))/eta (mod first-order ODE): True
+K_Phi2(0) Laurent: {-2: -4*q**2*(3*mu**2 - 1)/9, -1: 8*mu*q/9, 0: -8/9}
+Q_d(eta->0) = -4*q**2*(3*mu**2 - 1)/3 ;  3 Phi_d(0) = -4*q**2*(3*mu**2 - 1)/3  -> equal: True
+Q^(-1)(eta->0) = 8*mu*q/3 ;  3 Phi^(-1)(0) = 8*mu*q/3  -> equal: True
+S00 kernel: k^-2, k^-1 coefficients: [0, 0]
+S0z kernel: k^-2, k^-1 coefficients: 0 0
+
+=== (ii) gauge-mode relations of the divergent parts ===
+Let Phi_d solve Phi_d'' + 4 Phi_d'/eta = K_SPhi^(-n) = (K_Q^(-n))'/eta with Phi_d(0) = K_Phi2(0)^(-n) (regular, unique).
+Then r := eta Phi_d' + 3 Phi_d - Q_d has r' = eta(Phi_d'' + 4Phi_d'/eta - Q_d'/eta) = 0 and r(0) = 3Phi_d(0) - Q_d(0) = 0 (checked above):
+   => Q_d = eta Phi_d' + 3 Phi_d for all eta, i.e. with G := eta Phi_d:  Phi_d = G/eta, Psi_d = Phi_d - Q_d = -(G' + G/eta).
+delta2 divergent part (S00 has no divergent part; -2 eta^2 k^2 Phi/3 is O(k^0)): 4*Phi_d(eta)  (= 4 Phi_d = -4 G/eta... time-reparametrisation value)
+v2_z divergent part (S0z regular): I*eta*k*Phi_d(eta)   = i k (eta Phi_d)  => V_d = eta Phi_d = G
+engine (gauge.py, eta_old = eta + F(eta) P(x), F = -G): Psi + (eta Phi)' + Phi = 0
+
+=== (iii) q-angle average at fixed k (the tadpole limit) ===
+K_Q       <k^-2 coeff>_mu = 0, <k^-1 coeff>_mu = 0, <k^0 coeff>_mu = -16/9
+K_SPhi    <k^-2 coeff>_mu = 0, <k^-1 coeff>_mu = 0, <k^0 coeff>_mu = -56*q**2/81
+K_Phi2_0  <k^-2 coeff>_mu = 0, <k^-1 coeff>_mu = 0, <k^0 coeff>_mu = -8/9
+K_S00     <k^-2 coeff>_mu = 0, <k^-1 coeff>_mu = 0, <k^0 coeff>_mu = 32/3
+   (K_S00 entry is eta^2 x <k^0>, C1: eta^2 tadS00 -> 32/3; K_SPhi entry is its eta->0 limit)
+Exact statement for K_Phi2(0): int dOmega_q/(4pi) K_Phi2(0)(q, k - q) at FIXED k = -8/9 (k-independent)
+K_om Laurent: k^-2: 0 ; k^-1: 2*I*eta*mu*q*(-eta*q*T_Phi(q, eta)*Derivative(T_Phi(q, eta), eta, q) + eta*q*Derivative(T_Phi(q, eta), eta)*Derivative(T_Phi(q, eta), q) + 2*eta*T_Phi(q, eta)*Derivative(T_Phi(q, eta), eta) + 2*T_Phi(q, eta)**2)
+   omega2 ~ P_ij(khat) q_j K_om: the 1/k term is odd in mu -> int dOmega_q q_j mu = (4pi/3) q khat_j, and P_ij khat_j = 0: ensemble tadpole of omega2 vanishes at every k.

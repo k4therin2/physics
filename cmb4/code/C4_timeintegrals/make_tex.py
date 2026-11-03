@@ -12,20 +12,36 @@ def abstract(e):
     e = e.subs({sp.Function('T_Phi')(q, eta): Tq, sp.Function('T_Phi')(p, eta): Tp})
     return sp.expand(e)
 def lx(e): return sp.latex(e).replace(r'\operatorname{Cin}', r'\mathrm{Cin}').replace(r'\operatorname{Si}', r'\mathrm{Si}')
+def wr(c, width=110):
+    """latex of a (rational) coefficient, broken over several align lines if long"""
+    f = sp.factor(c)
+    if len(lx(f)) < width * 1.3: return lx(f)
+    num, den = sp.fraction(sp.together(f))
+    pref = 1
+    if num.is_Mul:   # keep short factors outside
+        short = [a for a in num.args if len(lx(a)) < 40]; pref = sp.Mul(*short); num = sp.Mul(*[a for a in num.args if a not in short])
+    terms = sp.Add.make_args(sp.expand(num)); lines = []; cur = []
+    for t in terms:
+        if cur and len(lx(sp.Add(*(cur + [t])))) > width:
+            lines.append(cur); cur = []
+        cur.append(t)
+    if cur: lines.append(cur)
+    body = r" \\ &\qquad ".join((("+" if not lx(sp.Add(*ln)).startswith("-") else "") if i else "") + lx(sp.Add(*ln)) for i, ln in enumerate(lines))
+    return r"\frac{%s}{%s}\Big(%s\Big)" % (lx(pref), lx(den), body)
 def kernel_tex(e):
     e = abstract(e)
     P = sp.Poly(e, Tq, Tp, dTq, dTp)
     parts = []
     for mono, c in P.terms():
         m = sp.Mul(*[s**n for s, n in zip((Tq, Tp, dTq, dTp), mono)])
-        parts.append(r"\left[%s\right] %s" % (lx(sp.factor(c)), lx(m)))
+        parts.append(r"\Big[%s\Big] %s" % (wr(c), lx(m)))
     return r" \\ &\quad + ".join(parts)
 ser = {nm: {n: sp.parse_expr(c) for n, c in d.items()} for nm, d in pickle.load(open('series_small_eta.pkl', 'rb')).items()}
 def series_tex(nm, nmax):
     out = []
     for n in range(nmax + 1):
         c = ser[nm].get(n, 0)
-        if c != 0: out.append(r"\left[%s\right]\eta^{%d}" % (lx(sp.factor(c)), n))
+        if c != 0: out.append(r"\Big[%s\Big]\eta^{%d}" % (wr(c), n))
     return r" \\ &\quad + ".join(out) + r" + O(\eta^{%d})" % (nmax + 2)
 comp = {}
 phi2c = None
@@ -42,7 +58,8 @@ def laurent_tex(c):
     for t in sp.Add.make_args(c):
         n = sp.Poly(sp.expand(t * eta**30), eta).degree() - 30
         groups[n] = groups.get(n, 0) + t / eta**n
-    return r" \\ &\qquad ".join(r"+\left[%s\right]\eta^{%d}" % (lx(sp.factor(sp.expand(v))), n) for n, v in sorted(groups.items()))
+    return r" \\ &\qquad ".join(r"+\Big[%s\Big]\eta^{%d}" % (wr(sp.expand(v)), n) for n, v in sorted(groups.items()))
+Dsym = (k**2 + p**2 + q**2) * (3*k**6 - 3*k**4*(p**2 + q**2) - 3*k**2*(p**4 + q**4) - 2*k**2*p**2*q**2 + 3*(p**6 + q**6) - 3*p**2*q**2*(p**2 + q**2)) / (8*k**2*p**3*q**3)
 def phi2_full():
     if phi2c is None: return "(not generated)"
     s = r"$P=u_2(x_k)\mathcal A-u_1(x_k)\mathcal B$, frequencies $w_1=(k+q+p)/\sqrt3,\ w_2=(k+q-p)/\sqrt3,\ w_3=(k-q+p)/\sqrt3,\ w_4=(q+p-k)/\sqrt3$. "
@@ -50,8 +67,8 @@ def phi2_full():
     for nm, sym in (('A', r'\mathcal A'), ('B', r'\mathcal B')):
         sf, C, Sn, c0 = phi2c[nm]
         s += r"\subsection*{$%s$}Special functions: \begin{align*}" % sym
-        s += r" \\ ".join(r"&[%s(w_{%d}\eta)]:\ %s" % (kk.split(',')[0].strip("('\" "), int(kk.split(',')[1].strip(")' ")) + 1, lx(v)) for kk, v in sf.items())
-        s += r"\end{align*} constant $c_0=%s$; \begin{align*}" % lx(c0)
+        s += r" \\ ".join(r"&[%s(w_{%d}\eta)]:\ %s" % (kk.split(',')[0].strip("('\" "), int(kk.split(',')[1].strip(")' ")) + 1, lx(sp.factor(v / Dsym)) + r"\,\mathcal D") for kk, v in sf.items())
+        s += r"\end{align*} constant: \begin{align*}c_0&=%s\end{align*}\begin{align*}" % wr(c0)
         for j in range(4):
             s += r"C_{%d}&=%s\\ S_{%d}&=%s\\ " % (j + 1, laurent_tex(C[j]), j + 1, laurent_tex(Sn[j]))
         s += r"\end{align*}"
@@ -73,7 +90,7 @@ def trig_tex(trig, xmap):
         terms = []
         for n in sorted(pw):
             cn = sp.expand(c * eta**(-n)).subs(eta, 0) if False else sp.Add(*[t for t in sp.Add.make_args(c) if sp.Poly(sp.expand(t * eta**30), eta).degree() - 30 == n]) / eta**n
-            terms.append(r"\left[%s\right]\eta^{%d}" % (lx(sp.factor(sp.expand(cn))), n))
+            terms.append(r"\Big[%s\Big]\eta^{%d}" % (wr(sp.expand(cn)), n))
         lines.append(r"%s\Big\{ %s \Big\}" % (lx(mm), r" \\ &\qquad + ".join(terms)))
     return r" \\ &+ ".join(lines)
 
@@ -188,14 +205,14 @@ def full_tex(nm, xmap, skel_label):
     s = (r"Frequencies: $w_1=(k+q+p)/\sqrt3,\ w_2=(k+q-p)/\sqrt3,\ w_3=(k-q+p)/\sqrt3,\ w_4=(q+p-k)/\sqrt3$. " if nm == 'phi2' else
          r"Frequencies: $w_1=k+(q+p)/\sqrt3,\ w_2=k+(q-p)/\sqrt3,\ w_3=k-(q-p)/\sqrt3,\ w_4=k-(q+p)/\sqrt3$ (only $w_4$ can vanish). ")
     s += r"Special-function part (function, frequency):\begin{align*}" + \
-        r" \\ ".join(r"&[%s,\ w_{%d}]:\ %s" % (f, j + 1, lx(c)) for (f, j), c in [((kk.split(',')[0].strip("('\" "), int(kk.split(',')[1].strip(")' "))), v) for kk, v in sf.items()]) + r"\end{align*}"
+        r" \\ ".join(r"&[%s,\ w_{%d}]:\ %s" % (f, j + 1, wr(c)) for (f, j), c in [((kk.split(',')[0].strip("('\" "), int(kk.split(',')[1].strip(")' "))), v) for kk, v in sf.items()]) + r"\end{align*}"
     s += r"Elementary part ($x_a=a\eta/\sqrt3$%s):\begin{align*}&%s\end{align*}" % (skel_label, trig_tex(trig, xmap))
     return s
 x = lambda a: a * eta / s3
 xmap_phi = {sp.sin(x(k)): sp.sin(xk), sp.cos(x(k)): sp.cos(xk), sp.sin(x(q)): sp.sin(xq), sp.cos(x(q)): sp.cos(xq), sp.sin(x(p)): sp.sin(xp), sp.cos(x(p)): sp.cos(xp)}
 yk = sp.Symbol(r'k\eta')
 xmap_h = dict(xmap_phi); xmap_h.update({sp.sin(k * eta): sp.sin(yk), sp.cos(k * eta): sp.cos(yk)})
-Bsk = r"-\tfrac{\mathcal D}{1}\,[\ldots]\ \text{(see Appendix)}"
+Bsk = r"-\mathcal D\,[\mathrm{Cin}(w_1\eta)-\mathrm{Cin}(w_2\eta)-\mathrm{Cin}(w_3\eta)+\mathrm{Cin}(w_4\eta)],"
 if 'phi2' in comp:
     pass
 tex = doc % (kernel_tex(S['K_SPhi']), Bsk, kernel_tex(S['K_Q']), kernel_tex(S['K_om']),

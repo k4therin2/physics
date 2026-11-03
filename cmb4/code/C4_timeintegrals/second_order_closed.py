@@ -192,26 +192,89 @@ def _series_h(kk, qq, pp, ee, N=_NSER):
         I = I * ee + a[n]
     return I * ee**2
 
-Z_SWITCH = 4.0      # closed form used for (k+q+p) eta/sqrt3 > Z_SWITCH, ODE series below (calibrated in calibrate_numerics.py)
+Z_SWITCH = 4.0      # ODE series used for (k+q+p) eta/sqrt3 <= Z_SWITCH (calibrated in calibrate_numerics.py)
+W_SAFE = 6.0        # closed form used only if every frequency x eta >= W_SAFE ...
+RATIO_SAFE = 5.0    # ... and 1/RATIO_SAFE <= q/k, p/k <= RATIO_SAFE; otherwise double-precision Gauss-Legendre quadrature of the
+                    # Green's-function integral (verify_module.py: the closed form loses digits by cancellation of the 1/w and
+                    # 1/(p^3 q^3) terms near the collinear edges / h2 resonance and for hierarchical triangles).
+_GL_X, _GL_W = np.polynomial.legendre.leggauss(40)
+def _quad_panels(z):
+    return np.maximum(2, np.ceil((2 * z + 1) / 20.0)).astype(int)
+def _gw_nodes(ee, M):
+    """composite Gauss-Legendre nodes/weights on [0, ee] with M panels (ee: array, same M for all)"""
+    edges = np.linspace(0, 1, M + 1)
+    t = ((edges[:-1, None] + edges[1:, None]) / 2 + (edges[1:, None] - edges[:-1, None]) / 2 * _GL_X[None, :]).ravel()
+    w = ((edges[1:, None] - edges[:-1, None]) / 2 * _GL_W[None, :]).ravel()
+    return ee[:, None] * t[None, :], ee[:, None] * w[None, :]
+def _u1(kk, ee): return -0.5 * _tphi_np(kk, ee)
+def _du1(kk, ee): return -0.5 * _dtphi_np(kk, ee)
+def _u2(kk, ee):
+    x = kk * ee / np.sqrt(3.0); return (np.cos(x) + x * np.sin(x)) / x**3
+def _du2(kk, ee):
+    x = kk * ee / np.sqrt(3.0); return (x**2 * np.cos(x) - 3 * np.cos(x) - 3 * x * np.sin(x)) / x**4 * kk / np.sqrt(3.0)
+def _quad_phi(kk, qq, pp, ee):
+    """P and dP/deta by quadrature:  P = u2(eta) int (u1/W) S - u1(eta) int (u2/W) S"""
+    P = np.empty_like(ee); dP = np.empty_like(ee)
+    z = (kk + qq + pp) * ee / np.sqrt(3.0); Ms = _quad_panels(z)
+    for M in np.unique(Ms):
+        sel = Ms == M
+        k_, q_, p_, e_ = kk[sel], qq[sel], pp[sel], ee[sel]
+        t, w = _gw_nodes(e_, M)
+        K_, Q_, P_ = [np.repeat(a[:, None], t.shape[1], axis=1) for a in (k_, q_, p_)]
+        S = _alg_eval('K_SPhi', K_, Q_, P_, t)
+        xp = K_ * t / np.sqrt(3.0)
+        u1W = -t * np.sin(xp) + K_ / np.sqrt(3.0) * t**2 * np.cos(xp)
+        u2W = -t * np.cos(xp) - K_ / np.sqrt(3.0) * t**2 * np.sin(xp)
+        A = np.sum(w * u1W * S, axis=1); B = np.sum(w * u2W * S, axis=1)
+        P[sel] = _u2(k_, e_) * A - _u1(k_, e_) * B
+        dP[sel] = _du2(k_, e_) * A - _du1(k_, e_) * B
+    return P, dP
+def _quad_h(kk, qq, pp, ee):
+    I = np.empty_like(ee)
+    z = (kk + qq + pp) * ee / np.sqrt(3.0) + kk * ee; Ms = _quad_panels(z)
+    for M in np.unique(Ms):
+        sel = Ms == M
+        k_, q_, p_, e_ = kk[sel], qq[sel], pp[sel], ee[sel]
+        t, w = _gw_nodes(e_, M)
+        K_, Q_, P_ = [np.repeat(a[:, None], t.shape[1], axis=1) for a in (k_, q_, p_)]
+        Kh = _alg_eval('K_h', K_, Q_, P_, t)
+        E_ = e_[:, None]
+        I[sel] = np.sum(w * (t / E_) * np.sin(K_ * (E_ - t)) / K_ * Kh, axis=1)
+    return I
+def _safe(kk, qq, pp, ee, freqs):
+    ok = (qq / kk >= 1 / RATIO_SAFE) & (qq / kk <= RATIO_SAFE) & (pp / kk >= 1 / RATIO_SAFE) & (pp / kk <= RATIO_SAFE)
+    for f in freqs:
+        ok &= np.abs(f) * ee >= W_SAFE
+    return ok
 def _P_num(kk, qq, pp, ee):
-    kk, qq, pp, ee = np.broadcast_arrays(*[np.asarray(a, dtype=float) for a in (kk, qq, pp, ee)])
+    kk, qq, pp, ee = [np.array(a, dtype=float) for a in np.broadcast_arrays(*[np.asarray(a, dtype=float) for a in (kk, qq, pp, ee)])]
     z = (kk + qq + pp) * ee / np.sqrt(3.0)
     P = np.empty_like(ee); dP = np.empty_like(ee)
-    big = z > Z_SWITCH
-    if np.any(big):
-        P[big] = _lam('P', P_expr)(kk[big], qq[big], pp[big], ee[big])
-        dP[big] = _lam('dP', sp.diff(P_expr, eta))(kk[big], qq[big], pp[big], ee[big])
-    if np.any(~big):
-        P[~big], dP[~big] = _series_phi(kk[~big], qq[~big], pp[~big], ee[~big])
+    s3_ = np.sqrt(3.0)
+    ser = z <= Z_SWITCH
+    cf = ~ser & _safe(kk, qq, pp, ee, [(kk + qq - pp) / s3_, (kk - qq + pp) / s3_, (qq + pp - kk) / s3_])
+    qd = ~ser & ~cf
+    if np.any(cf):
+        P[cf] = _lam('P', P_expr)(kk[cf], qq[cf], pp[cf], ee[cf])
+        dP[cf] = _lam('dP', sp.diff(P_expr, eta))(kk[cf], qq[cf], pp[cf], ee[cf])
+    if np.any(ser):
+        P[ser], dP[ser] = _series_phi(kk[ser], qq[ser], pp[ser], ee[ser])
+    if np.any(qd):
+        P[qd], dP[qd] = _quad_phi(kk[qd], qq[qd], pp[qd], ee[qd])
     return P, dP
 def _Ih_num(kk, qq, pp, ee):
-    kk, qq, pp, ee = np.broadcast_arrays(*[np.asarray(a, dtype=float) for a in (kk, qq, pp, ee)])
+    kk, qq, pp, ee = [np.array(a, dtype=float) for a in np.broadcast_arrays(*[np.asarray(a, dtype=float) for a in (kk, qq, pp, ee)])]
     z = (kk + qq + pp) * ee / np.sqrt(3.0)
-    I = np.empty_like(ee); big = z > Z_SWITCH
-    if np.any(big):
-        I[big] = _lam('Ih', h2_I_expr)(kk[big], qq[big], pp[big], ee[big])
-    if np.any(~big):
-        I[~big] = _series_h(kk[~big], qq[~big], pp[~big], ee[~big])
+    I = np.empty_like(ee); s3_ = np.sqrt(3.0)
+    ser = z <= Z_SWITCH
+    cf = ~ser & _safe(kk, qq, pp, ee, [kk - (qq + pp) / s3_, kk - (qq - pp) / s3_])
+    qd = ~ser & ~cf
+    if np.any(cf):
+        I[cf] = _lam('Ih', h2_I_expr)(kk[cf], qq[cf], pp[cf], ee[cf])
+    if np.any(ser):
+        I[ser] = _series_h(kk[ser], qq[ser], pp[ser], ee[ser])
+    if np.any(qd):
+        I[qd] = _quad_h(kk[qd], qq[qd], pp[qd], ee[qd])
     return I
 _ghat = sp.lambdify((k, eta), ghat, 'numpy'); _dghat = sp.lambdify((k, eta), sp.diff(ghat, eta), 'numpy')
 _KPhi20 = sp.lambdify((k, q, p), K_Phi2_0, 'numpy')

@@ -112,3 +112,14 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   language (agent names, SPEC refs, pkl); M6 display Theta^(3) fully (appendix) and K_2 Fourier form; M7 present N1 comparison as gauge
   test; M8 analytic l-cutoff; M9 FW tetrad proof; M10 define <>_c. Proposed reorder + 2-page roadmap in report.
 - [11-03] Launched V5 (zero-mode gauge invariance proof, M1 tensor-mode statement), W3 (revision per R1 M-items, reorder, roadmap, full L3 appendix, eta_i restored). In flight: A3, C4, V4, V5, W3. Blocked: W2c (third-order sections, unresolved), R2 final referee, final summary.
+- [11-03] A3 DONE (report_A3.md; code A3_third_order; A3_channels.tex). kappa := <dTh3/dzeta_k> = (1/2) int P coef_abc, K_3c = kappa/3;
+  C13_l = (2/pi) int k^2 P Delta_l Delta^kappa*_l; mono: 4 pi sigma^4 Delta_l Delta^kappa*_l. Shear vs direct L3 with C1's contracted
+  fields: 2e-11. Tadpoles: kappa invariant under residual K=0 gauge eta->eta+tau(eta) to 1e-13 (B2 resolved in gauge sense; only
+  qhat-averaged tadpole can enter). B1: six channels have 1/(1-mu) poles (residues v3 +0.0117, Dx2 time delay -0.2805, clock +0.2393,
+  emission +0.0295, local 2+1 +0.0247, radial k2 -0.0247; sum ~1e-5 = 0 within accuracy) -> monochromatic C13 FINITE; integrand finite
+  at mu->±1. IR: qhat-avg integrand -> 3(k d_k)^2 K1 = V2's D^2 K1; combined IR = (2/pi) int dlnk (1/2) Delta_l^2 d^2_{lnk}(k^3 P) -> 0 for n_s=1.
+  UV: numerically O(q^0) oscillatory up to q=4k (not proven). Mono numbers (k0=1,eta_*=2,eta_o=8, sigma^4): 1/3ReC13: l=2 -5.39801,
+  3 -23.5152, 4 -9.06394, 6 -1.586e-2, 10 -1.463e-3; 1/4C22+1/3ReC13: l=2 +8.85953, 3 -20.6370, 4 -7.19802, 6 +0.506198, 10 +3.8622e-2.
+  TRIAD: A3 uses shear form + canonical GLOBAL (rigid) triad; Theta2 is triad-independent (first-order direction map has no rotation
+  for scalar perturbations; O(eps^2) direction corrections enter S only at O(eps^3)); a rigid O(eps^2) rotation drops out of Re C13
+  identically (a*(-i L a) imaginary) -> combination consistent. Not done: eta_o=4 for C13; closed-form Delta^kappa_l; UV proof.
