@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CMB Fourth Order</title>
-<meta name="description" content="One-page report: an ~8-hour multi-agent Claude run on the fourth-order CMB temperature power spectrum in a radiation-only universe — what was done, how, what is verified, what is new, and what is not done.">
+<meta name="description" content="One-page report: a multi-agent Claude run (about 8 h wall-clock, 16 agent-hours summed) on the fourth-order CMB temperature power spectrum in a radiation-only universe — what was done, how, what is verified, what is new, and what is not done.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -229,7 +229,7 @@ footer{margin:64px 0 0;padding:24px 0 48px;border-top:1px solid var(--line);font
 <header class="hero"><div class="wrap">
 <p class="eyebrow">I threw my Claude at your CMB problem</p>
 <h1>The CMB temperature spectrum through fourth order</h1>
-<p class="lede">An <b>~8-hour multi-agent Claude run</b> (spread over two days, paused by a usage limit) on a fourth-order CMB problem: “Analytical temperature power spectrum through fourth order”, in a radiation-only GR universe. This page is the summary; everything behind it is in the repo.</p>
+<p class="lede">A <b>multi-agent Claude run</b> (about 8 hours of wall-clock with agents in parallel, 16 agent-hours summed sequentially; spread over two days, paused by a usage limit) on a fourth-order CMB problem: “Analytical temperature power spectrum through fourth order”, in a radiation-only GR universe. This page is the summary; everything behind it is in the repo.</p>
 <blockquote class="quote">
 <p>For a pure radiation fluid the observed temperature is <em>exactly</em> the local temperature times exp of minus the fluid shear integrated along the ray, which collapses the Sachs–Wolfe / Doppler / lensing / emission-surface bookkeeping into one integral and makes the third-order expansion tractable.</p>
 <p>The full fourth-order spectrum (C<sub>11</sub>, C<sub>22</sub> and the previously uncomputed 1×3 term) is assembled with all observer and normalisation terms, evaluated for a monochromatic spectrum, and checked end-to-end against an exact numerical GR solution in a different gauge at first, second and third order.</p>
@@ -263,7 +263,7 @@ footer{margin:64px 0 0;padding:24px 0 48px;border-top:1px solid var(--line);font
 <div class="wide"><div class="tiles">
 <div class="tile"><span class="tl">Agent runs</span><span class="tv">26</span><span class="td">plus 7 that died on a usage limit and were relaunched</span></div>
 <div class="tile"><span class="tl">Agent tokens reported</span><span class="tv">7.2M</span><div class="seg" role="img" aria-label="2.1M Fable 5.1, 5.1M Opus 5.5"><i class="sF" style="flex:2106"></i><i class="sO" style="flex:5064"></i></div><span class="segk"><span>2.1M Fable 5.1</span><span>5.1M Opus 5.5</span></span></div>
-<div class="tile"><span class="tl">Summed agent wall-clock</span><span class="tv">16 h</span><span class="td">many ran in parallel</span></div>
+<div class="tile"><span class="tl">Agent time</span><span class="tv">16 h</span><span class="td">summed sequentially across all runs; about 8 h of wall-clock because many ran in parallel</span></div>
 <div class="tile"><span class="tl">Rough API-equivalent cost</span><span class="tv">~$150–400</span><span class="td">an estimate: it ran on a subscription, so check the usage page</span></div>
 </div>
 <div class="card fig wfcard">
