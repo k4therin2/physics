@@ -25,8 +25,8 @@ $\zeta_{\rm nl}$ or by regularity (see below).  The initial-data definition (Def
 $h_{ij}\to0$ as $\tilde\eta\to0$; with it $\gamma_{ij}\to a(\tilde\eta)^2e^{2\zeta_{\rm nl}}\delta_{ij}$, so $\zeta_{\rm nl}$ is exactly the $\zeta$ of
 Salopek--Bond and Maldacena \cite{SalopekBond,Maldacena}.  (On these slices the fluid is also comoving in the limit, since the regular
 velocity potential vanishes as $\eta\to0$, Sec.~\ref{sec:first}.)  The spatial coordinates are those of Poisson
-gauge; the residual freedom of the conformally flat form, a constant rescaling $\vx\to B\vx$, is the zero-mode
-ambiguity discussed in Sec.~\ref{sec:tadpole}.
+gauge; the residual freedom of the conformally flat form, a constant rescaling $\vx\to B\vx$, is fixed by $\zeta^{(2)}(0)=0$
+(Sec.~\ref{sec:asm-zeromodes}).
 
 \begin{definition}[initial data: Gaussian $\zeta_{\rm nl}$, no primordial vectors or tensors]\label{def:gauss}
 The initial data are those of the regular solution (Sec.~\ref{sec:regular}) with
@@ -140,14 +140,9 @@ a simple pole in $\mu$ at $\mu=1$ ($p\to0$).  For a smooth $P(q)$ the $\dd^3q$ i
 $q=k$ exactly, as for the monochromatic spectrum, $\int\dd\mu\,C_3$ diverges logarithmically unless the pole cancels in the full
 contracted map $\Theta^{(3)}_c$.  (At $q=k$, $\mu\to1$ means $\hat{\vp}\perp\khat$, so the $(3\mu_p^2-1)$ angular structure of the $p^{-2}$
 terms does not average away.)
-\emph{Resolution.}  In the complete contracted map the pole cancels.  Besides $C_3$, every Poisson-inverted second-order object of the
-long pair carries $p^{-2}=[2k^2(1-\mu)]^{-1}$, and six channels of $\kappa=\Theta^{(3)}_c$ acquire simple poles (the third-order velocity
-including $C_3U$, the time delay with $\Delta\vx_2$, the second-order clock and emission shift, the local $2{+}1$ products and the radial
-$\vk_2$).  Their residues cancel to the accuracy of the extraction for $\ell\le6$, and the total $\mu$-integrand has a finite limit approached
-linearly in $1-\mu$, with no $(1-\mu)^{-1/2}$ term (Sec.~\ref{sec:mono-13}).  These are precisely the channels that respond to the residual
-$K=0$ time reparametrisation: the $O(p^{-2})$ part of a long second-order mode is a residual gauge mode of Poisson gauge, to which the
-observable is blind.  The monochromatic $C^{(13)}_\ell$ is therefore finite without a narrow-spectrum regularisation; the cancellation is
-established numerically, and an analytic residue computation is listed in Sec.~\ref{sec:unresolved} (item 1).
+In the complete contracted map this pole cancels: the $p^{-2}$ part of the long second-order mode of the pair $(\vk,-\vq)$ is a residual
+$K=0$ time reparametrisation of Poisson gauge, and the six channel residues it produces cancel identically (Proposition~\ref{prop:mono-residues},
+proved in Sec.~\ref{sec:mono-gauge}).
 
 \subsection{The exact dilation family and the zero-mode (tadpole) ambiguity}
 \label{sec:tadpole}
@@ -171,8 +166,8 @@ Poisson gauge at zero momentum (the free coefficient $a_2$ of the time rescaling
 K_{\Phi_2}(\vq,\vk-\vq;0)=-\frac89+\frac{8q\mu}{9k}-\frac{4q^2(3\mu^2-1)}{9k^2},
 \label{eq:KPhi20_smallk}
 \end{equation}
-and similarly for $K_Q$; the divergent pieces are Poisson inversions of a constant anisotropic shear, a residual (non-dilation)
-gauge mode at $k=0$, and they vanish only after averaging over the direction of $\vq$.  The angular average taken \emph{before} the
+and similarly for $K_Q$; the divergent pieces form a quadrupolar/dipolar residual time-reparametrisation mode at $k=0$ (not a constant
+shear), and they vanish after averaging over the direction of $\vq$ (Sec.~\ref{sec:asm-zeromodes}).  The angular average taken \emph{before} the
 limit,
 \begin{equation}
 \langle\Phi_2(0)\rangle_{\rm ang}=-\tfrac89c^2,\qquad \langle\Psi_2(0)\rangle_{\rm ang}=+\tfrac89c^2,\qquad
@@ -184,27 +179,12 @@ $1-2\Phi=e^{4\zeta/3}$, $1+2\Psi=e^{-4\zeta/3}$ (the member with $\Psi_2=\Phi_2$
 $\Phi_2=\Psi_2=-\tfrac8{27}c^2$, $\delta_2=\tfrac{112}{27}c^2$).
 
 This matters because the third-order map contains \emph{mean-field} (tadpole) terms $\langle X_2\rangle=
-\int\!\frac{\dd^3q}{(2\pi)^3}P(q)K_X(\vq,-\vq;\eta)$, the $\vk=0$ components of the second-order fields
-(Sec.~\ref{sec:third}).  They are evaluated with the angle-averaged convention (closed forms $\mathrm{tad}_X(q,\eta)$
-in App.~\ref{app:kernels}; e.g.\ $\mathrm{tad}_{\Phi_2}\to-\tfrac89$, $\mathrm{tad}_{Q_2}\to-\tfrac{16}9$,
-$\mathrm{tad}_{\delta_2}\to\tfrac{16}9$ as $\eta\to0$).  Because of \eqref{eq:KPhi20_smallk} this convention exchanges the limit $k\to0$
-with the angular average, which is legitimate only if the observable does not depend on the zero-mode assignment.  Since the whole $k=0$ family is a coordinate
-transformation and the observable is defined by physical labels only (fluid worldline, proper time from the
-$\Tphys=T_i$ crossing, emission on $\Tphys=T_*$, sky-monopole normalisation), a constant $\zeta_1$ must be
-unobservable: the full map must be invariant under $c$ at every order, which fixes the squeezed limits of
-$K_2$ and $K_3$ and forces the tadpole convention to drop out of $\Theta^{(3)}$ and hence of $C^{(13)}_\ell$.
-The dilation family is the $k=0$ gauge test of the assembled map (Sec.~\ref{sec:check_dilation}); a numerical test of the
-zero-mode independence of $\Theta^{(1,2,3)}$ for one plane wave is also passed there.
-\emph{Resolution in the gauge sense.}  In the assembled contracted kernel the tadpoles multiply first-order objects of the free leg
-$\vk$ only (\eqref{eq:asm-classii}), so only the $\qhat$-averaged $K=0$ pair kernel can enter: the anisotropic piece
-$-4q^2(3\mu^2-1)/(9k^2)$ of \eqref{eq:KPhi20_smallk}, a constant anisotropic shear, drops out identically and the angular average is not a
-convention.  The isotropic tadpole has three functions $(\langle\Phi_2\rangle,\langle\Psi_2\rangle,\langle\delta_2\rangle)(\eta)$ and two $K=0$ constraints; the remaining
-freedom is the residual time reparametrisation $\eta\to\eta+\tfrac{\eps^2}2\tau(\eta)$ (with the dilation constant fixed by $\zeta^{(2)}(0)=0$).  The
-full contracted kernel $\kappa$, with clock, emission shift, tadpoles and normalisation, is invariant under it to $6\times10^{-14}$ ($\tau=0.1\eta$)
-and $3\times10^{-13}$ ($\tau=0.1\eta^3$), while individual channels change at $O(1)$ (Sec.~\ref{sec:asm-C13}; ledger R-11, EF-22).  The sourced part
-of the tadpole is not a gauge mode but the physical back-reaction of the short modes on the homogeneous expansion, and is kept.
-%% HOOK-V5: analytic zero-mode proof.
-\pending{an analytic proof of zero-mode invariance of $\Theta^{(3)}$ for general momenta (Sec.~\ref{sec:unresolved}, item 8).}
+\int\!\frac{\dd^3q}{(2\pi)^3}P(q)K_X(\vq,-\vq;\eta)$, the $\vk=0$ components of the second-order fields (Sec.~\ref{sec:third}).  They are
+evaluated as the $\qhat$-averaged limits (closed forms $\mathrm{tad}_X(q,\eta)$ in App.~\ref{app:kernels}; e.g.\ $\mathrm{tad}_{\Phi_2}\to-\tfrac89$,
+$\mathrm{tad}_{Q_2}\to-\tfrac{16}9$, $\mathrm{tad}_{\delta_2}\to\tfrac{16}9$ as $\eta\to0$).  This is not a convention: the $\qhat$-average at fixed $k$
+removes every negative power of $k$, only the averaged pair kernel enters the contracted map, the remaining isotropic freedom is the residual time
+reparametrisation $F(\eta)$, and the map is invariant under every zero mode.  The complete argument is given once, in Sec.~\ref{sec:asm-zeromodes};
+the numerical tests are in Sec.~\ref{sec:check_dilation}.
 At the level of the field equations the consistency is already verified by the squeezed limit of \eqref{eq:C3},
 \begin{equation}
 \lim_{q\to0}C_3(k;q,\mu)=-\tfrac{32}9 ,

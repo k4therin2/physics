@@ -184,14 +184,31 @@ $s=10^{-2,-3,-4}$ (linear in $s$); $k_1$-odd part vs $-\mathcal S_{\hat\ve}K_1$:
 \item[SQ-3] Squeezed limit at third order (Theorem~\ref{thm:asm-squeezed3}) on the full assembled $\kappa$: $\Delta^{\tilde\kappa}_\ell(1,q)\to3\mathcal D^2\Delta_\ell$
 ($\ell=1..4$), deviations $\propto q^2$ (factor $4.0$ per halving, $q=0.1,0.05,0.025$).
 \item[H-13] Reality: $\Im C^{(13)}_\ell\sim10^{-14}$ (monochromatic, $\ell\le12$); $C^{(11)}_\ell=4\pi\Delta_\ell^2$ from the $(13)$ code vs \eqref{eq:mono-C11}: $3\times10^{-14}$.
-\item[L-1] Collinear residues of the monochromatic $(13)$ integrand at $1-\mu=10^{-6}$: six channels with non-zero residues (up to $0.35$), sum
-$\le5\times10^{-5}$ for $\ell\le6$; other channels $\le4\times10^{-5}$; total integrand approaches a finite limit linearly in $1-\mu$; even in $\mu$.
+\item[L-0] Monochromatic $C^{(22)}_\ell$ quadrature (Sec.~\ref{sec:mono-num}): $\eta_o=8$, settings $(n_K,n_\theta)=(24,40)$, $(40,48)$, $(56,60)$ agree to
+$\le1.5\times10^{-11}$ relative for $\ell\le20$ ($\le10^{-13}$ for $\ell\le14$); $\eta_o=4$, $(24,40)$ vs $(40,48)$: $\le4\times10^{-11}$ ($\ell\le12$), $10^{-9}$
+($\ell=13,14$); entries $\ell\ge15$ at $\eta_o=4$ (values $<10^{-14}$) below the cancellation floor ($\sim10^{-16}$ of the largest channel), scatter up to
+$2\times10^{-3}$.  Type-B diagonal from the $\mu$-integral vs the closed $3j$ sum \eqref{eq:mono-BB}: $4\times10^{-12}$ ($\ell\le12$), $5\times10^{-9}$ ($\ell\le20$)
+at $\eta_o=8$; $3\times10^{-10}$ ($\ell\le12$) at $\eta_o=4$.
+\item[L-1] Collinear residues of the monochromatic $(13)$ integrand (Table~\ref{tab:mono-res}): Richardson extraction (nine points $1-\mu=0.04\ldots6.25\times10^{-4}$,
+$R/(1-\mu)+$ degree-6 polynomial): six channels with non-zero residues (up to $0.355$), equal to the analytic gauge responses \eqref{eq:mono-Rexpl} to
+$\le9\times10^{-11}$ ($2.5\times10^{-10}$ relative); other channels $\le5\times10^{-10}$; sum $\le8\times10^{-10}$ ($2.3\times10^{-9}$ of the largest), $\ell=0..8$;
+$(1-\mu)^{-1/2}$ coefficient $\le2\times10^{-5}$ (consistent with zero); finite limits $F_\ell$ \eqref{eq:mono-Fl}; $\mu\to-1$ equals $\mu\to+1$ to $1.5\times10^{-14}$.
+(Superseded: the earlier extraction at $1-\mu=10^{-6}$ included the finite part, hence its apparent sums $\sim10^{-5}$.)
+\item[L-5] Collinear pole $=$ gauge mode, symbolic (Sec.~\ref{sec:mono-gauge}, code \code{V6\_residues/}): second-order pole parts \eqref{eq:mono-AQ}--\eqref{eq:mono-pole2}
+with $\tau$ in closed form \eqref{eq:mono-tau}; all contracted third-order sources have only $p^{-2}$ poles, equal to $2/p^2$ times the gauge-shift sources
+\eqref{eq:mono-shift3} (sympy solves for the factor: $2$ in all four); $C_3$ pole reproduced; numerical pair profiles $P^2\times(\cdot)\to$ pole parts with error $O(P^2)$
+($4\times10^{-8}$ at $P=10^{-4}$): exact / pass.
+\item[L-6] Explicit residues \eqref{eq:mono-Rexpl} vs the engine's channels: $\le1.2\times10^{-14}$ ($\ell=0..8$); total gauge response of $\kappa$ to $\tilde\tau$ through all
+routes $1.2\times10^{-14}$ (channels $O(0.36)$).
 \item[L-2] Monochromatic $C^{(13)}_\ell$: settings $(N_\mu,N_\varphi,N_\nu)=(16,16,32)$ vs $(12,20,32)$: $\le8\times10^{-5}$ ($\ell\le10$), $3\times10^{-4}$ ($\ell=12$),
 $2\times10^{-3}$ ($\ell=14$); azimuthal convergence $N_\varphi=16$ vs $32$: $2\times10^{-5}$ at $\mu=0.5$.
 \item[L-3] UV probe of $\tilde\kappa(q)$ to $q=4k$: $O(10)$, oscillatory, no growth (azimuthal resolution $N_\varphi\gtrsim2q\chi_*+8$ required; under-resolution
 by a factor 4 detected at $q=2$).  Numerical only.
-%% HOOK-V4: L-4 (Monte Carlo of C22).
-\item[L-4] Monte-Carlo evaluation of $C^{(22)}_\ell$ (Sec.~\ref{sec:mono-mc}): pending at the time of writing.
+\item[L-4] Monte Carlo of the monochromatic $C^{(22)}_\ell$ (Sec.~\ref{sec:mono-mc}): $N=20$ shell modes, $45\times4000=1.8\times10^5$ realisations,
+$K_2$ as a black box, unbiased off-diagonal estimator: agreement with the quadrature within $1.1\sigma$ at $0.3$--$0.7\%$ precision for $\ell=1..11$
+($\ell=12$: $+2.0\sigma$, $1.4\%$); $C^{(11)}_\ell$ to $0.1$--$0.2\%$; $\langle\zeta^2\rangle/\sigma^2=0.9964(32)$; normalisation term $=-2\sky{m_1}\Theta^{(1)}$ to
+$2.3\times10^{-15}$ per realisation.  Sensitive to the Wick factor ($50\%$) and to the $-2\sky{m_1}m_1$ term ($6\sigma$ at $\ell=3$).  Tests the
+assembly, not $K_2$ (same evaluator).
 \end{itemize}
 
 \subsection*{Not yet checked / pending}

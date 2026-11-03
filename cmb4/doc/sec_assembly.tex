@@ -461,18 +461,58 @@ $2.3$; class (iii): $1.35$; local $2{+}1$ and radial $\vk_2$: $1.18$ each; emiss
 \item \emph{Reality.}  $\Im C^{(13)}_\ell\sim10^{-14}$ in the monochromatic evaluation (relative to $\Re C^{(13)}_\ell$, $\ell\le12$).
 \end{enumerate}
 
-\paragraph{The tadpole (mean-field) convention.}  Item 2 settles the zero-mode question raised by \eqref{eq:KPhi20_smallk} in the gauge sense.
-(1) In \eqref{eq:asm-classii} the tadpole multiplies first-order objects of the free leg $\vk$ only, so only the $\qhat$-average of the $K=0$
-pair kernel can enter $\kappa$: the anisotropic (quadrupolar, $q^2(3\mu^2-1)/k^2$) part of \eqref{eq:KPhi20_smallk}, a constant anisotropic shear,
-drops out identically, without any convention.  (2) The isotropic tadpole has three functions $(\langle\Phi_2\rangle,\langle\Psi_2\rangle,\langle\delta_2\rangle)(\eta)$
-subject to two $K=0$ constraints; the remaining freedom is exactly $\tau(\eta)$ (plus the constant dilation fixed by $\zeta^{(2)}(0)=0$), under
-which $\kappa$ is invariant.  (3) The sourced part of the tadpole is not a gauge mode: its source is the $\qhat$-averaged $K=0$ stress of the
-short modes, and it is the physical back-reaction of the short modes on the homogeneous expansion; it is kept and is not expected to cancel.
-In the shear form, $L_2$ contains no tadpole field (the shear of a homogeneous perturbation vanishes), so $3L_1L_2$ and $-3\sky{m_2}m_1$ see the
-pair $(\vq,-\vq)$ only through products of first-order objects (class (i)); the tadpole fields act only through the third-order routes listed
-in item 2.
-\pending{an analytic proof of zero-mode invariance for general momenta (all anisotropic $K\to0$ pieces, not only the $\qhat$-averaged ones);
-the numerical statements above cover the residual time reparametrisation and the plane-wave configurations of Sec.~\ref{sec:check_dilation}.}
+\subsection{Zero modes and the tadpoles}
+\label{sec:asm-zeromodes}
+This is the single authoritative discussion of the $k=0$ (zero-mode) freedom of Poisson gauge and of the tadpole prescription; Secs.~\ref{sec:tadpole},
+\ref{sec:third}, \ref{sec:check_dilation} and \ref{sec:unresolved} refer to it (ledger ZM-1--ZM-5).
+
+\paragraph{(1) The residual freedom at $k=0$.}  Every candidate homogeneous coordinate change was applied exactly to FRW plus generic first-order
+fields, keeping $\partial_i\omega_i=0$ and $h_{ij}$ transverse-traceless (ZM-1).
+\begin{itemize}\itemsep1pt
+\item \emph{Time reparametrisation} $\eta\to\eta+F(\eta)$, $F=O(\eta)$: it induces $\Psi=F'+F/\eta$, $\Phi=-F/\eta$, $\delta=-4F/\eta$ and leaves
+$\zeta_{\rm nl}$, $h(0)$ and the observer label unchanged.  It is a genuine residual freedom; the residual time rescaling $a_2$ of the dilation
+family \eqref{eq:dilation} is its member $F\propto\eta$.  ($\eta\to\eta+c_0$ gives $\Psi\propto c_0/\eta$ and is excluded by regularity.)
+\item \emph{Dilation, constant shear, constant rotation, constant translation}: each changes $\zeta^{(2)}$ (e.g.\ by $\vx\cdot\nabla\zeta_1$), $h(0)$
+or the label, and is therefore fixed by $\zeta^{(2)}(0)=0$, $h_n(0)=0$ (Definition~\ref{def:gauss}) and the labelling (O2).
+\item \emph{Time-dependent translations $\mathbf c(\eta)$ and rotations $\mathbf w(\eta)$} with $\mathbf c(0)=\mathbf w(0)=0$: pure gauge, absorbed by the
+observer's worldline and triad.
+\end{itemize}
+Hence the only residual $k=0$ freedom is the family $F(\eta)$.  For the vector and tensor sectors (ZM-5): the tensor mode $j_0(k\eta)$ is regular
+(indicial roots $0,-1$), so regularity does not exclude it and $h_n(0)=0$ must be, and is, part of the initial-data definition (this also removes the
+constant-shear zero mode); for $k\ne0$ the only homogeneous vector mode is $\omega=-8C_v/(k^2\eta^2)$, singular and carried by primordial vorticity, so
+regularity is equivalent to $\omega_n=v^T_n=0$ initially; at $k=0$ the only vector mode is $\boldsymbol\omega=-\vv=\mathbf c'(\eta)$, pure gauge.
+
+\paragraph{(2) The $k\to0$ limit of the second-order kernels.}  The divergent term $-4q^2(3\mu^2-1)/(9k^2)$ of \eqref{eq:KPhi20_smallk} is \emph{not} a
+constant shear (ZM-2).  At $O(k^{-2})$, $K_Q=-(3\mu^2-1)q^2K_h(q,q)/(4k^2)$ (the tensor source), $K_{S_\Phi}^{(-2)}=(K_Q^{(-2)})'/\eta$, and at $\eta=0$ the
+$k^{-2}$ parts obey $Q=3\Phi$.  The $k^{-2}$ and $k^{-1}$ parts of $(\Phi_2,\Psi_2,\delta_2,V_2)$ satisfy exactly $\Phi=G/\eta$, $\Psi=-(G'+G/\eta)$,
+$\delta=4\Phi$, $V=\eta\Phi$ for one function $G$, i.e.\ they form a quadrupolar/dipolar \emph{time-reparametrisation} mode ($F=-G$ with a quadratic or
+linear dependence on position), whose induced homogeneous shear vanishes at $\eta=0$.  The average over the direction of $\vq$ at fixed $k$
+removes every negative power of $k$ (the $k^{-1}$ part of $\omega_2$ averages to zero as well), so the tadpole limit exists and equals the
+angle-averaged values $\mathrm{tad}_{Q_2}\to-\tfrac{16}9$, $\mathrm{tad}_{\Phi_2}\to-\tfrac89$, $\eta^2\mathrm{tad}_{S_{00}}\to\tfrac{32}3$ of App.~\ref{app:kernels}.
+In the assembled kernel the question does not even arise for the anisotropic part: in \eqref{eq:asm-classii} the tadpole multiplies first-order
+objects of the free leg $\vk$ only, so only the $\qhat$-averaged $K=0$ pair kernel enters $\kappa$.  The angular average is therefore not a convention.
+
+\paragraph{(3) Invariance of the map.}  To second order the map is invariant under every zero mode (ZM-3): with all ingredients transformed
+(observer event, emission surface, triad, ray functionals), $\Delta L_1=0$ and $\Delta L_2$ is a rigid rotation of the sky plus an exact total
+derivative whose boundary terms cancel.  This was verified for time rescaling and a general cubic $F(\eta)$ (no rotation), for the dilation and
+$\mathbf c(\eta)$ (no change), for a constant shear (rotation $(-S_{23},S_{13},-S_{12})/2$, the Gram--Schmidt prediction), for $\mathbf w(\eta)$ (rotation
+$\mathbf w(\eta_o)$), and for the quadrupolar and dipolar modes of (2); deliberately wrong controls fail.  A rigid rotation drops out of the $C^{(rs)}_\ell$
+(Sec.~\ref{sec:FW}).
+
+\paragraph{(4) The physical tadpole.}  The isotropic tadpole has three functions $(\langle\Phi_2\rangle,\langle\Psi_2\rangle,\langle\delta_2\rangle)(\eta)$
+subject to two $K=0$ constraints; $\zeta^{(2)}(0)=0$ with the $00$ constraint $\delta_2=-2\Psi_2+\tfrac{32}9c^2$ fixes the dilation direction, and the
+remaining freedom is exactly the family $F(\eta)$, whose linear member $F=a\eta$ shifts $(\Psi_2,\Phi_2,\delta_2)$ by $(2a,-a,-4a)$.  The two isotropic
+tadpole members of Sec.~\ref{sec:tadpole} (the angle-averaged one \eqref{eq:tad0} and the one with $\Psi_2=\Phi_2$) differ by $|a|=16/27$ along this family:
+the choice between them is pure gauge (ZM-4).  At third order the reparametrised solution again solves the field equations with $\zeta^{(3)}(0)=0$ and
+$h(0)=0$, and the regular solution is unique, so the third-order fields shift by the corresponding gauge transformation \eqref{eq:mono-shift3}.  The
+sourced part of the tadpole is not a gauge mode: its source is the $\qhat$-averaged $K=0$ stress of the short modes, the physical back-reaction on the
+homogeneous expansion; it is kept and is not expected to cancel.  In the shear form $L_2$ contains no tadpole field (the shear of a homogeneous
+perturbation vanishes), so the tadpoles act only through the third-order routes listed in item 2 of Sec.~\ref{sec:asm-C13}.
+
+\paragraph{(5) Status at third order.}  Invariance of $\Theta^{(3)}$ under $F(\eta)$ follows from the same multilinear identity as at second order
+together with the covariance of the third-order solution (EF-22); it was not run separately as a symbolic third-order test.  It is supported
+numerically by the invariance of the fully assembled $\kappa$ under $\tau=0.1\eta$ and $0.1\eta^3$ (R-11) and by the plane-wave zero-mode test PW-3, and
+analytically, for the long-mode poles, by Sec.~\ref{sec:mono-gauge}.
 
 % ======================================================================
 \subsection{Infrared and ultraviolet structure of the loop}

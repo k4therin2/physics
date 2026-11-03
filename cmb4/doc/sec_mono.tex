@@ -111,14 +111,9 @@ Table~\ref{tab:mono-comb} ($\eta_o=8$).  $^\dagger$: below the double-precision 
 \label{tab:mono}
 \end{table}
 
-\paragraph{Numerical reliability.}  $\eta_o=8$: the settings $(n_K,n_\theta)=(24,40)$, $(40,48)$, $(56,60)$ agree to $\le1.5\times10^{-11}$
-relative for $\ell\le20$ ($\le10^{-13}$ for $\ell\le14$).  $\eta_o=4$: $(24,40)$ vs $(40,48)$ agree to $\le4\times10^{-11}$ for $\ell\le12$ and
-$10^{-9}$ for $\ell=13,14$; the entries $\ell\ge15$ ($^\dagger$, values $<10^{-14}$) lie below the cancellation floor ($\sim10^{-16}$ of the
-largest channel) and scatter by up to $2\times10^{-3}$ relative.  The type-B diagonal from the $\mu$-integral reproduces the closed
-$3j$ sum \eqref{eq:mono-BB} to $4\times10^{-12}$ ($\ell\le12$) and $5\times10^{-9}$ ($\ell\le20$) at $\eta_o=8$, $3\times10^{-10}$ ($\ell\le12$) at
-$\eta_o=4$.  $C^{(11)}_\ell$ uses \eqref{eq:mono-C11}.  The kernel entering \eqref{eq:mono-C22} has passed the checks of
-Sec.~\ref{sec:asm-cl22} (plane wave vs the planar solver, form equivalence, symmetry, reality, squeezed limits).  An independent
-Monte-Carlo evaluation of $C^{(22)}_\ell$ itself is described in Sec.~\ref{sec:mono-mc}.
+\paragraph{Reliability.}  The quadrature is converged to $\le1.5\times10^{-11}$ relative for $\ell\le20$ at $\eta_o=8$ and to $\le4\times10^{-11}$
+for $\ell\le12$ at $\eta_o=4$; entries marked $^\dagger$ lie below the double-precision cancellation floor (settings and the type-B control: ledger L-0).
+The kernel has passed the checks of Sec.~\ref{sec:asm-cl22}, and the assembly is confirmed by the Monte Carlo of Sec.~\ref{sec:mono-mc}.
 
 \paragraph{Structure.}  Table~\ref{tab:mono-groups} lists diagonal channel-group contributions $G_{gg}(\ell)/C^{(22)}_\ell$ at $\eta_o=8$
 (cross terms $g\neq g'$ in the last column).  There are strong cancellations: the lensing (transverse displacement) and
@@ -170,47 +165,50 @@ $\tfrac12\langle{\rm coef}_{abc}\rangle_\varphi$ at fixed $\mu$.  The integrand 
 under $\vq\to-\vq$), and the sky monopole enters through $\langle\sky{m_1}^2\rangle=\sigma^2\Delta_0^2$ and $\langle\!\langle m_2\rangle\!\rangle=-7.46928\,\sigma^2$
 ($\eta_o=8$).
 
-\paragraph{The collinear limit $\mu\to\pm1$.}  At $\mu\to1$ the pair $(\vk,-\vq)$ has total momentum $p=|\vk-\vq|=k_0\sqrt{2(1-\mu)}\to0$ (at $\mu\to-1$
-the pair $(\vk,\vq)$); every Poisson-inverted second-order object of that pair carries $p^{-2}=[2k_0^2(1-\mu)]^{-1}$, e.g.\ the amplitude
-$C_3\to16/[9(1-\mu)]$ \eqref{eq:C3pole}.  Individual channels of $\Delta^\kappa_\ell(\mu)$ therefore have simple poles, which would make the
-$\mu$-integral of each of them logarithmically divergent.  Define the channel residues $R_{c,\ell}=\lim_{\mu\to1}(1-\mu)\Delta^\kappa_{\ell,c}(\mu)$.
-Extracted at $1-\mu=10^{-6}$ ($k_0=1$, $\eta_*=2$, $\eta_o=8$, per unit $\sigma^2$), exactly six channels have non-zero residues:
-\begin{center}\footnotesize\setlength{\tabcolsep}{3.5pt}
-\begin{tabular}{l|rrrrrrr}
+\paragraph{The collinear limit $\mu\to\pm1$: statement.}  At $\mu\to1$ the pair $(\vk,-\vq)$ has total momentum $p=|\vk-\vq|=k_0\sqrt{2(1-\mu)}\to0$
+(at $\mu\to-1$ the pair $(\vk,\vq)$; the integrand is even in $\mu$, and the two limits agree to $1.5\times10^{-14}$).  Every Poisson-inverted
+second-order object of that pair carries $p^{-2}=[2k_0^2(1-\mu)]^{-1}$, e.g.\ the amplitude $C_3\to16/[9(1-\mu)]$ \eqref{eq:C3pole}, so individual
+channels of $\Delta^\kappa_\ell(\mu)$ have simple poles and their $\mu$-integrals diverge logarithmically.  Define the channel residues
+$R_{c,\ell}=\lim_{\mu\to1}(1-\mu)\Delta^\kappa_{\ell,c}(\mu)$.  Exactly six channels have non-zero residues: the third-order velocity
+$\vv_{3c}=\nabla V_{3c}$ (class (iii), including $C_3U$), the radial time delay with $\Delta\vx_2$, the second-order clock $\delta\eta_{o2}$, the
+second-order emission shift $\delta\eta_{e2}$, the local $2{+}1$ products and the radial $\vk_2$.
+\begin{proposition}[collinear residues]\label{prop:mono-residues}
+The six residues cancel identically, for every $\nhat$ and hence for every $\ell$; the integrand $\Delta^\kappa_\ell(\mu)$ is analytic in $1-\mu$ at
+$\mu=1$, with no $(1-\mu)^{-1}$ and no $(1-\mu)^{-1/2}$ term, and the monochromatic $C^{(13)}_\ell$ is finite without regularisation.
+\end{proposition}
+The proof (Sec.~\ref{sec:mono-gauge}) shows that the $p^{-2}$ part of the long second-order mode is a residual $K=0$ time reparametrisation
+of Poisson gauge, to which the observable is blind, and computes the residues explicitly.  Table~\ref{tab:mono-res} gives them at
+$k_0=1$, $\eta_*=2$, $\eta_o=8$ (per unit $\sigma^2$), extracted numerically by Richardson extrapolation: the per-channel integrand is evaluated at
+nine points $1-\mu=0.04,\dots,6.25\times10^{-4}$ and fitted by $R/(1-\mu)+{}$a polynomial of degree~6 in $1-\mu$, so that the finite part is
+subtracted.  The extracted residues agree with the analytic formulas \eqref{eq:mono-Rexpl} to $\le9\times10^{-11}$ in every channel; all other
+channels (lensing, aberration, transverse $\vk_2$ and $\Delta\vx_2$, products, normalisation) have $|R|\le5\times10^{-10}$; the sum is
+$\le8\times10^{-10}$, i.e.\ $2.3\times10^{-9}$ of the largest residue, for $\ell=0,\dots,8$ (ledger L-1).
+\begin{table}[t]
+\centering\scriptsize\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{l|rrrrrrrrr}
 \hline
-channel & $\ell=0$ & $\ell=1$ & $\ell=2$ & $\ell=3$ & $\ell=4$ & $\ell=5$ & $\ell=6$\\ \hline
-class (iii): $\vv_{3c}=\nabla V_{3c}$ (incl.\ $C_3U$) & $-0.34416$ & $0.00803$ & $0.01165$ & $-0.05832$ & $-0.07581$ & $-0.05898$ & $-0.03418$\\
-time delay with $\Delta\vx_2$ (radial) & $0.35486$ & $-0.05097$ & $-0.28054$ & $0.05950$ & $0.08132$ & $0.05308$ & $0.02098$\\
-observer clock $\delta\eta_{o2}$ & $0$ & $0$ & $0.23933$ & $0$ & $0$ & $0$ & $0$\\
-emission shift $\delta\eta_{e2}$ & $-0.01075$ & $0.04295$ & $0.02954$ & $-0.00119$ & $-0.00551$ & $0.00590$ & $0.01319$\\
-local $2{+}1$ products & $0.00997$ & $-0.04053$ & $0.02473$ & $0.01970$ & $0.00444$ & $-0.00261$ & $-0.00378$\\
-radial $\vk_2$ & $-0.01001$ & $0.04054$ & $-0.02473$ & $-0.01970$ & $-0.00444$ & $0.00261$ & $0.00379$\\ \hline
-sum & $-5{\times}10^{-5}$ & $3{\times}10^{-5}$ & $-6{\times}10^{-6}$ & $-2{\times}10^{-5}$ & $-3{\times}10^{-6}$ & $-1{\times}10^{-5}$ & $4{\times}10^{-7}$\\ \hline
+channel & $\ell=0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$\\ \hline
+class (iii) $\vv_{3c}$ & $-0.344109$ & $0.007989$ & $0.011686$ & $-0.058296$ & $-0.075801$ & $-0.058979$ & $-0.034176$ & $-0.015961$ & $-0.006274$\\
+time delay, radial $\Delta\vx_2$ & $0.354859$ & $-0.050939$ & $-0.280538$ & $0.059482$ & $0.081315$ & $0.053080$ & $0.020982$ & $0.003707$ & $-0.001550$\\
+clock $\delta\eta_{o2}$ & $0$ & $0$ & $0.239315$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$\\
+emission $\delta\eta_{e2}$ & $-0.010750$ & $0.042950$ & $0.029538$ & $-0.001186$ & $-0.005514$ & $0.005899$ & $0.013194$ & $0.012254$ & $0.007824$\\
+local $2{+}1$ & $0.009983$ & $-0.040507$ & $0.024701$ & $0.019679$ & $0.004434$ & $-0.002613$ & $-0.003785$ & $-0.002757$ & $-0.001508$\\
+radial $\vk_2$ & $-0.009983$ & $0.040507$ & $-0.024701$ & $-0.019679$ & $-0.004434$ & $0.002613$ & $0.003785$ & $0.002757$ & $0.001508$\\ \hline
+sum (extracted) & $-6{\times}10^{-11}$ & $2{\times}10^{-11}$ & $-2{\times}10^{-11}$ & $3{\times}10^{-10}$ & $2{\times}10^{-10}$ & $6{\times}10^{-10}$ & $-7{\times}10^{-11}$ & $-1{\times}10^{-10}$ & $-8{\times}10^{-10}$\\ \hline
 \end{tabular}
-\end{center}
-All other channels (lensing, aberration, transverse $\vk_2$ and $\Delta\vx_2$, products, normalisation) have $|R|\le4\times10^{-5}$.  The residues
-cancel: the sum is at most $2\times10^{-5}$ of the largest individual residue for $\ell=2$ and $\le1.5\times10^{-4}$ of it for $\ell\le6$, which is the
-accuracy of the extraction ($\sim10^{-6}$ of the finite part).  The total integrand has a finite limit and approaches it linearly in $1-\mu$
-(i.e.\ analytically in $p^2$): $\Delta^\kappa_\ell(\mu)=F_\ell+G_\ell(1-\mu)+\dots$, with no $(1-\mu)^{-1}$ and no $(1-\mu)^{-1/2}$ term (the $O(1/p)$
-gradient pieces are odd under the azimuthal average about $\khat$); the differences between $1-\mu=10^{-4},10^{-5},10^{-6}$ shrink by a factor $10$
-per step, and for $\ell=2$ the integrand is $-6.639$, $-6.294$, $-6.259$ at $1-\mu=10^{-2},10^{-3},10^{-4}$.  The limits are
+\caption{Residues $R_{c,\ell}$ of the six singular channels of the monochromatic $(13)$ integrand at $\mu\to1$ ($k_0=1$, $\eta_*=2$, $\eta_o=8$,
+per unit $\sigma^2$), Richardson extraction with the finite part subtracted.  The exact sum is zero (Sec.~\ref{sec:mono-gauge}); the last row is the
+sum of the extracted values.}
+\label{tab:mono-res}
+\end{table}
+The total integrand approaches its limit linearly in $1-\mu$ (a fitted $(1-\mu)^{-1/2}$ coefficient is $\le2\times10^{-5}$, consistent with zero at
+$\sim2\sigma$; pure polynomial fits leave residuals $10^{-11}$--$3\times10^{-10}$), with
 \begin{equation}
-F_\ell=-52.71,\ 28.75,\ -6.256,\ -18.91,\ -3.284,\ -13.25,\ 0.374\qquad(\ell=0,\dots,6),
+F_\ell=\lim_{\mu\to1}\Delta^\kappa_\ell(\mu)=-52.7128,\ 28.7446,\ -6.2552,\ -18.9101,\ -3.2837,\ -13.2462,\ 0.3738,\ 1.1248,\ 2.9794\qquad(\ell=0,\dots,8).
 \label{eq:mono-Fl}
 \end{equation}
-identical at $\mu\to-1$.
-
-\emph{Structural explanation.}  The six singular channels are exactly the channels that respond to the residual $K=0$ gauge mode
-$\eta\to\eta+\tfrac{\eps^2}2\tau(\eta)$ (item 2 of Sec.~\ref{sec:asm-C13}): class (iii), the time delay with $\Delta\vx_2$, the clock, the emission
-shift, the local $2{+}1$ products and the radial $\vk_2$.  A long second-order mode $p\to0$ generated by two nearly equal and opposite short
-modes is, at leading order $O(p^{-2})$, a homogeneous solution of the $K=0$ equations, i.e.\ a residual Poisson-gauge mode, to which the
-complete observable is blind (the consistency relation for a long second-order mode); its gradient pieces $O(p^{-1})$ are integrable and,
-in addition, average to zero.  This explains why the residues cancel and why they cancel among precisely these channels.  The cancellation
-is, however, established \emph{numerically} (to the accuracy quoted above, for $\ell\le6$ at one parameter point); an analytic computation of
-the residues is not available (Sec.~\ref{sec:unresolved}, item 1).  Consequently the monochromatic $C^{(13)}_\ell$ is finite, the
-$\mu$-integral needs no regularisation, and a narrow-shell spectrum would give the same limit.  The $\sqrt3$ resonances
-($|\vk\mp\vq|=2k_0/\sqrt3$, $\mu=\pm\tfrac13$) are harmless at finite $\eta$: the Green's-function integrals are entire functions of the frequencies
-(cf.\ App.~\ref{app:closedforms}, $\mathrm{Cin}$ and $\Si$ are entire), so the integrand is analytic there.
+The $\sqrt3$ resonances ($|\vk\mp\vq|=2k_0/\sqrt3$, $\mu=\pm\tfrac13$) are harmless at finite $\eta$: the Green's-function integrals are entire
+functions of the frequencies (cf.\ App.~\ref{app:closedforms}, $\mathrm{Cin}$ and $\Si$ are entire), so the integrand is analytic there.
 
 \paragraph{Evaluation.}  $\Delta^\kappa_\ell$ is evaluated by Gauss--Legendre quadrature in $\mu$ (no regularisation), uniform quadrature in
 $\varphi$ and Gauss--Legendre quadrature in $\nu$ for the Legendre projection, at $k_0=1$, $\eta_*=2$, $\eta_o=8$.  The $\varphi$ integral needs
@@ -228,6 +226,90 @@ There are strong cancellations between channels: for $\ell=2$ the largest contri
 aberration$+$deflection $\times$ second-order fields ($+12.54$), radial $\vk_2$ ($-11.40$), clock ($+11.14$), time delay $\times$ second order ($+7.00$),
 lensing $\times$ second order ($-6.76$), transverse $\vk_2$ ($+5.52$), $-3\sky{m_2}m_1$ ($+3.96$) and $3L_1L_2$ ($-4.00$).  The $(13)$ term was
 not evaluated at $\eta_o=4$.
+
+\subsection{The collinear residues are a residual gauge mode}
+\label{sec:mono-gauge}
+This subsection proves Proposition~\ref{prop:mono-residues} (ledger L-5, L-6).  Momenta are in units of $k=|\vk|=|\vq|$, $p=|\vk-\vq|$,
+$p^2=2k^2(1-\mu)$; $\mu\to-1$ follows by $\vq\to-\vq$.
+
+\paragraph{Step 1: the pole of a long second-order mode.}  Consider the pair kernels of Sec.~\ref{sec:einstein} for two first-order modes of equal
+magnitude $s$ and total momentum $P\to0$, and write $T=\TP(s\eta/\sqrt3)$, $T'=\partial_\eta T$.  Symbolic expansion gives: only $K_Q$, $K_{S_\Phi}$
+and $K^0_{\Phi_2}$ have a pole; it is a single $P^{-2}$ term (no $P^{-4}$); $K_{S_{00}}$, $K_{S_{0z}}$, $K_h$ have no pole, and $K_\omega$, $K_{v^T}$ vanish at
+equal magnitudes.  Explicitly
+\begin{equation}
+K_Q=\frac{A_Q(\eta)}{P^2}+O(1),\qquad A_Q=s^2\big[2T^2+(T+\eta T')^2\big],\qquad
+\text{pole}(K_{S_\Phi})=\frac{A_Q'}{\eta},\qquad \text{pole}(K^0_{\Phi_2})=\frac{4s^2}{9}=\frac{A_Q(0)}3,
+\label{eq:mono-AQ}
+\end{equation}
+the second relation exact once $T''$ is eliminated with the first-order equation.  Define $\tau(\eta)$ as the regular solution of
+\begin{equation}
+(\eta^2\tau)'=-\eta^2A_Q,\qquad
+\tau=-\sqrt3\,s\,\frac{x^3(2x-\sin2x)-8x^2\cos^2x+8x\sin2x+4\cos2x-4}{x^5}=-\tfrac49s^2\eta+O(\eta^3),\qquad x=\frac{s\eta}{\sqrt3}.
+\label{eq:mono-tau}
+\end{equation}
+With the $k\to0$ Green's function $G_\Phi\to\tfrac{\eta'}3(1-\eta'^3/\eta^3)$ \eqref{eq:greens} and one integration by parts, the pole parts of the
+second-order fields are exactly
+\begin{equation}
+\big(\Phi_2,\ \Psi_2,\ \delta_2,\ \delta_{T2}\big)\Big|_{P^{-2}}=\Big(-\frac\tau\eta,\ \tau'+\frac\tau\eta,\ -\frac{4\tau}\eta,\ -\frac\tau\eta\Big)\frac1{P^2},\qquad
+V_2=-\frac{\tau}{P^2}+O(P^{-1}),
+\label{eq:mono-pole2}
+\end{equation}
+and $V_2$ enters only through $\vv_2=\nabla V_2=O(P^{-1})$.  These are the field shifts of the residual $K=0$ time reparametrisation
+$\eta\to\eta+\tfrac{\eps^2}2\,\tau/P^2$ of Poisson gauge (Sec.~\ref{sec:asm-zeromodes}, with $F=\tau/P^2$).  A constant spatial dilation could also
+appear at $K=0$; it is excluded because the pole of $K^0_{\Phi_2}$ equals $A_Q(0)/3$, which is the statement $\zeta^{(2)}(0)=0$.  (Numerically:
+$P^2\times$ the pair profiles of the engine tend to \eqref{eq:mono-pole2} with error $O(P^2)$, $4\times10^{-8}$ at $P=10^{-4}$.)
+
+\paragraph{Step 2: the third-order poles are the same gauge mode.}  Set $q=k$, $\mu=1-p^2/2k^2$, $K_{\Phi_2}=a/p^2+b+cp^2$, $K_h=h_0+h_1p^2$ in the
+contracted sources $K_{3c,X}$.  All of them have monomial denominators $p^2$, hence only a simple $p^{-2}$ pole, and the pole depends only on
+$a=-\tau/\eta$ and on $T(k)$: the regular parts $b,c,h_{0,1}$ and the tadpoles drop out.  Using $\tau'=-A_Q-2\tau/\eta$, each pole equals exactly
+$2/p^2$ times the source generated by the gauge shift of the first-order fields of the leg $\vk$,
+\begin{equation}
+\delta\Phi_3=3\tau T'+\frac{6\tau}\eta T,\quad \delta\Psi_3=3\tau T'+6\Big(\tau'+\frac\tau\eta\Big)T,\quad
+\delta V_3=3\tau T_V'+3\tau'T_V,\quad \delta\delta_3=3\tau T_\delta'-\frac{12\tau}\eta T_\delta
+\label{eq:mono-shift3}
+\end{equation}
+($T=\TP(k\eta/\sqrt3)$ etc.; the factor 2 is that of $2A(q)B_2$ in \eqref{eq:contraction_rules}).  The initial amplitude matches:
+$2\lim_{\eta\to0}[3\tau T'+6\tau T/\eta]=32k^2/9$, i.e.\ $C_3\to(32k^2/9)/p^2=16/[9(1-\mu)]$, which is \eqref{eq:C3pole}.  Since the regular solution
+is unique, the poles of $\Phi_{3c},\Psi_{3c},\delta_{3c},V_{3c}$ are exactly $2/p^2$ times \eqref{eq:mono-shift3}.
+
+\paragraph{Step 3: only the poles matter, and they act as a gauge transformation.}  Each term of $\kappa$ contains a single second-order factor.
+Scalars are Laurent series in $p^2$; gradients and $\vv_2$ give $p_j/p^2$, and after the azimuthal average about $\khat$ these are either odd (and
+vanish) or come with $\vp\cdot\khat=p^2/2k$, which makes them $O(1)$.  Hence the residue is the response of the map of the leg $\vk$ to the
+homogeneous pole fields alone, i.e.\ the response to the time reparametrisation with parameter
+\begin{equation}
+\tilde\tau(\eta)\equiv\frac{\tau(\eta)}{2k^2}\qquad(\text{since }p^{-2}=[2k^2(1-\mu)]^{-1}).
+\end{equation}
+The same structure (the integrand depends only on $p^2$, $\vp\cdot\khat=p^2/2k$ and even powers of $p_\perp$) excludes a $(1-\mu)^{-1/2}$ term.
+
+\paragraph{Step 4: explicit residues.}  Let $I_1(\eta,\nu)=-k^2(\nu^2-\tfrac13)T_V(\eta)\,e^{ik\nu\chi}$ be the first-order shear integrand on the ray
+($\nu=\nhat\cdot\khat$; $\Delta_\ell=\frac1{2i^\ell}\int\dd\nu\,P_\ell\,\cdot$ for the Legendre coefficients).  The responses of the six channels are
+\begin{equation}
+\begin{gathered}
+R_{\rm clock}=3\tilde\tau I_1\big|_{\eta_o},\qquad R_{\rm emi}=-3\tilde\tau I_1\big|_{\eta_*},\qquad
+R_{\rm TD}=3\int_{\eta_*}^{\eta_o}\!\tilde\tau\,(ik\nu)\,I_1\,\dd\eta,\\
+R_{v_3}=-3\int_{\eta_*}^{\eta_o}\!\big[\tilde\tau\,\partial_\eta I_1+\tilde\tau' I_1\big]\dd\eta,\qquad
+R_{2+1}=6\int_{\eta_*}^{\eta_o}\!\tilde\tau' I_1\,\dd\eta=-R_{\vk_2,r},
+\end{gathered}
+\label{eq:mono-Rexpl}
+\end{equation}
+where $\partial_\eta$ in $R_{v_3}$ acts on $T_V$ only.  They come, respectively, from $\delta\eta_{o2}\to-\tilde\tau(\eta_o)$, $\delta\eta_{e2}\to-\tilde\tau(\eta_*)$,
+$\Delta x_{2,\parallel}\to-\tilde\tau(\eta)$, $\delta V_3$ of \eqref{eq:mono-shift3}, and $\nhat\cdot\vk_2\to-(\Phi_2+\Psi_2)=-\tilde\tau'$.  The clock residue is pure
+$\ell=2$, $\Delta_2=\tfrac25k^2\tilde\tau(\eta_o)T_V(\eta_o)=0.2393147529$ at the parameter point of Table~\ref{tab:mono-res}.  Since
+$\dd e^{ik\nu\chi}/\dd\eta=-ik\nu\,e^{ik\nu\chi}$,
+\begin{equation}
+R_{v_3}+R_{\rm TD}=-3\int_{\eta_*}^{\eta_o}\frac{\dd}{\dd\eta}\big[\tilde\tau I_1(\eta,\nu)\big]\dd\eta=-3\big[\tilde\tau I_1\big]_{\eta_o}+3\big[\tilde\tau I_1\big]_{\eta_*}
+=-R_{\rm clock}-R_{\rm emi},
+\end{equation}
+and $R_{2+1}+R_{\vk_2,r}=0$: the six residues cancel identically in $\nu$, hence for every $\ell$.  $\square$
+
+\paragraph{Physical reason and status.}  Under $\eta\to\eta+\tilde\tau(\eta)$ at fixed $\vx$ the observer's proper-time clock, the $\Tphys=T_*$ surface,
+the label and the canonical triad are invariant, while the ray, the clock reading and the emission time shift by $\tilde\tau$ and $\vv$ acquires a
+Lie-derivative shift; $\Theta$ is a scalar, so the total response vanishes, and the six channels are exactly those that respond to the residual
+gauge mode (item 2 of Sec.~\ref{sec:asm-C13}).  Status: Steps 1 and 2 are symbolic identities (computer algebra); the structural statements of
+Step 3 are analytic and confirmed numerically; the formulas \eqref{eq:mono-Rexpl} were written by hand from the group structures of the term lists
+and agree with the engine's channels to $\le1.2\times10^{-14}$ ($\ell=0,\dots,8$), and their cancellation is an exact identity.  The gauge response of
+$\kappa$ to $\tilde\tau$ through the tadpole and third-order routes is $O(0.36)$ per channel and $1.2\times10^{-14}$ in total.  The argument
+presupposes that the term lists of $L_3$ represent $\Theta^{(3)}$ correctly, which is established independently (R-9, PW-2).
 
 \subsection{The combination \texorpdfstring{$\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell$}{1/4 C22 + 1/3 Re C13}}
 \label{sec:mono-comb}
@@ -265,17 +347,34 @@ $4\times10^{-4}$ of $\tfrac14C^{(22)}_\ell$; for $\ell\ge15$, $|\tfrac13\Re C^{(
 Table~\ref{tab:mono} to $10^{-4}$ relative.  (b) Signs: the $\eps^4$ term is a correction to a positive quantity, not a power spectrum, and it can
 be negative: $\tfrac13\Re C^{(13)}_\ell<0$ for all evaluated $\ell\ge2$, and the combination is negative for $\ell=3,4,5$, where the $(13)$ term
 dominates.  At $\ell=2$, $\tfrac13\Re C^{(13)}$ cancels $38\%$ of $\tfrac14C^{(22)}$.  Positivity of $C_\ell$ through this order requires
-$\eps^2\sigma^2<1/|{\rm ratio}|$, e.g.\ $\eps^2\sigma^2<0.03$ at $\ell=3$, $4$.  (c) For $\ell\ge6$ the first-order spectrum is tiny (the shell
+$\eps^2\sigma^2<1/|{\rm ratio}|$, e.g.\ $\eps^2\sigma^2<0.030$ at $\ell=3$ and $<0.024$ at $\ell=4$.  (c) For $\ell\ge6$ the first-order spectrum is tiny (the shell
 at $k_0$ with $k_0\chi_*=6$ is band limited) while the loop reaches total momenta up to $2k_0$; the $\eps^4$ terms then exceed $C^{(11)}_\ell$ by
 three to four orders of magnitude per unit $\eps^2\sigma^2$, so the perturbative ordering is strongly $\ell$ dependent for this toy spectrum
 (Sec.~\ref{sec:mono-num}).  (d) Reliability: the kernel $\kappa$ has passed the checks of Sec.~\ref{sec:asm-C13} (form equivalence at third order,
-residual-gauge invariance, reality) and the squeezed test of Sec.~\ref{sec:asm-IR}; the monochromatic number rests in addition on the numerical
-cancellation of the collinear residues; no end-to-end test of $C^{(13)}_\ell$ itself (e.g.\ Monte Carlo) exists.  (e) $\eta_o=4$ was not evaluated
+residual-gauge invariance, reality) and the squeezed test of Sec.~\ref{sec:asm-IR}; the finiteness of the monochromatic number rests on
+Proposition~\ref{prop:mono-residues}, proved in Sec.~\ref{sec:mono-gauge}; no end-to-end test of $C^{(13)}_\ell$ itself (e.g.\ Monte Carlo) exists.  (e) $\eta_o=4$ was not evaluated
 for $(13)$.
 
 \subsection{Monte-Carlo cross-check of \texorpdfstring{$C^{(22)}_\ell$}{C22}}
 \label{sec:mono-mc}
-%% HOOK-V4: filled from the Monte-Carlo report if available.
-\pending{Monte-Carlo evaluation of $C^{(22)}_\ell$ from random finite sums of plane waves on the shell, using the kernel $K_2$ as a black box and
-none of the reductions of Sec.~\ref{sec:asm-cl22} (no $\Khat=\hat{\mathbf z}$ frame, no $\mu$ or $K$ quadrature, no Wick formula); comparison with
-Table~\ref{tab:mono} (in progress at the time of writing).}
+The quadrature of Sec.~\ref{sec:mono-num} was cross-checked by a Monte Carlo that shares only the kernel evaluator $K_2$ with it
+(ledger L-4).  The field is a finite sum of $N=20$ plane waves on the shell, $\zeta=\sum_{j=1}^{N}(\sigma/\sqrt N)[a_j\cos(\vk_j\cdot\vx)+b_j\sin(\vk_j\cdot\vx)]$,
+$|\vk_j|=k_0$, isotropic random directions, $a_j,b_j$ standard normal; $\Theta^{(2)}$ is summed over all ordered pairs of modes with the
+full $K_2$ (normalisation term included, checked realisation by realisation), the $a_{\ell m}$ are obtained by sky quadrature, and
+$C^{(22)}_\ell$ is estimated from $45$ direction sets $\times\,4000$ amplitude draws ($1.8\times10^5$ realisations), omitting the
+$i=j$ pairs and rescaling by $N/(N-1)$, which makes the estimator unbiased.  No $\Khat=\hat{\mathbf z}$ frame, no $\mu$ or $K$ quadrature, no
+Wick formula and no $m$-sum identity are used.
+\begin{center}\footnotesize
+\begin{tabular}{r|lllll}
+\hline
+$\ell$ & 2 & 3 & 4 & 6 & 8\\ \hline
+$\tfrac14C^{(22)}_\ell/\sigma^4$, Monte Carlo & $14.174(100)$ & $2.8564(208)$ & $1.8724(99)$ & $0.5201(32)$ & $0.2603(26)$\\
+$\tfrac14C^{(22)}_\ell/\sigma^4$, quadrature (Table~\ref{tab:mono}) & $14.2575$ & $2.87813$ & $1.86592$ & $0.522062$ & $0.261974$\\ \hline
+\end{tabular}
+\end{center}
+For $\ell=10$: $3.9864(25)\times10^{-2}$ vs $4.00848\times10^{-2}$.  All $\ell=1,\dots,11$ agree within $1.1\sigma$ at $0.3$--$0.7\%$ precision
+($\ell=12$: $+2.0\sigma$, $1.4\%$); the errors are correlated across $\ell$ (common direction sets).  $C^{(11)}_\ell$ is reproduced to
+$0.1$--$0.2\%$.  Sensitivity: a wrong Wick factor would be a $50\%$ effect, and omitting the normalisation term $-2\sky{m_1}m_1$ would shift
+$C^{(22)}_3$ by $4.2\%$, a $6\sigma$ discrepancy.  The test therefore confirms the harmonic projection, the Wick factor, the factor $\tfrac14$,
+the normalisation and the monochromatic reduction; since it uses the same $K_2$ evaluator, it does not independently test $K_2$ itself
+(which is tested in Sec.~\ref{sec:asm-cl22}).
