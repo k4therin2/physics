@@ -70,3 +70,21 @@ sigma^2_IR (2/pi) int k^2 P (k d_k Delta_l)^2 forms (2/pi) int dlnk (k^3 P) (1/2
 for n_s <= 1, but its coefficient is ~ (n_s-1)^2 x (finite): exactly zero for n_s = 1; for n_s != 1 the total is IR-finite only
 for n_s > 1 (n_s < 1: log/power IR sensitivity proportional to (n_s-1)^2, the usual dilation-induced IR sensitivity of a
 non-scale-invariant spectrum).  O(q^2) remainder: int dq q^{n_s} -> converges for n_s > -1.  Monochromatic spectrum: no IR issue.
+
+## Milestone 5 — tadpoles / zero-mode gauge (DONE; `gauge.py`, gauge_lin.log, gauge_cub.log)
+The K=0 second-order modes (tadpoles <Phi2>, <Psi2>, <delta2>, C1's angle-averaged convention) enter kappa through: L3
+'local 2+1' (tadpole x first order), radial k2 and Dx2 (time delay 2nd), the observer clock deta_o2 (lapse tadpole on the
+worldline), the emission shift deta_e2 (dT2 tadpole), 3 L1 L2 and the normalisation -3<m2>m1 (<m2> tadpole), and channel
+(iii) (C1's sources A1(k)<B2> and C3).  The tadpoles are NOT pure gauge as a whole (their eta-dependence ~ q^2 eta^2 is the
+backreaction of the short modes on the homogeneous expansion), so their total coefficient is not expected to vanish; what must
+vanish is the dependence on the residual K=0 Poisson-gauge freedom eta -> eta + eps^2 tau(eta)/2:
+  d<Psi2> = tau' + tau/eta, d<Phi2> = -tau/eta, d<delta2> = -4 tau/eta (zeta_nl unchanged), and the exact transformation of the
+  third-order fields dPhi3 = 3 tau T' + 6 (tau/eta) T, dPsi3 = 3 tau T' + 6(tau' + tau/eta) T, dV3 = 3 tau T_V' + 3 tau' T_V.
+RESULTS: (1) C1's K3c sources with shifted tadpoles, solved with the same Green's function (+ the shift of the regular-mode
+amplitude dC3 = dPhi3(0)), reproduce dPhi3c, dPsi3c, dV3c to 1e-13: C1's tadpole bookkeeping is exactly gauge covariant.
+(2) Full assembled kappa (all tadpole routes incl. normalisation) for tau = 0.1 eta: unchanged to 6e-14 (scale 4e2) while
+individual channels change by O(1-4) (time delay 2nd 3.6, clock 2nd 2.3, channel iii 1.35, local 2+1 1.18, radial k2 1.18,
+emission 2nd 0.15).  tau ~ eta^3 (time-dependent gauge): see gauge_cub.log.  The tadpole part of 3L1L2 cancels identically
+against -3<m2>m1 (algebraically: both are <m2>_tad x m1(k) with opposite sign once <L2>_tad = <m2>_tad - <L1^2> ...), so
+"tadpole coefficients vanish after normalisation" holds in the precise sense: the gauge-dependent tadpole content cancels
+identically; the remaining tadpole dependence is gauge-invariant backreaction and is kept.
