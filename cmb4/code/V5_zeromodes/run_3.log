@@ -1,0 +1,14 @@
+
+================ generator: time-dependent rotation x_old = x + w(eta) x x ================
+  eta_old = eta ;  x_old = [eps*s*(-y*(eta*w1_3 + w0_3) + z*(eta*w1_2 + w0_2)) + x, eps*s*(x*(eta*w1_3 + w0_3) - z*(eta*w1_1 + w0_1)) + y, eps*s*(-x*(eta*w1_2 + w0_2) + y*(eta*w1_1 + w0_1)) + z]
+  induced first-order zero-mode fields (coefficient of s):
+     v_1_1  = -w1_2*z + w1_3*y
+     om_1_1 = w1_2*z - w1_3*y
+     v_2_1  = w1_1*z - w1_3*x
+     om_2_1 = -w1_1*z + w1_3*x
+     v_3_1  = -w1_1*y + w1_2*x
+     om_3_1 = w1_1*y - w1_2*x
+  Poisson conditions on zero mode: div omega = 0 ; div h = [0, 0, 0]
+  observer event (new coords): {'dxo2_1': 2*dxo1_2*eta_o_bar*s*w1_3 + 2*dxo1_2*s*w0_3 - 2*dxo1_3*eta_o_bar*s*w1_2 - 2*dxo1_3*s*w0_2 + dxo2_1, 'dxo2_2': -2*dxo1_1*eta_o_bar*s*w1_3 - 2*dxo1_1*s*w0_3 + 2*dxo1_3*eta_o_bar*s*w1_1 + 2*dxo1_3*s*w0_1 + dxo2_2, 'dxo2_3': 2*dxo1_1*eta_o_bar*s*w1_2 + 2*dxo1_1*s*w0_2 - 2*dxo1_2*eta_o_bar*s*w1_1 - 2*dxo1_2*s*w0_1 + dxo2_3}
+  zero-mode parts of ray functionals: K = [-2*(eta - eta_o_bar)*(n2*w1_3 - n3*w1_2), 2*(eta - eta_o_bar)*(n1*w1_3 - n3*w1_1), -2*(eta - eta_o_bar)*(n1*w1_2 - n2*w1_1)] 
+      D = [-(eta - eta_o_bar)**2*(n2*w1_3 - n3*w1_2), (eta - eta_o_bar)**2*(n1*w1_3 - n3*w1_1), -(eta - eta_o_bar)**2*(n1*w1_2 - n2*w1_1)]

@@ -1,0 +1,38 @@
+
+================ generator: NEGATIVE CONTROL: constant translation (changes the observer label) ================
+  eta_old = eta ;  x_old = [c0_1*eps*s + x, c0_2*eps*s + y, c0_3*eps*s + z]
+  induced first-order zero-mode fields (coefficient of s):
+  Poisson conditions on zero mode: div omega = 0 ; div h = [0, 0, 0]
+  observer event (new coords): {'dxo1_1': -c0_1*s + dxo1_1, 'dxo1_2': -c0_2*s + dxo1_2, 'dxo1_3': -c0_3*s + dxo1_3}
+  zero-mode parts of ray functionals: K = [0, 0, 0] 
+      D = [-c0_1, -c0_2, -c0_3]
+  Delta L1 [ray] = 0
+  Delta L1 [obs] = 0
+  Delta L1 [emi] = 0
+  [NEGATIVE CONTROL: constant translation (changes the observer label)] fit of  R_ray = rot(omega) + D W : [{omega1: 0, omega2: 0, omega3: 0}]
+  rotation vector omega = [0, 0, 0] ; W = 0
+  boundary  obs + W(obs) = 0 ;  emi - W(emi) = 0
+  VERDICT [NEGATIVE CONTROL: constant translation (changes the observer label)]: Delta Theta2 = pure rotation of Theta1 (+ monopole): True
+  (29s)
+
+================ generator: NEGATIVE CONTROL: constant h1 = -S superposed WITHOUT transforming the first-order fields ================
+  eta_old = eta ;  x_old = [-S11*eps*s*x/2 - S12*eps*s*y/2 - S13*eps*s*z/2 + x, -S12*eps*s*x/2 - S22*eps*s*y/2 - S23*eps*s*z/2 + y, -S13*eps*s*x/2 - S23*eps*s*y/2 - eps*s*z*(-S11 - S22)/2 + z]
+  NAIVE superposition (no cross terms with first-order fields)
+  induced first-order zero-mode fields (coefficient of s):
+     h_11_1 = -S11
+     h_12_1 = -S12
+     h_13_1 = -S13
+     h_22_1 = -S22
+     h_23_1 = -S23
+  Poisson conditions on zero mode: div omega = 0 ; div h = [0, 0, 0]
+  observer event (new coords): {'dxo2_1': S11*dxo1_1*s + S12*dxo1_2*s + S13*dxo1_3*s + dxo2_1, 'dxo2_2': S12*dxo1_1*s + S22*dxo1_2*s + S23*dxo1_3*s + dxo2_2, 'dxo2_3': -S11*dxo1_3*s + S13*dxo1_1*s - S22*dxo1_3*s + S23*dxo1_2*s + dxo2_3}
+  zero-mode parts of ray functionals: K = [-(S11*n1 + 2*S12*n2 + 2*S13*n3)/2, -(S22*n2 + 2*S23*n3)/2, n3*(S11 + S22)/2] 
+      D = [-(eta - eta_o_bar)*(S11*n1 + 2*S12*n2 + 2*S13*n3)/2, -(eta - eta_o_bar)*(S22*n2 + 2*S23*n3)/2, n3*(S11 + S22)*(eta - eta_o_bar)/2]
+  Delta L1 [ray] = 0
+  Delta L1 [obs] = 0
+  Delta L1 [emi] = 0
+  [NEGATIVE CONTROL: constant h1 = -S superposed WITHOUT transforming the first-order fields] fit of  R_ray = rot(omega) + D W : []
+  NO SOLUTION; residual terms: 787
+  (69s)
+
+SUMMARY: {'NEGATIVE CONTROL: constant translation (changes the observer label)': True, 'NEGATIVE CONTROL: constant h1 = -S superposed WITHOUT transforming the first-order fields': False}

@@ -150,7 +150,7 @@ def match_rotation(out, extra_W=None):
     reps = {a: sp.Dummy() for a in ats}
     r2 = sp.expand(resid.subs(reps))
     eqs = []
-    gens = list(reps.values()) + list(n) + [eta, eta_o, eta_s]
+    gens = list(reps.values()) + list(n) + [eta, eta_s]   # eta_o kept in the coefficients: omega may depend on it (rotation at the observation time)
     P = sp.Poly(r2, *gens)
     eqs = [c_ for c_ in P.coeffs()]
     sol = sp.solve(eqs, unknowns, dict=True)
