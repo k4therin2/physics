@@ -28,3 +28,7 @@ sec_primordial/sec_checks, ledger entries for A3/V4/V5.
   paragraph updated.  app_k2channels intro: code/pkl names removed.  main.tex: \input{app_k3channels}; abstract status sentence updated
   (minimal edit, W3-owned file -- flagged).
 * pdflatex x2: 0 errors, 0 undefined references; no overfull boxes in the new material.
+
+## Final check of V4/V5 (end of run)
+* report_V5.md still absent -> hooks %% HOOK-V5 in sec_unresolved (item 8), sec_primordial, sec_checks (\pending boxes).
+* report_V4.md still has only its Method section (mc_n20 at set 30/45) -> hook %% HOOK-V4 in sec_mono (sec:mono-mc, \pending) and ledger L-4.
