@@ -1,3 +1,53 @@
+\section{Introduction}
+\label{sec:intro}
+
+\paragraph{The problem.}  We compute the observed angular power spectrum of the CMB temperature through fourth order in the
+primordial amplitude, $C_\ell=\eps^2C^{(11)}_\ell+\eps^4[\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell]$, in the simplest
+universe in which every ingredient of a one-loop calculation is present: spatially flat, general relativity with $\Lambda=0$,
+a single perfect radiation fluid, Gaussian non-linear primordial curvature perturbation, last scattering on a surface of
+constant physical temperature, and an observer who is a fluid element measuring at fixed proper time.  No piece of the
+observable (emission surface, propagation, observer motion and clock, normalisation by the measured mean) is approximated or
+dropped; the result is expressed through named, analytic objects, and every integral that is not evaluated in closed form is
+declared with its complete integrand, limits and nesting.
+
+\paragraph{Why the calculation is tractable: the exact observable.}  For a radiation fluid, energy--momentum conservation alone
+implies that the expansion and acceleration of the fluid are gradients of $\ln\Tphys$ (Lemma~\ref{lem:fluid}).  Combined with
+the kinematic decomposition of the redshift along a null geodesic (Lemma~\ref{lem:kin}), this gives the exact, non-perturbative
+identity (Theorem~\ref{thm:exact})
+\begin{equation*}
+\Tobs(\nhat)=T_o\,e^{-S(\nhat)},\qquad S=\int_e^o\sigma_{\mu\nu}e^\mu e^\nu\,\dd l ,
+\end{equation*}
+with $T_o$ the fluid temperature at the observer and $\sigma_{\mu\nu}$ the fluid shear.  What this buys: (a)~there are no separate
+Sachs--Wolfe, Doppler, integrated Sachs--Wolfe, lensing, time-delay, ``intrinsic $\delta T$'' or observer terms to be added and
+reconciled -- all of them are contained in $S$, the only inputs being the shear along the actual ray and the two endpoints;
+(b)~$T_o$ is a scalar at the observer and drops out of the normalised anisotropy $\Theta$ identically, so no background
+temperature or clock bookkeeping enters the anisotropy except through the location of the endpoints; (c)~the background shear
+vanishes, so $S=O(\eps)$ and the third-order map needs the ray only to second order.  The normalisation by the measured sky mean
+then becomes exact algebra on $\Lambda\equiv-S$ (Sec.~\ref{sec:normalisation}).  The remaining work is to expand $S$ about the
+background ray (Secs.~\ref{sec:map2}--\ref{sec:map3}), to supply the fields from the regular solution of the Einstein--fluid
+equations with Gaussian initial data (Secs.~\ref{sec:primordial}--\ref{sec:einstein}), and to perform the harmonic transforms and
+Wick contractions (Secs.~\ref{sec:harmonic}--\ref{sec:mono}).
+
+\paragraph{Relation to existing work.}
+No complete $O(\eps^4)$ (one-loop) computation of the temperature power spectrum exists in the literature:
+the only $(22)$-type temperature calculation \cite{Tomita} is for dust in synchronous gauge (ISW terms only) and
+explicitly leaves out the $(13)$ term for lack of third-order metric perturbations; third-order temperature
+anisotropies have been studied on large scales in matter domination \cite{DAmico,Gao}; second-order Boltzmann
+codes \cite{SONG,FKP} and the $(22)$-type $B$-mode spectrum \cite{FidlerBmode} exist, as do the second-order
+Sachs--Wolfe analyses \cite{Boubekeur,HuangVernizzi,BMR1,BMR2,PUB} which, ``following standard practice'',
+drop the observer terms; only \cite{MZ,CPV} keep them, for long-wavelength modes.  The lensed $C_\ell$ at
+$O(C^\phi)$ \cite{Hu2000,LewisChallinor} is the $(22)+(13)$ structure restricted to lensing and serves as our
+control case.  The radiation-era second-order vector and tensor sectors are treated in \cite{Lu} and
+\cite{KT,Baumann,Espinosa}; general second-order perturbation theory is reviewed in \cite{MalikWands}.
+
+\paragraph{Organisation.}  Section~\ref{sec:setup} fixes the model and all conventions; Sec.~\ref{sec:roadmap} is a two-page
+summary (target, structural results, pipeline, where each requirement is met, status, delicate points).
+Sections~\ref{sec:observable}--\ref{sec:einstein} contain the exact observable, the initial data and the field solution.
+Section~\ref{sec:linear} runs the whole pipeline at first order as a worked example; Secs.~\ref{sec:map2} and \ref{sec:map3} are the
+same steps at second and third order.  The harmonic machinery and loop formulas (Sec.~\ref{sec:harmonic}) are then applied in the
+assembly (Sec.~\ref{sec:assembly}) and the monochromatic reduction (Sec.~\ref{sec:mono}).  Section~\ref{sec:checks} summarises the
+checks; the ledger of App.~\ref{app:ledger} records each of them, and App.~\ref{app:repro} lists the code that reproduces them.
+
 \section{Setup and conventions}
 \label{sec:setup}
 
@@ -10,18 +60,31 @@ T^{\mu\nu}=(\rho+P)u^\mu u^\nu+P g^{\mu\nu},\qquad P=\rho/3,\qquad \rho=\alpha\,
 \end{equation}
 with $\alpha$ constant and $u^\mu u_\mu=-1$.  The second relation \emph{defines} the physical
 temperature $\Tphys$; no chemical potential or particle-number assumption is made.  Test photons
-are emitted isotropically with a Planck spectrum of temperature $T_*$ on the hypersurface
-$\Tphys=T_*$, then propagate collisionlessly without backreaction.
+propagate collisionlessly without backreaction after emission.
+
+\paragraph{Assumptions defining the observable.}  The problem statement leaves three choices implicit; we fix them here, and
+they are part of the definition of the observable.
+\begin{itemize}\itemsep1pt
+\item[(O1)] \emph{Emission frame.}  Photons are emitted with an isotropic Planck spectrum of temperature $T_*$ \emph{in the
+fluid rest frame} (the frame of $u^\mu$), at the last crossing of the hypersurface $\Tphys=T_*$ by their past light ray.
+\item[(O2)] \emph{Observer.}  The observer is the fluid element whose position at the initial event is the label $\vx^{\rm lab}$:
+its worldline is $\vx_o(\eta)=\vx^{\rm lab}+\int_{\eta_{\rm init}}^{\eta}\vv(\eta',\vx_o(\eta'))\,\dd\eta'$, where the
+\emph{initial event} is the crossing of $\Tphys=T_i$ by this worldline (Poisson time $\eta_{\rm init}(\vx^{\rm lab})$).  The
+observation is made at fixed proper time $\Delta\tau$ after the initial event, and the sky directions are measured in a
+Fermi--Walker transported orthonormal frame (Sec.~\ref{sec:observer}).
+\item[(O3)] \emph{Normalisation.}  $\Theta(\nhat)\equiv\Tobs(\nhat)/\sky{\Tobs}-1$ with the sky mean $\sky{\cdot}$ measured by the
+observer; the dipole is removed after normalising, i.e.\ only $\ell\ge2$ is reported.
+\end{itemize}
 
 \paragraph{Background and units.}
-Conformal time $\eta$, $\dd s^2=a^2(\eta)\,\hat g_{\mu\nu}\dd x^\mu\dd x^\nu$.  In radiation
+Conformal time $\eta$, $\dd s^2=a^2(\eta)\,\hat g_{\mu\nu}\dd x^\mu\dd x^\nu$ ($\hat g$ is the \emph{conformal metric}).  In radiation
 domination $a\propto\eta$; we fix the normalisation $a(\eta)=\eta$, so that $\mathcal H\equiv a'/a=1/\eta$
 and the Friedmann equation $3\mathcal H^2=8\pi G a^2\bar\rho$ reads
 \begin{equation}
 8\pi G\,a^4\bar\rho=3,\qquad\text{i.e.}\qquad 8\pi G\,\bar\rho=3/\eta^4 .
 \label{eq:friedmann}
 \end{equation}
-Background temperature $\bar T(\eta)=\bar T_i\,\eta_i/\eta$.  The \emph{conformal} fluid variables
+Background temperature $\bar T(\eta)=T_i\,\eta_i/\eta$.  The \emph{conformal} fluid variables
 \begin{equation}
 \hat\rho\equiv a^4\rho,\qquad \hat P\equiv a^4P,\qquad \hat T\equiv a\,\Tphys,\qquad
 \hat u^\mu\equiv a\,u^\mu\quad(\hat g_{\mu\nu}\hat u^\mu\hat u^\nu=-1),
@@ -30,7 +93,7 @@ Background temperature $\bar T(\eta)=\bar T_i\,\eta_i/\eta$.  The \emph{conforma
 are constant in the background ($\hat{\bar\rho}=3/8\pi G$, $\hat{\bar T}=$ const) and are the natural
 variables of Sec.~\ref{sec:observable}.
 
-\paragraph{Fourier conventions and statistics.}
+\paragraph{Fourier conventions, statistics and the connected average.}
 \begin{equation}
 f(\vx)=\int\!\frac{\dd^3k}{(2\pi)^3}\,e^{i\vk\cdot\vx}f_{\vk},\qquad
 \langle\zeta_{\vk}\zeta_{\vk'}\rangle=(2\pi)^3\delta^3(\vk+\vk')\,P(k),\qquad
@@ -40,7 +103,15 @@ f(\vx)=\int\!\frac{\dd^3k}{(2\pi)^3}\,e^{i\vk\cdot\vx}f_{\vk},\qquad
 Products in position space become convolutions, $ (fg)_{\vk}=\int\dd^3q/(2\pi)^3\,f_{\vq}\,g_{\vk-\vq}$,
 and $\partial_i\to ik_i$, $\lap\to-k^2$, $\ilap\to-1/k^2$.  $\langle\cdot\rangle$ denotes the ensemble
 average over the Gaussian field $\zeta_1$ (Sec.~\ref{sec:primordial}); $\sky{\cdot}$ denotes the
-solid-angle average over the observer's sky.
+solid-angle average over the observer's sky.  The \emph{connected average} of two multipoles is
+\begin{equation}
+\conn{a^{(r)}_{\ell m}a^{(s)*}_{\ell m}}\equiv\big\langle a^{(r)}_{\ell m}a^{(s)*}_{\ell m}\big\rangle-\big\langle a^{(r)}_{\ell m}\big\rangle\big\langle a^{(s)*}_{\ell m}\big\rangle ,
+\label{eq:conn}
+\end{equation}
+i.e.\ connected with respect to the $a_{\ell m}$, \emph{not} with respect to $\zeta_1$.  By statistical isotropy
+$\langle a_{\ell m}\rangle=0$ for $\ell\ge1$, so for the multipoles reported here $\conn{\cdot}=\langle\cdot\rangle$; in particular products
+of two ensemble averages that are disconnected in $\zeta_1$ but connected in the $a_{\ell m}$, such as
+$\langle\sky{m_1}^2\rangle\,C^{(11)}_\ell$ in $C^{(22)}_\ell$, are part of $C_\ell$.
 
 \paragraph{Perturbative expansion.}
 Every perturbation $X\in\{\Psi,\Phi,\omega_i,h_{ij},\delta,v^i,\ldots\}$ is expanded as
@@ -48,7 +119,7 @@ Every perturbation $X\in\{\Psi,\Phi,\omega_i,h_{ij},\delta,v^i,\ldots\}$ is expa
 X=\eps X_1+\tfrac{\eps^2}{2}X_2+\tfrac{\eps^3}{6}X_3+O(\eps^4),
 \label{eq:expansion}
 \end{equation}
-and the same convention is used for every derived quantity ($S$, $\Lambda$, $m$, $\Theta$, $\zeta_{\rm nl}$).
+and the same convention is used for every derived quantity ($S$, $\Lambda$, $m$, $\Theta$, $\zeta_{\rm nl}$, $\delta\eta_o$, \ldots).
 For an equation $E[X]=0$ we write $E^{(n)}\equiv n!\,[\eps^n]E$, so that $X_n$ enters $E^{(n)}$ linearly with
 unit weight.  The bookkeeping parameter $\eps$ is the amplitude of $\zeta_1$; the final expansion
 parameter is $\eps^2\langle\zeta_1^2\rangle$.  Products of lower-order quantities are never dropped.
@@ -60,8 +131,8 @@ The conformal metric is parametrised \emph{linearly} (no exponentials),
 \qquad \partial_i\omega_i=0,\quad h_{ii}=0=\partial_ih_{ij},
 \label{eq:poisson}
 \end{equation}
-with $\omega_i$ and $h_{ij}$ starting at order $\eps^2$ (no primordial vector or tensor modes,
-Sec.~\ref{sec:primordial}).  Indices on $\omega_i$, $h_{ij}$, $v^i$ are raised and lowered with $\delta_{ij}$.
+with $\omega_i$ and $h_{ij}$ starting at order $\eps^2$: there are no primordial vector or tensor modes at any order
+(Definition~\ref{def:gauss}).  Indices on $\omega_i$, $h_{ij}$, $v^i$ are raised and lowered with $\delta_{ij}$.
 The fluid is parametrised by
 \begin{equation}
 \rho=\bar\rho(\eta)\,(1+\delta),\qquad 1+\delta_T\equiv(1+\delta)^{1/4}=\hat T/\hat{\bar T},\qquad
@@ -77,41 +148,50 @@ Dictionary to the exponential parametrisation of \cite{BMR1,BMR2,MZ}
 ($\hat g_{00}=-e^{2\Phi_{\rm e}}$, $\hat g_{ij}=e^{-2\Psi_{\rm e}}\delta_{ij}+\ldots$, note the swapped names):
 $\Phi_{\rm e}^{(2)}=\Psi_2-2\Psi_1^2$, $\Psi_{\rm e}^{(2)}=\Phi_2+2\Phi_1^2$ at second order.
 
-\paragraph{Directions, rays and times.}
-$\nhat$ is the direction in which the observer looks (unit vector with respect to the observer's
-orthonormal triad, Sec.~\ref{sec:observer}); the photon propagation direction at the observer is
-$\ehat=-\nhat$.  The background ray through the observer event $(\bar\eta_o,\bar\vx_o)$ is
+\paragraph{Directions and rays (one convention throughout).}
+$\nhat$ is the direction in which the observer looks (a unit vector with respect to the observer's
+orthonormal triad, Sec.~\ref{sec:observer}); the photon propagation direction at the observer is $-\nhat$.
+The background ray through the observer event $(\bar\eta_o,\bar\vx_o)$ is
 \begin{equation}
 \bar\vx(\eta)=\bar\vx_o+\nhat\,\chi(\eta),\qquad \chi(\eta)\equiv\bar\eta_o-\eta,\qquad
 \frac{\dd\bar\vx}{\dd\eta}=-\nhat,
 \label{eq:bgray}
 \end{equation}
-and the total derivative along it acting on a field is $D\equiv\partial_\eta-\nhat\cdot\nabla$.  Four times are
-kept distinct: the \emph{initial} time $\eta_i$ at which initial data are posed
-($\bar T(\eta_i)=T_i$); the background \emph{emission} time $\eta_*$ defined by $\bar T(\eta_*)=T_*$, and the
-actual emission time $\eta_e(\nhat)=\eta_*+\delta\eta_e(\nhat)$ along each ray; the \emph{observation} time
-$\eta_o=\bar\eta_o+\delta\eta_o$ of the observer (direction independent, fixed by proper time); and the
-dummy time $\eta$ along the ray.  The ordering is $0<\eta_i<\eta_*<\bar\eta_o$.
-The angular quantities are
+so a Fourier mode on the ray carries the phase $e^{+i\vk\cdot\nhat\chi}$ (observer at $\bar\vx_o=0$), and we use the Rayleigh expansion
+\begin{equation}
+e^{+i\vk\cdot\nhat\chi}=4\pi\sum_{\ell m}i^\ell\jl(k\chi)\,Y_{\ell m}(\nhat)\,Y^*_{\ell m}(\khat)
+\label{eq:rayleigh}
+\end{equation}
+everywhere.  The total derivative along the ray acting on a field is $D\equiv\partial_\eta-\nhat\cdot\nabla$.  (Writing maps as
+functions of the propagation direction $-\nhat$ instead, with $e^{-i\vk\cdot(-\nhat)\chi}$ and $(-i)^\ell$, multiplies every $a_{\ell m}$ by
+$(-1)^\ell$ at every order; all transfer functions $\Delta_\ell$ and all $C^{(rs)}_\ell$ are unchanged.)
+
+\paragraph{Times.}  Four times are kept distinct: the \emph{initial} time $\eta_i$ at which initial data are posed,
+$\bar T(\eta_i)=T_i$ (the initial event of a given fluid element is at the perturbed time $\eta_{\rm init}$, $1+\delta_T(\eta_{\rm init})=\eta_{\rm init}/\eta_i$);
+the background \emph{emission} time $\eta_*$, $\bar T(\eta_*)=T_*$, and the actual emission time $\eta_e(\nhat)=\eta_*+\delta\eta_e(\nhat)$
+along each ray; the \emph{observation} time $\eta_o=\bar\eta_o+\delta\eta_o$ (direction independent, fixed by proper time, with
+$\bar\eta_o$ its background value, $\Delta\tau=(\bar\eta_o^2-\eta_i^2)/2$); and the dummy time $\eta$ along the ray.  The ordering is
+$0<\eta_i<\eta_*<\bar\eta_o$.  Initial data are \emph{defined} at finite $\eta_i$ (Sec.~\ref{sec:regular}); the limit $\eta_i\to0$ is
+taken only where stated, with its $O(\eta_i^2)$ remainder displayed (Sec.~\ref{sec:obsevent}).
+
+\paragraph{Angular quantities and target.}
 \begin{equation}
 a^{(r)}_{\ell m}=\int\dd\Omega_{\nhat}\,Y^*_{\ell m}(\nhat)\,\Theta^{(r)}(\nhat),\qquad
-C^{(rs)}_\ell=\frac1{2\ell+1}\sum_{m=-\ell}^{\ell}\big\langle a^{(r)}_{\ell m}a^{(s)*}_{\ell m}\big\rangle_c ,
+C^{(rs)}_\ell=\frac1{2\ell+1}\sum_{m=-\ell}^{\ell}\conn{a^{(r)}_{\ell m}a^{(s)*}_{\ell m}},
 \label{eq:cl_def}
 \end{equation}
 with $Y_{\ell m}$ carrying the Condon--Shortley phase, and the target is
 \begin{equation}
-C_\ell=\eps^2C^{(11)}_\ell+\eps^4\Big[\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell\Big]+O(\eps^6),\qquad \ell\ge2 .
+C_\ell=\eps^2C^{(11)}_\ell+\eps^4\Big[\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell\Big]+O(\eps^6),\qquad \ell\ge2 ,
 \label{eq:cl_target}
 \end{equation}
+where the factors $\tfrac14$, $\tfrac13$ come from the coefficient convention \eqref{eq:expansion}, $\Theta=\eps\Theta^{(1)}+\tfrac{\eps^2}2\Theta^{(2)}+\tfrac{\eps^3}6\Theta^{(3)}$.
 
-\paragraph{Relation to existing work.}
-No complete $O(\eps^4)$ (one-loop) computation of the temperature power spectrum exists in the literature:
-the only $(22)$-type temperature calculation \cite{Tomita} is for dust in synchronous gauge (ISW terms only) and
-explicitly leaves out the $(13)$ term for lack of third-order metric perturbations; third-order temperature
-anisotropies have been studied on large scales in matter domination \cite{DAmico,Gao}; second-order Boltzmann
-codes \cite{SONG,FKP} and the $(22)$-type $B$-mode spectrum \cite{FidlerBmode} exist, as do the second-order
-Sachs--Wolfe analyses \cite{Boubekeur,HuangVernizzi,BMR1,BMR2,PUB} which, ``following standard practice'',
-drop the observer terms; only \cite{MZ,CPV} keep them, for long-wavelength modes.  The lensed $C_\ell$ at
-$O(C^\phi)$ \cite{Hu2000,LewisChallinor} is the $(22)+(13)$ structure restricted to lensing and serves as our
-control case.  The radiation-era second-order vector and tensor sectors are treated in \cite{Lu} and
-\cite{KT,Baumann,Espinosa}; general second-order perturbation theory is reviewed in \cite{MalikWands}.
+\paragraph{Notation.}  Symbols that could be confused are kept distinct as follows.  $S(\nhat)$ is the shear integral; order-$n$
+sources of the field equations always carry indices ($S^{(n)}_{\mu\nu}$, $S_\Phi$, $S_{\rm TL}$, \ldots).  $\Lambda\equiv-S$ and
+$M\equiv e^\Lambda$; the transverse-traceless projector is $\Pi_{ij,kl}$.  The fluid vorticity tensor is $\varpi_{\mu\nu}$ and the
+spatial projector $\perp_{\mu\nu}$; $\omega_i$ is the metric vector and $h_{ij}$ the metric tensor mode.  The affine parameter is
+$\varsigma$; $\lambda$ alone denotes a helicity in Sec.~\ref{sec:typeA}, and $\lambda(\eps)$, $\beta(\eps)$ are the time and space
+rescalings of the dilation family (Sec.~\ref{sec:tadpole}).  $\mu\equiv\khat\cdot\qhat$; $K\equiv|\vk_1+\vk_2|$ in the $(22)$ loop,
+while kernels are $K_X$, $K_r$; $U(x)\equiv3u_1(x)$ is the regular homogeneous solution of the scalar equation;
+$\sigma_{\mu\nu}$ is the fluid shear and $\sigma^2\equiv\langle\zeta_1^2\rangle$ the primordial variance of the monochromatic spectrum.

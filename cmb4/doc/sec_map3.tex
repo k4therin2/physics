@@ -11,9 +11,9 @@ third-order fields in the local shear.
 
 \subsection{\texorpdfstring{$L_3$}{L3}: named groups}
 \label{sec:L3}
-C2's result, $\tfrac16L_3$, has 359 terms in 32 groups for $\nhat=\hat{\mathbf z}$ (2484 terms in 24 groups for general $\nhat$,
-without $|\nhat|=1$).  Table~\ref{tab:L3groups} organises the 32 groups by the three endpoints and by physical content;
-the machine-generated lists, with the explicit expressions of all groups of at most ten terms, are in App.~\ref{app:L3groups}.
+The expansion gives $\tfrac16L_3$ as 359 terms in 32 groups for $\nhat=\hat{\mathbf z}$.  Table~\ref{tab:L3groups} organises the groups by
+the three endpoints and by physical content; \emph{every term of every group is displayed in App.~\ref{app:L3full}}, so that $\Theta^{(3)}$ is
+fully explicit: $L_3$ from App.~\ref{app:L3full}, $L_1,L_2$ from App.~\ref{app:lterms}, and \eqref{eq:theta3} below.
 The structure is that of $L_2$ promoted by one order: every second-order piece (a)--(g) of Table~\ref{tab:L2pieces} reappears
 (1)~with one first-order field replaced by a second-order field, (2)~multiplied by one more first-order factor (a field, a
 functional $k_1$, $\Delta\vx_1$, or a shift $\delta\eta_{o1},\delta\eta_{e1}$), or (3)~with a first-order functional replaced by its
@@ -57,7 +57,7 @@ $\delta\eta_{e1}k_{1\perp}$, $\delta\eta_{e1}\Delta\vx_{1\perp}$, $\delta\eta_{e
 $\delta\eta_{e1}^2$ (1) & second-order Taylor term of the lower limit & 6\\ \hline
 total & 32 groups & 359\\ \hline
 \end{tabular}
-\caption{The groups of $\tfrac16L_3$ (shear form, $\nhat=\hat{\mathbf z}$), from \code{L\_terms.pkl[\textquotesingle L\_split\textquotesingle][3]}.
+\caption{The groups of $\tfrac16L_3$ (shear form, $\nhat=\hat{\mathbf z}$); all terms are listed in App.~\ref{app:L3full}.
 ``(1+1)'' etc.\ gives the orders of the explicit fields; functionals and shifts are counted separately.  The direct form has
 480 terms (69 groups) for $\nhat=\hat{\mathbf z}$.}
 \label{tab:L3groups}
@@ -71,7 +71,7 @@ m_3=L_3+3L_1L_2+L_1^3,\qquad
 \Theta^{(3)}_{\ell m}=m_{3,\ell m}-3\sky{m_1}m_{2,\ell m}-3\sky{m_2}m_{1,\ell m}+6\sky{m_1}^2m_{1,\ell m}\quad(\ell\ge1),
 \label{eq:theta3}
 \end{equation}
-which C2 re-derived from the exponential and ratio series (App.~\ref{app:ledger}, C2-8).  Only the correlation of
+obtained from the exponential and ratio series (App.~\ref{app:ledger}, R-5).  Only the correlation of
 $\Theta^{(3)}$ with $\Theta^{(1)}$ is needed, $C^{(13)}_\ell$ of \eqref{eq:loops}, decomposed as in (E0) of Sec.~\ref{sec:thirteen}.
 
 \paragraph{What survives the self-contraction.}  In $\langle m_{1}\,m_3^*\rangle$ one $\zeta$ of $m_3$ is paired with $m_1$ and the
@@ -84,17 +84,42 @@ one-point variance or an equal-sky-point correlation times a first-order map, st
 $(\Delta\vx_{1\perp})^2\partial\partial I_1$ group, for instance, produces the convergence-type term $-\ell(\ell+1)R\,C_\ell$ of the lensing
 control case (Sec.~\ref{sec:lensing_control}), now with the radiation-era deflection correlated with the source.
 \item[(ii)] \emph{Tadpole (mean field).}  A second-order field $X_2$ times a first-order factor, with the first-order factor paired with
-$m_1$: the contraction rule $A_1B_2\to A_k\langle B_2\rangle$ of \eqref{eq:contraction_rules} gives the mean field $\langle X_2\rangle$ times a
-first-order map.  This includes the $\Psi_2$ in $\delta\eta_{o2}$, the $\delta_{T,2}$ in $\delta\eta_{e2}$ and the zero-mode parts of the local
-(2+1) terms.  Individual tadpoles depend on the zero-mode convention of Sec.~\ref{sec:tadpole}; only their sum with the clock,
-emission-surface and normalisation terms is physical (Sec.~\ref{sec:checks}).
+$m_1$: the contraction rule $A_1B_2\to A_k\langle B_2\rangle$ of \eqref{eq:contraction_rules} gives the mean field $\langle X_2\rangle(\eta)$ (a
+function of time only) times a first-order map.  Vector, tensor and velocity tadpoles vanish by isotropy, so only $\langle\Phi_2\rangle$,
+$\langle\Psi_2\rangle$, $\langle\delta_{T,2}\rangle$ survive, and the groups that contain them are: the local (2+1) group ($\Phi_2,\Psi_2$ undifferentiated);
+the second-order clock $\delta\eta_{o2}$ ($\Psi_2$ on the worldline, \eqref{eq:deta_o2}); the second-order emission shift $\delta\eta_{e2}$ ($\delta_{T,2}$,
+\eqref{eq:deta_e}); and the radial direction functionals $k^z_2$, $\Delta x^z_2$ (through $k^z_{2,\rm init}\supset-\tfrac12(\Psi_2+\Phi_2)$, \eqref{eq:kinit2},
+and $\partial_\eta\langle\Phi_2+\Psi_2\rangle$ in $G^z_2$).  Hence
+\begin{equation}
+\Theta^{(3)}_{c,\rm tad}(\vk;\nhat)=\sum_{X\in\{\Phi_2,\Psi_2,\delta_{T,2}\}}\mathcal T_X\big[\langle X_2\rangle\big](\vk;\nhat),
+\label{eq:tadgroup}
+\end{equation}
+where $\mathcal T_X$ is the linear map obtained by replacing $X_2(\eta,\vx)\to\langle X_2\rangle(\eta)$ in the listed groups of App.~\ref{app:L3full}
+(and in $3L_1L_2$), keeping the first-order factor as a Fourier mode $\vk$.  Individual tadpoles depend on the zero-mode convention of
+Sec.~\ref{sec:tadpole}; only their sum with the clock, emission-surface and normalisation terms is physical (Sec.~\ref{sec:check_dilation}).
 \item[(iii)] \emph{Cross-contracted.}  The same products with the first-order factor contracted with one leg of $X_2$ (rule
 $A_1B_2\to2A_qK_B(-\vq,\vk)$), and the cross-pairings of three first-order factors at different points: a loop convolution, structure (ii)
 of Sec.~\ref{sec:thirteen}.
 \item[(iv)] \emph{Third-order fields.}  The local shear \eqref{eq:L3loc3} (and $\Phi_3,\Psi_3,\delta_{T,3}$ in the direct form), which enter only
 through the contracted fields $X_{3c}$ of \eqref{eq:contracted}, including the amplitude $C_3$ \eqref{eq:C3}: structure (iii).
 \end{enumerate}
-The normalisation terms $-3\sky{m_1}m_2-3\sky{m_2}m_1+6\sky{m_1}^2m_1$ of \eqref{eq:theta3} supply the remaining pieces of (E0).  The
+The normalisation terms $-3\sky{m_1}m_2-3\sky{m_2}m_1+6\sky{m_1}^2m_1$ of \eqref{eq:theta3} supply the remaining pieces of (E0).
+
+\paragraph{A worked contraction: the emission-shift tadpole.}  To show what a $(13)$ contribution looks like, take the group
+``emission shift $\delta\eta_{e2}$'' (3 terms, App.~\ref{app:L3full}): by the endpoint formula \eqref{eq:endpoint}, $\tfrac16L_3\supset\tfrac12\delta\eta_{e2}\,I_1|_*$,
+and by \eqref{eq:deta_e} $\delta\eta_{e2}\supset\eta_*\delta_{T,2}|_*$, so $L_3\supset3\eta_*\,\delta_{T,2}\,I_1|_*$.  For one Fourier mode,
+$v_{1,i}=ik_iT_V\zeta_{\vk}$ gives $I_1=n^in^j\partial_iv_{1,j}-\tfrac13\partial\cdot v_1=-\tfrac23k^2T_V(k,\eta)P_2(\nhat\cdot\khat)\,e^{i\vk\cdot\nhat\chi}\zeta_{\vk}$.  The
+contraction $A_1B_2\to A_k\langle B_2\rangle$ then contributes to the contracted map \eqref{eq:Theta3c}
+\begin{equation}
+\Theta^{(3)}_c(\vk;\nhat)\supset-2\eta_*\,\langle\delta_{T,2}\rangle(\eta_*)\,k^2T_V(k,\eta_*)\,P_2(\nhat\cdot\khat)\,e^{i\vk\cdot\nhat\chi_*},\qquad
+\langle\delta_{T,2}\rangle(\eta)=\int\!\frac{\dd^3q}{(2\pi)^3}P(q)\Big[\tfrac14\mathrm{tad}_{\delta_2}(q,\eta)-\tfrac3{16}T_\delta(q\eta/\sqrt3)^2\Big],
+\end{equation}
+using $\delta_{T,2}=\tfrac14\delta_2-\tfrac3{16}\delta_1^2$ and $\mathrm{tad}_{\delta_2}$ of App.~\ref{app:kernels},
+i.e.\ $h_2(k,\eta)\supset-2\eta_*\langle\delta_{T,2}\rangle k^2T_V\,\delta(\eta-\eta_*)$ in \eqref{eq:hL}, and by (A-$L$)
+$\Delta^{(3c)}_\ell\supset-2\eta_*\langle\delta_{T,2}\rangle(\eta_*)k^2T_V(k,\eta_*)\sum_{J=\ell,\ell\pm2}(2J+1)(\begin{smallmatrix}\ell&2&J\\0&0&0\end{smallmatrix})^2i^{J-\ell}j_J(k\chi_*)$.
+Physically this is the first-order emission-time Doppler/shear term with the emission surface displaced by the mean temperature
+perturbation; it is matched by the $\langle\Psi_2\rangle$ in $\delta\eta_{o2}$ and by $-3\sky{m_2}m_1$, as the zero-mode argument requires.
+The cross-contracted part of the same group, $2A_qK_{\delta_{T,2}}(-\vq,\vk)$, is a structure-(ii) loop term.  The
 \emph{obs} groups are polynomials in $\nhat$ of bounded degree (all fields at the observer event, direction-independent shifts), so their
 direct contribution to $C^{(13)}_\ell$ is confined to a few low multipoles; through the products $3L_1L_2$, $L_1^3$ and the normalisation the
 observer quantities nevertheless affect all $\ell$.

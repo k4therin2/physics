@@ -1,12 +1,21 @@
-% linear_cl.tex -- agent C5.  First-order transfer function, C_l^(11), closed-form ISW integral, monochromatic limits,
-% sky monopole.  Uses doc/macros.tex.  Machine-generated companions: isw_coeffs.tex (A_l..D_l, l<=6),
-% isw_closed_forms.tex (full E_l, l<=6).  Code and checks: code/C5_linear_Cl/linear_cl.py, isw_structure.py, plateau_isw.py.
-\section{First order: transfer function $\Delta_\ell(k)$ and $C_\ell^{(11)}$}\label{sec:linear}
+\section{First order: the pipeline worked through, \texorpdfstring{$\Delta_\ell(k)$}{Delta_l(k)} and \texorpdfstring{$C_\ell^{(11)}$}{C11}}\label{sec:linear}
+
+\paragraph{The pipeline at first order.}  Every order is computed by the same five steps; at first order each is one line, and
+Secs.~\ref{sec:map2}--\ref{sec:map3} repeat them at second and third order.
+\begin{enumerate}\itemsep1pt
+\item[(1)] \emph{Shear on the ray.}  $\hat\sigma_{1,ij}=\partial_{(i}v_{j)}-\tfrac13\delta_{ij}\partial\cdot v$; the integrand of \eqref{eq:S_eta} on the background ray
+is $I_1=n^in^j\partial_iv_{1,j}-\tfrac13\partial\cdot v_1$ \eqref{eq:lin_kin}.
+\item[(2)] \emph{Line-of-sight functional.}  Endpoints and ray at their background values: $L_1=-\int_{\eta_*}^{\bar\eta_o}I_1\,\dd\eta$, which on shell is the
+Sachs--Wolfe form \eqref{eq:L1} including the observer terms.
+\item[(3)] \emph{Exponential and normalisation.}  $m_1=L_1$ \eqref{eq:mdef}; $\Theta^{(1)}_{\ell m}=m_{1,\ell m}$ for $\ell\ge1$ \eqref{eq:theta_orders}.
+\item[(4)] \emph{Fields.}  The regular first-order solution \eqref{eq:transfer} with $\zeta_1$ as the only random variable.
+\item[(5)] \emph{Harmonic transform and Wick contraction.}  Rule (A-$s$) of Sec.~\ref{sec:typeA} gives $\Delta_\ell(k)$, and $C^{(11)}_\ell=\frac2\pi\int k^2P\Delta_\ell^2$.
+\end{enumerate}
+The rest of this section carries out steps (4)--(5) explicitly and derives the closed form of the ISW integral.
 
 \paragraph{Conventions.}  Observer at $\vx_o=0$, observation direction $\nhat$, background ray
-$\vx(\eta)=\nhat\,\chi(\eta)$, $\chi=\eta_o-\eta$, emission at $\eta_*$, $\chi_*=\eta_o-\eta_*$.  We write
-$x=k\eta/\sqrt3$, $s=k\eta$, $s_*=k\eta_*$, $S=k\eta_o$, $w=S-s_*=k\chi_*$.  The first-order map (SPEC \S9a, verified from
-$S_1$ in Sec.~\ref{sec:observable}) is
+$\vx(\eta)=\nhat\,\chi(\eta)$, $\chi=\eta_o-\eta$, emission at $\eta_*$, $\chi_*=\eta_o-\eta_*$ (at first order $\eta_o=\bar\eta_o$).  We write
+$x=k\eta/\sqrt3$, $s=k\eta$, $s_*=k\eta_*$, $s_o=k\eta_o$, $w=s_o-s_*=k\chi_*$.  The first-order map, from $S_1$ (Sec.~\ref{sec:linearS}), is
 \begin{equation}
 \Th_1(\nhat)=\big[\delta_{T1}+\Psi_1-\nhat\cdot\vv_1\big]_e-\big[\delta_{T1}+\Psi_1-\nhat\cdot\vv_1\big]_o
 +\int_{\eta_*}^{\eta_o}(\Phi_1'+\Psi_1')\,\dd\eta ,
@@ -16,10 +25,9 @@ with the regular first-order solution ($\Phi_1=\Psi_1=\zeta\,\TP$, $\delta_{T1}=
 \TP=-\frac{2j_1(x)}{x},\quad T_{\delta T}=-\cos x+2j_0(x)+\TP,\quad kT_V=\sqrt3\,\big(\sin x-2j_1(x)\big),\quad
 2\partial_\eta\TP=\frac{4k}{\sqrt3}\frac{j_2(x)}{x}.
 \end{equation}
-Define the emission (Sachs--Wolfe) source $A(x):=T_{\delta T}+\TP=-\cos x+2j_0(x)-4j_1(x)/x$.
+Define the emission (Sachs--Wolfe) source $A_{\rm SW}(x):=T_{\delta T}+\TP=-\cos x+2j_0(x)-4j_1(x)/x$.
 
-\paragraph{Rayleigh rules.}  From $e^{i\vk\cdot\nhat\chi}=4\pi\sum_{\ell m}i^\ell j_\ell(k\chi)Y_{\ell m}(\nhat)Y^*_{\ell m}(\khat)$
-and $\nhat\cdot\khat\,e^{ik\chi\nhat\cdot\khat}=(ik)^{-1}\partial_\chi e^{ik\chi\nhat\cdot\khat}$:
+\paragraph{Rayleigh rules.}  From \eqref{eq:rayleigh} and $\nhat\cdot\khat\,e^{ik\chi\nhat\cdot\khat}=(ik)^{-1}\partial_\chi e^{ik\chi\nhat\cdot\khat}$:
 $(i\nhat\cdot\khat)^p e^{ik\chi\nhat\cdot\khat}\to 4\pi i^\ell\,j_\ell^{(p)}(k\chi)\,Y^*_{\ell m}(\khat)$.
 Observer terms carry no phase ($\chi=0$): since $j_\ell(0)=\delta_{\ell0}$ and $j'_\ell(0)=\delta_{\ell1}/3$, the observer
 monopole $[\delta_{T1}+\Psi_1]_o$ contributes only to $\ell=0$ and the observer Doppler term
@@ -28,11 +36,11 @@ $\nhat\cdot\vv_1(\eta_o,0)=i k\,(\nhat\cdot\khat)\,T_V(x_o)\zeta_\vk$ only to $\
 \begin{proposition}[First-order transfer function]\label{prop:Delta}
 $a^{(1)}_{\ell m}=4\pi i^\ell\int\!\frac{\dd^3k}{(2\pi)^3}\,\zeta_\vk\,Y^*_{\ell m}(\khat)\,\Delta_\ell(k)$ with real
 \begin{equation}
-\Delta_\ell(k)=A(x_*)\,j_\ell(w)-kT_V(x_*)\,j'_\ell(w)-\delta_{\ell0}\,A(x_o)+\tfrac13\delta_{\ell1}\,kT_V(x_o)+I_\ell(k),
+\Delta_\ell(k)=A_{\rm SW}(x_*)\,j_\ell(w)-kT_V(x_*)\,j'_\ell(w)-\delta_{\ell0}\,A_{\rm SW}(x_o)+\tfrac13\delta_{\ell1}\,kT_V(x_o)+I_\ell(k),
 \qquad
-I_\ell(k)=\frac{4}{\sqrt3}\int_{s_*}^{S}\frac{j_2(s/\sqrt3)}{s/\sqrt3}\,j_\ell(S-s)\,\dd s .
+I_\ell(k)=\frac{4}{\sqrt3}\int_{s_*}^{s_o}\frac{j_2(s/\sqrt3)}{s/\sqrt3}\,j_\ell(s_o-s)\,\dd s .
 \end{equation}
-For $\ell\ge1$, $\Th^{(1)}_{\ell m}=m^{(1)}_{\ell m}$ (SPEC \S7) and
+For $\ell\ge1$, $\Th^{(1)}_{\ell m}=m_{1,\ell m}$ \eqref{eq:theta_orders} and
 \begin{equation}
 C^{(11)}_\ell=\frac{2}{\pi}\int_0^\infty k^2\,\dd k\,P(k)\,\Delta_\ell(k)^2 ,
 \end{equation}
@@ -45,44 +53,43 @@ $Y(s)=y_2(s/\sqrt3)/(s/\sqrt3)=-27/s^4-3/(2s^2)+O(1)$, $a_\pm=1\pm1/\sqrt3$ and
 $\mathrm{Cin}(z)=\int_0^z(1-\cos t)\,\dd t/t=\gamma+\ln z-\Ci z$.
 \begin{theorem}[ISW integral, all $\ell$]\label{thm:isw}
 \begin{multline}
-I_\ell=E_\ell(s_*,S)+A_\ell(S)\big[\Ci a_+S-\Ci a_+s_*-\Ci a_-S+\Ci a_-s_*\big]
-+B_\ell(S)\big[\Si a_+S-\Si a_+s_*-\Si a_-S+\Si a_-s_*\big]\\
-+C_\ell(S)\big[\mathrm{Cin}(a_+w)-\mathrm{Cin}(a_-w)\big]+D_\ell(S)\big[\Si a_+w+\Si a_-w\big],
+I_\ell=E_\ell(s_*,s_o)+A_\ell(s_o)\big[\Ci a_+s_o-\Ci a_+s_*-\Ci a_-s_o+\Ci a_-s_*\big]
++B_\ell(s_o)\big[\Si a_+s_o-\Si a_+s_*-\Si a_-s_o+\Si a_-s_*\big]\\
++C_\ell(s_o)\big[\mathrm{Cin}(a_+w)-\mathrm{Cin}(a_-w)\big]+D_\ell(s_o)\big[\Si a_+w+\Si a_-w\big],
 \end{multline}
 \begin{align}
-A_\ell&=\tfrac{2}{\sqrt3}\operatorname*{Res}_{s=0}Y(s)\,y_\ell(S-s)=\sqrt3\,\big[3y_\ell'''(S)+y_\ell'(S)\big], &
-B_\ell&=-\tfrac{2}{\sqrt3}\operatorname*{Res}_{s=0}Y(s)\,j_\ell(S-s)=-\sqrt3\,\big[3j_\ell'''(S)+j_\ell'(S)\big],\\
-C_\ell&=-\tfrac{2}{\sqrt3}\operatorname*{Res}_{u=0}y_\ell(u)\,Y(S-u), &
-D_\ell&=-\tfrac{2}{\sqrt3}\operatorname*{Res}_{u=0}y_\ell(u)\,J(S-u),
+A_\ell&=\tfrac{2}{\sqrt3}\operatorname*{Res}_{s=0}Y(s)\,y_\ell(s_o-s)=\sqrt3\,\big[3y_\ell'''(s_o)+y_\ell'(s_o)\big], &
+B_\ell&=-\tfrac{2}{\sqrt3}\operatorname*{Res}_{s=0}Y(s)\,j_\ell(s_o-s)=-\sqrt3\,\big[3j_\ell'''(s_o)+j_\ell'(s_o)\big],\\
+C_\ell&=-\tfrac{2}{\sqrt3}\operatorname*{Res}_{u=0}y_\ell(u)\,Y(s_o-u), &
+D_\ell&=-\tfrac{2}{\sqrt3}\operatorname*{Res}_{u=0}y_\ell(u)\,J(s_o-u),
 \end{align}
-and $E_\ell$ elementary: Laurent polynomials in $s_*,S,w$ times $\sin,\cos$ of $a_\pm s_*$, $a_\pm S$, $w$, $s_*/\sqrt3$, $S/\sqrt3$.
+and $E_\ell$ elementary: Laurent polynomials in $s_*,s_o,w$ times $\sin,\cos$ of $a_\pm s_*$, $a_\pm s_o$, $w$, $s_*/\sqrt3$, $s_o/\sqrt3$.
 \end{theorem}
 \begin{proof}[Derivation]
-With $g(x)=h^{(1)}_2(x)/x$ and $h=h^{(1)}_\ell$, the integrand is $\frac1{\sqrt3}(g+\bar g)(s/\sqrt3)\,(h+\bar h)(S-s)$, a sum of four
+With $g(x)=h^{(1)}_2(x)/x$ and $h=h^{(1)}_\ell$, the integrand is $\frac1{\sqrt3}(g+\bar g)(s/\sqrt3)\,(h+\bar h)(s_o-s)$, a sum of four
 terms $e^{ibs}R(s)$ with $b\in\{\pm a_\pm\}$ (never zero: no resonance) and $R$ rational with poles only at $s=0$ (order 4, from
-$y_2(x)/x$) and $s=S$ (order $\ell+1$, from $y_\ell$).  Partial fractions and the recursion
+$y_2(x)/x$) and $s=s_o$ (order $\ell+1$, from $y_\ell$).  Partial fractions and the recursion
 $\int e^{ibs}s^{-m}\dd s=-\frac{e^{ibs}}{(m-1)s^{m-1}}+\frac{ib}{m-1}\int e^{ibs}s^{1-m}\dd s$ reduce everything to elementary terms plus
 $\int e^{ibs}\dd s/s=\Ci|b|s+i\,\mathrm{sgn}(b)\Si|b|s$, whose total coefficient is $\operatorname{Res}[e^{ibs}R]$, i.e.\ the residue of the
 product of the \emph{full} Hankel functions.  Because $j_\ell$ and $j_2(x)/x$ are entire, the four products pair up
 ($A^-=-A^+$, $B^-=-B^+$, $C^-=-C^+$, $D^-=D^+$) and only the $y$-parts survive, giving the residues above.  At the observer end
-$u=S-s\to0$ the coefficient of $\ln u$ is $\propto\operatorname{Re}\operatorname{Res}_{u=0}[j_\ell(u)g]=0$, so the endpoint is regular and
+$u=s_o-s\to0$ the coefficient of $\ln u$ is $\propto\operatorname{Re}\operatorname{Res}_{u=0}[j_\ell(u)g]=0$, so the endpoint is regular and
 the $\mathrm{Cin}$ combination appears with no finite-part ambiguity.
 \end{proof}
-Checks (\code{isw\_structure.py}, $\ell=0,\dots,6$): every $\Ci/\Si$ coefficient of the brute-force antiderivative equals the residue
-formula to $10^{-169}$ (40-digit evaluation), $E_\ell$ contains no $\Ci,\Si,\ln,\gamma$; the closed form agrees with mpmath quadrature
-to relative $5\times10^{-18}$ (\code{linear\_cl.py}, five parameter sets).  Explicit coefficients for $\ell\le6$
-($z=S/\sqrt3$) are in \code{isw\_coeffs.tex}; e.g.
+Checks ($\ell=0,\dots,6$; ledger FO-3): every $\Ci/\Si$ coefficient of the brute-force antiderivative equals the residue
+formula to $10^{-169}$ (40-digit evaluation), $E_\ell$ contains no $\Ci,\Si,\ln,\gamma$; the closed form agrees with quadrature
+to relative $5\times10^{-18}$ (five parameter sets).  Explicit coefficients for $\ell=2$ ($z=s_o/\sqrt3$) are
 \begin{align*}
-A_2&=\tfrac{2\sqrt3}{S^6}\big(S^5\sin S+7S^4\cos S-36S^3\sin S-126S^2\cos S+270S\sin S+270\cos S\big),\\
-B_2&=-\tfrac{2\sqrt3}{S^6}\big(S^5\cos S-7S^4\sin S-36S^3\cos S+126S^2\sin S+270S\cos S-270\sin S\big),\\
+A_2&=\tfrac{2\sqrt3}{s_o^6}\big(s_o^5\sin s_o+7s_o^4\cos s_o-36s_o^3\sin s_o-126s_o^2\cos s_o+270s_o\sin s_o+270\cos s_o\big),\\
+B_2&=-\tfrac{2\sqrt3}{s_o^6}\big(s_o^5\cos s_o-7s_o^4\sin s_o-36s_o^3\cos s_o+126s_o^2\sin s_o+270s_o\cos s_o-270\sin s_o\big),\\
 C_2&=\tfrac{4\sqrt3}{3z^6}\big(z^3\sin z+6z^2\cos z-15z\sin z-15\cos z\big),\qquad
 D_2=\tfrac{4\sqrt3}{3z^6}\big(z^3\cos z-6z^2\sin z-15z\cos z+15\sin z\big);
 \end{align*}
-the elementary parts $E_\ell$ (56--464 terms for $\ell=0..6$) are machine-generated in \code{isw\_closed\_forms.tex}.
+the coefficients for $\ell\le6$ and the elementary parts $E_\ell$ (56--464 terms for $\ell=0..6$) are machine generated (App.~\ref{app:repro}).
 
 \paragraph{Monochromatic spectrum.}  For $P=2\pi^2\sigma^2\delta(k-k_0)/k_0^2$ ($\ens{\zeta^2}=\sigma^2$),
 \begin{equation}
-C_\ell^{(11)}=4\pi\sigma^2\Big[A(x_{0*})\,j_\ell(k_0\chi_*)-k_0T_V(x_{0*})\,j'_\ell(k_0\chi_*)-\delta_{\ell0}A(x_{0o})+\tfrac13\delta_{\ell1}k_0T_V(x_{0o})+I_\ell(k_0)\Big]^2,
+C_\ell^{(11)}=4\pi\sigma^2\Big[A_{\rm SW}(x_{0*})\,j_\ell(k_0\chi_*)-k_0T_V(x_{0*})\,j'_\ell(k_0\chi_*)-\delta_{\ell0}A_{\rm SW}(x_{0o})+\tfrac13\delta_{\ell1}k_0T_V(x_{0o})+I_\ell(k_0)\Big]^2,
 \end{equation}
 $x_{0*}=k_0\eta_*/\sqrt3$, $x_{0o}=k_0\eta_o/\sqrt3$, with $I_\ell(k_0)$ from Theorem~\ref{thm:isw}.  A real-space check (two-point function
 of the map built directly from the kernel vs $\sum_\ell\frac{2\ell+1}{4\pi}C_\ell P_\ell$, including $\ell=0,1$ observer terms) agrees to
@@ -90,18 +97,18 @@ $6\times10^{-15}$.  Example ($\sigma^2=1$, $\eta_*=0.5$, $\eta_o=2$, $k_0=4$): $
 $C_{2,3,4}=0.95460,\,0.62508,\,0.17507$.
 
 \paragraph{Limit $k_0\eta_*\to0$ (Sachs--Wolfe).}  Superhorizon the constraints give $\Phi_1'=0$, $\delta_1=-2\Psi_1$, i.e.\
-$\delta_{T1}=-\Psi_1/2$; with $\zeta=\delta_{T1}-\Phi_1$ (SPEC \S5, linearised) and $\Phi_1=\Psi_1$: $\Phi_1=-\tfrac23\zeta$ and
+$\delta_{T1}=-\Psi_1/2$; with $\zeta=\delta_{T1}-\Phi_1$ \eqref{eq:zeta1} and $\Phi_1=\Psi_1$: $\Phi_1=-\tfrac23\zeta$ and
 \begin{equation}
 \big[\delta_{T1}+\Psi_1\big]_e\to\tfrac12\Psi_1=-\tfrac13\,\zeta\qquad(\text{RD; cf.\ }-\tfrac15\zeta\text{ in matter domination}),
 \end{equation}
-while the emission Doppler term vanishes ($kT_V\sim x$).  Hence at fixed $S$, for $\ell\ge2$,
-$\Delta_\ell\to-\tfrac13j_\ell(S)+I^0_\ell(S)$, $I^0_\ell=I_\ell|_{s_*=0}$ (closed form: Theorem~\ref{thm:isw} with
+while the emission Doppler term vanishes ($kT_V\sim x$).  Hence at fixed $s_o$, for $\ell\ge2$,
+$\Delta_\ell\to-\tfrac13j_\ell(s_o)+I^0_\ell(s_o)$, $I^0_\ell=I_\ell|_{s_*=0}$ (closed form: Theorem~\ref{thm:isw} with
 $s_*\to0$: the poles of $E_\ell$ in $s_*$ cancel against the small-argument expansions of the $s_*$-dependent terms,
-$\Ci a_+s_*-\Ci a_-s_*\to\ln(a_+/a_-)$; implemented as \code{I\_l\_closed\_eta0}, checked against quadrature).
-For a scale-invariant $P=2\pi^2A_s/k^3$ this is an exact plateau, $\ell(\ell+1)C_\ell/2\pi A_s=2\ell(\ell+1)\int_0^\infty\frac{\dd S}{S}\Delta_\ell(S)^2$,
+$\Ci a_+s_*-\Ci a_-s_*\to\ln(a_+/a_-)$; checked against quadrature).
+For a scale-invariant $P=2\pi^2A_s/k^3$ this is an exact plateau, $\ell(\ell+1)C_\ell/2\pi A_s=2\ell(\ell+1)\int_0^\infty\frac{\dd s_o}{s_o}\Delta_\ell(s_o)^2$,
 independent of $\eta_o$.  The SW term alone gives $1/9$ ($\int\dd y\,j_\ell^2/y=1/[2\ell(\ell+1)]$, the RD analogue of $1/25$).
-In RD, however, $\Phi$ decays after horizon entry and every observed mode has entered by $\eta_o$ ($S\gtrsim\ell$), so the ISW term is
-not small: $\int2\TP'\,\dd\eta=+\tfrac43$.  Numerically (\code{plateau\_isw.py})
+In RD, however, $\Phi$ decays after horizon entry and every observed mode has entered by $\eta_o$ ($s_o\gtrsim\ell$), so the ISW term is
+not small: $\int2\TP'\,\dd\eta=+\tfrac43$.  Numerically (quadrature of the closed form):
 \begin{center}
 \begin{tabular}{c|ccccccccc}
 $\ell$ & 2 & 3 & 4 & 6 & 10 & 20 & 40 & 100 & $\infty$\\\hline
@@ -109,14 +116,14 @@ SW only & .1111 & .1111 & .1111 & .1111 & .1111 & .1111 & .1111 & .1111 & 1/9\\
 SW+ISW & .3772 & .4474 & .5003 & .5757 & .6649 & .7629 & .8290 & .8770 & .91377
 \end{tabular}
 \end{center}
-The large-$\ell$ value follows from the flat-sky limit: with the line-of-sight source $K(s)=-\tfrac13\delta(s)+2\,\dd\TP/\dd s$,
-$\ell(\ell+1)C_\ell/2\pi A_s\to\int_0^1\dd\mu\,|\tilde K(\mu)|^2$, and using $j_1(x)/x=\frac14\int_{-1}^1(1-t^2)e^{ixt}\dd t$,
+The large-$\ell$ value follows from the flat-sky limit: with the line-of-sight source $\kappa(s)=-\tfrac13\delta(s)+2\,\dd\TP/\dd s$,
+$\ell(\ell+1)C_\ell/2\pi A_s\to\int_0^1\dd\mu\,|\tilde\kappa(\mu)|^2$, and using $j_1(x)/x=\frac14\int_{-1}^1(1-t^2)e^{ixt}\dd t$,
 \begin{equation}
-\tilde K(\mu)=\int K e^{i\mu s}\dd s=1-2\beta^2-\beta(1-\beta^2)\ln\Big|\frac{1+\beta}{1-\beta}\Big|+i\pi\beta(1-\beta^2)\,\theta(1-\beta),\qquad\beta=\sqrt3\,\mu ,
+\tilde\kappa(\mu)=\int \kappa\, e^{i\mu s}\dd s=1-2b^2-b(1-b^2)\ln\Big|\frac{1+b}{1-b}\Big|+i\pi b(1-b^2)\,\theta(1-b),\qquad b=\sqrt3\,\mu ,
 \end{equation}
-($\tilde K(0)=-\tfrac13+\tfrac43=1$), giving $0.913769$ (ISW alone $0.865111$); verified against a numerical transform.
+($\tilde\kappa(0)=-\tfrac13+\tfrac43=1$), giving $0.913769$ (ISW alone $0.865111$); verified against a numerical transform.
 
-\paragraph{Limit $k_0\to\infty$.}  $A(x)=-\cos x+O(1/x)$, $kT_V=\sqrt3\sin x+O(1/x)$ and $I_\ell=O(1/(k\eta_*))$ (no resonance,
+\paragraph{Limit $k_0\to\infty$.}  $A_{\rm SW}(x)=-\cos x+O(1/x)$, $kT_V=\sqrt3\sin x+O(1/x)$ and $I_\ell=O(1/(k\eta_*))$ (no resonance,
 $a_\pm\neq0$), so
 \begin{equation}
 \Delta_\ell\to-\cos x_{0*}\,j_\ell(k_0\chi_*)-\sqrt3\sin x_{0*}\,j'_\ell(k_0\chi_*)+\delta_{\ell0}\cos x_{0o}+\tfrac{1}{\sqrt3}\delta_{\ell1}\sin x_{0o},
@@ -128,19 +135,19 @@ $C_0\to4\pi\sigma^2\cos^2x_{0o}$, $C_1\to\tfrac{4\pi}{3}\sigma^2\sin^2x_{0o}$.  
 \paragraph{Small $k$ (gauge modes).}  Expanding in $k$ (ISW integrated term by term):
 $\Delta_0=-\frac{k^4\chi_*^3(\eta_o+3\eta_*)}{810}+O(k^6)$, $\Delta_1=\frac{2k^3\chi_*^2(\eta_o+2\eta_*)}{405}+O(k^5)$:
 the $k^0,k^2$ terms of $\Delta_0$ and the $k$ term of $\Delta_1$ cancel between emission, observer and ISW, as required by the
-invisibility of constant and gradient $\zeta$ modes (SPEC \S9d at first order).
+invisibility of constant and gradient $\zeta$ modes at first order.
 
 \paragraph{Sky monopole.}  $\sky{m_1}=\frac1{4\pi}\int\dd\Omega\,m_1=a^{(1)}_{00}/\sqrt{4\pi}$, so
 \begin{equation}
-\sky{m_1}=\int\!\frac{\dd^3k}{(2\pi)^3}\zeta_\vk M(k),\qquad
-M(k)=\Delta_0(k)=A(x_*)\,j_0(w)+kT_V(x_*)\,j_1(w)-A(x_o)+I_0(k),
+\sky{m_1}=\int\!\frac{\dd^3k}{(2\pi)^3}\zeta_\vk\,\Delta_0(k),\qquad
+\Delta_0(k)=A_{\rm SW}(x_*)\,j_0(w)+kT_V(x_*)\,j_1(w)-A_{\rm SW}(x_o)+I_0(k),
 \end{equation}
-observer monopole included; $M=O(k^4)$.  Then $\ens{\sky{m_1}^2}=\frac1{2\pi^2}\int k^2P\,M^2\,\dd k=C^{(11)}_0/4\pi$, monochromatic
-$\sigma^2M(k_0)^2$ (example above: $0.193652$).  For $\ell\ge1$,
+observer monopole included; $\Delta_0=O(k^4)$.  Then $\ens{\sky{m_1}^2}=\frac1{2\pi^2}\int k^2P\,\Delta_0^2\,\dd k=C^{(11)}_0/4\pi$, monochromatic
+$\sigma^2\Delta_0(k_0)^2$ (example above: $0.193652$).  For $\ell\ge1$,
 \begin{equation}
-\ens{\sky{m_1}\,a^{(1)*}_{\ell m}}=4\pi(-i)^\ell\int\!\frac{k^2\dd k}{(2\pi)^3}P\,M\,\Delta_\ell\int\dd\Omega_k\,Y_{\ell m}(\khat)=0,
+\ens{\sky{m_1}\,a^{(1)*}_{\ell m}}=4\pi(-i)^\ell\int\!\frac{k^2\dd k}{(2\pi)^3}P\,\Delta_0\,\Delta_\ell\int\dd\Omega_k\,Y_{\ell m}(\khat)=0,
 \end{equation}
 since $\int Y_{\ell m}\dd\Omega=\sqrt{4\pi}\,\delta_{\ell0}\delta_{m0}$ (statistical isotropy; any $P$).  This is a statement about the
-Gaussian first-order fields only; at higher order $\sky{m_1}$ multiplies $m_{\ell m}$ in $\Th^{(2)}_{\ell m}$ (SPEC \S7) and its connected
-correlations with products of fields do not vanish.  Numerical check: the sky average of the kernel equals $M(k_0)$ for every
+Gaussian first-order fields only; at higher order $\sky{m_1}$ multiplies $m_{\ell m}$ in $\Th^{(2)}_{\ell m}$ \eqref{eq:theta_orders} and its
+correlations with products of fields do not vanish.  Numerical check: the sky average of the kernel equals $\Delta_0(k_0)$ for every
 $\khat$ to $5\times10^{-15}$, and $|\ens{\sky{m_1}a^*_{\ell m}}|<10^{-14}$ for $\ell=1..3$.

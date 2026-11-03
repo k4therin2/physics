@@ -1,98 +1,110 @@
 \section{Checks}
 \label{sec:checks}
-This section gives a structured account of the verifications performed on the chain
-exact observable $\to$ field equations $\to$ line-of-sight functionals $\to$ observer bookkeeping $\to$ harmonic machinery.
-Each item points to the verification ledger (App.~\ref{app:ledger}), where the code location and the numbers are recorded.
-Checks of the assembled $C^{(22)}_\ell$, $C^{(13)}_\ell$ and of the monochromatic evaluation belong to
-Secs.~\ref{sec:assembly}--\ref{sec:mono} and are not described here.
+This section summarises the verifications of the chain exact observable $\to$ field equations $\to$ line-of-sight functionals
+$\to$ observer bookkeeping $\to$ harmonic machinery.  Each item cites check identifiers of the ledger (App.~\ref{app:ledger}), where the
+numbers are recorded; the code is listed in App.~\ref{app:repro}.  The classification analytic / numerical / pending is collected in the
+status table of Sec.~\ref{sec:roadmap}.  Checks of the assembled $C^{(22)}_\ell$ and of the monochromatic evaluation are described with
+those results (Secs.~\ref{sec:asm-cl22}, \ref{sec:mono-num}).
 
 \subsection{The exact formula}
 \label{sec:check_exact}
 \begin{itemize}\itemsep2pt
-\item \emph{Algebraic identities} (referee V1).  Lemma~\ref{lem:kin} was verified in a generic Lorentzian metric with no symmetry,
-for generic $u$ and null $p$; Lemma~\ref{lem:fluid} for general $\rho,P$, with the converse that the identities hold iff $w=\tfrac13$
-for $P=w\rho$, $\rho\propto T^4$; the off-shell identity behind Theorem~\ref{thm:exact} vanishes exactly on shell (V1-1--V1-3).
-\item \emph{Exact solutions} (V1).  FRW and Milne: $\Tobs=T_o$ symbolically; Bianchi~I with a radiation test fluid (Kasner
+\item \emph{Algebraic identities} (analytic).  Lemma~\ref{lem:kin} in a generic Lorentzian metric with no symmetry, for generic $u$ and
+null $p$; Lemma~\ref{lem:fluid} for general $\rho,P$, with the converse that the identities hold iff $w=\tfrac13$ for $P=w\rho$,
+$\rho\propto T^4$; the off-shell identity behind Theorem~\ref{thm:exact} vanishes exactly on shell (X-1--X-3).
+\item \emph{Exact solutions}.  FRW and Milne: $\Tobs=T_o$ symbolically; Bianchi~I with a radiation test fluid (Kasner
 $(\tfrac23,\tfrac23,-\tfrac13)$ and non-Kasner exponents), where the anisotropy is $O(1)$: $|\Tobs^{\rm exact}-T_oe^{-S}|\lesssim2\times10^{-31}$,
-i.e.\ at quadrature precision (V1-4).  Linear Poisson gauge: the textbook Sachs--Wolfe $+$ Doppler $+$ ISW formula with observer terms is
-recovered (V1-5).
-\item \emph{Non-perturbative} (agent N1).  In the planar solver the photon energies are integrated from the geodesic equation and the
+i.e.\ at quadrature precision (X-4).  Linear Poisson gauge: the Sachs--Wolfe $+$ Doppler $+$ ISW formula with observer terms is
+recovered (X-5).
+\item \emph{Non-perturbative}.  In an exact planar solver the photon energies are integrated from the geodesic equation and the
 fluid temperatures are read off independently at emission and observation; $\max_{\nhat}|\Tobs/T_o-e^{-S}|=7.5\times10^{-15}$ at $\eps=0.01$ and
-$1.4\times10^{-14}$ at $\eps=0.1$ ($\Theta_{\rm rms}=0.08$), and $\le7.5\times10^{-14}$ in every production run (N1-1).
-\item \emph{Symbolic, through third order} (agent C2).  Route (i) (photon energy from $\hat\Gamma^0_{kk}$) and route (ii) ($e^{-S}$) agree
-(a)~at the integrand level along an arbitrary perturbed ray at orders 1, 2, 3 modulo $\hat\nabla_\mu\hat T^{\mu\nu}=0$ only (C2-1--C2-3), and
-(b)~at the level of the assembled, background-ray-expanded functionals, piece by piece (ray, obs, emi), orders 1, 2, 3 (C2-7).  The
-two assembled forms in \code{L\_terms.pkl} agree numerically for the plane wave below to $4\times10^{-10}$ ($L_2$) and $9\times10^{-7}$ ($L_3$)
-(A1-4).
+$1.4\times10^{-14}$ at $\eps=0.1$ ($\Theta_{\rm rms}=0.08$), and $\le7.5\times10^{-14}$ in every production run (X-10).
+\item \emph{Symbolic, through third order} (analytic).  The photon energy computed from $\hat\Gamma^0_{kk}$ (direct route) and $e^{-S}$ agree
+(a)~at the integrand level along an arbitrary perturbed ray at orders 1, 2, 3 modulo $\hat\nabla_\mu\hat T^{\mu\nu}=0$ only (X-7--X-9), and
+(b)~at the level of the assembled, background-ray-expanded functionals, piece by piece (ray, obs, emi), orders 1, 2, 3 (R-4).  The
+two assembled forms agree numerically for the plane wave below to $4\times10^{-10}$ ($L_2$) and $9\times10^{-7}$ ($L_3$) (PW-4).
 \end{itemize}
 
 \subsection{Einstein equations}
 \label{sec:check_einstein}
 \begin{itemize}\itemsep2pt
-\item \emph{Internal} (C1).  Background parts vanish; the contracted Bianchi identity holds identically through $O(\eps^3)$, so the
+\item \emph{Internal} (analytic).  Background parts vanish; the contracted Bianchi identity holds identically through $O(\eps^3)$, so the
 constraints propagate; the first-order system reproduces the standard equations and the conservation laws hold on shell; the exact dilation
-family solves the equations through $O(\eps^3)$ (C1-1--C1-6).
-\item \emph{Independent confirmation} (referee V3).  A separately coded engine gives $E_{\mu\nu}$ term-by-term identical to C1's for all ten
-components at orders 1, 2, 3 (V3-1; same method coded independently, compensated by the literature controls).  V3 confirmed the linear
-solution, the operator structure at orders 2 and 3, all second-order kernels (agreement to $10^{-164}$ at random points), the algebraic
-$\omega_2$ from relativistic Kelvin and its uniqueness, the superhorizon $\Phi_2$, the third-order contraction rules (brute-force Wick), the
-contracted third-order sources, and $C_3$ re-derived independently at three random points to 30 digits (V3-2--V3-6).
-\item \emph{Literature controls.}  Kohri--Terada \cite{KT}: $K_h=4f_{\rm RD}$, relative difference $5\times10^{-29}$ (V3-3, C1-9); Pitrou--Uzan--Bernardeau
+family solves the equations through $O(\eps^3)$ (EF-1--EF-6).
+\item \emph{Independent re-derivation} (analytic).  A separately coded computation gives $E_{\mu\nu}$ term by term identical for all ten
+components at orders 1, 2, 3 (EF-15; same method, independently coded, hence complemented by the literature controls).  It confirms the
+linear solution, the operator structure at orders 2 and 3, all second-order kernels (agreement to $10^{-164}$ at random points), the
+algebraic $\omega_2$ from the relativistic Kelvin theorem and its uniqueness, the superhorizon $\Phi_2$, the third-order contraction rules
+(brute-force Wick), the contracted third-order sources, and $C_3$ re-derived at three random points to 30 digits (EF-16--EF-20).
+\item \emph{Literature controls.}  Kohri--Terada \cite{KT}: $K_h=4f_{\rm RD}$, relative difference $5\times10^{-29}$ (EF-9, EF-17); Pitrou--Uzan--Bernardeau
 \cite{PUB}: scalar sources (A.1)--(A.8) except the trace source (A.6), whose printed form is visibly garbled (our trace source is fixed by two
-engines and by the exact dilation family), and the superhorizon initial data (3.12b,c) exactly (V3-4, C1-10); Lu et al.\ \cite{Lu}: the
-radiation-era vector kernel is identical to $K_\omega$ (V3-5).
-\item \emph{Closed forms} (agent C4).  The closed-form $\mathcal K_h$ equals Kohri--Terada (22) [with the modulus in the logarithm] to
+independent computations and by the exact dilation family), and the superhorizon initial data (3.12b,c) exactly (EF-10, EF-18); Lu et al.\ \cite{Lu}:
+the radiation-era vector kernel is identical to $K_\omega$ (EF-19).
+\item \emph{Closed forms} (high precision).  The closed-form $\mathcal K_h$ equals Kohri--Terada (22) [with the modulus in the logarithm] to
 $10^{-15}$ (25 digits with rational input) and their late-time form (25) exactly; the closed-form $\Phi_2$ agrees with 60-digit quadrature to
-$3.5\times10^{-40}$; all second-order fields assembled from the closed forms satisfy C1's full second-order Einstein and conservation equations
-with relative residual $5.5\times10^{-50}$ (C4-1--C4-3).
-\item \emph{Plane-wave fields} (agent A1).  The orders-1--3 plane-wave fields generated from C1's engine satisfy C1's conservation equations to
-$10^{-27}$/$5\times10^{-21}$ (orders 2/3) and reproduce N1's nonperturbative maps (Sec.~\ref{sec:check_endtoend}), which tests the equations
-together with the initial-data prescription $\zeta^{(2)}_{\rm nl}(0)=\zeta^{(3)}_{\rm nl}(0)=0$ (A1-1).
+$3.5\times10^{-40}$; all second-order fields assembled from the closed forms satisfy the full second-order Einstein and conservation equations
+with relative residual $5.5\times10^{-50}$ (CF-1--CF-3); the printed form of App.~\ref{app:closedforms} was re-checked against quadrature (CF-4).
+\item \emph{Plane-wave fields}.  Orders-1--3 plane-wave fields generated from the same field equations satisfy the conservation equations to
+$10^{-27}$/$5\times10^{-21}$ (orders 2/3) and reproduce the non-perturbative maps (Sec.~\ref{sec:check_endtoend}), which tests the equations
+together with the initial-data prescription $\zeta^{(2)}_{\rm nl}(0)=\zeta^{(3)}_{\rm nl}(0)=0$ (PW-1).
 \end{itemize}
-A harmless erratum was found by V3: the small-$\eta$ helper for $\Phi_2$ in C1's \code{third\_order\_ic.py} uses $\tfrac3{10}S_\Phi(0)\eta^2$ instead
-of $\tfrac1{10}$; $C_3$, the tadpoles and all other quoted results are independent of it.
 
-\subsection{Dilation invariance}
+\subsection{Gauge invariance at \texorpdfstring{$k=0$}{k=0}: the dilation family}
 \label{sec:check_dilation}
+The observable is defined by physical labels only: $\Tphys$ surfaces (emission and initial event), proper time along a fluid worldline,
+the photon direction relative to an orthonormal frame, and the integral of the scalar $\sigma_{\mu\nu}e^\mu e^\nu$ along a geometric curve.
+Under a change of coordinates each of these is invariant, except that the canonical triad (built from $\partial_i$) rotates; by
+Sec.~\ref{sec:FW} that rotation drops out of $C_\ell$.  The perturbative chain, however, is written in Poisson gauge, and gauge invariance is a
+non-trivial test of it.  The exact dilation family \eqref{eq:dilation} is a pure coordinate transformation of FRW and is the $k=0$ test:
 \begin{itemize}\itemsep2pt
-\item \emph{The exact family.}  The rescaled FRW solution \eqref{eq:dilation} solves the field equations through $O(\eps^3)$ (C1-6) and
-non-perturbatively (V3-7); it carries $\zeta_{\rm nl}=\ln B$ exactly and, with $B=e^{\eps c}$, is the $k\to0$ limit of the regular solution with
-a free residual time rescaling at second order.
-\item \emph{Symbolic cancellation in the observable} (C2).  For the family with $\lambda=1+\eps a_1+\tfrac{\eps^2}2a_2$, $a_1=-c/3$, $a_2$ free:
+\item \emph{The family} solves the field equations through $O(\eps^3)$ (EF-6) and non-perturbatively (EF-21); it carries $\zeta_{\rm nl}=\ln\beta$
+exactly and, with $\beta=e^{\eps c}$, is the $k\to0$ limit of the regular solution with a free residual time rescaling $a_2$ at second order.
+\item \emph{Cancellation in the observable} (analytic).  For $\lambda=1+\eps a_1+\tfrac{\eps^2}2a_2$, $a_1=-c/3$, $a_2$ free, $\beta=e^{\eps c}$:
 $\hat\sigma_{\mu\nu}\equiv0$ through third order; the assembled $L_1,L_2,L_3$ vanish in the shear \emph{and} the direct form, with
 $\delta\eta_{e1}=c\eta_*/3$, $\delta\eta_{e2}=(-a_2+\tfrac29c^2)\eta_*$ inserted (the exact $\eta_*(1/\lambda-1)$ series); the clock gives
-$\eta_o=\bar\eta_o/\lambda$ through second order for any $a_2$, hence $T_o=\bar T(\bar\eta_o)$ and $\Theta=0$ (C2-9).  In the $e^{-S}$
+$\eta_o=\bar\eta_o/\lambda$ through second order for any $a_2$ and any $\eta_i$, hence $T_o=\bar T(\bar\eta_o)$ and $\Theta=0$ (R-6, R-8).  In the $e^{-S}$
 formulation the anisotropy part is automatic ($S$ involves only derivatives of $\hat u$), so the non-trivial content is the direct form and
-the monopole at fixed proper time.  A factor-2 slip in C2's stored $\delta\eta_{e2}$ was caught by this check and corrected.
-\item \emph{Squeezed limit of the initial data.}  $C_3(q\to0)=-\tfrac{32}9$, the value predicted by the dilation family (C1-14), re-derived by V3 (V3-6).
-\item \emph{Zero-mode (tadpole) independence} (A1).  Regenerating the plane-wave fields with a different zero-mode convention
+the monopole at fixed proper time.
+\item \emph{Squeezed limit of the initial data}.  $C_3(q\to0)=-\tfrac{32}9$, the value predicted by the dilation family (EF-14, EF-20).
+\item \emph{Zero-mode (tadpole) independence, numerical}.  Regenerating the plane-wave fields with a different zero-mode assignment
 ($\Psi_{2,0}=\Phi_{2,0}+c_g\eta$, a residual time reparametrisation) changes $\Phi_{2,0},\Psi_{2,0},\delta_{2,0}$ and all third-order fields at
 $O(1)$ ($\Psi_{2,0}(8)$: $-1.21\to+4.79$) and $\delta\eta_{o2}$ ($4.411\to-11.589$), but every $a_{\ell0}$ of $\Theta^{(1,2,3)}$, the sky monopoles and $T_o$
-are unchanged to $\le2\times10^{-14}$ (A1-3).  This is the numerical realisation of the statement that individual tadpoles are
-convention dependent (V3 finds that the image-summed $C_3$ shifts by $8$ per unit shift of the tadpole $\langle\Phi_2\rangle$ along the allowed zero-mode family, V3-6) while the
-observable, with clock and normalisation, is not.
-\item \emph{First-order gradient mode.}  $\Delta_0=O(k^4)$, $\Delta_1=O(k^3)$ as $k\to0$ (C5-3): constant and gradient modes are invisible at first order.
+are unchanged to $\le2\times10^{-14}$ (PW-3).  Correspondingly, the amplitude $C_3$, summed over the two orderings of the contracted momenta,
+shifts by 8 per unit shift of the tadpole $\langle\Phi_2\rangle$ along the zero-mode family (EF-20): individual tadpoles are convention
+dependent while the observable, with clock and normalisation, is not.  This test has collinear momenta and no vector or tensor modes.
+\todo{zero-mode invariance (analytic): proof that $\Theta^{(3)}$ is independent of the zero-mode assignment for general momenta, including the
+anisotropic $k\to0$ pieces \eqref{eq:KPhi20_smallk}; being derived.}
+\item \emph{First-order gradient mode}.  $\Delta_0=O(k^4)$, $\Delta_1=O(k^3)$ as $k\to0$ (FO-3): constant and gradient modes are invisible at first order.
 \end{itemize}
 
-\subsection{The decisive end-to-end test: plane wave versus the non-perturbative solver}
+\subsection{Gauge invariance at finite \texorpdfstring{$k$}{k}: plane wave versus the non-perturbative solver}
 \label{sec:check_endtoend}
-\paragraph{Set-up.}  For $\zeta=\eps\cos x$ (single plane wave, $k=1$) agent N1 solved the full planar Einstein--radiation system
-non-perturbatively in comoving-orthogonal gauge (lapse fixed algebraically by Lemma~\ref{lem:fluid}), with regular non-linear initial data
-at $t_i=0.01$, ray tracing to the hypersurface $\Tphys=T_*$, the observer clock at fixed proper time, and the normalisation of
+\paragraph{Set-up.}  For $\zeta=\eps\cos x$ (single plane wave, $k=1$) the full planar Einstein--radiation system was solved
+non-perturbatively in \emph{comoving-orthogonal gauge}, $\dd s^2=-\alpha^2\dd t^2+A^2\dd x^2+B^2(\dd y^2+\dd z^2)$ with $u=\alpha^{-1}\partial_t$ and the lapse
+fixed algebraically by Lemma~\ref{lem:fluid}, $\alpha=e^{-\zeta}(AB^2)^{1/3}$, $\Tphys=1/\alpha$; regular non-linear initial data at $t_i=0.01$, ray
+tracing to the hypersurface $\Tphys=T_*$, the observer clock at fixed proper time from the $\Tphys=T_i$ crossing, and the normalisation of
 Corollary~\ref{cor:theta}; $\Theta^{(1,2,3)}$ were extracted from 16 amplitudes $|\eps|\le0.1$ by even/odd polynomial fits, with an uncertainty
-defined as the spread between fit subsets (N1-3).  Independently, agent A1 evaluated the analytic chain: C1's equations reduced to the plane
-wave (fields to third order as exact Green's-function integrals, 40-digit arithmetic), C2's general-$\nhat$ shear-form lists $L_1,L_2,L_3$ with the
-ray functionals \eqref{eq:k1def}--\eqref{eq:Dx2def}, the emission shifts \eqref{eq:deta_e}, the clock and displacement of Sec.~\ref{sec:obsevent}
-(including the $O(t_i^2)$ initial-event terms) and the bookkeeping \eqref{eq:theta_orders} including $\ell=0,1$.  No fitting of A1 to N1 is
-involved.  Configurations: $\bar\eta_o/\eta_*=4$ ($\bar\eta_o=8$) and $2$ ($\bar\eta_o=4$), $\eta_*=2$; observer at $x_o=0$ (maximum of $\zeta$; even
-$\ell$ only) and $x_o=\pi/2$ (generic; odd $\ell$ and dipole).  Multipoles $a_{\ell0}=\sqrt{4\pi(2\ell+1)}\,\tfrac12\int\Theta P_\ell\,\dd\mu$ about the
-wave vector.
+defined as the spread between fit subsets (NP-2).  Independently, the analytic chain of this paper was evaluated in \emph{Poisson gauge}: the
+field equations reduced to the plane wave (fields to third order as exact Green's-function integrals, 40-digit arithmetic), the
+symbolic-$\nhat$ shear-form lists $L_1,L_2,L_3$ (App.~\ref{app:lterms}) with the ray functionals \eqref{eq:k1def}--\eqref{eq:Dx2def}, the emission
+shifts \eqref{eq:deta_e}, the clock and displacement of Sec.~\ref{sec:obsevent} (with the $O(\eta_i^2)$ clock terms at $\eta_i=0.01$ and the
+label as $\eta\to0$, i.e.\ the solver's comoving label) and the bookkeeping \eqref{eq:theta_orders} including $\ell=0,1$.  No fitting of one to
+the other is involved.  Configurations: $\bar\eta_o/\eta_*=4$ ($\bar\eta_o=8$) and $2$ ($\bar\eta_o=4$), $\eta_*=2$; observer at $x_o=0$ (maximum
+of $\zeta$; even $\ell$ only) and $x_o=\pi/2$ (generic; odd $\ell$ and dipole).  Multipoles $a_{\ell0}=\sqrt{4\pi(2\ell+1)}\,\tfrac12\int\Theta P_\ell\,\dd\mu$
+about the wave vector.
 
+\paragraph{Why this is a gauge-invariance test.}  The two computations share no coordinate quantity: the slicing (Poisson versus
+fluid-orthogonal with $\alpha\Tphys=1$), the spatial coordinates, the time of observation and the field variables all differ.  For example,
+the coordinate time of observation is $\eta_o=8+0.91167\,\eps+4.41138\,\eps^2/2$ in Poisson gauge but $t_o=8+2.54456\,\eps-3.2885\,\eps^2$ in the solver
+($\bar\eta_o=8$, $x_o=0$).  What agrees must therefore be the gauge-invariant content: the sky map defined by physical labels.  By planar
+symmetry both canonical triads are aligned with the symmetry axes, so the frame rotation of Sec.~\ref{sec:FW} is trivial and the comparison
+holds multipole by multipole at each order, not only for $C_\ell$.  The test covers the second- and third-order gauge transformations of all
+scalar quantities entering the map (the solver has no vector modes and only a homogeneous tensor mode).
 \begin{table}[t]
 \centering\small
 \begin{tabular}{@{}lrr rrr@{}}
 \hline
-configuration & order & $\ell$ & A1 (analytic chain) & N1 (non-perturbative) & A1$-$N1\\ \hline
+configuration & order & $\ell$ & analytic chain (Poisson gauge) & non-perturbative (comoving gauge) & difference\\ \hline
 $\bar\eta_o=8$, $x_o=0$ & 1 & 2 & $-2.1847203553$ & $-2.1847203553$ & $-4.4\times10^{-12}$\\
  & 1 & 4 & $+1.2552456282$ & $+1.2552456282$ & $-3.6\times10^{-12}$\\
  & 1 & 6 & $-4.7973477367\times10^{-2}$ & $-4.7973477364\times10^{-2}$ & $-3.4\times10^{-12}$\\
@@ -118,9 +130,9 @@ $\bar\eta_o=4$, $x_o=\pi/2$ & 1 & 1 & $-2.3149107586\times10^{-1}$ & $-2.3149107
  & 3 & 1 & $+1.3059761781\times10^{1}$ & $+1.3059761844\times10^{1}$ & $-6.4\times10^{-8}$\\
  & 3 & 3 & $-3.6965575489\times10^{-1}$ & $-3.6965566762\times10^{-1}$ & $-8.7\times10^{-8}$\\ \hline
 \end{tabular}
-\caption{Plane-wave comparison of the analytic chain (agent A1) with the non-perturbative planar solver (agent N1): $a_{\ell0}$ of
-$\Theta^{(r)}$, $r=1,2,3$ ($\ell=1$ is the dipole, kept here because the comparison is made before dipole removal).  Full lists
-($\ell\le12$): \code{code/A1\_planewave/compare\_*.log}.}
+\caption{Plane-wave comparison of the analytic chain (Poisson gauge) with the non-perturbative planar solver (comoving-orthogonal
+gauge): $a_{\ell0}$ of $\Theta^{(r)}$, $r=1,2,3$ ($\ell=1$ is the dipole, kept here because the comparison is made before dipole removal).
+Full lists ($\ell\le12$): App.~\ref{app:repro}.}
 \label{tab:a1n1}
 \end{table}
 
@@ -135,64 +147,67 @@ $\bar\eta_o=8$, $x_o=\pi/2$ & $2.7\times10^{-8}$ ($5.3\times10^{-7}$) & $4.0\tim
 $\bar\eta_o=4$, $x_o=\pi/2$ & $2.1\times10^{-11}$ ($6.7\times10^{-10}$) & $2.4\times10^{-9}$ ($5.4\times10^{-9}$) & $3.1\times10^{-7}$ ($3.9\times10^{-5}$)\\ \hline
 map rms ($\bar\eta_o=8$, $x_o=0$) & $0.71$ & $1.31$ & $14.2$\\ \hline
 \end{tabular}
-\caption{Maximum over the sky of $|\Theta^{(r)}_{\rm A1}-\Theta^{(r)}_{\rm N1}|$, with N1's extraction uncertainty in parentheses.}
+\caption{Maximum over the sky of $|\Theta^{(r)}_{\rm analytic}-\Theta^{(r)}_{\rm non\text{-}pert}|$, with the extraction uncertainty of the
+non-perturbative maps in parentheses.}
 \label{tab:a1n1maps}
 \end{table}
 
 \paragraph{Result.}  Tables~\ref{tab:a1n1} and \ref{tab:a1n1maps}: the analytic chain reproduces the non-perturbative maps at all three
-orders in all four configurations, within N1's uncertainty: first order to $\sim10^{-11}$, second order to $\sim10^{-9}$ in $a_{\ell0}$, third order
-to $\sim10^{-7}$ ($x_o=0$) and $\sim10^{-6}$ ($x_o=\pi/2$, where N1's own uncertainty is $3\times10^{-2}$) (A1-2).  The second-order map differences for
-$x_o=0$ exceed N1's quoted spread by $\sim4$ but sit at N1's stated noise floor; a test that uses no N1 fitting at all settles this:
-the residual $R(\eps)=\Theta_{\rm N1}(\eps)-[\eps\Theta^{(1)}+\tfrac{\eps^2}2\Theta^{(2)}+\tfrac{\eps^3}6\Theta^{(3)}]_{\rm A1}$ scales cleanly as $\eps^4$ for all 16
-amplitudes ($\max|R|/\eps^4=11.6\ldots14.5$ smoothly over $-0.1\le\eps\le0.1$; $|R|=1.2\times10^{-7}$ at $\eps=0.01$), i.e.\ no lower-order
-remainder (A1-6).  The gauge-invariant observer quantities agree as well: $T_o$ and $\sky{\Tobs}$ through $O(\eps^2)$, e.g.\ for
-$\bar\eta_o=8$, $x_o=0$: $T_o=0.125-0.0550223132\,\eps+0.0041441746\,\eps^2$ (A1) vs $0.125-0.0550222904\,\eps+0.0041441914\,\eps^2$ (N1 fit), with N1 fit
-uncertainties $10^{-8}$--$5\times10^{-7}$.  (The coordinate time of observation is gauge dependent and is not compared.)
-A1's own numerics are converged (Chebyshev $N=48/64/96$ identical to all printed digits).
+orders in all four configurations, within the extraction uncertainty: first order to $\sim10^{-11}$, second order to $\sim10^{-9}$ in $a_{\ell0}$,
+third order to $\sim10^{-7}$ ($x_o=0$) and $\sim10^{-6}$ ($x_o=\pi/2$, where the extraction uncertainty itself is $3\times10^{-2}$) (PW-2).  The second-order
+map differences for $x_o=0$ exceed the quoted spread by $\sim4$ but sit at the solver's stated noise floor; a test that uses no fitting at all
+settles this: the residual $R(\eps)=\Theta_{\rm non\text{-}pert}(\eps)-[\eps\Theta^{(1)}+\tfrac{\eps^2}2\Theta^{(2)}+\tfrac{\eps^3}6\Theta^{(3)}]_{\rm analytic}$ scales cleanly
+as $\eps^4$ for all 16 amplitudes ($\max|R|/\eps^4=11.6\ldots14.5$ smoothly over $-0.1\le\eps\le0.1$; $|R|=1.2\times10^{-7}$ at $\eps=0.01$), i.e.\ there is
+no lower-order remainder (PW-6).  The gauge-invariant observer quantities agree as well: $T_o$ and $\sky{\Tobs}$ through $O(\eps^2)$, e.g.\ for
+$\bar\eta_o=8$, $x_o=0$: $T_o=0.125-0.0550223132\,\eps+0.0041441746\,\eps^2$ (analytic) vs $0.125-0.0550222904\,\eps+0.0041441914\,\eps^2$ (fit to the
+solver), with fit uncertainties $10^{-8}$--$5\times10^{-7}$.  The analytic evaluation is converged (Chebyshev $N=48/64/96$ identical to all printed digits).
 
-\paragraph{What it tests.}  Every link of the chain enters: C1's second- and third-order equations and the initial-data prescription,
-the tadpoles at third order, C2's $L_1,L_2,L_3$ including lensing, time delay, aberration, the direction map with the canonical triad, the
-emission surface to second order, the clock and observer displacement to second order, and the normalisation \eqref{eq:theta_orders}.
-On the way two errors were found and corrected, neither in C1's equations nor in C2's term lists: a zero-mode weight in A1's own
-conversion $\delta\to\delta_T$ (detected by C2's conservation rules and by $T_o$ at $O(\eps^2)$, A1-7) and the documentation sign slip of
-Remark~\ref{rem:signslip}, which with the printed $+$ sign spoils the null condition at $O(1)$ (A1-4).  The comparison also fixed the observer
-label convention (Sec.~\ref{sec:obsevent}): with the label taken at $\eta_{\rm init}$ instead of $\eta\to0$ the observer is a different fluid element,
-which moves $\Theta^{(2)}$'s $a_{20}$ by $7\times10^{-5}$, beyond N1's uncertainty (A1-5).
+\paragraph{What it tests.}  Every link of the chain enters: the second- and third-order field equations and the initial-data prescription,
+the tadpoles at third order, $L_1,L_2,L_3$ including lensing, time delay, aberration, the direction map with the canonical triad, the
+emission surface to second order, the clock and observer displacement to second order, and the normalisation \eqref{eq:theta_orders}.  It
+also fixes two conventions that a different choice would violate at $O(1)$: the sign of the tangent integrals in \eqref{eq:k1def},
+\eqref{eq:k2def} (the opposite sign violates the null condition by $2.3$ and makes the shear and direct forms differ by $2.1$ ($L_2$) and $38$
+($L_3$), PW-4), and the zero-mode weight in the conversion $\delta\to\delta_T$ (PW-7).  The label convention matters at finite $\eta_i$: with the
+label taken at the initial event instead of $\eta\to0$ the observer is a different fluid element (offset $1.7\times10^{-5}$ at $\eta_i=0.01$), which
+moves $a_{20}[\Theta^{(2)}]$ by $7\times10^{-5}$, beyond the solver's uncertainty (PW-5); this is the $O(\eta_i^2)$ effect of Sec.~\ref{sec:obsevent}
+and disappears as $\eta_i\to0$.
 
 \subsection{First-order controls}
 \label{sec:check_first}
-Agent C5 (Sec.~\ref{sec:linear}): the transfer functions satisfy the first-order equations and constraints exactly; the Rayleigh rules in the
-convention of Sec.~\ref{sec:dirconv} were checked by sphere quadrature ($3\times10^{-14}$, $\ell\le6$), including the observer monopole ($\ell=0$ only) and
-observer Doppler ($\ell=1$ only); the prefactor of $C^{(11)}_\ell$ and the observer and ISW terms by an independent real-space computation of the
-correlation function ($6\times10^{-15}$); the ISW closed form against quadrature ($2\times10^{-18}$), its residue formulas for the Ci/Si/Cin
-coefficients ($<10^{-169}$) and the vanishing of the $\ln w$ coefficient (regularity at the observer) symbolically; the limits
-$k\eta_*\to0$ (Sachs--Wolfe $-\tfrac13$, plateau $A_s/9$), $k\to\infty$ and $k\to0$; and $\langle\sky{m_1}a_{\ell m}\rangle=0$ ($\ell\ge1$),
-$\langle\sky{m_1}^2\rangle=C^{(11)}_0/4\pi$ (C5-1--C5-4).  The first-order map is in addition tested end to end by the plane-wave comparison
-($\sim10^{-11}$).
+The transfer functions satisfy the first-order equations and constraints exactly; the Rayleigh rules were checked by sphere quadrature
+($3\times10^{-14}$, $\ell\le6$), including the observer monopole ($\ell=0$ only) and observer Doppler ($\ell=1$ only); the prefactor of $C^{(11)}_\ell$ and the
+observer and ISW terms by an independent real-space computation of the correlation function ($6\times10^{-15}$); the ISW closed form against
+quadrature ($2\times10^{-18}$), its residue formulas for the $\Ci/\Si/\mathrm{Cin}$ coefficients ($<10^{-169}$) and the vanishing of the $\ln w$
+coefficient (regularity at the observer) symbolically; the limits $k\eta_*\to0$ (Sachs--Wolfe $-\tfrac13$, plateau $A_s/9$), $k\to\infty$ and $k\to0$;
+and $\langle\sky{m_1}a_{\ell m}\rangle=0$ ($\ell\ge1$), $\langle\sky{m_1}^2\rangle=C^{(11)}_0/4\pi$ (FO-1--FO-4).  The first-order map is in addition tested
+end to end by the plane-wave comparison ($\sim10^{-11}$).
 
 \subsection{Harmonic machinery controls}
 \label{sec:check_harmonic}
-Agent C3 (Sec.~\ref{sec:harmonic}): rules (A-$s$), (A-$\lambda$), (A-$L$), the type-C $3j$ sums and the reduction (E1) against direct quadrature
-($10^{-14}$--$10^{-15}$); (B1) with both pairings against an exact real-space Wick computation ($2.6\times10^{-12}$) and by Monte Carlo on the
-sphere; the type-D Fourier/angular-gradient identity ($3\times10^{-12}$); the prefactors 2 and 3 of \eqref{eq:loops}.  The decisive control is
-the lensed $C_\ell$ (Sec.~\ref{sec:lensing_control}): the bookkeeping \eqref{eq:cl_target} reproduces Hu's $(22)$ and $(13)$ lensing terms, extended to
-correlated $\phi,\Theta$, algebraically ($2.5\times10^{-16}$) and by Monte Carlo of the remapped sky ($2$--$5\%$, statistical) (C3-1--C3-9).
-Formulas (E2), (E3) and $T^{\rm(ii)}$ are derived by Wick counting consistent with the verified ones but have not been tested numerically (C3-10).
+Rules (A-$s$), (A-$\lambda$), (A-$L$), the type-C $3j$ sums and the reduction (E1) against direct quadrature ($10^{-14}$--$10^{-15}$), re-checked in the
+observation-direction convention of this paper (H-1, H-7, H-8, H-11); (B1) with both pairings against an exact real-space Wick computation
+($2.6\times10^{-12}$) and by Monte Carlo on the sphere (H-3); the type-D Fourier/angular-gradient identity ($3\times10^{-12}$, H-4); the prefactors 2 and 3
+of \eqref{eq:loops} (H-6); the Bessel tail bound \eqref{eq:jbound} (H-12).  The decisive control is the lensed $C_\ell$ (Sec.~\ref{sec:lensing_control}):
+the bookkeeping \eqref{eq:cl_target} reproduces Hu's $(22)$ and $(13)$ lensing terms, extended to correlated $\phi,\Theta$, algebraically
+($2.5\times10^{-16}$) and by Monte Carlo of the remapped sky ($2$--$5\%$, statistical) (H-5).  Formulas (E2), (E3) and $T^{\rm(ii)}$ are derived by Wick
+counting in the same way as the verified ones but have not been tested numerically (H-10).
 
 \subsection{What the checks do not cover}
 \label{sec:check_gaps}
 \begin{itemize}\itemsep2pt
 \item A single plane wave probes only the axisymmetric ($m=0$ about $\vk$) part of the kernels $K_r$, and only the collinear configurations
 $\vk_i\parallel\vk$ of $K_2$, $K_3$ (with the $x_o=0$ configurations restricted to even $\ell$); the planar solver contains no vector or tensor
-modes beyond a homogeneous $h$, so the $\omega_2$ terms and the non-collinear $h_2$ terms of the map are untested end to end.
-\item Only $\bar\eta_o/\eta_*=2$ and $4$ were compared, far from a realistic $\bar\eta_o/\eta_*$; the third-order comparison at ratio 4 and
-$x_o=\pi/2$ is limited by N1's extraction uncertainty ($3\times10^{-2}$ absolute on a map of rms 24).
-\item The loop integrals over $\vk_1,\vk_2$ and $\vq$, the harmonic transforms of the actual second- and third-order kernels, and the
-monochromatic evaluation (including the delicate limits listed in Sec.~\ref{sec:monodef}) are so far checked only by internal consistency;
-their checks are recorded in Secs.~\ref{sec:assembly}--\ref{sec:mono}.  The squeezed-limit predictions of agent V2 (adiabatic-mode
-transformation, App.~\ref{app:ledger}, V2-1) await comparison with the assembled $K_2$.
-\item The tetrad-rotation invariance of $\tfrac14C^{(22)}+\tfrac13\Re C^{(13)}$ (V1-6) is verified only for an exact $\ell=2$ example; it is not needed if
-the canonical triad is used consistently, as here.
-\item The literature agreement for the scalar second-order trace source rests on our two engines and the dilation family only, since
-the printed PUB (A.6) is garbled.
+modes beyond a homogeneous $h$, so the $\omega_2$ terms and the non-collinear $h_2$ terms of the map are untested end to end (the
+non-collinear second-order kernel is tested by the equality of its shear and direct forms, Sec.~\ref{sec:asm-K2}).
+\item Only $\bar\eta_o/\eta_*=2$ and $4$ were compared; the third-order comparison at ratio 4 and $x_o=\pi/2$ is limited by the extraction
+uncertainty ($3\times10^{-2}$ absolute on a map of rms 24).
+\item The gauge-invariance test at finite $k$ covers scalar modes and collinear momenta; a perturbative check under a general second-order
+gauge transformation of the assembled $L_2$ has not been performed.
+\item The $(13)$ loop integrals, (E2), (E3), $T^{\rm(ii)}$ and the collinear behaviour of the $(13)$ integrand at $q=k$ are pending:
+\todo{$\mu\to1$ behaviour of the $(13)$ integrand: cancellation of the $1/(1-\mu)$ pole \eqref{eq:C3pole} in the complete contracted map at
+$q=k$, and the resulting monochromatic $C^{(13)}_\ell$ (being derived; Secs.~\ref{sec:asm-C13}, \ref{sec:mono-13}).}
+\item The squeezed-limit predictions for $K_2$ derived from the adiabatic-mode transformation (SQ-1) are compared with the assembled $K_2$ in
+Sec.~\ref{sec:asm-squeezed}.
+\item The literature agreement for the scalar second-order trace source rests on two independent computations and the dilation family only,
+since the printed PUB (A.6) is garbled.
 \end{itemize}

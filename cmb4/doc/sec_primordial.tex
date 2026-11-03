@@ -18,50 +18,68 @@ $\gamma_{ij}=g_{ij}+g_{00}\partial_i\eta_P\partial_j\eta_P+2g_{0(i}\partial_{j)}
 \begin{equation}
 \gamma_{ij}=\tilde\eta^2(1+\delta_T)^2\Big[(1-2\Phi)\delta_{ij}+h_{ij}+O(\tilde\eta^2)\Big],
 \end{equation}
-because $\partial_i\eta_P=\tilde\eta\,\partial_i\delta_T=O(\tilde\eta)$.  For regular solutions (below) $h_{ij}\to0$
-as $\tilde\eta\to0$ (the induced tensors are sourced and vanish at $\eta=0$; there are no free tensor modes), so
-$\gamma_{ij}\to a(\tilde\eta)^2e^{2\zeta_{\rm nl}}\delta_{ij}$: $\zeta_{\rm nl}$ is exactly the quantity $\zeta$ of
-Salopek--Bond and Maldacena, $h_{ij}=a^2e^{2\zeta}(e^{\gamma})_{ij}$ on uniform-density slices with $\gamma=0$
-\cite{SalopekBond,Maldacena}.  (On these slices the fluid is also comoving in the limit, since the regular
+because $\partial_i\eta_P=\tilde\eta\,\partial_i\delta_T=O(\tilde\eta)$.  Maldacena's parametrisation of the uniform-density
+spatial metric, $\gamma_{ij}=a^2e^{2\zeta}(e^{\gamma})_{ij}$ with $\gamma_{ii}=0=\partial_i\gamma_{ij}$, contains \emph{two} independent
+variables, $\zeta$ and the tensor $\gamma_{ij}$; the limit of $h_{ij}$ as $\tilde\eta\to0$ is $\gamma_{ij}$, and it is not fixed by
+$\zeta_{\rm nl}$ or by regularity (see below).  The initial-data definition (Definition~\ref{def:gauss}) sets $\gamma_{ij}=0$, i.e.\
+$h_{ij}\to0$ as $\tilde\eta\to0$; with it $\gamma_{ij}\to a(\tilde\eta)^2e^{2\zeta_{\rm nl}}\delta_{ij}$, so $\zeta_{\rm nl}$ is exactly the $\zeta$ of
+Salopek--Bond and Maldacena \cite{SalopekBond,Maldacena}.  (On these slices the fluid is also comoving in the limit, since the regular
 velocity potential vanishes as $\eta\to0$, Sec.~\ref{sec:first}.)  The spatial coordinates are those of Poisson
 gauge; the residual freedom of the conformally flat form, a constant rescaling $\vx\to B\vx$, is the zero-mode
 ambiguity discussed in Sec.~\ref{sec:tadpole}.
 
-\begin{definition}[Gaussian initial conditions; absence of higher-order primordial modes]\label{def:gauss}
+\begin{definition}[initial data: Gaussian $\zeta_{\rm nl}$, no primordial vectors or tensors]\label{def:gauss}
+The initial data are those of the regular solution (Sec.~\ref{sec:regular}) with
 \begin{equation}
 \zeta_{\rm nl}=\eps\,\zeta_1\quad\text{exactly},\qquad \zeta_1\ \text{a Gaussian random field with spectrum }P(k),
 \label{eq:gauss}
 \end{equation}
-i.e.\ in the expansion \eqref{eq:expansion} of $\zeta_{\rm nl}$,
-$\zeta^{(2)}(\eta\to0)=0$ and $\zeta^{(3)}(\eta\to0)=0$ \emph{identically in $\vx$}.  This is the statement
-that the exponentiated uniform-density curvature perturbation is Gaussian \cite{Maldacena}; in the language
-of \cite{PUB} it is $\mathcal R^{(2)}=-2\mathcal R^{(1)2}$ ($f_{\rm NL}=0$ for the variable appearing in
-$e^{2\zeta}$), and it fixes the second- and third-order scalar fields at $\eta\to0$ completely, with no freedom
-to add independent second- or third-order scalar, vector or tensor modes.
+i.e.\ $\zeta^{(2)}(\eta\to0)=0$ and $\zeta^{(3)}(\eta\to0)=0$ identically in $\vx$ in the expansion \eqref{eq:expansion}, and, at every order $n$,
+\begin{equation}
+h_{n,ij}(\eta\to0,\vx)=0,\qquad \omega_{n,i}(\eta\to0,\vx)\ \text{and}\ v^T_{n,i}(\eta\to0,\vx)\ \text{finite (no primordial vector mode)}.
+\label{eq:notensor}
+\end{equation}
+The first condition is the statement that the exponentiated uniform-density curvature perturbation is Gaussian \cite{Maldacena};
+in the language of \cite{PUB} it is $\mathcal R^{(2)}=-2\mathcal R^{(1)2}$ ($f_{\rm NL}=0$ for the variable appearing in $e^{2\zeta}$).
+It fixes the scalar sector only.  The second condition, $\gamma_{ij}=0$ at every order, is an independent part of the definition.
 \end{definition}
 
 \subsection{Regularity and initial data at finite \texorpdfstring{$\eta_i$}{eta\_i}}
 \label{sec:regular}
 \emph{Regular} means: at every order the solution of the Einstein--fluid system is analytic in $\eta$ at
-$\eta=0$.  At first order this discards the decaying mode $\propto(\cos x+x\sin x)/x^3\sim\eta^{-3}$
-($x=k\eta/\sqrt3$); at second and third order it discards the homogeneous scalar decaying modes and all
-homogeneous vector and tensor modes, and selects the particular solutions that vanish at $\eta=0$
-(Sec.~\ref{sec:second}).  The regular solution is uniquely fixed by \eqref{eq:gauss}.
+$\eta=0$.  What regularity does and does not remove (operators of \eqref{eq:operators}):
+\begin{itemize}\itemsep1pt
+\item scalars: the decaying mode $u_2\propto(\cos x+x\sin x)/x^3\sim\eta^{-3}$ ($x=k\eta/\sqrt3$) is removed at every order; the regular
+homogeneous mode $U(x)=3u_1(x)$ remains and its amplitude is fixed by $\zeta^{(n)}(0)=0$;
+\item vectors: the homogeneous solution of $\mathcal L_\omega\omega=0$ is $\omega\propto\eta^{-2}$ (with $v^T$ then fixed by the transverse
+$0i$ constraint), so there is no regular homogeneous vector mode and regularity alone removes it; \eqref{eq:notensor} states the same
+as part of the definition;
+\item tensors: the homogeneous solutions of $\mathcal L_h h=0$ are $j_0(k\eta)=\sin(k\eta)/(k\eta)$ and $y_0(k\eta)$.  The mode
+$j_0(k\eta)$ is analytic at $\eta=0$ and is \emph{not} removed by regularity; it is a free primordial gravitational wave at
+order $n$, and it is excluded by \eqref{eq:notensor}, which sets its amplitude to zero.  The particular solution
+$\int_0^\eta G_hK_h$ vanishes at $\eta=0$ ($\propto\tfrac89\eta^2$, App.~\ref{app:closedforms}) and is the entire $h_n$.
+\end{itemize}
+With these choices the regular solution is uniquely fixed by Definition~\ref{def:gauss}.
 
 Initial data at the finite time $\eta_i$ ($\bar T(\eta_i)=T_i$) are \emph{defined} as the restriction of the
 regular solution to $\eta=\eta_i$.  They satisfy the Hamiltonian and momentum constraints at every order
 by construction, since the regular solution solves all ten Einstein equations for $\eta>0$ and the constraints
-propagate (contracted Bianchi identity, verified to $O(\eps^3)$ by the engine, App.~\ref{app:ledger}, C1-5).
-Concretely, every Green's-function integral below may be written either as $\int_0^\eta$ or as
-$\int_{\eta_i}^\eta$ plus the homogeneous solution matched to the (regular) data at $\eta_i$; the two are
-identical.  We keep $\eta_i$ explicit where the problem statement asks for it and note that $\eta_i\to0$
-reproduces the $\int_0^\eta$ form.  This is how the instruction ``do not indiscriminately set higher-order
+propagate (contracted Bianchi identity, verified to $O(\eps^3)$, App.~\ref{app:ledger}, EF-5).
+Every Green's-function integral below is written as $\int_0^\eta$.  This is \emph{not} an $\eta_i\to0$ limit: for $\eta\ge\eta_i$,
+\begin{equation}
+\int_0^\eta G(\eta,\eta')\,S(\eta')\,\dd\eta'=\int_{\eta_i}^\eta G(\eta,\eta')\,S(\eta')\,\dd\eta'+X^{\rm hom}_{[\eta_i]}(\eta),
+\label{eq:greens_split}
+\end{equation}
+where $X^{\rm hom}_{[\eta_i]}$ is the homogeneous solution whose value and derivative at $\eta_i$ equal those of the left-hand side.
+Since the data at $\eta_i$ are \emph{defined} as the restriction of the regular solution, \eqref{eq:greens_split} is an identity
+at finite $\eta_i$, and the initial data at $\eta_i$ are exactly $X_n(\eta_i)$, $X_n'(\eta_i)$ of the $\int_0$ form.  Finite $\eta_i$
+enters the observable only through the observer's initial event, which is kept explicitly (Sec.~\ref{sec:obsevent}).  This is how the instruction ``do not indiscriminately set higher-order
 perturbations to zero'' is implemented: $X_2(\eta_i)$, $X_3(\eta_i)$ are non-zero, non-local functionals of
 $\zeta_1$ determined by \eqref{eq:gauss} and the constraints.
 
 \subsection{The conditions at second and third order}
 \label{sec:zeta_cond}
-Expanding \eqref{eq:zeta_nl} with \eqref{eq:expansion} (engine output, App.~\ref{app:ledger}, C1-8),
+Expanding \eqref{eq:zeta_nl} with \eqref{eq:expansion} (App.~\ref{app:ledger}, EF-8),
 \begin{align}
 \zeta^{(1)}&=\tfrac14\delta_1-\Phi_1=\delta_{T,1}-\Phi_1,\label{eq:zeta1}\\
 \zeta^{(2)}&=\tfrac14\delta_2-\tfrac14\delta_1^2-\Phi_2-2\Phi_1^2,\label{eq:zeta2}\\
@@ -93,12 +111,14 @@ In position space, with $\Phi_1=-\tfrac23\zeta_1$,
 \Phi_2(0)&=-2\Phi_1^2-\ilap\big(\partial_i\Phi_1\partial_i\Phi_1\big)+3\nabla^{-4}\partial_i\partial_j\big(\partial_i\Phi_1\partial_j\Phi_1\big),\label{eq:Phi20_pos}\\
 \Psi_2(0)-\Phi_2(0)&=4\Phi_1^2+3\ilap\big(\partial_i\Phi_1\partial_i\Phi_1\big)-9\nabla^{-4}\partial_i\partial_j\big(\partial_i\Phi_1\partial_j\Phi_1\big),\label{eq:Psi20_pos}
 \end{align}
-and $\delta_2(0)$, $v_2(0)$ follow from the constraints (App.~\ref{app:kernels}).  Equations
+and $\delta_2(0)$, $v_2(0)$ follow from the constraints (App.~\ref{app:kernels}): $\delta_2(0)=\tfrac{32}9-2\Psi_2(0)$ in kernel form,
+$v_{2,i}=\partial_iV_2+v^T_{2,i}$ with $V_2=K^0_{\Phi_2}\,\eta+O(\eta^3)$ and $\omega_2,v^T_2=O(\eta)$, so $v_2(0)=0$ (small-$\eta$
+series in App.~\ref{app:closedforms}).  Equations
 \eqref{eq:Phi20_pos}--\eqref{eq:Psi20_pos} agree \emph{exactly} with the radiation-era superhorizon initial
 conditions of Pitrou--Uzan--Bernardeau \cite{PUB} (their (3.12b,c) with $\mathcal R^{(2)}=-2\mathcal R^{(1)2}$,
 after exchanging their names for the two potentials).  Bartolo--Matarrese--Riotto \cite{BMR2} (their (7.30))
 agree in the local and gradient terms but differ in the velocity-quadrupole term, which they evaluate with
-the late-time velocity rather than its $\eta\to0$ limit (App.~\ref{app:ledger}, C1-11).
+the late-time velocity rather than its $\eta\to0$ limit (App.~\ref{app:ledger}, EF-11).
 
 \paragraph{Third order.}
 Only the $q$-contracted third-order fields are needed for $C^{(13)}_\ell$ (Sec.~\ref{sec:third}).  With
@@ -110,49 +130,73 @@ $\Phi_{3c}(k,0)=\int\frac{\dd^3q}{(2\pi)^3}P(q)\,C_3(k;q,\mu)$ and $\zeta^{(3)}(
 \label{eq:C3}
 \end{equation}
 ($p^2=k^2-2kq\mu+q^2$; invariant form and the intermediate $Q_{3c}(0)$, $\lim\eta^2K_{3c,S_{00}}$ in
-App.~\ref{app:kernels}).  The $p^{-4}$ denominator is the Poisson inversion of the traceless equation; it is
-integrable over $\mu$ at $q\to k$ (the numerator vanishes there to the required order).
+App.~\ref{app:kernels}).  The $p^{-4}$ denominator is the Poisson inversion of the traceless equation.  At $q=k$ the numerator
+vanishes only to first order in $p^2$, so $C_3\sim p^{-2}$:
+\begin{equation}
+C_3(k;k,\mu)=-\frac{4(3\mu^3+39\mu^2-45\mu+7)}{9(\mu-1)}=\frac{16}{9(1-\mu)}-\frac{56}3+O(1-\mu),
+\label{eq:C3pole}
+\end{equation}
+a simple pole in $\mu$ at $\mu=1$ ($p\to0$).  For a smooth $P(q)$ the $\dd^3q$ integral converges ($\dd^3p/p^2$ is integrable), but at
+$q=k$ exactly, as for the monochromatic spectrum, $\int\dd\mu\,C_3$ diverges logarithmically unless the pole cancels in the full
+contracted map $\Theta^{(3)}_c$.  (At $q=k$, $\mu\to1$ means $\hat{\vp}\perp\khat$, so the $(3\mu_p^2-1)$ angular structure of the $p^{-2}$
+terms does not average away.)
+\todo{$\mu\to1$ behaviour of the $(13)$ integrand: coefficient of $1/(1-\mu)$ of the complete contracted map $\Theta^{(3)}_c$ at $q=k$
+(all $K_{3c}$, tadpole and normalisation terms) and its cancellation in $C^{(13)}_\ell$, or definition of the monochromatic limit as the
+limit of a narrow spectrum (being derived; Secs.~\ref{sec:asm-C13}, \ref{sec:mono-13}).}
 
 \subsection{The exact dilation family and the zero-mode (tadpole) ambiguity}
 \label{sec:tadpole}
-The flat FRW solution written in rescaled coordinates $\tilde\eta=A\eta$, $\tilde\vx=B\vx$ ($A,B$ constants) is,
+The flat FRW solution written in rescaled coordinates $\tilde\eta=\lambda\eta$, $\tilde\vx=\beta\vx$ ($\lambda,\beta$ constants) is,
 in the $(\eta,\vx)$ chart, the exact Poisson-gauge configuration
 \begin{equation}
-1+2\Psi=A^4,\qquad 1-2\Phi=A^2B^2,\qquad 1+\delta=A^{-4},\qquad v^i=0,\qquad \zeta_{\rm nl}=\ln B ,
+1+2\Psi=\lambda^4,\qquad 1-2\Phi=\lambda^2\beta^2,\qquad 1+\delta=\lambda^{-4},\qquad v^i=0,\qquad \zeta_{\rm nl}=\ln\beta ,
 \label{eq:dilation}
 \end{equation}
-which the engine verifies to solve $E_{\mu\nu}=0$ through $O(\eps^3)$ for arbitrary $A,B$
-(App.~\ref{app:ledger}, C1-6).  It is the $k=0$ member of the solution space: a constant $\zeta_1=c$
-corresponds to $B=e^{\eps c}$ (so that $\zeta_{\rm nl}=\eps c$ exactly) and, by \eqref{eq:zeta1},
-$a_1=-c/3$, giving $\Psi_1=\Phi_1=-\tfrac23c$, $\delta_1=\tfrac43c$ in agreement with the $k\to0$ limit of the
-first-order transfer functions.  At second order, however, the $k=0$ equations fix only
+which solves $E_{\mu\nu}=0$ through $O(\eps^3)$ for arbitrary $\lambda,\beta$ (App.~\ref{app:ledger}, EF-6) and non-perturbatively (EF-21).
+We write $\lambda=1+\eps a_1+\tfrac{\eps^2}2a_2+\tfrac{\eps^3}6a_3$ in the coefficient convention \eqref{eq:expansion} and
+$\beta=e^{\eps c}$.  It is the $k=0$ member of the solution space: a constant $\zeta_1=c$ corresponds to $\beta=e^{\eps c}$ (so that
+$\zeta_{\rm nl}=\eps c$ exactly) and, by \eqref{eq:zeta1}, $a_1=-c/3$, giving $\Psi_1=\Phi_1=-\tfrac23c$, $\delta_1=\tfrac43c$ in agreement with
+the $k\to0$ limit of the first-order transfer functions.  At second order the family gives
+$\Psi_2=2a_2+\tfrac23c^2$, $\Phi_2=-a_2-\tfrac79c^2$, $\delta_2=-4a_2+\tfrac{20}9c^2$.  At second order, however, the $k=0$ equations fix only
 $\delta_2=-2\Psi_2+\tfrac{32}9c^2$ and leave $\Phi_2,\Psi_2$ free: this is the residual gauge freedom of
-Poisson gauge at zero momentum (the time rescaling $A$, cf.\ Weinberg's adiabatic modes \cite{Weinberg03,MZ}).
-Correspondingly, the $k\to0$ limit of the finite-$k$ kernels \eqref{eq:KQ0}--\eqref{eq:KPhi20} at
-$\vp=-\vq$ is direction dependent ($\propto 3\mu^2-1$) and its angular average,
+Poisson gauge at zero momentum (the free coefficient $a_2$ of the time rescaling $\lambda$, cf.\ Weinberg's adiabatic modes
+\cite{Weinberg03,MZ}).  Correspondingly, the $k\to0$ limit of the finite-$k$ kernels \eqref{eq:KQ0}--\eqref{eq:KPhi20} at fixed $\vq$
+\emph{does not exist}:
+\begin{equation}
+K_{\Phi_2}(\vq,\vk-\vq;0)=-\frac89+\frac{8q\mu}{9k}-\frac{4q^2(3\mu^2-1)}{9k^2},
+\label{eq:KPhi20_smallk}
+\end{equation}
+and similarly for $K_Q$; the divergent pieces are Poisson inversions of a constant anisotropic shear, a residual (non-dilation)
+gauge mode at $k=0$, and they vanish only after averaging over the direction of $\vq$.  The angular average taken \emph{before} the
+limit,
 \begin{equation}
 \langle\Phi_2(0)\rangle_{\rm ang}=-\tfrac89c^2,\qquad \langle\Psi_2(0)\rangle_{\rm ang}=+\tfrac89c^2,\qquad
 \delta_2=\tfrac{16}9c^2,
 \label{eq:tad0}
 \end{equation}
-lies on the family \eqref{eq:dilation} with $A=e^{-\eps c/3}$, $B=e^{\eps c}$, i.e.\ $1+\delta_T=e^{\zeta/3}$,
-$1-2\Phi=e^{4\zeta/3}$, $1+2\Psi=e^{-4\zeta/3}$ (the member with $\Psi_2=\Phi_2$ instead has
+lies on the family \eqref{eq:dilation} with $\lambda=e^{-\eps c/3}$ ($a_2=c^2/9$), $\beta=e^{\eps c}$, i.e.\ $1+\delta_T=e^{\zeta/3}$,
+$1-2\Phi=e^{4\zeta/3}$, $1+2\Psi=e^{-4\zeta/3}$ (the member with $\Psi_2=\Phi_2$ instead has $a_2=-\tfrac{13}{27}c^2$,
 $\Phi_2=\Psi_2=-\tfrac8{27}c^2$, $\delta_2=\tfrac{112}{27}c^2$).
 
 This matters because the third-order map contains \emph{mean-field} (tadpole) terms $\langle X_2\rangle=
 \int\!\frac{\dd^3q}{(2\pi)^3}P(q)K_X(\vq,-\vq;\eta)$, the $\vk=0$ components of the second-order fields
 (Sec.~\ref{sec:third}).  They are evaluated with the angle-averaged convention (closed forms $\mathrm{tad}_X(q,\eta)$
 in App.~\ref{app:kernels}; e.g.\ $\mathrm{tad}_{\Phi_2}\to-\tfrac89$, $\mathrm{tad}_{Q_2}\to-\tfrac{16}9$,
-$\mathrm{tad}_{\delta_2}\to\tfrac{16}9$ as $\eta\to0$).  Since the whole $k=0$ family is a coordinate
+$\mathrm{tad}_{\delta_2}\to\tfrac{16}9$ as $\eta\to0$).  Because of \eqref{eq:KPhi20_smallk} this convention exchanges the limit $k\to0$
+with the angular average, which is legitimate only if the observable does not depend on the zero-mode assignment.  Since the whole $k=0$ family is a coordinate
 transformation and the observable is defined by physical labels only (fluid worldline, proper time from the
 $\Tphys=T_i$ crossing, emission on $\Tphys=T_*$, sky-monopole normalisation), a constant $\zeta_1$ must be
 unobservable: the full map must be invariant under $c$ at every order, which fixes the squeezed limits of
 $K_2$ and $K_3$ and forces the tadpole convention to drop out of $\Theta^{(3)}$ and hence of $C^{(13)}_\ell$.
-This is the dilation check, to be performed on the assembled map (Sec.~\ref{sec:checks}); at the level of the
-field equations the consistency is already verified by the squeezed limit of \eqref{eq:C3},
+The dilation family is the $k=0$ gauge test of the assembled map (Sec.~\ref{sec:check_dilation}); a numerical test of the
+zero-mode independence of $\Theta^{(1,2,3)}$ for one plane wave is also passed there.
+\todo{zero-mode invariance: analytic proof that $\Theta^{(3)}$ (clock, emission, tadpoles and normalisation together) is independent of the
+zero-mode assignment $(\Phi_{2,0},\Psi_{2,0})$ along the residual $k=0$ family, including the anisotropic pieces of
+\eqref{eq:KPhi20_smallk}, which justifies the exchange of limit and angular average (being derived).}
+At the level of the field equations the consistency is already verified by the squeezed limit of \eqref{eq:C3},
 \begin{equation}
 \lim_{q\to0}C_3(k;q,\mu)=-\tfrac{32}9 ,
 \end{equation}
 which is precisely the $c^2\zeta_s$ coefficient $6\times\tfrac12(\tfrac43c)^2\times(-\tfrac23)$ of the short
-mode modulated by the long-mode member $A=e^{-\eps c/3}$, $B=e^{\eps c}$
-($1-2\Phi=A^2B^2(1-2\Phi_s)$, App.~\ref{app:ledger}, C1-14).
+mode modulated by the long-mode member $\lambda=e^{-\eps c/3}$, $\beta=e^{\eps c}$
+($1-2\Phi=\lambda^2\beta^2(1-2\Phi_s)$, App.~\ref{app:ledger}, EF-14).

@@ -1,0 +1,93 @@
+\section{Closed-form second-order time integrals}
+\label{app:closedforms}
+{\small\begingroup\sloppy\allowdisplaybreaks
+The only non-algebraic second-order time integrals are those of \eqref{eq:declared2},
+\begin{equation*}
+\mathcal K_{\Phi_2}=P(\eta)+K^0_{\Phi_2}\,U(x_k),\qquad P\equiv\int_0^\eta G_\Phi(k;\eta,\eta')\,K_{S_\Phi}(k,q,p;\eta')\,\dd\eta',\qquad
+\mathcal K_h=\int_0^\eta\frac{\eta'}{\eta}\frac{\sin k(\eta-\eta')}{k}\,K_h(k,q,p;\eta')\,\dd\eta',
+\end{equation*}
+with $x_a\equiv a\eta/\sqrt3$, $T_a\equiv\TP(x_a)$.  Both are evaluated in closed form: elementary functions plus $\Si(w\eta)$ and the entire,
+even function $\mathrm{Cin}(z)=\int_0^z(1-\cos t)\,\dd t/t=\gamma_E+\ln|z|-\Ci(|z|)$.  Because $\mathrm{Cin}$ is entire, the forms need no absolute
+values, principal values or branch choices; rewriting $\mathrm{Cin}\to\Ci$ reproduces the $\ln|\ldots|$ terms of Kohri--Terada \cite{KT}.  All other
+second-order fields are algebraic in $\Phi_2,\Phi_2'$ and first-order transfer functions \eqref{eq:operators}, so \emph{nothing remains as an
+unevaluated integral at second order} (checks CF-1--CF-4).
+
+\paragraph{Method.}  The integrands are finite sums $\sum c_{n,w}(k,q,p)\,{\eta'}^n e^{iw\eta'}$, $-7\le n\le0$.  Each term is integrated on
+$[\varepsilon,\eta]$ by the recursion $I_n=[t^{n+1}e^{iwt}]/(n+1)-\frac{iw}{n+1}I_{n+1}$, $I_{-1}=-\mathrm{Cin}(w\eta)+i\Si(w\eta)+\ln(\eta/\varepsilon)$.
+All $\varepsilon^{-m}$ and $\ln\varepsilon$ pieces cancel identically (symbolic check) --- this is the regularity of the total integrand at
+$\eta'=0$ --- so the lower limit $0$ is attained.
+
+\subsection*{The scalar \texorpdfstring{$\Phi_2$}{Phi2}}
+With $u_1,u_2,W$ of \eqref{eq:greens}, $P=u_2(x_k)\,\mathcal A(\eta)-u_1(x_k)\,\mathcal B(\eta)$, $\mathcal A=\int_0^\eta(u_1/W)K_{S_\Phi}\,\dd\eta'$,
+$\mathcal B=\int_0^\eta(u_2/W)K_{S_\Phi}\,\dd\eta'$, where $u_1/W=-\eta'\sin x_k'+(k/\sqrt3){\eta'}^2\cos x_k'$, $u_2/W=-\eta'\cos x_k'-(k/\sqrt3){\eta'}^2\sin x_k'$.
+The frequencies are
+\begin{equation*}
+w_1=\tfrac{k+q+p}{\sqrt3},\quad w_2=\tfrac{k+q-p}{\sqrt3},\quad w_3=\tfrac{k-q+p}{\sqrt3},\quad w_4=\tfrac{q+p-k}{\sqrt3}\qquad(\text{all}\ \ge0\ \text{by the triangle inequalities}),
+\end{equation*}
+and the complete special-function part is governed by one coefficient,
+\begin{gather*}
+\mathcal A\supset\mathcal D\,\big[\Si(w_1\eta)-\Si(w_2\eta)-\Si(w_3\eta)-\Si(w_4\eta)\big],\qquad
+\mathcal B\supset\mathcal D\,\big[\mathrm{Cin}(w_2\eta)+\mathrm{Cin}(w_3\eta)-\mathrm{Cin}(w_1\eta)-\mathrm{Cin}(w_4\eta)\big],\\
+\mathcal D(k,q,p)=\frac{(k^2+p^2+q^2)\,R}{8k^2p^3q^3},\qquad
+R=3k^6-3k^4(p^2+q^2)-3k^2(p^4+q^4)-2k^2p^2q^2+3(p^6+q^6)-3p^2q^2(p^2+q^2).
+\end{gather*}
+The remainder of $\mathcal A,\mathcal B$ is elementary: a sum over the eight products $t(x_k)t(x_q)t(x_p)$, $t\in\{\sin,\cos\}$, of Laurent polynomials in
+$\eta$ with powers $\eta^{-7},\ldots,\eta^0$, obtained from the displayed source by the recursion above (64 monomials per integral; machine-readable,
+App.~\ref{app:repro}).  Only the $n=0$ monomials produce $1/w$ factors; they become removable $0/0$ at the collinear edges $w_2=0$ ($\mu=-1$),
+$w_3=0$ ($\mu=1$, $q>k$), $w_4=0$ ($\mu=1$, $q<k$).  Exact collinear limiting forms are obtained by substituting $p=k+q,\ q-k,\ k-q$ before
+integrating; zero-frequency terms occur only at $n=-4,-2,0$, so no $\ln\eta$ appears in collinear $\Phi_2$.  There is no $\sqrt3$-resonance for
+$\Phi_2$ (the sound speed enters both $G_\Phi$ and the source).
+
+\subsection*{The tensor kernel \texorpdfstring{$\mathcal K_h$}{Kh}: complete form}
+With the frequencies $\varpi_1=k+\tfrac{q+p}{\sqrt3}$, $\varpi_2=k+\tfrac{q-p}{\sqrt3}$, $\varpi_3=k-\tfrac{q-p}{\sqrt3}$, $\varpi_4=k-\tfrac{q+p}{\sqrt3}$ (only
+$\varpi_4$ can vanish), $s_k\equiv k\eta$, $x_q=q\eta/\sqrt3$, $x_p=p\eta/\sqrt3$:
+\begin{align*}
+\mathcal K_h&=\frac{3(p^2+q^2-3k^2)^2}{k\,p^3q^3\,\eta}\Big\{\sin s_k\big[\mathrm{Cin}(\varpi_1\eta)-\mathrm{Cin}(\varpi_2\eta)-\mathrm{Cin}(\varpi_3\eta)+\mathrm{Cin}(\varpi_4\eta)\big]\\
+&\hspace{9em}+\cos s_k\big[\Si(\varpi_1\eta)-\Si(\varpi_2\eta)-\Si(\varpi_3\eta)+\Si(\varpi_4\eta)\big]\Big\}\;+\;\mathcal K_h^{\rm el},
+\end{align*}
+with the elementary part
+\begin{align*}
+\mathcal K_h^{\rm el}={}&&\cos^{2}{\left(s_{k} \right)} \cos{\left(x_{p} \right)} \cos{\left(x_{q} \right)}\times\Big\{\Big[\frac{72}{p^{2} q^{2}}\Big]\eta^{-2}\Big\}\\
+&+\sin^{2}{\left(s_{k} \right)} \cos{\left(x_{p} \right)} \cos{\left(x_{q} \right)}\times\Big\{\Big[\frac{72}{p^{2} q^{2}}\Big]\eta^{-2}\Big\}\\
+&+\sin^{2}{\left(s_{k} \right)} \sin{\left(x_{p} \right)} \cos{\left(x_{q} \right)}\times\Big\{\Big[- \frac{72 \sqrt{3}}{p^{3} q^{2}}\Big]\eta^{-3}\Big\}\\
+&+\sin^{2}{\left(s_{k} \right)} \sin{\left(x_{p} \right)} \sin{\left(x_{q} \right)}\times\Big\{\Big[\frac{216}{p^{3} q^{3}}\Big]\eta^{-4} \\ &\qquad +\Big[\frac{36 \left(- 3 k^{2} + p^{2} + q^{2}\right)}{p^{3} q^{3}}\Big]\eta^{-2}\Big\}\\
+&+\sin^{2}{\left(s_{k} \right)} \sin{\left(x_{q} \right)} \cos{\left(x_{p} \right)}\times\Big\{\Big[- \frac{72 \sqrt{3}}{p^{2} q^{3}}\Big]\eta^{-3}\Big\}\\
+&+\sin{\left(x_{p} \right)} \cos^{2}{\left(s_{k} \right)} \cos{\left(x_{q} \right)}\times\Big\{\Big[- \frac{72 \sqrt{3}}{p^{3} q^{2}}\Big]\eta^{-3}\Big\}\\
+&+\sin{\left(x_{p} \right)} \sin{\left(x_{q} \right)} \cos^{2}{\left(s_{k} \right)}\times\Big\{\Big[\frac{216}{p^{3} q^{3}}\Big]\eta^{-4} \\ &\qquad +\Big[\frac{36 \left(- 3 k^{2} + p^{2} + q^{2}\right)}{p^{3} q^{3}}\Big]\eta^{-2}\Big\}\\
+&+\sin{\left(x_{q} \right)} \cos^{2}{\left(s_{k} \right)} \cos{\left(x_{p} \right)}\times\Big\{\Big[- \frac{72 \sqrt{3}}{p^{2} q^{3}}\Big]\eta^{-3}\Big\}\\
+&+\sin{\left(s_{k} \right)}\times\Big\{\Big[- \frac{12 \left(- 3 k^{2} + p^{2} + q^{2}\right)}{k p^{2} q^{2}}\Big]\eta^{-1}\Big\}
+\end{align*}
+(the printed form, re-assembled and compared with 30-digit quadrature of the defining integral at three points, agrees to $2\times10^{-29}$, CF-4).
+It equals $(4/k^2)\times$ Kohri--Terada (22) [with $|\cdot|$ inside its logarithm] to $10^{-15}$ (25 digits with exact input).  At the resonance
+$q+p=\sqrt3k$ ($\varpi_4=0$) nothing happens in the $\mathrm{Cin}$ form; the separately integrated resonant form contains an explicit $\ln\eta$.  The
+other resonance $|q-p|=\sqrt3k$ lies outside the physical domain.
+
+\subsection*{Algebraic fields and limits}
+$\Psi_2=\Phi_2-Q_2$, $\delta_2=\tfrac{\eta^2}3K_{S_{00}}-\tfrac23\eta^2k^2\Phi_2-2\eta\Phi_2'-2\Psi_2$, $\delta_{T,2}=\tfrac14\delta_2-\tfrac3{16}T_\delta(x_q)T_\delta(x_p)$,
+$V_2=-\tfrac{\eta^2}4[2(\Phi_2'+\Psi_2/\eta)+K_{S_{0z}}/(ik)]$, $\omega_{2,i}=P_{ij}q_jK_\omega$, $v^T_{2,i}=P_{ij}q_jK_{v^T}$, with the kernels of
+\eqref{eq:second_kernels} and App.~\ref{app:kernels}; $\Phi_2'$ is the closed-form derivative ($G_\Phi(\eta,\eta)=0$).
+
+\paragraph{Small $\eta$} (Frobenius series of the equations with the constraints; checked against the closed forms at 120 digits):
+\begin{align*}
+\Phi_2&=\left[- \frac{7 k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}}{9 k^{4}}\right]\eta^{0} \\ &\quad + \left[\frac{- 21 k^{4} p^{2} - 21 k^{4} q^{2} + 10 k^{2} p^{4} - 28 k^{2} p^{2} q^{2} + 10 k^{2} q^{4} + 3 p^{6} - 3 p^{4} q^{2} - 3 p^{2} q^{4} + 3 q^{6}}{270 k^{4}}\right]\eta^{2} \\ &\quad + \left[- \frac{- 150 k^{6} p^{2} - 150 k^{6} q^{2} - 65 k^{4} p^{4} - 398 k^{4} p^{2} q^{2} - 65 k^{4} q^{4} + 80 k^{2} p^{6} - 144 k^{2} p^{4} q^{2} - 144 k^{2} p^{2} q^{4} + 80 k^{2} q^{6} + 15 p^{8} + 36 p^{6} q^{2} - 102 p^{4} q^{4} + 36 p^{2} q^{6} + 15 q^{8}}{113400 k^{4}}\right]\eta^{4} + O(\eta^{6})\\
+\mathcal K_h&=\left[\frac{8}{9}\right]\eta^{2} \\ &\quad + \left[- \frac{2 \left(3 k^{2} + p^{2} + q^{2}\right)}{135}\right]\eta^{4} + O(\eta^{6})\\
+\Psi_2&=\left[\frac{2 \left(3 k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}\right)}{9 k^{4}}\right]\eta^{0} \\ &\quad + \left[- \frac{2 \left(8 k^{4} p^{2} + 8 k^{4} q^{2} - 5 k^{2} p^{4} + 2 k^{2} p^{2} q^{2} - 5 k^{2} q^{4} + 3 p^{6} - 3 p^{4} q^{2} - 3 p^{2} q^{4} + 3 q^{6}\right)}{135 k^{4}}\right]\eta^{2} \\ &\quad + \left[\frac{75 k^{6} p^{2} + 75 k^{6} q^{2} + 55 k^{4} p^{4} + 234 k^{4} p^{2} q^{2} + 55 k^{4} q^{4} - 75 k^{2} p^{6} - 117 k^{2} p^{4} q^{2} - 117 k^{2} p^{2} q^{4} - 75 k^{2} q^{6} + 45 p^{8} + 108 p^{6} q^{2} - 306 p^{4} q^{4} + 108 p^{2} q^{6} + 45 q^{8}}{56700 k^{4}}\right]\eta^{4} + O(\eta^{6})\\
+\delta_2&=\left[- \frac{4 \left(- 5 k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}\right)}{9 k^{4}}\right]\eta^{0} \\ &\quad + \left[\frac{2 \left(15 k^{6} - 41 k^{4} p^{2} - 41 k^{4} q^{2} - 5 k^{2} p^{4} + 2 k^{2} p^{2} q^{2} - 5 k^{2} q^{4} + 3 p^{6} - 3 p^{4} q^{2} - 3 p^{2} q^{4} + 3 q^{6}\right)}{135 k^{4}}\right]\eta^{2} \\ &\quad + \left[- \frac{- 1095 k^{6} p^{2} - 1095 k^{6} q^{2} - 275 k^{4} p^{4} - 3394 k^{4} p^{2} q^{2} - 275 k^{4} q^{4} - 25 k^{2} p^{6} - 39 k^{2} p^{4} q^{2} - 39 k^{2} p^{2} q^{4} - 25 k^{2} q^{6} + 15 p^{8} + 36 p^{6} q^{2} - 102 p^{4} q^{4} + 36 p^{2} q^{6} + 15 q^{8}}{28350 k^{4}}\right]\eta^{4} + O(\eta^{6})\\
+V_2&=\left[- \frac{7 k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}}{9 k^{4}}\right]\eta^{1} \\ &\quad + \left[\frac{39 k^{4} p^{2} + 39 k^{4} q^{2} + 6 k^{2} p^{4} - 20 k^{2} p^{2} q^{2} + 6 k^{2} q^{4} + 3 p^{6} - 3 p^{4} q^{2} - 3 p^{2} q^{4} + 3 q^{6}}{270 k^{4}}\right]\eta^{3} \\ &\quad + \left[- \frac{375 k^{6} p^{2} + 375 k^{6} q^{2} + 105 k^{4} p^{4} + 134 k^{4} p^{2} q^{2} + 105 k^{4} q^{4} + 105 k^{2} p^{6} - 169 k^{2} p^{4} q^{2} - 169 k^{2} p^{2} q^{4} + 105 k^{2} q^{6} + 15 p^{8} + 36 p^{6} q^{2} - 102 p^{4} q^{4} + 36 p^{2} q^{6} + 15 q^{8}}{113400 k^{4}}\right]\eta^{5} + O(\eta^{7})
+\end{align*}
+\paragraph{Large $\eta$.}
+With $\Xi\equiv\ln\frac{(k+q+p)(q+p-k)}{(k+q-p)(k+p-q)}$ and $x_k=k\eta/\sqrt3$:
+\begin{align*}
+\Phi_2&\to\frac{1}{\eta^2}\Big\{C_L\big[\Xi\cos x_k+\pi\sin x_k\big]+C_0\cos x_k\Big\}+O(\eta^{-3}),\qquad C_L=-\frac{3(k^2+p^2+q^2)R}{8k^4p^3q^3},\\
+C_0&=\frac{3\left[-3k^6-3k^4(p^2+q^2)+3k^2(p^4+q^4)+2k^2p^2q^2+3(p^6+q^6)-3p^2q^2(p^2+q^2)\right]}{2k^4p^2q^2},\\
+\mathcal K_h&\to\frac{4}{k^2}\,\,\text{[Kohri--Terada (25)]}\quad(\sin k\eta\ \text{log term}+\Theta(q+p-\sqrt3k)\,\pi\cos k\eta\ \text{term}).
+\end{align*}
+The next orders ($\eta^{-3}$ for $\Phi_2$, $\eta^{-2}$ for $\mathcal K_h$) are available in machine-readable form; verified up to $k\eta=10^5$ (remainder
+scales as the first dropped power). The expansion is non-uniform as $q\to0$ or $p\to0$ and near the collinear edges / $q+p=\sqrt3k$.
+
+
+\paragraph{Verification.}  Quadrature (50--60 digits) versus the closed forms: $P$ at 11 points including collinear and $\sqrt3$ points,
+$\le3.5\times10^{-40}$; $\mathcal K_h$: 25 digits.  All closed-form fields inserted into the full second-order Einstein tensor (10 components) and
+the 4 conservation equations for a plane-wave pair: residual/maximal term $\le5.5\times10^{-50}$ at three points ($k\eta=2.5,\,9.6,\,20.1$).  Small-$\eta$
+series $=$ Frobenius series; Kohri--Terada (22), (25) controls (CF-1--CF-4).
+\endgroup}

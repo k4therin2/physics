@@ -2,8 +2,8 @@
 \label{sec:einstein}
 
 This section summarises the solution of $E_{\mu\nu}=G_{\mu\nu}[\eta^2\hat g]-8\pi G\,T_{\mu\nu}=0$ through
-$O(\eps^3)$ in the parametrisation of Sec.~\ref{sec:setup}, obtained with a dedicated truncated-polynomial
-engine (code \code{cmb4/code/C1\_einstein/}, App.~\ref{app:ledger}, C1-$\ast$).  The Christoffel symbols,
+$O(\eps^3)$ in the parametrisation of Sec.~\ref{sec:setup}, obtained by computer algebra with truncated power series in $\eps$
+(App.~\ref{app:repro}; checks EF-$\ast$ of App.~\ref{app:ledger}).  The Christoffel symbols,
 Ricci and Einstein tensors are computed directly from $g=\eta^2\hat g$ as series in $\eps$; the background
 part of every component vanishes identically and the contracted Bianchi identity
 $g^{\mu\alpha}\nabla_\alpha E_{\mu\nu}+g_{\nu\beta}\nabla_\mu T^{\mu\beta}=0$ holds identically through
@@ -20,9 +20,10 @@ $\TP,T_\delta,T_{\delta_T},T_V$ & \eqref{eq:transfer} & first-order transfer fun
 $\mathcal L_\Phi,\mathcal L_h,\mathcal L_\omega$ & \eqref{eq:operators} & universal linear operators (same at every order)\\
 $S^{(n)}_{\mu\nu}$; $S_{\rm TL},S_{0}^{L},S^{T}_{0i},S^{V}_{ij},S^{TT}_{ij},S_\Phi$ & \eqref{eq:split}, \eqref{eq:sources} & order-$n$ sources and their SVT projections\\
 $K_X(\vq,\vp;\eta)$, $\vp=\vk-\vq$ & \eqref{eq:kernel_def} & second-order kernel of $X$ per $\zeta_{\vq}\zeta_{\vp}$\\
-$K_Q,K_{S_{00}},K_{S_{0z}},K_{S_\Phi},K_\omega,K_{v^T},K_h,K^0_{\Phi_2}$ & \eqref{eq:second_kernels}, App.~\ref{app:kernels} & the explicit second-order kernels\\
-$u_1,u_2,\hat g,G_\Phi,G_h$ & \eqref{eq:greens} & homogeneous solutions and Green's functions\\
-$\mathcal K_{\Phi_2},\mathcal K_h$ & \eqref{eq:declared2} & declared time integrals for $\Phi_2$, $h_2$\\
+$K_Q,K_{S_{00}},K_{S_{0z}},K_{S_\Phi},K_\omega,K_{v^T},K_h$ & \eqref{eq:second_kernels}, App.~\ref{app:kernels} & the explicit second-order kernels\\
+$K^0_{\Phi_2}$ & \eqref{eq:KPhi20} (Sec.~\ref{sec:zeta_cond}) & initial amplitude of $\Phi_2$ fixed by $\zeta^{(2)}(0)=0$\\
+$u_1,u_2,U,G_\Phi,G_h$ & \eqref{eq:greens} & homogeneous solutions and Green's functions\\
+$\mathcal K_{\Phi_2},\mathcal K_h$ & \eqref{eq:declared2}, App.~\ref{app:closedforms} & time integrals for $\Phi_2$, $h_2$ (closed forms)\\
 $X_{3c}(k,\eta)$, $K_{3c,X}(k,q,\mu;\eta)$ & \eqref{eq:contracted} & $q$-contracted third-order fields and kernels\\
 $\mathrm{tad}_X(q,\eta)$ & \eqref{eq:tad} & mean-field (tadpole) functions $\langle X_2\rangle$\\
 $C_3(k;q,\mu)$ & \eqref{eq:C3} & third-order superhorizon amplitude of $\Phi_{3c}$\\
@@ -37,14 +38,14 @@ $C_3(k;q,\mu)$ & \eqref{eq:C3} & third-order superhorizon amplitude of $\Phi_{3c
 In the frame $\vk=k\hat{\mathbf z}$ the first-order equations are
 \begin{align}
 E^{(1)}_{ij}\ (i\neq j,\ \text{traceless}):&\quad -k^2(\Phi_1-\Psi_1)=0\ \Rightarrow\ \Psi_1=\Phi_1,\nonumber\\
-E^{(1)}_{0i}:&\quad 2ik_i(\Phi_1'+\Psi_1/\eta)+4v_{1,i}/\eta^2=0\ \Rightarrow\ v^T_{1}=0,\quad
+E^{(1)}_{0i}:&\quad 2ik_i(\Phi_1'+\Psi_1/\eta)+4v_{1,i}/\eta^2=0\ \ [4/\eta^2=8\pi Ga^2(\bar\rho+\bar P)]\ \Rightarrow\ v^T_{1}=0,\quad
 v_{1,i}=\partial_iV_1,\ V_1=-\tfrac{\eta^2}2(\Phi_1'+\Psi_1/\eta),\nonumber\\
 E^{(1)}_{00}:&\quad \delta_1=-\tfrac23\eta^2k^2\Phi_1-2\eta\Phi_1'-2\Psi_1,\nonumber\\
 \text{trace}:&\quad \Phi_1''+\tfrac4\eta\Phi_1'+\tfrac{k^2}3\Phi_1=0 .
 \label{eq:first_eqs}
 \end{align}
 The velocity is irrotational and the conservation equations hold identically on this solution
-(App.~\ref{app:ledger}, C1-3).  With
+(App.~\ref{app:ledger}, EF-3).  With
 \begin{equation}
 x\equiv k\eta/\sqrt3
 \label{eq:x}
@@ -68,8 +69,8 @@ E^{(n)}_{\mu\nu}=\mathrm{Lin}_{\mu\nu}[X_n]+S^{(n)}_{\mu\nu},
 \label{eq:split}
 \end{equation}
 where $\mathrm{Lin}$ is the \emph{same} linear operator as in \eqref{eq:first_eqs} and $S^{(n)}_{\mu\nu}$ is built from
-lower-order fields ($S^{(2)}$ quadratic in $X_1$; $S^{(3)}$ contains $X_1X_2$ and $X_1^3$ terms; position-space
-expressions with 6--20 resp.\ 71--127 terms per component are in \code{position\_sources.tex}).  Decomposing
+lower-order fields ($S^{(2)}$ quadratic in $X_1$; $S^{(3)}$ contains $X_1X_2$ and $X_1^3$ terms; the position-space
+expressions have 6--20 resp.\ 71--127 terms per component and are available in machine-readable form, App.~\ref{app:repro}).  Decomposing
 $S^{(n)}_{\mu\nu}$ into scalar, vector and tensor parts (frame $\vk=k\hat{\mathbf z}$, $\vq$ in the $x$--$z$ plane),
 \begin{equation}
 S_{\rm TL}\equiv S_{zz}-\tfrac12(S_{xx}+S_{yy}),\quad S_0^L\equiv S_{0z},\quad S^T_{0i}\equiv(S_{0x},S_{0y}),\quad
@@ -85,12 +86,12 @@ the ten equations become (all verified by the engine):
 0i\ \text{transverse:}&\quad \tfrac12\lap\omega_{n,i}-\tfrac4{\eta^2}\big(\omega_{n,i}+v^T_{n,i}\big)=S^T_{0i}
 \quad[8\pi Ga^2(\rho+P)=4/\eta^2],\nonumber\\
 ij\ \text{vector:}&\quad \mathcal L_\omega\,\omega_{n}=\frac2{ik}S^V,\qquad \mathcal L_\omega\equiv\partial_\eta+\frac2\eta,\nonumber\\
-ij\ \text{TT:}&\quad \mathcal L_h\,h_{n,ij}=-2\Lambda_{ij,kl}(\khat)S_{kl},\qquad \mathcal L_h\equiv\partial_\eta^2+\frac2\eta\partial_\eta+k^2,\nonumber\\
+ij\ \text{TT:}&\quad \mathcal L_h\,h_{n,ij}=-2\Pi_{ij,kl}(\khat)S_{kl},\qquad \mathcal L_h\equiv\partial_\eta^2+\frac2\eta\partial_\eta+k^2,\nonumber\\
 \text{trace:}&\quad \mathcal L_\Phi\,\Phi_n=S_\Phi\equiv-\frac{S_{\rm tr}-S_{00}}6+\frac{Q_n'}\eta-\frac{k^2}3Q_n,\qquad
 \mathcal L_\Phi\equiv\partial_\eta^2+\frac4\eta\partial_\eta+\frac{k^2}3 ,
 \label{eq:operators}
 \end{align}
-where $\Lambda_{ij,kl}=P_{ik}P_{jl}-\tfrac12P_{ij}P_{kl}$, $P_{ij}=\delta_{ij}-\hat k_i\hat k_j$, and in the trace
+where $\Pi_{ij,kl}=P_{ik}P_{jl}-\tfrac12P_{ij}P_{kl}$, $P_{ij}=\delta_{ij}-\hat k_i\hat k_j$, and in the trace
 equation $\delta_n$ and $\Psi_n$ have been eliminated with the 00 and traceless equations.  Thus at every
 order the scalar sector reduces to \emph{one} forced oscillator $\mathcal L_\Phi\Phi_n=S_\Phi$, after which
 $\Psi_n,\delta_n,V_n$ are algebraic; the vector sector to a first-order equation; the tensor sector to a
@@ -101,9 +102,11 @@ Vorticity-freedom of $v^i$ is \emph{not} implied at second order.  What the equa
 algebraic $\omega_2$ so obtained satisfies the $ij$-vector equation identically) is the circulation theorem
 for the isentropic radiation fluid, whose enthalpy per particle is $\propto T$:
 \begin{equation}
-\partial_{[i}\big[(1+\delta_T)\,\hat u_{j]}\big]=0 .
+\partial_{[i}\big[(1+\delta_T)\,\hat u_{j]}\big]=0,\qquad
+\hat u_j\equiv\hat g_{j\mu}\hat u^\mu=\hat u^0\big[\omega_j+(1-2\Phi)v_j+h_{jk}v^k\big]
 \label{eq:kelvin}
 \end{equation}
+(lower index, so that $\omega_j$ enters).
 Consequently $\omega_2$ is \emph{algebraic} in the first-order fields and $v^T_2$ follows from the transverse
 $0i$ constraint; no vector Green's function is needed (the vector ODE has $G_\omega=(\eta'/\eta)^2$ and gives the
 same result).
@@ -130,7 +133,7 @@ v^T_{2,i}=\int P_{ij}q_jK_{v^T}\zeta\zeta,\qquad K_{v^T}=-\Big(\frac{\eta^2k^2}8
 \label{eq:second_kernels}
 \end{align}
 The tensor source $K_h$ is identical to the radiation-era kernel of Kohri--Terada \cite{KT} (their eq.~(8)) and
-Baumann et al.\ \cite{Baumann} (their (11)--(12)) with $w=\tfrac13$, $\Phi=\Psi$ (App.~\ref{app:ledger}, C1-9).
+Baumann et al.\ \cite{Baumann} (their (11)--(12)) with $w=\tfrac13$, $\Phi=\Psi$ (App.~\ref{app:ledger}, EF-9).
 $K_{S_\Phi}$ is finite as $\eta\to0$ (no $\eta^{-2}$ terms), so the particular integral of the trace equation
 vanishes at $\eta=0$; $\lim_{\eta\to0}\eta^2K_{S_{00}}=\tfrac{32}3$ and $K_Q(\eta\to0)$ is \eqref{eq:KQ0}.
 The vector and tensor sources vanish as $\vp\to-\vq$ ($k\to0$) because of the projectors, which is what makes
@@ -140,7 +143,7 @@ the $K\to0$ corner of the $(22)$ loop integrable (Sec.~\ref{sec:monodef}).
 With $x=k\eta/\sqrt3$, $x'=k\eta'/\sqrt3$,
 \begin{align}
 u_1(x)&=\frac{\sin x-x\cos x}{x^3},\qquad u_2(x)=\frac{\cos x+x\sin x}{x^3},\qquad
-\hat g(x)\equiv3u_1(x)=-\tfrac32\TP(x)\ \to1,\qquad W\equiv u_1u_2'-u_1'u_2=-\frac{3\sqrt3}{\eta^4k^3},\nonumber\\
+U(x)\equiv3u_1(x)=-\tfrac32\TP(x)\ \to1,\qquad W\equiv u_1u_2'-u_1'u_2=-\frac{3\sqrt3}{\eta^4k^3},\nonumber\\
 G_\Phi(k;\eta,\eta')&=\frac{u_1(x')u_2(x)-u_1(x)u_2(x')}{W(\eta')}
 =\frac{\sqrt3}{k}\,\frac{x'}{x^3}\Big[(1+xx')\sin(x-x')-(x-x')\cos(x-x')\Big]
 \ \xrightarrow{k\to0}\ \frac{\eta'}3\Big(1-\frac{{\eta'}^3}{\eta^3}\Big),\nonumber\\
@@ -151,23 +154,25 @@ satisfying $\mathcal L G=0$, $G(\eta,\eta)=0$, $\partial_\eta G|_{\eta'=\eta}=1$
 scalar and tensor fields are then
 \begin{align}
 \Phi_{2,\vk}(\eta)&=\int\!\frac{\dd^3q}{(2\pi)^3}\zeta_{\vq}\zeta_{\vp}\,\mathcal K_{\Phi_2}(k,q,p;\eta),\qquad
-\mathcal K_{\Phi_2}\equiv\int_{0}^{\eta}\!\dd\eta'\,G_\Phi(k;\eta,\eta')K_{S_\Phi}(k,q,p;\eta')+K^0_{\Phi_2}(k,q,p)\,\hat g(k\eta),\nonumber\\
-h_{2,ij,\vk}(\eta)&=\Lambda_{ij,kl}(\khat)\int\!\frac{\dd^3q}{(2\pi)^3}q_kq_l\,\zeta_{\vq}\zeta_{\vp}\,\mathcal K_h(k,q,p;\eta),\qquad
+\mathcal K_{\Phi_2}\equiv\int_{0}^{\eta}\!\dd\eta'\,G_\Phi(k;\eta,\eta')K_{S_\Phi}(k,q,p;\eta')+K^0_{\Phi_2}(k,q,p)\,U(k\eta/\sqrt3),\nonumber\\
+h_{2,ij,\vk}(\eta)&=\Pi_{ij,kl}(\khat)\int\!\frac{\dd^3q}{(2\pi)^3}q_kq_l\,\zeta_{\vq}\zeta_{\vp}\,\mathcal K_h(k,q,p;\eta),\qquad
 \mathcal K_h\equiv\int_0^\eta\!\dd\eta'\,G_h(k;\eta,\eta')K_h(k,q,p;\eta'),
 \label{eq:declared2}
 \end{align}
 with $K^0_{\Phi_2}$ the initial amplitude \eqref{eq:KPhi20} fixed by Gaussianity, and
-$\Psi_2=\Phi_2-Q_2$, $\delta_2$, $V_2$ algebraic from \eqref{eq:operators}.  The lower limit $0$ may be replaced
-by $\eta_i$ together with the homogeneous solution matched to the regular data at $\eta_i$ (Sec.~\ref{sec:regular}).
-The time integrals $\mathcal K_{\Phi_2}$, $\mathcal K_h$ are \unevaluated{$\mathcal K_{\Phi_2}$, $\mathcal K_h$;
-closed forms in terms of $\Si$, $\Ci$ of the Kohri--Terada type are being derived separately and will be quoted in
-Sec.~\ref{sec:assembly}}.
+$\Psi_2=\Phi_2-Q_2$, $\delta_2$, $V_2$ algebraic from \eqref{eq:operators}.  The lower limit $0$ is equivalent to $\eta_i$
+together with the regular data at $\eta_i$, by \eqref{eq:greens_split}.
+\emph{Both time integrals are evaluated in closed form} (App.~\ref{app:closedforms}): $\mathcal K_{\Phi_2}$ and $\mathcal K_h$ are
+elementary functions plus $\Si(w\eta)$ and the entire function $\mathrm{Cin}(z)=\int_0^z(1-\cos t)\,\dd t/t$ at the frequencies
+$w=(\pm k\pm q\pm p)/\sqrt3$ (for $\Phi_2$) and $k\pm(q\pm p)/\sqrt3$ (for $h_2$); $\mathcal K_h$ equals $4/k^2$ times the radiation-era
+kernel of Kohri--Terada \cite{KT} (their (22), with a modulus in the logarithm).  Hence no unevaluated integral remains at second
+order.
 
 \paragraph{Checks at second order.}
-Bianchi propagation of the constraints (C1-5); exact dilation family \eqref{eq:dilation} (C1-6); tensor source
-$=$ Kohri--Terada (C1-9); superhorizon $\Phi_2,\Psi_2$ $=$ Pitrou--Uzan--Bernardeau (C1-10); vorticity structure
-\eqref{eq:kelvin} (C1-7).  An independent referee re-derivation (agent V3) is in progress and will be reported in
-Sec.~\ref{sec:checks}.
+Bianchi propagation of the constraints (EF-5); exact dilation family \eqref{eq:dilation} (EF-6); tensor source
+$=$ Kohri--Terada (EF-9); superhorizon $\Phi_2,\Psi_2$ $=$ Pitrou--Uzan--Bernardeau (EF-10); vorticity structure
+\eqref{eq:kelvin} (EF-7); an independently coded re-derivation of the equations and kernels (EF-15--EF-21); the closed forms
+inserted into the full second-order Einstein and conservation equations (CF-3).  Summary in Sec.~\ref{sec:check_einstein}.
 
 \subsection{Third order: contracted kernels}
 \label{sec:third}
@@ -204,21 +209,20 @@ Q_{3c}&=K_{3c,Q},\qquad
 \delta_{3c}=\tfrac{\eta^2}3K_{3c,S_{00}}-\tfrac23\eta^2k^2\Phi_{3c}-2\eta\Phi_{3c}'-2\Psi_{3c},\qquad
 V_{3c}=-\tfrac{\eta^2}4\Big[2(\Phi_{3c}'+\Psi_{3c}/\eta)+\frac{K_{3c,S_{0z}}}{ik}\Big],\nonumber\\
 \mathcal L_\Phi\Phi_{3c}&=K_{3c,S_\Phi},\qquad
-\Phi_{3c}(k,\eta)=\int\!\frac{\dd^3q}{(2\pi)^3}P(q)\Big[\int_0^\eta\!\dd\eta'\,G_\Phi(k;\eta,\eta')K_{3c,S_\Phi}(k,q,\mu;\eta')+C_3(k;q,\mu)\,\hat g(k\eta)\Big],
+\Phi_{3c}(k,\eta)=\int\!\frac{\dd^3q}{(2\pi)^3}P(q)\Big[\int_0^\eta\!\dd\eta'\,G_\Phi(k;\eta,\eta')K_{3c,S_\Phi}(k,q,\mu;\eta')+C_3(k;q,\mu)\,U(k\eta/\sqrt3)\Big],
 \label{eq:third_eqs}
 \end{align}
 with $C_3$ the amplitude \eqref{eq:C3} fixed by $\zeta^{(3)}(0)=0$ and $K_{3c,S_\Phi}$ finite at $\eta\to0$.
 The contracted vector and tensor sources ($S_{0x},S_{xz},S_{xx}-S_{yy}$) are produced as well but integrate to
 zero over the $\vq$ angles by isotropy ($S_{0y},S_{yz},S_{xy}$ vanish identically).  The kernels
-$K_{3c,X}$ have 157--830 terms and are not reproduced; they are stored in machine-readable form
-(\code{third\_order.pkl}, loader \code{kernels\_api.load()['third']}, \LaTeX\ dump \code{third\_order.tex}).
-The $\eta'$ integral in \eqref{eq:third_eqs} is \unevaluated{$\int_0^\eta G_\Phi K_{3c,S_\Phi}$, which itself
-contains $\mathcal K_{\Phi_2}$ and $\mathcal K_h$ at the lower-order momenta}.
+$K_{3c,X}$ have 157--830 terms and are not reproduced; they are available in machine-readable form (App.~\ref{app:repro}).
+The $\eta'$ integral in \eqref{eq:third_eqs} is \unevaluated{$\int_0^\eta G_\Phi K_{3c,S_\Phi}\,\dd\eta'$, whose integrand contains
+the closed-form $\mathcal K_{\Phi_2}$, $\mathcal K_h$ at the momenta $(q,k,p)$; it is a declared single time integral with complete
+integrand and limits}.
 The un-contracted kernel $K_3(\vk_1,\vk_2,\vk_3)$ is not needed for $C^{(13)}_\ell$ and has not been produced.
 
-\paragraph{Summary of what is settled.}
-First order: closed forms \eqref{eq:transfer}.  Second order: all kernels in closed form except the two
-time integrals $\mathcal K_{\Phi_2}$, $\mathcal K_h$, which are declared.  Third order: contracted sources and
-amplitude $C_3$ in closed form; $\Phi_{3c}$ declared as one further nested time integral.  The zero-mode
-convention for the tadpoles is a declared convention whose irrelevance for the observable is to be shown in
-Sec.~\ref{sec:checks}.
+\paragraph{Summary.}
+First order: closed forms \eqref{eq:transfer}.  Second order: all fields in closed form, including the time integrals
+$\mathcal K_{\Phi_2}$, $\mathcal K_h$ (App.~\ref{app:closedforms}).  Third order: contracted sources and amplitude $C_3$ in closed form;
+$\Phi_{3c}$ is one declared time integral.  The zero-mode convention for the tadpoles is a declared convention; its numerical
+irrelevance for one plane wave is shown in Sec.~\ref{sec:check_dilation}, and the analytic proof is pending (Sec.~\ref{sec:tadpole}).
