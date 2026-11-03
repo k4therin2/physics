@@ -12,7 +12,7 @@ once in the text and the long expressions are in App.~\ref{app:kernels}.
 
 \begin{table}[t]
 \centering\small
-\begin{tabular}{llp{0.6\textwidth}}
+\begin{tabular}{@{}p{0.36\textwidth}p{0.2\textwidth}p{0.4\textwidth}@{}}
 \hline
 object & defined in & meaning\\ \hline
 $x=k\eta/\sqrt3$ & \eqref{eq:x} & dimensionless sound-horizon variable\\
@@ -38,8 +38,8 @@ $C_3(k;q,\mu)$ & \eqref{eq:C3} & third-order superhorizon amplitude of $\Phi_{3c
 In the frame $\vk=k\hat{\mathbf z}$ the first-order equations are
 \begin{align}
 E^{(1)}_{ij}\ (i\neq j,\ \text{traceless}):&\quad -k^2(\Phi_1-\Psi_1)=0\ \Rightarrow\ \Psi_1=\Phi_1,\nonumber\\
-E^{(1)}_{0i}:&\quad 2ik_i(\Phi_1'+\Psi_1/\eta)+4v_{1,i}/\eta^2=0\ \ [4/\eta^2=8\pi Ga^2(\bar\rho+\bar P)]\ \Rightarrow\ v^T_{1}=0,\quad
-v_{1,i}=\partial_iV_1,\ V_1=-\tfrac{\eta^2}2(\Phi_1'+\Psi_1/\eta),\nonumber\\
+E^{(1)}_{0i}:&\quad 2ik_i(\Phi_1'+\Psi_1/\eta)+4v_{1,i}/\eta^2=0\ \ [4/\eta^2=8\pi Ga^2(\bar\rho+\bar P)]\nonumber\\
+&\quad\Rightarrow\ v^T_{1}=0,\quad v_{1,i}=\partial_iV_1,\ V_1=-\tfrac{\eta^2}2(\Phi_1'+\Psi_1/\eta),\nonumber\\
 E^{(1)}_{00}:&\quad \delta_1=-\tfrac23\eta^2k^2\Phi_1-2\eta\Phi_1'-2\Psi_1,\nonumber\\
 \text{trace}:&\quad \Phi_1''+\tfrac4\eta\Phi_1'+\tfrac{k^2}3\Phi_1=0 .
 \label{eq:first_eqs}
@@ -122,17 +122,17 @@ and all scalar kernels are given in the \emph{invariant form} $K_X(k,q,p;\eta)$ 
 magnitudes), equivalently in the $(k,q,\mu)$ form.  With $T_q=\TP(q\eta/\sqrt3)$, $\dot T_q=\partial_\eta T_q$,
 the second-order kernels obtained from \eqref{eq:operators} with $S^{(2)}$ are (full forms in App.~\ref{app:kernels}):
 \begin{align}
-K_Q&=T_qT_p\Big[-4+\frac{6\mu q}k+\frac{3q^2}{k^2}-\frac{9\mu^2q^2}{k^2}\Big]
-+\Big[\eta(T_p\dot T_q+T_q\dot T_p)+\eta^2\dot T_q\dot T_p\Big]\Big[\frac{2\mu q}k+\frac{q^2}{k^2}-\frac{3\mu^2q^2}{k^2}\Big],\nonumber\\
+K_Q&=T_qT_p\Big[-4+\frac{6\mu q}k+\frac{3q^2}{k^2}-\frac{9\mu^2q^2}{k^2}\Big]\nonumber\\
+&\quad+\Big[\eta(T_p\dot T_q+T_q\dot T_p)+\eta^2\dot T_q\dot T_p\Big]\Big[\frac{2\mu q}k+\frac{q^2}{k^2}-\frac{3\mu^2q^2}{k^2}\Big],\nonumber\\
 K_\omega&=\frac{2i}{k^2}\Big[\eta\,(q^2-p^2)\,T_qT_p+\eta^2\big(q^2T_q\dot T_p-p^2T_p\dot T_q\big)\Big]
-\quad(\omega_{2,i}=\int\!P_{ij}(\khat)q_j\,K_\omega\,\zeta\zeta;\ \text{antisymmetric in }q\leftrightarrow p),\nonumber\\
+\quad(\omega_{2,i}=\int\!P_{ij}(\khat)q_j\,K_\omega\,\zeta\zeta),\nonumber\\
 K_h&=4\Big[3T_qT_p+\eta(\dot T_qT_p+T_q\dot T_p)+\eta^2\dot T_q\dot T_p\Big]
 =4\Big[2T_qT_p+(\eta\dot T+T)_q(\eta\dot T+T)_p\Big],\nonumber\\
-K_{S_{00}},\ K_{S_{0z}},\ K_{S_\Phi},\ K_{v^T}&:\ \text{App.~\ref{app:kernels}};\qquad
-v^T_{2,i}=\int P_{ij}q_jK_{v^T}\zeta\zeta,\qquad K_{v^T}=-\Big(\frac{\eta^2k^2}8+1\Big)K_\omega-\frac{\eta^2}4K_{S^T_{0i}} .
+K_{v^T}&=-\Big(\frac{\eta^2k^2}8+1\Big)K_\omega-\frac{\eta^2}4K_{S^T_{0i}}\quad\big(v^T_{2,i}=\textstyle\int P_{ij}q_jK_{v^T}\zeta\zeta\big);\qquad
+K_{S_{00}},\ K_{S_{0z}},\ K_{S_\Phi}:\ \text{App.~\ref{app:kernels}}
 \label{eq:second_kernels}
 \end{align}
-The tensor source $K_h$ is identical to the radiation-era kernel of Kohri--Terada \cite{KT} (their eq.~(8)) and
+$K_\omega$ is antisymmetric in $q\leftrightarrow p$.  The tensor source $K_h$ is identical to the radiation-era kernel of Kohri--Terada \cite{KT} (their eq.~(8)) and
 Baumann et al.\ \cite{Baumann} (their (11)--(12)) with $w=\tfrac13$, $\Phi=\Psi$ (App.~\ref{app:ledger}, EF-9).
 $K_{S_\Phi}$ is finite as $\eta\to0$ (no $\eta^{-2}$ terms), so the particular integral of the trace equation
 vanishes at $\eta=0$; $\lim_{\eta\to0}\eta^2K_{S_{00}}=\tfrac{32}3$ and $K_Q(\eta\to0)$ is \eqref{eq:KQ0}.
@@ -143,19 +143,20 @@ the $K\to0$ corner of the $(22)$ loop integrable (Sec.~\ref{sec:monodef}).
 With $x=k\eta/\sqrt3$, $x'=k\eta'/\sqrt3$,
 \begin{align}
 u_1(x)&=\frac{\sin x-x\cos x}{x^3},\qquad u_2(x)=\frac{\cos x+x\sin x}{x^3},\qquad
-U(x)\equiv3u_1(x)=-\tfrac32\TP(x)\ \to1,\qquad W\equiv u_1u_2'-u_1'u_2=-\frac{3\sqrt3}{\eta^4k^3},\nonumber\\
+U(x)\equiv3u_1(x)=-\tfrac32\TP(x)\ \to1,\nonumber\\
+W&\equiv u_1u_2'-u_1'u_2=-\frac{3\sqrt3}{\eta^4k^3},\nonumber\\
 G_\Phi(k;\eta,\eta')&=\frac{u_1(x')u_2(x)-u_1(x)u_2(x')}{W(\eta')}
-=\frac{\sqrt3}{k}\,\frac{x'}{x^3}\Big[(1+xx')\sin(x-x')-(x-x')\cos(x-x')\Big]
-\ \xrightarrow{k\to0}\ \frac{\eta'}3\Big(1-\frac{{\eta'}^3}{\eta^3}\Big),\nonumber\\
+=\frac{\sqrt3}{k}\,\frac{x'}{x^3}\Big[(1+xx')\sin(x-x')-(x-x')\cos(x-x')\Big]\nonumber\\
+&\xrightarrow{k\to0}\ \frac{\eta'}3\Big(1-\frac{{\eta'}^3}{\eta^3}\Big),\nonumber\\
 G_h(k;\eta,\eta')&=\frac{\eta'}{\eta}\,\frac{\sin k(\eta-\eta')}{k},
 \label{eq:greens}
 \end{align}
 satisfying $\mathcal L G=0$, $G(\eta,\eta)=0$, $\partial_\eta G|_{\eta'=\eta}=1$.  The regular second-order
 scalar and tensor fields are then
 \begin{align}
-\Phi_{2,\vk}(\eta)&=\int\!\frac{\dd^3q}{(2\pi)^3}\zeta_{\vq}\zeta_{\vp}\,\mathcal K_{\Phi_2}(k,q,p;\eta),\qquad
-\mathcal K_{\Phi_2}\equiv\int_{0}^{\eta}\!\dd\eta'\,G_\Phi(k;\eta,\eta')K_{S_\Phi}(k,q,p;\eta')+K^0_{\Phi_2}(k,q,p)\,U(k\eta/\sqrt3),\nonumber\\
-h_{2,ij,\vk}(\eta)&=\Pi_{ij,kl}(\khat)\int\!\frac{\dd^3q}{(2\pi)^3}q_kq_l\,\zeta_{\vq}\zeta_{\vp}\,\mathcal K_h(k,q,p;\eta),\qquad
+\Phi_{2,\vk}(\eta)&=\int\!\frac{\dd^3q}{(2\pi)^3}\zeta_{\vq}\zeta_{\vp}\,\mathcal K_{\Phi_2}(k,q,p;\eta),\nonumber\\
+\mathcal K_{\Phi_2}&\equiv\int_{0}^{\eta}\!\dd\eta'\,G_\Phi(k;\eta,\eta')K_{S_\Phi}(k,q,p;\eta')+K^0_{\Phi_2}(k,q,p)\,U(k\eta/\sqrt3),\nonumber\\
+h_{2,ij,\vk}(\eta)&=\Pi_{ij,kl}(\khat)\int\!\frac{\dd^3q}{(2\pi)^3}q_kq_l\,\zeta_{\vq}\zeta_{\vp}\,\mathcal K_h(k,q,p;\eta),\quad
 \mathcal K_h\equiv\int_0^\eta\!\dd\eta'\,G_h(k;\eta,\eta')K_h(k,q,p;\eta'),
 \label{eq:declared2}
 \end{align}
@@ -206,10 +207,10 @@ angle-averaged $\vk\to0$ limits are given in closed form in App.~\ref{app:kernel
 The contracted third-order equations have the same operators \eqref{eq:operators}:
 \begin{align}
 Q_{3c}&=K_{3c,Q},\qquad
-\delta_{3c}=\tfrac{\eta^2}3K_{3c,S_{00}}-\tfrac23\eta^2k^2\Phi_{3c}-2\eta\Phi_{3c}'-2\Psi_{3c},\qquad
-V_{3c}=-\tfrac{\eta^2}4\Big[2(\Phi_{3c}'+\Psi_{3c}/\eta)+\frac{K_{3c,S_{0z}}}{ik}\Big],\nonumber\\
-\mathcal L_\Phi\Phi_{3c}&=K_{3c,S_\Phi},\qquad
-\Phi_{3c}(k,\eta)=\int\!\frac{\dd^3q}{(2\pi)^3}P(q)\Big[\int_0^\eta\!\dd\eta'\,G_\Phi(k;\eta,\eta')K_{3c,S_\Phi}(k,q,\mu;\eta')+C_3(k;q,\mu)\,U(k\eta/\sqrt3)\Big],
+\delta_{3c}=\tfrac{\eta^2}3K_{3c,S_{00}}-\tfrac23\eta^2k^2\Phi_{3c}-2\eta\Phi_{3c}'-2\Psi_{3c},\nonumber\\
+V_{3c}&=-\tfrac{\eta^2}4\Big[2(\Phi_{3c}'+\Psi_{3c}/\eta)+\frac{K_{3c,S_{0z}}}{ik}\Big],\qquad
+\mathcal L_\Phi\Phi_{3c}=K_{3c,S_\Phi},\nonumber\\
+\Phi_{3c}(k,\eta)&=\int\!\frac{\dd^3q}{(2\pi)^3}P(q)\Big[\int_0^\eta\!\dd\eta'\,G_\Phi(k;\eta,\eta')K_{3c,S_\Phi}(k,q,\mu;\eta')+C_3(k;q,\mu)\,U(k\eta/\sqrt3)\Big],
 \label{eq:third_eqs}
 \end{align}
 with $C_3$ the amplitude \eqref{eq:C3} fixed by $\zeta^{(3)}(0)=0$ and $K_{3c,S_\Phi}$ finite at $\eta\to0$.

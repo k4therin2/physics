@@ -184,7 +184,7 @@ subtracted.  The extracted residues agree with the analytic formulas \eqref{eq:m
 channels (lensing, aberration, transverse $\vk_2$ and $\Delta\vx_2$, products, normalisation) have $|R|\le5\times10^{-10}$; the sum is
 $\le8\times10^{-10}$, i.e.\ $2.3\times10^{-9}$ of the largest residue, for $\ell=0,\dots,8$ (ledger L-1).
 \begin{table}[t]
-\centering\scriptsize\setlength{\tabcolsep}{2.5pt}
+\centering\scriptsize\setlength{\tabcolsep}{1.8pt}
 \begin{tabular}{l|rrrrrrrrr}
 \hline
 channel & $\ell=0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$\\ \hline
@@ -204,7 +204,8 @@ sum of the extracted values.}
 The total integrand approaches its limit linearly in $1-\mu$ (a fitted $(1-\mu)^{-1/2}$ coefficient is $\le2\times10^{-5}$, consistent with zero at
 $\sim2\sigma$; pure polynomial fits leave residuals $10^{-11}$--$3\times10^{-10}$), with
 \begin{equation}
-F_\ell=\lim_{\mu\to1}\Delta^\kappa_\ell(\mu)=-52.7128,\ 28.7446,\ -6.2552,\ -18.9101,\ -3.2837,\ -13.2462,\ 0.3738,\ 1.1248,\ 2.9794\qquad(\ell=0,\dots,8).
+\begin{split}F_\ell=\lim_{\mu\to1}\Delta^\kappa_\ell(\mu)={}&-52.7128,\ 28.7446,\ -6.2552,\ -18.9101,\ -3.2837,\\
+&-13.2462,\ 0.3738,\ 1.1248,\ 2.9794\qquad(\ell=0,\dots,8).\end{split}
 \label{eq:mono-Fl}
 \end{equation}
 The $\sqrt3$ resonances ($|\vk\mp\vq|=2k_0/\sqrt3$, $\mu=\pm\tfrac13$) are harmless at finite $\eta$: the Green's-function integrals are entire
@@ -237,14 +238,14 @@ magnitude $s$ and total momentum $P\to0$, and write $T=\TP(s\eta/\sqrt3)$, $T'=\
 and $K^0_{\Phi_2}$ have a pole; it is a single $P^{-2}$ term (no $P^{-4}$); $K_{S_{00}}$, $K_{S_{0z}}$, $K_h$ have no pole, and $K_\omega$, $K_{v^T}$ vanish at
 equal magnitudes.  Explicitly
 \begin{equation}
-K_Q=\frac{A_Q(\eta)}{P^2}+O(1),\qquad A_Q=s^2\big[2T^2+(T+\eta T')^2\big],\qquad
-\text{pole}(K_{S_\Phi})=\frac{A_Q'}{\eta},\qquad \text{pole}(K^0_{\Phi_2})=\frac{4s^2}{9}=\frac{A_Q(0)}3,
+\begin{gathered}K_Q=\frac{A_Q(\eta)}{P^2}+O(1),\qquad A_Q=s^2\big[2T^2+(T+\eta T')^2\big],\\
+\text{pole}(K_{S_\Phi})=\frac{A_Q'}{\eta},\qquad \text{pole}(K^0_{\Phi_2})=\frac{4s^2}{9}=\frac{A_Q(0)}3,\end{gathered}
 \label{eq:mono-AQ}
 \end{equation}
 the second relation exact once $T''$ is eliminated with the first-order equation.  Define $\tau(\eta)$ as the regular solution of
 \begin{equation}
-(\eta^2\tau)'=-\eta^2A_Q,\qquad
-\tau=-\sqrt3\,s\,\frac{x^3(2x-\sin2x)-8x^2\cos^2x+8x\sin2x+4\cos2x-4}{x^5}=-\tfrac49s^2\eta+O(\eta^3),\qquad x=\frac{s\eta}{\sqrt3}.
+\begin{gathered}(\eta^2\tau)'=-\eta^2A_Q,\qquad x\equiv\frac{s\eta}{\sqrt3},\\
+\tau=-\frac{\sqrt3\,s}{x^5}\big[x^3(2x-\sin2x)-8x^2\cos^2x+8x\sin2x+4\cos2x-4\big]=-\tfrac49s^2\eta+O(\eta^3).\end{gathered}
 \label{eq:mono-tau}
 \end{equation}
 With the $k\to0$ Green's function $G_\Phi\to\tfrac{\eta'}3(1-{\eta'}^3/\eta^3)$ \eqref{eq:greens} and one integration by parts, the pole parts of the

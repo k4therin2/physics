@@ -25,9 +25,13 @@ $\partial_\eta=(q/\sqrt3)\,\dd/\dd x$ convert everything to closed form in $\sin
 \end{dmath}
 
 \paragraph{$K_{S_\Phi}$ (source of $\mathcal L_\Phi\Phi_2=S_\Phi$)}
-\begin{dmath}
-\frac{T_{p} T_{q} \left(- 7 k^{6} - 19 k^{4} p^{2} - 19 k^{4} q^{2} + 7 k^{2} p^{4} - 22 k^{2} p^{2} q^{2} + 7 k^{2} q^{4} + 3 p^{6} - 3 p^{4} q^{2} - 3 p^{2} q^{4} + 3 q^{6}\right)}{12 k^{4}} + \frac{T_{p} \dot{T}_q \eta \left(k^{2} + p^{2}\right) \left(- k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}\right)}{12 k^{4}} + \frac{T_{q} \dot{T}_p \eta \left(k^{2} + q^{2}\right) \left(- k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}\right)}{12 k^{4}} + \frac{\dot{T}_p \dot{T}_q \left(- \eta^{2} k^{6} - 2 \eta^{2} k^{4} p^{2} - 2 \eta^{2} k^{4} q^{2} + 3 \eta^{2} k^{2} p^{4} - 6 \eta^{2} k^{2} p^{2} q^{2} + 3 \eta^{2} k^{2} q^{4} + 12 k^{4} - 24 k^{2} p^{2} - 24 k^{2} q^{2} + 36 p^{4} - 72 p^{2} q^{2} + 36 q^{4}\right)}{12 k^{4}}
-\end{dmath}
+\begin{align*}
+K_{S_\Phi}={}&\frac{T_qT_p}{12k^4}\Big[-7k^6-19k^4(p^2+q^2)+7k^2(p^4+q^4)-22k^2p^2q^2+3(p^6+q^6)-3p^2q^2(p^2+q^2)\Big]\\
+&+\frac{\eta\,\big[(k^2+p^2)T_p\dot T_q+(k^2+q^2)T_q\dot T_p\big]}{12k^4}\,B\\
+&+\frac{\dot T_q\dot T_p}{12k^4}\Big\{\eta^2k^2B+12\big[k^4-2k^2(p^2+q^2)+3(p^2-q^2)^2\big]\Big\},\\
+B\equiv{}&-k^4-2k^2(p^2+q^2)+3(p^2-q^2)^2
+\end{align*}
+(regrouped from the machine output; identical by computer algebra).
 
 \paragraph{$K_\omega$ (vector metric, $\omega_{2,i}=\int P_{ij}q_jK_\omega\zeta\zeta$)}
 \begin{dmath}
@@ -86,9 +90,10 @@ v_{2,z} = \frac{\eta \left(- S_{0z} \eta - 2 i \eta k \frac{d}{d \eta} \Phi_{2}{
 \end{dmath}
 
 \paragraph{$G_\Phi(k;\eta,\eta')$}
-\begin{dmath}
-\frac{\sqrt{3} \eta' \left(\eta' \eta k^{2} \sin{\left(\frac{\sqrt{3} k \left(- \eta' + \eta\right)}{3} \right)} + \sqrt{3} \eta' k \cos{\left(\frac{\sqrt{3} k \left(- \eta' + \eta\right)}{3} \right)} - \sqrt{3} \eta k \cos{\left(\frac{\sqrt{3} k \left(- \eta' + \eta\right)}{3} \right)} + 3 \sin{\left(\frac{\sqrt{3} k \left(- \eta' + \eta\right)}{3} \right)}\right)}{\eta^{3} k^{3}}
-\end{dmath}
+\begin{equation*}
+G_\Phi(k;\eta,\eta')=\frac{\sqrt3}{k}\,\frac{x'}{x^3}\Big[(1+xx')\sin(x-x')-(x-x')\cos(x-x')\Big],\qquad x=\frac{k\eta}{\sqrt3},\ x'=\frac{k\eta'}{\sqrt3}
+\end{equation*}
+(the machine output rewritten in $x,x'$; EF-12).
 
 \paragraph{$G_h(k;\eta,\eta')$}
 \begin{dmath}
@@ -110,9 +115,11 @@ Per $P(q)\,\zeta_{\vk}$ in the contracted sense of \eqref{eq:contracted}; $p^2=k
 \end{dmath}
 
 \paragraph{$C_3$ in invariant form $(k,q,p)$}
-\begin{dmath}
-- \frac{35 k^{8} + 12 k^{6} p^{2} - 84 k^{6} q^{2} + 66 k^{4} p^{4} - 52 k^{4} p^{2} q^{2} + 66 k^{4} q^{4} - 84 k^{2} p^{6} + 84 k^{2} p^{4} q^{2} + 20 k^{2} p^{2} q^{4} - 20 k^{2} q^{6} + 3 p^{8} - 12 p^{6} q^{2} + 18 p^{4} q^{4} - 12 p^{2} q^{6} + 3 q^{8}}{9 k^{4} p^{4}}
-\end{dmath}
+\begin{multline*}
+C_3=\frac{1}{9 k^{4} p^{4}}\Big[- 12 k^{6} p^{2}- 18 p^{4} q^{4}- 20 k^{2} p^{2} q^{4}- 3 p^{8}- 3 q^{8}- 35 k^{8}- 66 k^{4} p^{4}- 66 k^{4} q^{4}\\
+- 84 k^{2} p^{4} q^{2}+12 p^{2} q^{6}+12 p^{6} q^{2}+20 k^{2} q^{6}+52 k^{4} p^{2} q^{2}+84 k^{2} p^{6}\\
++84 k^{6} q^{2}\Big]
+\end{multline*}
 
 \paragraph{$Q_{3c}(\eta\to0)$}
 \begin{dmath}
@@ -127,32 +134,39 @@ Per $P(q)\,\zeta_{\vk}$ in the contracted sense of \eqref{eq:contracted}; $p^2=k
 
 \subsection{Tadpole (mean-field) functions}
 $\mathrm{tad}_X(q,\eta)=\langle K_X(\vq,-\vq;\eta)\rangle_{\rm ang}$, Eq.~\eqref{eq:tad}, angle-averaged $\vk\to0$ limits of the
-second-order kernels (convention of Sec.~\ref{sec:tadpole}); small-$\eta$ behaviour in brackets.
+second-order kernels (Sec.~\ref{sec:asm-zeromodes}), written in $x\equiv q\eta/\sqrt3$ (typeset by \code{doc/gen\_kernels\_long.py} and
+checked numerically against the stored expressions); small-$\eta$ behaviour in brackets.
 
 \paragraph{$\mathrm{tad}_{Q_2}$ [$-\tfrac{16}9+\tfrac{88}{405}q^2\eta^2+\ldots$]}
-\begin{dmath}
-\frac{8 \left(\eta^{6} q^{6} \sin^{2}{\left(\frac{\sqrt{3} \eta q}{3} \right)} + \sqrt{3} \eta^{5} q^{5} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 6 \eta^{4} q^{4} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 6 \sqrt{3} \eta^{3} q^{3} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 18 \eta^{2} q^{2} \left(16 \sin^{2}{\left(\frac{\sqrt{3} \eta q}{3} \right)} - 15\right) + 270 \sqrt{3} \eta q \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 810 \sin^{2}{\left(\frac{\sqrt{3} \eta q}{3} \right)}\right)}{15 \eta^{6} q^{6}}
-\end{dmath}
+\begin{multline*}
+\mathrm{tad}_{Q_2}=\frac{8}{15 x^{6}}\Big[x^{6} \sin^2x+2 x^{5} \sin x \cos x- 2 x^{4}+4 x^{4} \cos^2x- 4 x^{3} \sin x \cos x- 30 x^{2}+32 x^{2} \sin^2x\\
++60 x \sin x \cos x- 30 \sin^2x\Big]
+\end{multline*}
 
 \paragraph{$\mathrm{tad}_{S_{00}}$ [$\tfrac{32}{3\eta^2}-\tfrac{272}{45}q^2+\ldots$]}
-\begin{dmath}
-\frac{24 \left(\frac{\eta^{6} q^{6} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)}}{2} - \frac{\eta^{6} q^{6}}{2} - 2 \sqrt{3} \eta^{5} q^{5} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 21 \eta^{4} q^{4} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 6 \eta^{4} q^{4} + 36 \sqrt{3} \eta^{3} q^{3} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 126 \eta^{2} q^{2} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 9 \eta^{2} q^{2} - 117 \sqrt{3} \eta q \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - \frac{351 \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)}}{2} + \frac{351}{2}\right)}{\eta^{8} q^{6}}
-\end{dmath}
+\begin{multline*}
+\mathrm{tad}_{S_{00}}=\frac{8}{x^{8}}\Big[- q^{2} x^{6}+q^{2} x^{6} \cos^2x- 4 q^{2} x^{5} \sin x \cos x- 14 q^{2} x^{4} \cos^2x+5 q^{2} x^{4}+24 q^{2} x^{3} \sin x \cos x\\
+- 15 q^{2} x^{2}+28 q^{2} x^{2} \cos^2x- 26 q^{2} x \sin x \cos x- 13 q^{2} \cos^2x+13 q^{2}\Big]
+\end{multline*}
 
 \paragraph{$\mathrm{tad}_{S_\Phi}$ [$-\tfrac{56}{81}q^2+\ldots$]}
-\begin{dmath}
-\frac{4 \left(2 \sqrt{3} \eta^{7} q^{7} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 12 \eta^{6} q^{6} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 30 \sqrt{3} \eta^{5} q^{5} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 684 \eta^{4} q^{4} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 270 \eta^{4} q^{4} + 1764 \sqrt{3} \eta^{3} q^{3} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 7506 \eta^{2} q^{2} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 216 \eta^{2} q^{2} - 7290 \sqrt{3} \eta q \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 10935 \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 10935\right)}{45 \eta^{8} q^{6}}
-\end{dmath}
+\begin{multline*}
+\mathrm{tad}_{S_\Phi}=\frac{8}{45 x^{8}}\Big[2 q^{2} x^{7} \sin x \cos x- 2 q^{2} x^{6}+4 q^{2} x^{6} \cos^2x- 10 q^{2} x^{5} \sin x \cos x- 76 q^{2} x^{4} \cos^2x\\
++23 q^{2} x^{4}+196 q^{2} x^{3} \sin x \cos x- 143 q^{2} x^{2}+278 q^{2} x^{2} \cos^2x- 270 q^{2} x \sin x \cos x\\
+- 135 q^{2} \cos^2x+135 q^{2}\Big]
+\end{multline*}
 
 \paragraph{$\mathrm{tad}_{\Phi_2}$ [$-\tfrac89-\tfrac{28}{405}q^2\eta^2+\ldots$]}
-\begin{dmath}
-\frac{- 116 \eta^{6} q^{6} + 3 \eta^{3} q^{3} \left(- 2 \sqrt{3} \eta^{2} q^{2} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 18 \eta q \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 180 \eta q + 33 \sqrt{3} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)}\right) + 108 \eta^{2} q^{2} \left(17 \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 2\right) - 1620 \sqrt{3} \eta q \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 2430 \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 2430}{45 \eta^{6} q^{6}}
-\end{dmath}
+\begin{multline*}
+\mathrm{tad}_{\Phi_2}=\frac{2}{45 x^{6}}\Big[- 58 x^{6}- 6 x^{5} \sin x \cos x- 18 x^{4} \cos^2x+99 x^{4}+33 x^{3} \sin x \cos x- 114 x^{2}+204 x^{2} \cos^2x\\
+- 180 x \sin x \cos x- 90 \cos^2x+90\Big]
+\end{multline*}
 
 \paragraph{$\mathrm{tad}_{\delta_2}$ [$\tfrac{16}9-\tfrac{472}{405}q^2\eta^2+\ldots$]}
-\begin{dmath}
-\frac{4 \left(45 \eta^{6} q^{6} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 19 \eta^{6} q^{6} - 186 \sqrt{3} \eta^{5} q^{5} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 1944 \eta^{4} q^{4} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 270 \eta^{4} q^{4} + 3879 \sqrt{3} \eta^{3} q^{3} \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 13986 \eta^{2} q^{2} \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 2646 \eta^{2} q^{2} - 11340 \sqrt{3} \eta q \sin{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} - 17010 \cos{\left(\frac{2 \sqrt{3} \eta q}{3} \right)} + 17010\right)}{45 \eta^{6} q^{6}}
-\end{dmath}
+\begin{multline*}
+\mathrm{tad}_{\delta_2}=\frac{8}{45 x^{6}}\Big[- 13 x^{6}+45 x^{6} \cos^2x- 186 x^{5} \sin x \cos x- 648 x^{4} \cos^2x+279 x^{4}+1293 x^{3} \sin x \cos x\\
+- 924 x^{2}+1554 x^{2} \cos^2x- 1260 x \sin x \cos x- 630 \cos^2x+630\Big]
+\end{multline*}
 
 
 \subsection{Not reproduced here}

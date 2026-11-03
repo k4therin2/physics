@@ -27,7 +27,8 @@ with the regular first-order solution ($\Phi_1=\Psi_1=\zeta\,\TP$, $\delta_{T1}=
 \end{equation}
 Define the emission (Sachs--Wolfe) source $A_{\rm SW}(x):=T_{\delta T}+\TP=-\cos x+2j_0(x)-4j_1(x)/x$.
 
-\paragraph{Rayleigh rules.}  From \eqref{eq:rayleigh} and $\nhat\cdot\khat\,e^{ik\chi\nhat\cdot\khat}=(ik)^{-1}\partial_\chi e^{ik\chi\nhat\cdot\khat}$:
+\paragraph{Rayleigh rules.}  From \eqref{eq:rayleigh} and $\nhat\cdot\khat\,e^{ik\chi\nhat\cdot\khat}=(ik)^{-1}\partial_\chi e^{ik\chi\nhat\cdot\khat}$
+one has
 $(i\nhat\cdot\khat)^p e^{ik\chi\nhat\cdot\khat}\to 4\pi i^\ell\,j_\ell^{(p)}(k\chi)\,Y^*_{\ell m}(\khat)$.
 Observer terms carry no phase ($\chi=0$): since $j_\ell(0)=\delta_{\ell0}$ and $j'_\ell(0)=\delta_{\ell1}/3$, the observer
 monopole $[\delta_{T1}+\Psi_1]_o$ contributes only to $\ell=0$ and the observer Doppler term
@@ -35,11 +36,10 @@ $\nhat\cdot\vv_1(\eta_o,0)=i k\,(\nhat\cdot\khat)\,T_V(x_o)\zeta_\vk$ only to $\
 
 \begin{proposition}[First-order transfer function]\label{prop:Delta}
 $a^{(1)}_{\ell m}=4\pi i^\ell\int\!\frac{\dd^3k}{(2\pi)^3}\,\zeta_\vk\,Y^*_{\ell m}(\khat)\,\Delta_\ell(k)$ with real
-\begin{equation}
-\Delta_\ell(k)=A_{\rm SW}(x_*)\,j_\ell(w)-kT_V(x_*)\,j'_\ell(w)-\delta_{\ell0}\,A_{\rm SW}(x_o)+\tfrac13\delta_{\ell1}\,kT_V(x_o)+I_\ell(k),
-\qquad
+\begin{gather}
+\Delta_\ell(k)=A_{\rm SW}(x_*)\,j_\ell(w)-kT_V(x_*)\,j'_\ell(w)-\delta_{\ell0}\,A_{\rm SW}(x_o)+\tfrac13\delta_{\ell1}\,kT_V(x_o)+I_\ell(k),\nonumber\\
 I_\ell(k)=\frac{4}{\sqrt3}\int_{s_*}^{s_o}\frac{j_2(s/\sqrt3)}{s/\sqrt3}\,j_\ell(s_o-s)\,\dd s .
-\end{equation}
+\end{gather}
 For $\ell\ge1$, $\Th^{(1)}_{\ell m}=m_{1,\ell m}$ \eqref{eq:theta_orders} and
 \begin{equation}
 C^{(11)}_\ell=\frac{2}{\pi}\int_0^\infty k^2\,\dd k\,P(k)\,\Delta_\ell(k)^2 ,
@@ -53,15 +53,15 @@ $Y(s)=y_2(s/\sqrt3)/(s/\sqrt3)=-27/s^4-3/(2s^2)+O(1)$, $a_\pm=1\pm1/\sqrt3$ and
 $\mathrm{Cin}(z)=\int_0^z(1-\cos t)\,\dd t/t=\gamma+\ln z-\Ci z$.
 \begin{theorem}[ISW integral, all $\ell$]\label{thm:isw}
 \begin{multline}
-I_\ell=E_\ell(s_*,s_o)+A_\ell(s_o)\big[\Ci a_+s_o-\Ci a_+s_*-\Ci a_-s_o+\Ci a_-s_*\big]
+I_\ell=E_\ell(s_*,s_o)+A_\ell(s_o)\big[\Ci a_+s_o-\Ci a_+s_*-\Ci a_-s_o+\Ci a_-s_*\big]\\
 +B_\ell(s_o)\big[\Si a_+s_o-\Si a_+s_*-\Si a_-s_o+\Si a_-s_*\big]\\
 +C_\ell(s_o)\big[\mathrm{Cin}(a_+w)-\mathrm{Cin}(a_-w)\big]+D_\ell(s_o)\big[\Si a_+w+\Si a_-w\big],
 \end{multline}
 \begin{align}
-A_\ell&=\tfrac{2}{\sqrt3}\operatorname*{Res}_{s=0}Y(s)\,y_\ell(s_o-s)=\sqrt3\,\big[3y_\ell'''(s_o)+y_\ell'(s_o)\big], &
+A_\ell&=\tfrac{2}{\sqrt3}\operatorname*{Res}_{s=0}Y(s)\,y_\ell(s_o-s)=\sqrt3\,\big[3y_\ell'''(s_o)+y_\ell'(s_o)\big],\nonumber\\
 B_\ell&=-\tfrac{2}{\sqrt3}\operatorname*{Res}_{s=0}Y(s)\,j_\ell(s_o-s)=-\sqrt3\,\big[3j_\ell'''(s_o)+j_\ell'(s_o)\big],\\
-C_\ell&=-\tfrac{2}{\sqrt3}\operatorname*{Res}_{u=0}y_\ell(u)\,Y(s_o-u), &
-D_\ell&=-\tfrac{2}{\sqrt3}\operatorname*{Res}_{u=0}y_\ell(u)\,J(s_o-u),
+C_\ell&=-\tfrac{2}{\sqrt3}\operatorname*{Res}_{u=0}y_\ell(u)\,Y(s_o-u),\qquad
+D_\ell=-\tfrac{2}{\sqrt3}\operatorname*{Res}_{u=0}y_\ell(u)\,J(s_o-u),\nonumber
 \end{align}
 and $E_\ell$ elementary: Laurent polynomials in $s_*,s_o,w$ times $\sin,\cos$ of $a_\pm s_*$, $a_\pm s_o$, $w$, $s_*/\sqrt3$, $s_o/\sqrt3$.
 \end{theorem}
@@ -82,15 +82,16 @@ to relative $2\times10^{-18}$ (five parameter sets).  Explicit coefficients for 
 \begin{align*}
 A_2&=\tfrac{2\sqrt3}{s_o^6}\big(s_o^5\sin s_o+7s_o^4\cos s_o-36s_o^3\sin s_o-126s_o^2\cos s_o+270s_o\sin s_o+270\cos s_o\big),\\
 B_2&=-\tfrac{2\sqrt3}{s_o^6}\big(s_o^5\cos s_o-7s_o^4\sin s_o-36s_o^3\cos s_o+126s_o^2\sin s_o+270s_o\cos s_o-270\sin s_o\big),\\
-C_2&=\tfrac{4\sqrt3}{3z^6}\big(z^3\sin z+6z^2\cos z-15z\sin z-15\cos z\big),\qquad
-D_2=\tfrac{4\sqrt3}{3z^6}\big(z^3\cos z-6z^2\sin z-15z\cos z+15\sin z\big);
+C_2&=\tfrac{4\sqrt3}{3z^6}\big(z^3\sin z+6z^2\cos z-15z\sin z-15\cos z\big),\\
+D_2&=\tfrac{4\sqrt3}{3z^6}\big(z^3\cos z-6z^2\sin z-15z\cos z+15\sin z\big);
 \end{align*}
 the coefficients for $\ell\le6$ and the elementary parts $E_\ell$ (56--464 terms for $\ell=0..6$) are machine generated (App.~\ref{app:repro}).
 
 \paragraph{Monochromatic spectrum.}  For $P=2\pi^2\sigma^2\delta(k-k_0)/k_0^2$ ($\ens{\zeta^2}=\sigma^2$),
-\begin{equation}
-C_\ell^{(11)}=4\pi\sigma^2\Big[A_{\rm SW}(x_{0*})\,j_\ell(k_0\chi_*)-k_0T_V(x_{0*})\,j'_\ell(k_0\chi_*)-\delta_{\ell0}A_{\rm SW}(x_{0o})+\tfrac13\delta_{\ell1}k_0T_V(x_{0o})+I_\ell(k_0)\Big]^2,
-\end{equation}
+\begin{multline}
+C_\ell^{(11)}=4\pi\sigma^2\Big[A_{\rm SW}(x_{0*})\,j_\ell(k_0\chi_*)-k_0T_V(x_{0*})\,j'_\ell(k_0\chi_*)\\
+-\delta_{\ell0}A_{\rm SW}(x_{0o})+\tfrac13\delta_{\ell1}k_0T_V(x_{0o})+I_\ell(k_0)\Big]^2,
+\end{multline}
 $x_{0*}=k_0\eta_*/\sqrt3$, $x_{0o}=k_0\eta_o/\sqrt3$, with $I_\ell(k_0)$ from Theorem~\ref{thm:isw}.  A real-space check (two-point function
 of the map built directly from the kernel vs $\sum_\ell\frac{2\ell+1}{4\pi}C_\ell P_\ell$, including $\ell=0,1$ observer terms) agrees to
 $6\times10^{-15}$.  Example ($\sigma^2=1$, $\eta_*=0.5$, $\eta_o=2$, $k_0=4$): $\Delta_{0..4}=0.44006,\,-0.33896,\,0.27562,\,0.22303,\,0.11803$,

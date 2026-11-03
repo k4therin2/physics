@@ -100,12 +100,13 @@ K_Q(\vq,\vp;0)=-\frac{13k^4-6k^2(p^2+q^2)+9(p^2-q^2)^2}{9k^4}
 \end{equation}
 and $\zeta^{(2)}(0)=0$ then yields
 \begin{equation}
-\boxed{\;K_{\Phi_2}(\vq,\vp;0)=\tfrac13K_Q(\vq,\vp;0)-\tfrac8{27}
-=-\frac{7k^4-2k^2(p^2+q^2)+3(p^2-q^2)^2}{9k^4}
-=-\frac49\,\frac{2k^2-2kq\mu+3q^2\mu^2-q^2}{k^2}\;}
+\boxed{\;\begin{aligned}K_{\Phi_2}(\vq,\vp;0)&=\tfrac13K_Q(\vq,\vp;0)-\tfrac8{27}\\
+&=-\frac{7k^4-2k^2(p^2+q^2)+3(p^2-q^2)^2}{9k^4}
+=-\frac49\,\frac{2k^2-2kq\mu+3q^2\mu^2-q^2}{k^2}\end{aligned}\;}
 \label{eq:KPhi20}
 \end{equation}
-(the reader may verify: $\tfrac14[\tfrac{32}9+2K_Q(0)-2\Phi_2]-\tfrac14\cdot\tfrac{16}9-\Phi_2-2\cdot\tfrac49=0$).
+(the reader may verify:
+$\tfrac14[\tfrac{32}9+2K_Q(0)-2\Phi_2]-\tfrac14\cdot\tfrac{16}9-\Phi_2-2\cdot\tfrac49=0$).
 In position space, with $\Phi_1=-\tfrac23\zeta_1$,
 \begin{align}
 \Phi_2(0)&=-2\Phi_1^2-\ilap\big(\partial_i\Phi_1\partial_i\Phi_1\big)+3\nabla^{-4}\partial_i\partial_j\big(\partial_i\Phi_1\partial_j\Phi_1\big),\label{eq:Phi20_pos}\\
@@ -125,8 +126,8 @@ Only the $q$-contracted third-order fields are needed for $C^{(13)}_\ell$ (Sec.~
 $\Phi_{3c}(k,\eta)=\int\!\frac{\dd^3q}{(2\pi)^3}P(q)\,K_{\Phi_{3c}}(k,q,\mu;\eta)$, the regular solution has
 $\Phi_{3c}(k,0)=\int\frac{\dd^3q}{(2\pi)^3}P(q)\,C_3(k;q,\mu)$ and $\zeta^{(3)}(0)=0$ gives
 \begin{equation}
-\boxed{\;C_3(k;q,\mu)=-\frac{16\big(2k^5+12k^4q\mu-42k^3q^2\mu^2-10k^3q^2+36k^2q^3\mu^3+32k^2q^3\mu+3kq^4\mu^4-42kq^4\mu^2+kq^4+8q^5\mu\big)}
-{9\,k\,(k^2-2kq\mu+q^2)^2}\;}
+\boxed{\;\begin{aligned}C_3(k;q,\mu)=-\frac{16}{9\,k\,(k^2-2kq\mu+q^2)^2}\big(&2k^5+12k^4q\mu-42k^3q^2\mu^2-10k^3q^2\\
+&+36k^2q^3\mu^3+32k^2q^3\mu+3kq^4\mu^4\\&-42kq^4\mu^2+kq^4+8q^5\mu\big)\end{aligned}\;}
 \label{eq:C3}
 \end{equation}
 ($p^2=k^2-2kq\mu+q^2$; invariant form and the intermediate $Q_{3c}(0)$, $\lim\eta^2K_{3c,S_{00}}$ in
@@ -178,8 +179,8 @@ lies on the family \eqref{eq:dilation} with $\lambda=e^{-\eps c/3}$ ($a_2=c^2/9$
 $1-2\Phi=e^{4\zeta/3}$, $1+2\Psi=e^{-4\zeta/3}$ (the member with $\Psi_2=\Phi_2$ instead has $a_2=-\tfrac{13}{27}c^2$,
 $\Phi_2=\Psi_2=-\tfrac8{27}c^2$, $\delta_2=\tfrac{112}{27}c^2$).
 
-This matters because the third-order map contains \emph{mean-field} (tadpole) terms $\langle X_2\rangle=
-\int\!\frac{\dd^3q}{(2\pi)^3}P(q)K_X(\vq,-\vq;\eta)$, the $\vk=0$ components of the second-order fields (Sec.~\ref{sec:third}).  They are
+This matters because the third-order map contains \emph{mean-field} (tadpole) terms
+$\langle X_2\rangle=\int\!\frac{\dd^3q}{(2\pi)^3}P(q)K_X(\vq,-\vq;\eta)$, the $\vk=0$ components of the second-order fields (Sec.~\ref{sec:third}).  They are
 evaluated as the $\qhat$-averaged limits (closed forms $\mathrm{tad}_X(q,\eta)$ in App.~\ref{app:kernels}; e.g.\ $\mathrm{tad}_{\Phi_2}\to-\tfrac89$,
 $\mathrm{tad}_{Q_2}\to-\tfrac{16}9$, $\mathrm{tad}_{\delta_2}\to\tfrac{16}9$ as $\eta\to0$).  This is not a convention: the $\qhat$-average at fixed $k$
 removes every negative power of $k$, only the averaged pair kernel enters the contracted map, the remaining isotropic freedom is the residual time

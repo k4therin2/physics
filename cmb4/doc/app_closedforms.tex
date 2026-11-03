@@ -2,10 +2,10 @@
 \label{app:closedforms}
 {\small\begingroup\sloppy\allowdisplaybreaks
 The only non-algebraic second-order time integrals are those of \eqref{eq:declared2},
-\begin{equation*}
-\mathcal K_{\Phi_2}=P(\eta)+K^0_{\Phi_2}\,U(x_k),\qquad P\equiv\int_0^\eta G_\Phi(k;\eta,\eta')\,K_{S_\Phi}(k,q,p;\eta')\,\dd\eta',\qquad
+\begin{gather*}
+\mathcal K_{\Phi_2}=P(\eta)+K^0_{\Phi_2}\,U(x_k),\qquad P\equiv\int_0^\eta G_\Phi(k;\eta,\eta')\,K_{S_\Phi}(k,q,p;\eta')\,\dd\eta',\\
 \mathcal K_h=\int_0^\eta\frac{\eta'}{\eta}\frac{\sin k(\eta-\eta')}{k}\,K_h(k,q,p;\eta')\,\dd\eta',
-\end{equation*}
+\end{gather*}
 with $x_a\equiv a\eta/\sqrt3$, $T_a\equiv\TP(x_a)$.  Both are evaluated in closed form: elementary functions plus $\Si(w\eta)$ and the entire,
 even function $\mathrm{Cin}(z)=\int_0^z(1-\cos t)\,\dd t/t=\gamma_E+\ln|z|-\Ci(|z|)$.  Because $\mathrm{Cin}$ is entire, the forms need no absolute
 values, principal values or branch choices; rewriting $\mathrm{Cin}\to\Ci$ reproduces the $\ln|\ldots|$ terms of Kohri--Terada \cite{KT}.  All other
@@ -22,13 +22,14 @@ With $u_1,u_2,W$ of \eqref{eq:greens}, $P=u_2(x_k)\,\mathcal A(\eta)-u_1(x_k)\,\
 $\mathcal B=\int_0^\eta(u_2/W)K_{S_\Phi}\,\dd\eta'$, where $u_1/W=-\eta'\sin x_k'+(k/\sqrt3){\eta'}^2\cos x_k'$, $u_2/W=-\eta'\cos x_k'-(k/\sqrt3){\eta'}^2\sin x_k'$.
 The frequencies are
 \begin{equation*}
-w_1=\tfrac{k+q+p}{\sqrt3},\quad w_2=\tfrac{k+q-p}{\sqrt3},\quad w_3=\tfrac{k-q+p}{\sqrt3},\quad w_4=\tfrac{q+p-k}{\sqrt3}\qquad(\text{all}\ \ge0\ \text{by the triangle inequalities}),
+w_1=\tfrac{k+q+p}{\sqrt3},\quad w_2=\tfrac{k+q-p}{\sqrt3},\quad w_3=\tfrac{k-q+p}{\sqrt3},\quad w_4=\tfrac{q+p-k}{\sqrt3}
 \end{equation*}
+(all $\ge0$ by the triangle inequalities),
 and the complete special-function part is governed by one coefficient,
 \begin{gather*}
-\mathcal A\supset\mathsf D\,\big[\Si(w_1\eta)-\Si(w_2\eta)-\Si(w_3\eta)-\Si(w_4\eta)\big],\qquad
+\mathcal A\supset\mathsf D\,\big[\Si(w_1\eta)-\Si(w_2\eta)-\Si(w_3\eta)-\Si(w_4\eta)\big],\\
 \mathcal B\supset\mathsf D\,\big[\mathrm{Cin}(w_2\eta)+\mathrm{Cin}(w_3\eta)-\mathrm{Cin}(w_1\eta)-\mathrm{Cin}(w_4\eta)\big],\\
-\mathsf D(k,q,p)=\frac{(k^2+p^2+q^2)\,R}{8k^2p^3q^3},\qquad
+\mathsf D(k,q,p)=\frac{(k^2+p^2+q^2)\,R}{8k^2p^3q^3},\\
 R=3k^6-3k^4(p^2+q^2)-3k^2(p^4+q^4)-2k^2p^2q^2+3(p^6+q^6)-3p^2q^2(p^2+q^2).
 \end{gather*}
 The remainder of $\mathcal A,\mathcal B$ is elementary: a sum over the eight products $t(x_k)t(x_q)t(x_p)$, $t\in\{\sin,\cos\}$, of Laurent polynomials in
@@ -67,13 +68,22 @@ $\Psi_2=\Phi_2-Q_2$, $\delta_2=\tfrac{\eta^2}3K_{S_{00}}-\tfrac23\eta^2k^2\Phi_2
 $V_2=-\tfrac{\eta^2}4[2(\Phi_2'+\Psi_2/\eta)+K_{S_{0z}}/(ik)]$, $\omega_{2,i}=P_{ij}q_jK_\omega$, $v^T_{2,i}=P_{ij}q_jK_{v^T}$, with the kernels of
 \eqref{eq:second_kernels} and App.~\ref{app:kernels}; $\Phi_2'$ is the closed-form derivative ($G_\Phi(\eta,\eta)=0$).
 
-\paragraph{Small $\eta$} (Frobenius series of the equations with the constraints; checked against the closed forms at 120 digits):
+\paragraph{Small $\eta$} (Frobenius series of the equations with the constraints, checked against the closed forms at 120 digits;
+$s\equiv p^2+q^2$, $r\equiv p^2q^2$; typeset by \code{doc/gen\_series\_small.py} from C4's stored series):
 \begin{align*}
-\Phi_2&=\left[- \frac{7 k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}}{9 k^{4}}\right]\eta^{0} \\ &\quad + \left[\frac{- 21 k^{4} p^{2} - 21 k^{4} q^{2} + 10 k^{2} p^{4} - 28 k^{2} p^{2} q^{2} + 10 k^{2} q^{4} + 3 p^{6} - 3 p^{4} q^{2} - 3 p^{2} q^{4} + 3 q^{6}}{270 k^{4}}\right]\eta^{2} \\ &\quad + \left[- \frac{- 150 k^{6} p^{2} - 150 k^{6} q^{2} - 65 k^{4} p^{4} - 398 k^{4} p^{2} q^{2} - 65 k^{4} q^{4} + 80 k^{2} p^{6} - 144 k^{2} p^{4} q^{2} - 144 k^{2} p^{2} q^{4} + 80 k^{2} q^{6} + 15 p^{8} + 36 p^{6} q^{2} - 102 p^{4} q^{4} + 36 p^{2} q^{6} + 15 q^{8}}{113400 k^{4}}\right]\eta^{4} + O(\eta^{6})\\
-\mathcal K_h&=\left[\frac{8}{9}\right]\eta^{2} \\ &\quad + \left[- \frac{2 \left(3 k^{2} + p^{2} + q^{2}\right)}{135}\right]\eta^{4} + O(\eta^{6})\\
-\Psi_2&=\left[\frac{2 \left(3 k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}\right)}{9 k^{4}}\right]\eta^{0} \\ &\quad + \left[- \frac{2 \left(8 k^{4} p^{2} + 8 k^{4} q^{2} - 5 k^{2} p^{4} + 2 k^{2} p^{2} q^{2} - 5 k^{2} q^{4} + 3 p^{6} - 3 p^{4} q^{2} - 3 p^{2} q^{4} + 3 q^{6}\right)}{135 k^{4}}\right]\eta^{2} \\ &\quad + \left[\frac{75 k^{6} p^{2} + 75 k^{6} q^{2} + 55 k^{4} p^{4} + 234 k^{4} p^{2} q^{2} + 55 k^{4} q^{4} - 75 k^{2} p^{6} - 117 k^{2} p^{4} q^{2} - 117 k^{2} p^{2} q^{4} - 75 k^{2} q^{6} + 45 p^{8} + 108 p^{6} q^{2} - 306 p^{4} q^{4} + 108 p^{2} q^{6} + 45 q^{8}}{56700 k^{4}}\right]\eta^{4} + O(\eta^{6})\\
-\delta_2&=\left[- \frac{4 \left(- 5 k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}\right)}{9 k^{4}}\right]\eta^{0} \\ &\quad + \left[\frac{2 \left(15 k^{6} - 41 k^{4} p^{2} - 41 k^{4} q^{2} - 5 k^{2} p^{4} + 2 k^{2} p^{2} q^{2} - 5 k^{2} q^{4} + 3 p^{6} - 3 p^{4} q^{2} - 3 p^{2} q^{4} + 3 q^{6}\right)}{135 k^{4}}\right]\eta^{2} \\ &\quad + \left[- \frac{- 1095 k^{6} p^{2} - 1095 k^{6} q^{2} - 275 k^{4} p^{4} - 3394 k^{4} p^{2} q^{2} - 275 k^{4} q^{4} - 25 k^{2} p^{6} - 39 k^{2} p^{4} q^{2} - 39 k^{2} p^{2} q^{4} - 25 k^{2} q^{6} + 15 p^{8} + 36 p^{6} q^{2} - 102 p^{4} q^{4} + 36 p^{2} q^{6} + 15 q^{8}}{28350 k^{4}}\right]\eta^{4} + O(\eta^{6})\\
-V_2&=\left[- \frac{7 k^{4} - 2 k^{2} p^{2} - 2 k^{2} q^{2} + 3 p^{4} - 6 p^{2} q^{2} + 3 q^{4}}{9 k^{4}}\right]\eta^{1} \\ &\quad + \left[\frac{39 k^{4} p^{2} + 39 k^{4} q^{2} + 6 k^{2} p^{4} - 20 k^{2} p^{2} q^{2} + 6 k^{2} q^{4} + 3 p^{6} - 3 p^{4} q^{2} - 3 p^{2} q^{4} + 3 q^{6}}{270 k^{4}}\right]\eta^{3} \\ &\quad + \left[- \frac{375 k^{6} p^{2} + 375 k^{6} q^{2} + 105 k^{4} p^{4} + 134 k^{4} p^{2} q^{2} + 105 k^{4} q^{4} + 105 k^{2} p^{6} - 169 k^{2} p^{4} q^{2} - 169 k^{2} p^{2} q^{4} + 105 k^{2} q^{6} + 15 p^{8} + 36 p^{6} q^{2} - 102 p^{4} q^{4} + 36 p^{2} q^{6} + 15 q^{8}}{113400 k^{4}}\right]\eta^{5} + O(\eta^{7})
+\Phi_2&=\frac{1}{9 k^{4}}\Big[- 7 k^{4} + 2 k^{2} s + 12 r - 3 s^{2}\Big]\\
+&\quad+\frac{\eta^{2}}{270 k^{4}}\Big[- 21 k^{4} s + k^{2} \left(- 48 r + 10 s^{2}\right) - 12 r s + 3 s^{3}\Big]\\
+&\quad+\frac{\eta^{4}}{113400 k^{4}}\Big[150 k^{6} s + k^{4} \left(268 r + 65 s^{2}\right) + k^{2} \left(384 r s - 80 s^{3}\right) + 144 r^{2} + 24 r s^{2} - 15 s^{4}\Big]+O(\eta^{6})\\
+\mathcal K_h&=\frac89\eta^2-\frac{2\eta^4}{135}\big(3k^2+s\big)+O(\eta^{6})\\
+\Psi_2&=\frac{1}{9 k^{4}}\Big[6 k^{4} - 4 k^{2} s - 24 r + 6 s^{2}\Big]\\
+&\quad+\frac{\eta^{2}}{135 k^{4}}\Big[- 16 k^{4} s + k^{2} \left(- 24 r + 10 s^{2}\right) + 24 r s - 6 s^{3}\Big]\\
+&\quad+\frac{\eta^{4}}{56700 k^{4}}\Big[75 k^{6} s + k^{4} \left(124 r + 55 s^{2}\right) + k^{2} \left(108 r s - 75 s^{3}\right) - 432 r^{2} - 72 r s^{2} + 45 s^{4}\Big]+O(\eta^{6})\\
+\delta_2&=\frac{1}{9 k^{4}}\Big[20 k^{4} + 8 k^{2} s + 48 r - 12 s^{2}\Big]\\
+&\quad+\frac{\eta^{2}}{135 k^{4}}\Big[30 k^{6} - 82 k^{4} s + k^{2} \left(24 r - 10 s^{2}\right) - 24 r s + 6 s^{3}\Big]\\
+&\quad+\frac{\eta^{4}}{28350 k^{4}}\Big[1095 k^{6} s + k^{4} \left(2844 r + 275 s^{2}\right) + k^{2} \left(- 36 r s + 25 s^{3}\right) + 144 r^{2} + 24 r s^{2} - 15 s^{4}\Big]+O(\eta^{6})\\
+V_2&=\frac{\eta^{1}}{9 k^{4}}\Big[- 7 k^{4} + 2 k^{2} s + 12 r - 3 s^{2}\Big]\\
+&\quad+\frac{\eta^{3}}{270 k^{4}}\Big[39 k^{4} s + k^{2} \left(- 32 r + 6 s^{2}\right) - 12 r s + 3 s^{3}\Big]\\
+&\quad+\frac{\eta^{5}}{113400 k^{4}}\Big[- 375 k^{6} s + k^{4} \left(76 r - 105 s^{2}\right) + k^{2} \left(484 r s - 105 s^{3}\right) + 144 r^{2} + 24 r s^{2} - 15 s^{4}\Big]+O(\eta^{7})
 \end{align*}
 \paragraph{Large $\eta$.}
 With $\Xi\equiv\ln\frac{(k+q+p)(q+p-k)}{(k+q-p)(k+p-q)}$ and $x_k=k\eta/\sqrt3$:
