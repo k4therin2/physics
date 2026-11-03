@@ -109,6 +109,10 @@ Separately coded; arbiter exact computer algebra or 30-digit numerics at random 
 \item[CF-1] $\mathcal K_h$ in closed form (Si and the entire function Cin; all $\epsilon$-singular pieces cancel symbolically): equal to $4/k^2$ times Kohri--Terada (22) [with $|\cdot|$ in the logarithm] at 12 points ($10^{-15}$; 25 digits with rational input), to 60-digit quadrature (25 digits), and the late-time limit equal to KT (25); exact resonant ($q+p=\sqrt3k$) form vs quadrature: 40 digits.
 \item[CF-2] Closed-form $\Phi_2$ vs 60-digit quadrature at 8 random points and the $\sqrt3$ point: $3.5\times10^{-40}$; collinear limiting forms: $2.5\times10^{-40}$; small-$\eta$ series vs Frobenius recursion and late-time asymptotics vs 80-digit evaluation: consistent.
 \item[CF-3] All second-order fields built from the closed forms inserted in the full second-order Einstein (10 components) and conservation (4) equations, three points: relative residual $5.5\times10^{-50}$.
+\item[CF-5] Fast evaluators of all second-order fields (\code{second\_order\_closed.py}) vs the 50-digit closed form at 40 random points ($q/k\in[0.03,20]$,
+all $\mu$, $k\eta\in[0.05,300]$), 15 near-collinear points ($|\mu|=1-10^{-6}..10^{-10}$) and the point $q+p=\sqrt3k$: worst relative error $\Phi_2$ $1.1\times10^{-13}$,
+$\Phi_2'$ $2.1\times10^{-13}$, $\Psi_2$ $1.7\times10^{-13}$, $\delta_2$ $1.5\times10^{-13}$, $\delta_{T,2}$ $1.8\times10^{-13}$, $V_2$ $1.4\times10^{-13}$, $h_2$ $3.6\times10^{-13}$; the 50-digit
+reference vs direct quadrature $10^{-31}$--$10^{-44}$; small-$\eta$ series minus closed form $\propto\eta^8$; large-$\eta$ expansions verified to $k\eta=10^5$.
 \item[CF-4] The printed form of $\mathcal K_h$ (special-function skeleton plus nine trigonometric monomials, App.~\ref{app:closedforms}) re-assembled from the stored closed form and compared with 30-digit quadrature of $\int_0^\eta G_hK_h$ at three points: $\le2.4\times10^{-29}$.
 \end{itemize}
 

@@ -28,26 +28,26 @@
 \contentsline {paragraph}{Consequences.}{11}{section*.22}%
 \contentsline {subsection}{\numberline {4.4}Observer, clock, emission event and direction map}{12}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Fermi--Walker frame versus canonical triad}{12}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Linear order: recovery of the Sachs--Wolfe formula}{13}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.6}Linear order: recovery of the Sachs--Wolfe formula}{14}{subsection.4.6}%
 \contentsline {subsection}{\numberline {4.7}Normalisation: exact algebra on the logarithm}{14}{subsection.4.7}%
-\contentsline {section}{\numberline {5}Primordial variable and initial data}{14}{section.5}%
-\contentsline {subsection}{\numberline {5.1}The non-linear primordial variable}{14}{subsection.5.1}%
+\contentsline {section}{\numberline {5}Primordial variable and initial data}{15}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The non-linear primordial variable}{15}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Regularity and initial data at finite $\eta _i$}{15}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}The conditions at second and third order}{15}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.3}The conditions at second and third order}{16}{subsection.5.3}%
 \contentsline {paragraph}{Second order.}{16}{section*.23}%
-\contentsline {paragraph}{Third order.}{16}{section*.24}%
-\contentsline {subsection}{\numberline {5.4}The exact dilation family and the zero-mode (tadpole) ambiguity}{17}{subsection.5.4}%
-\contentsline {section}{\numberline {6}Perturbative solution of the Einstein--fluid equations}{18}{section.6}%
+\contentsline {paragraph}{Third order.}{17}{section*.24}%
+\contentsline {subsection}{\numberline {5.4}The exact dilation family and the zero-mode (tadpole) ambiguity}{18}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Perturbative solution of the Einstein--fluid equations}{19}{section.6}%
 \contentsline {subsection}{\numberline {6.1}First order}{19}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Second order: operator structure}{19}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.2}Second order: operator structure}{20}{subsection.6.2}%
 \contentsline {paragraph}{Vector sector (relativistic Kelvin theorem).}{20}{section*.25}%
-\contentsline {paragraph}{Kernels.}{20}{section*.26}%
+\contentsline {paragraph}{Kernels.}{21}{section*.26}%
 \contentsline {paragraph}{Green's functions and the regular solution.}{21}{section*.27}%
-\contentsline {paragraph}{Checks at second order.}{21}{section*.28}%
+\contentsline {paragraph}{Checks at second order.}{22}{section*.28}%
 \contentsline {subsection}{\numberline {6.3}Third order: contracted kernels}{22}{subsection.6.3}%
 \contentsline {paragraph}{Summary.}{22}{section*.29}%
-\contentsline {section}{\numberline {7}First order: the pipeline worked through, $\Delta _\ell (k)$ and $C_\ell ^{(11)}$}{22}{section.7}%
-\contentsline {paragraph}{The pipeline at first order.}{22}{section*.30}%
+\contentsline {section}{\numberline {7}First order: the pipeline worked through, $\Delta _\ell (k)$ and $C_\ell ^{(11)}$}{23}{section.7}%
+\contentsline {paragraph}{The pipeline at first order.}{23}{section*.30}%
 \contentsline {paragraph}{Conventions.}{23}{section*.31}%
 \contentsline {paragraph}{Rayleigh rules.}{23}{section*.32}%
 \contentsline {paragraph}{Closed form of the ISW integral.}{24}{section*.33}%
@@ -112,193 +112,205 @@
 \contentsline {paragraph}{Channel classes.}{48}{section*.65}%
 \contentsline {paragraph}{The spatial triad.}{49}{section*.66}%
 \contentsline {subsection}{\numberline {11.7}$C_\ell ^{(13)}$}{49}{subsection.11.7}%
-\contentsline {paragraph}{Validation of $\kappa $}{50}{section*.67}%
-\contentsline {paragraph}{The tadpole (mean-field) convention.}{50}{section*.68}%
-\contentsline {subsection}{\numberline {11.8}Infrared and ultraviolet structure of the loop}{50}{subsection.11.8}%
-\contentsline {paragraph}{Combined infrared behaviour.}{51}{section*.69}%
-\contentsline {paragraph}{Ultraviolet behaviour (numerical only).}{51}{section*.70}%
+\contentsline {paragraph}{Validation of $\kappa $}{49}{section*.67}%
+\contentsline {subsection}{\numberline {11.8}Zero modes and the tadpoles}{50}{subsection.11.8}%
+\contentsline {paragraph}{(1) The residual freedom at $k=0$.}{50}{section*.68}%
+\contentsline {paragraph}{(2) The $k\rightarrow 0$ limit of the second-order kernels.}{50}{section*.69}%
+\contentsline {paragraph}{(3) Invariance of the map.}{51}{section*.70}%
+\contentsline {paragraph}{(4) The physical tadpole.}{51}{section*.71}%
+\contentsline {paragraph}{(5) Status at third order.}{51}{section*.72}%
+\contentsline {subsection}{\numberline {11.9}Infrared and ultraviolet structure of the loop}{51}{subsection.11.9}%
+\contentsline {paragraph}{Combined infrared behaviour.}{52}{section*.73}%
+\contentsline {paragraph}{Ultraviolet behaviour (numerical only).}{52}{section*.74}%
 \contentsline {section}{\numberline {12}Monochromatic spectrum}{52}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Definition and first order}{52}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}Collapse of $C^{(22)}_\ell $ to a single integral}{52}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.2}Collapse of $C^{(22)}_\ell $ to a single integral}{53}{subsection.12.2}%
 \contentsline {subsection}{\numberline {12.3}The corner $K\rightarrow 0$}{53}{subsection.12.3}%
-\contentsline {subsection}{\numberline {12.4}Evaluation at two parameter points}{53}{subsection.12.4}%
-\contentsline {paragraph}{Numerical reliability.}{53}{section*.71}%
-\contentsline {paragraph}{Structure.}{54}{section*.72}%
-\contentsline {subsection}{\numberline {12.5}The $(13)$ term}{54}{subsection.12.5}%
-\contentsline {paragraph}{Collapse.}{54}{section*.73}%
-\contentsline {paragraph}{The collinear limit $\mu \rightarrow \pm 1$.}{55}{section*.74}%
-\contentsline {paragraph}{Evaluation.}{56}{section*.75}%
-\contentsline {subsection}{\numberline {12.6}The combination $\genfrac {}{}{}\displaystyle 14C^{(22)}_\ell +\genfrac {}{}{}\displaystyle 13\operatorname {Re}C^{(13)}_\ell $}{56}{subsection.12.6}%
-\contentsline {paragraph}{Remarks.}{56}{section*.76}%
-\contentsline {subsection}{\numberline {12.7}Monte-Carlo cross-check of $C^{(22)}_\ell $}{57}{subsection.12.7}%
-\contentsline {section}{\numberline {13}Checks}{57}{section.13}%
-\contentsline {subsection}{\numberline {13.1}The exact formula}{57}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}Einstein equations}{58}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}Gauge invariance at $k=0$: the dilation family}{59}{subsection.13.3}%
-\contentsline {subsection}{\numberline {13.4}Gauge invariance at finite $k$: plane wave versus the non-perturbative solver}{59}{subsection.13.4}%
-\contentsline {paragraph}{Set-up.}{59}{section*.77}%
-\contentsline {paragraph}{Why this is a gauge-invariance test.}{60}{section*.78}%
-\contentsline {paragraph}{Result.}{60}{section*.79}%
-\contentsline {paragraph}{What it tests.}{60}{section*.80}%
-\contentsline {subsection}{\numberline {13.5}First-order controls}{61}{subsection.13.5}%
-\contentsline {subsection}{\numberline {13.6}Harmonic machinery controls}{61}{subsection.13.6}%
-\contentsline {subsection}{\numberline {13.7}What the checks do not cover}{62}{subsection.13.7}%
-\contentsline {section}{\numberline {14}Unresolved steps and limitations}{62}{section.14}%
-\contentsline {section}{\numberline {A}Explicit kernels (machine generated)}{64}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Second-order kernels}{64}{subsection.A.1}%
-\contentsline {paragraph}{$K_Q$ (traceless scalar, $Q_2=\Phi _2-\Psi _2$)}{64}{section*.81}%
-\contentsline {paragraph}{$K_{S_{00}}$ (source of the 00 constraint)}{65}{section*.82}%
-\contentsline {paragraph}{$K_{S_{0z}}$ (longitudinal $0i$ source, $S_0^L$)}{65}{section*.83}%
-\contentsline {paragraph}{$K_{S_\Phi }$ (source of $\mathcal L_\Phi \Phi _2=S_\Phi $)}{65}{section*.84}%
-\contentsline {paragraph}{$K_\omega $ (vector metric, $\omega _{2,i}=\int P_{ij}q_jK_\omega \zeta \zeta $)}{65}{section*.85}%
-\contentsline {paragraph}{$K_{v^T}$ (transverse velocity, $v^T_{2,i}=\int P_{ij}q_jK_{v^T}\zeta \zeta $)}{65}{section*.86}%
-\contentsline {paragraph}{$K_h$ (tensor source, $h_{2,ij}=\Pi _{ij,kl}q_kq_l\int _0^\eta G_hK_h$)}{65}{section*.87}%
-\contentsline {paragraph}{$K^0_{\Phi _2}$ (initial amplitude of $\Phi _2$, Eq.~\eqref {eq:KPhi20})}{65}{section*.88}%
-\contentsline {paragraph}{$K_Q(\eta \rightarrow 0)$}{66}{section*.89}%
-\contentsline {paragraph}{kernel of the local quadratic part $-\genfrac {}{}{}\displaystyle 14\delta _1^2-2\Phi _1^2$ of $\zeta ^{(2)}$, Eq.~\eqref {eq:zeta2} ($\rightarrow -\genfrac {}{}{}\displaystyle 43$ as $\eta \rightarrow 0$)}{66}{section*.90}%
-\contentsline {paragraph}{Algebraic second-order scalars}{66}{section*.91}%
-\contentsline {subsection}{\numberline {A.2}Homogeneous solutions and Green's functions}{66}{subsection.A.2}%
-\contentsline {paragraph}{$u_1$}{66}{section*.92}%
-\contentsline {paragraph}{$u_2$}{66}{section*.93}%
-\contentsline {paragraph}{$U=3u_1$}{66}{section*.94}%
-\contentsline {paragraph}{$G_\Phi (k;\eta ,\eta ')$}{66}{section*.95}%
-\contentsline {paragraph}{$G_h(k;\eta ,\eta ')$}{66}{section*.96}%
-\contentsline {paragraph}{$G_\omega (\eta ,\eta ')$ (for the ODE form of the vector equation)}{66}{section*.97}%
-\contentsline {subsection}{\numberline {A.3}Third-order initial amplitude and intermediate limits}{67}{subsection.A.3}%
-\contentsline {paragraph}{$C_3(k;q,\mu )$, Eq.~\eqref {eq:C3}}{67}{section*.98}%
-\contentsline {paragraph}{$C_3$ in invariant form $(k,q,p)$}{67}{section*.99}%
-\contentsline {paragraph}{$Q_{3c}(\eta \rightarrow 0)$}{67}{section*.100}%
-\contentsline {paragraph}{$\lim _{\eta \rightarrow 0}\eta ^2K_{3c,S_{00}}$}{67}{section*.101}%
-\contentsline {subsection}{\numberline {A.4}Tadpole (mean-field) functions}{67}{subsection.A.4}%
-\contentsline {paragraph}{$\mathrm {tad}_{Q_2}$ [$-\genfrac {}{}{}\displaystyle {16}9+\genfrac {}{}{}\displaystyle {88}{405}q^2\eta ^2+\ldots $]}{67}{section*.102}%
-\contentsline {paragraph}{$\mathrm {tad}_{S_{00}}$ [$\genfrac {}{}{}\displaystyle {32}{3\eta ^2}-\genfrac {}{}{}\displaystyle {272}{45}q^2+\ldots $]}{67}{section*.103}%
-\contentsline {paragraph}{$\mathrm {tad}_{S_\Phi }$ [$-\genfrac {}{}{}\displaystyle {56}{81}q^2+\ldots $]}{67}{section*.104}%
-\contentsline {paragraph}{$\mathrm {tad}_{\Phi _2}$ [$-\genfrac {}{}{}\displaystyle 89-\genfrac {}{}{}\displaystyle {28}{405}q^2\eta ^2+\ldots $]}{68}{section*.105}%
-\contentsline {paragraph}{$\mathrm {tad}_{\delta _2}$ [$\genfrac {}{}{}\displaystyle {16}9-\genfrac {}{}{}\displaystyle {472}{405}q^2\eta ^2+\ldots $]}{68}{section*.106}%
-\contentsline {subsection}{\numberline {A.5}Not reproduced here}{68}{subsection.A.5}%
-\contentsline {section}{\numberline {B}Closed-form second-order time integrals}{68}{appendix.B}%
-\contentsline {paragraph}{Method.}{68}{section*.107}%
-\contentsline {paragraph}{Small $\eta $}{70}{section*.111}%
-\contentsline {paragraph}{Large $\eta $.}{70}{section*.112}%
-\contentsline {paragraph}{Verification.}{70}{section*.113}%
-\contentsline {section}{\numberline {C}Complete line-of-sight term lists of $L_1$, $L_2$ and $L_3$}{71}{appendix.C}%
-\contentsline {subsection}{\numberline {C.1}$L_1$, $\hat {\mathbf n}=\hat {\mathbf z}$}{71}{subsection.C.1}%
-\contentsline {paragraph}{(1) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 1}{71}{section*.114}%
-\contentsline {subsection}{\numberline {C.2}$\genfrac {}{}{}\displaystyle 12L_2$, shear form, $\hat {\mathbf n}=\hat {\mathbf z}$: all terms}{71}{subsection.C.2}%
-\contentsline {paragraph}{(1) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 2}{71}{section*.115}%
-\contentsline {paragraph}{(2) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{1\perp }$; explicit fields of order 1}{71}{section*.116}%
-\contentsline {paragraph}{(3) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 1{+}1}{71}{section*.117}%
-\contentsline {paragraph}{(4) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; time delay $\Delta x^z_1$; explicit fields of order 1}{72}{section*.118}%
-\contentsline {paragraph}{(5) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; lensing $\Delta \mathbf x_{1\perp }$; explicit fields of order 1}{72}{section*.119}%
-\contentsline {paragraph}{(6) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 1}{72}{section*.120}%
-\contentsline {paragraph}{(7) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 1}{72}{section*.121}%
-\contentsline {subsection}{\numberline {C.3}$\genfrac {}{}{}\displaystyle 12L_2$, direct (redshift) form, $\hat {\mathbf n}=\hat {\mathbf z}$}{72}{subsection.C.3}%
-\contentsline {paragraph}{(1) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 2}{72}{section*.122}%
-\contentsline {paragraph}{(2) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; lensing $\Delta \mathbf x_{1\perp }$; explicit fields of order 1}{72}{section*.123}%
-\contentsline {paragraph}{(3) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; time delay $\Delta x^z_1$; explicit fields of order 1}{72}{section*.124}%
-\contentsline {paragraph}{(4) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{1\perp }$; explicit fields of order 1}{73}{section*.125}%
-\contentsline {paragraph}{(5) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 1{+}1}{73}{section*.126}%
-\contentsline {paragraph}{(6) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 1}{73}{section*.127}%
-\contentsline {paragraph}{(7) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 1}{73}{section*.128}%
-\contentsline {paragraph}{(8) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; local; explicit fields of order 1{+}1}{73}{section*.129}%
-\contentsline {paragraph}{(9) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; local; explicit fields of order 2}{73}{section*.130}%
-\contentsline {paragraph}{(10) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 1}{73}{section*.131}%
-\contentsline {paragraph}{(11) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; observer displacement $\delta \mathbf x_{o1}$; explicit fields of order 1}{73}{section*.132}%
-\contentsline {paragraph}{(12) emission, at $(\eta _*,\bar \mathbf x_*)$; local; explicit fields of order 1{+}1}{73}{section*.133}%
-\contentsline {paragraph}{(13) emission, at $(\eta _*,\bar \mathbf x_*)$; local; explicit fields of order 2}{73}{section*.134}%
-\contentsline {paragraph}{(14) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 1}{74}{section*.135}%
-\contentsline {paragraph}{(15) emission, at $(\eta _*,\bar \mathbf x_*)$; lensing $\Delta \mathbf x_{1\perp }$; explicit fields of order 1}{74}{section*.136}%
-\contentsline {paragraph}{(16) emission, at $(\eta _*,\bar \mathbf x_*)$; time delay $\Delta x^z_1$; explicit fields of order 1}{74}{section*.137}%
-\contentsline {paragraph}{(17) emission, at $(\eta _*,\bar \mathbf x_*)$; direction $\mathbf k_{1\perp }$; explicit fields of order 1}{74}{section*.138}%
-\contentsline {subsection}{\numberline {C.4}$\genfrac {}{}{}\displaystyle 16L_3$, shear form, $\hat {\mathbf n}=\hat {\mathbf z}$: all 359 terms}{74}{subsection.C.4}%
-\contentsline {paragraph}{(1) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 3}{74}{section*.139}%
-\contentsline {paragraph}{(2) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 2{+}1}{74}{section*.140}%
-\contentsline {paragraph}{(3) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{1\perp }$; explicit fields of order 2}{77}{section*.141}%
-\contentsline {paragraph}{(4) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{2\perp }$; explicit fields of order 1}{77}{section*.142}%
-\contentsline {paragraph}{(5) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; time delay $\Delta x^z_1$; explicit fields of order 1{+}1}{78}{section*.143}%
-\contentsline {paragraph}{(6) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 1{+}1{+}1}{78}{section*.144}%
-\contentsline {paragraph}{(7) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{1\perp }$ (squared); explicit fields of order 1}{79}{section*.145}%
-\contentsline {paragraph}{(8) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; lensing $\Delta \mathbf x_{1\perp }$ (squared); explicit fields of order 1}{79}{section*.146}%
-\contentsline {paragraph}{(9) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; time delay $\Delta x^z_1$ (squared); explicit fields of order 1}{80}{section*.147}%
-\contentsline {paragraph}{(10) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $k^z_2$; explicit fields of order 1}{80}{section*.148}%
-\contentsline {paragraph}{(11) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; time delay $\Delta x^z_2$; explicit fields of order 1}{80}{section*.149}%
-\contentsline {paragraph}{(12) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; time delay $\Delta x^z_1$; explicit fields of order 2}{80}{section*.150}%
-\contentsline {paragraph}{(13) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; lensing $\Delta \mathbf x_{2\perp }$; explicit fields of order 1}{80}{section*.151}%
-\contentsline {paragraph}{(14) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; lensing $\Delta \mathbf x_{1\perp }$; explicit fields of order 2}{80}{section*.152}%
-\contentsline {paragraph}{(15) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{1\perp }$; explicit fields of order 1{+}1}{81}{section*.153}%
-\contentsline {paragraph}{(16) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{1\perp }$ $\times $ time delay $\Delta x^z_1$; explicit fields of order 1}{81}{section*.154}%
-\contentsline {paragraph}{(17) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{1\perp }$ $\times $ lensing $\Delta \mathbf x_{1\perp }$; explicit fields of order 1}{81}{section*.155}%
-\contentsline {paragraph}{(18) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; lensing $\Delta \mathbf x_{1\perp }$; explicit fields of order 1{+}1}{81}{section*.156}%
-\contentsline {paragraph}{(19) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; lensing $\Delta \mathbf x_{1\perp }$ $\times $ time delay $\Delta x^z_1$; explicit fields of order 1}{82}{section*.157}%
-\contentsline {paragraph}{(20) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$ (squared); explicit fields of order 1}{82}{section*.158}%
-\contentsline {paragraph}{(21) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 2}{82}{section*.159}%
-\contentsline {paragraph}{(22) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o2}$; explicit fields of order 1}{83}{section*.160}%
-\contentsline {paragraph}{(23) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$ $\times $ observer displacement $\delta \mathbf x_{o1}$; explicit fields of order 1}{83}{section*.161}%
-\contentsline {paragraph}{(24) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 1{+}1}{83}{section*.162}%
-\contentsline {paragraph}{(25) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$ (squared); explicit fields of order 1}{83}{section*.163}%
-\contentsline {paragraph}{(26) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 2}{83}{section*.164}%
-\contentsline {paragraph}{(27) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e2}$; explicit fields of order 1}{83}{section*.165}%
-\contentsline {paragraph}{(28) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 1{+}1}{84}{section*.166}%
-\contentsline {paragraph}{(29) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$ $\times $ direction $\mathbf k_{1\perp }$; explicit fields of order 1}{84}{section*.167}%
-\contentsline {paragraph}{(30) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$ $\times $ lensing $\Delta \mathbf x_{1\perp }$; explicit fields of order 1}{84}{section*.168}%
-\contentsline {paragraph}{(31) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$ $\times $ time delay $\Delta x^z_1$; explicit fields of order 1}{84}{section*.169}%
-\contentsline {paragraph}{(32) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$ (squared); explicit fields of order 1}{84}{section*.170}%
-\contentsline {section}{\numberline {D}Machine-generated channel kernels of $K_2$}{84}{appendix.D}%
-\contentsline {paragraph}{[ray] second-order fields (C: $\Phi _2,\Psi _2$ ISW, $\omega _2$, $h_2$).}{85}{section*.171}%
-\contentsline {paragraph}{[ray] lensing, transverse $\Delta \mathbf x_1$ (D).}{85}{section*.172}%
-\contentsline {paragraph}{[ray] time delay, radial $\Delta \mathbf x_1$ (D).}{85}{section*.173}%
-\contentsline {paragraph}{[ray] aberration + deflection, transverse $\mathbf k_1$ (D).}{85}{section*.174}%
-\contentsline {paragraph}{[ray] local $1\times 1$ (C).}{85}{section*.175}%
-\contentsline {paragraph}{[obs] observer clock (D).}{85}{section*.176}%
-\contentsline {paragraph}{[emi] emission-surface shift (D).}{85}{section*.177}%
-\contentsline {paragraph}{[obs] local $1\times 1$ (B, endpoint).}{86}{section*.178}%
-\contentsline {paragraph}{[obs] second-order fields (C: $\Psi _2,\delta _{T2},V_2,v^T_2+\omega _2$).}{86}{section*.179}%
-\contentsline {paragraph}{[obs] observer displacement (D).}{86}{section*.180}%
-\contentsline {paragraph}{[emi] local $1\times 1$ (B, endpoint).}{86}{section*.181}%
-\contentsline {paragraph}{[emi] second-order fields (C: $\Psi _2,\delta _{T2},V_2,v^T_2+\omega _2$).}{86}{section*.182}%
-\contentsline {paragraph}{[emi] lensing at emission (D).}{86}{section*.183}%
-\contentsline {paragraph}{[emi] time delay at emission (D).}{86}{section*.184}%
-\contentsline {paragraph}{[emi] aberration + deflection at emission (D).}{86}{section*.185}%
-\contentsline {section}{\numberline {E}Machine-generated channels of the contracted third-order kernel}{87}{appendix.E}%
-\contentsline {paragraph}{local; fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{87}{section*.187}%
-\contentsline {paragraph}{local; fields of order 2 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{87}{section*.189}%
-\contentsline {paragraph}{transverse direction $\mathbf k_1$ (aberration+deflection); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{87}{section*.190}%
-\contentsline {paragraph}{local; fields of order 1{+}1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{87}{section*.191}%
-\contentsline {paragraph}{time delay (radial $\Delta \mathbf x_1$); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{88}{section*.192}%
-\contentsline {paragraph}{lensing (transverse $\Delta \mathbf x_1$); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{88}{section*.193}%
-\contentsline {paragraph}{observer clock; fields of order 1 [observer, $\eta =\eta _o$, $\chi =0$].}{88}{section*.194}%
-\contentsline {paragraph}{emission-surface shift; fields of order 1 [emission, $\eta =\eta _*$].}{88}{section*.195}%
-\contentsline {paragraph}{local; fields of order 3 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{88}{section*.197}%
-\contentsline {paragraph}{local; fields of order 2{+}1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{88}{section*.198}%
-\contentsline {paragraph}{transverse direction $\mathbf k_1$ (aberration+deflection); fields of order 2 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{88}{section*.199}%
-\contentsline {paragraph}{transverse $\mathbf k_2$; fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{89}{section*.200}%
-\contentsline {paragraph}{time delay (radial $\Delta \mathbf x_1$); fields of order 1{+}1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{89}{section*.201}%
-\contentsline {paragraph}{local; fields of order 1{+}1{+}1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{89}{section*.202}%
-\contentsline {paragraph}{transverse direction $\mathbf k_1$ (aberration+deflection)${}^2$; fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{89}{section*.203}%
-\contentsline {paragraph}{lensing (transverse $\Delta \mathbf x_1$)${}^2$; fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{89}{section*.204}%
-\contentsline {paragraph}{time delay (radial $\Delta \mathbf x_1$)${}^2$; fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{90}{section*.205}%
-\contentsline {paragraph}{radial $\mathbf k_2$; fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{90}{section*.206}%
-\contentsline {paragraph}{time delay 2nd (radial $\Delta \mathbf x_2$); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{90}{section*.207}%
-\contentsline {paragraph}{time delay (radial $\Delta \mathbf x_1$); fields of order 2 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{90}{section*.208}%
-\contentsline {paragraph}{lensing 2nd (transverse $\Delta \mathbf x_2$); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{90}{section*.209}%
-\contentsline {paragraph}{lensing (transverse $\Delta \mathbf x_1$); fields of order 2 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{90}{section*.210}%
-\contentsline {paragraph}{transverse direction $\mathbf k_1$ (aberration+deflection); fields of order 1{+}1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{90}{section*.211}%
-\contentsline {paragraph}{transverse direction $\mathbf k_1$ (aberration+deflection); time delay (radial $\Delta \mathbf x_1$); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{90}{section*.212}%
-\contentsline {paragraph}{transverse direction $\mathbf k_1$ (aberration+deflection); lensing (transverse $\Delta \mathbf x_1$); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{90}{section*.213}%
-\contentsline {paragraph}{lensing (transverse $\Delta \mathbf x_1$); fields of order 1{+}1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{91}{section*.214}%
-\contentsline {paragraph}{lensing (transverse $\Delta \mathbf x_1$); time delay (radial $\Delta \mathbf x_1$); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{91}{section*.215}%
-\contentsline {paragraph}{observer clock${}^2$; fields of order 1 [observer, $\eta =\eta _o$, $\chi =0$].}{91}{section*.216}%
-\contentsline {paragraph}{observer clock; fields of order 2 [observer, $\eta =\eta _o$, $\chi =0$].}{91}{section*.217}%
-\contentsline {paragraph}{observer clock 2nd; fields of order 1 [observer, $\eta =\eta _o$, $\chi =0$].}{91}{section*.218}%
-\contentsline {paragraph}{observer clock; observer displacement; fields of order 1 [observer, $\eta =\eta _o$, $\chi =0$].}{92}{section*.219}%
-\contentsline {paragraph}{observer clock; fields of order 1{+}1 [observer, $\eta =\eta _o$, $\chi =0$].}{92}{section*.220}%
-\contentsline {paragraph}{observer clock${}^2$; fields of order 1 [observer, $\eta =\eta _o$, $\chi =0$].}{92}{section*.221}%
-\contentsline {paragraph}{emission-surface shift; fields of order 2 [emission, $\eta =\eta _*$].}{92}{section*.222}%
-\contentsline {paragraph}{emission-surface shift 2nd; fields of order 1 [emission, $\eta =\eta _*$].}{92}{section*.223}%
-\contentsline {paragraph}{emission-surface shift; fields of order 1{+}1 [emission, $\eta =\eta _*$].}{92}{section*.224}%
-\contentsline {paragraph}{emission-surface shift; transverse direction $\mathbf k_1$ (aberration+deflection); fields of order 1 [emission, $\eta =\eta _*$].}{92}{section*.225}%
-\contentsline {paragraph}{emission-surface shift; lensing (transverse $\Delta \mathbf x_1$); fields of order 1 [emission, $\eta =\eta _*$].}{92}{section*.226}%
-\contentsline {paragraph}{emission-surface shift; time delay (radial $\Delta \mathbf x_1$); fields of order 1 [emission, $\eta =\eta _*$].}{92}{section*.227}%
-\contentsline {paragraph}{emission-surface shift${}^2$; fields of order 1 [emission, $\eta =\eta _*$].}{93}{section*.228}%
-\contentsline {section}{\numberline {F}Reproducibility}{93}{appendix.F}%
-\contentsline {section}{\numberline {G}Verification ledger}{94}{appendix.G}%
+\contentsline {subsection}{\numberline {12.4}Evaluation at two parameter points}{54}{subsection.12.4}%
+\contentsline {paragraph}{Reliability.}{54}{section*.75}%
+\contentsline {paragraph}{Structure.}{55}{section*.76}%
+\contentsline {subsection}{\numberline {12.5}The $(13)$ term}{55}{subsection.12.5}%
+\contentsline {paragraph}{Collapse.}{55}{section*.77}%
+\contentsline {paragraph}{The collinear limit $\mu \rightarrow \pm 1$: statement.}{55}{section*.78}%
+\contentsline {paragraph}{Evaluation.}{56}{section*.79}%
+\contentsline {subsection}{\numberline {12.6}The collinear residues are a residual gauge mode}{57}{subsection.12.6}%
+\contentsline {paragraph}{Step 1: the pole of a long second-order mode.}{57}{section*.80}%
+\contentsline {paragraph}{Step 2: the third-order poles are the same gauge mode.}{57}{section*.81}%
+\contentsline {paragraph}{Step 3: only the poles matter, and they act as a gauge transformation.}{58}{section*.82}%
+\contentsline {paragraph}{Step 4: explicit residues.}{58}{section*.83}%
+\contentsline {paragraph}{Physical reason and status.}{58}{section*.84}%
+\contentsline {subsection}{\numberline {12.7}The combination $\genfrac {}{}{}\displaystyle 14C^{(22)}_\ell +\genfrac {}{}{}\displaystyle 13\operatorname {Re}C^{(13)}_\ell $}{58}{subsection.12.7}%
+\contentsline {paragraph}{Remarks.}{59}{section*.85}%
+\contentsline {subsection}{\numberline {12.8}Monte-Carlo cross-check of $C^{(22)}_\ell $}{59}{subsection.12.8}%
+\contentsline {section}{\numberline {13}Checks}{60}{section.13}%
+\contentsline {subsection}{\numberline {13.1}The exact formula}{60}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Einstein equations}{60}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Gauge invariance at $k=0$: the dilation family}{61}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Gauge invariance at finite $k$: plane wave versus the non-perturbative solver}{62}{subsection.13.4}%
+\contentsline {paragraph}{Set-up.}{62}{section*.86}%
+\contentsline {paragraph}{Why this is a gauge-invariance test.}{62}{section*.87}%
+\contentsline {paragraph}{Result.}{63}{section*.88}%
+\contentsline {paragraph}{What it tests.}{64}{section*.89}%
+\contentsline {subsection}{\numberline {13.5}First-order controls}{64}{subsection.13.5}%
+\contentsline {subsection}{\numberline {13.6}Harmonic machinery controls}{64}{subsection.13.6}%
+\contentsline {subsection}{\numberline {13.7}What the checks do not cover}{65}{subsection.13.7}%
+\contentsline {section}{\numberline {14}Unresolved steps and limitations}{65}{section.14}%
+\contentsline {section}{\numberline {A}Explicit kernels (machine generated)}{67}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Second-order kernels}{67}{subsection.A.1}%
+\contentsline {paragraph}{$K_Q$ (traceless scalar, $Q_2=\Phi _2-\Psi _2$)}{67}{section*.90}%
+\contentsline {paragraph}{$K_{S_{00}}$ (source of the 00 constraint)}{67}{section*.91}%
+\contentsline {paragraph}{$K_{S_{0z}}$ (longitudinal $0i$ source, $S_0^L$)}{67}{section*.92}%
+\contentsline {paragraph}{$K_{S_\Phi }$ (source of $\mathcal L_\Phi \Phi _2=S_\Phi $)}{68}{section*.93}%
+\contentsline {paragraph}{$K_\omega $ (vector metric, $\omega _{2,i}=\int P_{ij}q_jK_\omega \zeta \zeta $)}{68}{section*.94}%
+\contentsline {paragraph}{$K_{v^T}$ (transverse velocity, $v^T_{2,i}=\int P_{ij}q_jK_{v^T}\zeta \zeta $)}{68}{section*.95}%
+\contentsline {paragraph}{$K_h$ (tensor source, $h_{2,ij}=\Pi _{ij,kl}q_kq_l\int _0^\eta G_hK_h$)}{68}{section*.96}%
+\contentsline {paragraph}{$K^0_{\Phi _2}$ (initial amplitude of $\Phi _2$, Eq.~\eqref {eq:KPhi20})}{68}{section*.97}%
+\contentsline {paragraph}{$K_Q(\eta \rightarrow 0)$}{68}{section*.98}%
+\contentsline {paragraph}{kernel of the local quadratic part $-\genfrac {}{}{}\displaystyle 14\delta _1^2-2\Phi _1^2$ of $\zeta ^{(2)}$, Eq.~\eqref {eq:zeta2} ($\rightarrow -\genfrac {}{}{}\displaystyle 43$ as $\eta \rightarrow 0$)}{68}{section*.99}%
+\contentsline {paragraph}{Algebraic second-order scalars}{68}{section*.100}%
+\contentsline {subsection}{\numberline {A.2}Homogeneous solutions and Green's functions}{69}{subsection.A.2}%
+\contentsline {paragraph}{$u_1$}{69}{section*.101}%
+\contentsline {paragraph}{$u_2$}{69}{section*.102}%
+\contentsline {paragraph}{$U=3u_1$}{69}{section*.103}%
+\contentsline {paragraph}{$G_\Phi (k;\eta ,\eta ')$}{69}{section*.104}%
+\contentsline {paragraph}{$G_h(k;\eta ,\eta ')$}{69}{section*.105}%
+\contentsline {paragraph}{$G_\omega (\eta ,\eta ')$ (for the ODE form of the vector equation)}{69}{section*.106}%
+\contentsline {subsection}{\numberline {A.3}Third-order initial amplitude and intermediate limits}{69}{subsection.A.3}%
+\contentsline {paragraph}{$C_3(k;q,\mu )$, Eq.~\eqref {eq:C3}}{69}{section*.107}%
+\contentsline {paragraph}{$C_3$ in invariant form $(k,q,p)$}{69}{section*.108}%
+\contentsline {paragraph}{$Q_{3c}(\eta \rightarrow 0)$}{70}{section*.109}%
+\contentsline {paragraph}{$\lim _{\eta \rightarrow 0}\eta ^2K_{3c,S_{00}}$}{70}{section*.110}%
+\contentsline {subsection}{\numberline {A.4}Tadpole (mean-field) functions}{70}{subsection.A.4}%
+\contentsline {paragraph}{$\mathrm {tad}_{Q_2}$ [$-\genfrac {}{}{}\displaystyle {16}9+\genfrac {}{}{}\displaystyle {88}{405}q^2\eta ^2+\ldots $]}{70}{section*.111}%
+\contentsline {paragraph}{$\mathrm {tad}_{S_{00}}$ [$\genfrac {}{}{}\displaystyle {32}{3\eta ^2}-\genfrac {}{}{}\displaystyle {272}{45}q^2+\ldots $]}{70}{section*.112}%
+\contentsline {paragraph}{$\mathrm {tad}_{S_\Phi }$ [$-\genfrac {}{}{}\displaystyle {56}{81}q^2+\ldots $]}{70}{section*.113}%
+\contentsline {paragraph}{$\mathrm {tad}_{\Phi _2}$ [$-\genfrac {}{}{}\displaystyle 89-\genfrac {}{}{}\displaystyle {28}{405}q^2\eta ^2+\ldots $]}{70}{section*.114}%
+\contentsline {paragraph}{$\mathrm {tad}_{\delta _2}$ [$\genfrac {}{}{}\displaystyle {16}9-\genfrac {}{}{}\displaystyle {472}{405}q^2\eta ^2+\ldots $]}{70}{section*.115}%
+\contentsline {subsection}{\numberline {A.5}Not reproduced here}{71}{subsection.A.5}%
+\contentsline {section}{\numberline {B}Closed-form second-order time integrals}{71}{appendix.B}%
+\contentsline {paragraph}{Method.}{71}{section*.116}%
+\contentsline {paragraph}{Small $\eta $}{72}{section*.120}%
+\contentsline {paragraph}{Large $\eta $.}{73}{section*.121}%
+\contentsline {paragraph}{Evaluators.}{73}{section*.122}%
+\contentsline {paragraph}{Verification.}{73}{section*.123}%
+\contentsline {section}{\numberline {C}Complete line-of-sight term lists of $L_1$, $L_2$ and $L_3$}{74}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}$L_1$, $\hat {\mathbf n}=\hat {\mathbf z}$}{74}{subsection.C.1}%
+\contentsline {paragraph}{(1) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 1}{74}{section*.124}%
+\contentsline {subsection}{\numberline {C.2}$\genfrac {}{}{}\displaystyle 12L_2$, shear form, $\hat {\mathbf n}=\hat {\mathbf z}$: all terms}{74}{subsection.C.2}%
+\contentsline {paragraph}{(1) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 2}{74}{section*.125}%
+\contentsline {paragraph}{(2) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{1\perp }$; explicit fields of order 1}{74}{section*.126}%
+\contentsline {paragraph}{(3) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 1{+}1}{74}{section*.127}%
+\contentsline {paragraph}{(4) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; time delay $\Delta x^z_1$; explicit fields of order 1}{74}{section*.128}%
+\contentsline {paragraph}{(5) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; lensing $\Delta \mathbf x_{1\perp }$; explicit fields of order 1}{75}{section*.129}%
+\contentsline {paragraph}{(6) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 1}{75}{section*.130}%
+\contentsline {paragraph}{(7) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 1}{75}{section*.131}%
+\contentsline {subsection}{\numberline {C.3}$\genfrac {}{}{}\displaystyle 12L_2$, direct (redshift) form, $\hat {\mathbf n}=\hat {\mathbf z}$}{75}{subsection.C.3}%
+\contentsline {paragraph}{(1) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 2}{75}{section*.132}%
+\contentsline {paragraph}{(2) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; lensing $\Delta \mathbf x_{1\perp }$; explicit fields of order 1}{75}{section*.133}%
+\contentsline {paragraph}{(3) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; time delay $\Delta x^z_1$; explicit fields of order 1}{75}{section*.134}%
+\contentsline {paragraph}{(4) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{1\perp }$; explicit fields of order 1}{75}{section*.135}%
+\contentsline {paragraph}{(5) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 1{+}1}{76}{section*.136}%
+\contentsline {paragraph}{(6) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 1}{76}{section*.137}%
+\contentsline {paragraph}{(7) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 1}{76}{section*.138}%
+\contentsline {paragraph}{(8) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; local; explicit fields of order 1{+}1}{76}{section*.139}%
+\contentsline {paragraph}{(9) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; local; explicit fields of order 2}{76}{section*.140}%
+\contentsline {paragraph}{(10) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 1}{76}{section*.141}%
+\contentsline {paragraph}{(11) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; observer displacement $\delta \mathbf x_{o1}$; explicit fields of order 1}{76}{section*.142}%
+\contentsline {paragraph}{(12) emission, at $(\eta _*,\bar \mathbf x_*)$; local; explicit fields of order 1{+}1}{76}{section*.143}%
+\contentsline {paragraph}{(13) emission, at $(\eta _*,\bar \mathbf x_*)$; local; explicit fields of order 2}{76}{section*.144}%
+\contentsline {paragraph}{(14) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 1}{76}{section*.145}%
+\contentsline {paragraph}{(15) emission, at $(\eta _*,\bar \mathbf x_*)$; lensing $\Delta \mathbf x_{1\perp }$; explicit fields of order 1}{77}{section*.146}%
+\contentsline {paragraph}{(16) emission, at $(\eta _*,\bar \mathbf x_*)$; time delay $\Delta x^z_1$; explicit fields of order 1}{77}{section*.147}%
+\contentsline {paragraph}{(17) emission, at $(\eta _*,\bar \mathbf x_*)$; direction $\mathbf k_{1\perp }$; explicit fields of order 1}{77}{section*.148}%
+\contentsline {subsection}{\numberline {C.4}$\genfrac {}{}{}\displaystyle 16L_3$, shear form, $\hat {\mathbf n}=\hat {\mathbf z}$: all 359 terms}{77}{subsection.C.4}%
+\contentsline {paragraph}{(1) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 3}{77}{section*.149}%
+\contentsline {paragraph}{(2) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 2{+}1}{77}{section*.150}%
+\contentsline {paragraph}{(3) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{1\perp }$; explicit fields of order 2}{80}{section*.151}%
+\contentsline {paragraph}{(4) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{2\perp }$; explicit fields of order 1}{80}{section*.152}%
+\contentsline {paragraph}{(5) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; time delay $\Delta x^z_1$; explicit fields of order 1{+}1}{80}{section*.153}%
+\contentsline {paragraph}{(6) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; local; explicit fields of order 1{+}1{+}1}{81}{section*.154}%
+\contentsline {paragraph}{(7) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{1\perp }$ (squared); explicit fields of order 1}{82}{section*.155}%
+\contentsline {paragraph}{(8) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; lensing $\Delta \mathbf x_{1\perp }$ (squared); explicit fields of order 1}{82}{section*.156}%
+\contentsline {paragraph}{(9) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; time delay $\Delta x^z_1$ (squared); explicit fields of order 1}{82}{section*.157}%
+\contentsline {paragraph}{(10) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $k^z_2$; explicit fields of order 1}{83}{section*.158}%
+\contentsline {paragraph}{(11) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; time delay $\Delta x^z_2$; explicit fields of order 1}{83}{section*.159}%
+\contentsline {paragraph}{(12) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; time delay $\Delta x^z_1$; explicit fields of order 2}{83}{section*.160}%
+\contentsline {paragraph}{(13) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; lensing $\Delta \mathbf x_{2\perp }$; explicit fields of order 1}{83}{section*.161}%
+\contentsline {paragraph}{(14) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; lensing $\Delta \mathbf x_{1\perp }$; explicit fields of order 2}{83}{section*.162}%
+\contentsline {paragraph}{(15) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{1\perp }$; explicit fields of order 1{+}1}{83}{section*.163}%
+\contentsline {paragraph}{(16) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{1\perp }$ $\times $ time delay $\Delta x^z_1$; explicit fields of order 1}{84}{section*.164}%
+\contentsline {paragraph}{(17) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; direction $\mathbf k_{1\perp }$ $\times $ lensing $\Delta \mathbf x_{1\perp }$; explicit fields of order 1}{84}{section*.165}%
+\contentsline {paragraph}{(18) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; lensing $\Delta \mathbf x_{1\perp }$; explicit fields of order 1{+}1}{84}{section*.166}%
+\contentsline {paragraph}{(19) ray, $\int _{\eta _*}^{\bar \eta _o}\!\mathrm d\eta $; lensing $\Delta \mathbf x_{1\perp }$ $\times $ time delay $\Delta x^z_1$; explicit fields of order 1}{85}{section*.167}%
+\contentsline {paragraph}{(20) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$ (squared); explicit fields of order 1}{85}{section*.168}%
+\contentsline {paragraph}{(21) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 2}{85}{section*.169}%
+\contentsline {paragraph}{(22) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o2}$; explicit fields of order 1}{85}{section*.170}%
+\contentsline {paragraph}{(23) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$ $\times $ observer displacement $\delta \mathbf x_{o1}$; explicit fields of order 1}{86}{section*.171}%
+\contentsline {paragraph}{(24) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$; explicit fields of order 1{+}1}{86}{section*.172}%
+\contentsline {paragraph}{(25) observer, at $(\bar \eta _o,\bar \mathbf x_o)$; clock $\delta \eta _{o1}$ (squared); explicit fields of order 1}{86}{section*.173}%
+\contentsline {paragraph}{(26) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 2}{86}{section*.174}%
+\contentsline {paragraph}{(27) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e2}$; explicit fields of order 1}{86}{section*.175}%
+\contentsline {paragraph}{(28) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$; explicit fields of order 1{+}1}{86}{section*.176}%
+\contentsline {paragraph}{(29) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$ $\times $ direction $\mathbf k_{1\perp }$; explicit fields of order 1}{87}{section*.177}%
+\contentsline {paragraph}{(30) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$ $\times $ lensing $\Delta \mathbf x_{1\perp }$; explicit fields of order 1}{87}{section*.178}%
+\contentsline {paragraph}{(31) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$ $\times $ time delay $\Delta x^z_1$; explicit fields of order 1}{87}{section*.179}%
+\contentsline {paragraph}{(32) emission, at $(\eta _*,\bar \mathbf x_*)$; emission shift $\delta \eta _{e1}$ (squared); explicit fields of order 1}{87}{section*.180}%
+\contentsline {section}{\numberline {D}Machine-generated channel kernels of $K_2$}{87}{appendix.D}%
+\contentsline {paragraph}{[ray] second-order fields (C: $\Phi _2,\Psi _2$ ISW, $\omega _2$, $h_2$).}{88}{section*.181}%
+\contentsline {paragraph}{[ray] lensing, transverse $\Delta \mathbf x_1$ (D).}{88}{section*.182}%
+\contentsline {paragraph}{[ray] time delay, radial $\Delta \mathbf x_1$ (D).}{88}{section*.183}%
+\contentsline {paragraph}{[ray] aberration + deflection, transverse $\mathbf k_1$ (D).}{88}{section*.184}%
+\contentsline {paragraph}{[ray] local $1\times 1$ (C).}{88}{section*.185}%
+\contentsline {paragraph}{[obs] observer clock (D).}{88}{section*.186}%
+\contentsline {paragraph}{[emi] emission-surface shift (D).}{88}{section*.187}%
+\contentsline {paragraph}{[obs] local $1\times 1$ (B, endpoint).}{88}{section*.188}%
+\contentsline {paragraph}{[obs] second-order fields (C: $\Psi _2,\delta _{T2},V_2,v^T_2+\omega _2$).}{89}{section*.189}%
+\contentsline {paragraph}{[obs] observer displacement (D).}{89}{section*.190}%
+\contentsline {paragraph}{[emi] local $1\times 1$ (B, endpoint).}{89}{section*.191}%
+\contentsline {paragraph}{[emi] second-order fields (C: $\Psi _2,\delta _{T2},V_2,v^T_2+\omega _2$).}{89}{section*.192}%
+\contentsline {paragraph}{[emi] lensing at emission (D).}{89}{section*.193}%
+\contentsline {paragraph}{[emi] time delay at emission (D).}{89}{section*.194}%
+\contentsline {paragraph}{[emi] aberration + deflection at emission (D).}{89}{section*.195}%
+\contentsline {section}{\numberline {E}Machine-generated channels of the contracted third-order kernel}{90}{appendix.E}%
+\contentsline {paragraph}{local; fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{90}{section*.197}%
+\contentsline {paragraph}{local; fields of order 2 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{90}{section*.199}%
+\contentsline {paragraph}{transverse direction $\mathbf k_1$ (aberration+deflection); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{90}{section*.200}%
+\contentsline {paragraph}{local; fields of order 1{+}1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{90}{section*.201}%
+\contentsline {paragraph}{time delay (radial $\Delta \mathbf x_1$); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{91}{section*.202}%
+\contentsline {paragraph}{lensing (transverse $\Delta \mathbf x_1$); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{91}{section*.203}%
+\contentsline {paragraph}{observer clock; fields of order 1 [observer, $\eta =\eta _o$, $\chi =0$].}{91}{section*.204}%
+\contentsline {paragraph}{emission-surface shift; fields of order 1 [emission, $\eta =\eta _*$].}{91}{section*.205}%
+\contentsline {paragraph}{local; fields of order 3 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{91}{section*.207}%
+\contentsline {paragraph}{local; fields of order 2{+}1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{91}{section*.208}%
+\contentsline {paragraph}{transverse direction $\mathbf k_1$ (aberration+deflection); fields of order 2 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{91}{section*.209}%
+\contentsline {paragraph}{transverse $\mathbf k_2$; fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{92}{section*.210}%
+\contentsline {paragraph}{time delay (radial $\Delta \mathbf x_1$); fields of order 1{+}1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{92}{section*.211}%
+\contentsline {paragraph}{local; fields of order 1{+}1{+}1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{92}{section*.212}%
+\contentsline {paragraph}{transverse direction $\mathbf k_1$ (aberration+deflection)${}^2$; fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{92}{section*.213}%
+\contentsline {paragraph}{lensing (transverse $\Delta \mathbf x_1$)${}^2$; fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{92}{section*.214}%
+\contentsline {paragraph}{time delay (radial $\Delta \mathbf x_1$)${}^2$; fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{93}{section*.215}%
+\contentsline {paragraph}{radial $\mathbf k_2$; fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{93}{section*.216}%
+\contentsline {paragraph}{time delay 2nd (radial $\Delta \mathbf x_2$); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{93}{section*.217}%
+\contentsline {paragraph}{time delay (radial $\Delta \mathbf x_1$); fields of order 2 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{93}{section*.218}%
+\contentsline {paragraph}{lensing 2nd (transverse $\Delta \mathbf x_2$); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{93}{section*.219}%
+\contentsline {paragraph}{lensing (transverse $\Delta \mathbf x_1$); fields of order 2 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{93}{section*.220}%
+\contentsline {paragraph}{transverse direction $\mathbf k_1$ (aberration+deflection); fields of order 1{+}1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{93}{section*.221}%
+\contentsline {paragraph}{transverse direction $\mathbf k_1$ (aberration+deflection); time delay (radial $\Delta \mathbf x_1$); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{93}{section*.222}%
+\contentsline {paragraph}{transverse direction $\mathbf k_1$ (aberration+deflection); lensing (transverse $\Delta \mathbf x_1$); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{93}{section*.223}%
+\contentsline {paragraph}{lensing (transverse $\Delta \mathbf x_1$); fields of order 1{+}1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{94}{section*.224}%
+\contentsline {paragraph}{lensing (transverse $\Delta \mathbf x_1$); time delay (radial $\Delta \mathbf x_1$); fields of order 1 [ray, $\int _{\eta _*}^{\eta _o}\mathrm d\eta $].}{94}{section*.225}%
+\contentsline {paragraph}{observer clock${}^2$; fields of order 1 [observer, $\eta =\eta _o$, $\chi =0$].}{94}{section*.226}%
+\contentsline {paragraph}{observer clock; fields of order 2 [observer, $\eta =\eta _o$, $\chi =0$].}{94}{section*.227}%
+\contentsline {paragraph}{observer clock 2nd; fields of order 1 [observer, $\eta =\eta _o$, $\chi =0$].}{94}{section*.228}%
+\contentsline {paragraph}{observer clock; observer displacement; fields of order 1 [observer, $\eta =\eta _o$, $\chi =0$].}{95}{section*.229}%
+\contentsline {paragraph}{observer clock; fields of order 1{+}1 [observer, $\eta =\eta _o$, $\chi =0$].}{95}{section*.230}%
+\contentsline {paragraph}{observer clock${}^2$; fields of order 1 [observer, $\eta =\eta _o$, $\chi =0$].}{95}{section*.231}%
+\contentsline {paragraph}{emission-surface shift; fields of order 2 [emission, $\eta =\eta _*$].}{95}{section*.232}%
+\contentsline {paragraph}{emission-surface shift 2nd; fields of order 1 [emission, $\eta =\eta _*$].}{95}{section*.233}%
+\contentsline {paragraph}{emission-surface shift; fields of order 1{+}1 [emission, $\eta =\eta _*$].}{95}{section*.234}%
+\contentsline {paragraph}{emission-surface shift; transverse direction $\mathbf k_1$ (aberration+deflection); fields of order 1 [emission, $\eta =\eta _*$].}{95}{section*.235}%
+\contentsline {paragraph}{emission-surface shift; lensing (transverse $\Delta \mathbf x_1$); fields of order 1 [emission, $\eta =\eta _*$].}{95}{section*.236}%
+\contentsline {paragraph}{emission-surface shift; time delay (radial $\Delta \mathbf x_1$); fields of order 1 [emission, $\eta =\eta _*$].}{95}{section*.237}%
+\contentsline {paragraph}{emission-surface shift${}^2$; fields of order 1 [emission, $\eta =\eta _*$].}{96}{section*.238}%
+\contentsline {section}{\numberline {F}Reproducibility}{96}{appendix.F}%
+\contentsline {section}{\numberline {G}Verification ledger}{97}{appendix.G}%

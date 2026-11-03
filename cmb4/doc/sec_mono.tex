@@ -71,9 +71,9 @@ of individual channels cancel in the monopole; this cancellation is not needed f
 \subsection{Evaluation at two parameter points}
 \label{sec:mono-num}
 Table~\ref{tab:mono} gives the \emph{evaluation of the exact expressions \eqref{eq:mono-C11}, \eqref{eq:mono-C22} by quadrature} at
-$k_0=1$, $\eta_*=2$ and $\eta_o=8$ ($k_0\chi_*=6$) or $\eta_o=4$ ($k_0\chi_*=2$).  The time integrals (declared integrals
-$\mathcal K_{\Phi_2},\mathcal K_h$ \eqref{eq:declared2}, the functionals \eqref{eq:asm-functionals}) are done on a Chebyshev grid with
-Gauss--Legendre Green's-function integrals, the $K$ integral by $n_K$-point Gauss--Legendre on $[0,2k_0]$, and the multipoles by an
+$k_0=1$, $\eta_*=2$ and $\eta_o=8$ ($k_0\chi_*=6$) or $\eta_o=4$ ($k_0\chi_*=2$).  The time integrals ($\mathcal K_{\Phi_2},\mathcal K_h$
+\eqref{eq:declared2}, which have closed forms but are evaluated numerically for speed, and the functionals \eqref{eq:asm-functionals}) are done on a
+Chebyshev grid with Gauss--Legendre Green's-function integrals, the $K$ integral by $n_K$-point Gauss--Legendre on $[0,2k_0]$, and the multipoles by an
 $n_\theta\times2n_\theta$ Gauss--Legendre sky grid.  These are numbers, not closed forms.
 
 \begin{table}[t]
@@ -247,7 +247,7 @@ the second relation exact once $T''$ is eliminated with the first-order equation
 \tau=-\sqrt3\,s\,\frac{x^3(2x-\sin2x)-8x^2\cos^2x+8x\sin2x+4\cos2x-4}{x^5}=-\tfrac49s^2\eta+O(\eta^3),\qquad x=\frac{s\eta}{\sqrt3}.
 \label{eq:mono-tau}
 \end{equation}
-With the $k\to0$ Green's function $G_\Phi\to\tfrac{\eta'}3(1-\eta'^3/\eta^3)$ \eqref{eq:greens} and one integration by parts, the pole parts of the
+With the $k\to0$ Green's function $G_\Phi\to\tfrac{\eta'}3(1-{\eta'}^3/\eta^3)$ \eqref{eq:greens} and one integration by parts, the pole parts of the
 second-order fields are exactly
 \begin{equation}
 \big(\Phi_2,\ \Psi_2,\ \delta_2,\ \delta_{T2}\big)\Big|_{P^{-2}}=\Big(-\frac\tau\eta,\ \tau'+\frac\tau\eta,\ -\frac{4\tau}\eta,\ -\frac\tau\eta\Big)\frac1{P^2},\qquad

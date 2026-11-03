@@ -86,6 +86,12 @@ The next orders ($\eta^{-3}$ for $\Phi_2$, $\eta^{-2}$ for $\mathcal K_h$) are a
 scales as the first dropped power). The expansion is non-uniform as $q\to0$ or $p\to0$ and near the collinear edges / $q+p=\sqrt3k$.
 
 
+\paragraph{Evaluators.}  All second-order fields ($\Phi_2,\Phi_2',\Psi_2,\delta_2,\delta_{T,2},V_2,\omega_2,v^T_2,h_2$) are provided as fast
+double-precision evaluators (\code{C4\_timeintegrals/second\_order\_closed.py}): small-$\eta$ series for $(k+q+p)\eta/\sqrt3\le4$, the closed form where it is
+well conditioned, and Gauss--Legendre quadrature of the Green's-function integral otherwise (the double-precision closed form loses digits through the
+removable $1/w_j$ collinear poles and the $1/(p^3q^3)$ prefactors).  Against the 50-digit closed form at 56 points, including near-collinear and resonant
+ones, the worst relative error is $3.6\times10^{-13}$ (CF-5).
+
 \paragraph{Verification.}  Quadrature (50--60 digits) versus the closed forms: $P$ at 11 points including collinear and $\sqrt3$ points,
 $\le3.5\times10^{-40}$; $\mathcal K_h$: 25 digits.  All closed-form fields inserted into the full second-order Einstein tensor (10 components) and
 the 4 conservation equations for a plane-wave pair: residual/maximal term $\le5.5\times10^{-50}$ at three points ($k\eta=2.5,\,9.6,\,20.1$).  Small-$\eta$
