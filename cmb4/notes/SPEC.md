@@ -71,7 +71,7 @@ Expected linear solution (to be DERIVED, not assumed): with x = k eta / sqrt3,
 Fourier: f(x) = int d^3k/(2pi)^3 e^{ik.x} f_k ; <zeta_k zeta_k'> = (2pi)^3 delta^3(k+k') P(k).
 
 ## 6. Observer and emission
-Observer worldline: tagged fluid element, x_o(eta) = x_o^label + int_{eta_init}^eta v^i(eta', x_o(eta')) d eta'.
+Observer worldline: tagged fluid element, x_o(eta) = x_o^label + int_0^eta v^i(eta', x_o(eta')) d eta'  (label = position as eta->0; A1 2026-11-03).
 Clock: proper time from the crossing of the initial-data surface T_phys = T_i (Poisson-time eta_init(x_o),
 1+delta_T(eta_init,x_o) = eta_init/eta_i): Delta tau = int_{eta_init}^{eta_o} a(eta)/uhat^0 d eta  fixed
 => eta_o = eta_o^bar + delta eta_o[zeta] (direction independent).

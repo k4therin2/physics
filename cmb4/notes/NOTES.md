@@ -85,3 +85,8 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   ISW I_l closed form for every l (Ci/Si with a± = 1 ± 1/sqrt3; coefficients as residues; verified 1e-169 / 5e-18). RD SW amplitude
   -zeta/3. Monochromatic C11 = 4 pi sigma^2 Delta_l(k0)^2. Sky monopole M = Delta_0; <<m1>^2> = C_0/4pi; <<m1> a_lm>=0 for l>=1.
   Scale-invariant plateau l(l+1)C_l/(2pi A_s): SW alone 1/9; with ISW 0.377 (l=2) -> 0.914 (l->inf).
+- [11-03] *** A1 DONE: FULL ANALYTIC CHAIN MATCHES EXACT SOLVER N1 AT ORDERS 1,2,3 in 4 configs (eta_o=8,4; x_o=0,pi/2) within N1
+  noise (a_20[Th3] diff 7e-8; residual Theta_N1 - series scales as eps^4). Tadpole independence confirmed (2e-14). Bugs found:
+  (1) C2 DOC sign: k1(eta) = k1_init - int_eta^{eta_o} G1 (minus, not plus); L-term lists correct. A2/A3 informed. (2) crashed-run bug
+  in A1's own code fixed. (3) SPEC §6 wording: observer label = position as eta->0: x_o(eta) = x_label + int_0^eta v. N1's eta_o shift
+  is in N1's gauge, not Poisson. Report: report_A1.md; code A1_planewave (pw_symbolic, pw_numeric, pw_map).
