@@ -85,3 +85,15 @@ E_sympy.pkl, i.e. independent of the SVT decomposition used to derive the kernel
 eta-derivatives of the closed forms by mpmath.diff at 50 digits.  Three points (k eta = 2.5, 9.6, 20.1; q/k from 0.19 to 1.6):
   max |residual| / max|individual term| = 5.5e-50 over all 14 equations x 3 points.
 (This simultaneously checks the closed-form Phi2, its eta-derivatives, all constraint-derived fields, the vector fields and h2.)
+
+## Milestone 6 — COMPACT STRUCTURE + LaTeX  [COMPLETE]
+`structure5.py` (-> `phi2_compact.pkl`, log `structure5.log`), `structure4.py` (h2 part -> `h2_compact.pkl`; its Phi2 stage was too
+slow and was superseded by structure5), `make_tex.py` -> `C4_closed_forms.tex/.pdf` (16 pp; structure in main text, full forms in
+the appendix, all formulas generated from the pickles).
+KEY STRUCTURAL RESULT: P = u2(x_k) A(eta) - u1(x_k) B(eta) and the whole special-function content of Phi2 is governed by ONE coefficient
+   D(k,q,p) = (k^2+p^2+q^2) R / (8 k^2 p^3 q^3)   (R as in the asymptotics):
+   A = D [Si(w1 eta) - Si(w2 eta) - Si(w3 eta) - Si(w4 eta)] + sum_j [C^A_j cos(w_j eta) + S^A_j sin(w_j eta)],
+   B = -D [Cin(w1 eta) - Cin(w2 eta) - Cin(w3 eta) + Cin(w4 eta)] + sum_j [C^B_j cos + S^B_j sin] + c^B_0,
+   w1..4 = (k+q+p), (k+q-p), (k-q+p), (q+p-k) over sqrt3 (all >= 0 in the triangle), C_j, S_j Laurent polynomials eta^-6..eta^0
+   (eta^0 terms carry the removable 1/w_j collinear poles).  No ln(eta) survives.  Rebuild from the compact form = stored P (30 digits).
+   (Consistency: the eta->infinity coefficient C_L = -(3/k^2) D ... matches Milestone 4.)
