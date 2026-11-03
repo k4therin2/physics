@@ -99,6 +99,14 @@ Fields regenerated with gauge_c = 1 (`pw_fields_g1.pkl`): Phi2_0, Psi2_0, delta2
 at O(1) (e.g. Psi2_0(8): -1.21 -> +4.79; Phi3_1(8): -3.72 -> -1.20), deta_o2 changes 4.411 -> -11.589, but every a_l0 of
 Th1, Th2, Th3, the sky monopoles and T_o are unchanged to <= 2e-14 (`compare_to8_xo0_g1.log`).
 
+## Observer label convention (DONE, `label_test.py`, x_o = pi/2, etao = 8)
+Label = Poisson position at eta -> 0 (default, dxo1 = 4.0130026275): all a_l0 agree with N1 (above).
+SPEC §6 literal (label = position at eta_init, worldline integral from eta_init): dxo1 = 4.0130192941 (shift 1.7e-5 = int_0^{t_i} v);
+Th1 unchanged, but Th2 a_20 moves by 7.3e-5 and Th3 a_10 by 7.3e-4, i.e. beyond N1's Th2 uncertainty (9e-6).
+So N1's "fluid element with label x_o" is the eta->0 (comoving) label; with SPEC's literal wording the observer is a
+different fluid element, offset by O(t_i^2). Irrelevant as t_i -> 0 and for statistically homogeneous C_l (a translation),
+but it must be matched when comparing with N1 at finite t_i. Suggest SPEC §6 wording: x_o(eta) = x_o^label + int_0^eta v.
+
 ## Bugs found (evidence)
 1. **A1 crashed-run code (fixed):** `pw_eval._build_dT` built the k=0 mode of delta with weight 2 (z^0 + z^-0 = 2), so
    dT2_0 = delta2_0/2 - ... instead of delta2_0/4 - .... Detected by C2's own conservation rules evaluated with A1's jets
