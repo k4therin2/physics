@@ -34,10 +34,10 @@ observer dipole is fixed by the comparison with the planar solver N1, $a_{10}[\T
 The sky monopole entering \eqref{eq:theta_orders} is the $\ell=0$ projection,
 \begin{equation}
 \sky{m_1}=\int\!\frac{\dd^3k}{(2\pi)^3}\,\zeta_\vk\,\Delta_0(k),\qquad
-\big\langle\sky{m_1}^2\big\rangle=\frac1{2\pi^2}\int k^2\dd k\,P(k)\,\Delta_0(k)^2=\frac{C^{(11)}_0}{4\pi},\qquad
-\Delta_0=O(k^4)\ (k\to0).
+\big\langle\sky{m_1}^2\big\rangle=\frac1{2\pi^2}\int k^2\dd k\,P(k)\,\Delta_0(k)^2=\frac{C^{(11)}_0}{4\pi},
 \label{eq:asm-monopole}
 \end{equation}
+with $\Delta_0=O(k^4)$ as $k\to0$ (Sec.~\ref{sec:linear}).
 
 \paragraph{Observer clock.}  The observer measures at fixed proper time $\Delta\tau=\int_{\eta_{\rm init}}^{\eta_o}a\,\dd\eta/\hat u^0$
 from the initial-data surface (Sec.~\ref{sec:observer}, \eqref{eq:clock}).  At first order $1/\hat u^0=1+\Psi_1$ on the worldline,
@@ -90,11 +90,11 @@ $\zeta_{\vk_a}T_X(k_a,\eta)E_a$, with $\partial_j\to ik_{a,j}$, $\nhat\cdot\vv_1
 $\mu\equiv\khat_1\cdot\khat_2$, $\vK\equiv\vk_1+\vk_2$, $K_n\equiv\nhat\cdot\vK=k_1\mu_1+k_2\mu_2$,
 $P_\perp\equiv\vk_{1\perp}\cdot\vk_{2\perp}=k_1k_2(\mu-\mu_1\mu_2)$ ($\vk_\perp=\vk-\nhat(\nhat\cdot\vk)$), $E_K\equiv E_1E_2=e^{iK_n\chi}$.
 Two first-order combinations recur: the direct-form line-of-sight integrand and boundary function,
-\begin{equation}
-J_a\equiv2ik_a\mu_a\TP(k_a,\eta)E_a\ \ (=2\partial_n\Psi_1=-\Gamma^0_{kk}|_1),\qquad
-U_a\equiv\big[\TP+ik_a\mu_aT_V-T_{\delta_T}\big](k_a,\eta)\,E_a\ \ (=\Psi_1+\nhat\cdot\vv_1-\delta_{T1}),
+\begin{align}
+J_a&\equiv2ik_a\mu_a\TP(k_a,\eta)E_a\ \ (=2\partial_n\Psi_1=-\Gamma^0_{kk}|_1),\nonumber\\
+U_a&\equiv\big[\TP+ik_a\mu_aT_V-T_{\delta_T}\big](k_a,\eta)\,E_a\ \ (=\Psi_1+\nhat\cdot\vv_1-\delta_{T1}),
 \label{eq:asm-JU}
-\end{equation}
+\end{align}
 so that $L_1=\int_{\eta_*}^{\eta_o}J\,\dd\eta+[U]^{o}_{e}$, equal to \eqref{eq:L1} after one integration by parts.  The perturbed photon
 direction and position along the ray, $\vk_1(\eta)=\vk_{1}^{\rm init}-\int_\eta^{\eta_o}\mathbf G_1\dd\eta'$ and
 $\Delta\vx_1(\eta)=\delta\vx_{o1}+\nhat\,\delta\eta_{o1}-\int_\eta^{\eta_o}\vk_1\dd\eta'$ (Sec.~\ref{sec:map2}; note the sign of the
@@ -113,11 +113,11 @@ displacement = Shapiro delay + clock + observer displacement), while $\nhat\cdot
 A second-order field contributes its pair kernel times $E_K$ (Sec.~\ref{sec:einstein}, \eqref{eq:kernel_def} with $\vq\to\vk_1$,
 $\vp\to\vk_2$, $\vk\to\vK$):
 \begin{align}
-&\Phi_2\equiv\mathcal K_{\Phi_2}(K,k_1,k_2;\eta),\quad \Psi_2\equiv\mathcal K_{\Phi_2}-K_Q,\quad
-\delta_{T2}\equiv\tfrac14K_{\delta_2}-\tfrac3{16}T_\delta(k_1)T_\delta(k_2),\quad V_2\ (\vv^L_2=\nabla V_2)\ \text{from \eqref{eq:operators}},\nonumber\\
+&\Phi_2\equiv\mathcal K_{\Phi_2}(K,k_1,k_2;\eta),\quad \Psi_2\equiv\mathcal K_{\Phi_2}-K_Q,\nonumber\\
+&\delta_{T2}\equiv\tfrac14K_{\delta_2}-\tfrac3{16}T_\delta(k_1)T_\delta(k_2),\quad V_2\ (\vv^L_2=\nabla V_2)\ \text{from \eqref{eq:operators}},\nonumber\\
+&\nhat\!\cdot\!P(\Khat)\vk_a=k_a\mu_a-\frac{K_n\,\vK\cdot\vk_a}{K^2},\nonumber\\
 &\nhat\cdot\vv^T_2=\tfrac12\big[\nhat\!\cdot\!P(\Khat)\vk_1\,K^{(12)}_{v^T}+\nhat\!\cdot\!P(\Khat)\vk_2\,K^{(21)}_{v^T}\big],\quad
-\nhat\cdot\boldsymbol\omega_2=\tfrac12\big[\nhat\!\cdot\!P\vk_1\,K^{(12)}_{\omega}+\nhat\!\cdot\!P\vk_2\,K^{(21)}_{\omega}\big],\quad
-\nhat\!\cdot\!P(\Khat)\vk_a=k_a\mu_a-\frac{K_n\,\vK\cdot\vk_a}{K^2},\nonumber\\
+\nhat\cdot\boldsymbol\omega_2=\tfrac12\big[\nhat\!\cdot\!P\vk_1\,K^{(12)}_{\omega}+\nhat\!\cdot\!P\vk_2\,K^{(21)}_{\omega}\big],\nonumber\\
 &h_{2,nn}=\Big[(\nhat\!\cdot\!P\vk_1)^2-\tfrac12\Big(1-\frac{K_n^2}{K^2}\Big)\Big(k_1^2-\frac{(\vK\cdot\vk_1)^2}{K^2}\Big)\Big]\mathcal H,\qquad
 \mathcal H\equiv\mathcal K_h(K,k_1,k_2;\eta),
 \label{eq:asm-second}
@@ -202,11 +202,11 @@ Let $\mathcal D\equiv\vk_2\cdot\partial_{\vk_2}$ (at fixed $\khat_2$, $\nhat$) a
 $\mathcal S_{\vp}\equiv(\vk_2\cdot\partial_{\vk_2})(\vp\cdot\partial_{\vk_2})-\tfrac12(\vp\cdot\vk_2)\nabla^2_{\vk_2}$.
 \begin{theorem}[squeezed limit of the second-order map]\label{thm:asm-squeezed}
 For $\eta_i\to0$ and every $\nhat$ (all multipoles, observer terms and normalisation included),
-\begin{equation}
-K_2(\vk_1,\vk_2;\nhat)=-\mathcal D K_1(\vk_2;\nhat)-\mathcal S_{\vk_1}K_1(\vk_2;\nhat)+O(k_1^2),
-\qquad\text{in particular}\quad \lim_{\vk_1\to0}K_2(\vk_1,\vk_2;\nhat)=-\vk_2\cdot\partial_{\vk_2}K_1(\vk_2;\nhat).
+\begin{align}
+K_2(\vk_1,\vk_2;\nhat)&=-\mathcal D K_1(\vk_2;\nhat)-\mathcal S_{\vk_1}K_1(\vk_2;\nhat)+O(k_1^2),\nonumber\\
+\lim_{\vk_1\to0}K_2(\vk_1,\vk_2;\nhat)&=-\vk_2\cdot\partial_{\vk_2}K_1(\vk_2;\nhat).
 \label{eq:asm-squeezed}
-\end{equation}
+\end{align}
 (For finite $\eta_i$ add $+\tfrac{\eta_i^2}6(\vk_1\cdot\vk_2)K_1(\vk_2;\nhat)$, a translation of the observer label.)  Since in RD
 $K_1$ depends on $k$ only through $k\eta_o$, $k\eta_*$ and $\mu$, $\mathcal DK_1=(\eta_o\partial_{\eta_o}+\eta_*\partial_{\eta_*})K_1$.
 \end{theorem}
@@ -257,18 +257,22 @@ treated there is a different limit.
 \label{sec:asm-cl22}
 With $K_2$ symmetric, the two connected pairings give (\eqref{eq:loops}, (C1) of \eqref{eq:C1C2}, frame $\Khat=\hat{\mathbf z}$,
 $\vk_{1,2}$ in the $x$--$z$ plane)
-\begin{equation}
-C^{(22)}_\ell=\frac{2}{2\ell+1}\sum_m\!\int\!\frac{\dd^3k_1\dd^3k_2}{(2\pi)^6}P(k_1)P(k_2)\big|K_{2,\ell m}\big|^2
-=\frac1{4\pi^4(2\ell+1)}\int\!k_1^2\dd k_1\,k_2^2\dd k_2\,P(k_1)P(k_2)\int_{-1}^1\!\dd\mu\sum_m\big|\tilde K_{\ell m}(k_1,k_2,\mu)\big|^2 ,
+\begin{align}
+C^{(22)}_\ell&=\frac{2}{2\ell+1}\sum_m\!\int\!\frac{\dd^3k_1\dd^3k_2}{(2\pi)^6}P(k_1)P(k_2)\big|K_{2,\ell m}\big|^2\nonumber\\
+&=\frac1{4\pi^4(2\ell+1)}\int\!k_1^2\dd k_1\,k_2^2\dd k_2\,P(k_1)P(k_2)\int_{-1}^1\!\dd\mu\sum_m\big|\tilde K_{\ell m}(k_1,k_2,\mu)\big|^2 ,
 \label{eq:asm-C22}
-\end{equation}
+\end{align}
 and it enters $C_\ell$ as $\tfrac14C^{(22)}_\ell$ \eqref{eq:cl_target}.  With $\tilde K_{\ell m}=\sum_c\tilde K^c_{\ell m}$,
 $C^{(22)}_\ell=\sum_{c,c'}G_{cc'}(\ell)$, $G_{cc'}$ being \eqref{eq:asm-C22} with $|\tilde K|^2\to\tilde K^c_{\ell m}\tilde K^{c'*}_{\ell m}$ (cross
 terms included).  The radial functions of each type are:
 \begin{itemize}
-\item[B$\times$B:] $\Delta_\ell(k)$ only.  $C^{\rm BB}_\ell=C^{m_1^2}_\ell-4\langle\sky{m_1}^2\rangle C^{(11)}_\ell$ with
-$C^{m_1^2}_\ell=2\sum_{\ell_1\ell_2}\frac{(2\ell_1+1)(2\ell_2+1)}{4\pi}\threej{\ell}{\ell_1}{\ell_2}{0}{0}{0}^2C^{(11)}_{\ell_1}C^{(11)}_{\ell_2}$ (\eqref{eq:B1},
-$\ell_{1,2}\ge0$ including the observer monopole and dipole), and $-4=-8$ (cross with $m_1^2$, \eqref{eq:monopole_terms}(ii)) $+4$ (i).
+\item[B$\times$B:] $\Delta_\ell(k)$ only:
+\begin{equation}
+C^{\rm BB}_\ell=C^{m_1^2}_\ell-4\langle\sky{m_1}^2\rangle C^{(11)}_\ell,\qquad
+C^{m_1^2}_\ell=2\sum_{\ell_1\ell_2}\frac{(2\ell_1+1)(2\ell_2+1)}{4\pi}\threej{\ell}{\ell_1}{\ell_2}{0}{0}{0}^2C^{(11)}_{\ell_1}C^{(11)}_{\ell_2}
+\label{eq:asm-CBB}
+\end{equation}
+(\eqref{eq:B1}, $\ell_{1,2}\ge0$ including the observer monopole and dipole), and $-4=-8$ (cross with $m_1^2$, \eqref{eq:monopole_terms}(ii)) $+4$ (i).
 The endpoint $1\times1$ channels are products of shell maps with radial functions $T_X(k,\eta_e)\,j^{(s)}_\ell(k\chi_e)$, $s\le1$
 (gradient weight $w_\nabla$ for $P_\perp$), $\eta_e\in\{\eta_*,\eta_o\}$.
 \item[C:] $\tilde K^C_{\ell m}=\int\dd\eta\,K^c(k_1,k_2,K;\eta)\sum_{|L-\ell|\le d}i^L\sqrt{4\pi(2L+1)}\,j_L(K\chi)\,\langle\ell m|\mathcal Q|L0\rangle$ \eqref{eq:K2lm},
@@ -278,8 +282,8 @@ helicity pieces equivalently by (A-$\lambda$) \eqref{eq:ruleAlambda}).
 \item[D:] the functionals \eqref{eq:asm-functionals} are expanded in Legendre series of $\mu_a$,
 $\mathcal F_a=\sum_\ell(2\ell+1)i^\ell\mathcal F_\ell(k_a;\eta)P_\ell(\mu_a)$ etc., with radial functions
 \begin{align}
-\mathcal F_\ell(k;\eta)&=T_V(k,\eta_o)\delta_{\ell0}+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k,\eta')j_\ell(k\chi'),\qquad
-\mathcal D_{\perp\ell}(k;\eta)=X_o(k)\delta_{\ell0}-\int_\eta^{\eta_o}\!\dd\eta'\,\mathcal F_\ell(k;\eta'),\nonumber\\
+\mathcal F_\ell(k;\eta)&=T_V(k,\eta_o)\delta_{\ell0}+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k,\eta')j_\ell(k\chi'),\nonumber\\
+\mathcal D_{\perp\ell}(k;\eta)&=X_o(k)\delta_{\ell0}-\int_\eta^{\eta_o}\!\dd\eta'\,\mathcal F_\ell(k;\eta'),\nonumber\\
 \mathcal D_{r\ell}(k;\eta)&=\delta\eta_o(k)\delta_{\ell0}+\tfrac13kX_o(k)\delta_{\ell1}+2\int_\eta^{\eta_o}\!\dd\eta'\,\TP(k,\eta')j_\ell(k\chi'),
 \label{eq:asm-Dl}
 \end{align}

@@ -1,0 +1,19 @@
+shifted=False  M2tad=(-7.4692808459437074+0j)  kappa_mu(nu) = [-212.934082-336.503328j  -61.441134-214.399685j  -71.582357  -4.605326j
+ -139.534875 +26.370292j -139.534875 -26.370292j  -71.582357  +4.605326j
+  -61.441134+214.399685j -212.934082+336.503328j]
+shifted=True  M2tad=(-7.4692808459437074+0j)  kappa_mu(nu) = [-212.934082-336.503328j  -61.441134-214.399685j  -71.582357  -4.605326j
+ -139.534875 +26.370292j -139.534875 -26.370292j  -71.582357  +4.605326j
+  -61.441134+214.399685j -212.934082+336.503328j]
+max |kappa(shifted) - kappa| = 2.6812987050722663e-13   scale 398.21528456362967
+largest channel changes (cancel in the sum):
+   L3: [ray] time delay 2nd (radial Dx2) | fields:1                       171.7
+   L3: [ray] radial k2 | fields:1                                         152.8
+   L3: [ray] local | fields:2+1                                           152.8
+   L3: [obs] observer clock 2nd | fields:1                                147.7
+   L3: [ray] local | fields:3                                             89
+   L3: [emi] emission-surface shift 2nd | fields:1                        0.5942
+   L3: [ray] transverse k2 | fields:1                                     3.178e-14
+   L3: [ray] lensing 2nd (transverse Dx2) | fields:1                      1.421e-14
+C1 K3c with shifted tadpoles: dPhi3c - expected: max 4.619e-14 (scale 8.057e+00)
+C1 K3c with shifted tadpoles: dPsi3c - expected: max 5.151e-14 (scale 1.209e+01)
+C1 K3c with shifted tadpoles: dV3c - expected: max 5.826e-13 (scale 9.018e+01)

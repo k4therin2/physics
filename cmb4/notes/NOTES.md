@@ -98,3 +98,7 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   (3/k^2)(2 sin x_o/x_o - cos x_o - 1). mu->-1 (K->0): Phi2,Psi2,V2 ~ K^-2, omega2+v2T ~ K; K_{2,lm} finite for l>=2 (dipole log).
   Monochromatic numbers (k0=1, eta_*=2, eta_o=8; sigma units): l=2: C11=0.95460, 1/4 C22=14.2575; l=4: 0.17507, 1.86592; l=10:
   9.68e-6, 4.0085e-2. A3 informed of the corrected IR criterion.
+- [11-03] V2 DONE (independent route; report_V2.md): K_2(k1->0,k2;n) = -D K_1 - S_{k1} K_1 + O(k1^2), D = k.d_k, S_p = (k.d_k)(p.d_k)
+  - (1/2)(p.k) nabla_k^2; agrees with A2's numerics. Third order: K_3(q,-q,k) = D^2 K_1 + O(q^2); K_{m+1}(0..0,k) = (-D)^m K_1.
+  IR: [C22/4 + Re C13/3]_IR = sigma_L^2 (1/2) int |K_lm|^2 (3+D)^2 P -> total derivative, vanishes for P ∝ k^-3. "Gaussian zeta breaks
+  Maldacena's consistency relation unless n_s = 1" (comment to include). A3 informed.
