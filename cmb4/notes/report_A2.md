@@ -42,3 +42,50 @@ a_40 = +1.3785439772 (N1 +1.3785439781).  Shear and direct forms of L2 agree wit
   Individual channels are O(10) at s -> 0 (e.g. [ray] 2nd:V2 alone: 11.0; [emi] time delay: 13.9) and cancel to the dilation.
 * (ii) gradient O(k1): V2's report does not exist; the O(k1) residual is recorded (linear in s, coefficient 31.8 (l>=2 rms)
   at |k2| = 1.07), no independent prediction compared — NOT DONE.
+
+## Milestone 3 — explicit kernels (deliverables 1, 2)
+### K_1, Delta_l, <m1>  (direct form of L1 = standard SW + Doppler + ISW incl. observer terms)
+  K_1(k;n) = [T_dT + T_Phi - i k mu T_V]_{eta_*} e^{i k mu chi_*} - [T_dT + T_Phi - i k mu T_V]_{eta_o} + int_{eta_*}^{eta_o} 2 T_Phi'(k,eta) e^{i k mu chi} d eta,
+  mu = n.khat, chi = eta_o - eta.  Rayleigh e^{i k.n chi} = 4pi sum i^l j_l(k chi) Y_lm(n) Y*_lm(khat), (i n.khat) -> +d/dx:
+  K_1 = 4 pi sum_lm i^l Delta_l(k) Y_lm(n) Y*_lm(khat),
+  Delta_l(k) = (T_dT + T_Phi)(k,eta_*) j_l(k chi_*) - k T_V(k,eta_*) j_l'(k chi_*) + int 2 T_Phi' j_l(k chi) d eta
+               - delta_l0 (T_dT + T_Phi)(k,eta_o) + delta_l1 k T_V(k,eta_o)/3 .
+  (verified: K_1 rebuilt from Delta_l, l<=40, equals the engine's L1 to 7e-15; observer dipole sign confirmed by N1 x_o=pi/2.)
+  Sky monopole <m1> = int d^3k/(2pi)^3 zeta_k Delta_0(k);  <<m1>^2> = (1/2pi^2) int k^2 dk P Delta_0^2 (mono: sigma^2 Delta_0(k0)^2).
+  Observer objects (x_o = 0, closed forms, x_o := k eta_o/sqrt3):
+   clock      deta_o1(k) = -(1/eta_o) int_0^{eta_o} eta T_Phi d eta = (6/(k^2 eta_o)) (1 - sin x_o/x_o)    (-> eta_o/3: dilation c eta_o/3 OK)
+              [from Delta tau = int a/uhat^0 = int eta (1 + Psi1) d eta fixed; the initial-surface term ~ eta_i^2 -> 0].  NOTE: this is the
+              integral of Psi1 (lapse), not of delta_T1 as the brief says; the two differ for k eta_o ~ 1.
+   displacement dx_o1 = i k X_o zeta_k,  X_o(k) = int_0^{eta_o} T_V d eta = (3/k^2)(2 sin x_o/x_o - cos x_o - 1)   (-> eta_o^2/6)
+   emission   deta_e1 = eta_* T_dT(k,eta_*) e^{i k mu chi_*}.
+### Normalisation chain
+  Lambda = eps L1 + eps^2 L2/2, C2's list L[2] IS L2/2;  m2 = L2 + L1^2;  Theta2 = m2 - 2<m1> m1 (l >= 1);  hence
+  **K_2(k1,k2;n) = 2 Sym[K_{L2/2}] + K_1(k1)K_1(k2) - Delta_0(k1) K_1(k2) - Delta_0(k2) K_1(k1)**,  Sym = (1/2)(k1 <-> k2).
+### Channel kernels in named objects (`symbolic.py` -> `symbolic_kernels.pkl`, `symbolic_kernels.tex`)
+Each channel is an explicit sympy expression in (k1,k2,mu,mu1=n.khat1,mu2,K,Kn=n.K, Pperp = k1k2(mu - mu1 mu2)), phases
+E_a = e^{i k_a mu_a chi}, EK = E1E2, first-order transfer functions (TPhi, TdT, TV and eta-derivatives, slot a), ray functionals
+Kf_a (aberration+deflection), Dp_a (transverse displacement), Dz_a (radial displacement = time delay + clock + displacement),
+observer/emission objects (Xo, detao1, detae1) and C1's pair kernels (Phi2, Psi2, dT2, V2, K_vT, K_om, H = int G_h K_h).
+Examples (ray terms are int_{eta_*}^{eta_o} d eta):
+  ray time delay        -2 [Dz_1 TPhi_2 k2^2 mu2^2 E2 + (1<->2)]
+  ray lensing           -2i Pperp [Dp_1 TPhi_2 k2 mu2 E2 + (1<->2)]      (= 2 grad_perp Dx1 . grad_perp (2Psi)-type, cf. C3 type D)
+  ray aberr.+deflection  2 Pperp [Kf_2 TPhi_1 E1 + (1<->2)]
+  ray local 1x1          4 (TPhi_1 TPhi_2' + TPhi_2 TPhi_1') E1E2
+  ray 2nd-order          EK [ Phi2' - Psi2' + 2i Kn Psi2 - (1/2) h_nn'/H' * Hp + i Kn n.om2 ]   (h_nn, n.om2 via projectors above)
+  endpoint 2nd-order     +-EK [ Psi2 - dT2 + i Kn V2 + n.(v2T + om2) ]  (obs: +, emi: -)
+  endpoint 1x1, observer clock/displacement, emission shift, emission lensing/time delay/aberration: see .tex.
+CHECK: every symbolic channel evaluated numerically equals the engine channel to <= 1.8e-15 (`check_symbolic.py`, `.log`).
+C3 type of each channel:  B = L1^2, -2<m1>m1 (products of full LOS maps: finite 3j sums), and endpoint 1x1 products (shell maps
+at eta_* / eta_o: finite 3j sums with Bessel shells);  C = ray local 1x1 (single-time product) and all second-order fields
+(Phi2/Psi2, dT2, V2, v2T+om2 [helicity +-1], h2 [helicity +-2]);  D = lensing, time delay, aberration+deflection, clock,
+observer displacement, emission-surface shift (nested two-time or endpoint x functional).
+### K -> 0 (mu -> -1) analytically (`k0_limits.py`, `k0_limits.log`)
+Leading behaviour as K = |k1+k2| -> 0 (p^2 = q^2 - 2Kqc + K^2, c = Khat.qhat):  K_Q, K_SPhi, K_Phi2_0 ~ K^-2 (coefficient
+∝ (3c^2-1) q^2: Poisson-gauge d_i d_j nabla^-4 S_ij), hence Phi2, Psi2 ~ K^-2;  K_om ~ K^-1 and K_vT ~ K^-1 with EXACTLY
+opposite coefficients, K_om + K_vT ~ K^+1;  K_S0z ~ K (so V2 ~ K^-2, v2 = grad V2 ~ K^-1);  K_S00, K_h ~ K^0.
+Power counting: a term f(K) P_d(n) e^{i K.n chi} with f ~ K^-p and P_d a degree-d polynomial in n contributes to multipole l
+through j_L(K chi), |L - l| <= d, i.e. ~ K^{l-d-p}.  All terms have d + p <= 2 (Psi2: d=0,p=2; d_z Psi2: d=1,p=1; n.om2,
+n.v2T, d_z V2: d=1,p=1; h_nn, d_z om_z: p=0), so K_{2,lm} = O(1) for l >= 2 (finite, Khat-dependent limit) while l = 1, 0
+pieces are O(K^-1), O(K^-2).  With dmu = K dK/k0^2 the mu-integrand of C^(22)_l is bounded at mu = -1 for every l >= 2:
+**integrable, no cancellation needed** (the dipole, l = 1, would be log-divergent channel by channel).  Numerical confirmation
+below (integrand near K -> 0).  In the monochromatic integral we integrate in K (analytic) instead of mu.

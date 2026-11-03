@@ -1,0 +1,16 @@
+[ray] local | fields:2                                                 rel.diff 4.6e-16
+[ray] lensing (transverse Dx1) | fields:1                              rel.diff 6.7e-16
+[ray] time delay (radial Dx1) | fields:1                               rel.diff 2.2e-16
+[ray] transverse direction k1 (aberration+deflection) | fields:1       rel.diff 1.9e-16
+[ray] local | fields:1+1                                               rel.diff 1.6e-16
+[obs] observer clock | fields:1                                        rel.diff 8.5e-17
+[emi] emission-surface shift | fields:1                                rel.diff 9.2e-16
+[obs] local | fields:1+1                                               rel.diff 1.5e-16
+[obs] local | fields:2                                                 rel.diff 2.8e-16
+[obs] observer displacement | fields:1                                 rel.diff 7.1e-16
+[emi] local | fields:1+1                                               rel.diff 2.6e-16
+[emi] local | fields:2                                                 rel.diff 1.8e-15
+[emi] lensing (transverse Dx1) | fields:1                              rel.diff 4.5e-16
+[emi] time delay (radial Dx1) | fields:1                               rel.diff 2.9e-16
+[emi] transverse direction k1 (aberration+deflection) | fields:1       rel.diff 2.5e-16
+WORST 1.7918571580664294e-15
