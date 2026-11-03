@@ -1,0 +1,12 @@
+first-order series: -eta**16/22169819549509632000 + eta**14/24309012663936000 - eta**12/34046236224000 + eta**10/63048585600 - eta**8/161663040 + eta**6/612360 - eta**4/3780 + eta**2/45 - 2/3 | -41*eta**16/1583558539250688000 + 223*eta**14/12154506331968000 - 167*eta**12/17023118112000 + 17*eta**10/4503470400 - 79*eta**8/80831520 + 47*eta**6/306180 - 23*eta**4/1890 + 14*eta**2/45 + 4/3 | -eta**15/3241201688524800 + eta**13/5237882496000 - eta**11/11463379200 + eta**9/35925120 - eta**7/174960 + eta**5/1512 - eta**3/30 + eta/3
+first-order Chebyshev representation: max error (f..f''') = 2.6e-34  tail 2.0e-39 (0.8s)
+Traceback (most recent call last):
+  File "/home/user/physics/cmb4/code/A1_planewave/pw_numeric.py", line 276, in <module>
+    build()
+    ~~~~~^^
+  File "/home/user/physics/cmb4/code/A1_planewave/pw_numeric.py", line 171, in build
+    Pp = particular_series(src_ser, m, Kn, 'Phi')
+  File "/home/user/physics/cmb4/code/A1_planewave/pw_numeric.py", line 103, in particular_series
+    assert e >= 0, ('source singular at eta=0', t)
+           ^^^^^^
+AssertionError: ('source singular at eta=0', -1/eta)

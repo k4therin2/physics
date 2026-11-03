@@ -98,7 +98,7 @@ class PlaneWave:
         for n in (1, 2, 3):
             for m in MODES[n]:
                 A = amp('delta', n, m)
-                delta_ser += eps ** n / sp.factorial(n) * A * (z ** m + z ** (-m)) / (2 if m > 0 else 1)
+                delta_ser += eps ** n / sp.factorial(n) * A * ((z ** m + z ** (-m)) / 2 if m > 0 else 1)   # (bug fixed: m=0 gave 2A)
         dT = sp.series((1 + delta_ser) ** sp.Rational(1, 4) - 1, eps, 0, NORD + 1).removeO()
         self.dT_expr = {}
         xs = nodes(0, self.L, len(self.reg['Phi1_1'].ch.c) - 1)

@@ -76,3 +76,7 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   subagents. Briefs saved persistently in cmb4/notes/briefs/. All seven RELAUNCHED on Opus 5.5 (resume from partial files).
   Blocked after them: W2 (results sections sec_map2/map3/assembly/checks/mono/unresolved), cold-read referee, simplifier.
   pdflatex now installed; doc compiles (29 pp).
+- [11-03] V3 DONE: all 5 C1 claims CONFIRMED (K_h = 4 f_RD Kohri-Terada to 5e-29; omega2 = Lu et al eq 20; Phi2(0) = PUB 3.12; C3
+  re-derived independently to 30 digits). Erratum: third_order_ic.py line 72 coefficient 3/10 should be 1/10 (affects only O(1) value of
+  K3c[SPhi](0), not C3). CAVEAT: tadpole zero-mode family Phi2 = -Psi2/2 - 4/9; C3 shifts by -2 dPsi2 per image; assembly must use the
+  SAME tadpoles with matching clock/normalisation (dilation check). PUB (A.6) trace source garbled in paper (literature note).
