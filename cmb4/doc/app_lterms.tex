@@ -15,8 +15,12 @@ $k^i_1,k^i_2,\Delta x^i_1,\Delta x^i_2$ are the ray functionals (functions of $\
 value at the emission end); primes are $\partial_\eta$.  ``Ray'' groups are integrated over $\eta\in[\eta_*,\bar\eta_o]$ with
 all fields at $(\eta,\bar\vx(\eta))$; ``observer'' groups are evaluated at $(\bar\eta_o,\bar\vx_o)$; ``emission'' groups at
 $(\eta_*,\bar\vx_*)$.  For $\nhat=\hat{\mathbf z}$ the radial direction functional has been eliminated with the null condition
-$k^z_1=-(\Phi_1+\Psi_1)$ and $|\nhat|=1$ is used.  A general direction follows by rotation, since $\Lambda$ is a scalar
-functional of the fields and $\nhat$ (Sec.~\ref{sec:map3}); the lists for symbolic $\nhat$ (without $|\nhat|=1$ imposed) are
+$k^z_1=-(\Phi_1+\Psi_1)$ and $|\nhat|=1$ is used.  \emph{Triad caveat.}  These $\nhat=\hat{\mathbf z}$ lists assume the global canonical triad, with the direction entering only through
+$n^a$; the only place where the triad enters is $k_{2,\rm init}$ inside the ray functional $k_2$ \eqref{eq:k2def} (the shear form has no explicit
+$k_2$ at the observer), and $k_{2,\rm init}$ must be taken from \eqref{eq:triad}--\eqref{eq:dirmap} with general $n^a$ in global components and then
+rotated into the frame adapted to $\nhat$.  Rotating the $\nhat=\hat{\mathbf z}$ form of $k_{2,\rm init}$ \eqref{eq:kinit2} instead amounts to a
+per-direction Gram--Schmidt triad, which changes $\Theta^{(3)}$ (by $0.3\%$ in $\kappa$, R-12) and must not be used (Sec.~\ref{sec:FW}).  With this
+proviso a general direction follows by rotation, since $\Lambda$ is a scalar functional of the fields and $\nhat$; the lists for symbolic $\nhat$ (without $|\nhat|=1$ imposed) are
 longer ($L_1$: 15, $\tfrac12L_2$: 229, $\tfrac16L_3$: 2484 terms) and are available in machine-readable form (App.~\ref{app:repro}).
 No equation of motion has been used in the lists.
 

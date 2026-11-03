@@ -313,9 +313,48 @@ presupposes that the term lists of $L_3$ represent $\Theta^{(3)}$ correctly, whi
 
 \subsection{The combination \texorpdfstring{$\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell$}{1/4 C22 + 1/3 Re C13}}
 \label{sec:mono-comb}
-Table~\ref{tab:mono-comb} gives the $O(\eps^4)$ coefficient of $C_\ell$ at $k_0=1$, $\eta_*=2$, $\eta_o=8$, next to $C^{(11)}_\ell$.  It is an
-\emph{evaluation} of the exact expressions \eqref{eq:mono-C22}, \eqref{eq:mono-C13} by quadrature, not a closed-form result.  Both terms are
-computed in the same frame (the canonical triad, Sec.~\ref{sec:FW}); only their sum is independent of the observer frame.
+\paragraph{Final result.}  For the monochromatic spectrum \eqref{eq:mono-P}, every momentum integral collapses and the observed spectrum is, for $\ell\ge2$,
+\begin{equation}
+\boxed{\;\begin{aligned}
+C_\ell&=\eps^2C^{(11)}_\ell+\eps^4\Big[\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell\Big]+O(\eps^6),\qquad C^{(11)}_\ell=4\pi\sigma^2\,\Delta_\ell(k_0)^2,\\
+\tfrac14C^{(22)}_\ell&=\frac{\sigma^4}{4(2\ell+1)}\int_{-1}^1\!\dd\mu\sum_m\big|\tilde K_{2,\ell m}(k_0,k_0,\mu)\big|^2,\qquad
+\tfrac13\Re C^{(13)}_\ell=\frac{4\pi}3\,\sigma^4\,\Delta_\ell(k_0)\,\Re\Delta^\kappa_\ell(k_0),
+\end{aligned}\;}
+\label{eq:mono-final}
+\end{equation}
+with: $\Delta_\ell$ the first-order transfer function (Proposition~\ref{prop:Delta}, closed form with Theorem~\ref{thm:isw}); $\tilde K_{2,\ell m}(k_0,k_0,\mu)$ the
+multipoles, in the frame $\Khat=\hat{\mathbf z}$, of the second-order kernel $K_2$ \eqref{eq:asm-K2}, i.e.\ of the sum of the channels
+\eqref{eq:asm-chB}--\eqref{eq:asm-chD} (App.~\ref{app:k2channels}) built from the closed-form second-order fields (App.~\ref{app:closedforms}); and
+$\Delta^\kappa_\ell(k_0)$ (per unit $\sigma^2$) the Legendre coefficient \eqref{eq:asm-C13} of the contracted third-order kernel $\kappa$
+\eqref{eq:kappa-def}, $\kappa=\tfrac12\int_{-1}^1\dd\mu\,\tfrac12\langle{\rm coef}_{abc}\rangle_\varphi$ \eqref{eq:mono-C13}, assembled from the term lists of
+App.~\ref{app:L3full} by the class rules \eqref{eq:asm-classi}--\eqref{eq:asm-classiii} and \eqref{eq:asm-kappanorm}.  All three ingredients are defined
+in the canonical triad, in which, for the FW observer, $C^{(22)}_\ell$ and $\Re C^{(13)}_\ell$ are separately frame independent (Sec.~\ref{sec:FW}).
+
+\emph{Parameter dependence.}  In RD the only scales are $k_0$, $\eta_*$, $\eta_o$, so at fixed $\sigma^2$ the three coefficients depend on
+$(k_0\eta_*,k_0\eta_o)$ only.  The full evaluation was made at one point, $k_0\eta_*=2$, $k_0\eta_o=8$ (and $C^{(22)}_\ell$ also at $k_0\eta_o=4$); no
+scan in $k_0$ was made.
+
+\emph{Superhorizon limit} (ledger L-7).  As $k_0\eta_o\to0$ at fixed $\eta_o/\eta_*=4$, the constant and gradient parts of every mode are pure gauge
+(Theorem~\ref{thm:asm-squeezed}) and the quadrupole and higher multipoles are carried by the tidal, $O(k^2)$, parts.  With the same evaluators (low
+resolution, $\ell\le6$) at $k_0\eta_o=0.2,\,0.1,\,0.05$:
+\begin{center}\footnotesize
+\begin{tabular}{r|lll|lll}
+\hline
+& \multicolumn{3}{c|}{$\ell=2$} & \multicolumn{3}{c}{$\ell=3$}\\
+$k_0\eta_o$ & $C^{(11)}_2/\sigma^2$ & $\tfrac14C^{(22)}_2/\sigma^4$ & $\tfrac13\Re C^{(13)}_2/\sigma^4$ & $C^{(11)}_3/\sigma^2$ & $\tfrac14C^{(22)}_3/\sigma^4$ & $\tfrac13\Re C^{(13)}_3/\sigma^4$\\ \hline
+$0.2$  & $8.666\times10^{-6}$ & $4.797\times10^{-5}$ & $3.315\times10^{-5}$ & $5.741\times10^{-9}$ & $2.097\times10^{-7}$ & $5.049\times10^{-8}$\\
+$0.1$  & $5.445\times10^{-7}$ & $3.067\times10^{-6}$ & $2.154\times10^{-6}$ & $9.004\times10^{-11}$ & $3.321\times10^{-9}$ & $8.058\times10^{-10}$\\
+$0.05$ & $3.407\times10^{-8}$ & $1.928\times10^{-7}$ & $1.359\times10^{-7}$ & $1.408\times10^{-12}$ & $5.207\times10^{-11}$ & $1.266\times10^{-11}$\\ \hline
+\end{tabular}
+\end{center}
+The $O(\eps^4)$ coefficient vanishes as $(k_0\eta_o)^{2\ell}$ (factor $15.9$ per halving at $\ell=2$, $64$ at $\ell=3$), at the same rate as
+$C^{(11)}_\ell$; no term survives at a lower power, as it would if a gauge piece were not cancelled.  The ratio to $C^{(11)}_\ell$ tends to a finite
+constant, $[\tfrac14C^{(22)}+\tfrac13\Re C^{(13)}]/C^{(11)}\to9.6\,\sigma^2$ ($\ell=2$), $46\,\sigma^2$ ($\ell=3$), $268\,\sigma^2$ ($\ell=4$): the tidal
+quadrupole is modulated by the same field at relative order $\eps^2\sigma^2$, as expected for a spectrum that is not scale invariant (cf.\
+\eqref{eq:asm-IRtot}).  So the superhorizon limit tests the cancellation of the gauge pieces, not a vanishing of the relative correction.
+
+\paragraph{Evaluation.}  Table~\ref{tab:mono-comb} gives the $O(\eps^4)$ coefficient at $k_0=1$, $\eta_*=2$, $\eta_o=8$, next to $C^{(11)}_\ell$: an
+\emph{evaluation} of \eqref{eq:mono-final} by quadrature, not a closed-form result.
 \begin{table}[t]
 \centering\footnotesize
 \setlength{\tabcolsep}{5pt}

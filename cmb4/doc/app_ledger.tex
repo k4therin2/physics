@@ -57,7 +57,7 @@ plane-wave end-to-end test, L loop assembly and monochromatic evaluation.  The c
 \item[X-4b] Bianchi~I $\dd s^2=-\dd t^2+\sum t^{2q_i}\dd x_i^2$ with a radiation test fluid $u=\partial_t$: $\dd/\dd t[\ln E-\ln T]+\sigma_{ee}=0$ symbolically; integrated for Kasner $(\tfrac23,\tfrac23,-\tfrac13)$ and non-Kasner $(\tfrac12,\tfrac13,\tfrac15)$, three directions, $t_e=1\to t_o=5$: $|T_{\rm obs}^{\rm exact}-T_oe^{-S}|\lesssim2\times10^{-31}$ with $O(1)$ direction dependence.
 \item[X-4c] Milne flow in Minkowski: $\theta=3/\tau$, $\sigma=a=0$, $T_{\rm obs}=T(o)$ isotropic: exact.
 \item[X-5] Linear Poisson gauge: $\hat\theta,\hat a,\hat\sigma$ of \eqref{eq:lin_kin}; direct geodesic $\dd\ln\hat E/\dd\eta$ vs kinematic: agree; identity \eqref{eq:sigma_ee_lin} off shell non-zero, on shell $0$: exact.  Sachs--Wolfe + Doppler + ISW with observer terms recovered.
-\item[X-6] Frame rotation $\mathsf R=\exp(\eps\mathsf J)$ at $\ell=2$ (exact spin-2 generators): $\sum_m|a_{\ell m}|^2$ invariant through $O(\eps^4)$ and $a^{(1)}$ invariant; $a^{(2)}\to a^{(2)}+2\mathsf Ja^{(1)}$; $C^{(22)}$ and $\Re C^{(13)}$ separately \emph{not} invariant ($\sum|a_2|^2$: $321/25$ vs $329107/1225-8798\sqrt6/1225$) while $\tfrac14C^{(22)}+\tfrac13\Re C^{(13)}$ is ($107/60$ both).  Dipole power invariant.
+\item[X-6] Generic frame rotation with an $O(\eps)$ part, $\mathsf R=\exp(\eps\mathsf J)$, at $\ell=2$ (exact spin-2 generators; the situation of the remark in Sec.~\ref{sec:FW}, \emph{not} that of the FW observer, for which $\mathsf J_1=0$ and the rotation is rigid at $O(\eps^2)$, Lemma~\ref{lem:asm-triad}): $\sum_m|a_{\ell m}|^2$ invariant through $O(\eps^4)$ and $a^{(1)}$ invariant; $a^{(2)}\to a^{(2)}+2\mathsf Ja^{(1)}$; $C^{(22)}$ and $\Re C^{(13)}$ separately \emph{not} invariant ($\sum|a_2|^2$: $321/25$ vs $329107/1225-8798\sqrt6/1225$) while $\tfrac14C^{(22)}+\tfrac13\Re C^{(13)}$ is ($107/60$ both).  Dipole power invariant.
 \end{itemize}
 
 \subsection*{Exact observable through third order and line-of-sight functionals (Secs.~\ref{sec:linearS}, \ref{sec:map2}--\ref{sec:map3})}
@@ -206,6 +206,11 @@ with $\tau$ in closed form \eqref{eq:mono-tau}; all contracted third-order sourc
 routes $1.2\times10^{-14}$ (channels $O(0.36)$).
 \item[L-2] Monochromatic $C^{(13)}_\ell$: settings $(N_\mu,N_\varphi,N_\nu)=(16,16,32)$ vs $(12,20,32)$: $\le8\times10^{-5}$ ($\ell\le10$), $3\times10^{-4}$ ($\ell=12$),
 $2\times10^{-3}$ ($\ell=14$); azimuthal convergence $N_\varphi=16$ vs $32$: $2\times10^{-5}$ at $\mu=0.5$.
+\item[L-7] Superhorizon limit of the monochromatic $O(\eps^4)$ coefficient (Sec.~\ref{sec:mono-comb}; \code{W4\_final/superhorizon.py}, A2's and A3's
+evaluators read-only; $\eta_o/\eta_*=4$; $(n_K,n_\theta)=(16,16)$, $(N_\mu,N_\varphi,N_\nu)=(8,8,16)$; $N_\mu=12$ changes nothing at the printed digits):
+at $k_0\eta_o=0.2,0.1,0.05$, $\tfrac14C^{(22)}_\ell$, $\tfrac13\Re C^{(13)}_\ell$ and $C^{(11)}_\ell$ all scale as $(k_0\eta_o)^{2\ell}$ ($\ell=2..6$); ratio of the
+$O(\eps^4)$ coefficient to $C^{(11)}_\ell$: $9.36,\,9.59,\,9.65$ ($\ell=2$), $45.8,\,46.0$ ($\ell=3$, $x=0.1,0.05$), $268$ ($\ell=4$); every channel group of
+$C^{(22)}_2$ scales at the same rate; $\Im C^{(13)}\le10^{-21}$ relative.
 \item[L-3] UV probe of $\tilde\kappa(q)$ to $q=4k$: $O(10)$, oscillatory, no growth (azimuthal resolution $N_\varphi\gtrsim2q\chi_*+8$ required; under-resolution
 by a factor 4 detected at $q=2$).  Numerical only.
 \item[L-4] Monte Carlo of the monochromatic $C^{(22)}_\ell$ (Sec.~\ref{sec:mono-mc}): $N=20$ shell modes, $45\times4000=1.8\times10^5$ realisations,
