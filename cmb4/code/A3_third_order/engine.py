@@ -196,8 +196,10 @@ class Ctx:
         P = dict(s=(s1, s2), Kg=Kg, Km=Km, zero=zero)
         prof = None
         if np.any(~zero):
-            pp = pair_profiles(self.g, np.where(zero, 1.0, Km), q1m, q2m)
-            prof = pp
+            trip = np.round(np.stack([np.where(zero, 1.0, Km), q1m, q2m], 1), 13)
+            u, inv = np.unique(trip, axis=0, return_inverse=True)
+            pp = pair_profiles(self.g, u[:, 0], u[:, 1], u[:, 2])
+            prof = {nm_: v[inv.ravel()] for nm_, v in pp.items()}
         if np.any(zero):
             zp = zero_profiles(self.g, q1m)
             if self.tadshift is not None:
@@ -234,7 +236,7 @@ class Ctx:
                 assert np.allclose(d['kmag'], kmag)
                 if name == 'v':
                     ang = 1j * kv[..., comp]; prof = tf.tv(kmag, T, me)
-                elif name in ('Phi', 'Psi', 'dT'):
+                elif name in ('Phi', 'Psi', 'dT', 'delta'):
                     ang = np.ones(kv.shape[:2], complex); prof = tf.first(name, kmag, T, me)
                 else:
                     continue   # no first-order om, h
@@ -252,6 +254,10 @@ class Ctx:
             if self.third is not None and self.nslot == 3:
                 arr = self.third_field(name, comp, der, where)
                 if arr is not None: out[7] = arr
+            if name == 'dT' and der == (0, 0, 0, 0):
+                # delta_T3 = delta3/4 - (9/16) delta1 delta2 + (21/64) delta1^3  (from (1+delta)^(1/4)); delta3/4 is in 'dT3lin'
+                d1 = self.field(('f', 'delta', None, 1, der), where); d2 = self.field(('f', 'delta', None, 2, der), where)
+                out = aadd(out, aadd(ascale(amul(d1, d2), -9 / 16), ascale(amul(amul(d1, d1), d1), 21 / 64)))
         self.cache[key] = out
         return out
     def pair_field(self, P, name, comp, der, where, basis):
@@ -263,8 +269,8 @@ class Ctx:
         Pq2 = P['Pq2'] if basis == 'frame' else P['Pq2_g']
         k1v = P['k1v'] if basis == 'frame' else P['k1v_g']
         dd = {0: '', 1: 'd', 2: 'dd'}[me]
-        if name in ('Phi', 'Psi', 'dT'):
-            nm = {'Phi': {0: 'Phi', 1: 'dPhi', 2: 'ddPhi'}, 'Psi': {0: 'Psi', 1: 'dPsi'}, 'dT': {0: 'dT', 1: 'ddT'}}[name][me]
+        if name in ('Phi', 'Psi', 'dT', 'delta'):
+            nm = {'Phi': {0: 'Phi', 1: 'dPhi', 2: 'ddPhi'}, 'Psi': {0: 'Psi', 1: 'dPsi'}, 'dT': {0: 'dT', 1: 'ddT'}, 'delta': {0: 'delta'}}[name][me]
             arr = self.bshape(np.ones(Kv.shape[:2], complex), g(nm), where)
         elif name == 'v':
             arr = self.bshape(1j * Kv[..., comp], g(dd + 'V'), where) + self.bshape(Pq1[..., comp] + 0j, g(dd + 'vT12'), where) \
@@ -297,7 +303,7 @@ class Ctx:
         d = self.sl[0]; kv = d['kv']; kmag = d['kmag'][0]
         dd = {0: '', 1: 'd'}[me]
         if name in ('Phi', 'Psi', 'dT'):
-            key = dd + {'Phi': 'Phi', 'Psi': 'Psi', 'dT': 'dT'}[name]
+            key = dd + {'Phi': 'Phi', 'Psi': 'Psi', 'dT': 'dT3lin'}[name]
             ang = np.ones(kv.shape[:2], complex)
         elif name == 'v':
             key = dd + 'V'; ang = 1j * kv[..., comp]
@@ -305,7 +311,7 @@ class Ctx:
             return None       # om3, h3: contracted transverse/TT parts vanish by isotropy
         prof = self.from_global(np.atleast_2d(th[key]), where)
         ang = ang * (1j * kv[..., 0])**mx * (1j * kv[..., 1])**my * (1j * kv[..., 2])**mz
-        arr = self.bshape(ang, 2 * prof, where)
+        arr = self.bshape(ang, prof, where)
         if where in ('ray', 'emi'): arr = arr * self.phase(kv[..., 2], where)
         return arr
     # ---------------- generic expression evaluation

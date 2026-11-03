@@ -80,3 +80,8 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   re-derived independently to 30 digits). Erratum: third_order_ic.py line 72 coefficient 3/10 should be 1/10 (affects only O(1) value of
   K3c[SPhi](0), not C3). CAVEAT: tadpole zero-mode family Phi2 = -Psi2/2 - 4/9; C3 shifts by -2 dPsi2 per image; assembly must use the
   SAME tadpoles with matching clock/normalisation (dilation check). PUB (A.6) trace source garbled in paper (literature note).
+- [11-03] C5 DONE (report_C5.md; code C5_linear_Cl; linear_cl.tex to \input into doc). Delta_l = A(x_*) j_l(w) - k T_V(x_*) j_l'(w)
+  - d_l0 A(x_o) + (1/3) d_l1 k T_V(x_o) + I_l(k); A = T_dT + T_Phi = -cos x + 2 j_0(x) - 4 j_1(x)/x; k T_V = sqrt3 (sin x - 2 j_1(x));
+  ISW I_l closed form for every l (Ci/Si with a± = 1 ± 1/sqrt3; coefficients as residues; verified 1e-169 / 5e-18). RD SW amplitude
+  -zeta/3. Monochromatic C11 = 4 pi sigma^2 Delta_l(k0)^2. Sky monopole M = Delta_0; <<m1>^2> = C_0/4pi; <<m1> a_lm>=0 for l>=1.
+  Scale-invariant plateau l(l+1)C_l/(2pi A_s): SW alone 1/9; with ISW 0.377 (l=2) -> 0.914 (l->inf).
