@@ -1,0 +1,8 @@
+int_0^eta G_Phi(k->0) deta' = eta**2/10  => coefficient 1/10, C1 used 3/10
+C1's KPhi2_small reproduced with alpha=3/10: True
+eta^-4 coefficient: zero=True, depends on alpha=False
+eta^-3 coefficient: zero=True, depends on alpha=False
+eta^-2 coefficient: zero=True, depends on alpha=False
+eta^-1 coefficient: zero=True, depends on alpha=False
+eta^0 coefficient: zero=False, depends on alpha=True
+EXIT 0

@@ -1,0 +1,4 @@
+dilation family solves independent E to O(eps^3): True
+exact (nonperturbative) check G - 8piG T = 0: True
+zeta_nl = ln(1+delta_T) + (1/2) ln(1-2Phi) = log(B)
+EXIT 0

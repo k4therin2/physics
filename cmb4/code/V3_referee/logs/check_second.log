@@ -1,0 +1,57 @@
+L00 = -2*k**2*A_Phi2(t) + k**2*A_h112(t)/2 + k**2*A_h222(t)/2 - 2*I*k*A_om32(t)/t - 6*Derivative(A_Phi2(t), t)/t + Derivative(A_h112(t), t)/t + Derivative(A_h222(t), t)/t + Derivative(A_h332(t), t)/t - 6*A_Psi2(t)/t**2 - 3*A_delta2(t)/t**2
+L0z = 2*I*k*Derivative(A_Phi2(t), t) - I*k*Derivative(A_h112(t), t)/2 - I*k*Derivative(A_h222(t), t)/2 + 2*I*k*A_Psi2(t)/t + 4*A_om32(t)/t**2 + 4*A_v32(t)/t**2
+L0x = k**2*A_om12(t)/2 + I*k*Derivative(A_h132(t), t)/2 + 4*A_om12(t)/t**2 + 4*A_v12(t)/t**2
+L_TL = Lzz-(Lxx+Lyy)/2 = (-2*I*k*A_om32(t) + t*(-4*k**2*A_Phi2(t) + 4*k**2*A_Psi2(t) + k**2*A_h112(t) + k**2*A_h222(t) - 4*I*k*Derivative(A_om32(t), t) - Derivative(A_h112(t), (t, 2)) - Derivative(A_h222(t), (t, 2)) + 2*Derivative(A_h332(t), (t, 2)))/4 - Derivative(A_h112(t), t)/2 - Derivative(A_h222(t), t)/2 + Derivative(A_h332(t), t))/t
+L_xz = -I*k*Derivative(A_om12(t), t)/2 - I*k*A_om12(t)/t + Derivative(A_h132(t), (t, 2))/2 + Derivative(A_h132(t), t)/t
+L_xx - L_yy = k**2*A_h112(t)/2 - k**2*A_h222(t)/2 + Derivative(A_h112(t), (t, 2))/2 - Derivative(A_h222(t), (t, 2))/2 + Derivative(A_h112(t), t)/t - Derivative(A_h222(t), t)/t
+TL claim ok: False
+delta2 from 00: S00*t**2/3 - 2*k**2*t**2*A_Phi2(t)/3 + k**2*t**2*A_h112(t)/6 + k**2*t**2*A_h222(t)/6 - 2*I*k*t*A_om32(t)/3 - 2*t*Derivative(A_Phi2(t), t) + t*Derivative(A_h112(t), t)/3 + t*Derivative(A_h222(t), t)/3 + t*Derivative(A_h332(t), t)/3 - 2*A_Psi2(t)   matches C1: False
+v2z from 0z: -S0z*t**2/4 - I*k*t**2*Derivative(A_Phi2(t), t)/2 + I*k*t**2*Derivative(A_h112(t), t)/8 + I*k*t**2*Derivative(A_h222(t), t)/8 - I*k*t*A_Psi2(t)/2 - A_om32(t)   matches C1 V_n formula: False
+0x operator matches C1 (-k^2 om/2 - 4(om+v)/eta^2): False
+xz operator matches C1 (-(ik/2)(om'+2om/eta)): False
+tensor operator (h11=-h22=hp): k**2*hp(t) + Derivative(hp(t), (t, 2)) + 2*Derivative(hp(t), t)/t   matches hp''+2hp'/eta+k^2 hp: True
+(trace-00)/6 after eliminating delta2 (with S00 -> 0): False ; S00 coefficient: 0
+   => with delta2 eliminated, the Phi ODE source is -(S_tr - S00)/6 + Q'/eta - k^2 Q/3 iff coefficient above is 0 (S00 enters only through delta2 elimination)
+point 0 {'k': 217/100, 'q': 47/20, 'mu': -4/5, 'eta': 38/25}
+   K_S00                                    mine=-4.12757295874  C1=-4.12757295874  |diff|=0.00e+00
+   K_S0z                                    mine=-14.0960280045*I  C1=-14.0960280045*I  |diff|=0.00e+00
+   K_Q                                      mine=-0.365595115126  C1=-0.365595115126  |diff|=0.00e+00
+   K_SPhi                                   mine=-0.348323709645  C1=-0.348323709645  |diff|=0.00e+00
+   K_h                                      mine=0.296454364188  C1=0.296454364188  |diff|=0.00e+00
+   S0y,Syz,Sxy=0                            mine=0  C1=0  |diff|=0.00e+00
+   om ODE residual                          mine=4.34132568259e-165  C1=0  |diff|=4.34e-165
+   vT 0x residual                           mine=2.71332855162e-166*I  C1=0  |diff|=2.71e-166
+   vorticity (om2+v2 + quad) residual       mine=0  C1=0  |diff|=0.00e+00
+point 1 {'k': 22/25, 'q': 13/25, 'mu': -1/4, 'eta': 4/5}
+   K_S00                                    mine=11.4996724469  C1=11.4996724469  |diff|=0.00e+00
+   K_S0z                                    mine=1.57475070544*I  C1=1.57475070544*I  |diff|=0.00e+00
+   K_Q                                      mine=-1.73480974264  C1=-1.73480974264  |diff|=0.00e+00
+   K_SPhi                                   mine=-0.767661129463  C1=-0.767661129463  |diff|=0.00e+00
+   K_h                                      mine=5.04696242130  C1=5.04696242130  |diff|=0.00e+00
+   S0y,Syz,Sxy=0                            mine=0  C1=0  |diff|=0.00e+00
+   om ODE residual                          mine=5.42665710324e-166  C1=0  |diff|=5.43e-166
+   vT 0x residual                           mine=-3.47306054607e-164*I  C1=0  |diff|=3.47e-164
+   vorticity (om2+v2 + quad) residual       mine=0  C1=0  |diff|=0.00e+00
+point 2 {'k': 12/25, 'q': 33/50, 'mu': -69/100, 'eta': 51/25}
+   K_S00                                    mine=-1.19465814476  C1=-1.19465814476  |diff|=0.00e+00
+   K_S0z                                    mine=-0.28957205096*I  C1=-0.28957205096*I  |diff|=0.00e+00
+   K_Q                                      mine=-3.94326298745  C1=-3.94326298745  |diff|=0.00e+00
+   K_SPhi                                   mine=0.0664653036712  C1=0.0664653036712  |diff|=0.00e+00
+   K_h                                      mine=3.71296891123  C1=3.71296891123  |diff|=0.00e+00
+   S0y,Syz,Sxy=0                            mine=0  C1=0  |diff|=0.00e+00
+   om ODE residual                          mine=-1.73653027304e-164  C1=0  |diff|=1.74e-164
+   vT 0x residual                           mine=-2.71332855162e-166*I  C1=0  |diff|=2.71e-166
+   vorticity (om2+v2 + quad) residual       mine=0  C1=0  |diff|=0.00e+00
+point 3 {'k': 141/100, 'q': 149/50, 'mu': -57/100, 'eta': 209/100}
+   K_S00                                    mine=-3.40532294624  C1=-3.40532294624  |diff|=0.00e+00
+   K_S0z                                    mine=-4.27187298139*I  C1=-4.27187298139*I  |diff|=0.00e+00
+   K_Q                                      mine=-0.387361509982  C1=-0.387361509982  |diff|=0.00e+00
+   K_SPhi                                   mine=0.708594543673  C1=0.708594543673  |diff|=0.00e+00
+   K_h                                      mine=0.694671746091  C1=0.694671746091  |diff|=0.00e+00
+   S0y,Syz,Sxy=0                            mine=0  C1=0  |diff|=0.00e+00
+   om ODE residual                          mine=1.69583034476e-167  C1=0  |diff|=1.70e-167
+   vT 0x residual                           mine=5.42665710324e-166*I  C1=0  |diff|=5.43e-166
+   vorticity (om2+v2 + quad) residual       mine=0  C1=0  |diff|=0.00e+00
+linear part of 2[eps^2] uhat_x: A_om12(t) + A_v12(t)
+WORST DISCREPANCY over all second-order kernels: 3.47306054607043356787923970980e-164
+EXIT 0

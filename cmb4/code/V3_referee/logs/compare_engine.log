@@ -1,0 +1,32 @@
+E_00 order 1: C1 terms 6, V3 terms 6, difference terms: 0
+E_00 order 2: C1 terms 36, V3 terms 36, difference terms: 0
+E_00 order 3: C1 terms 127, V3 terms 127, difference terms: 0
+E_01 order 1: C1 terms 3, V3 terms 3, difference terms: 0
+E_01 order 2: C1 terms 18, V3 terms 18, difference terms: 0
+E_01 order 3: C1 terms 83, V3 terms 83, difference terms: 0
+E_02 order 1: C1 terms 3, V3 terms 3, difference terms: 0
+E_02 order 2: C1 terms 18, V3 terms 18, difference terms: 0
+E_02 order 3: C1 terms 83, V3 terms 83, difference terms: 0
+E_03 order 1: C1 terms 3, V3 terms 3, difference terms: 0
+E_03 order 2: C1 terms 18, V3 terms 18, difference terms: 0
+E_03 order 3: C1 terms 83, V3 terms 83, difference terms: 0
+E_11 order 1: C1 terms 9, V3 terms 9, difference terms: 0
+E_11 order 2: C1 terms 40, V3 terms 40, difference terms: 0
+E_11 order 3: C1 terms 147, V3 terms 147, difference terms: 0
+E_12 order 1: C1 terms 2, V3 terms 2, difference terms: 0
+E_12 order 2: C1 terms 19, V3 terms 19, difference terms: 0
+E_12 order 3: C1 terms 89, V3 terms 89, difference terms: 0
+E_13 order 1: C1 terms 2, V3 terms 2, difference terms: 0
+E_13 order 2: C1 terms 19, V3 terms 19, difference terms: 0
+E_13 order 3: C1 terms 89, V3 terms 89, difference terms: 0
+E_22 order 1: C1 terms 9, V3 terms 9, difference terms: 0
+E_22 order 2: C1 terms 40, V3 terms 40, difference terms: 0
+E_22 order 3: C1 terms 147, V3 terms 147, difference terms: 0
+E_23 order 1: C1 terms 2, V3 terms 2, difference terms: 0
+E_23 order 2: C1 terms 19, V3 terms 19, difference terms: 0
+E_23 order 3: C1 terms 89, V3 terms 89, difference terms: 0
+E_33 order 1: C1 terms 9, V3 terms 9, difference terms: 0
+E_33 order 2: C1 terms 40, V3 terms 40, difference terms: 0
+E_33 order 3: C1 terms 147, V3 terms 147, difference terms: 0
+ENGINE AGREEMENT (all components, orders 1-3, and u_mu): True
+EXIT 0

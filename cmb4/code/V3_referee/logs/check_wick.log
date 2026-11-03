@@ -1,0 +1,3 @@
+cubic: brute-force Wick == C1 rule: True
+bilinear: brute-force Wick == C1 rule (2 A(q) B2(-q,k) + A(k) <B2>): True
+EXIT 0

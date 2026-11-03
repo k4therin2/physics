@@ -1,0 +1,7 @@
+L[int G_Phi S] - S  = 0   (Leibniz rule: 0 iff G(eta,eta)=0 and d_eta G|=1)
+L_h[int G_h S] - S = 0
+ghat = 3 u1 at eta->0: 1 ; ghat solves homogeneous ODE: True
+S_Phi small-eta series (my sources): leading power present: [0, 2]
+K_SPhi(eta=0) mine - C1: 0
+K_SPhi(eta=0) = 8*(-2*k**4 - k**3*mu*q + 8*k**2*mu**2*q**2 - 5*k**2*q**2 - 3*k*mu**3*q**3 - k*mu*q**3 + 3*mu**2*q**4 - q**4)/(27*k**2)
+EXIT 0

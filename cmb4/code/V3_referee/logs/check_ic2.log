@@ -1,0 +1,11 @@
+zeta1 = -Phi1 + delta1/4 ;  zeta^(2) = -2*Phi1**2 - Phi2 - delta1**2/4 + delta2/4   [C1: delta2/4 - delta1^2/4 - Phi2 - 2 Phi1^2]
+lim eta^2 S00 = 32/3    [C1: 32/3]
+Q2(0) = -4*(4*k**2 - 6*k*mu*q + 9*mu**2*q**2 - 3*q**2)/(9*k**2)
+zeta2 quadratic kernel at eta=0: -4/3   [expected from Phi1=-2/3, delta1=4/3 per zeta: 2*(-(4/3)^2/4 - 2*(4/9))/2 =  -4/3 ]
+Phi2(k, eta->0) kernel (mine): -4*(2*k**2 - 2*k*mu*q + 3*mu**2*q**2 - q**2)/(9*k**2)
+difference from C1 K_Phi2_0: 0
+difference Q0 from C1 K_Q0: 0
+PUB (3.12b) Phi2(0) - mine: 0
+PUB (3.12c) Psi2-Phi2 (= -Q2(0)) - mine: 0
+angle average of Phi2(0) at k->0: -8/9 ; of Q2(0): -16/9
+EXIT 0

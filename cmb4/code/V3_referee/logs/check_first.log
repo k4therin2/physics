@@ -1,0 +1,9 @@
+traceless scalar: -k**2*(A_Phi1(t) - A_Psi1(t))  => Psi1 = Phi1
+0x, 0y: 4*A_v11(t)/t**2 4*A_v21(t)/t**2  => v_x = v_y = 0
+V1 = -t*(t*Derivative(A_Phi1(t), t) + A_Psi1(t))/2   claim -(eta^2/2)(Phi'+Psi/eta): True
+delta1 = -2*k**2*t**2*A_Phi1(t)/3 - 2*t*Derivative(A_Phi1(t), t) - 2*A_Psi1(t)   claim: True
+ODE: k**2*A_Phi1(t)/3 + Derivative(A_Phi1(t), (t, 2)) + 4*Derivative(A_Phi1(t), t)/t  claim: True
+T_Phi solves ODE: True ; T_Phi(0) = -2/3
+lim (T_delta/4 - T_Phi) = 1 (must be 1)
+all E^(1) vanish on the closed-form solution: True
+EXIT 0

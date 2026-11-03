@@ -1,0 +1,10 @@
+int_0^eta G_Phi(k->0) deta' = eta**2/10  => coefficient 1/10, C1 used 3/10
+C1's KPhi2_small reproduced with alpha=3/10: True
+Q3c(0) depends on alpha: False ; equals C1: True
+lim eta^2 S00c depends on alpha: False ; equals C1: True
+zeta3 contracted kernel limit depends on alpha: False
+C3 depends on alpha: False ; equals C1's C3: True
+C3 = -16*(2*k**5 + 12*k**4*mu*q - 42*k**3*mu**2*q**2 - 10*k**3*q**2 + 36*k**2*mu**3*q**3 + 32*k**2*mu*q**3 + 3*k*mu**4*q**4 - 42*k*mu**2*q**4 + k*q**4 + 8*mu*q**5)/(9*k*(k**2 - 2*k*mu*q + q**2)**2)
+squeezed limit q->0: -32/9
+S_Phi^(3)c(eta=0) depends on alpha: True (this O(1) value feeds the O(eta^2) term of Phi3c only)
+EXIT 0

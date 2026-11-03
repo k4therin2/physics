@@ -1,0 +1,29 @@
+point 0 {'k': 217/100, 'q': 47/20, 'mu': -4/5, 'eta': 38/25}
+   my om vs C1 K_om*qperp           3.47306054607e-164*I
+   my vT vs C1 K_vT*qperp           5.42665710324e-166*I
+   my om satisfies xz ODE           4.34132568259e-165
+   C1 (om,vT) in my 0x eq           2.71332855162e-166*I
+   C1 (om,vT) in Kelvin eq          5.42665710324e-166*I
+point 1 {'k': 22/25, 'q': 13/25, 'mu': -1/4, 'eta': 4/5}
+   my om vs C1 K_om*qperp           2.71332855162e-166*I
+   my vT vs C1 K_vT*qperp           2.71332855162e-166*I
+   my om satisfies xz ODE           5.42665710324e-166
+   C1 (om,vT) in my 0x eq           -3.47306054607e-164*I
+   C1 (om,vT) in Kelvin eq          -1.73653027304e-164*I
+point 2 {'k': 12/25, 'q': 33/50, 'mu': -69/100, 'eta': 51/25}
+   my om vs C1 K_om*qperp           2.17066284129e-165*I
+   my vT vs C1 K_vT*qperp           1.08533142065e-165*I
+   my om satisfies xz ODE           -1.73653027304e-164
+   C1 (om,vT) in my 0x eq           -2.71332855162e-166*I
+   C1 (om,vT) in Kelvin eq          2.17066284129e-165*I
+point 3 {'k': 141/100, 'q': 149/50, 'mu': -57/100, 'eta': 209/100}
+   my om vs C1 K_om*qperp           2.17066284129e-165*I
+   my vT vs C1 K_vT*qperp           1.08533142065e-165*I
+   my om satisfies xz ODE           1.69583034476e-167
+   C1 (om,vT) in my 0x eq           5.42665710324e-166*I
+   C1 (om,vT) in Kelvin eq          -5.42665710324e-166*I
+WORST: 0.e-164
+Lu et al (20) -> omega kernel (if omega = -S, S = full 2nd-order coefficient without 1/2): 2*I*eta*(-eta*p**2*T_Phi(p, eta)*Derivative(T_Phi(q, eta), eta) + eta*q**2*T_Phi(q, eta)*Derivative(T_Phi(p, eta), eta) - p**2*T_Phi(p, eta)*T_Phi(q, eta) + q**2*T_Phi(p, eta)*T_Phi(q, eta))/k**2
+C1 K_om: -2*I*eta**2*p**2*T_Phi(p, eta)*Derivative(T_Phi(q, eta), eta)/k**2 + 2*I*eta**2*q**2*T_Phi(q, eta)*Derivative(T_Phi(p, eta), eta)/k**2 - 2*I*eta*p**2*T_Phi(p, eta)*T_Phi(q, eta)/k**2 + 2*I*eta*q**2*T_Phi(p, eta)*T_Phi(q, eta)/k**2
+ratio C1/(-S_LAC): 1
+EXIT 0

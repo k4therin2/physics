@@ -1,0 +1,19 @@
+point 0 {'k': 217/100, 'q': 47/20, 'mu': -4/5, 'eta': 38/25}
+   S1 / (-K_S00)         = 1.00000000000000
+   S3 / (2 K_Q)          = -0.321694247068675
+   S4 / (-K_S0z/(ik))    = 0.920636142259481
+   L_tr(ours) / LPUB2 = 6   (constant => (A.2) is our trace eq;  S_tr = -ratio * S2  => S2 / (-S_tr/ratio) below)
+   S2 / (-S_tr/ratio)    = 0.825476435742843
+point 1 {'k': 22/25, 'q': 13/25, 'mu': -1/4, 'eta': 4/5}
+   S1 / (-K_S00)         = 1.00000000000000
+   S3 / (2 K_Q)          = 1.74728717422240
+   S4 / (-K_S0z/(ik))    = 0.436010650843492
+   L_tr(ours) / LPUB2 = 6   (constant => (A.2) is our trace eq;  S_tr = -ratio * S2  => S2 / (-S_tr/ratio) below)
+   S2 / (-S_tr/ratio)    = 1.89239491711957
+point 2 {'k': 12/25, 'q': 33/50, 'mu': -69/100, 'eta': 51/25}
+   S1 / (-K_S00)         = 1.00000000000000
+   S3 / (2 K_Q)          = -1.06727766426370
+   S4 / (-K_S0z/(ik))    = 1.28604237636794
+   L_tr(ours) / LPUB2 = 6   (constant => (A.2) is our trace eq;  S_tr = -ratio * S2  => S2 / (-S_tr/ratio) below)
+   S2 / (-S_tr/ratio)    = 1.51927809583198
+EXIT 0
