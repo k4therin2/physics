@@ -1,6 +1,100 @@
-\section{The third-order map \texorpdfstring{$\Theta^{(3)}$}{Theta3} in contracted form}
+\section{The third-order map \texorpdfstring{$\Theta^{(3)}$}{Theta3}}
 \label{sec:map3}
-\todo{Agent C2/assembly: $L_3$ and $m_3=L_3+3L_1L_2+L_1^3$ in the $q$-contracted form
-$\Theta^{(3)}_{\rm c}(k;\nhat)$ of Sec.~\ref{sec:thirteen}, including the mean-field (tadpole)
-pieces $\langle X_2\rangle$ of Sec.~\ref{sec:tadpole}, the third-order fields $X_{3c}$ of
-Sec.~\ref{sec:third}, and the third-order ray/observer/emission expansions.}
+The third-order map is built with exactly the machinery of Sec.~\ref{sec:map2}: the integrand $\mathcal I$ of \eqref{eq:Idef}
+expanded to $O(\eps^3)$ with $k^i=-n^i+\eps k_1^i+\tfrac{\eps^2}2k_2^i$ (the $k_3$ and $\Delta x_3$ terms do not enter, since
+$\mathcal I=O(\eps)$), the position expansion to second order in $\Delta\vx=\eps\Delta\vx_1+\tfrac{\eps^2}2\Delta\vx_2$, the endpoint formula
+\eqref{eq:endpoint} with $\delta\eta_o=\eps\delta\eta_{o1}+\tfrac{\eps^2}2\delta\eta_{o2}$ and $\delta\eta_e=\eps\delta\eta_{e1}+\tfrac{\eps^2}2\delta\eta_{e2}$,
+and the functionals \eqref{eq:k1def}--\eqref{eq:Dx2def}, \eqref{eq:deta_o1}--\eqref{eq:deta_e}.  The new ingredients relative to $L_2$
+are the second-order functionals $k_2$, $\Delta\vx_2$, $\delta\eta_{o2}$, $\delta\eta_{e2}$, the triad and direction map at second order
+\eqref{eq:triad}, \eqref{eq:kinit2}, the second-order fields (including $\omega_2$, $\Phi_2$, $\Psi_2$, which now appear in products), and the
+third-order fields in the local shear.
+
+\subsection{\texorpdfstring{$L_3$}{L3}: named groups}
+\label{sec:L3}
+C2's result, $\tfrac16L_3$, has 359 terms in 32 groups for $\nhat=\hat{\mathbf z}$ (2484 terms in 24 groups for general $\nhat$,
+without $|\nhat|=1$).  Table~\ref{tab:L3groups} organises the 32 groups by the three endpoints and by physical content;
+the machine-generated lists, with the explicit expressions of all groups of at most ten terms, are in App.~\ref{app:L3groups}.
+The structure is that of $L_2$ promoted by one order: every second-order piece (a)--(g) of Table~\ref{tab:L2pieces} reappears
+(1)~with one first-order field replaced by a second-order field, (2)~multiplied by one more first-order factor (a field, a
+functional $k_1$, $\Delta\vx_1$, or a shift $\delta\eta_{o1},\delta\eta_{e1}$), or (3)~with a first-order functional replaced by its
+second-order counterpart ($k_2$, $\Delta\vx_2$, $\delta\eta_{o2}$, $\delta\eta_{e2}$).  The one genuinely new piece is the third-order shear,
+\begin{equation}
+\tfrac16L_3\supset-\tfrac16\int_{\eta_*}^{\bar\eta_o}\Big(I_1[\vv_3]+\tfrac12n^in^jh'_{3,ij}\Big)\dd\eta
+\qquad(\text{5 terms for }\nhat=\hat{\mathbf z}),
+\label{eq:L3loc3}
+\end{equation}
+and, as at second order, $\omega_3,\Phi_3,\Psi_3$ do not appear in the shear form (they do in the direct form).
+The second-order functionals carry the second-order physics of the ray: $k_2$ contains the second-order aberration
+\eqref{eq:kinit2}, the transport of the initial direction to the background event, and the second-order deflection
+$\int[\tfrac12G_2+\Delta\vx_1\cdot\nabla G_1]$ (lens--lens coupling and the deflection by second-order potentials, $\omega_2$, $h_2$);
+$\Delta\vx_2$ is the second-order displacement (post-Born lensing and time delay); $\delta\eta_{e2}$ the emission surface at second
+order including the lensed position of $\delta_{T,1}$ \eqref{eq:deta_e}; $\delta\eta_{o2}$ the second-order clock \eqref{eq:deta_o2}.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}p{0.36\textwidth}p{0.5\textwidth}r@{}}
+\hline
+group (fields) & meaning & terms\\ \hline
+\multicolumn{3}{@{}l}{\emph{ray} (integrated over $[\eta_*,\bar\eta_o]$)}\\
+local (3) & third-order shear \eqref{eq:L3loc3} & 5\\
+local (2+1), local (1+1+1) & non-linearity of $\mathcal I$: second$\times$first, cubic & 57, 55\\
+$k_{1\perp}$ (1+1), (2); $k_{1\perp}^2$ (1) & direction perturbation acting on quadratic / second-order shear; quadratic in the deflection & 22, 6, 8\\
+$k_{2\perp}$ (1), $k_2^z$ (1) & second-order direction (aberration, transport, post-Born deflection) acting on $I_1$ & 4, 3\\
+lensing $\Delta\vx_{1\perp}$ (1+1), (2); $(\Delta\vx_{1\perp})^2$ (1) & quadratic / second-order shear at the lensed point; second-order Taylor term (convergence-type) & 50, 10, 9\\
+lensing $\Delta\vx_{2\perp}$ (1) & second-order (post-Born) transverse displacement & 6\\
+time delay $\Delta x_1^z$ (1+1), (2); $(\Delta x_1^z)^2$ (1) & as lensing, radial & 26, 5, 3\\
+time delay $\Delta x_2^z$ (1) & second-order radial displacement & 3\\
+mixed $\Delta\vx_{1\perp}\Delta x_1^z$, $k_{1\perp}\Delta\vx_{1\perp}$, $k_{1\perp}\Delta x_1^z$ (1) & cross terms of displacement and direction & 6, 8, 4\\
+\multicolumn{3}{@{}l}{\emph{obs} (at $(\bar\eta_o,\bar\vx_o)$)}\\
+$\delta\eta_{o2}$ (1) & second-order clock & 3\\
+$\delta\eta_{o1}$ (1+1), (2) & clock acting on quadratic / second-order shear at the observer & 6, 5\\
+$\delta\eta_{o1}\delta x_{o1}$ (1) & clock $\times$ observer displacement & 9\\
+$\delta\eta_{o1}^2$ (1) & second-order Taylor term of the upper limit (two groups) & 3+6\\
+\multicolumn{3}{@{}l}{\emph{emi} (at $(\eta_*,\bar\vx(\eta_*))$)}\\
+$\delta\eta_{e2}$ (1) & second-order emission surface & 3\\
+$\delta\eta_{e1}$ (1+1), (2) & emission shift acting on quadratic / second-order shear & 10, 5\\
+$\delta\eta_{e1}k_{1\perp}$, $\delta\eta_{e1}\Delta\vx_{1\perp}$, $\delta\eta_{e1}\Delta x_1^z$ (1) & emission shift $\times$ direction / lensing / time delay at $\eta_*$ & 4, 6, 3\\
+$\delta\eta_{e1}^2$ (1) & second-order Taylor term of the lower limit & 6\\ \hline
+total & 32 groups & 359\\ \hline
+\end{tabular}
+\caption{The groups of $\tfrac16L_3$ (shear form, $\nhat=\hat{\mathbf z}$), from \code{L\_terms.pkl[\textquotesingle L\_split\textquotesingle][3]}.
+``(1+1)'' etc.\ gives the orders of the explicit fields; functionals and shifts are counted separately.  The direct form has
+480 terms (69 groups) for $\nhat=\hat{\mathbf z}$.}
+\label{tab:L3groups}
+\end{table}
+
+\subsection{From \texorpdfstring{$L_3$}{L3} to \texorpdfstring{$\Theta^{(3)}$}{Theta3}}
+\label{sec:theta3}
+By \eqref{eq:mdef} and \eqref{eq:theta_orders},
+\begin{equation}
+m_3=L_3+3L_1L_2+L_1^3,\qquad
+\Theta^{(3)}_{\ell m}=m_{3,\ell m}-3\sky{m_1}m_{2,\ell m}-3\sky{m_2}m_{1,\ell m}+6\sky{m_1}^2m_{1,\ell m}\quad(\ell\ge1),
+\label{eq:theta3}
+\end{equation}
+which C2 re-derived from the exponential and ratio series (App.~\ref{app:ledger}, C2-8).  Only the correlation of
+$\Theta^{(3)}$ with $\Theta^{(1)}$ is needed, $C^{(13)}_\ell$ of \eqref{eq:loops}, decomposed as in (E0) of Sec.~\ref{sec:thirteen}.
+
+\paragraph{What survives the self-contraction.}  In $\langle m_{1}\,m_3^*\rangle$ one $\zeta$ of $m_3$ is paired with $m_1$ and the
+remaining two are contracted with each other.  Qualitatively the groups of Table~\ref{tab:L3groups} and the products $3L_1L_2$,
+$L_1^3$ fall into four classes (their explicit evaluation is the subject of Sec.~\ref{sec:assembly}):
+\begin{enumerate}
+\item[(i)] \emph{Variance $\times$ map.}  Products of three first-order objects (cubic local terms; $k_1^2$, $(\Delta\vx_1)^2$, $k_1\Delta\vx_1$,
+$\delta\eta_{o1}^2$, $\delta\eta_{e1}^2$, \ldots; first-order parts of $L_1L_2$ and $L_1^3$): contracting two of the three factors leaves a
+one-point variance or an equal-sky-point correlation times a first-order map, structure (i) of Sec.~\ref{sec:thirteen}.  The
+$(\Delta\vx_{1\perp})^2\partial\partial I_1$ group, for instance, produces the convergence-type term $-\ell(\ell+1)R\,C_\ell$ of the lensing
+control case (Sec.~\ref{sec:lensing_control}), now with the radiation-era deflection correlated with the source.
+\item[(ii)] \emph{Tadpole (mean field).}  A second-order field $X_2$ times a first-order factor, with the first-order factor paired with
+$m_1$: the contraction rule $A_1B_2\to A_k\langle B_2\rangle$ of \eqref{eq:contraction_rules} gives the mean field $\langle X_2\rangle$ times a
+first-order map.  This includes the $\Psi_2$ in $\delta\eta_{o2}$, the $\delta_{T,2}$ in $\delta\eta_{e2}$ and the zero-mode parts of the local
+(2+1) terms.  Individual tadpoles depend on the zero-mode convention of Sec.~\ref{sec:tadpole}; only their sum with the clock,
+emission-surface and normalisation terms is physical (Sec.~\ref{sec:checks}).
+\item[(iii)] \emph{Cross-contracted.}  The same products with the first-order factor contracted with one leg of $X_2$ (rule
+$A_1B_2\to2A_qK_B(-\vq,\vk)$), and the cross-pairings of three first-order factors at different points: a loop convolution, structure (ii)
+of Sec.~\ref{sec:thirteen}.
+\item[(iv)] \emph{Third-order fields.}  The local shear \eqref{eq:L3loc3} (and $\Phi_3,\Psi_3,\delta_{T,3}$ in the direct form), which enter only
+through the contracted fields $X_{3c}$ of \eqref{eq:contracted}, including the amplitude $C_3$ \eqref{eq:C3}: structure (iii).
+\end{enumerate}
+The normalisation terms $-3\sky{m_1}m_2-3\sky{m_2}m_1+6\sky{m_1}^2m_1$ of \eqref{eq:theta3} supply the remaining pieces of (E0).  The
+\emph{obs} groups are polynomials in $\nhat$ of bounded degree (all fields at the observer event, direction-independent shifts), so their
+direct contribution to $C^{(13)}_\ell$ is confined to a few low multipoles; through the products $3L_1L_2$, $L_1^3$ and the normalisation the
+observer quantities nevertheless affect all $\ell$.

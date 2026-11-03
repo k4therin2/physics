@@ -1,7 +1,266 @@
 \section{The second-order map \texorpdfstring{$\Theta^{(2)}$}{Theta2}}
 \label{sec:map2}
-\todo{Agent C2/assembly: explicit $L_1$, $L_2$ (hence $m_1$, $m_2$) as direction-space kernels
-$K_1(\vk;\nhat)$, $K_2(\vk_1,\vk_2;\nhat)$ of the types A/B/C/D of Sec.~\ref{sec:harmonic}, built from
-$S$ of Sec.~\ref{sec:observable} with the ray, observer-event and emission-point expansions; the
-observer clock shift $\delta\eta_o^{(1)},\delta\eta_o^{(2)}$ and the observer position shift; the
-second-order fields of Sec.~\ref{sec:einstein} inserted.}
+This section turns the exact observable \eqref{eq:S_eta} into explicit line-of-sight functionals $L_1$, $L_2$
+(this section) and $L_3$ (Sec.~\ref{sec:map3}) of the Poisson-gauge fields of Sec.~\ref{sec:einstein}, with the
+normalisation of Sec.~\ref{sec:normalisation}.  All results are from agent C2 (code \code{cmb4/code/C2\_observable/},
+term lists \code{L\_terms.pkl}, reproduced in App.~\ref{app:lterms}); the definitions of the ray functionals are stated
+here with a sign correction found by agent A1 (Remark~\ref{rem:signslip}).  The whole chain has been tested end to end
+against a non-perturbative solver (Sec.~\ref{sec:checks}).
+
+Write the integrand of \eqref{eq:S_eta} as a function of the spacetime point and of the tangent $k^\mu=(1,k^i)$,
+\begin{equation}
+\mathcal I(x;k)\equiv\frac{\hat\sigma_{\mu\nu}k^\mu k^\nu}{-\hat u_\mu k^\mu},\qquad
+S(\nhat)=\int_{\eta_e(\nhat)}^{\eta_o}\dd\eta\;\mathcal I\big(\eta,\vx(\eta);k(\eta)\big),\qquad \Lambda\equiv-S .
+\label{eq:Idef}
+\end{equation}
+Since $\hat\sigma$ vanishes on the background, $\mathcal I=O(\eps)$, and at first order on the background ray ($k=(1,-\nhat)$)
+\begin{equation}
+I_1\equiv\mathcal I_1\big|_{k^i=-n^i}=n^in^j\partial_iv^j_1-\tfrac13\partial_iv^i_1=\hat\sigma_{1,ee}
+\label{eq:I1}
+\end{equation}
+(cf.\ \eqref{eq:sigma_ee_lin}).  The \emph{expansion scheme} has three ingredients, each expanded in $\eps$ as in
+\eqref{eq:expansion}: (i)~the perturbed ray $x^i(\eta)=\bar x^i(\eta)+\Delta x^i(\eta)$ with perturbed tangent $k^i(\eta)$;
+(ii)~the perturbed endpoints, $\eta_o=\bar\eta_o+\delta\eta_o$ (clock) with the observer at $\bar\vx_o+\delta\vx_o$, and
+$\eta_e=\eta_*+\delta\eta_e(\nhat)$ (emission surface); (iii)~Taylor expansion of every field about the background ray
+\eqref{eq:bgray}, so that the final functionals involve only fields at $(\eta,\bar\vx(\eta))$, $\eta_*\le\eta\le\bar\eta_o$,
+at the background observer event $(\bar\eta_o,\bar\vx_o)$ and at the background emission point $(\eta_*,\bar\vx(\eta_*))$.
+
+\subsection{Ray, triad and direction map}
+\label{sec:ray}
+\paragraph{Geodesic equation.}  With the ray parametrised by $\eta$, the null geodesic equation of $\hat g$ is, exactly,
+\begin{equation}
+\frac{\dd k^i}{\dd\eta}=G^i\equiv-\hat\Gamma^i_{\mu\nu}k^\mu k^\nu+\hat\Gamma^0_{\mu\nu}k^\mu k^\nu\,k^i,\qquad
+\frac{\dd x^i}{\dd\eta}=k^i .
+\label{eq:geodesic}
+\end{equation}
+The background $\hat g$ is Minkowski, so the background ray is straight, $k^i=-n^i$.  We write
+$k^i=-n^i+\eps k_1^i+\tfrac{\eps^2}2k_2^i+\ldots$, $\Delta x^i=\eps\Delta x_1^i+\tfrac{\eps^2}2\Delta x_2^i+\ldots$, and use the
+decomposition along $\nhat$: $\Delta x_\parallel\equiv\nhat\cdot\Delta\vx$ (radial: time delay) and
+$\Delta\vx_\perp\equiv\Delta\vx-\nhat\,\Delta x_\parallel$ (transverse: lensing), likewise for $k$.  At first order ($|\nhat|=1$)
+\begin{equation}
+G_1^i=-\partial_i(\Phi_1+\Psi_1)+2n^i\,\nhat\cdot\nabla(\Phi_1+\Psi_1)-n^i(\Phi_1'+\Psi_1'),\qquad
+\nhat\cdot\vec G_1=-D(\Phi_1+\Psi_1),
+\label{eq:G1}
+\end{equation}
+whose transverse part $-\nabla_\perp(\Phi_1+\Psi_1)$ is the lensing deflection.  $G_2^i/2$ consists of the second-order
+Christoffel symbols on the background ray plus $\Gamma_1\times k_1$ cross terms (82--85 terms per component, stored in
+\code{ray\_cache.pkl}); the positional shift $\Delta x_1^j\partial_jG_1^i$ is added explicitly in \eqref{eq:k2def}.
+
+\paragraph{Canonical triad.}  The Gram--Schmidt triad of Sec.~\ref{sec:observer} (order $1,2,3$) is needed through
+second order, since $\mathcal I=O(\eps)$ (in the coefficient convention $X=\eps X_1+\tfrac{\eps^2}2X_2$):
+\begin{align}
+e_a^{\;0}&=\eps v^a_1+\eps^2\big[\tfrac12(v^a_2+\omega_{2,a})-(\Phi_1+2\Psi_1)v^a_1\big],\nonumber\\
+e_a^{\;i}&=\delta_a^i\big\{1+\eps\Phi_1+\eps^2\big[\tfrac32\Phi_1^2+\tfrac12\Phi_2-\tfrac14h_{2,aa}+\tfrac12(v^a_1)^2\big]\big\}
++\eps^2\begin{cases}v^a_1v^i_1,& i>a,\\ -\tfrac12h_{2,ai},& i<a,\end{cases}
+\label{eq:triad}
+\end{align}
+(no sum over $a$; the asymmetry between $i>a$ and $i<a$ is that of the Gram--Schmidt order).  Verified:
+$\hat g(e_a,e_b)=\delta_{ab}$, $\hat g(e_a,\hat u)=0$ through third order (App.~\ref{app:ledger}, C2-5).
+
+\paragraph{Direction map.}  From \eqref{eq:dirmap}, $k^i(\eta_o)=(\hat u^i-n^ae_a^{\;i})/(\hat u^0-n^ae_a^{\;0})$ with all
+fields at the actual observer event.  Expanding, with fields at that event,
+\begin{equation}
+k^i_{1,\rm init}=v^i_1-n^i(\nhat\cdot\vv_1)-n^i(\Phi_1+\Psi_1),
+\label{eq:kinit1}
+\end{equation}
+i.e.\ aberration $\vv_{1\perp}$ in the transverse direction and $|\vec k|=1+\Phi_1+\Psi_1$ radially (the null condition
+$\nhat\cdot\vec k_1=-(\Phi_1+\Psi_1)$ holds at every $\eta$, by \eqref{eq:G1}).  At second order, displayed for $\nhat=\hat{\mathbf z}$
+($\perp=x,y$; general $\nhat$: 23--26 terms per component, \code{ray.k\_init}),
+\begin{align}
+\tfrac12k_{2,\rm init}^\perp&=\tfrac12v^\perp_2+v^\perp_1v^z_1+\tfrac12h_{2,\perp z},\nonumber\\
+\tfrac12k_{2,\rm init}^z&=-\tfrac12\Psi_2-\tfrac12\Phi_2-\tfrac32\Phi_1^2-\Phi_1\Psi_1+\tfrac12\Psi_1^2+\tfrac14h_{2,zz}-\tfrac12\omega_{2,z}+\tfrac12|\vv_{1\perp}|^2 .
+\label{eq:kinit2}
+\end{align}
+The map $\nhat\mapsto k^\mu(\eta_o)$ is null through third order (App.~\ref{app:ledger}, C2-6).
+
+\paragraph{Ray functionals.}  Integrating \eqref{eq:geodesic} backwards from the observer and transporting the observer
+event to $(\bar\eta_o,\bar\vx_o)$ gives, with all fields on the background ray,
+\begin{align}
+k_1^i(\eta)&=k^i_{1,\rm init}\big|_{\bar o}-\int_\eta^{\bar\eta_o}G_1^i\,\dd\eta',\label{eq:k1def}\\
+\Delta x_1^i(\eta)&=\delta x^i_{o1}+n^i\,\delta\eta_{o1}-\int_\eta^{\bar\eta_o}k_1^i\,\dd\eta',\label{eq:Dx1def}\\
+\tfrac12k_2^i(\eta)&=\tfrac12k^i_{2,\rm init}\big|_{\bar o}+\delta\eta_{o1}\,\partial_\eta k^i_{1,\rm init}\big|_{\bar o}
++\delta x^j_{o1}\,\partial_jk^i_{1,\rm init}\big|_{\bar o}-\delta\eta_{o1}G_1^i(\bar\eta_o)
+-\int_\eta^{\bar\eta_o}\big[\tfrac12G_2^i+\Delta x_1^j\partial_jG_1^i\big]\dd\eta',\label{eq:k2def}\\
+\tfrac12\Delta x_2^i(\eta)&=\tfrac12\delta x^i_{o2}+\tfrac12n^i\,\delta\eta_{o2}-\delta\eta_{o1}\,k_1^i(\bar\eta_o)-\int_\eta^{\bar\eta_o}\tfrac12k_2^i\,\dd\eta',\label{eq:Dx2def}
+\end{align}
+where $|_{\bar o}$ means fields at $(\bar\eta_o,\bar\vx_o)$, the derivative terms in \eqref{eq:k2def} transport the initial
+direction from the actual to the background observer event, and $G_2^i$ contains $k_1(\eta)$.  The $n^i\delta\eta_o$ terms
+in $\Delta x$ express that the photon reaching the later observer event passes $\bar\eta_o$ displaced by $-k\,\delta\eta_o$.
+
+\begin{remark}[sign of the tangent integrals]\label{rem:signslip}
+Since $\dd k/\dd\eta=G$ and the integrals run from $\eta$ to the observer, $k(\eta)=k(\bar\eta_o)-\int_\eta^{\bar\eta_o}G$:
+the \emph{minus} signs in \eqref{eq:k1def} and \eqref{eq:k2def} are correct.  The definitions printed by C2
+(\code{ray.definitions}, \code{L\_terms.pkl[\textquotesingle definitions\textquotesingle]}, report C2) carry a $+$ sign; this is a
+documentation slip only: the term lists were generated with the correct derivative rules ($\dd k_1/\dd\eta\to G_1$,
+$\dd\Delta x_1/\dd\eta\to k_1$).  With the $+$ sign the null condition fails at $O(1)$ and the shear and direct forms of
+Sec.~\ref{sec:L2direct} disagree; with the $-$ sign the null condition holds to $10^{-15}$ and the two forms agree
+(agent A1, App.~\ref{app:ledger}, A1-4).  Equations \eqref{eq:Dx1def}, \eqref{eq:Dx2def} are as printed by C2.
+\end{remark}
+
+\subsection{Observer event: clock and displacement}
+\label{sec:obsevent}
+The observer is the fluid element whose Poisson position tends to the label $\bar\vx_o$ as $\eta\to0$,
+\begin{gather}
+\vx_o(\eta)=\bar\vx_o+\int_0^\eta\vv\big(\eta',\vx_o(\eta')\big)\dd\eta',\qquad
+\delta x^i_{o1}=\int_0^{\bar\eta_o}v^i_1(\eta,\bar\vx_o)\,\dd\eta,\nonumber\\
+\tfrac12\delta x^i_{o2}=\int_0^{\bar\eta_o}\big[\tfrac12v^i_2+\delta x^j_{o1}(\eta)\partial_jv^i_1\big]\dd\eta+\delta\eta_{o1}v^i_1\big|_{\bar o},
+\label{eq:dxo}
+\end{gather}
+with $\delta x^j_{o1}(\eta)$ the first integral with upper limit $\eta$ and $\delta\vx_o\equiv\vx_o(\eta_o)-\bar\vx_o$.  (Starting
+the worldline integral at $\eta_{\rm init}$ instead, as in Sec.~\ref{sec:observer}, selects a different fluid element, offset by
+$\int_0^{\eta_i}\vv=O(\eta_i^2)$; this is irrelevant for $C_\ell$ but must be matched when comparing with the planar solver
+at finite $\eta_i$, Sec.~\ref{sec:checks}.)  Expanding the clock condition \eqref{eq:clock} with
+$1/\hat u^0=1+\eps\Psi_1+\eps^2\big[\tfrac12\Psi_2-\tfrac12\Psi_1^2-\tfrac12|\vv_1|^2\big]+O(\eps^3)$ and
+$\eta_{\rm init}=\eta_i(1+\delta_T)$, and dropping terms $O(\eta_i^2)$,
+\begin{align}
+\delta\eta_{o1}&=-\frac1{\bar\eta_o}\int_0^{\bar\eta_o}\eta\,\Psi_1(\eta,\bar\vx_o)\,\dd\eta,\label{eq:deta_o1}\\
+\delta\eta_{o2}&=-\frac2{\bar\eta_o}\Big\{\tfrac12\delta\eta_{o1}^2+\bar\eta_o\,\delta\eta_{o1}\Psi_1\big|_{\bar o}
++\int_0^{\bar\eta_o}\eta\big[\tfrac12\Psi_2-\tfrac12\Psi_1^2-\tfrac12|\vv_1|^2+\delta x^j_{o1}(\eta)\partial_j\Psi_1\big]_{(\eta,\bar\vx_o)}\dd\eta\Big\},
+\label{eq:deta_o2}
+\end{align}
+both integrals running along the observer worldline.  (The $O(\eta_i^2)$ terms, from the initial event, are kept in the
+numerical test of Sec.~\ref{sec:checks}.)  For the constant mode of Sec.~\ref{sec:tadpole} these give
+$\eta_o=\bar\eta_o/\lambda$ with $\lambda$ the time rescaling of the dilation family, as they must.
+The clock and the displacement are direction independent random variables; they affect the map only through
+\eqref{eq:Dx1def}--\eqref{eq:Dx2def}, the transport terms of \eqref{eq:k2def} and the endpoint terms below.
+
+\subsection{Emission event}
+\label{sec:emi}
+Solving \eqref{eq:emission}, $1+\delta_T(\eta_e,\vx(\eta_e))=\eta_e/\eta_*$, with $\vx(\eta_e)=\bar\vx(\eta_*)-\nhat\,\delta\eta_e+\Delta\vx(\eta_*)+\ldots$,
+\begin{equation}
+\delta\eta_{e1}=\eta_*\,\delta_{T,1}\big|_*,\qquad
+\delta\eta_{e2}=\eta_*\Big[\delta_{T,2}+2\,\delta\eta_{e1}\,\delta_{T,1}'+2\big(\Delta\vx_1(\eta_*)-\nhat\,\delta\eta_{e1}\big)\cdot\nabla\delta_{T,1}\Big]_*,
+\label{eq:deta_e}
+\end{equation}
+with $|_*$ the background emission point $(\eta_*,\bar\vx(\eta_*))$.  $\delta\eta_{e1}$ is the first-order emission-surface shift
+(``temperature at fixed time'' bookkeeping of standard derivations); $\delta\eta_{e2}$ contains the second-order temperature
+perturbation and the lensed and time-delayed position of the first-order one.
+
+\subsection{Expansion about the background ray}
+\label{sec:expansion}
+Let $F(\eta)\equiv\mathcal I(\eta,\vx(\eta);k(\eta))$.  The three steps are:
+(1)~\emph{position}: $F=\mathcal I+\Delta x^j\partial_j\mathcal I+\tfrac12\Delta x^j\Delta x^l\partial_j\partial_l\mathcal I$, all at $(\eta,\bar\vx(\eta))$,
+with $k=k(\eta)$ inserted in $\mathcal I$;
+(2)~\emph{endpoints}:
+\begin{equation}
+\int_{\eta_e}^{\eta_o}F\,\dd\eta=\int_{\eta_*}^{\bar\eta_o}F\,\dd\eta+\sum_{j\ge1}\Big[\frac{\delta\eta_o^j}{j!}D^{j-1}F\Big]_{\bar\eta_o}
+-\sum_{j\ge1}\Big[\frac{\delta\eta_e^j}{j!}D^{j-1}F\Big]_{\eta_*},
+\label{eq:endpoint}
+\end{equation}
+where $D$ is the total derivative along the ray in the background representation ($D=\partial_\eta-\nhat\cdot\nabla$ on fields,
+$\dd k_1/\dd\eta\to G_1$, $\dd\Delta x_1/\dd\eta\to k_1$, \ldots);
+(3)~at the observer endpoint the functionals take their initial values ($k_1\to k_{1,\rm init}|_{\bar o}$,
+$\Delta\vx_1\to\delta\vx_{o1}+\nhat\,\delta\eta_{o1}$, \ldots), while at the emission endpoint they appear as $k_1(\eta_*)$, $\Delta x_1(\eta_*)$.
+The outcome is stored as lists of terms, each labelled \emph{ray} (integrated over $[\eta_*,\bar\eta_o]$ on the background
+ray), \emph{obs} (at $(\bar\eta_o,\bar\vx_o)$) or \emph{emi} (at $(\eta_*,\bar\vx(\eta_*))$).  No equation of motion is used in
+building the lists; $|\nhat|=1$ is imposed only in the $\nhat=\hat{\mathbf z}$ ``split'' versions.
+
+\paragraph{First order.}  $L_1=-\int_{\eta_*}^{\bar\eta_o}I_1\,\dd\eta$ (3 terms for $\nhat=\hat{\mathbf z}$, 15 for general $\nhat$), which on shell
+equals the Sachs--Wolfe form \eqref{eq:L1} including the observer monopole and dipole (App.~\ref{app:ledger}, C2-4).
+
+\subsection{\texorpdfstring{$L_2$}{L2}: named pieces}
+\label{sec:L2}
+Collecting the $\eps^2$ terms,
+\begin{equation}
+\tfrac12L_2=-\int_{\eta_*}^{\bar\eta_o}\dd\eta\Big[\tfrac12\mathcal I_2\big|_{k=(1,-\nhat)}+k_1^i\frac{\partial\mathcal I_1}{\partial k^i}\Big|_{k=(1,-\nhat)}+\Delta x_1^j\partial_jI_1\Big]
+-\delta\eta_{o1}\,I_1\big|_{\bar o}+\delta\eta_{e1}\,I_1\big|_*,
+\label{eq:L2gen}
+\end{equation}
+where $\tfrac12\mathcal I_2$ is the $\eps^2$ part of $\mathcal I$ at fixed point and fixed background tangent and
+$k_1^i\partial\mathcal I_1/\partial k^i=-2k_1^i\hat\sigma_{1,ij}n^j$.  Table~\ref{tab:L2pieces} lists the pieces.  Two
+simplifications occur in the $\nhat=\hat{\mathbf z}$ form: the radial direction perturbation $k_1^z=-(\Phi_1+\Psi_1)$, the
+$(1-2\Phi)$ of $\hat\sigma_{ij}$ and the factor $1/(-\hat u\cdot k)=1-\Psi-\nhat\cdot\vv+\ldots$ cancel exactly (as they must for
+$\sigma_{ee}$ with $e$ a unit vector), so no undifferentiated $\Phi_1,\Psi_1$ survive; and $\omega_2,\Phi_2,\Psi_2$ drop out of the
+second-order shear ($\omega$ cancels between $\partial_{(i}\hat u_{j)}$ and $\hat\Gamma^0_{ij}\hat u_0$).  These fields
+\emph{do} appear in $L_3$ and in the direct form below.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}p{0.2\textwidth}lp{0.44\textwidth}rr@{}}
+\hline
+piece & where & physical meaning & $\nhat=\hat{\mathbf z}$ & general $\nhat$\\ \hline
+(a) second-order shear & ray & intrinsic second-order shear of the fluid: $v_2$ and the tensor shear $\tfrac12h_2'$ (ISW-like tensor term) & 5 & 22\\
+(b) quadratic local & ray & products of first-order fields at the same point: non-linearity of $\hat\sigma_{\mu\nu}k^\mu k^\nu/(-\hat u\cdot k)$ & 10 & 111\\
+(c) direction ($k_1$) & ray & aberration at the observer ($\vv_{1\perp}$ in $k_{1,\rm init}$) and accumulated deflection, changing the projection $\sigma_{kk}$ & 4 & 21\\
+(d) lensing ($\Delta\vx_{1\perp}$) & ray & first-order shear sampled at the transversely displaced point & 6 & 45\rlap{$^\dagger$}\\
+(e) time delay ($\Delta x_{1\parallel}$) & ray & first-order shear sampled at the radially displaced point (Shapiro delay, clock shift, radial observer displacement) & 3 & $^\dagger$\\
+(f) clock ($\delta\eta_{o1}$) & obs & observation at a perturbed time: shift of the upper limit & 3 & 15\\
+(g) emission surface ($\delta\eta_{e1}$) & emi & emission on $\Tphys=T_*$ rather than $\eta=\eta_*$: shift of the lower limit & 3 & 15\\
+\hline
+total & & & 34 & 229\\ \hline
+\end{tabular}
+\caption{Pieces of $\tfrac12L_2$ (shear form, C2's groups); term counts as stored in \code{L\_terms.pkl} ($^\dagger$(d) and (e) form one group for general $\nhat$).  The observer
+displacement $\delta\vx_{o1}$ enters through $\Delta\vx_1$ in (d), (e) (and through $k_2$ only at third order).
+Full expressions: App.~\ref{app:L2z}.}
+\label{tab:L2pieces}
+\end{table}
+
+Explicitly, for $\nhat=\hat{\mathbf z}$ (all fields first order unless indexed, $\perp=x,y$, $\partial_\perp\cdot\vv_\perp=\partial_xv^x+\partial_yv^y$,
+$I_1=\partial_zv^z_1-\tfrac13\partial_iv^i_1$, and $I_1[\vv_2]$ the same with $\vv_2$):
+\begin{align}
+\tfrac12L_2=\int_{\eta_*}^{\bar\eta_o}\!\dd\eta\,\Big\{&
+\underbrace{-\tfrac14h'_{2,zz}-\tfrac12I_1[\vv_2]}_{\rm (a)}
+\;\underbrace{+\,\vv_\perp\cdot\big(\tfrac13\vv_\perp'-\partial_z\vv_\perp-\nabla_\perp v^z\big)+v^z\big(\tfrac13\partial_\perp\cdot\vv_\perp-\tfrac23v^{z\prime}-\tfrac23\partial_zv^z\big)}_{\rm (b)}\nonumber\\
+&\underbrace{+\,\vec k_{1\perp}\cdot\big(\partial_z\vv_\perp+\nabla_\perp v^z\big)}_{\rm (c)}
+\;\underbrace{-\,\Delta\vx_{1\perp}\cdot\nabla_\perp I_1}_{\rm (d)}
+\;\underbrace{-\,\Delta x_1^z\,\partial_zI_1}_{\rm (e)}\Big\}
+\;\underbrace{-\,\delta\eta_{o1}I_1\big|_{\bar o}}_{\rm (f)}
+\;\underbrace{+\,\delta\eta_{e1}I_1\big|_*}_{\rm (g)} ,
+\label{eq:L2shear}
+\end{align}
+with $h_{2,zz}=-h_{2,xx}-h_{2,yy}$, $k_1$, $\Delta x_1$ from \eqref{eq:k1def}--\eqref{eq:Dx1def}, $\delta\eta_{o1}$ from
+\eqref{eq:deta_o1}, $\delta\eta_{e1}=\eta_*\delta_{T,1}|_*$.  For general $\nhat$, (a) reads $-\tfrac12I_1[\vv_2]-\tfrac14n^in^jh'_{2,ij}$ and
+(d)+(e) $=-\Delta\vx_1\cdot\nabla I_1$.  No equation of motion has been used; $\vv'$ may be eliminated with the Euler equation
+\eqref{eq:lin_fluid}.
+
+\subsection{Direct (Sachs--Wolfe) form and equivalence}
+\label{sec:L2direct}
+The alternative organisation integrates the photon energy directly.  Since $\hat E=\hat p^0(-\hat u_\mu k^\mu)$ and
+$\dd\ln\hat p^0/\dd\eta=-\hat\Gamma^0_{\mu\nu}k^\mu k^\nu$,
+\begin{equation}
+\Lambda=\ln\frac{\Tobs}{T_o}=-\int_{\eta_e}^{\eta_o}\hat\Gamma^0_{\mu\nu}k^\mu k^\nu\,\dd\eta+\Big[\ln(-\hat u_\mu k^\mu)-\ln(1+\delta_T)\Big]_e^o ,
+\label{eq:direct}
+\end{equation}
+expanded with the same ray, endpoints and Taylor rules.  The boundary function is $\Psi+\nhat\cdot\vv-\delta_T+O(\eps^2)$, and at
+first order \eqref{eq:direct} gives \eqref{eq:L1} after one integration by parts.  At second order, $\nhat=\hat{\mathbf z}$, with
+$\mathcal G_1\equiv\Phi_1'-\Psi_1'+2\partial_z\Psi_1=-(\hat\Gamma^0_{kk})_1$ and $B_1\equiv\Psi_1-\delta_{T,1}+v^z_1$:
+\begin{align}
+\tfrac12L_2^{\rm dir}=\;&\int_{\eta_*}^{\bar\eta_o}\!\dd\eta\Big\{\tfrac12(\Phi_2'-\Psi_2')+\partial_z\Psi_2-\tfrac14h'_{2,zz}+\tfrac12\partial_z\omega_{2,z}\nonumber\\
+&\qquad+2\Phi_1\Phi_1'+2\Phi_1\partial_z\Psi_1+2\Psi_1\Psi_1'-2\Psi_1\partial_z\Psi_1\nonumber\\
+&\qquad-2\vec k_{1\perp}\cdot\nabla_\perp\Psi_1+\Delta\vx_1\cdot\nabla\mathcal G_1\Big\}\nonumber\\
+&+\Big[\tfrac12(\Psi_2-\delta_{T,2}+\omega_{2,z}+v^z_2)-\Phi_1v^z-\Psi_1^2-\Psi_1v^z+\tfrac12\delta_{T,1}^2-\tfrac12|\vv_\perp|^2\nonumber\\
+&\qquad+\delta\eta_{o1}(\mathcal G_1+B_1')+\delta\vx_{o1}\cdot\nabla B_1\Big]_{\bar o}\nonumber\\
+&+\Big[-\tfrac12(\Psi_2-\delta_{T,2}+\omega_{2,z}+v^z_2)+\Phi_1v^z+\Psi_1^2+\Psi_1v^z-\tfrac12\delta_{T,1}^2-\tfrac12|\vv_\perp|^2\nonumber\\
+&\qquad-\delta\eta_{e1}(\mathcal G_1+DB_1)-\Delta\vx_1(\eta_*)\cdot\nabla B_1+\vec k_{1\perp}(\eta_*)\cdot\vv_\perp\Big]_*,
+\label{eq:L2direct}
+\end{align}
+76 terms (179 for general $\nhat$; App.~\ref{app:L2direct}).  Its pieces have the familiar names: second-order ISW/Rees--Sciama,
+vector and tensor integrand $\tfrac12(\Phi_2'+\Psi_2'+\ldots)$ after integration by parts, quadratic ISW corrections, transverse
+deflection, lensing and Shapiro delay of the ISW integrand, second-order Sachs--Wolfe and Doppler at both ends with the
+clock, displacement and emission-surface shifts.
+
+\paragraph{Equivalence.}  The two forms are equal, not merely equivalent on average:
+(i)~at the integrand level along an arbitrary perturbed ray, $-\hat\Gamma^0_{kk}+\dd_\eta[\ln(-\hat u\cdot k)-\ln\hat T]+\hat\sigma_{kk}/(-\hat u\cdot k)
++\hat\theta\hat g_{kk}/(3(-\hat u\cdot k))\equiv0$ modulo $\hat\nabla_\mu\hat T^{\mu\nu}=0$ at orders 1, 2, 3 (App.~\ref{app:ledger}, C2-3);
+(ii)~at the assembled level, $\Lambda^{\rm dir}-\Lambda^{\rm shear}$ vanishes piece by piece (ray, obs, emi) at orders 1, 2 \emph{and} 3
+modulo the conservation equations and their derivatives (C2-7); (iii)~numerically, for the plane wave of Sec.~\ref{sec:checks},
+the two forms agree to $4\times10^{-10}$ ($L_2$) and $9\times10^{-7}$ ($L_3$), the level of the quadrature (A1-4).  With
+$\vv=0$, emission at fixed coordinate time and the observer at the origin, \eqref{eq:L2direct} reduces term by term to the
+second-order Sachs--Wolfe result of Boubekeur et al.\ \cite{Boubekeur}, the only remainder being
+$\int[\Delta\vx_1\cdot\nabla(\Phi_1'+\Psi_1')+2\Phi_1\Phi_1'-2\Psi_1\Psi_1']$, which vanishes under their matter-era assumption
+$\Phi_1'=\Psi_1'=0$ (C2-10).
+
+\subsection{From \texorpdfstring{$L_2$}{L2} to \texorpdfstring{$\Theta^{(2)}$}{Theta2}}
+\label{sec:theta2}
+By \eqref{eq:mdef} and \eqref{eq:theta_orders},
+\begin{equation}
+m_2=L_2+L_1^2,\qquad \Theta^{(2)}_{\ell m}=m_{2,\ell m}-2\sky{m_1}\,m_{1,\ell m}\quad(\ell\ge1),
+\label{eq:theta2}
+\end{equation}
+with $L_2$ twice the expression \eqref{eq:L2shear} (or \eqref{eq:L2direct}) and the second-order fields of
+Sec.~\ref{sec:second} inserted.  In the language of Sec.~\ref{sec:harmonic}: $L_1^2$ and the emission-surface piece (g) are
+products of type-A maps on the sky (type B); the local pieces (a), (b) are line-of-sight integrals of fields at one spacetime
+point (type C, with the second-order kernels of \eqref{eq:second_kernels} in (a)); the direction, lensing and time-delay
+pieces (c)--(e) are nested unequal-time products (type D); the clock piece (f) is a direction-independent random variable times
+a quadratic polynomial in $\nhat$ built from fields at the observer, and contributes to $\ell\le2$ only.  The kernels
+$K_2(\vk_1,\vk_2;\nhat)$ and their harmonic transforms are assembled in Sec.~\ref{sec:assembly}.
