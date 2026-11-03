@@ -124,3 +124,4 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   for scalar perturbations; O(eps^2) direction corrections enter S only at O(eps^3)); a rigid O(eps^2) rotation drops out of Re C13
   identically (a*(-i L a) imaginary) -> combination consistent. Not done: eta_o=4 for C13; closed-form Delta^kappa_l; UV proof.
 - [11-03] W3 DONE (revision per R1: reorder, roadmap, intro, eta_i restored, app_closedforms from C4, full L3 appendix, FW lemma; 85 pp). Launched W2c (third-order sections, unresolved, roadmap fill) and V6 (analytic collinear residue cancellation). In flight: W2c, V4, V5, V6, (C4 finishing). Blocked: R2 final cold read, final user summary.
+- [11-03] W2c DONE: manuscript complete (102 pp) except HOOK-V4 (MC C22) and HOOK-V5 (zero-mode proof). Lead confirms W2c's out-of-ownership edits (abstract, roadmap status rows/bullets, ledger closing). Next: R2 final cold read after V4/V5/V6 land; then final summary.
