@@ -1,2 +1,109 @@
-\section{Roadmap}\label{sec:roadmap}
-stub
+\section{Roadmap: target, structure, status}
+\label{sec:roadmap}
+
+\noindent\fbox{\begin{minipage}{0.97\textwidth}\small
+\textbf{Target and conventions.}
+$C_\ell=\eps^2C^{(11)}_\ell+\eps^4[\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell]+O(\eps^6)$, $\ell\ge2$ \eqref{eq:cl_target}, with
+$C^{(rs)}_\ell=\frac1{2\ell+1}\sum_m\conn{a^{(r)}_{\ell m}a^{(s)*}_{\ell m}}$, $\conn{\cdot}$ connected in the $a_{\ell m}$ \eqref{eq:conn}.
+Fourier $f=\int\frac{\dd^3k}{(2\pi)^3}e^{i\vk\cdot\vx}f_\vk$, $\langle\zeta_\vk\zeta_{\vk'}\rangle=(2\pi)^3\delta^3(\vk+\vk')P(k)$ \eqref{eq:fourier};
+every quantity expanded as $X=\eps X_1+\tfrac{\eps^2}2X_2+\tfrac{\eps^3}6X_3$ \eqref{eq:expansion}; Poisson gauge with linear
+metric functions \eqref{eq:poisson}; $a=\eta$.  $\nhat$ is the observation direction, the ray is $\vx=\vx_o+\nhat\chi$, and
+$e^{+i\vk\cdot\nhat\chi}=4\pi\sum i^\ell\jl(k\chi)Y_{\ell m}(\nhat)Y^*_{\ell m}(\khat)$ \eqref{eq:rayleigh} ($Y_{\ell m}$ with Condon--Shortley phase).
+Observable: emission isotropic in the fluid rest frame on $\Tphys=T_*$; observer = fluid element labelled at its $\Tphys=T_i$
+event, fixed proper time, FW frame (replaceable by the canonical triad for $C_\ell$); $\Theta=\Tobs/\sky{\Tobs}-1$, dipole removed
+after normalising (assumptions (O1)--(O3), Sec.~\ref{sec:setup}).  Monochromatic: $P=2\pi^2\sigma^2\delta(k-k_0)/k_0^2$ with
+$\sigma^2=\langle\zeta_1^2\rangle$ held fixed, applied after assembly \eqref{eq:mono}.
+\end{minipage}}
+
+\paragraph{Three structural results.}
+\begin{itemize}\itemsep1pt
+\item[(a)] Exact observable (Thm.~\ref{thm:exact}, Cor.~\ref{cor:theta}):\quad $\Tobs(\nhat)=T_o\,e^{-S(\nhat)}$,\quad $1+\Theta=e^{-S}/\sky{e^{-S}}$.
+\item[(b)] Initial data (Def.~\ref{def:gauss}):\quad $\zeta_{\rm nl}=\eps\zeta_1$ Gaussian, $h_n(0)=0$, regular $\Rightarrow$ $X_n(\eta_i)$ fixed, non-local, constraint-satisfying.
+\item[(c)] Log-normalisation algebra \eqref{eq:theta_orders}, with $m_n$ the coefficients of $e^{-S}$:\quad
+$\Theta^{(3)}_{\ell m}=m_{3,\ell m}-3\sky{m_1}m_{2,\ell m}-3\sky{m_2}m_{1,\ell m}+6\sky{m_1}^2m_{1,\ell m}$.
+\end{itemize}
+
+\paragraph{Pipeline.}  Each arrow is labelled by the section that performs it; boxes give the type of object.
+\begin{center}
+\begin{tikzpicture}[node distance=4mm and 5mm, every node/.style={font=\scriptsize},
+  b/.style={draw,rounded corners,align=center,inner sep=2pt,minimum height=7mm},
+  a/.style={-{Stealth[length=1.6mm]}}]
+\node[b] (z) {$\zeta_1$ Gaussian\\[-1pt]$+$ Def.~\ref{def:gauss}};
+\node[b,right=of z] (f) {fields $T_X$, $K_X$, $\mathcal K_{\Phi_2},\mathcal K_h$,\\[-1pt]$K_{3c}$, $C_3$, tadpoles\\[-1pt]\emph{closed form}; $\Phi_{3c}$ \emph{declared}};
+\node[b,right=of f] (r) {ray functionals\\[-1pt]$k_n$, $\Delta\vx_n$, $\delta\eta_{o}$, $\delta\eta_{e}$\\[-1pt]\emph{declared integrals}};
+\node[b,right=of r] (L) {$L_1,L_2,L_3$\\[-1pt]\emph{complete term lists}};
+\node[b,below=7mm of L] (m) {$m_n$, $\Theta^{(n)}$\\[-1pt]\emph{exact algebra}};
+\node[b,left=of m] (h) {$\Delta_\ell$, $K_{2,\ell m}$, $\Delta^{(3c)}_\ell$\\[-1pt]\emph{harmonic rules}};
+\node[b,left=of h] (c) {$C^{(11)}$, $C^{(22)}$, $C^{(13)}$\\[-1pt]\emph{loop integrals}};
+\node[b,left=of c] (mo) {monochromatic\\[-1pt]\emph{single integrals}};
+\draw[a] (z) -- node[above]{\S\ref{sec:primordial}--\ref{sec:einstein}} (f);
+\draw[a] (f) -- node[above]{\S\ref{sec:map2}} (r);
+\draw[a] (r) -- node[above]{\S\ref{sec:map2}--\ref{sec:map3}} (L);
+\draw[a] (L) -- node[right]{\S\ref{sec:normalisation}} (m);
+\draw[a] (m) -- node[above]{\S\ref{sec:harmonic}} (h);
+\draw[a] (h) -- node[above]{\S\ref{sec:assembly}} (c);
+\draw[a] (c) -- node[above]{\S\ref{sec:mono}} (mo);
+\end{tikzpicture}
+\end{center}
+At first order every box is one line (Sec.~\ref{sec:linear}); Secs.~\ref{sec:map2}--\ref{sec:map3} repeat the same steps at higher order.
+
+\paragraph{Where each requirement is met.}\mbox{}\par\noindent
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{0.42\textwidth}p{0.54\textwidth}@{}}
+\hline
+requirement & where \\ \hline
+model; Gaussian non-linear variable & Sec.~\ref{sec:setup}; Defs.~\ref{def:zeta}--\ref{def:gauss} ($\zeta_{\rm nl}$ of Salopek--Bond/Maldacena) \\
+no independent higher-order modes & Def.~\ref{def:gauss} (scalars by $\zeta^{(n)}(0)=0$; tensors and vectors by \eqref{eq:notensor}); Sec.~\ref{sec:regular} \\
+constraints at every order, data not set to zero & Sec.~\ref{sec:regular} (Bianchi propagation, \eqref{eq:greens_split}); $X_2(0)$, $v_2(0)$, $C_3$ in Sec.~\ref{sec:zeta_cond} \\
+emission on $\Tphys=T_*$; fluid-frame emission & Thm.~\ref{thm:exact} ($T_e=T_*$ exactly), \eqref{eq:emission}, \eqref{eq:deta_e}; (O1) \\
+observer: fluid worldline, proper time from initial event & (O2), \eqref{eq:worldline}--\eqref{eq:clock}; finite $\eta_i$ in \eqref{eq:dxo}--\eqref{eq:deta_o2} \\
+FW tetrad, initial orientation & Sec.~\ref{sec:FW} (rotation drops out of $C_\ell$, not of $C^{(22)}$, $C^{(13)}$ separately) \\
+$E_o/E_e$; normalise by sky mean; dipole after normalising & Thm.~\ref{thm:exact}, Cor.~\ref{cor:theta}, Sec.~\ref{sec:normalisation} \\
+all terms of $\Theta^{(1,2,3)}$ incl.\ vectors, tensors, products & \eqref{eq:L1}; Secs.~\ref{sec:map2}--\ref{sec:map3}; App.~\ref{app:lterms} (every term of $L_1,L_2,L_3$) \\
+$a_{\ell m}$, $C^{(rs)}_\ell$, interference terms & Secs.~\ref{sec:harmonic}, \ref{sec:assembly}; (E0)--(E3) \\
+analytic; evaluated vs unevaluated marked & status table below; \unevaluated{\ldots} markers; analytic $\ell$-cut-off \eqref{eq:tailbound} \\
+finite times $\eta_i<\eta_*<\eta_o$, boundary terms & Sec.~\ref{sec:setup} (times), \eqref{eq:endpoint}, Sec.~\ref{sec:obsevent} \\
+constraints, normalisation, null condition, gauge invariance & Sec.~\ref{sec:checks}: EF-5, R-2, R-3; dilation ($k=0$) and plane wave vs comoving-gauge solver (finite $k$) \\
+monochromatic only after the full observable & Sec.~\ref{sec:monodef} \\
+exchanges of limits; unresolved steps & delicate points below; Sec.~\ref{sec:unresolved} \\ \hline
+\end{tabular}}
+
+\paragraph{Status.}\mbox{}\par\noindent
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{0.19\textwidth}p{0.2\textwidth}p{0.16\textwidth}p{0.22\textwidth}p{0.13\textwidth}@{}}
+\hline
+object & closed form & declared integral & verified by & open \\ \hline
+$T_X$, $\Delta_\ell$, $C^{(11)}_\ell$ & yes (ISW: $\Ci$, $\Si$, all $\ell$) & --- & EF-3, FO-1--4, PW-2 & --- \\
+$K_X$ (2nd order), tadpoles & yes & --- & EF-17, EF-19 & --- \\
+$\mathcal K_{\Phi_2}$, $\mathcal K_h$ & yes (App.~\ref{app:closedforms}) & --- & CF-1--4 & --- \\
+$K_{3c,X}$, $C_3$ & yes & --- & EF-20 & pole \eqref{eq:C3pole} \\
+$\Phi_{3c}$ & --- & one time integral & PW-1 (plane wave) & --- \\
+$L_1$, $L_2$, $L_3$ & complete term lists & ray functionals & X-9, R-4, R-6, PW-2 & --- \\
+clock, label at finite $\eta_i$ & yes \eqref{eq:deta_o1}--\eqref{eq:deta_o2} & worldline integrals & R-8, PW-5 & --- \\
+harmonic rules, (B1), (C1) & yes & --- & H-1--9, H-11 & --- \\
+$K_2$, $K_{2,\ell m}$ & channels (App.~\ref{app:k2channels}) & time integrals & Sec.~\ref{sec:asm-K2} & --- \\
+$C^{(22)}_\ell$ (mono) & --- & $\mu$ integral, evaluated & Sec.~\ref{sec:mono-num} & --- \\
+(E2), (E3), $T^{\rm(ii)}$ & formulas & loop integrals & analytic collapse only & numerical test \\
+$\Theta^{(3)}_c$, $C^{(13)}_\ell$ & --- & loop integrals & --- & being assembled \\
+zero-mode invariance & --- & --- & PW-3 (numerical, collinear) & analytic proof \\ \hline
+\end{tabular}}
+\todo{monochromatic $\tfrac13\Re C^{(13)}_\ell$ and the combination $\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell$ at the two parameter points
+(Secs.~\ref{sec:mono-13}--\ref{sec:mono-comb}); update the last three rows of the status table.}
+
+\paragraph{Delicate points.}
+\begin{itemize}\itemsep1pt
+\item \emph{Dilation and squeezed limits.}  Constant and gradient modes of $\zeta_1$ must be unobservable; the exact dilation family is the $k=0$
+gauge test (Sec.~\ref{sec:check_dilation}); the squeezed limit of $K_2$ is a dilation of $K_1$, $K_2(\vk_1\to0,\vk_2)=-\vk\cdot\partial_\vk K_1+O(k_1)$
+(Sec.~\ref{sec:asm-squeezed}), and the soft region of the loop is a total derivative that vanishes only for $P\propto k^{-3}$.
+\item \emph{Zero modes.}  The $k\to0$ limit of the second-order kernels does not exist \eqref{eq:KPhi20_smallk}; the tadpole convention averages
+over angles first.  Justified numerically (PW-3); the analytic proof of zero-mode invariance is pending (Sec.~\ref{sec:tadpole}).
+\item \emph{$\mu\to\pm1$.}  In $(22)$, $K\to0$ is integrable for $\ell\ge2$ (Sec.~\ref{sec:mono-K0}).  In $(13)$ at $q=k$, $C_3$ has a simple pole in $\mu$
+\eqref{eq:C3pole}; the monochromatic $(13)$ term requires its cancellation in $\Theta^{(3)}_c$ or a narrow-spectrum limit (pending).
+\item \emph{UV behaviour of the perfect fluid.}  After emission the fluid is continued as a perfect fluid (no free streaming); the acoustic
+oscillations persist undamped, $\Delta_\ell\to$ oscillatory as $k\to\infty$ (Sec.~\ref{sec:linear}), and the $(22)$ kernel reaches $K=2k_0$, so
+$\tfrac14C^{(22)}_\ell/C^{(11)}_\ell$ grows steeply with $\ell$ for a monochromatic spectrum (Sec.~\ref{sec:mono-num}): the expansion in
+$\eps^2\sigma^2$ is $\ell$ dependent.
+\item \emph{IR for tilted spectra.}  The IR region of the one-loop terms cancels between $\tfrac14C^{(22)}$ and $\tfrac13\Re C^{(13)}$ only up to a
+total derivative $\propto(3+\vk\cdot\partial_\vk)^2P$; for $n_s\neq1$ the loop is IR sensitive (Sec.~\ref{sec:asm-IR}).  The monochromatic
+spectrum has no IR region.
+\end{itemize}

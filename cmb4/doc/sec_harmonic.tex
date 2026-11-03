@@ -62,9 +62,9 @@ Helicity pieces (vectors $\omega_i,v^T_i$ contracted with $\nhat$, tensors $h_{i
 $\khat=\hat{\mathbf z}$ with $e^{(\pm1)}=(\hat{\mathbf x}\pm i\hat{\mathbf y})/\sqrt2$, $e^{(\pm2)}_{ij}=e^{(\pm1)}_ie^{(\pm1)}_j$,
 $Q_{\pm1}=\nhat\cdot e^{(\pm1)}$, $Q_{\pm2}=e^{(\pm2)}_{ij}n^in^j$,
 \begin{equation}
-\text{(A-$\lambda$)}\qquad Q_\lambda e^{i\vk\cdot\nhat\chi}=\sum_\ell i^\ell\sqrt{4\pi(2\ell+1)}\,\hat\Delta^{(\lambda)}_\ell(x)\,Y_{\ell\lambda}(\nhat),\quad
-\hat\Delta^{(\pm1)}_\ell=\pm i\sqrt{\tfrac{\ell(\ell+1)}2}\frac{\jl(x)}x,\quad
-\hat\Delta^{(\pm2)}_\ell=-\tfrac12\sqrt{\tfrac{(\ell+2)!}{(\ell-2)!}}\frac{\jl(x)}{x^2},
+\begin{split}\text{(A-$\lambda$)}\qquad Q_\lambda e^{i\vk\cdot\nhat\chi}&=\sum_\ell i^\ell\sqrt{4\pi(2\ell+1)}\,\hat\Delta^{(\lambda)}_\ell(x)\,Y_{\ell\lambda}(\nhat),\\
+\hat\Delta^{(\pm1)}_\ell&=\pm i\sqrt{\tfrac{\ell(\ell+1)}2}\frac{\jl(x)}x,\quad
+\hat\Delta^{(\pm2)}_\ell=-\tfrac12\sqrt{\tfrac{(\ell+2)!}{(\ell-2)!}}\frac{\jl(x)}{x^2},\end{split}
 \label{eq:ruleAlambda}
 \end{equation}
 and in a general frame $a^{(\lambda)}_{\ell m}=4\pi\,i^\ell\int\frac{\dd^3k}{(2\pi)^3}\zeta^{(\lambda)}_{\vk}(-1)^\lambda[{}_{-\lambda}Y_{\ell m}(\khat)]^*\Delta^{(\lambda)}_\ell(k)$,
@@ -72,9 +72,9 @@ $\Delta^{(\lambda)}_\ell=\int\dd\eta\,g^{(\lambda)}\hat\Delta^{(\lambda)}_\ell(k
 $\hat\Delta^{(\pm1)}$ changes sign, because $Q_{\pm1}$ is odd in $\nhat$.)  Scalar, vector and tensor pieces
 of the same $\vk$ do not cross-correlate.  For two type-A maps
 \begin{equation}
-C^{AA'}_\ell=\frac2\pi\int k^2\dd k\,P(k)\,\Delta^A_\ell(k)\Delta^{A'}_\ell(k)^*,\qquad
-\sky A=\int\!\frac{\dd^3k}{(2\pi)^3}\zeta_{\vk}\Delta^A_0(k),\qquad
-\big\langle\sky A\sky{A'}\big\rangle=\frac1{2\pi^2}\int k^2\dd k\,P\,\Delta^A_0\Delta^{A'}_0=\frac{C^{AA'}_0}{4\pi},
+\begin{gathered}C^{AA'}_\ell=\frac2\pi\int k^2\dd k\,P(k)\,\Delta^A_\ell(k)\Delta^{A'}_\ell(k)^*,\qquad
+\sky A=\int\!\frac{\dd^3k}{(2\pi)^3}\zeta_{\vk}\Delta^A_0(k),\\
+\big\langle\sky A\sky{A'}\big\rangle=\frac1{2\pi^2}\int k^2\dd k\,P\,\Delta^A_0\Delta^{A'}_0=\frac{C^{AA'}_0}{4\pi},\end{gathered}
 \label{eq:C11}
 \end{equation}
 and $\langle\sky A\,a^{A'}_{\ell m}\rangle=0$ for $\ell\ge1$ by isotropy.  The first-order map $m_1=L_1$ of
