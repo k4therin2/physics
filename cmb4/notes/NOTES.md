@@ -153,3 +153,9 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
 - [11-03] One-pager published on Vandygraph (private): https://vandygraph.com/v/cmb-fourth-order-multi-agent-run-summary ; source cmb4/doc/onepager.html (gen_onepager.py).
 - [11-03] Vandygraph page recreated PUBLIC (same URL): https://vandygraph.com/v/cmb-fourth-order-multi-agent-run-summary (id 98b8fc74-7944-4d8a-89fd-ec56944d3f3c); links now point to main. Designer v2 in progress; history slimming awaiting user permission (force push blocked).
 - [11-03] v2 one-pager (designer redo) published PUBLIC at the same URL; links point to main. History slimming still awaiting user permission for force-push.
+- [11-03] X1 comparison with Adam (a-johnston/temp-power-spectrum) DONE (report_X1_compare.md): first-order T_l identical to 1e-38;
+  superhorizon 4th-order factors agree to 7 digits (l=2: 17/3 + 4 = 29/3; l=3: 37 + 9 = 46; both 22/13 splits match); C22 inside
+  horizon agrees <=0.13%; ONE discrepancy: O(k0^6) coefficient of 1/3 Re C13: ours -4.3796 vs Adam -257/60 = -4.2833 (2.2%),
+  emission-time independent -> observer-local (second-order clock / K=0 lapse) in one of the two frameworks; unresolved.
+  Adam has the shear formula too (his Lemma 2, coordinates, irrotational), no Dunsby attribution. TODO: replace our §12.7 sentence
+  ("9.6 sigma^2") with the exact 29/3 = 8 + 5/3 observer-dilation reading; settle the k0^6 C13 term analytically.
