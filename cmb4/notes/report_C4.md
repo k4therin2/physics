@@ -47,3 +47,41 @@ Only the n = 0 monomials give 1/w factors: (e^{iw eta}-1)/(iw)  -> removable 0/0
    terms occur only at n = -4, -2, 0 => NO log(eta) in the collinear Phi2 (unlike the h2 resonance).
 CHECK (quadrature arbiter, 60 digits): 8 random points + sqrt3-point: |rel. diff| <= 3.5e-40; 4 collinear points vs limiting forms:
    <= 2.5e-40; generic Cin-form evaluated 1e-12 off the collinear point agrees to 1e-11 (continuity).
+
+## Milestone 4 — ASYMPTOTICS AND SMALL-eta SERIES  [COMPLETE, verified]  (relaunch 2026-11-03)
+### eta -> infinity (`asymptotics.py` -> `asymptotics.pkl`; `asymptotics_compact.py`; check `probe_asym2.py`)
+Cin(z) -> EulerGamma + ln|z| - sin z/z + cos z/z^2 + 2 sin z/z^3 - 6 cos z/z^4,  Si(z) -> (pi/2)sgn z - cos z/z - sin z/z^2 + ...,
+with the frequency signs fixed by the triangle inequalities.  The "sign error" suspected by the crashed run is NOT present in the
+saved expansion: re-checked with a 80-digit mpmath evaluation of the full closed forms at k eta = 1e2, 1e3, 1e4, 1e5 for three
+configurations, (full - asym) x^4 (Phi2, kept eta^-2, eta^-3) and (full - asym) x^3 (h2, kept eta^-1, eta^-2) stay bounded
+(no growth over three decades) => the expansions are correct through the kept orders.  [The earlier log only looked bad because
+for q/k = 0.1 the next coefficient is ~1e4 (1/(p^3 q^3) prefactors) — the expansion is non-uniform as q -> 0 and near q+p = sqrt3 k.]
+LEADING TERMS (x = k eta/sqrt3):
+  Phi2 -> (1/eta^2) { C_L [ Lambda cos x + pi sin x ] + C_0 cos x } + O(eta^-3),
+     Lambda = ln[ (k+q+p)(q+p-k) / ((k+q-p)(k+p-q)) ],
+     C_L = -3 (k^2+p^2+q^2) R / (8 k^4 p^3 q^3),
+     R = 3k^6 - 3k^4(p^2+q^2) - 3k^2(p^4+q^4) - 2k^2 p^2 q^2 + 3(p^6+q^6) - 3 p^2 q^2 (p^2+q^2),
+     C_0 = 3[ -3k^6 - 3k^4(p^2+q^2) + 3k^2(p^4+q^4) + 2k^2 p^2 q^2 + 3(p^6+q^6) - 3p^2q^2(p^2+q^2) ] / (2 k^4 p^2 q^2)
+     (C_0 includes the homogeneous piece K_Phi2_0 ghat -> -9 K_Phi2_0 cos x/(k eta)^2).  No Theta function: for Phi2 all four
+     frequency signs are fixed in the physical domain; Lambda is real and finite except at the collinear edges (log divergence of
+     the *asymptotic* coefficient only; the exact closed form is finite there, see Milestone 3).
+  I_h -> (4/k^2) x KT(25)  (sin(k eta) log term + Theta(q+p-sqrt3 k) pi cos(k eta) term), identical to Kohri-Terada (25).
+### eta -> 0 (`series_small.py` -> `series_small_eta.pkl`, log `series_small.log`)
+Frobenius recursion a_n n(n+3) = s_{n-2} - (k^2/3) a_{n-2} on the exact source series + C1 constraints; all fields regular:
+  Phi2   = -(7k^4 - 2k^2(p^2+q^2) + 3(p^2-q^2)^2)/(9k^4)
+           + eta^2 [-21k^4(p^2+q^2) + 10k^2(p^4+q^4) - 28k^2p^2q^2 + 3(p^6+q^6) - 3p^2q^2(p^2+q^2)]/(270 k^4)
+           - eta^4 [-150k^6(p^2+q^2) - 65k^4(p^4+q^4) - 398k^4p^2q^2 + 80k^2(p^6+q^6) - 144k^2p^2q^2(p^2+q^2)
+                    + 15(p^8+q^8) + 36p^2q^2(p^4+q^4) - 102p^4q^4]/(113400 k^4) + O(eta^6)
+  I_h    = (8/9) eta^2 - (2/135)(3k^2+p^2+q^2) eta^4 + (45k^4+15k^2(p^2+q^2)+5(p^4+q^4)+22p^2q^2) eta^6/42525 + O(eta^8)
+  Psi2, Q2, delta2, deltaT2 to eta^4 and V2 to eta^5: in series_small.log (eta^0 terms reproduce PUB/C1 ICs; zeta^(2)(0) = 0 checked).
+CHECK: closed forms (mpmath 120 digits) minus the series through eta^6: (closed - series)/eta^8 -> constant for eta = 1e-1..1e-3
+  (two configurations) for both P and I_h.
+
+## Milestone 5 — ALL SECOND-ORDER FIELDS: END-TO-END EINSTEIN CHECK  [COMPLETE: PASS]
+`verify_einstein.py` (log `verify_einstein.log`): first-order plane-wave pair zeta = A e^{i q1.x} + B e^{i q2.x} plus the C4
+second-order fields (Phi2, Psi2 = Phi2 - Q2, delta2, v2 = grad V2 + v2^T, omega2, h2_ij from I_h; coefficient of A B e^{ik.x},
+summed over both orderings) inserted into C1's FULL second-order Einstein equations E^(2)_{mu nu} (10 components, from
+E_sympy.pkl, i.e. independent of the SVT decomposition used to derive the kernels) and the 4 second-order conservation equations;
+eta-derivatives of the closed forms by mpmath.diff at 50 digits.  Three points (k eta = 2.5, 9.6, 20.1; q/k from 0.19 to 1.6):
+  max |residual| / max|individual term| = 5.5e-50 over all 14 equations x 3 points.
+(This simultaneously checks the closed-form Phi2, its eta-derivatives, all constraint-derived fields, the vector fields and h2.)
