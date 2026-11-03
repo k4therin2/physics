@@ -154,7 +154,17 @@ def match_rotation(out, extra_W=None):
     P = sp.Poly(r2, *gens)
     eqs = [c_ for c_ in P.coeffs()]
     sol = sp.solve(eqs, unknowns, dict=True)
-    return sol, W, resid
+    # IMPORTANT: sympy's solve silently drops equations free of the unknowns; verify the residual explicitly.
+    good = []
+    for so in sol:
+        full = {u: so.get(u, 0) for u in unknowns}   # unfixed unknowns set to 0
+        chk = unit_rules(sp.expand(r2.subs(full)))
+        if chk == 0: good.append(full)
+    if not sol:
+        chk = r2
+    if sol and not good:
+        print('  (solve returned', sol, 'but the residual does not vanish:', len(sp.Add.make_args(chk)), 'terms)')
+    return good, W, resid
 
 if __name__ == '__main__':
     pass
