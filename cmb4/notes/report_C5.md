@@ -49,6 +49,31 @@ Closed form vs mpmath quadrature (5 parameter sets): max rel. err 2e-18.  eta_* 
 - k -> infinity: Delta_l -> -cos x_* j_l(k chi) - sqrt3 sin x_* j_l'(k chi) + O(1/(k eta_*)) (verified k = 200, 2000).
 - Example (sigma^2=1, eta_*=0.5, eta_o=2, k0=4): Delta_0..4 = 0.44006, -0.33896, 0.27562, 0.22303, 0.11803.
 
+## Milestone 1 — general-l structure of the ISW closed form (status: COMPLETE, verified l = 0..6)
+Script `isw_structure.py` (log `isw_structure.log`), explicit forms `isw_closed_forms.tex` (l = 0..6).
+THEOREM (all l).  With s_* = k eta_*, S = k eta_o, w = S - s_* = k(eta_o - eta_*), a_± = 1 ± 1/sqrt3,
+Cin(z) = int_0^z (1 - cos t) dt/t = gamma + ln z - Ci(z) (entire), J(s) = j_2(s/sqrt3)/(s/sqrt3), Y(s) = y_2(s/sqrt3)/(s/sqrt3):
+    I_l = E_l(s_*,S) + A_l(S) [Ci(a_+S) - Ci(a_+s_*) - Ci(a_-S) + Ci(a_-s_*)] + B_l(S) [same with Si]
+          + C_l(S) [Cin(a_+w) - Cin(a_-w)] + D_l(S) [Si(a_+w) + Si(a_-w)],
+    A_l = (2/sqrt3) Res_{s=0} Y(s) y_l(S-s) = sqrt3 [3 y_l^(3)(S) + y_l^(1)(S)],
+    B_l = -(2/sqrt3) Res_{s=0} Y(s) j_l(S-s) = -sqrt3 [3 j_l^(3)(S) + j_l^(1)(S)],
+    C_l = -(2/sqrt3) Res_{u=0} y_l(u) Y(S-u),     D_l = -(2/sqrt3) Res_{u=0} y_l(u) J(S-u),
+    E_l elementary: Laurent polynomials in (s_*, S, w) times sin/cos of a_± s_*, a_± S, S - s_*, s_*/sqrt3, S/sqrt3.
+(Y = -27/s^4 - 3/(2s^2) + regular gives the derivative form of A, B; y_l has a pole of order l+1, so C_l, D_l involve
+derivatives of y_2(x)/x, j_2(x)/x up to order l at x = S/sqrt3.)
+Derivation: integrand = (1/sqrt3)(g + gbar)(s/sqrt3)(h + hbar)(S - s), g = h_2^(1)(x)/x, h = h_l^(1).  A phase term
+e^{ibs}R(s) contributes to Ci/Si with coefficient Res[e^{ibs}R] at each pole (higher poles feed in through the recursion
+int e^{ibs}/s^m -> (ib)^{m-1}/(m-1)! int e^{ibs}/s); poles: s = 0 (order 4, from y_2/x) and u = S - s = 0 (order l+1, from y_l).
+Since j_l and j_2(x)/x are entire, the four Hankel products pair up: A^- = -A^+, B^- = -B^+, C^- = -C^+, D^- = D^+, leaving the
+real residue forms above.  Re Res_{u=0}[j_l(u) g] = 0 is exactly the vanishing of the ln w coefficient (regularity at the
+observer: no finite-part ambiguity).
+CHECKS (40-digit numerics at 3 points, l = 0..6): every Ci/Si coefficient of the brute-force closed form equals the residue
+formula (diff < 1e-169); ln w coefficient = 0 symbolically; E_l contains no Ci, Si, log, gamma.  CAUTION: sympy.residue gave
+WRONG answers for these expressions; residues are computed by explicit Laurent x Taylor products.
+Example l = 0:  C_0 = (2/sqrt3) Y(S), D_0 = (2/sqrt3) J(S),
+    A_0 = -2 sqrt3 (S^3 sin S + 4S^2 cos S - 9S sin S - 9 cos S)/S^4,  B_0 = 2 sqrt3 (S^3 cos S - 4S^2 sin S - 9S cos S + 9 sin S)/S^4;
+  E_0 has 56 terms; E_l (l = 1..6): 99, 156, 221, 294, 375, 464 terms (all in isw_closed_forms.tex).
+
 ## Remaining (from brief) — see later milestones
 - explicit printed closed forms l = 2..6 + general-l structure statement (output file); 
 - explicit monochromatic formulas and the two limits written out analytically incl. derivation of the RD SW amplitude;
