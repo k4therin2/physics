@@ -46,11 +46,13 @@ normalisation and the order-by-order maps $\Theta^{(n)}$ follow by exact algebra
 transfer function and $C^{(11)}_\ell$ in closed form; all second-order fields in closed form (elementary functions, $\Si$ and $\Ci$);
 the contracted third-order fields with closed-form initial amplitude and one declared time integral; the complete
 line-of-sight maps $L_1,L_2,L_3$ (all terms are listed); the harmonic machinery; the kernel $K_2$, $C^{(22)}_\ell$ and its
-monochromatic evaluation.  The $(13)$ term is being assembled (status in Sec.~\ref{sec:roadmap}).  Checks: the exact formula, the
+monochromatic evaluation; the contracted third-order kernel, $C^{(13)}_\ell$ and the monochromatic $O(\eps^4)$ coefficient (an evaluation by
+quadrature at one parameter point).  Checks: the exact formula, the
 field equations, the second-order closed forms and the harmonic rules are verified symbolically or to high precision;
-the maps $\Theta^{(1,2,3)}$ are verified end to end against a non-perturbative solver in a different gauge; the formulas
-(E2), (E3), $T^{\rm(ii)}$ of the $(13)$ machinery, the analytic zero-mode invariance and the collinear behaviour of the $(13)$
-integrand are pending.
+the maps $\Theta^{(1,2,3)}$ are verified end to end against a non-perturbative solver in a different gauge; the contracted
+third-order kernel is checked by form equivalence, residual-gauge invariance and its squeezed limit; the cancellation of the collinear
+poles of the $(13)$ integrand and the UV behaviour of the loop are established numerically only, and the formulas (E2), (E3),
+$T^{\rm(ii)}$ and an analytic zero-mode proof are open (Sec.~\ref{sec:unresolved}).
 \end{abstract}
 
 \tableofcontents
@@ -76,6 +78,7 @@ integrand are pending.
 \input{app_closedforms}    % Closed-form second-order time integrals
 \input{app_lterms}         % Complete line-of-sight term lists of L1, L2, L3 (machine generated)
 \input{app_k2channels}     % Channel kernels of K_2 (machine generated)
+\input{app_k3channels}     % Channel groups of the contracted K_3 (machine generated)
 \input{app_ledger}         % Reproducibility and verification ledger
 
 \input{refs}               % References (thebibliography)

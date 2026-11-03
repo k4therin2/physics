@@ -140,9 +140,14 @@ a simple pole in $\mu$ at $\mu=1$ ($p\to0$).  For a smooth $P(q)$ the $\dd^3q$ i
 $q=k$ exactly, as for the monochromatic spectrum, $\int\dd\mu\,C_3$ diverges logarithmically unless the pole cancels in the full
 contracted map $\Theta^{(3)}_c$.  (At $q=k$, $\mu\to1$ means $\hat{\vp}\perp\khat$, so the $(3\mu_p^2-1)$ angular structure of the $p^{-2}$
 terms does not average away.)
-\todo{$\mu\to1$ behaviour of the $(13)$ integrand: coefficient of $1/(1-\mu)$ of the complete contracted map $\Theta^{(3)}_c$ at $q=k$
-(all $K_{3c}$, tadpole and normalisation terms) and its cancellation in $C^{(13)}_\ell$, or definition of the monochromatic limit as the
-limit of a narrow spectrum (being derived; Secs.~\ref{sec:asm-C13}, \ref{sec:mono-13}).}
+\emph{Resolution.}  In the complete contracted map the pole cancels.  Besides $C_3$, every Poisson-inverted second-order object of the
+long pair carries $p^{-2}=[2k^2(1-\mu)]^{-1}$, and six channels of $\kappa=\Theta^{(3)}_c$ acquire simple poles (the third-order velocity
+including $C_3U$, the time delay with $\Delta\vx_2$, the second-order clock and emission shift, the local $2{+}1$ products and the radial
+$\vk_2$).  Their residues cancel to the accuracy of the extraction for $\ell\le6$, and the total $\mu$-integrand has a finite limit approached
+linearly in $1-\mu$, with no $(1-\mu)^{-1/2}$ term (Sec.~\ref{sec:mono-13}).  These are precisely the channels that respond to the residual
+$K=0$ time reparametrisation: the $O(p^{-2})$ part of a long second-order mode is a residual gauge mode of Poisson gauge, to which the
+observable is blind.  The monochromatic $C^{(13)}_\ell$ is therefore finite without a narrow-spectrum regularisation; the cancellation is
+established numerically, and an analytic residue computation is listed in Sec.~\ref{sec:unresolved} (item 1).
 
 \subsection{The exact dilation family and the zero-mode (tadpole) ambiguity}
 \label{sec:tadpole}
@@ -190,9 +195,16 @@ unobservable: the full map must be invariant under $c$ at every order, which fix
 $K_2$ and $K_3$ and forces the tadpole convention to drop out of $\Theta^{(3)}$ and hence of $C^{(13)}_\ell$.
 The dilation family is the $k=0$ gauge test of the assembled map (Sec.~\ref{sec:check_dilation}); a numerical test of the
 zero-mode independence of $\Theta^{(1,2,3)}$ for one plane wave is also passed there.
-\todo{zero-mode invariance: analytic proof that $\Theta^{(3)}$ (clock, emission, tadpoles and normalisation together) is independent of the
-zero-mode assignment $(\Phi_{2,0},\Psi_{2,0})$ along the residual $k=0$ family, including the anisotropic pieces of
-\eqref{eq:KPhi20_smallk}, which justifies the exchange of limit and angular average (being derived).}
+\emph{Resolution in the gauge sense.}  In the assembled contracted kernel the tadpoles multiply first-order objects of the free leg
+$\vk$ only (\eqref{eq:asm-classii}), so only the $\qhat$-averaged $K=0$ pair kernel can enter: the anisotropic piece
+$-4q^2(3\mu^2-1)/(9k^2)$ of \eqref{eq:KPhi20_smallk}, a constant anisotropic shear, drops out identically and the angular average is not a
+convention.  The isotropic tadpole has three functions $(\langle\Phi_2\rangle,\langle\Psi_2\rangle,\langle\delta_2\rangle)(\eta)$ and two $K=0$ constraints; the remaining
+freedom is the residual time reparametrisation $\eta\to\eta+\tfrac{\eps^2}2\tau(\eta)$ (with the dilation constant fixed by $\zeta^{(2)}(0)=0$).  The
+full contracted kernel $\kappa$, with clock, emission shift, tadpoles and normalisation, is invariant under it to $6\times10^{-14}$ ($\tau=0.1\eta$)
+and $3\times10^{-13}$ ($\tau=0.1\eta^3$), while individual channels change at $O(1)$ (Sec.~\ref{sec:asm-C13}; ledger R-11, EF-22).  The sourced part
+of the tadpole is not a gauge mode but the physical back-reaction of the short modes on the homogeneous expansion, and is kept.
+%% HOOK-V5: analytic zero-mode proof.
+\pending{an analytic proof of zero-mode invariance of $\Theta^{(3)}$ for general momenta (Sec.~\ref{sec:unresolved}, item 8).}
 At the level of the field equations the consistency is already verified by the squeezed limit of \eqref{eq:C3},
 \begin{equation}
 \lim_{q\to0}C_3(k;q,\mu)=-\tfrac{32}9 ,

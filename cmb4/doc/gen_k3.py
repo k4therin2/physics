@@ -20,12 +20,12 @@ def math(s):
         return ''.join('\\partial_{%s}'%v+('^{%s}'%p if p else '') for v,p in toks)+' '
     s=re.sub(r'\\frac\{\\partial\^\{\d\}\}\{((?:\\partial (?:\\eta|[xyz])(?:\^\{\d\})?)+)\}',d2,s)
     # fields
-    s=re.sub(r'\bv_\{([123]) ([123])\}',lambda m:'v^{%s}_{%s}'%(C[m.group(1)],m.group(2)),s)
+    s=re.sub(r'\bv_\{([123]) ([123])\}',lambda m:'{v^{%s}_{%s}}'%(C[m.group(1)],m.group(2)),s)
     s=re.sub(r'\bh_\{([123])([123]) ([123])\}',lambda m:'h_{%s,%s%s}'%(m.group(3),C[m.group(1)],C[m.group(2)]),s)
     s=re.sub(r'\\operatorname\{om\}_\{([123]) ([123])\}',lambda m:'\\omega_{%s,%s}'%(m.group(2),C[m.group(1)]),s)
-    s=re.sub(r'\\operatorname\{Dx\}_\{([12]) ([123])\}',lambda m:'\\Delta x^{%s}_{%s}'%(C[m.group(2)],m.group(1)),s)
-    s=re.sub(r'\bk_\{([12]) ([123])\}',lambda m:'k^{%s}_{%s}'%(C[m.group(2)],m.group(1)),s)
-    s=re.sub(r'\bdxo_\{([12]) ([123])\}',lambda m:'\\delta x^{%s}_{o%s}'%(C[m.group(2)],m.group(1)),s)
+    s=re.sub(r'\\operatorname\{Dx\}_\{([12]) ([123])\}',lambda m:'{\\Delta x^{%s}_{%s}}'%(C[m.group(2)],m.group(1)),s)
+    s=re.sub(r'\bk_\{([12]) ([123])\}',lambda m:'{k^{%s}_{%s}}'%(C[m.group(2)],m.group(1)),s)
+    s=re.sub(r'\bdxo_\{([12]) ([123])\}',lambda m:'{\\delta x^{%s}_{o%s}}'%(C[m.group(2)],m.group(1)),s)
     s=re.sub(r'\bdeta_\{([oe])([12])\}',lambda m:'\\delta\\eta_{%s%s}'%(m.group(1),m.group(2)),s)
     s=re.sub(r'\\(Phi|Psi)_\{([123])\}',lambda m:'\\%s_{%s}'%(m.group(1),m.group(2)),s)
     return s

@@ -76,7 +76,7 @@ object & closed form & declared integral & verified by & open \\ \hline
 $T_X$, $\Delta_\ell$, $C^{(11)}_\ell$ & yes (ISW: $\Ci$, $\Si$, all $\ell$) & --- & EF-3, FO-1--4, PW-2 & --- \\
 $K_X$ (2nd order), tadpoles & yes & --- & EF-17, EF-19 & --- \\
 $\mathcal K_{\Phi_2}$, $\mathcal K_h$ & yes (App.~\ref{app:closedforms}) & --- & CF-1--4 & --- \\
-$K_{3c,X}$, $C_3$ & yes & --- & EF-20 & pole \eqref{eq:C3pole} \\
+$K_{3c,X}$, $C_3$ & yes & --- & EF-20, EF-22 & --- (pole \eqref{eq:C3pole} cancels in $\kappa$, L-1) \\
 $\Phi_{3c}$ & --- & one time integral & PW-1 (plane wave) & --- \\
 $L_1$, $L_2$, $L_3$ & complete term lists & ray functionals & X-9, R-4, R-6, PW-2 & --- \\
 clock, label at finite $\eta_i$ & yes \eqref{eq:deta_o1}--\eqref{eq:deta_o2} & worldline integrals & R-8, PW-5 & --- \\
@@ -84,11 +84,17 @@ harmonic rules, (B1), (C1) & yes & --- & H-1--9, H-11 & --- \\
 $K_2$, $K_{2,\ell m}$ & channels (App.~\ref{app:k2channels}) & time integrals & Sec.~\ref{sec:asm-K2} & --- \\
 $C^{(22)}_\ell$ (mono) & --- & $\mu$ integral, evaluated & Sec.~\ref{sec:mono-num} & --- \\
 (E2), (E3), $T^{\rm(ii)}$ & formulas & loop integrals & analytic collapse only & numerical test \\
-$\Theta^{(3)}_c$, $C^{(13)}_\ell$ & --- & loop integrals & --- & being assembled \\
-zero-mode invariance & --- & --- & PW-3 (numerical, collinear) & analytic proof \\ \hline
+$\kappa=\Theta^{(3)}_c$, $C^{(13)}_\ell$ (mono) & --- & $\mu$ integral, evaluated & R-9--R-11, SQ-3, H-13, L-1, L-2 & analytic residues; UV \\
+zero-mode invariance & --- & --- & PW-3, R-11; quadrupole drops identically & analytic proof (general $\vq$) \\ \hline
 \end{tabular}}
-\todo{monochromatic $\tfrac13\Re C^{(13)}_\ell$ and the combination $\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell$ at the two parameter points
-(Secs.~\ref{sec:mono-13}--\ref{sec:mono-comb}); update the last three rows of the status table.}
+\paragraph{The $(13)$ term and the $O(\eps^4)$ coefficient.}  The contracted third-order kernel is assembled and validated
+(Secs.~\ref{sec:asm-K3c}--\ref{sec:asm-IR}); the monochromatic $C^{(13)}_\ell$ is finite (numerical cancellation of the collinear residues,
+Sec.~\ref{sec:mono-13}) and evaluated at $k_0=1$, $\eta_*=2$, $\eta_o=8$ (not at $\eta_o=4$).  In units of $\sigma^4$
+(Table~\ref{tab:mono-comb}):
+$\tfrac13\Re C^{(13)}_\ell=-5.398$, $-9.064$, $-1.463\times10^{-3}$ and
+$\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell=8.860$, $-7.198$, $3.862\times10^{-2}$ for $\ell=2,4,10$, against
+$C^{(11)}_\ell/\sigma^2=0.9546$, $0.1751$, $9.68\times10^{-6}$.  These are evaluations by quadrature (relative accuracy of the $(13)$ part
+$\le8\times10^{-5}$); open: an analytic proof of the residue cancellation and the UV behaviour for power-law spectra (Sec.~\ref{sec:unresolved}).
 
 \paragraph{Delicate points.}
 \begin{itemize}\itemsep1pt
@@ -96,9 +102,11 @@ zero-mode invariance & --- & --- & PW-3 (numerical, collinear) & analytic proof 
 gauge test (Sec.~\ref{sec:check_dilation}); the squeezed limit of $K_2$ is a dilation of $K_1$, $K_2(\vk_1\to0,\vk_2)=-\vk\cdot\partial_\vk K_1+O(k_1)$
 (Sec.~\ref{sec:asm-squeezed}), and the soft region of the loop is a total derivative that vanishes only for $P\propto k^{-3}$.
 \item \emph{Zero modes.}  The $k\to0$ limit of the second-order kernels does not exist \eqref{eq:KPhi20_smallk}; the tadpole convention averages
-over angles first.  Justified numerically (PW-3); the analytic proof of zero-mode invariance is pending (Sec.~\ref{sec:tadpole}).
+over angles first.  In the assembled kernel only the angle-averaged tadpole can enter, and the remaining freedom (a residual time
+reparametrisation) drops out of $\kappa$ to $10^{-13}$ (Sec.~\ref{sec:asm-C13}); an analytic proof for general momenta is open.
 \item \emph{$\mu\to\pm1$.}  In $(22)$, $K\to0$ is integrable for $\ell\ge2$ (Sec.~\ref{sec:mono-K0}).  In $(13)$ at $q=k$, $C_3$ has a simple pole in $\mu$
-\eqref{eq:C3pole}; the monochromatic $(13)$ term requires its cancellation in $\Theta^{(3)}_c$ or a narrow-spectrum limit (pending).
+\eqref{eq:C3pole}; six channels of $\kappa$ have $1/(1-\mu)$ poles whose residues cancel numerically, so the integrand has a finite limit
+(Sec.~\ref{sec:mono-13}); an analytic residue computation is open.
 \item \emph{UV behaviour of the perfect fluid.}  After emission the fluid is continued as a perfect fluid (no free streaming); the acoustic
 oscillations persist undamped, $\Delta_\ell\to$ oscillatory as $k\to\infty$ (Sec.~\ref{sec:linear}), and the $(22)$ kernel reaches $K=2k_0$, so
 $\tfrac14C^{(22)}_\ell/C^{(11)}_\ell$ grows steeply with $\ell$ for a monochromatic spectrum (Sec.~\ref{sec:mono-num}): the expansion in

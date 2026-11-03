@@ -378,20 +378,20 @@ the second-order kernels at the momenta $(\vk,-\vq)$, $|\vk-\vq|=p$, with all th
 \eqref{eq:third_eqs}: $\Phi_{3c}=\int\frac{\dd^3q}{(2\pi)^3}P(q)\big[\int_0^\eta G_\Phi K_{3c,S_\Phi}\dd\eta'+C_3\,U(k\eta/\sqrt3)\big]$, $\Psi_{3c}=\Phi_{3c}-Q_{3c}$,
 $V_{3c}=-\tfrac{\eta^2}4[2(\Phi'_{3c}+\Psi_{3c}/\eta)+K_{3c,S_{0z}}/(ik)]$.  In the shear form only the velocity enters (the contracted vector and
 tensor parts vanish by isotropy), $\vv_{3c}=i\vk V_{3c}$, through the same projection as at first order:
-\begin{equation}
-\kappa^{\rm(iii)}(\vk;\nhat)=\int_{\eta_*}^{\eta_o}\!\dd\eta\,\tfrac23k^2\,P_2(\nhat\cdot\khat)\,V_{3c}(k,\eta)\,e^{i\vk\cdot\nhat\chi},\qquad
-\Delta^{\rm(iii)}_\ell=\int\!\dd\eta\,\tfrac23k^2V_{3c}\sum_{J}(2J+1)\threej{\ell}{2}{J}{0}{0}{0}^2i^{J-\ell}j_J(k\chi),
+\begin{align}
+\kappa^{\rm(iii)}(\vk;\nhat)&=\int_{\eta_*}^{\eta_o}\!\dd\eta\,\tfrac23k^2\,P_2(\nhat\cdot\khat)\,V_{3c}(k,\eta)\,e^{i\vk\cdot\nhat\chi},\nonumber\\
+\Delta^{\rm(iii)}_\ell(k)&=\int_{\eta_*}^{\eta_o}\!\dd\eta\,\tfrac23k^2V_{3c}(k,\eta)\sum_{J=|\ell-2|}^{\ell+2}(2J+1)\threej{\ell}{2}{J}{0}{0}{0}^2i^{J-\ell}j_J(k\chi),
 \label{eq:asm-classiii}
-\end{equation}
+\end{align}
 by (A-$L$) \eqref{eq:AL} with $L=2$.  (In the direct form, $\Phi_{3c},\Psi_{3c},\delta_{T3c},V_{3c}$ appear instead; the two forms agree, below.)
 \end{itemize}
 The normalisation terms of \eqref{eq:theta3} contribute, for $\ell\ge1$ (with $K^{m_2}\equiv2\,{\rm Sym}[K_{L_2/2}]+K_1K_1$ the kernel of $m_2$ and
 $\bar K_2$ its sky average, Sec.~\ref{sec:thirteen}),
-\begin{equation}
-\kappa_{\rm norm}=-6\!\int_{\vq}\!P\,\Delta_0(q)\,K^{m_2}(\vk,-\vq;\nhat)-3\langle\!\langle m_2\rangle\!\rangle K_1(\vk;\nhat)
--6\!\int_{\vq}\!P\,\bar K_2(\vk,-\vq)\,K_1(\vq;\nhat)+6\langle\sky{m_1}^2\rangle K_1(\vk;\nhat),
+\begin{align}
+\kappa_{\rm norm}&=-6\!\int_{\vq}\!P\,\Delta_0(q)\,K^{m_2}(\vk,-\vq;\nhat)-6\!\int_{\vq}\!P\,\bar K_2(\vk,-\vq)\,K_1(\vq;\nhat)\nonumber\\
+&\quad-3\langle\!\langle m_2\rangle\!\rangle K_1(\vk;\nhat)+6\langle\sky{m_1}^2\rangle K_1(\vk;\nhat),
 \label{eq:asm-kappanorm}
-\end{equation}
+\end{align}
 $\int_\vq\equiv\int\frac{\dd^3q}{(2\pi)^3}$; inserted in \eqref{eq:asm-C13} they give the four terms of (E0) \eqref{eq:E0} with (E2), (E3)
 \eqref{eq:E2E3}.  The complete list of groups ($L_1$: 3 terms; $\tfrac12L_2$: 34; $\tfrac16L_3$: 359 in 32 groups) with their classes is
 App.~\ref{app:k3channels}; the engine evaluates every group in a per-direction frame $(\ehat_1,\ehat_2,\nhat)$, builds the ray functionals by

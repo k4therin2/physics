@@ -1,7 +1,61 @@
-\section{Unresolved steps}
+\section{Unresolved steps and limitations}
 \label{sec:unresolved}
-\todo{Complete list of declared-but-unevaluated integrals (time integrals over Green's functions,
-$\eta$-line-of-sight integrals, $k$-, $q$-, $\mu$-loop integrals), the tadpole zero-mode
-convention and its validation, any exchange of limit and integration not yet justified.  Items
-flagged \unevaluated{\ldots} or \textcolor{red!70!black}{[To be supplied]} in the settled sections
-must be collected here.}
+The following list collects every step of the calculation that is not derived analytically, not tested, or rests on an assumption.
+Items marked \emph{numerical} have been established by computation only, with the accuracy quoted at the place indicated.
+\begin{enumerate}\itemsep3pt
+\item \emph{Collinear residues of the $(13)$ integrand (numerical only).}  At $q=k$ six channels of the contracted kernel have simple poles in
+$1-\mu$; their residues cancel for $\ell\le6$ to the accuracy of the extraction ($\le1.5\times10^{-4}$ of the largest residue) at one parameter point
+(Sec.~\ref{sec:mono-13}), and the cancellation is explained structurally by the gauge character of a long second-order mode.  An analytic
+computation of the residues, i.e.\ a proof that the $O(p^{-2})$ part of the pair $(\vk,-\vq)$ enters $\kappa$ only as a residual $K=0$ gauge
+mode, is not available.  The finiteness of the monochromatic $C^{(13)}_\ell$ rests on this numerical result.
+\item \emph{UV behaviour of the loop for power-law spectra (numerical, partial).}  The $\qhat$-averaged integrand of $\kappa$ is $O(10)$ and
+oscillatory up to $q=4k$ (Sec.~\ref{sec:asm-IR}); no analytic large-$q$ expansion of $K_{3c}$ (nor of the $(22)$ integrand at large $k_1\simeq k_2$)
+has been made.  If the integrand is $O(q^0)$, the loop converges in the UV for $n_s<1$ and is logarithmically divergent for $n_s=1$, as
+$\langle\zeta^2\rangle$; the perfect fluid provides no damping scale.
+\item \emph{IR for tilted spectra (derived, untested).}  The combined soft region \eqref{eq:asm-IRtot}, $\tfrac12(n_s-1)^2\sigma_L^2C^{(11)}_\ell$ for a power
+law \eqref{eq:asm-IRns}, follows from the squeezed theorems \ref{thm:asm-squeezed} and \ref{thm:asm-squeezed3}, both verified numerically; the
+combined formula itself (including the vanishing of the boundary terms) has not been tested by a loop computation with a tilted spectrum.
+\item \emph{Closed forms versus declared integrals.}  Closed: the first-order transfer function and the ISW integral for all $\ell$
+(Theorem~\ref{thm:isw}); all second-order fields, including the tensor kernel $\mathcal K_h$ and the special-function part of $\mathcal K_{\Phi_2}$
+(one coefficient $D$, App.~\ref{app:closedforms}); the contracted third-order sources $K_{3c,X}$, the tadpoles and the amplitude $C_3$.  Left as
+explicit one-dimensional integrals with complete integrands and limits: the third-order Green's integral
+$\int_0^\eta G_\Phi K_{3c,S_\Phi}\dd\eta'$ in $\Phi_{3c}$ \eqref{eq:third_eqs}, hence $V_{3c}$ and $\Delta^{\rm(iii)}_\ell$ \eqref{eq:asm-classiii}; the ray
+functionals $\mathcal F_\ell$, $\mathcal D_{\perp\ell}$, $\mathcal D_{r\ell}$ \eqref{eq:asm-Dl} and their second-order analogues; the transfer functions
+$\Delta^\kappa_\ell$ of the contracted kernel (a $\mu$-integral of time integrals); the type-C and type-D $\mu$-integrands of $C^{(22)}_\ell$, which
+are projected on $Y_{\ell m}$ by sky quadrature (no closed form beyond \eqref{eq:K2lm}, \eqref{eq:asm-Dl}).  The loop integrals over $k$, $q$, $\mu$
+are evaluated numerically for the monochromatic spectrum only.
+\item \emph{(E2), (E3), $T^{\rm(ii)}$ untested numerically.}  These harmonic formulas (Sec.~\ref{sec:thirteen}) are derived by Wick counting and
+pass an analytic collapse check (H-10).  The monochromatic $C^{(13)}_\ell$ does not use them: $\kappa$, including its normalisation part
+\eqref{eq:asm-kappanorm}, is computed directly by polarisation.  An evaluation of $C^{(13)}_\ell$ through (E0)--(E3) would be an independent
+route and has not been made.
+\item \emph{Gauge invariance.}  Tested: the exact $k=0$ family (dilation, all orders, analytic; Sec.~\ref{sec:check_dilation}); the residual $K=0$
+time reparametrisation $\tau(\eta)$ for the full contracted kernel $\kappa$ (Sec.~\ref{sec:asm-C13}); the finite-$k$ comparison of the planar
+plane-wave maps with a non-perturbative solver in comoving-orthogonal gauge (Sec.~\ref{sec:check_endtoend}).  Not performed: a perturbative test
+of the assembled $L_2$, $L_3$ under a general second-order gauge transformation at finite momenta.  The invariance of $\Re C^{(13)}$ under a rigid
+rotation of the observer triad is proved (Lemma~\ref{lem:asm-triad}) but was not checked numerically by rotating the global axes.
+\item \emph{Coverage of the end-to-end test.}  The single-plane-wave comparison with the non-perturbative solver probes only the axisymmetric
+($m=0$ about $\vk$) parts of $K_2$, $K_3$ in collinear configurations, scalar modes only, and $\bar\eta_o/\eta_*=2$ and $4$
+(Sec.~\ref{sec:check_gaps}).  The contracted kernel $\kappa$ shares the term lists and field solutions tested there but was not itself compared
+with the plane-wave chain; the $(13)$ term was evaluated at $\eta_o/\eta_*=4$ only.
+\item \emph{Tadpole (mean-field) convention.}  Resolved in the gauge sense (Sec.~\ref{sec:asm-C13}): only the $\qhat$-averaged tadpole can enter
+$\kappa$, so the anisotropic $k\to0$ pieces \eqref{eq:KPhi20_smallk} drop out identically, and the remaining isotropic freedom is the residual time
+reparametrisation, under which $\kappa$ is invariant to $3\times10^{-13}$; the sourced part of the tadpole is physical back-reaction and is kept.
+What remains is an analytic proof of zero-mode invariance for general momenta (the numerical tests cover $\tau(\eta)=0.1\eta$, $0.1\eta^3$ and the
+plane-wave zero-mode shift PW-3).
+%% HOOK-V5: replace the last sentence if the analytic zero-mode proof is available.
+\item \emph{Exchange of limits and integrations.}  Justified: (a) the monochromatic $\delta$-function collapse is applied only to the complete
+observable, after the kernels $K_2$ and $\kappa$ have been assembled (Sec.~\ref{sec:monodef}); (b) the corner $K\to0$ of $C^{(22)}_\ell$ is taken
+inside the $\mu$-integral with the bound of Proposition~\ref{prop:mono-K0} (bounded integrand for $\ell\ge2$, analytic power counting); (c) the
+limit $\eta_i\to0$ is controlled by the exact split \eqref{eq:greens_split}, with the $O(\eta_i^2)$ corrections displayed (Sec.~\ref{sec:obsevent});
+(d) the $\ell$-sums are cut off with the analytic Bessel bound \eqref{eq:tailbound}; (e) $k\to0$ versus the angular average of the tadpoles: only
+the averaged quantity enters (item 8).  Justified numerically only: (f) the collinear limit $\mu\to\pm1$ of the $(13)$ integrand, taken inside
+the $\mu$-integral on the strength of the finite, linearly approached limit (item 1); (g) the squeezed limits $q\to0$ inside the soft region
+(Theorems~\ref{thm:asm-squeezed}, \ref{thm:asm-squeezed3}: derived, verified with $O(q^2)$ remainders).  Not justified: the interchange of the
+large-$q$ limit with the time integrals (item 2), and the uniformity in $k$ of the soft expansion used in \eqref{eq:asm-IRtot} (item 3).  The
+perturbative series in $\eps$ itself is used as an asymptotic expansion; its convergence is not addressed.
+\item \emph{Physical limitations of the model.}  Radiation-only universe ($\Lambda=0$, no matter, no neutrinos); the fluid is a perfect fluid
+before and \emph{after} emission (it is continued past $T_*$, so there is no free streaming, no diffusion damping and no recombination physics);
+acoustic oscillations are undamped and $\Delta_\ell(k)$ decays only as $k^{-1}$, which is the origin of the UV issue of item 2; emission is
+instantaneous on $\Tphys=T_*$ and isotropic in the fluid frame.  The monochromatic spectrum is a toy: band limited at first order but not
+in the loop, so the $\eps^4$ terms dominate $C^{(11)}_\ell$ for $\ell\gtrsim6$ (Sec.~\ref{sec:mono-comb}).
+\end{enumerate}

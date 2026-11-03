@@ -72,8 +72,13 @@ $O(1)$ ($\Psi_{2,0}(8)$: $-1.21\to+4.79$) and $\delta\eta_{o2}$ ($4.411\to-11.58
 are unchanged to $\le2\times10^{-14}$ (PW-3).  Correspondingly, the amplitude $C_3$, summed over the two orderings of the contracted momenta,
 shifts by 8 per unit shift of the tadpole $\langle\Phi_2\rangle$ along the zero-mode family (EF-20): individual tadpoles are convention
 dependent while the observable, with clock and normalisation, is not.  This test has collinear momenta and no vector or tensor modes.
-\todo{zero-mode invariance (analytic): proof that $\Theta^{(3)}$ is independent of the zero-mode assignment for general momenta, including the
-anisotropic $k\to0$ pieces \eqref{eq:KPhi20_smallk}; being derived.}
+\item \emph{Residual $K=0$ gauge invariance of the contracted kernel} (numerical, general momenta).  Under the residual time
+reparametrisation $\eta\to\eta+\tfrac{\eps^2}2\tau(\eta)$ the tadpoles and third-order fields shift at $O(1)$; the contracted third-order
+solution is covariant to $10^{-13}$ and the fully assembled $\kappa$ is unchanged to $6\times10^{-14}$ ($\tau=0.1\eta$) and $3\times10^{-13}$
+($\tau=0.1\eta^3$) (R-11, EF-22; Sec.~\ref{sec:asm-C13}).  Since only the $\qhat$-averaged tadpole enters $\kappa$, the anisotropic $k\to0$ pieces
+\eqref{eq:KPhi20_smallk} drop out identically; this settles the zero-mode question in the gauge sense.
+%% HOOK-V5: analytic zero-mode proof.
+\pending{analytic proof of zero-mode invariance for general momenta (Sec.~\ref{sec:unresolved}, item 8).}
 \item \emph{First-order gradient mode}.  $\Delta_0=O(k^4)$, $\Delta_1=O(k^3)$ as $k\to0$ (FO-3): constant and gradient modes are invisible at first order.
 \end{itemize}
 
@@ -203,11 +208,11 @@ non-collinear second-order kernel is tested by the equality of its shear and dir
 uncertainty ($3\times10^{-2}$ absolute on a map of rms 24).
 \item The gauge-invariance test at finite $k$ covers scalar modes and collinear momenta; a perturbative check under a general second-order
 gauge transformation of the assembled $L_2$ has not been performed.
-\item The $(13)$ loop integrals, (E2), (E3), $T^{\rm(ii)}$ and the collinear behaviour of the $(13)$ integrand at $q=k$ are pending:
-\todo{$\mu\to1$ behaviour of the $(13)$ integrand: cancellation of the $1/(1-\mu)$ pole \eqref{eq:C3pole} in the complete contracted map at
-$q=k$, and the resulting monochromatic $C^{(13)}_\ell$ (being derived; Secs.~\ref{sec:asm-C13}, \ref{sec:mono-13}).}
-\item The squeezed-limit predictions for $K_2$ derived from the adiabatic-mode transformation (SQ-1) are compared with the assembled $K_2$ in
-Sec.~\ref{sec:asm-squeezed}.
+\item The collinear behaviour of the $(13)$ integrand at $q=k$: the $1/(1-\mu)$ residues of six channels cancel numerically
+($\le1.5\times10^{-4}$ of the largest residue, $\ell\le6$; L-1), leaving a finite limit (Sec.~\ref{sec:mono-13}); no analytic residue computation.
+(E2), (E3), $T^{\rm(ii)}$ are not used by the monochromatic evaluation and remain untested numerically.
+\item The squeezed-limit predictions for $K_2$ and $K_3$ derived from the adiabatic-mode transformation (SQ-1) are compared with the
+assembled kernels in Secs.~\ref{sec:asm-squeezed} and \ref{sec:asm-IR} (SQ-2, SQ-3); the IR formula for tilted spectra is not tested.
 \item The literature agreement for the scalar second-order trace source rests on two independent computations and the dilation family only,
 since the printed PUB (A.6) is garbled.
 \end{itemize}

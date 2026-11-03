@@ -18,3 +18,13 @@ sec_primordial/sec_checks, ledger entries for A3/V4/V5.
   9.8 (Theorem thm:asm-squeezed3 + table, eq:asm-IRtot, eq:asm-IRns: soft = (1/2)(n_s-1)^2 sigma_L^2 C11, UV table, numerical only).
 * sec_mono: (13) collapse eq:mono-C13, residue table l=0..6, F_l, structural explanation, numerical-only caveat, evaluation settings,
   Delta^kappa_l; Table tab:mono-comb (l=2..12), remarks; hook sec:mono-mc for V4.
+
+## Milestone 3 — unresolved section, roadmap/hooks, ledger, compile  [DONE]
+* sec_unresolved: 10 numbered items (residues, UV, IR tilted, closed forms vs declared integrals, E2/E3/T(ii), gauge, end-to-end coverage,
+  tadpole convention [HOOK-V5], limit exchanges, model limitations).
+* roadmap: (13)/combination todo replaced by l=2,4,10 numbers; status rows (K3c, kappa/C13, zero-mode) and two delicate-point bullets updated.
+* sec_primordial / sec_checks: B1/B2 todos replaced by resolution text; analytic zero-mode proof left as \pending with %% HOOK-V5.
+* app_ledger: new category L; entries R-9..R-12, EF-22, SQ-2, SQ-3, H-13, L-1..L-4 (L-4 = V4 hook); repro list split A2/A3/V4; pending
+  paragraph updated.  app_k2channels intro: code/pkl names removed.  main.tex: \input{app_k3channels}; abstract status sentence updated
+  (minimal edit, W3-owned file -- flagged).
+* pdflatex x2: 0 errors, 0 undefined references; no overfull boxes in the new material.
