@@ -125,3 +125,9 @@ Deliverable must be understandable by a physics postdoc. Also: research Anthropi
   identically (a*(-i L a) imaginary) -> combination consistent. Not done: eta_o=4 for C13; closed-form Delta^kappa_l; UV proof.
 - [11-03] W3 DONE (revision per R1: reorder, roadmap, intro, eta_i restored, app_closedforms from C4, full L3 appendix, FW lemma; 85 pp). Launched W2c (third-order sections, unresolved, roadmap fill) and V6 (analytic collinear residue cancellation). In flight: W2c, V4, V5, V6, (C4 finishing). Blocked: R2 final cold read, final user summary.
 - [11-03] W2c DONE: manuscript complete (102 pp) except HOOK-V4 (MC C22) and HOOK-V5 (zero-mode proof). Lead confirms W2c's out-of-ownership edits (abstract, roadmap status rows/bullets, ledger closing). Next: R2 final cold read after V4/V5/V6 land; then final summary.
+- [11-03] V6 DONE: collinear 1/(1-mu) residue cancellation PROVEN analytically (report_V6.md). Long second-order mode pole is the
+  K=0 time reparametrisation eta -> eta + tau, (eta^2 tau)' = -eta^2 A_Q, A_Q = s^2[2T^2 + (T + eta T')^2]; pole parts Phi2 = -tau/eta,
+  Psi2 = tau' + tau/eta, delta2 = -4 tau/eta; C_3 pole = same shift. Residues (tt = tau/2k^2): clock 3tt I1|_o, emission -3tt I1|_e,
+  time delay + v3 = -3 int d/deta[tt I1] (total derivative) cancels clock+emission; local 2+1 = -radial k2. Sum zero for every n.
+  Numerically: residues to 9e-11, sum <= 8e-10 (2.3e-9 relative). No (1-mu)^{-1/2} term; finite limits F_l match A3 to 1e-4.
+  -> B1 RESOLVED ANALYTICALLY. Manuscript must be updated: "numerical only" -> proven (W4 final pass).

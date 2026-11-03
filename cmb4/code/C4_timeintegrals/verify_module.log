@@ -6,3 +6,6 @@ lambdified (247s)
   arbiter k=2.08 q/k=0.84 mu=0.633 k eta=3.894: Phi2 6.84e-43 dPhi2 3.38e-39 I_h 2.86e-48
   arbiter k=2.95 q/k=0.113 mu=0.107 k eta=2.76: Phi2 5.91e-40 dPhi2 1.56e-39 I_h 2.63e-47
   arbiter k=1.19 q/k=1.41 mu=-0.529 k eta=20.58: Phi2 7.68e-44 dPhi2 2.84e-43 I_h 9.81e-50
+  arbiter k=2.63 q/k=0.0693 mu=-0.0659 k eta=0.4649: Phi2 7.72e-35 dPhi2 1.72e-32 I_h 1.56e-44
+  arbiter k=0.433 q/k=10.2 mu=-0.14 k eta=0.01454: Phi2 3.09e-18 dPhi2 1.78e-14 I_h 2.96e-43
+  arbiter k=2.09 q/k=0.112 mu=0.803 k eta=0.2829: Phi2 9.58e-34 dPhi2 3.03e-31 I_h 1.67e-42
