@@ -3,11 +3,11 @@
 The following list collects every step of the calculation that is not derived analytically, not tested, or rests on an assumption.
 Items marked \emph{numerical} have been established by computation only, with the accuracy quoted at the place indicated.
 \begin{enumerate}\itemsep3pt
-\item \emph{Collinear residues of the $(13)$ integrand (numerical only).}  At $q=k$ six channels of the contracted kernel have simple poles in
-$1-\mu$; their residues cancel for $\ell\le6$ to the accuracy of the extraction ($\le1.5\times10^{-4}$ of the largest residue) at one parameter point
-(Sec.~\ref{sec:mono-13}), and the cancellation is explained structurally by the gauge character of a long second-order mode.  An analytic
-computation of the residues, i.e.\ a proof that the $O(p^{-2})$ part of the pair $(\vk,-\vq)$ enters $\kappa$ only as a residual $K=0$ gauge
-mode, is not available.  The finiteness of the monochromatic $C^{(13)}_\ell$ rests on this numerical result.
+\item \emph{Collinear residues of the $(13)$ integrand (resolved; residual caveat).}  The cancellation of the six $1/(1-\mu)$ residues at
+$q=k$ is proved (Sec.~\ref{sec:mono-gauge}): the pole parts at second and third order are identified with the residual time reparametrisation by
+computer algebra, and the residues cancel by an exact total-derivative identity.  The explicit residue formulas \eqref{eq:mono-Rexpl} were written by hand
+from the group structures of the term lists and confirmed against the engine ($10^{-14}$), not obtained by a symbolic reduction of the lists; the
+absence of a $(1-\mu)^{-1/2}$ term rests on a structural argument plus numerics.
 \item \emph{UV behaviour of the loop for power-law spectra (numerical, partial).}  The $\qhat$-averaged integrand of $\kappa$ is $O(10)$ and
 oscillatory up to $q=4k$ (Sec.~\ref{sec:asm-IR}); no analytic large-$q$ expansion of $K_{3c}$ (nor of the $(22)$ integrand at large $k_1\simeq k_2$)
 has been made.  If the integrand is $O(q^0)$, the loop converges in the UV for $n_s<1$ and is logarithmically divergent for $n_s=1$, as
@@ -37,19 +37,17 @@ rotation of the observer triad is proved (Lemma~\ref{lem:asm-triad}) but was not
 ($m=0$ about $\vk$) parts of $K_2$, $K_3$ in collinear configurations, scalar modes only, and $\bar\eta_o/\eta_*=2$ and $4$
 (Sec.~\ref{sec:check_gaps}).  The contracted kernel $\kappa$ shares the term lists and field solutions tested there but was not itself compared
 with the plane-wave chain; the $(13)$ term was evaluated at $\eta_o/\eta_*=4$ only.
-\item \emph{Tadpole (mean-field) convention.}  Resolved in the gauge sense (Sec.~\ref{sec:asm-C13}): only the $\qhat$-averaged tadpole can enter
-$\kappa$, so the anisotropic $k\to0$ pieces \eqref{eq:KPhi20_smallk} drop out identically, and the remaining isotropic freedom is the residual time
-reparametrisation, under which $\kappa$ is invariant to $3\times10^{-13}$; the sourced part of the tadpole is physical back-reaction and is kept.
-What remains is an analytic proof of zero-mode invariance for general momenta (the numerical tests cover $\tau(\eta)=0.1\eta$, $0.1\eta^3$ and the
-plane-wave zero-mode shift PW-3).
-%% HOOK-V5: replace the last sentence if the analytic zero-mode proof is available.
+\item \emph{Zero modes and tadpoles (resolved; residual caveat).}  The residual $k=0$ freedom is classified and the map is shown to be
+invariant to second order under every zero mode; the $\qhat$-averaged tadpole is the unique $k\to0$ limit (Sec.~\ref{sec:asm-zeromodes}).  What is not
+separately established: the invariance of $\Theta^{(3)}$ under $F(\eta)$ is inferred from the multilinear identity and the uniqueness of the regular
+solution, supported by the numerical $\tau$-tests of the assembled $\kappa$ (R-11) and PW-3; no separate symbolic third-order run was made.
 \item \emph{Exchange of limits and integrations.}  Justified: (a) the monochromatic $\delta$-function collapse is applied only to the complete
 observable, after the kernels $K_2$ and $\kappa$ have been assembled (Sec.~\ref{sec:monodef}); (b) the corner $K\to0$ of $C^{(22)}_\ell$ is taken
 inside the $\mu$-integral with the bound of Proposition~\ref{prop:mono-K0} (bounded integrand for $\ell\ge2$, analytic power counting); (c) the
 limit $\eta_i\to0$ is controlled by the exact split \eqref{eq:greens_split}, with the $O(\eta_i^2)$ corrections displayed (Sec.~\ref{sec:obsevent});
-(d) the $\ell$-sums are cut off with the analytic Bessel bound \eqref{eq:tailbound}; (e) $k\to0$ versus the angular average of the tadpoles: only
-the averaged quantity enters (item 8).  Justified numerically only: (f) the collinear limit $\mu\to\pm1$ of the $(13)$ integrand, taken inside
-the $\mu$-integral on the strength of the finite, linearly approached limit (item 1); (g) the squeezed limits $q\to0$ inside the soft region
+(d) the $\ell$-sums are cut off with the analytic Bessel bound \eqref{eq:tailbound}; (e) $k\to0$ versus the angular average of the tadpoles: the
+averaged limit exists and is the only one that enters (item 8); (f) the collinear limit $\mu\to\pm1$ of the $(13)$ integrand, taken inside the
+$\mu$-integral: the integrand is analytic in $1-\mu$ there (item 1).  Justified numerically only: (g) the squeezed limits $q\to0$ inside the soft region
 (Theorems~\ref{thm:asm-squeezed}, \ref{thm:asm-squeezed3}: derived, verified with $O(q^2)$ remainders).  Not justified: the interchange of the
 large-$q$ limit with the time integrals (item 2), and the uniformity in $k$ of the soft expansion used in \eqref{eq:asm-IRtot} (item 3).  The
 perturbative series in $\eps$ itself is used as an asymptotic expansion; its convergence is not addressed.

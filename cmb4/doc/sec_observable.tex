@@ -111,8 +111,8 @@ In particular the perturbation of the emission point along the ray does \emph{no
 \item[(ii)] $T_o$ is a scalar at the observer event, independent of $\nhat$; it drops out of $\Theta$
 identically.  No expansion of $T_o$ or of $\sky{\Tobs}$ in terms of a background temperature is ever needed.
 \item[(iii)] The observer's frame enters only through the identification of $\nhat$ with a photon direction at $o$.  Any two
-admissible frames differ by a realisation-dependent rotation, which leaves $C_\ell$ invariant but not $C^{(22)}_\ell$ and
-$C^{(13)}_\ell$ separately (Sec.~\ref{sec:FW}).
+admissible frames differ by a realisation-dependent rotation, which leaves $C_\ell$ invariant.  For the Fermi--Walker frame and the canonical triad
+the rotation is rigid and starts at $O(\eps^2)$, so that $C^{(22)}_\ell$ and $\Re C^{(13)}_\ell$ are even separately the same in both (Sec.~\ref{sec:FW}).
 \item[(iv)] The emission surface enters only through the endpoint $e$ of the integral: the location of the
 last crossing of $T=T_*$ along the past ray.  Perturbatively there is a single crossing and
 $\eta_e(\nhat)=\eta_*+\delta\eta_e(\nhat)$.
@@ -180,28 +180,59 @@ E_a(o)=\mathsf R_{ab}\,e_b(o),\qquad \mathsf R\in SO(3),\qquad \mathsf R=\exp(\e
 \mathsf J=\mathsf J_1+\tfrac{\eps}2\mathsf J_2+\ldots\ \text{antisymmetric},
 \end{equation}
 with $\mathsf J$ a realisation-dependent random matrix (it depends on the fields along the worldline through \eqref{eq:FW} and on the
-initial orientation).  No further construction is needed: the integration of \eqref{eq:FW} only determines $\mathsf R$, and the
-following argument shows that $\mathsf R$ drops out of $C_\ell$.
+initial orientation).  The integration of \eqref{eq:FW} only determines $\mathsf R$, and the following shows that $\mathsf R$ drops out of
+$C_\ell$, and here even of $C^{(22)}_\ell$ and $\Re C^{(13)}_\ell$ separately.
 
-\emph{Invariance of $C_\ell$.}  A direction with components $n^a$ in the FW frame has components $(\mathsf R^{\rm T}n)^a$ in the canonical
-triad, so $\Theta^{\rm FW}(\nhat)=\Theta^{\rm can}(\mathsf R^{-1}\nhat)$ and, realisation by realisation,
+\emph{Invariance of $C_\ell$ under any frame rotation.}  A direction with components $n^a$ in the FW frame has components $(\mathsf R^{\rm T}n)^a$
+in the canonical triad, so $\Theta^{\rm FW}(\nhat)=\Theta^{\rm can}(\mathsf R^{-1}\nhat)$ and, realisation by realisation,
 \begin{equation}
 a^{\rm FW}_{\ell m}=\sum_{m'}D^\ell_{mm'}(\mathsf R)\,a^{\rm can}_{\ell m'}\qquad\Longrightarrow\qquad
 \sum_m|a^{\rm FW}_{\ell m}|^2=\sum_m|a^{\rm can}_{\ell m}|^2 ,
 \label{eq:rotinv}
 \end{equation}
-because the Wigner matrix $D^\ell(\mathsf R)$ is unitary.  This holds exactly, hence order by order in $\eps$: with
-$a_{\ell m}=\eps a^{(1)}_{\ell m}+\tfrac{\eps^2}2a^{(2)}_{\ell m}+\tfrac{\eps^3}6a^{(3)}_{\ell m}$, the $\eps^4$ coefficient of
-$\sum_m|a_{\ell m}|^2$ is $\sum_m[\tfrac14|a^{(2)}_{\ell m}|^2+\tfrac13\Re\,a^{(1)}_{\ell m}a^{(3)*}_{\ell m}]$, which is therefore invariant;
-taking the ensemble average, $C_\ell$ and in particular $\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell$ are the same in both frames.
-The two pieces are \emph{not} separately invariant: with $D^\ell(\mathsf R)=1+\eps\mathcal D^\ell_1+\ldots$ one has
-$a^{(2)}\to a^{(2)}+2\mathcal D^\ell_1a^{(1)}$ and a compensating change of $a^{(3)}$.  An explicit $\ell=2$ example with exact spin-2
-generators gives $\sum_m|a^{(2)}_{2m}|^2=321/25$ in one frame and $329107/1225-8798\sqrt6/1225$ in the other, while
-$\sum_m[\tfrac14|a^{(2)}|^2+\tfrac13\Re a^{(1)}a^{(3)*}]=107/60$ in both (ledger X-6).  Consequences: (a)~the problem's ``specified initial
-orientation and FW transport'' may be replaced by the canonical triad without loss for $C_\ell$; (b)~$\Theta^{(1)},\Theta^{(2)},\Theta^{(3)}$ must
-all be computed in one and the same frame (we use the canonical triad throughout); (c)~$\sum_m|a_{1m}|^2$ is invariant too, so
-removing the dipole after normalising is frame independent.  Statistical isotropy, and hence $\langle a_{\ell m}\rangle=0$ for $\ell\ge1$,
-holds in both frames.
+because the Wigner matrix $D^\ell(\mathsf R)$ is unitary.  This holds exactly, hence order by order in $\eps$: the $\eps^4$ coefficient of
+$\sum_m|a_{\ell m}|^2$, $\sum_m[\tfrac14|a^{(2)}_{\ell m}|^2+\tfrac13\Re\,a^{(1)}_{\ell m}a^{(3)*}_{\ell m}]$, is invariant, and $C_\ell$ is the same in both frames.
+Consequences: (a)~the ``specified initial orientation and FW transport'' may be replaced by the canonical triad without loss for $C_\ell$;
+(b)~$\Theta^{(1)},\Theta^{(2)},\Theta^{(3)}$ must be computed in one and the same frame (we use the canonical triad throughout); (c)~$\sum_m|a_{1m}|^2$
+is invariant too, so removing the dipole after normalising is frame independent.  Statistical isotropy, and hence $\langle a_{\ell m}\rangle=0$ for
+$\ell\ge1$, holds in both frames.
+
+\emph{The FW frame does not rotate at first order.}  For first-order scalar perturbations $\mathsf J_1=0$.  The angular velocity of the canonical
+triad relative to a Fermi--Walker frame is the sum of the fluid vorticity, the antisymmetric part of the spatial gradient of the triad
+(here $\propto\partial_{[i}(\omega_{j]}+v_{j]})$, the $\Phi$ terms being symmetric) and the Thomas precession $\propto\mathbf a\times\vv$.  At first
+order $\vv_1=\nabla V_1$ and $\omega_1=0$, so the first two vanish, and the Thomas term is $O(\eps^2)$; the vorticity and $\mathrm{curl}\,\boldsymbol\omega$
+start at $O(\eps^2)$ (Sec.~\ref{sec:second}).  Hence $\mathsf R=1+\tfrac{\eps^2}2\mathsf J_2+O(\eps^3)$, with $\mathsf J_2$ realisation dependent but the same
+for all $\nhat$ (a \emph{rigid} rotation).
+
+\begin{lemma}[triad independence]\label{lem:asm-triad}
+(a) $\Theta^{(1)}$ and $\Theta^{(2)}$ do not depend on the choice of orthonormal triad at the observer among those that agree at first order.
+(b) Let two such triads differ by a rigid rotation $\mathsf R=1+\tfrac{\eps^2}2\Omega+O(\eps^3)$, $\Omega_{ij}=\epsilon_{ijk}\varpi_k$, with $\boldsymbol\varpi$
+independent of $\nhat$ ($\boldsymbol\varpi$ may depend on the fields at the observer).  Then
+$\Theta^{(3)}\to\Theta^{(3)}+3(\Omega\nhat)\cdot\nabla_{\nhat}\Theta^{(1)}=\Theta^{(3)}+3i\,(\boldsymbol\varpi\cdot\hat{\mathbf L})\Theta^{(1)}$, $\hat{\mathbf L}=-i\nhat\times\nabla_{\nhat}$
+(up to the sign convention of $\Omega$), and $C^{(22)}_\ell$ and $\Re C^{(13)}_\ell$ are separately unchanged.
+\end{lemma}
+\begin{proof}
+The triad enters only through the map from the observed direction to the initial photon direction, $\nhat\to\mathsf R\nhat$.  A change of the
+direction at $O(\eps^2)$ changes $\Theta=\eps\Theta^{(1)}+\dots$ first at $O(\eps^3)$: $\Theta(\mathsf R\nhat)-\Theta(\nhat)=\tfrac{\eps^3}2(\Omega\nhat)\cdot\nabla_{\nhat}\Theta^{(1)}+O(\eps^4)$,
+i.e.\ $\delta\Theta^{(3)}=3(\Omega\nhat)\cdot\nabla_{\nhat}\Theta^{(1)}$, with $(\Omega\nhat)\cdot\nabla_{\nhat}=\boldsymbol\varpi\cdot(\nhat\times\nabla_{\nhat})$.  For each realisation
+$\sum_ma^{(1)*}_{\ell m}[(\boldsymbol\varpi\cdot\hat{\mathbf L})a^{(1)}]_{\ell m}$ is real ($\hat{\mathbf L}$ is Hermitian and acts within each $\ell$, $\boldsymbol\varpi$ real), so the change of
+$\sum_ma^{(1)*}_{\ell m}a^{(3)}_{\ell m}$ is purely imaginary.
+\end{proof}
+\noindent Applied to $\mathsf R=1+\tfrac{\eps^2}2\mathsf J_2$: \emph{for this observer $C^{(22)}_\ell$ and $\Re C^{(13)}_\ell$ are separately the same in the FW
+frame and in the canonical triad}, and the integration of \eqref{eq:FW} is not needed for either.
+
+\begin{remark}[a generic rotation at first order]
+If two frames differed by a rotation with $\mathsf J_1\neq0$ (e.g.\ an observer whose frame rotates relative to the triad at $O(\eps)$), then
+$a^{(2)}\to a^{(2)}+2\mathcal D^\ell_1a^{(1)}$ with $D^\ell(\mathsf R)=1+\eps\mathcal D^\ell_1+\ldots$, compensated by a change of $a^{(3)}$: only the sum
+$\tfrac14C^{(22)}_\ell+\tfrac13\Re C^{(13)}_\ell$ would be invariant.  An explicit $\ell=2$ example with exact spin-2 generators gives
+$\sum_m|a^{(2)}_{2m}|^2=321/25$ in one frame and $329107/1225-8798\sqrt6/1225$ in the other, while $\sum_m[\tfrac14|a^{(2)}|^2+\tfrac13\Re a^{(1)}a^{(3)*}]=107/60$
+in both (ledger X-6).  This case does not arise for the FW observer of (O2).
+\end{remark}
+
+\emph{Global versus per-direction triads.}  The canonical triad, Gram--Schmidt orthonormalisation of the \emph{global} coordinate basis, is one
+triad for the whole sky, and any other global choice differs from it by a rigid rotation.  A triad constructed per direction (Gram--Schmidt in the
+frame adapted to each $\nhat$, e.g.\ the $\nhat=\hat{\mathbf z}$ split of the term lists) differs from it by an $\nhat$-dependent rotation, which is not a
+rotation of the sky map: it changes $\kappa$ (at the $0.3\%$ level in the monochromatic case, R-12) and must not be used at third order.
 
 \subsection{Linear order: recovery of the Sachs--Wolfe formula}
 \label{sec:linearS}

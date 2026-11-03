@@ -372,7 +372,7 @@ and emission shift):
 +\underbrace{\int\!\frac{\dd^3q}{(2\pi)^3}P(q)\,A[\vq]\,B^{\rm s}_2(\vk,-\vq)}_{\rm cross\text{-}contracted}.
 \label{eq:asm-classii}
 \end{equation}
-The tadpole term multiplies the free leg only, so only the $\qhat$-averaged tadpole enters $\kappa$ (Sec.~\ref{sec:asm-C13}).  The cross term contains
+The tadpole term multiplies the free leg only, so only the $\qhat$-averaged tadpole enters $\kappa$ (Sec.~\ref{sec:asm-zeromodes}).  The cross term contains
 the second-order kernels at the momenta $(\vk,-\vq)$, $|\vk-\vq|=p$, with all their Poisson inversions $p^{-2}$, $p^{-4}$.
 \item[(iii)] \emph{Third-order fields}, $X_3\to K_{3c,X}(\vq)+K_{3c,X}(-\vq)$, i.e.\ the contracted solution $X_{3c}$ of \eqref{eq:contracted},
 \eqref{eq:third_eqs}: $\Phi_{3c}=\int\frac{\dd^3q}{(2\pi)^3}P(q)\big[\int_0^\eta G_\Phi K_{3c,S_\Phi}\dd\eta'+C_3\,U(k\eta/\sqrt3)\big]$, $\Psi_{3c}=\Phi_{3c}-Q_{3c}$,
@@ -398,29 +398,11 @@ App.~\ref{app:k3channels}; the engine evaluates every group in a per-direction f
 spectral cumulative integration on a Chebyshev grid and the third-order fields from Green's-function quadrature.
 
 \paragraph{The spatial triad.}  The direction map \eqref{eq:dirmap} contains, from second order on, the spatial triad of the observer
-\eqref{eq:triad} through $k_{2,\rm init}$ \eqref{eq:kinit2}.
-\begin{lemma}[triad independence]\label{lem:asm-triad}
-(a) $\Theta^{(1)}$ and $\Theta^{(2)}$ do not depend on the choice of orthonormal triad at the observer among those that agree at first order.
-(b) Let two such triads differ by a rotation $\mathsf R=1+\tfrac{\eps^2}2\Omega+O(\eps^3)$, $\Omega_{ij}=\epsilon_{ijk}\omega_k$, with $\boldsymbol\omega$
-independent of $\nhat$ (a \emph{rigid} rotation; $\boldsymbol\omega$ may depend on the fields at the observer).  Then
-$\Theta^{(3)}\to\Theta^{(3)}+3(\Omega\nhat)\cdot\nabla_{\nhat}\Theta^{(1)}=\Theta^{(3)}+3i\,(\boldsymbol\omega\cdot\mathbf L)\Theta^{(1)}$, $\mathbf L=-i\nhat\times\nabla_{\nhat}$
-(up to the sign convention of $\Omega$), and $\Re C^{(13)}_\ell$ is unchanged.
-\end{lemma}
-\emph{Proof.}  The triad enters only through the map from the observed direction to the initial photon direction, $\nhat\to\mathsf R\nhat$.
-Since every triad of the Gram--Schmidt type agrees at first order \eqref{eq:triad}, the change is $O(\eps^2)$ in the direction, which changes
-$\Theta=\eps\Theta^{(1)}+\dots$ first at $O(\eps^3)$: $\Theta(\mathsf R\nhat)-\Theta(\nhat)=\tfrac{\eps^3}2(\Omega\nhat)\cdot\nabla_{\nhat}\Theta^{(1)}+O(\eps^4)$,
-i.e.\ $\delta\Theta^{(3)}=3(\Omega\nhat)\cdot\nabla_{\nhat}\Theta^{(1)}$, and $(\Omega\nhat)\cdot\nabla_{\nhat}=\boldsymbol\omega\cdot(\nhat\times\nabla_{\nhat})$.
-For each realisation $\sum_ma^{(1)*}_{\ell m}[(\boldsymbol\omega\cdot\mathbf L)a^{(1)}]_{\ell m}$ is real ($\mathbf L$ is Hermitian and acts within each $\ell$,
-$\boldsymbol\omega$ real), so the change of $\sum_ma^{(1)*}_{\ell m}a^{(3)}_{\ell m}$ is purely imaginary and $\Re C^{(13)}_\ell$ is invariant.  $\square$
-
-\noindent The triad fixed by Gram--Schmidt orthonormalisation of the \emph{global} coordinate basis (the canonical triad of
-Sec.~\ref{sec:ray}) is one triad for the whole sky, and any other global choice differs from it by a rigid rotation.  A triad constructed per
-direction (Gram--Schmidt in the frame adapted to each $\nhat$, e.g.\ the $\nhat=\hat{\mathbf z}$ split of the term lists) differs from it by an
-$\nhat$-dependent rotation, which is not a rotation of the sky map: it changes $\kappa$ (at the $0.3\%$ level in the monochromatic case) and
-must not be used at third order.  We use the canonical global triad, evaluated in global components for each $\nhat$ and then rotated into the
-per-direction frame.  (In the shear form the observer contains no $k_2$ term, so the canonical triad enters only through the ray functional
-$\vk_2$; the direct-form observer terms written in the $\nhat=\hat{\mathbf z}$ split implicitly use the per-direction triad and must be
-re-expressed before they are compared.)
+\eqref{eq:triad} through $k_{2,\rm init}$ \eqref{eq:kinit2}.  By Lemma~\ref{lem:asm-triad} any global triad that agrees at first order gives the same
+$C^{(22)}_\ell$ and $\Re C^{(13)}_\ell$, whereas a per-direction triad must not be used (Sec.~\ref{sec:FW}).  We use the canonical global triad, evaluated
+in global components with general $n^a$ for each $\nhat$ and then rotated into the per-direction frame of the engine.  (In the shear form the
+observer contains no $k_2$ term, so the canonical triad enters only through the ray functional $\vk_2$; the direct-form observer terms written in the
+$\nhat=\hat{\mathbf z}$ split implicitly use the per-direction triad and must be re-expressed before they are compared, R-12.)
 
 % ======================================================================
 \subsection{\texorpdfstring{$C_\ell^{(13)}$}{C13}}
