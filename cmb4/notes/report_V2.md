@@ -92,3 +92,22 @@ K_1 built from the SPEC 9(a) linear formula (emission Theta = dT + Psi - n.v at 
 monopole of the local and ISW parts done analytically with j0, j1); derivatives in k, mu by sympy, eta-integrals by mpmath.
 Functions: K1, DK1, SK1(a,b,...), K2_squeezed(k1vec,k2vec,n,eta_o,eta_*,eta_i) -> (O(k1^0) part, O(k1^1) part, K_1).
 Self-checks: D K_1 vs eta-scaling finite difference; (k,mu) form of S_p vs direct 3D finite differences. Table below.
+
+### Output of squeezed_predictions.py (eta_o=1, eta_*=0.2, eta_i=0; full log in code/V2_squeezed/squeezed_predictions.out)
+```
+=== 4. Numerical predictions ===
+ small-k scaling: |K_1(k, mu=0.7)| at k = 0.01 : 2.506660955e-6
+ small-k scaling: |K_1(k, mu=0.7)| at k = 0.02 : 1.002657528e-5
+ D K_1 = (-4.04606063746 - 0.180539770808j)   (eta_o d_eo + eta_s d_es) K_1 = (-4.04606063746 - 0.180539770808j)
+ S_p K_1 direct 3D finite differences: (-0.39668417 - 2.6567602j)   (k,mu)-form: (-0.39668418 - 2.6567602j)
+
+ Table: eta_o=1, eta_s=0.2; k1 = k1hat*|k1| with |k1|-coefficient shown (K_2 = O0 + O1 + O(k1^2))
+ k2   mu2    K_1                      O0 = -D K_1                O1/|k1| (k1 || n)          O1/|k1| (k1 || k2)
+ 5.0 -0.6 (0.12330633 - 0.016212794j) (0.1809521 - 0.057730416j) (-0.73538123 + 0.38879993j) (-0.066219481 + 0.10608184j)
+ 5.0 0.1 (0.06523269 - 0.067821707j) (-1.4366745 - 0.00010016912j) (0.15500829 - 0.12701678j) (0.23789323 + 0.12567903j)
+ 5.0 0.8 (-0.16429667 + 0.10342607j) (1.6210472 + 1.214783j) (0.39491575 + 0.76156951j) (0.075718707 + 0.14211043j)
+ 20.0 -0.6 (-0.82960898 + 0.32721087j) (4.3053032 - 1.8441726j) (4.7297665 + 0.50309088j) (0.73299645 + 1.2634035j)
+ 20.0 0.1 (0.033301548 + 1.1805882j) (1.4909827 - 1.1483323j) (0.1236146 + 0.46286829j) (-0.13754799 - 7.8756025j)
+ 20.0 0.8 (0.54518662 - 1.0942288j) (-2.2900798 - 19.602507j) (4.6945138 - 3.3324619j) (2.1234487 - 3.3315042j)
+```
+Checks: K_1(k) ∝ k^2 at small k (ratio 4.000 for k doubling); D K_1 equals the eta-scaling derivative to 12 digits; the (k,mu) form of S_p agrees with direct 3D finite differences to 1e-8. Runtime about 20 min (the mpmath quadratures dominate).
